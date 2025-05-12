@@ -4,13 +4,18 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "AI Worker",
   description: "Documentation for AI Worker",
-  base: '/ai_worker_website/',
   appearance: 'dark',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Docs', link: '/markdown-examples' },
+      { text: 'Examples', link: '/markdown-examples' },
+      { text: 'API', link: '/api-examples' },
+      { text: 'Tutorials', link: '/tutorials' },
+      { text: 'Contributing', link: '/contributing' },
+      { text: 'Changelog', link: '/changelog' },
+      { text: 'Contact Us', link: '/contact' }
     ],
 
     sidebar: [
@@ -24,7 +29,10 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/ai_worker_website' }
+      { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/ai_worker_website' },
+      { icon: 'youtube', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam' },
+      { icon: 'x', link: 'https://x.com/ROBOTISAmerica' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/company/robotis/' },
     ]
   }
 })

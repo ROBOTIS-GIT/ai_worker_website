@@ -39,7 +39,11 @@ bower_components
 build/Release
 
 # Dependency directories
+node_modules/
+jspm_packages/
+
 # Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -131,7 +135,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# user-specific files
-node_modules
+# vitepress
 .vitepress/cache
 .vitepress/dist
+
+# user-specific files

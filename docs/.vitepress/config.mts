@@ -5,6 +5,7 @@ export default defineConfig({
   title: "AI Worker",
   description: "Documentation for AI Worker",
   base: '/ai_worker_website/',
+  appearance: 'dark',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

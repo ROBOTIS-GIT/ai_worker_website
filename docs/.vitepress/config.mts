@@ -22,7 +22,7 @@ export default defineConfig({
     // logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Documentations', link: '/markdown-examples' },
+      { text: 'Documentations', link: '/introduction' },
       {
         text: 'Resources',
         items: [
@@ -43,9 +43,37 @@ export default defineConfig({
     },
     sidebar: [
       {
-        text: 'Introduction',
+        text: 'Overview',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Introduction', link: '/introduction' },
+          { text: 'Runtime API Examples', link: '/api-examples' }
+        ]
+      },
+      {
+        text: 'Specifications',
+        items: [
+          { text: 'Hardware Specification', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' }
+        ]
+      },
+      {
+        text: 'Quick Start Guide',
+        items: [
+          { text: 'Hardware Specification', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' }
+        ]
+      },
+      {
+        text: 'Resources',
+        items: [
+          { text: 'Installation', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' }
+        ]
+      },
+    {
+        text: 'Troubleshooting',
+        items: [
+          { text: 'Issues', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       }

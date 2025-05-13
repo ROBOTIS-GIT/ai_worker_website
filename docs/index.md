@@ -1,17 +1,18 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
+  image:
+    src: /main.png
   name: "AI Worker"
   text: "Freedom from Work"
-  tagline: My great project tagline
+  tagline: AI Worker leverages imitation learning to learn from human behavior. The robot uses real-time inference to perceive its environment and perform intelligent, learned actions.
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: Introduction
       link: /markdown-examples
     - theme: alt
-      text: API Examples
+      text: Quick Start Guide
       link: /api-examples
 
 features:

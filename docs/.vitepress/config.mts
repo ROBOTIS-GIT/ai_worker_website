@@ -1,10 +1,25 @@
 import { defineConfig } from 'vitepress'
 
+const title = 'AI Worker'
+const description = 'Documentations for AI Worker'
+const ogUrl = 'https://ai.robotis.com/'
+const ogImage = `${ogUrl}og.png`
+
 export default defineConfig({
-  title: "AI Worker",
-  description: "Documentation for AI Worker",
+  title: title,
+  description: description,
   appearance: 'dark',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
+    ['meta', { name: 'author', content: 'ROBOTIS' }],
+    ['meta', { name: 'og:title', content: title }],
+    ['meta', { name: 'og:description', content: description }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:image', content: ogImage }],
+  ],
   themeConfig: {
+    // logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentations', link: '/markdown-examples' },
@@ -23,7 +38,9 @@ export default defineConfig({
         ]
       },
     ],
-
+    search: {
+      provider: 'local',
+    },
     sidebar: [
       {
         text: 'Introduction',
@@ -33,7 +50,6 @@ export default defineConfig({
         ]
       }
     ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/ai_worker' },
       { icon: 'youtube', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam' },

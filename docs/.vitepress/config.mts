@@ -46,35 +46,33 @@ export default defineConfig({
         text: 'Overview',
         items: [
           { text: 'Introduction', link: '/introduction' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       },
       {
         text: 'Specifications',
         items: [
-          { text: 'Hardware Specification', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Hardware Specification', link: '/specification' },
+          { text: 'Software Specification', link: '/api-examples' }
         ]
       },
       {
         text: 'Quick Start Guide',
         items: [
-          { text: 'Hardware Specification', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Installation', link: '/markdown-examples' },
+          { text: 'Commands', link: '/api-examples' }
         ]
       },
       {
         text: 'Resources',
         items: [
-          { text: 'Installation', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Resources', link: '/markdown-examples' },
         ]
       },
     {
         text: 'Troubleshooting',
         items: [
           { text: 'Issues', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'FAQ', link: '/api-examples' }
         ]
       }
     ],

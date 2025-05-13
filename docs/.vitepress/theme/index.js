@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import YouTube from './components/YouTube.vue'
-// import './custom.css'
+import './custom.css'
 
 export default {
   ...DefaultTheme,

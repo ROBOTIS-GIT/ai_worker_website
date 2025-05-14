@@ -19,7 +19,8 @@ export default defineConfig({
     ['meta', { property: 'og:image', content: ogImage }],
   ],
   themeConfig: {
-    // logo: '/logo.png',
+    // logo: '/logo_aiworker.png',
+    logo: '/favicon.svg',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentations', link: '/introduction' },
@@ -52,7 +53,7 @@ export default defineConfig({
         text: 'Specifications',
         items: [
           { text: 'Hardware Specification', link: '/specification' },
-          { text: 'Software Specification', link: '/api-examples' }
+          { text: 'Software Specification', link: '/specification' }
         ]
       },
       {
@@ -60,6 +61,23 @@ export default defineConfig({
         items: [
           { text: 'Installation', link: '/markdown-examples' },
           { text: 'Commands', link: '/api-examples' }
+        ]
+      },
+      {
+        text: 'Imitation Learning',
+        items: [
+          { text: 'Settings', link: '/introduction' },
+          { text: 'Dataset', link: '/introduction' },
+          { text: 'Data Collection', link: '/specification' },
+          { text: 'Data visualization', link: '/markdown-examples' },
+          { text: 'Model Training', link: '/api-examples' },
+          { text: 'Model Inference', link: '/markdown-examples' },
+        ]
+      },
+      {
+        text: 'Simulation',
+        items: [
+          { text: 'Simulation', link: '/markdown-examples' },
         ]
       },
       {

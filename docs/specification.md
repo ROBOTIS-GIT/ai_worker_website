@@ -1,5 +1,6 @@
-# Hardware specification
+# Hardware
 
+## Follower specification
 | Properties                  | Specification                           |
 |-----------------------------|-----------------------------------------|
 | Size                        | W600 x D600 x H1,600 (mm)               |
@@ -16,3 +17,13 @@
 | Exterior Materials          | Aluminium, Plastic                      |
 | Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU         |
 | Computer                    | NVIDIA Jetson Orin                      |
+
+## Leader specification
+| Properties                  | Specification                           |
+|-----------------------------|-----------------------------------------|
+|                             |                                         |
+
+
+## Dimension
+
+## Workspace

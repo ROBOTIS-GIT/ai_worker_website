@@ -17,6 +17,18 @@ export default defineConfig({
     ['meta', { name: 'og:description', content: description }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:image', content: ogImage }],
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-1ZL2D7EBQB' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1ZL2D7EBQB');`
+    ]
   ],
   themeConfig: {
     // logo: '/logo_aiworker.png',

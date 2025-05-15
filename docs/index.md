@@ -3,7 +3,7 @@ layout: home
 
 hero:
   image:
-    src: /main.png
+    src: /aiworker_front.png
     alt: AI Worker
   name: "AI Worker"
   text: "Freedom from Work"

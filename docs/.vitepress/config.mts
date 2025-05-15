@@ -76,15 +76,9 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Resources',
+        text: 'OpenSource Projects',
         items: [
-          { text: 'Resources', link: '/markdown_examples' },
-        ]
-      },
-      {
-        text: 'Appendix',
-        items: [
-          { text: 'Appendix', link: '/appendix' },
+          { text: 'Resources', link: '/resources' },
         ]
       },
       {

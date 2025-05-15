@@ -59,7 +59,7 @@ export default defineConfig({
       {
         text: 'Quick Start Guide',
         items: [
-          { text: 'Installation', link: '/markdown-examples' },
+          { text: 'Installation', link: '/markdown_examples' },
         ]
       },
       {
@@ -72,13 +72,13 @@ export default defineConfig({
       {
         text: 'Simulation',
         items: [
-          { text: 'Simulation', link: '/markdown-examples' },
+          { text: 'Simulation', link: '/Simulation' },
         ]
       },
       {
         text: 'Resources',
         items: [
-          { text: 'Resources', link: '/markdown-examples' },
+          { text: 'Resources', link: '/markdown_examples' },
         ]
       },
       {
@@ -90,8 +90,8 @@ export default defineConfig({
       {
           text: 'Troubleshooting',
           items: [
-            { text: 'Issues', link: '/markdown-examples' },
-            { text: 'FAQ', link: '/api-examples' }
+            { text: 'Issues', link: '/markdown_examples' },
+            { text: 'FAQ', link: '/markdown_examples' }
           ]
         }
     ],

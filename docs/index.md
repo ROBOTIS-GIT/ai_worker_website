@@ -14,10 +14,10 @@ hero:
       link: /introduction
     - theme: alt
       text: Quick Start Guide
-      link: /api-examples
+      link: /dataset_preparation
     - theme: alt
-      text: Resources
-      link: /api-examples
+      text: Open Source
+      link: /resources
 
 features:
   - title: All-in-one Smart Actuator DYNAMIXEL

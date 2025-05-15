@@ -72,7 +72,7 @@ export default defineConfig({
       {
         text: 'Simulation',
         items: [
-          { text: 'Simulation', link: '/Simulation' },
+          { text: 'Simulation', link: '/simulation' },
         ]
       },
       {

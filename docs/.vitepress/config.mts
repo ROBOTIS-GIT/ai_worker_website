@@ -60,18 +60,13 @@ export default defineConfig({
         text: 'Quick Start Guide',
         items: [
           { text: 'Installation', link: '/markdown-examples' },
-          { text: 'Commands', link: '/api-examples' }
         ]
       },
       {
         text: 'Imitation Learning',
         items: [
-          { text: 'Settings', link: '/introduction' },
-          { text: 'Dataset', link: '/introduction' },
-          { text: 'Data Collection', link: '/specification' },
-          { text: 'Data visualization', link: '/markdown-examples' },
-          { text: 'Model Training', link: '/api-examples' },
-          { text: 'Model Inference', link: '/markdown-examples' },
+          { text: 'Dataset Preparation', link: '/dataset_preparation' },
+          { text: 'Model Workflow', link: '/model_workflow' },
         ]
       },
       {
@@ -86,13 +81,19 @@ export default defineConfig({
           { text: 'Resources', link: '/markdown-examples' },
         ]
       },
-    {
-        text: 'Troubleshooting',
+      {
+        text: 'Appendix',
         items: [
-          { text: 'Issues', link: '/markdown-examples' },
-          { text: 'FAQ', link: '/api-examples' }
+          { text: 'Appendix', link: '/appendix' },
         ]
-      }
+      },
+      {
+          text: 'Troubleshooting',
+          items: [
+            { text: 'Issues', link: '/markdown-examples' },
+            { text: 'FAQ', link: '/api-examples' }
+          ]
+        }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/ai_worker' },

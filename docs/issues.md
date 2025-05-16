@@ -1,0 +1,16 @@
+# Issues
+
+If you encounter any issues or have questions about the AI Worker, please submit them through one of our support channels:
+
+- **GitHub Issues**: [https://github.com/ROBOTIS-GIT/ai_worker/issues](https://github.com/ROBOTIS-GIT/ai_worker/issues)
+- **Community Forum**: [https://forum.robotis.com/](https://forum.robotis.com/)
+
+Our team is committed to providing prompt assistance and will respond to your inquiries as quickly as possible.
+
+For bug reports, please include:
+- A clear description of the issue
+- Steps to reproduce the problem
+- System information (OS, ROS version, etc.)
+- Any relevant error messages or logs
+
+Your feedback helps us improve the AI Worker platform for everyone!

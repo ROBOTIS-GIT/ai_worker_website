@@ -31,13 +31,13 @@ export default defineConfig({
     ]
   ],
   themeConfig: {
-    // logo: '/logo_aiworker.png',
+    // logo: '/logo_aiworker.svg',
     logo: '/favicon.svg',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentations', link: '/introduction' },
       {
-        text: 'Resources',
+        text: 'OpenSource',
         items: [
           { text: 'AI Worker Packages', link: 'https://github.com/ROBOTIS-GIT/ai_worker', target: '_blank' },
           { text: 'MuJoCo Model Files', link: 'https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie', target: '_blank' },
@@ -64,15 +64,14 @@ export default defineConfig({
       {
         text: 'Specifications',
         items: [
-          { text: 'Hardware Specification', link: '/specification' },
-          { text: 'Software Specification', link: '/specification' }
+          { text: 'Hardware', link: '/specification' },
         ]
       },
       {
         text: 'Quick Start Guide',
         items: [
-          { text: 'Installation', link: '/installation' },
-          { text: 'Commands', link: '/command' }
+          { text: 'Setup', link: '/setup' },
+          { text: 'Basic Operations', link: '/operation' }
         ]
       },
       {
@@ -89,20 +88,22 @@ export default defineConfig({
         ]
       },
       {
-        text: 'OpenSource Projects',
+        text: 'OpenSource & Community',
         items: [
-          { text: 'Resources', link: '/resources' },
+          { text: 'OpenSource', link: '/opensource' },
+          { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
         ]
       },
       {
           text: 'Troubleshooting',
           items: [
-            { text: 'Issues', link: '/markdown_examples' },
-            { text: 'FAQ', link: '/markdown_examples' }
+            { text: 'Issues', link: '/issues' },
+            { text: 'FAQ', link: '/faq' }
           ]
         }
     ],
     socialLinks: [
+      { icon: '/favicon.svg', link: 'https://en.robotis.com/' },
       { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/ai_worker' },
       { icon: 'youtube', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam' },
       { icon: 'x', link: 'https://x.com/ROBOTISAmerica' },

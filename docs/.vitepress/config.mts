@@ -71,7 +71,8 @@ export default defineConfig({
       {
         text: 'Quick Start Guide',
         items: [
-          { text: 'Installation', link: '/markdown_examples' },
+          { text: 'Installation', link: '/installation' },
+          { text: 'Commands', link: '/command' }
         ]
       },
       {

@@ -25,16 +25,14 @@
 - NVIDIA Container Toolkit (Install the graphics driver `nvidia-driver-570-server-open` for CUDA 12.8)
 
 ## Configuration
-#### 1. USB Serial
+### 1. USB Serial Setup
 1. Prepare the provided serial data.
 2. Create a udev rule:
   ```bash
   sudo nano /etc/udev/rules.d/99-ai-worker.rules
   ```
-3. Enter the prepared serial data into the file.
-
+3. Paste the prepared serial data into the file.
 4. Save the file and exit the editor.
-
 5. Reload udev rules and trigger:
   ```bash
   sudo udevadm control --reload
@@ -59,17 +57,17 @@ cd ai_worker
 ```
 
 
-# Docker Command Guide
+## Docker Command Guide
 
 This script (`container.sh`) helps you easily manage Docker containers, including starting, entering, and stopping them.
 
-## Usage
+### Usage
 
 ```bash
 ./container.sh [command] [options]
 ```
 
-### Commands
+#### Commands
 
 - `help`  
   Displays this help message.
@@ -85,7 +83,7 @@ This script (`container.sh`) helps you easily manage Docker containers, includin
 - `stop`  
   Stops the container.
 
-### Examples
+#### Examples
 
 ```bash
 ./container.sh help                 # Show this help message

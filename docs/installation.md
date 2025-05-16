@@ -1,8 +1,8 @@
 # Hardware Setup
 ## Follower
 ![Back of the Follower](assets/back_of_the_follower.png)
-1. Connect all three battery charging cables to the charging terminals on the back of the Follower.
-2. Connect the Follower's HDMI port to a monitor.
+1. Connect all three battery charging cables to the charging terminals on the back of the `Follower`.
+2. Connect the `Follower`'s HDMI port to a monitor.
 3. If you need internet access, connect a LAN cable to the LAN port.
 4. Press and hold the Power button on the back of the `Follower` for about 3 seconds to turn on the board.
 5. After you hear a beep, check that the monitor displays the screen.
@@ -88,6 +88,7 @@ This script (`container.sh`) helps you easily manage Docker containers, includin
 ### Examples
 
 ```bash
+./container.sh help                 # Show this help message
 ./container.sh start with_gz        # Start container with Gazebo support
 ./container.sh start without_gz     # Start container without Gazebo support
 ./container.sh enter                # Enter the running container

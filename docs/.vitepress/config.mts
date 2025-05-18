@@ -64,7 +64,8 @@ export default defineConfig({
       {
         text: 'Specifications',
         items: [
-          { text: 'Hardware', link: '/specification' },
+          { text: 'Hardware', link: '/hardware' },
+          { text: 'Software', link: '/software' },
         ]
       },
       {

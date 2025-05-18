@@ -1,6 +1,6 @@
 # Software
 
-## 1 Introduction
+## Introduction
 
 **AI WORKER** is a Jetson Orin–based robot platform built for real-world **Physical AI** research. It supports **full-body motion control** and enables smooth integration of both **teleoperation** and **AI policy execution**.
 
@@ -14,7 +14,7 @@ This platform is designed for:
 
 It is suitable for researchers, developers, and integrators working with AI-enabled robotics.
 
-## 2 System Architecture Overview
+## System Architecture Overview
 
 > The diagram below illustrates the overall control structure of AI WORKER.
 >
@@ -33,7 +33,7 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 | **Networking** | Ethernet / Wi-Fi 6 | Remote control and AI policy streaming |
 | **Sensors (Optional)** | Realsense D405 (wrist), ZED Mini (head) | Integrated via official ROS 2 drivers |
 
-## 3 Why `ros2_control`?
+## Why `ros2_control`?
 
 `ros2_control` is a real-time, modular control framework used in ROS 2. AI WORKER uses it without major changes.
 
@@ -44,7 +44,7 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 
 This structure supports both manual operation and AI-based control in the same system.
 
-## 4 Motion Execution Pipeline
+## Motion Execution Pipeline
 
 ```
 Input Source (Teleoperation / AI Policy)
@@ -75,7 +75,7 @@ DYNAMIXEL Actuators
 6. **Hardware interface** — Converts commands to RS-485 packets using **Dynamixel SDK**
 7. **Actuators** — Execute the motion and return position/current feedback
 
-## 5 Controller Configuration & Joint Mapping
+## Controller Configuration & Joint Mapping
 
 | Controller | Segment | DOF | Input Topic |
 | --- | --- | --- | --- |
@@ -91,7 +91,7 @@ By default, all joints operate in **position mode**.
 
 The last joint in each arm controller corresponds to the **gripper**.
 
-## 6 Controller YAML Example ([link](https://github.com/ROBOTIS-GIT/ai_worker/blob/main/ffw_bringup/config/follower_with_rh_hardware_controller.yaml))
+## Controller YAML Example ([link](https://github.com/ROBOTIS-GIT/ai_worker/blob/main/ffw_bringup/config/follower_with_rh_hardware_controller.yaml))
 
 ```yaml
 controller_manager:
@@ -125,7 +125,7 @@ arm_l_controller:
 
 ```
 
-## 7 Debugging & Visualization Tools
+## Debugging & Visualization Tools
 
 | Tool / Topic | Description |
 | --- | --- |
@@ -133,7 +133,7 @@ arm_l_controller:
 | `/joint_states` | Real-time joint position and velocity feedback |
 | RViz2 | 3D view of robot model (URDF), TF, and movement |
 
-## 8 Safety & Fault Handling
+## Safety & Fault Handling
 
 - Joint limits are enforced using the URDF and controller configuration
 - Out-of-range values are clamped by the hardware interface (YAML-defined limits)

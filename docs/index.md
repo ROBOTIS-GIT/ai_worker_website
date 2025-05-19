@@ -13,11 +13,14 @@ hero:
       text: Introduction
       link: /introduction
     - theme: alt
-      text: Quick Start Guide
+      text: Quick Start
       link: /setup
     - theme: alt
       text: Open Source
       link: /opensource
+    - theme: alt
+      text: Purchase Inquiry
+      link: /contact
 
 features:
   - title: All-in-one Smart Actuator DYNAMIXEL

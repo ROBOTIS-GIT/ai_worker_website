@@ -50,6 +50,7 @@ export default defineConfig({
           { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
         ]
       },
+      { text: 'Contact Us', link: '/contact' },
     ],
     search: {
       provider: 'local',
@@ -96,8 +97,9 @@ export default defineConfig({
         ]
       },
       {
-          text: 'Troubleshooting',
+          text: 'Support',
           items: [
+            { text: 'Contact Us', link: '/contact' },
             { text: 'Issues', link: '/issues' },
             { text: 'FAQ', link: '/faq' }
           ]

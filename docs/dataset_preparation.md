@@ -3,6 +3,7 @@
 
 This dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the AI Worker via ROS 2 teleoperation using the [lerobot](https://github.com/huggingface/lerobot) framework.
 
+<YouTube videoId="hnJpFX2G3P4" />
 
 ## 2. Dataset Schema
 

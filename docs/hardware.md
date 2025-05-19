@@ -1,5 +1,10 @@
 # Hardware
 
+## Hardware Overview
+The AI Worker hardware platform combines advanced robotics with AI-powered capabilities to create a versatile semi-humanoid robot. Built around ROBOTIS DYNAMIXEL smart actuators, it features a mobile base with swerve drive, dual 7-DOF arms with dexterous grippers, and a sensor suite that includes RGBD cameras and LiDARs. The system is powered by an NVIDIA Jetson Orin computer and offers up to 4 hours of operation time on a single charge. This comprehensive hardware design enables the AI Worker to perform complex manipulation tasks through imitation learning in various industrial environments.
+
+![hardware_overview](./assets/hardware_overview.png)
+
 ## Product models
 
 ![model_lineup](./assets/model_lineup.png)

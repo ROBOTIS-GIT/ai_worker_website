@@ -1,17 +1,11 @@
 # Contact Us
 
-For purchase inquiries or to request detailed product information about the AI Worker, please contact us through one of the following channels:
+For sales inquiries or to request detailed product information about the AI Worker, please contact us through one of the following channels:
 
-## Purchase Inquiries
+## Sales Inquiries
 
 For sales inquiries, please reach out to our sales team:
 - Email: willson@robotis.com
-
-## Technical support
-
-For technical support and general inquiries:
-- [GitHub Issues](https://github.com/ROBOTIS-GIT/ai_worker/issues)
-- [Community Forum](https://forum.robotis.com/)
 
 ## Office Locations
 

@@ -36,6 +36,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentations', link: '/introduction' },
+      { text: 'Videos', link: '/videos' },
       {
         text: 'OpenSource',
         items: [
@@ -60,6 +61,7 @@ export default defineConfig({
         text: 'Overview',
         items: [
           { text: 'Introduction', link: '/introduction' },
+          { text: 'Video Gallery', link: '/videos' },
         ]
       },
       {

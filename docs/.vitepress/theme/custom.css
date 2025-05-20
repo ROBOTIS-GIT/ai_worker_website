@@ -2,6 +2,88 @@
   margin-bottom: 2rem;
 }
 
-.vp-doc img {
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
   margin-bottom: 2rem;
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-caption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.youtube-channel {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.channel-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-direction: column;
+}
+
+.channel-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.channel-text h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.channel-text p {
+  margin: 0.5rem 0 0;
+}
+
+.channel-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: #FF0000;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.channel-button:hover {
+  background-color: #CC0000;
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .channel-info {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .channel-logo {
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+  }
 }

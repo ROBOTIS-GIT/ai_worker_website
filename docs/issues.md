@@ -4,6 +4,7 @@ If you encounter any issues or have questions about the AI Worker, please submit
 
 - **GitHub Issues**: [https://github.com/ROBOTIS-GIT/ai_worker/issues](https://github.com/ROBOTIS-GIT/ai_worker/issues)
 - **Community Forum**: [https://forum.robotis.com/](https://forum.robotis.com/)
+- **Email for Sensitive Inquiries**: [ost@robotis.com](mailto:ost@robotis.com)
 
 Our team is committed to providing prompt assistance and will respond to your inquiries as quickly as possible.
 
@@ -13,4 +14,4 @@ For bug reports, please include:
 - System information (OS, ROS version, etc.)
 - Any relevant error messages or logs
 
-Your feedback helps us improve the AI Worker platform for everyone!
+Your feedback is valuable for the continuous improvement of the AI Worker platform.

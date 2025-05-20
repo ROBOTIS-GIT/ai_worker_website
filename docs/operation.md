@@ -1,15 +1,15 @@
 # Teleoperation
 - Place the `Follower` in a spacious area.
-- Wear the `Leader` device.  
+- Wear the `Leader` device.
 
 
-![Leader's wearing appearance](assets/Leader_wearing_appearance.png)
+![Leader's wearing appearance](assets/leader_wearing_appearance.png)
 
 
-###### How to wear the `Leader` :  
-1. Put both arms through the `Leader`'s `shoulder straps`.  
-2. Fasten the chest belt buckle and `hip belt buckle`.  
-3. Adjust the length of the `shoulder straps`, `chest belt`, and `hip belt` so that the `Leader` is securely fixed on your back.  
+###### How to wear the `Leader` :
+1. Put both arms through the `Leader`'s `shoulder straps`.
+2. Fasten the chest belt buckle and `hip belt buckle`.
+3. Adjust the length of the `shoulder straps`, `chest belt`, and `hip belt` so that the `Leader` is securely fixed on your back.
 4. Face the `red sticker` attached to the `Leader` to set the initial position.
 
 ### Running Teleoperation
@@ -42,4 +42,3 @@
          ``` bash
          follower
          ```
-

@@ -6,7 +6,6 @@ The AI Worker hardware platform combines advanced robotics with AI-powered capab
 ![hardware_overview](./assets/hardware_overview.png)
 
 ## Product Models
-
 ![model_name](./assets/model_name.png)
 
 ## Follower Specification
@@ -76,8 +75,10 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 ## Dexterous Hand
 Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under development. These hands are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future as development is completed. Please contact us for more information about upcoming dexterous hand availability.
 
-## DYNAMIXEL Details
+## Joints
+![joints](./assets/joints.png)
 
+## DYNAMIXEL Details
 The AI Worker utilizes various DYNAMIXEL actuators, each selected for specific joint applications:
 
 | Joints         | DYNAMIXEL Model | Features |
@@ -85,7 +86,7 @@ The AI Worker utilizes various DYNAMIXEL actuators, each selected for specific j
 | Arm joints 1~5 | DYNAMIXEL-Y     | High performance, high precision, modular design |
 | Arm joint 6    | DYNAMIXEL-X     | Versatile, various functions and lineup, compact design |
 | Arm joint 7    | DYNAMIXEL-P     | High power, high durability, high precision |
-| Neck           | DYNAMIXEL-X     | Versatile, various functions and lineup, compact design |
+| Head           | DYNAMIXEL-X     | Versatile, various functions and lineup, compact design |
 | Lift           | DYNAMIXEL-Y     | High performance, high precision, modular design |
 | Gripper        | [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/)       | Specialized gripper actuator |
 | Hand           | DYNAMIXEL-X     | Specialized finger actuator |
@@ -94,8 +95,9 @@ The AI Worker utilizes various DYNAMIXEL actuators, each selected for specific j
 For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS DYNAMIXEL website](https://dynamixel.com/).
 
 ## Dimension
-
-(TBD)
+<a href="./assets/dimension.png" target="_blank">
+  <img src="./assets/dimension.png" alt="AI Worker Dimensions" width="100%">
+</a>
 
 ## Workspace
 

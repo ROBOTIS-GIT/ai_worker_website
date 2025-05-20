@@ -36,23 +36,29 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU         | RGBD Camera x 3                        |
 | Host Interface              | Ethernet                                | Ethernet                               |
 | Internal Communications     | RS-485                                  | RS-485                                 |
-| Communication Baudrate      | 4 [Mbps]                                | 4 [Mbps]                               |
+| Communication Baudrate      | 4 Mbps                                  | 4 Mbps                                 |
 | Computer                    | NVIDIA Jetson AGX Orin 32GB             | NVIDIA Jetson AGX Orin 32GB            |
 | Software                    | ROS 2 Support, Python, C++, Web UI      | ROS 2 Support, Python, C++, Web UI     |
 
 ## Leader Specification
 <div style="display: flex; justify-content: space-between; gap: 20px;">
-    <div style="flex: 1; text-align: center; height: 300px; display: flex; flex-direction: column; align-items: center;">
-        <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+    <div style="flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <p style="margin: 0 0 10px 0; font-weight: bold;">FFW-LG2 Model</p>
+        <div style="display: flex; align-items: center; justify-content: center; height: 280px;">
             <img src="./assets/model_ffw_lg2.png" alt="FFW-LG2 Model" style="max-height: 250px; width: auto; object-fit: contain;">
         </div>
-        <p style="margin-top: 10px; font-weight: bold;">FFW-LG2 Model</p>
+        <div style="display: flex; align-items: center; justify-content: center; height: 280px; width: 100%;">
+            <img src="./assets/model_ffw_lg2.gif" alt="FFW-LG2 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
+        </div>
     </div>
-    <div style="flex: 1; text-align: center; height: 300px; display: flex; flex-direction: column; align-items: center;">
-        <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+    <div style="flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <p style="margin: 0 0 10px 0; font-weight: bold;">FFW-LH5 Model</p>
+        <div style="display: flex; align-items: center; justify-content: center; height: 280px;">
             <img src="./assets/model_ffw_lh5.png" alt="FFW-LH5 Model" style="max-height: 250px; width: auto; object-fit: contain;">
         </div>
-        <p style="margin-top: 10px; font-weight: bold;">FFW-LH5 Model</p>
+        <div style="display: flex; align-items: center; justify-content: center; height: 280px; width: 100%;">
+            <img src="./assets/model_ffw_lh5.gif" alt="FFW-LH5 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
+        </div>
     </div>
 </div>
 
@@ -63,6 +69,8 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Actuator                    | Joint 1~7: DYNAMIXEL-X                  | Joint 1~7: DYNAMIXEL-X                 |
 | Degrees of Freedom          | - Total: 22 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- JoyStick: 3 DOF x 2 | - Total: 60 DOF<br>- Arm: 7 DOF x 2<br>- Hand: 20 DOF x 2<br>- JoyStick: 3 DOF x 2  |
 | Exterior Materials          | Aluminum, Plastic                       | Aluminum, Plastic                      |
+| Internal Communications     | RS-485                                  | RS-485                                 |
+| Communication Baudrate      | 4 Mbps                                  | 4 Mbps                                 |
 | Software                    | ROS 2 Support, Python, C++              | ROS 2 Support, Python, C++|
 
 ## Dexterous Hand

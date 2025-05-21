@@ -1,52 +1,54 @@
-# Teleoperation
-- Place the `Follower` in a spacious area.
-- Wear the `Leader` device.
+# AI Worker Teleoperation Guide
 
+## Preparation
+1. Place the `Follower` in a spacious area
+2. Wear the `Leader` device
 
+## Leader Setup
 ![Leader's wearing appearance](assets/leader_wearing_appearance.png)
 
+### Wearing Instructions
+1. Put both arms through the `shoulder straps`
+2. Fasten the `chest belt` and `hip belt` buckles
+3. Adjust strap lengths for secure fit:
+   - Shoulder straps
+   - Chest belt
+   - Hip belt
+4. Align with the `red sticker` for initial position
 
-###### How to wear the `Leader` :
-1. Put both arms through the `Leader`'s `shoulder straps`.
-2. Fasten the chest belt buckle and `hip belt buckle`.
-3. Adjust the length of the `shoulder straps`, `chest belt`, and `hip belt` so that the `Leader` is securely fixed on your back.
-4. Face the `red sticker` attached to the `Leader` to set the initial position.
+## Operation
 
-### Running Teleoperation
+### Quick Start
+Run everything in a single terminal:
+```bash
+ros2 launch ffw_bringup bringup.launch.py
+# or
+bringup
+```
 
-1. Open a new terminal and run the following command:
+### Separate Terminal Operation
+Run `Leader` and `Follower` in different terminals:
 
-- To start teleoperation, run the launch file:
-    ```bash
-    ros2 launch ffw_bringup bringup.launch.py
-    ```
-    or
-    ```bash
-    bringup
-    ```
+1. **Leader Terminal**
+   ```bash
+   ros2 launch ffw_bringup leader.launch.py
+   # or
+   leader
+   ```
+
+2. **Follower Terminal**
+   ```bash
+   # With camera (default)
+   ros2 launch ffw_bringup follower_with_camera.launch.py
+   # or
+   follower
+
+   # Without camera
+   ros2 launch ffw_bringup follower.launch.py
+   ```
 
 ### Important Notes
-
-⚠️ **Camera Initialization Time**
-- After launching the system, wait approximately 30 seconds before starting teleoperation
-- This delay is necessary for the camera system to fully initialize
-- The system will be ready for operation when the camera feed appears stable
-- Do not attempt to control the robot during this initialization period
-
-- If you want to run the `Leader` and `Follower` separately in different terminals:
-    1. To launch the teleoperation `Leader`:
-         ```bash
-         ros2 launch ffw_bringup leader.launch.py
-         ```
-         or
-         ``` bash
-         leader
-         ```
-    2. To launch the teleoperation `Follower`:
-         ```bash
-         ros2 launch ffw_bringup follower_with_camera.launch.py
-         ```
-         or
-         ``` bash
-         follower
-         ```
+⚠️ **Camera Operation**
+- Wait 30 seconds after launch for camera initialization
+- Start teleoperation only after camera feed is stable
+- Use `follower.launch.py` if camera is not needed

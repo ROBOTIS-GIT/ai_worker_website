@@ -18,17 +18,25 @@
 
 - To start teleoperation, run the launch file:
     ```bash
-    ros2 launch ffw_bringup ffw_teleop_with_rh.launch.py
+    ros2 launch ffw_bringup bringup.launch.py
     ```
     or
     ```bash
     bringup
     ```
 
+### Important Notes
+
+⚠️ **Camera Initialization Time**
+- After launching the system, wait approximately 30 seconds before starting teleoperation
+- This delay is necessary for the camera system to fully initialize
+- The system will be ready for operation when the camera feed appears stable
+- Do not attempt to control the robot during this initialization period
+
 - If you want to run the `Leader` and `Follower` separately in different terminals:
     1. To launch the teleoperation `Leader`:
          ```bash
-         ros2 launch ffw_bringup hardware_leader_with_rh.launch.py
+         ros2 launch ffw_bringup leader.launch.py
          ```
          or
          ``` bash
@@ -36,7 +44,7 @@
          ```
     2. To launch the teleoperation `Follower`:
          ```bash
-         ros2 launch ffw_bringup hardware_follower_with_rh.launch.py
+         ros2 launch ffw_bringup follower_with_camera.launch.py
          ```
          or
          ``` bash

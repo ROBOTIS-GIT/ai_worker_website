@@ -95,10 +95,19 @@ The AI Worker utilizes various DYNAMIXEL actuators, each selected for specific j
 For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS DYNAMIXEL website](https://dynamixel.com/).
 
 ## Dimension
-<a href="./assets/dimension.png" target="_blank">
-  <img src="./assets/dimension.png" alt="AI Worker Dimensions" width="100%">
+### FFW-SG2
+<a href="./assets/dimension_ffw_sg2.png" target="_blank">
+  <img src="./assets/dimension_ffw_sg2.png" alt="Dimensions" width="100%">
+</a>
+
+### FFW-BG2
+<a href="./assets/dimension_ffw_bg2.png" target="_blank">
+  <img src="./assets/dimension_ffw_bg2.png" alt="Dimensions" width="100%">
 </a>
 
 ## Workspace
+The torso workspace is the same for both FFW-BG2 and FFW-SG2 models.
 
-(TBD)
+<a href="./assets/workspace.png" target="_blank">
+  <img src="./assets/workspace.png" alt="Workspace" width="100%">
+</a>

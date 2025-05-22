@@ -157,3 +157,23 @@
   background-color: var(--vp-c-bg-mute);
   text-decoration: none;
 }
+
+.coming-soon {
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.coming-soon-content {
+  text-align: center;
+}
+
+.coming-soon-content h3 {
+  margin-top: 0;
+}
+
+.coming-soon-content ul {
+  display: inline-block;
+  text-align: left;
+}

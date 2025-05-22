@@ -17,14 +17,14 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 
 | Properties                  | Specification (FFW-SG2)                | Specification (FFW-BG2)                |
 |-----------------------------|----------------------------------------|----------------------------------------|
-| Dimensions                  | 600 x 600 x 1,600 (WxDxH, mm)<br>23.6 x 23.6 x 63.0 (WxDxH, inches)| TBD (WxDxH, mm)<br>TBD (WxDxH, inches)|
+| Dimensions (WxDxH)          | 604x602x1,624 (mm)<br>23.8x23.7x63.9 (inches)| 604x564x1,618 (mm)<br>23.8x22.2x63.7 (inches)|
 | Weight                      | 85 kg (190 lbs)                         | TBD kg (TBD lbs)                      |
 | Actuator                    | Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|
 | Degrees of Freedom          | - Total: 25 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1<br>- Mobile: 6 DOF | - Total: 19 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1 |
 | Arm Reach                   | 647 mm (without Hand)                   | 647 mm (without Hand)                  |
 | Arm Payload                 | 1.5 kg (without Hand)                   | 1.5 kg (without Hand)                  |
-| Joint Resolution            | -π(rad) ~ π(rad), -262,144 ~ 262,144 (pulse/rev)| -π(rad) ~ π(rad), -262,144 ~ 262,144 (pulse/rev)|
-| Joint Range                 | Joint 1, 2 : ±xxx°<br>Joint 3 : ±xxx°<br>Joint 4, 5, 6, 7 : ±xxx°| Joint 1, 2 : ±xxx°<br>Joint 3 : ±xxx°<br>Joint 4, 5, 6, 7 : ±xxx°|
+| Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
+| Joint Range                 | (see [Joint Configuration](#joint-configuration))| (see [Joint Configuration](#joint-configuration))|
 | Gripper/Hand                | RH-P12-RN<br>(see [DYNAMIXEL Details](#dynamixel-details))| RH-P12-RN<br>(see [DYNAMIXEL Details](#dynamixel-details))|
 | Mobile Type                 | Swerve Drive                            | None                                   |
 | Mobile Operation Velocity   | 1.5 m/s                                 | None                                   |
@@ -75,7 +75,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 ## Dexterous Hand
 Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under development. These hands are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future as development is completed. Please contact us for more information about upcoming dexterous hand availability.
 
-## Joint Configuration and Nomenclature
+## Joint Configuration
 <a href="./assets/joints.png" target="_blank">
   <img src="./assets/joints.png" alt="Dimensions" width="100%">
 </a>

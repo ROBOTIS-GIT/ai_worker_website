@@ -1,5 +1,10 @@
-# Hardware Setup
-## Follower
+# Setup Guide
+
+This guide will walk you through the process of setting up your AI Worker hardware and software environment.
+
+## Hardware Setup
+
+### Follower
 ![Back of the Follower](/quick_start_guide/back_of_the_follower.png)
 1. Connect all three battery charging cables to the charging terminals on the back of the `Follower`.
 2. Connect the `Follower`'s HDMI port to a monitor.
@@ -7,25 +12,22 @@
 4. Press and hold the Power button on the back of the `Follower` for about 3 seconds to turn on the board.
 5. After you hear a beep, check that the monitor displays the screen.
 
-## Leader
+### Leader
 ![Back of the Leader](/quick_start_guide/back_of_the_leader.png)
 
 1. Connect the USB cable to the rear USB port of the `Follower`.
 2. Plug the power cable into an electrical outlet.
 3. The U2D2 switch is inside a hole. Slide the switch toward the white dot to turn on the U2D2.
 
-
----
-
-# Software Setup
-## Prerequisites
-- Ubuntu environment
-- [Docker Engine](https://docs.docker.com/engine/install/)
+## Software Setup
+### Prerequisites
+- Ubuntu 22.04 LTS (recommended) or later
+- [Docker Engine](https://docs.docker.com/engine/install/) (version 20.10+)
 - Git
 - NVIDIA Container Toolkit (Install the graphics driver `nvidia-driver-570-server-open` for CUDA 12.8)
 
-## Configuration
-### 1. USB Serial Setup
+### Configuration
+#### 1. USB Serial Setup
 1. Prepare the provided serial data.
 2. Create a udev rule:
   ```bash
@@ -39,8 +41,7 @@
   sudo udevadm trigger
   ```
 
-
-### 2. Docker Setup
+#### 2. Docker Setup
 - Create workspace and clone repository:
 ```bash
 cd ~/ # specify desired path
@@ -56,12 +57,11 @@ cd ai_worker
 ./docker/container.sh enter # Enter the running Docker container
 ```
 
-
-## Docker Command Guide
+### Docker Command Guide
 
 This script (`container.sh`) helps you easily manage Docker containers, including starting, entering, and stopping them.
 
-### Usage
+#### Usage
 
 ```bash
 ./container.sh [command] [options]

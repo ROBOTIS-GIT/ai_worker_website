@@ -17,7 +17,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 
 | Properties                  | Specification (FFW-SG2)                | Specification (FFW-BG2)                |
 |-----------------------------|----------------------------------------|----------------------------------------|
-| Dimensions (WxDxH)          | 604x602x1,624 (mm)<br>23.8x23.7x63.9 (inches)| 604x564x1,618 (mm)<br>23.8x22.2x63.7 (inches)|
+| Dimensions (WxDxH)          | 604x602x1,624 (mm)<br>23.8x23.7x63.9 (inch)| 604x564x1,618 (mm)<br>23.8x22.2x63.7 (inch)|
 | Weight                      | 85 kg (190 lbs)                         | TBD kg (TBD lbs)                      |
 | Actuator                    | Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|
 | Degrees of Freedom          | - Total: 25 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1<br>- Mobile: 6 DOF | - Total: 19 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1 |
@@ -25,7 +25,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Arm Payload                 | 1.5 kg (without Hand)                   | 1.5 kg (without Hand)                  |
 | Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
 | Joint Range                 | (see [Joint Configuration](#joint-configuration))| (see [Joint Configuration](#joint-configuration))|
-| Gripper/Hand                | RH-P12-RN<br>(see [DYNAMIXEL Details](#dynamixel-details))| RH-P12-RN<br>(see [DYNAMIXEL Details](#dynamixel-details))|
+| Gripper/Hand                | RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))| RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))|
 | Mobile Type                 | Swerve Drive                            | None                                   |
 | Mobile Operation Velocity   | 1.5 m/s                                 | None                                   |
 | Battery Capacity            | 25.48V / 80Ah                           | 25.48V / 80Ah                          |
@@ -63,7 +63,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 
 | Properties                  | Specification (FFW-LG2)                 | Specification (FFW-LH5)                |
 |-----------------------------|-----------------------------------------|----------------------------------------|
-| Dimensions                  | TBD (WxDxH, mm)<br>TBD (WxDxH, inches)  | TBD (WxDxH, mm)<br>TBD (WxDxH, inches) |
+| Dimensions                  | TBD (WxDxH, mm)<br>TBD (WxDxH, inch)  | TBD (WxDxH, mm)<br>TBD (WxDxH, inch) |
 | Weight                      | TBD kg (TBD lbs)                        | TBD kg (TBD lbs)                       |
 | Actuator                    | Joint 1~7: DYNAMIXEL-X                  | Joint 1~7: DYNAMIXEL-X                 |
 | Degrees of Freedom          | - Total: 22 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- JoyStick: 3 DOF x 2 | - Total: 60 DOF<br>- Arm: 7 DOF x 2<br>- Hand: 20 DOF x 2<br>- JoyStick: 3 DOF x 2  |
@@ -72,7 +72,11 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Communication Baudrate      | 4 Mbps                                  | 4 Mbps                                 |
 | Software                    | ROS 2 Support, Python, C++              | ROS 2 Support, Python, C++|
 
-## Dexterous Hand
+## Gripper Specification
+![model_rh_p12_rn](./assets/model_rh_p12_rn.png)
+The [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) is a multi-functional, 1-DOF two-fingered robot hand. It features an adaptive gripping design with passive joints, allowing it to grasp objects of various shapes. The hand utilizes a 10W DC motor and offers torque control and current-based position control, enabling it to handle objects made of different materials. Key features of the RH-P12-RN include its lightweight design (500g) and high payload capacity (5kg). It also has detachable fingertips that can be easily replaced with customized ones. The RH-P12-RN is designed for easy integration with the AI Worker platform, making it suitable for various applications in industrial environments.
+
+## Hand Specification
 Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under development. These hands are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future as development is completed. Please contact us for more information about upcoming dexterous hand availability.
 
 ## Joint Configuration

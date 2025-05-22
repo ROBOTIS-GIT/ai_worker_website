@@ -75,22 +75,57 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 ## Dexterous Hand
 Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under development. These hands are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future as development is completed. Please contact us for more information about upcoming dexterous hand availability.
 
-## Joints
-![joints](./assets/joints.png)
+## Joint Configuration and Nomenclature
+<a href="./assets/joints.png" target="_blank">
+  <img src="./assets/joints.png" alt="Dimensions" width="100%">
+</a>
+
+| ID | Joint Name          | Technical Name | Range     |
+|----|---------------------|----------------|-----------|
+|1   |Left Shoulder Pitch  |arm_r_joint1    |-180° ~180°|
+|2   |Left Shoulder Roll   |arm_r_joint2    |-10° ~ 190°|
+|3   |Left Shoulder Yaw    |arm_r_joint3    |-180° ~180°|
+|4   |Left Elbow           |arm_r_joint4    |-170° ~ 65°|
+|5   |Left Wrist Yaw       |arm_r_joint5    |-180° ~180°|
+|6   |Left Wrist Pitch     |arm_r_joint6    |-95° ~100°|
+|7   |Left Wrist Roll      |arm_r_joint7    |-130° ~ 95°|
+|8   |Left Gripper         |r_rh_r1_joint   |0 ~ 106 mm|
+|31  |Right Shoulder Pitch |arm_l_joint1    |-180° ~180°|
+|32  |Right Shoulder Roll  |arm_l_joint2    |-10° ~ 190°|
+|33  |Right Shoulder Yaw   |arm_l_joint3    |-180° ~180°|
+|34  |Right Elbow          |arm_l_joint4    |-170° ~ 65°|
+|35  |Right Wrist Yaw      |arm_l_joint5    |-180° ~180°|
+|36  |Right Wrist Pitch    |arm_l_joint6    |-95° ~100°|
+|37  |Right Wrist Roll     |arm_l_joint7    |-130° ~ 95°|
+|38  |Right Gripper        |l_rh_r1_joint   |0 ~ 106 mm|
+|61  |Head Pitch           |head_joint1     |-50° ~ 30°|
+|62  |Head Yaw             |head_joint2     |-20° ~ 20°|
+|81  |Lift                 |lift_joint      |0 ~ 500 mm|
+
+
+| Part Name          | Technical Name | Range      |
+|--------------------|----------------|------------|
+|Left Wheel Steer    |l_wheel_steer   |-90° ~ 90°  |
+|Right Wheel Steer   |r_wheel_steer   |-90° ~ 90°  |
+|Rear Wheel Steer    |b_wheel_steer   |-90° ~ 90°  |
+|Left Wheel Drive    |l_wheel_drive   |-360° ~ 360°|
+|Right Wheel Drive   |r_wheel_drive   |-360° ~ 360°|
+|Rear Wheel Drive    |b_wheel_drive   |-360° ~ 360°|
 
 ## DYNAMIXEL Details
 The AI Worker utilizes various DYNAMIXEL actuators, each selected for specific joint applications:
 
-| Joints         | DYNAMIXEL Model | Features |
-|----------------|-----------------|----------|
-| Arm joints 1~5 | DYNAMIXEL-Y     | High performance, high precision, modular design |
-| Arm joint 6    | DYNAMIXEL-X     | Versatile, various functions and lineup, compact design |
-| Arm joint 7    | DYNAMIXEL-P     | High power, high durability, high precision |
-| Head           | DYNAMIXEL-X     | Versatile, various functions and lineup, compact design |
-| Lift           | DYNAMIXEL-Y     | High performance, high precision, modular design |
-| Gripper        | [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/)       | Specialized gripper actuator |
-| Hand           | DYNAMIXEL-X     | Specialized finger actuator |
-| Mobile base    | DYNAMIXEL-Y     | High performance, high precision, modular design |
+| Joints         | DYNAMIXEL Series | DYNAMIXEL Model   |
+|----------------|------------------|-------------------|
+| Arm Joints 1~3 | DYNAMIXEL-Y      | [YM080-230-R099-RH](https://emanual.robotis.com/docs/en/dxl/y/ym080-230-r099-rh/) |
+| Arm Joints 4~5 | DYNAMIXEL-Y      | [YM070-210-R099-RH](https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r099-rh/) |
+| Arm Joint 6    | DYNAMIXEL-X      | [XH540-V270-R](https://emanual.robotis.com/docs/en/dxl/x/xh540-v270/)      |
+| Arm Joint 7    | DYNAMIXEL-P      | [PH42-020-S300-R](https://emanual.robotis.com/docs/en/dxl/p/ph42-020-s300-r/)   |
+| Gripper        | Robot Hands      | [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) |
+| Head Pitch     | DYNAMIXEL-X      | [XH540-V150-R](https://emanual.robotis.com/docs/en/dxl/x/xh540-v150/)      |
+| Head Yaw       | DYNAMIXEL-X      | [XH430-V210-R](https://emanual.robotis.com/docs/en/dxl/x/xh430-v210/)      |
+| Lift           | DYNAMIXEL-Y      | [YM080-230-B001-RH](https://emanual.robotis.com/docs/en/dxl/y/ym080-230-b001-rh/) |
+| Wheel Steer    | DYNAMIXEL-Y      | [YM070-210-R051-RH](https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r051-rh/) |
 
 For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS DYNAMIXEL website](https://dynamixel.com/).
 

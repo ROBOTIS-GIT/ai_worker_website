@@ -13,8 +13,8 @@ hero:
       text: Introduction
       link: /introduction
     - theme: alt
-      text: Quick Start
-      link: /setup
+      text: Specification
+      link: /hardware
     - theme: alt
       text: Open Source
       link: /opensource

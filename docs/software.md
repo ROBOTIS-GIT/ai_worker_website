@@ -2,7 +2,7 @@
 
 ## Software Overview
 
-**AI WORKER** is a Jetson Orin–based robot platform built for real-world **Physical AI** research. It supports **full-body motion control** and enables smooth integration of both **teleoperation** and **AI policy execution**.
+**AI Worker** is a Jetson Orin–based robot platform built for real-world **Physical AI** research. It supports **full-body motion control** and enables smooth integration of both **teleoperation** and **AI policy execution**.
 
 The platform runs on **ROS 2 Jazzy** and uses the **`ros2_control`** framework for real-time joint-level control. All joints are powered by **DYNAMIXEL X, Y, and P series** motors connected via a single RS-485 bus, using the **Dynamixel SDK**. Each joint can operate in either **position** or **current** control mode, managed through a unified hardware interface.
 
@@ -16,7 +16,7 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 
 ## System Architecture
 
-> The diagram below illustrates the overall control structure of AI WORKER.
+> The diagram below illustrates the overall control structure of AI Worker.
 >
 >
 > External teleoperation or trajectory commands are received via ROS 2 topics, processed in real time by `ros2_control`, and executed by DYNAMIXEL actuators over RS‑485.
@@ -35,7 +35,7 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 
 ## Why `ros2_control`?
 
-`ros2_control` is a real-time, modular control framework used in ROS 2. AI WORKER uses it without major changes.
+`ros2_control` is a real-time, modular control framework used in ROS 2. AI Worker uses it without major changes.
 
 - Separates control logic from hardware drivers
 - Operates at a fixed **100Hz** update rate
@@ -62,7 +62,6 @@ DynamixelHardwareInterface (position / current)
 RS‑485 via Dynamixel SDK
       ↓
 DYNAMIXEL Actuators
-
 ```
 
 ### Step-by-Step

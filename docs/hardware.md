@@ -79,33 +79,51 @@ The [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) is a mu
 ## Hand Specification
 Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under development. These hands are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future as development is completed. Please contact us for more information about upcoming dexterous hand availability.
 
-## Joint Configuration
+## Joint Configuration and Nomenclature
 <a href="/specifications/joints.png" target="_blank">
   <img src="/specifications/joints.png" alt="Dimensions" width="100%">
 </a>
 
-| ID | Joint Name          | Technical Name | Range     |
-|----|---------------------|----------------|-----------|
-|1   |Right Shoulder Pitch  |arm_r_joint1    |-180° ~180°|
-|2   |Right Shoulder Roll   |arm_r_joint2    |-10° ~ 190°|
-|3   |Right Shoulder Yaw    |arm_r_joint3    |-180° ~180°|
-|4   |Right Elbow           |arm_r_joint4    |-170° ~ 65°|
-|5   |Right Wrist Yaw       |arm_r_joint5    |-180° ~180°|
-|6   |Right Wrist Pitch     |arm_r_joint6    |-95° ~100°|
-|7   |Right Wrist Roll      |arm_r_joint7    |-130° ~ 95°|
-|8   |Right Gripper         |gripper_r_joint1|0 ~ 106 mm|
-|31  |Left Shoulder Pitch   |arm_l_joint1    |-180° ~180°|
-|32  |Left Shoulder Roll    |arm_l_joint2    |-10° ~ 190°|
-|33  |Left Shoulder Yaw     |arm_l_joint3    |-180° ~180°|
-|34  |Left Elbow            |arm_l_joint4    |-170° ~ 65°|
-|35  |Left Wrist Yaw        |arm_l_joint5    |-180° ~180°|
-|36  |Left Wrist Pitch      |arm_l_joint6    |-95° ~100°|
-|37  |Left Wrist Roll       |arm_l_joint7    |-130° ~ 95°|
-|38  |Left Gripper          |gripper_l_joint1|0 ~ 106 mm|
-|61  |Head Pitch            |head_joint1     |-50° ~ 30°|
-|62  |Head Yaw              |head_joint2     |-20° ~ 20°|
-|81  |Lift                  |lift_joint      |0 ~ 500 mm|
+| ID | Joint Name          | Technical Name | Range       |
+|----|---------------------|----------------|-------------|
+|1   |Right Shoulder Pitch  |arm_r_joint1    |-180° ~ 180°|
+|2   |Right Shoulder Roll   |arm_r_joint2    |-10° ~ 190° |
+|3   |Right Shoulder Yaw    |arm_r_joint3    |-180° ~ 180°|
+|4   |Right Elbow           |arm_r_joint4    |-170° ~ 65° |
+|5   |Right Wrist Yaw       |arm_r_joint5    |-180° ~ 180°|
+|6   |Right Wrist Pitch     |arm_r_joint6    |-95° ~ 100° |
+|7   |Right Wrist Roll      |arm_r_joint7    |-130° ~ 95° |
+|8   |Right Gripper         |gripper_r_joint1|0 ~ 106 mm  |
+|31  |Left Shoulder Pitch   |arm_l_joint1    |-180° ~ 180°|
+|32  |Left Shoulder Roll    |arm_l_joint2    |-10° ~ 190° |
+|33  |Left Shoulder Yaw     |arm_l_joint3    |-180° ~ 180°|
+|34  |Left Elbow            |arm_l_joint4    |-170° ~ 65° |
+|35  |Left Wrist Yaw        |arm_l_joint5    |-180° ~ 180°|
+|36  |Left Wrist Pitch      |arm_l_joint6    |-95° ~ 100° |
+|37  |Left Wrist Roll       |arm_l_joint7    |-130° ~ 95° |
+|38  |Left Gripper          |gripper_l_joint1|0 ~ 106 mm  |
+|61  |Head Pitch            |head_joint1     |-50° ~ 30°  |
+|62  |Head Yaw              |head_joint2     |-20° ~ 20°  |
+|81  |Lift                  |lift_joint      |0 ~ 500 mm  |
 
+### Mobile Base Configuration (Swerve Drive)
+The AI Worker's mobile base uses a swerve drive system that provides significant advantages over traditional omnidirectional wheel systems like mecanum wheels or omni wheels:
+
+#### Advantages Over Omniwheels and Mecanum Wheels:
+
+- **Superior Traction**: Swerve drive uses conventional wheels with full surface contact, providing better grip and stability compared to omniwheels and mecanum wheels that have smaller rollers with limited ground contact.
+
+- **Higher Efficiency**: Without the passive rollers found in omniwheels and mecanum wheels, swerve drive transfers power more efficiently to the ground, resulting in better energy usage and longer operation time.
+
+- **Greater Precision**: Swerve drive offers more precise control over movement direction and velocity, as each wheel's steering and drive are independently controlled with no slip dynamics inherent to roller-based wheels.
+
+- **Improved Load Capacity**: The direct wheel contact allows swerve drive to handle heavier loads more effectively, making it ideal for industrial applications where the robot needs to carry or manipulate objects.
+
+- **Better Performance on Various Surfaces**: While omniwheels and mecanum wheels struggle on uneven surfaces or soft carpets, swerve drive maintains consistent performance across different floor types.
+
+- **Reduced Vibration**: The continuous wheel contact with the ground produces less vibration during movement, which is critical for tasks requiring precise manipulation.
+
+The AI Worker's swerve drive configuration consists of three wheels positioned in a triangular arrangement, each with independent steering and driving capabilities:
 
 | Part Name          | Technical Name   | Range      |
 |--------------------|------------------|------------|

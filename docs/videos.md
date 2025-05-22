@@ -22,7 +22,7 @@ Explore AI Worker through our collection of videos showcasing its capabilities, 
 
 ## Use Cases
 
-(TBD)
+(Coming Soon)
 
 ## More Videos
 

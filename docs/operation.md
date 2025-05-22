@@ -3,7 +3,7 @@
 - Wear the `Leader` device.
 
 
-![Leader's wearing appearance](assets/leader_wearing_appearance.png)
+![Leader's wearing appearance](/quick_start_guide/leader_wearing_appearance.png)
 
 
 ###### How to wear the `Leader` :

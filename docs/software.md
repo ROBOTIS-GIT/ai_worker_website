@@ -22,7 +22,7 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 > External teleoperation or trajectory commands are received via ROS 2 topics, processed in real time by `ros2_control`, and executed by DYNAMIXEL actuators over RS‑485.
 >
 
-![softwate_architecture](./assets/softwate_architecture.png)
+![softwate_architecture](/specifications/software_architecture.png)
 
 | Layer | Component | Description |
 | --- | --- | --- |

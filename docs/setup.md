@@ -1,6 +1,6 @@
 # Hardware Setup
 ## Follower
-![Back of the Follower](assets/back_of_the_follower.png)
+![Back of the Follower](/quick_start_guide/back_of_the_follower.png)
 1. Connect all three battery charging cables to the charging terminals on the back of the `Follower`.
 2. Connect the `Follower`'s HDMI port to a monitor.
 3. If you need internet access, connect a LAN cable to the LAN port.
@@ -8,7 +8,7 @@
 5. After you hear a beep, check that the monitor displays the screen.
 
 ## Leader
-![Back of the Leader](assets/back_of_the_leader.png)
+![Back of the Leader](/quick_start_guide/back_of_the_leader.png)
 
 1. Connect the USB cable to the rear USB port of the `Follower`.
 2. Plug the power cable into an electrical outlet.
@@ -69,18 +69,18 @@ This script (`container.sh`) helps you easily manage Docker containers, includin
 
 #### Commands
 
-- `help`  
+- `help`
   Displays this help message.
 
-- `start [with_gz|without_gz]`  
-  Starts the container with or without Gazebo support.  
-  - `with_gz`: Includes Gazebo support  
+- `start [with_gz|without_gz]`
+  Starts the container with or without Gazebo support.
+  - `with_gz`: Includes Gazebo support
   - `without_gz`: Excludes Gazebo support
 
-- `enter`  
+- `enter`
   Enters the running container.
 
-- `stop`  
+- `stop`
   Stops the container.
 
 #### Examples
@@ -92,4 +92,3 @@ This script (`container.sh`) helps you easily manage Docker containers, includin
 ./container.sh enter                # Enter the running container
 ./container.sh stop                 # Stop the container
 ```
-

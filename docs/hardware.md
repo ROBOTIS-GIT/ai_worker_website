@@ -3,13 +3,13 @@
 ## Hardware Overview
 The AI Worker hardware platform combines advanced robotics with AI-powered capabilities to create a versatile semi-humanoid robot. Built around ROBOTIS [DYNAMIXEL](https://dynamixel.com/) actuators, it features a mobile base with swerve drive, dual 7-DOF arms with dexterous hand/grippers, and a sensor suite that includes RGBD cameras and LiDARs. The system is powered by an NVIDIA Jetson AGX Orin computer and offers up to 4 hours of operation time on a single charge. This comprehensive hardware design enables the AI Worker to perform complex manipulation tasks through imitation learning and reinforcement learning in various industrial environments.
 
-![hardware_overview](./assets/hardware_overview.png)
+![hardware_overview](/specifications/hardware_overview.png)
 
 ## Product Models
-![model_name](./assets/model_name.png)
+![model_name](/specifications/model_name.png)
 
 ## Follower Specification
-![model_lineup](./assets/model_lineup.png)
+![model_lineup](/specifications/model_lineup.png)
 
 ::: info
 The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model is expected to be released in September 2025. Please note that the specifications provided below are preliminary and subject to change before the official product launch.
@@ -44,19 +44,19 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
     <div style="flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center;">
         <p style="margin: 0 0 10px 0; font-weight: bold;">FFW-LG2 Model</p>
         <div style="display: flex; align-items: center; justify-content: center; height: 280px;">
-            <img src="./assets/model_ffw_lg2.png" alt="FFW-LG2 Model" style="max-height: 250px; width: auto; object-fit: contain;">
+            <img src="/specifications/model_ffw_lg2.png" alt="FFW-LG2 Model" style="max-height: 250px; width: auto; object-fit: contain;">
         </div>
         <div style="display: flex; align-items: center; justify-content: center; height: 280px; width: 100%;">
-            <img src="./assets/model_ffw_lg2.gif" alt="FFW-LG2 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
+            <img src="/specifications/model_ffw_lg2.gif" alt="FFW-LG2 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
         </div>
     </div>
     <div style="flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center;">
         <p style="margin: 0 0 10px 0; font-weight: bold;">FFW-LH5 Model</p>
         <div style="display: flex; align-items: center; justify-content: center; height: 280px;">
-            <img src="./assets/model_ffw_lh5.png" alt="FFW-LH5 Model" style="max-height: 250px; width: auto; object-fit: contain;">
+            <img src="/specifications/model_ffw_lh5.png" alt="FFW-LH5 Model" style="max-height: 250px; width: auto; object-fit: contain;">
         </div>
         <div style="display: flex; align-items: center; justify-content: center; height: 280px; width: 100%;">
-            <img src="./assets/model_ffw_lh5.gif" alt="FFW-LH5 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
+            <img src="/specifications/model_ffw_lh5.gif" alt="FFW-LH5 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
         </div>
     </div>
 </div>
@@ -73,15 +73,15 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Software                    | ROS 2 Support, Python, C++              | ROS 2 Support, Python, C++|
 
 ## Gripper Specification
-![model_rh_p12_rn](./assets/model_rh_p12_rn.png)
+![model_rh_p12_rn](/specifications/model_rh_p12_rn.png)
 The [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) is a multi-functional, 1-DOF two-fingered robot hand. It features an adaptive gripping design with passive joints, allowing it to grasp objects of various shapes. The hand utilizes a 10W DC motor and offers torque control and current-based position control, enabling it to handle objects made of different materials. Key features of the RH-P12-RN include its lightweight design (500g) and high payload capacity (5kg). It also has detachable fingertips that can be easily replaced with customized ones. The RH-P12-RN is designed for easy integration with the AI Worker platform, making it suitable for various applications in industrial environments.
 
 ## Hand Specification
 Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under development. These hands are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future as development is completed. Please contact us for more information about upcoming dexterous hand availability.
 
 ## Joint Configuration
-<a href="./assets/joints.png" target="_blank">
-  <img src="./assets/joints.png" alt="Dimensions" width="100%">
+<a href="/specifications/joints.png" target="_blank">
+  <img src="/specifications/joints.png" alt="Dimensions" width="100%">
 </a>
 
 | ID | Joint Name          | Technical Name | Range     |
@@ -135,18 +135,18 @@ For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS D
 
 ## Dimension
 ### FFW-SG2
-<a href="./assets/dimension_ffw_sg2.png" target="_blank">
-  <img src="./assets/dimension_ffw_sg2.png" alt="Dimensions" width="100%">
+<a href="/specifications/dimension_ffw_sg2.png" target="_blank">
+  <img src="/specifications/dimension_ffw_sg2.png" alt="Dimensions" width="100%">
 </a>
 
 ### FFW-BG2
-<a href="./assets/dimension_ffw_bg2.png" target="_blank">
-  <img src="./assets/dimension_ffw_bg2.png" alt="Dimensions" width="100%">
+<a href="/specifications/dimension_ffw_bg2.png" target="_blank">
+  <img src="/specifications/dimension_ffw_bg2.png" alt="Dimensions" width="100%">
 </a>
 
 ## Workspace
 The torso workspace is the same for both FFW-BG2 and FFW-SG2 models.
 
-<a href="./assets/workspace.png" target="_blank">
-  <img src="./assets/workspace.png" alt="Workspace" width="100%">
+<a href="/specifications/workspace.png" target="_blank">
+  <img src="/specifications/workspace.png" alt="Workspace" width="100%">
 </a>

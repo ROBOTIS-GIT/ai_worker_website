@@ -82,35 +82,35 @@ Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under de
 
 | ID | Joint Name          | Technical Name | Range     |
 |----|---------------------|----------------|-----------|
-|1   |Left Shoulder Pitch  |arm_r_joint1    |-180° ~180°|
-|2   |Left Shoulder Roll   |arm_r_joint2    |-10° ~ 190°|
-|3   |Left Shoulder Yaw    |arm_r_joint3    |-180° ~180°|
-|4   |Left Elbow           |arm_r_joint4    |-170° ~ 65°|
-|5   |Left Wrist Yaw       |arm_r_joint5    |-180° ~180°|
-|6   |Left Wrist Pitch     |arm_r_joint6    |-95° ~100°|
-|7   |Left Wrist Roll      |arm_r_joint7    |-130° ~ 95°|
-|8   |Left Gripper         |r_rh_r1_joint   |0 ~ 106 mm|
-|31  |Right Shoulder Pitch |arm_l_joint1    |-180° ~180°|
-|32  |Right Shoulder Roll  |arm_l_joint2    |-10° ~ 190°|
-|33  |Right Shoulder Yaw   |arm_l_joint3    |-180° ~180°|
-|34  |Right Elbow          |arm_l_joint4    |-170° ~ 65°|
-|35  |Right Wrist Yaw      |arm_l_joint5    |-180° ~180°|
-|36  |Right Wrist Pitch    |arm_l_joint6    |-95° ~100°|
-|37  |Right Wrist Roll     |arm_l_joint7    |-130° ~ 95°|
-|38  |Right Gripper        |l_rh_r1_joint   |0 ~ 106 mm|
-|61  |Head Pitch           |head_joint1     |-50° ~ 30°|
-|62  |Head Yaw             |head_joint2     |-20° ~ 20°|
-|81  |Lift                 |lift_joint      |0 ~ 500 mm|
+|1   |Right Shoulder Pitch  |arm_r_joint1    |-180° ~180°|
+|2   |Right Shoulder Roll   |arm_r_joint2    |-10° ~ 190°|
+|3   |Right Shoulder Yaw    |arm_r_joint3    |-180° ~180°|
+|4   |Right Elbow           |arm_r_joint4    |-170° ~ 65°|
+|5   |Right Wrist Yaw       |arm_r_joint5    |-180° ~180°|
+|6   |Right Wrist Pitch     |arm_r_joint6    |-95° ~100°|
+|7   |Right Wrist Roll      |arm_r_joint7    |-130° ~ 95°|
+|8   |Right Gripper         |gripper_r_joint1|0 ~ 106 mm|
+|31  |Left Shoulder Pitch   |arm_l_joint1    |-180° ~180°|
+|32  |Left Shoulder Roll    |arm_l_joint2    |-10° ~ 190°|
+|33  |Left Shoulder Yaw     |arm_l_joint3    |-180° ~180°|
+|34  |Left Elbow            |arm_l_joint4    |-170° ~ 65°|
+|35  |Left Wrist Yaw        |arm_l_joint5    |-180° ~180°|
+|36  |Left Wrist Pitch      |arm_l_joint6    |-95° ~100°|
+|37  |Left Wrist Roll       |arm_l_joint7    |-130° ~ 95°|
+|38  |Left Gripper          |gripper_l_joint1|0 ~ 106 mm|
+|61  |Head Pitch            |head_joint1     |-50° ~ 30°|
+|62  |Head Yaw              |head_joint2     |-20° ~ 20°|
+|81  |Lift                  |lift_joint      |0 ~ 500 mm|
 
 
-| Part Name          | Technical Name | Range      |
-|--------------------|----------------|------------|
-|Left Wheel Steer    |l_wheel_steer   |-90° ~ 90°  |
-|Right Wheel Steer   |r_wheel_steer   |-90° ~ 90°  |
-|Rear Wheel Steer    |b_wheel_steer   |-90° ~ 90°  |
-|Left Wheel Drive    |l_wheel_drive   |-360° ~ 360°|
-|Right Wheel Drive   |r_wheel_drive   |-360° ~ 360°|
-|Rear Wheel Drive    |b_wheel_drive   |-360° ~ 360°|
+| Part Name          | Technical Name   | Range      |
+|--------------------|------------------|------------|
+|Right Wheel Steer   |right_wheel_steer |-90° ~ 90°  |
+|Left Wheel Steer    |left_wheel_steer  |-90° ~ 90°  |
+|Rear Wheel Steer    |rear_wheel_steer  |-90° ~ 90°  |
+|Right Wheel Drive   |right_wheel_drive |-360° ~ 360°|
+|Left Wheel Drive    |left_wheel_drive  |-360° ~ 360°|
+|Rear Wheel Drive    |rear_wheel_drive  |-360° ~ 360°|
 
 ## DYNAMIXEL Details
 The AI Worker utilizes various DYNAMIXEL actuators, each selected for specific joint applications:

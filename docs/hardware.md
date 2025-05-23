@@ -33,7 +33,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Ambient Operating Temperature | 0 ~ 40℃                             | 0 ~ 40℃                                |
 | Exterior Materials          | Aluminum, Plastic                      | Aluminum, Plastic                      |
 | Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU        | RGBD Camera x 3                        |
-| Host Interface              | Ethernet                               | Ethernet                               |
+| Host Interface              | Ethernet (Wi-Fi router up to 1Gbps)    | Ethernet (Direct connection to host PC)|
 | Internal Communications     | RS-485                                 | RS-485                                 |
 | Communication Baudrate      | 4 Mbps                                 | 4 Mbps                                 |
 | Computer                    | NVIDIA Jetson AGX Orin 32GB            | NVIDIA Jetson AGX Orin 32GB            |

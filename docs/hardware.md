@@ -21,7 +21,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Weight                      | 90 kg (198 lb)                         | 85 kg (187 lb)                         |
 | Actuator                    | Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details)) |
 | Degrees of Freedom          | - Total: 25 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1<br>- Mobile: 6 DOF | - Total: 19 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1 |
-| Arm Reach                   | 630 (to wrist) + hand mm               | 630 (to wrist) + hand mm               |
+| Arm Reach                   | 630 mm (to wrist) + hand               | 630 mm (to wrist) + hand               |
 | Arm Payload                 | 1.5 kg (without Hand)                  | 1.5 kg (without Hand)                  |
 | Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
 | Joint Range                 | (see [Joint Configuration](#joint-configuration))| (see [Joint Configuration](#joint-configuration))|
@@ -29,8 +29,8 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Mobile Type                 | Swerve Drive                           | None                                   |
 | Mobile Operation Velocity   | 1.5 m/s                                | None                                   |
 | Power                       | Battery: 25V, 80Ah (2,040Wh)           | SMPS: 24VDC, 80A, 1,920W               |
-| Operating time              | Up to 4 hours                          | Continuous operation (SMPS)            |
-| Ambient Operating Temperature | 0 ~ 40 ℃                            | 0 ~ 40 ℃                              |
+| Operating time              | Up to 4 hours                          | Continuous operation (AC powered via SMPS)|
+| Ambient Operating Temperature | 0 ~ 40℃                             | 0 ~ 40℃                                |
 | Exterior Materials          | Aluminum, Plastic                      | Aluminum, Plastic                      |
 | Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU        | RGBD Camera x 3                        |
 | Host Interface              | Ethernet                               | Ethernet                               |

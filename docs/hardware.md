@@ -17,27 +17,27 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 
 | Properties                  | Specification (FFW-SG2)                | Specification (FFW-BG2)                |
 |-----------------------------|----------------------------------------|----------------------------------------|
-| Dimensions (WxDxH)          | 604x602x1,624 (mm)<br>23.8x23.7x63.9 (inch)| 604x564x1,618 (mm)<br>23.8x22.2x63.7 (inch)|
-| Weight                      | 85 kg (190 lbs)                         | TBD kg (TBD lbs)                      |
-| Actuator                    | Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|
+| Dimensions (WxDxH)          | 604x602x1,623 (mm)<br>23.8x23.7x63.8 (inch)| 604x564x1,607 (mm)<br>23.8x22.2x63.2 (inch)|
+| Weight                      | 90 kg (198 lb)                         | 85 kg (187 lb)                         |
+| Actuator                    | Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details)) |
 | Degrees of Freedom          | - Total: 25 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1<br>- Mobile: 6 DOF | - Total: 19 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1 |
-| Arm Reach                   | 647 mm (without Hand)                   | 647 mm (without Hand)                  |
-| Arm Payload                 | 1.5 kg (without Hand)                   | 1.5 kg (without Hand)                  |
+| Arm Reach                   | 630 (to wrist) + hand mm               | 630 (to wrist) + hand mm               |
+| Arm Payload                 | 1.5 kg (without Hand)                  | 1.5 kg (without Hand)                  |
 | Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
 | Joint Range                 | (see [Joint Configuration](#joint-configuration))| (see [Joint Configuration](#joint-configuration))|
 | Gripper/Hand                | RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))| RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))|
-| Mobile Type                 | Swerve Drive                            | None                                   |
-| Mobile Operation Velocity   | 1.5 m/s                                 | None                                   |
-| Battery Capacity            | 25.48V / 80Ah                           | 25.48V / 80Ah                          |
-| Operating time              | Up to 4 hours                           | Up to 6 hours                          |
-| Ambient Operating Temperature | 0 ~ 40 ℃                              | 0 ~ 40 ℃                              |
-| Exterior Materials          | Aluminum, Plastic                       | Aluminum, Plastic                      |
-| Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU         | RGBD Camera x 3                        |
-| Host Interface              | Ethernet                                | Ethernet                               |
-| Internal Communications     | RS-485                                  | RS-485                                 |
-| Communication Baudrate      | 4 Mbps                                  | 4 Mbps                                 |
-| Computer                    | NVIDIA Jetson AGX Orin 32GB             | NVIDIA Jetson AGX Orin 32GB            |
-| Software                    | ROS 2 Support, Python, C++, Web UI      | ROS 2 Support, Python, C++, Web UI     |
+| Mobile Type                 | Swerve Drive                           | None                                   |
+| Mobile Operation Velocity   | 1.5 m/s                                | None                                   |
+| Power                       | Battery: 25V, 80Ah (2,040Wh)           | SMPS: 24VDC, 80A, 1,920W               |
+| Operating time              | Up to 4 hours                          | Continuous operation (SMPS)            |
+| Ambient Operating Temperature | 0 ~ 40 ℃                            | 0 ~ 40 ℃                              |
+| Exterior Materials          | Aluminum, Plastic                      | Aluminum, Plastic                      |
+| Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU        | RGBD Camera x 3                        |
+| Host Interface              | Ethernet                               | Ethernet                               |
+| Internal Communications     | RS-485                                 | RS-485                                 |
+| Communication Baudrate      | 4 Mbps                                 | 4 Mbps                                 |
+| Computer                    | NVIDIA Jetson AGX Orin 32GB            | NVIDIA Jetson AGX Orin 32GB            |
+| Software                    | ROS 2 Support, Python, C++, Web UI     | ROS 2 Support, Python, C++, Web UI     |
 
 ## Leader Specification
 <div style="display: flex; justify-content: space-between; gap: 20px;">
@@ -61,16 +61,16 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
     </div>
 </div>
 
-| Properties                  | Specification (FFW-LG2)                 | Specification (FFW-LH5)                |
-|-----------------------------|-----------------------------------------|----------------------------------------|
-| Dimensions                  | TBD (WxDxH, mm)<br>TBD (WxDxH, inch)  | TBD (WxDxH, mm)<br>TBD (WxDxH, inch) |
-| Weight                      | TBD kg (TBD lbs)                        | TBD kg (TBD lbs)                       |
-| Actuator                    | Joint 1~7: DYNAMIXEL-X                  | Joint 1~7: DYNAMIXEL-X                 |
-| Degrees of Freedom          | - Total: 22 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- JoyStick: 3 DOF x 2 | - Total: 60 DOF<br>- Arm: 7 DOF x 2<br>- Hand: 20 DOF x 2<br>- JoyStick: 3 DOF x 2  |
-| Exterior Materials          | Aluminum, Plastic                       | Aluminum, Plastic                      |
-| Internal Communications     | RS-485                                  | RS-485                                 |
-| Communication Baudrate      | 4 Mbps                                  | 4 Mbps                                 |
-| Software                    | ROS 2 Support, Python, C++              | ROS 2 Support, Python, C++|
+| Properties               | Specification (FFW-LG2)                 | Specification (FFW-LH5)                |
+|--------------------------|-----------------------------------------|----------------------------------------|
+| Dimensions               | TBD (WxDxH, mm)<br>TBD (WxDxH, inch)    | TBD (WxDxH, mm)<br>TBD (WxDxH, inch)   |
+| Weight                   | TBD kg (TBD lb)                         | TBD kg (TBD lb)                        |
+| Actuator                 | Joint 1~7: DYNAMIXEL-X                  | Joint 1~7: DYNAMIXEL-X                 |
+| Degrees of Freedom       | - Total: 22 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- JoyStick: 3 DOF x 2 | - Total: 60 DOF<br>- Arm: 7 DOF x 2<br>- Hand: 20 DOF x 2<br>- JoyStick: 3 DOF x 2 |
+| Exterior Materials       | Aluminum, Plastic                       | Aluminum, Plastic                      |
+| Internal Communications  | RS-485                                  | RS-485                                 |
+| Communication Baudrate   | 4 Mbps                                  | 4 Mbps                                 |
+| Software                 | ROS 2 Support, Python, C++              | ROS 2 Support, Python, C++             |
 
 ## Gripper Specification
 ![model_rh_p12_rn](/specifications/model_rh_p12_rn.png)
@@ -84,27 +84,27 @@ Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under de
   <img src="/specifications/joints.png" alt="Dimensions" width="100%">
 </a>
 
-| ID | Joint Name          | Technical Name | Range       |
-|----|---------------------|----------------|-------------|
-|1   |Right Shoulder Pitch  |arm_r_joint1    |-180° ~ 180°|
-|2   |Right Shoulder Roll   |arm_r_joint2    |-10° ~ 190° |
-|3   |Right Shoulder Yaw    |arm_r_joint3    |-180° ~ 180°|
-|4   |Right Elbow           |arm_r_joint4    |-170° ~ 65° |
-|5   |Right Wrist Yaw       |arm_r_joint5    |-180° ~ 180°|
-|6   |Right Wrist Pitch     |arm_r_joint6    |-95° ~ 100° |
-|7   |Right Wrist Roll      |arm_r_joint7    |-130° ~ 95° |
-|8   |Right Gripper         |gripper_r_joint1|0 ~ 106 mm  |
-|31  |Left Shoulder Pitch   |arm_l_joint1    |-180° ~ 180°|
-|32  |Left Shoulder Roll    |arm_l_joint2    |-10° ~ 190° |
-|33  |Left Shoulder Yaw     |arm_l_joint3    |-180° ~ 180°|
-|34  |Left Elbow            |arm_l_joint4    |-170° ~ 65° |
-|35  |Left Wrist Yaw        |arm_l_joint5    |-180° ~ 180°|
-|36  |Left Wrist Pitch      |arm_l_joint6    |-95° ~ 100° |
-|37  |Left Wrist Roll       |arm_l_joint7    |-130° ~ 95° |
-|38  |Left Gripper          |gripper_l_joint1|0 ~ 106 mm  |
-|61  |Head Pitch            |head_joint1     |-50° ~ 30°  |
-|62  |Head Yaw              |head_joint2     |-20° ~ 20°  |
-|81  |Lift                  |lift_joint      |0 ~ 500 mm  |
+| ID  | Joint Name            | Technical Name  | Range        |
+|-----|-----------------------|-----------------|--------------|
+| 1   | Right Shoulder Pitch  | arm_r_joint1    | -180° ~ 180° |
+| 2   | Right Shoulder Roll   | arm_r_joint2    | -10° ~ 190°  |
+| 3   | Right Shoulder Yaw    | arm_r_joint3    | -180° ~ 180° |
+| 4   | Right Elbow           | arm_r_joint4    | -170° ~ 65°  |
+| 5   | Right Wrist Yaw       | arm_r_joint5    | -180° ~ 180° |
+| 6   | Right Wrist Pitch     | arm_r_joint6    | -95° ~ 100°  |
+| 7   | Right Wrist Roll      | arm_r_joint7    | -130° ~ 95°  |
+| 8   | Right Gripper         | gripper_r_joint1| 0 ~ 107.6 mm |
+| 31  | Left Shoulder Pitch   | arm_l_joint1    | -180° ~ 180° |
+| 32  | Left Shoulder Roll    | arm_l_joint2    | -10° ~ 190°  |
+| 33  | Left Shoulder Yaw     | arm_l_joint3    | -180° ~ 180° |
+| 34  | Left Elbow            | arm_l_joint4    | -170° ~ 65°  |
+| 35  | Left Wrist Yaw        | arm_l_joint5    | -180° ~ 180° |
+| 36  | Left Wrist Pitch      | arm_l_joint6    | -95° ~ 100°  |
+| 37  | Left Wrist Roll       | arm_l_joint7    | -130° ~ 95°  |
+| 38  | Left Gripper          | gripper_l_joint1| 0 ~ 107.6 mm |
+| 61  | Head Pitch            | head_joint1     | -50° ~ 30°   |
+| 62  | Head Yaw              | head_joint2     | -20° ~ 20°   |
+| 81  | Lift                  | lift_joint      | 0 ~ 500 mm   |
 
 ### Mobile Base Configuration (Swerve Drive)
 The AI Worker's mobile base uses a swerve drive system that provides significant advantages over traditional omnidirectional wheel systems like mecanum wheels or omni wheels:
@@ -125,27 +125,27 @@ The AI Worker's mobile base uses a swerve drive system that provides significant
 
 The AI Worker's swerve drive configuration consists of three wheels positioned in a triangular arrangement, each with independent steering and driving capabilities:
 
-| Part Name          | Technical Name   | Range      |
-|--------------------|------------------|------------|
-|Right Wheel Steer   |right_wheel_steer |-90° ~ 90°  |
-|Left Wheel Steer    |left_wheel_steer  |-90° ~ 90°  |
-|Rear Wheel Steer    |rear_wheel_steer  |-90° ~ 90°  |
-|Right Wheel Drive   |right_wheel_drive |-360° ~ 360°|
-|Left Wheel Drive    |left_wheel_drive  |-360° ~ 360°|
-|Rear Wheel Drive    |rear_wheel_drive  |-360° ~ 360°|
+| Part Name          | Technical Name   | Range        |
+|--------------------|------------------|--------------|
+|Right Wheel Steer   |right_wheel_steer | -90° ~ 90°   |
+|Left Wheel Steer    |left_wheel_steer  | -90° ~ 90°   |
+|Rear Wheel Steer    |rear_wheel_steer  | -90° ~ 90°   |
+|Right Wheel Drive   |right_wheel_drive | -360° ~ 360° |
+|Left Wheel Drive    |left_wheel_drive  | -360° ~ 360° |
+|Rear Wheel Drive    |rear_wheel_drive  | -360° ~ 360° |
 
 ## DYNAMIXEL Details
 The AI Worker utilizes various DYNAMIXEL actuators, each selected for specific joint applications:
 
-| Joints         | DYNAMIXEL Series | DYNAMIXEL Model   |
-|----------------|------------------|-------------------|
+| Joints         | DYNAMIXEL Series | DYNAMIXEL Model                                                                   |
+|----------------|------------------|-----------------------------------------------------------------------------------|
 | Arm Joints 1~3 | DYNAMIXEL-Y      | [YM080-230-R099-RH](https://emanual.robotis.com/docs/en/dxl/y/ym080-230-r099-rh/) |
 | Arm Joints 4~5 | DYNAMIXEL-Y      | [YM070-210-R099-RH](https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r099-rh/) |
-| Arm Joint 6    | DYNAMIXEL-X      | [XH540-V270-R](https://emanual.robotis.com/docs/en/dxl/x/xh540-v270/)      |
-| Arm Joint 7    | DYNAMIXEL-P      | [PH42-020-S300-R](https://emanual.robotis.com/docs/en/dxl/p/ph42-020-s300-r/)   |
-| Gripper        | Robot Hands      | [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) |
-| Head Pitch     | DYNAMIXEL-X      | [XH540-V150-R](https://emanual.robotis.com/docs/en/dxl/x/xh540-v150/)      |
-| Head Yaw       | DYNAMIXEL-X      | [XH430-V210-R](https://emanual.robotis.com/docs/en/dxl/x/xh430-v210/)      |
+| Arm Joint 6    | DYNAMIXEL-X      | [XH540-V270-R](https://emanual.robotis.com/docs/en/dxl/x/xh540-v270/)             |
+| Arm Joint 7    | DYNAMIXEL-P      | [PH42-020-S300-R](https://emanual.robotis.com/docs/en/dxl/p/ph42-020-s300-r/)     |
+| Gripper        | Robot Hands      | [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/)              |
+| Head Pitch     | DYNAMIXEL-X      | [XH540-V150-R](https://emanual.robotis.com/docs/en/dxl/x/xh540-v150/)             |
+| Head Yaw       | DYNAMIXEL-X      | [XH430-V210-R](https://emanual.robotis.com/docs/en/dxl/x/xh430-v210/)             |
 | Lift           | DYNAMIXEL-Y      | [YM080-230-B001-RH](https://emanual.robotis.com/docs/en/dxl/y/ym080-230-b001-rh/) |
 | Wheel Steer    | DYNAMIXEL-Y      | [YM070-210-R051-RH](https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r051-rh/) |
 

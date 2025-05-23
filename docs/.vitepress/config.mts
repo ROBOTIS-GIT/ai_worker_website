@@ -81,6 +81,7 @@ export default defineConfig({
       {
         text: 'Imitation Learning',
         items: [
+          { text: 'Overview', link: '/imitation_learning' },
           { text: 'Dataset Preparation', link: '/dataset_preparation' },
           { text: 'Model Workflow', link: '/model_workflow' },
         ]

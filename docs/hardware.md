@@ -1,7 +1,7 @@
 # Hardware
 
 ## Hardware Overview
-The AI Worker hardware platform combines advanced robotics with AI-powered capabilities to create a versatile semi-humanoid robot. Built around ROBOTIS [DYNAMIXEL](https://dynamixel.com/) actuators, it features a mobile base with swerve drive, dual 7-DOF arms with dexterous hand/grippers, and a sensor suite that includes RGBD cameras and LiDARs. The system is powered by an NVIDIA Jetson AGX Orin computer and offers up to 4 hours of operation time on a single charge. This comprehensive hardware design enables the AI Worker to perform complex manipulation tasks through imitation learning and reinforcement learning in various industrial environments.
+The AI Worker hardware platform combines advanced robotics with AI-powered capabilities to create a versatile semi-humanoid robot. Built around ROBOTIS [DYNAMIXEL](https://dynamixel.com/) actuators, it features a mobile base with swerve drive, dual 7-DOF arms with dexterous hand/grippers, and a sensor suite that includes RGBD cameras and LiDARs. The system is powered by an NVIDIA Jetson AGX Orin computer and offers up to 8 hours of operation time on a single charge. This comprehensive hardware design enables the AI Worker to perform complex manipulation tasks through imitation learning and reinforcement learning in various industrial environments.
 
 ![hardware_overview](/specifications/hardware_overview.png)
 
@@ -29,7 +29,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Mobile Type                 | Swerve Drive                           | None                                   |
 | Mobile Operation Velocity   | 1.5 m/s                                | None                                   |
 | Power                       | Battery: 25V, 80Ah (2,040Wh)           | SMPS: 24VDC, 80A, 1,920W               |
-| Operating time              | Up to 4 hours                          | Continuous operation (AC powered via SMPS)|
+| Operating time              | Up to 8 hours                          | Continuous operation (AC powered via SMPS)|
 | Ambient Operating Temperature | 0 ~ 40℃                             | 0 ~ 40℃                                |
 | Exterior Materials          | Aluminum, Plastic                      | Aluminum, Plastic                      |
 | Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU        | RGBD Camera x 3                        |

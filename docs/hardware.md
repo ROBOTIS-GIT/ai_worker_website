@@ -87,12 +87,12 @@ Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under de
 | ID  | Joint Name            | Technical Name  | Range        |
 |-----|-----------------------|-----------------|--------------|
 | 1   | Right Shoulder Pitch  | arm_r_joint1    | -180° ~ 180° |
-| 2   | Right Shoulder Roll   | arm_r_joint2    | -10° ~ 190°  |
+| 2   | Right Shoulder Roll   | arm_r_joint2    | -190° ~ 10°  |
 | 3   | Right Shoulder Yaw    | arm_r_joint3    | -180° ~ 180° |
 | 4   | Right Elbow           | arm_r_joint4    | -170° ~ 65°  |
 | 5   | Right Wrist Yaw       | arm_r_joint5    | -180° ~ 180° |
 | 6   | Right Wrist Pitch     | arm_r_joint6    | -95° ~ 100°  |
-| 7   | Right Wrist Roll      | arm_r_joint7    | -130° ~ 95°  |
+| 7   | Right Wrist Roll      | arm_r_joint7    | -95° ~ 130°  |
 | 8   | Right Gripper         | gripper_r_joint1| 0 ~ 107.6 mm |
 | 31  | Left Shoulder Pitch   | arm_l_joint1    | -180° ~ 180° |
 | 32  | Left Shoulder Roll    | arm_l_joint2    | -10° ~ 190°  |

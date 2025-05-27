@@ -74,13 +74,14 @@ export default defineConfig({
       {
         text: 'Quick Start Guide',
         items: [
-          { text: 'Setup', link: '/setup' },
-          { text: 'Basic Operations', link: '/operation' }
+          { text: 'Setup Guide', link: '/setup' },
+          { text: 'Teleoperation Guide', link: '/operation' }
         ]
       },
       {
         text: 'Imitation Learning',
         items: [
+          { text: 'Overview', link: '/imitation_learning' },
           { text: 'Dataset Preparation', link: '/dataset_preparation' },
           { text: 'Model Workflow', link: '/model_workflow' },
         ]

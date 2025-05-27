@@ -1,38 +1,19 @@
-# AI Worker Setup Guide
+# Setup Guide
 
-## Table of Contents
-1. [Hardware Setup](#hardware-setup)
-   - [Follower Setup](#follower)
-   - [Leader Setup](#leader)
-2. [Software Setup](#software-setup)
-   - [Prerequisites](#prerequisites)
-   - [Configuration](#configuration)
-3. [Docker Environment](#docker-environment)
-   - [Volume Management](#volume-management)
-   - [Container Management](#container-management)
+This guide will walk you through the process of setting up your AI Worker hardware and software environment.
 
----
+## Hardware Setup
 
-# Hardware Setup
+### Follower
+![Back of the Follower](/quick_start_guide/back_of_the_follower.png)
+1. Connect all three battery charging cables to the charging terminals on the back of the `Follower`.
+2. Connect the `Follower`'s HDMI port to a monitor.
+3. If you need internet access, connect a LAN cable to the LAN port.
+4. Press and hold the Power button on the back of the `Follower` for about 3 seconds to turn on the board.
+5. After you hear a beep, check that the monitor displays the screen.
 
-## Follower
-![Back of the Follower](assets/back_of_the_follower.png)
-
-### Setup Steps
-1. **Power Connection**
-   - Connect all three battery charging cables to the charging terminals on the back of the `Follower`
-   - Press and hold the Power button for about 3 seconds to turn on the board
-   - Wait for the startup beep
-
-2. **Display Setup**
-   - Connect the `Follower`'s HDMI port to a monitor
-   - Verify the display shows the system screen after startup
-
-3. **Network Setup** (Optional)
-   - For internet access, connect a LAN cable to the LAN port
-
-## Leader
-![Back of the Leader](assets/back_of_the_leader.png)
+### Leader
+![Back of the Leader](/quick_start_guide/back_of_the_leader.png)
 
 ### Setup Steps
 1. **USB Connection**

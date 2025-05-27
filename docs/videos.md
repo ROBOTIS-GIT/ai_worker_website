@@ -8,8 +8,9 @@ Explore AI Worker through our collection of videos showcasing its capabilities, 
 <YouTube videoId="DX7DEf9s3Eg" />
 
 ## Tutorials & Demonstrations
+<YouTube videoId="hnJpFX2G3P4" />
 
-<div class="video-grid">
+<!-- <div class="video-grid">
   <div class="video-item">
     <YouTube videoId="hnJpFX2G3P4" />
     <p class="video-caption">Imitation Learning Demo - From Teleop to Inference</p>
@@ -18,11 +19,22 @@ Explore AI Worker through our collection of videos showcasing its capabilities, 
     <YouTube videoId="hnJpFX2G3P4" />
     <p class="video-caption">Imitation Learning Demo - From Teleop to Inference</p>
   </div>
-</div>
+</div> -->
 
 ## Use Cases
 
-(TBD)
+<div class="coming-soon">
+  <div class="coming-soon-content">
+    <h3>Application Videos Coming Soon</h3>
+    <p>We're currently preparing videos demonstrating AI Worker in various industrial applications including:</p>
+    <ul>
+      <li>Manufacturing assembly tasks</li>
+      <li>Warehouse operations</li>
+      <li>Research environments</li>
+    </ul>
+    <p>Check back soon or subscribe to our YouTube channel for updates.</p>
+  </div>
+</div>
 
 ## More Videos
 

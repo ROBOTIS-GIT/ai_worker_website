@@ -25,7 +25,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Arm Payload                 | 1.5 kg (without Hand)                  | 1.5 kg (without Hand)                  |
 | Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
 | Joint Range                 | (see [Joint Configuration](#joint-configuration))| (see [Joint Configuration](#joint-configuration))|
-| Gripper/Hand                | RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))| RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))|
+| Gripper/Hand                | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous hands in development, see [Hand Specification](#hand-specification)) | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous hands in development, see [Hand Specification](#hand-specification)) |
 | Mobile Type                 | Swerve Drive                           | None                                   |
 | Mobile Operation Velocity   | 1.5 m/s                                | None                                   |
 | Power                       | Battery: 25V, 80Ah (2,040Wh)           | SMPS: 24VDC, 80A, 1,920W               |

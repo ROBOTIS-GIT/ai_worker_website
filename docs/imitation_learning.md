@@ -4,11 +4,11 @@
 
 ### General Information
 
-This dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the AI Worker via ROS 2 teleoperation using the [lerobot](https://github.com/huggingface/lerobot) framework.
+The dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the AI Worker via ROS 2 teleoperation using the [lerobot](https://github.com/huggingface/lerobot) framework.
 
-### Tutorial Video: Data Collection Process
+### Tutorial Video: End-to-End Imitation Learning Workflow
 
-The following video demonstrates the complete process of recording a dataset with AI Worker, from teleoperation to dataset creation:
+The following video demonstrates the complete process of recording a dataset with AI Worker, from teleoperation to dataset creation to inference using a model trained on the collected data:
 
 <YouTube videoId="hnJpFX2G3P4" />
 

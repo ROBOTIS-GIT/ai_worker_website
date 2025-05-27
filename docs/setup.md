@@ -32,11 +32,27 @@ This guide will walk you through the process of setting up your AI Worker hardwa
 
 ## Prerequisites
 - **Operating System**: Ubuntu environment
-- **Container Engine**: [Docker Engine](https://docs.docker.com/engine/install/)
+- **Container Engine**: Docker Engine
+  - Follow the [official Docker installation guide](https://docs.docker.com/engine/install/ubuntu/)
+  - Complete the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
+  - Required steps:
+    1. Install Docker Engine using the repository method
+    2. Add your user to the docker group
+    3. Enable Docker to start on boot
+    4. Verify installation with `docker run hello-world`
 - **Version Control**: Git
 - **Graphics Support**:
-  - NVIDIA Graphics Driver (nvidia-driver-570-server-open for CUDA 12.8)
-  - [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+  - NVIDIA Graphics Driver
+    - Install nvidia-driver-570-server-open for CUDA 12.8
+    - Verify installation with `nvidia-smi`
+  - NVIDIA Container Toolkit
+    - Follow the [official installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
+    - Required steps:
+      1. Configure the production repository
+      2. Install nvidia-container-toolkit
+      3. Configure Docker runtime using `nvidia-ctk`
+      4. Restart Docker daemon
+    - For detailed configuration, see the [Docker configuration guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker)
 
 ## Configuration
 

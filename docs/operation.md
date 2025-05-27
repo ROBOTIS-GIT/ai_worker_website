@@ -61,11 +61,9 @@ If you want to run the `Leader` and `Follower` separately in different terminals
    ```
 
 If you want to run the system without launching the cameras, you can set the `launch_cameras` parameter to `false`:
-```bash
+   ```bash
    ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py launch_cameras:=false
-```
-
-
+   ```
 
 ## Basic Operation
 

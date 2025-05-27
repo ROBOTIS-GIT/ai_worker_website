@@ -19,7 +19,7 @@ export default defineConfig({
     ['meta', { property: 'og:image', content: ogImage }],
     [
       'script',
-      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-1ZL2D7EBQB' }
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=GTM-P7L347G7' }
     ],
     [
       'script',
@@ -27,7 +27,7 @@ export default defineConfig({
       `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-1ZL2D7EBQB');`
+      gtag('config', 'GTM-P7L347G7');`
     ]
   ],
   themeConfig: {

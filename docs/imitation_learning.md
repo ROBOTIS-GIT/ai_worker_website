@@ -4,19 +4,19 @@
 
 This overview outlines the end-to-end imitation learning pipeline using the AI Worker platform and the Hugging Face Hub. 
 
-#### 1. Data Collection
+### 1. Data Collection
 
 Human operators use a wearable skeletal leader device to demonstrate motions and collect data consisting of images and joint positions. The collected data can be uploaded to and downloaded from the Hugging Face Hub.
 
-#### 2. Data Visualization
+### 2. Data Visualization
 
 Collected data is visualized to inspect motion trajectories and images, helping identify potential errors before training.
 
-#### 3. Model Training
+### 3. Model Training
 
 The verified dataset is then used to train an action policy model. Training can be performed on local GPUs or on embedded platforms such as NVIDIA Jetson. The resulting model can be uploaded to and downloaded from the Hugging Face Hub.
 
-#### 4. Model Inference
+### 4. Model Inference
 
 Once trained, the models are deployed on the AI Worker to execute real-time inference for tasks such as picking, placing, and obstacle avoidance.
 

@@ -27,15 +27,17 @@ bringup
 ```
 ### Visualize RGB images from the head-mounted Mini-ZED and the wrist-mounted Intel RealSense cameras.
 
-1. Open http://{hostname of Orin} or http://{IP address of Orin} in your web browser.
+1. You can find the AI Worker's serial number in the `~/.serial_number` file. This value is used as the device's hostname.
+
+2. You will see the web UI once you open `http://{hostname}` in your web browser as shown below.
 
 <img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
 
-2. Click the '+' button to open a pop-up where you can select a camera image topic, as shown below:
+3. Click the '+' button to open a pop-up where you can select a camera image topic as shown below:
 
 <img src="/imitation_learning/web_ui_topic_selection.png" alt="Web UI Topic Selection" style="width: 50%; ">
 
-3. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button.
+4. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button.
 
 ### Open a new terminal and navigate to the `lerobot` directory:
 
@@ -75,7 +77,7 @@ To create your own dataset, here are some important parameters you may want to a
 |----------------------------|-------------|---------|
 | `--control.repo_id`        | The Hugging Face dataset repository ID in the format `<username>/<dataset_name>` | `username/ffw_pick_place` |
 | `--control.single_task`    | The name of the task you're performing | "pick and place objects" |
-| `--control.fps`            | Frame rate for dataset recording | 30 (recommended) |
+| `--control.fps`            | Frame rate for dataset recording | 15 (recommended) |
 | `--control.episode_time_s` | Duration (in seconds) to record each episode | 30-60 for simple tasks |
 | `--control.reset_time_s`   | Time allocated (in seconds) for resetting between episodes | 10-20 seconds |
 | `--control.num_episodes`   | Total number of episodes to record | 10-50 depending on task complexity |

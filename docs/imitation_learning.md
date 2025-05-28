@@ -24,7 +24,7 @@ Once trained, the models are deployed on the AI Worker to execute real-time infe
 - The diagram below shows the full imitation learning workflow using the AI Worker and Hugging Face.
 
 
-<img src="/imitation_learning/end_to_end_imitation_learning_workflow.png" alt="Imitation Learning Workflow" style="width: 100%;; ">
+<img src="/imitation_learning/end_to_end_imitation_learning_workflow.png" alt="Imitation Learning Workflow" style="width: 100%; ">
 
 - Tutorial Video: End-to-End Imitation Learning Workflow
 

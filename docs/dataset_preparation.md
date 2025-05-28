@@ -1,8 +1,8 @@
 # Dataset Preparation
 
-## Create Your Datasets
+## Preparation Before Dataset Creation
 
-### 1. Authenticate with Hugging Face
+### Authenticate with Hugging Face
 
 To create a Hugging Face dataset, you first need to log in using a **write access token**, which can be generated from your [Hugging Face settings](https://huggingface.co/settings/tokens):
 
@@ -17,23 +17,34 @@ HF_USER=$(huggingface-cli whoami | head -n 1)
 echo $HF_USER
 ```
 
-### 2. Record Your Dataset
+## Record Your Datasets
 
-First, launch the ROS 2 teleoperation node:
+### Launch the ROS 2 teleoperation node:
 
 ```bash
 container
 bringup
 ```
+### Visualize RGB images from the head-mounted Mini-ZED and the wrist-mounted Intel RealSense cameras.
 
-Open a new terminal and navigate to the `lerobot` directory:
+1. Open http://{hostname of Orin} or http://{IP address of Orin} in your web browser.
+
+<img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
+
+2. Click the '+' button to open a pop-up where you can select a camera image topic, as shown below:
+
+<img src="/imitation_learning/web_ui_topic_selection.png" alt="Web UI Topic Selection" style="width: 50%; ">
+
+3. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button.
+
+### Open a new terminal and navigate to the `lerobot` directory:
 
 ```bash
 container
 cd /root/colcon_ws/src/physical_ai_tools/lerobot
 ```
 
-Run the following command to start recording your Hugging Face dataset:
+### Run the following command to start recording your Hugging Face dataset:
 
 ```bash
 python lerobot/scripts/control_robot.py \

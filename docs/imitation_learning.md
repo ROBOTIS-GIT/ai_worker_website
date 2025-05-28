@@ -2,17 +2,39 @@
 
 ## Overview
 
-### General Information
+This overview outlines the end-to-end imitation learning pipeline using the AI Worker platform and the Hugging Face Hub. 
 
-The dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the AI Worker via ROS 2 teleoperation using the [lerobot](https://github.com/huggingface/lerobot) framework.
+#### 1. Data Collection
 
-### Tutorial Video: End-to-End Imitation Learning Workflow
+Human operators use a wearable skeletal leader device to demonstrate motions and collect data consisting of images and joint positions. The collected data can be uploaded to and downloaded from the Hugging Face Hub.
 
-The following video demonstrates the complete process of recording a dataset with AI Worker, from teleoperation to dataset creation to inference using a model trained on the collected data:
+#### 2. Data Visualization
+
+Collected data is visualized to inspect motion trajectories and images, helping identify potential errors before training.
+
+#### 3. Model Training
+
+The verified dataset is then used to train an action policy model. Training can be performed on local GPUs or on embedded platforms such as NVIDIA Jetson. The resulting model can be uploaded to and downloaded from the Hugging Face Hub.
+
+#### 4. Model Inference
+
+Once trained, the models are deployed on the AI Worker to execute real-time inference for tasks such as picking, placing, and obstacle avoidance.
+
+## End-to-End Imitation Learning Workflow
+- The diagram below shows the full imitation learning workflow using the AI Worker and Hugging Face.
+
+
+<img src="/imitation_learning/end_to_end_imitation_learning_workflow.png" alt="Imitation Learning Workflow" style="width: 100%;; ">
+
+- Tutorial Video: End-to-End Imitation Learning Workflow
+
+This video illustrates the full imitation learning workflow using the AI Worker, including teleoperation, dataset creation, and real-time inference with a trained model:
 
 <YouTube videoId="hnJpFX2G3P4" />
 
-### Dataset Schema
+- Dataset Schema
+
+The dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the AI Worker via ROS 2 teleoperation using the [lerobot](https://github.com/huggingface/lerobot) framework.
 
 | Field              | Type            | Description          |
 |--------------------|-----------------|----------------------|

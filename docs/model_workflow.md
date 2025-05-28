@@ -28,10 +28,6 @@ python lerobot/scripts/train.py \
   --save_freq=1000
 ```
 
-### Training on Your PC
-
-First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally. Once installed, you can train the policy using the same command as above.
-
 ### Key Training Parameters
 
 | Parameter | Description |
@@ -44,14 +40,24 @@ First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS
 | `--log_freq` | How often to log training statistics (in iterations) |
 | `--save_freq` | How often to save model checkpoints (in iterations) |
 
+### Training on Your PC
+
+First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally. Once installed, you can train the policy using the same command as above.
+
 ### Expected Training Output
 
-During training, you'll see output similar to this:
+During training, you'll see output like this:
 
 ```
-[2025-05-16 13:45:22,885] epoch: 1/10, batch: 100/5000, loss: 0.18745
-[2025-05-16 13:47:45,312] epoch: 1/10, batch: 200/5000, loss: 0.12481
-[2025-05-16 13:50:12,769] epoch: 1/10, batch: 300/5000, loss: 0.09342
+INFO 2025-05-28 12:12:40 ts/train.py:232 step:200 smpl:2K ep:3 epch:0.16 loss:7.490 grdn:154.502 lr:1.0e-05 updt_s:0.047 data_s:0.002
+INFO 2025-05-28 12:12:48 ts/train.py:232 step:400 smpl:3K ep:7 epch:0.33 loss:3.128 grdn:85.109 lr:1.0e-05 updt_s:0.041 data_s:0.000
+INFO 2025-05-28 12:12:57 ts/train.py:232 step:600 smpl:5K ep:10 epch:0.49 loss:2.615 grdn:74.954 lr:1.0e-05 updt_s:0.041 data_s:0.000
+INFO 2025-05-28 12:13:05 ts/train.py:232 step:800 smpl:6K ep:13 epch:0.65 loss:2.331 grdn:68.764 lr:1.0e-05 updt_s:0.042 data_s:0.000
+INFO 2025-05-28 12:13:14 ts/train.py:232 step:1K smpl:8K ep:16 epch:0.81 loss:2.075 grdn:64.323 lr:1.0e-05 updt_s:0.042 data_s:0.000
+INFO 2025-05-28 12:13:22 ts/train.py:232 step:1K smpl:10K ep:20 epch:0.98 loss:1.903 grdn:61.364 lr:1.0e-05 updt_s:0.042 data_s:0.000
+INFO 2025-05-28 12:13:31 ts/train.py:232 step:1K smpl:11K ep:23 epch:1.14 loss:1.716 grdn:57.887 lr:1.0e-05 updt_s:0.042 data_s:0.001
+INFO 2025-05-28 12:13:40 ts/train.py:232 step:2K smpl:13K ep:26 epch:1.30 loss:1.558 grdn:54.819 lr:1.0e-05 updt_s:0.041 data_s:0.000
+INFO 2025-05-28 12:13:48 ts/train.py:232 step:2K smpl:14K ep:29 epch:1.47 loss:1.454 grdn:53.859 lr:1.0e-05 updt_s:0.042 data_s:0.000
 ...
 ```
 

@@ -31,11 +31,11 @@ Before starting teleoperation, make sure:
 To start both the `Leader` and `Follower` simultaneously:
 
 ```bash
-ros2 launch ffw_bringup ffw_teleop_with_rh.launch.py
+ros2 launch ffw_bringup ffw_bg2_ai.launch.py
 ```
 or use the shortcut command:
 ```bash
-bringup
+ffw_bg2_ai
 ```
 
 ### Option 2: Separate Launches
@@ -44,20 +44,25 @@ If you want to run the `Leader` and `Follower` separately in different terminals
 
 1. **Launch the teleoperation `Leader`**:
    ```bash
-   ros2 launch ffw_bringup hardware_leader_with_rh.launch.py
+   ros2 launch ffw_bringup ffw_bg2_leader_ai.launch.py
    ```
    or use the shortcut:
    ```bash
-   leader
+   ffw_lg2_leader_ai
    ```
 
 2. **Launch the teleoperation `Follower`**:
    ```bash
-   ros2 launch ffw_bringup hardware_follower_with_rh.launch.py
+   ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
    ```
    or use the shortcut:
    ```bash
-   follower
+   ffw_bg2_follower_ai
+   ```
+
+If you want to run the system without launching the cameras, you can set the `launch_cameras` parameter to `false`:
+   ```bash
+   ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py launch_cameras:=false
    ```
 
 ## Basic Operation

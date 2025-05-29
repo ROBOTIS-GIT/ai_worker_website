@@ -93,18 +93,19 @@ export default defineConfig({
         ]
       },
       {
-        text: 'OpenSource & Community',
+        text: 'Resources',
         items: [
-          { text: 'OpenSource', link: '/opensource' },
-          { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
+          { text: 'Open Source', link: '/opensource' },
+          { text: 'Release Notes', link: '/release_notes'},
         ]
       },
       {
           text: 'Support',
           items: [
-            { text: 'Contact Us', link: '/contact' },
+            { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
             { text: 'Issues', link: '/issues' },
-            { text: 'FAQ', link: '/faq' }
+            { text: 'FAQ', link: '/faq' },
+            { text: 'Contact Us', link: '/contact' },
           ]
         }
     ],

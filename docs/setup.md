@@ -15,80 +15,129 @@ This guide will walk you through the process of setting up your AI Worker hardwa
 ### Leader
 ![Back of the Leader](/quick_start_guide/back_of_the_leader.png)
 
-1. Connect the USB cable to the rear USB port of the `Follower`.
-2. Plug the power cable into an electrical outlet.
-3. The U2D2 switch is inside a hole. Slide the switch toward the white dot to turn on the U2D2.
+### Setup Steps
+1. **USB Connection**
+   - Connect the USB cable to the rear USB port of the `Follower`
 
-## Software Setup
-### Prerequisites
-- Ubuntu 22.04 LTS (recommended) or later
-- [Docker Engine](https://docs.docker.com/engine/install/) (version 20.10+)
-- Git
-- NVIDIA Container Toolkit (Install the graphics driver `nvidia-driver-570-server-open` for CUDA 12.8)
+2. **Power Setup**
+   - Plug the power cable into an electrical outlet
 
-### Configuration
-#### 1. USB Serial Setup
-1. Prepare the provided serial data.
-2. Create a udev rule:
-  ```bash
-  sudo nano /etc/udev/rules.d/99-ai-worker.rules
-  ```
-3. Paste the prepared serial data into the file.
-4. Save the file and exit the editor.
-5. Reload udev rules and trigger:
-  ```bash
-  sudo udevadm control --reload
-  sudo udevadm trigger
-  ```
+3. **U2D2 Activation**
+   - Locate the U2D2 switch inside the hole
+   - Slide the switch toward the white dot to turn on the U2D2
 
-#### 2. Docker Setup
-- Create workspace and clone repository:
-```bash
-cd ~/ # specify desired path
-git clone -b jazzy https://github.com/ROBOTIS-GIT/ai_worker.git
+---
+
+# Software Setup
+
+## Prerequisites
+- **Operating System**: Ubuntu environment
+- **Container Engine**: Docker Engine
+  - Follow the [official Docker installation guide](https://docs.docker.com/engine/install/ubuntu/)
+  - Complete the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
+  - Required steps:
+    1. Install Docker Engine using the repository method
+    2. Add your user to the docker group
+    3. Enable Docker to start on boot
+    4. Verify installation with `docker run hello-world`
+- **Version Control**: Git
+- **Graphics Support**:
+  - NVIDIA Graphics Driver
+    - Install nvidia-driver-570-server-open for CUDA 12.8
+    - Verify installation with `nvidia-smi`
+  - NVIDIA Container Toolkit
+    - Follow the [official installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
+    - Required steps:
+      1. Configure the production repository
+      2. Install nvidia-container-toolkit
+      3. Configure Docker runtime using `nvidia-ctk`
+      4. Restart Docker daemon
+    - For detailed configuration, see the [Docker configuration guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker)
+
+## Configuration
+
+### 1. USB Serial Setup
+1. **Prepare Configuration**
+   - Obtain the provided serial data
+   - Create a new udev rule file:
+     ```bash
+     sudo nano /etc/udev/rules.d/99-ai-worker.rules
+     ```
+   - Paste the serial data into the file
+   - Save and exit the editor
+
+2. **Apply Configuration**
+   ```bash
+   sudo udevadm control --reload
+   sudo udevadm trigger
+   ```
+
+### 2. Docker Environment
+
+#### Volume Management
+The Docker container uses the following volume mappings for data persistence and hardware access:
+
+```yaml
+volumes:
+  # Hardware and System Access
+  - /dev:/dev                    # Hardware device access
+  - /tmp/.X11-unix:/tmp/.X11-unix:rw  # X11 display
+  - /tmp/.docker.xauth:/tmp/.docker.xauth:rw  # X11 authentication
+
+  # Development and Data Storage
+  - ./workspace:/workspace       # Main workspace directory
+  - ../:/root/ros2_ws/src/ai_worker/  # AI Worker source code
+  - ./lerobot/outputs:/root/ros2_ws/src/physical_ai_tools/lerobot/outputs  # Model outputs
+  - ./huggingface:/root/.cache/huggingface  # Hugging Face cache
 ```
 
-- Build and run Docker container:
-``` bash
-cd ai_worker
-./docker/container.sh start without_gz # Docker build
-```
+⚠️ **Important: Data Persistence**
+- Container data is volatile and will be lost when the container is removed
+- Always store important data in the mapped volumes:
+  1. Use `/workspace` for development files
+  2. Save model outputs to the mapped output directory
+  3. Keep source code changes in the mapped ai_worker directory
+  4. Store downloaded models in the huggingface cache
+
+#### Container Management
+
+1. **Initial Setup**
+   ```bash
+   # Clone the repository
+   cd ~/  # or your preferred directory
+   git clone -b jazzy https://github.com/ROBOTIS-GIT/ai_worker.git
+   cd ai_worker
+   ```
+
+2. **Container Operations**
+   ```bash
+   # Start container (without Gazebo)
+   ./docker/container.sh start without_gz
+
+   # Enter running container
+   ./docker/container.sh enter
+
+   # Stop container
+   ./docker/container.sh stop
+   ```
+
+## Docker Command Guide
+
+The `container.sh` script provides easy container management:
+
+### Available Commands
+- `help`: Display help message
+- `start [with_gz|without_gz]`: Start container
+  - `with_gz`: Include Gazebo support
+  - `without_gz`: Exclude Gazebo support
+- `enter`: Enter running container
+- `stop`: Stop container
+
+### Usage Examples
 ```bash
-./docker/container.sh enter # Enter the running Docker container
-```
-
-### Docker Command Guide
-
-This script (`container.sh`) helps you easily manage Docker containers, including starting, entering, and stopping them.
-
-#### Usage
-
-```bash
-./container.sh [command] [options]
-```
-
-#### Commands
-
-- `help`
-  Displays this help message.
-
-- `start [with_gz|without_gz]`
-  Starts the container with or without Gazebo support.
-  - `with_gz`: Includes Gazebo support
-  - `without_gz`: Excludes Gazebo support
-
-- `enter`
-  Enters the running container.
-
-- `stop`
-  Stops the container.
-
-#### Examples
-
-```bash
-./container.sh help                 # Show this help message
-./container.sh start with_gz        # Start container with Gazebo support
-./container.sh start without_gz     # Start container without Gazebo support
-./container.sh enter                # Enter the running container
-./container.sh stop                 # Stop the container
+./container.sh help                 # Show help
+./container.sh start with_gz        # Start with Gazebo
+./container.sh start without_gz     # Start without Gazebo
+./container.sh enter                # Enter container
+./container.sh stop                 # Stop container
 ```

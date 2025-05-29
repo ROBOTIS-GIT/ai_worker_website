@@ -42,8 +42,9 @@ bringup
 ### Open a new terminal and navigate to the `lerobot` directory:
 
 ```bash
-container
-cd /root/colcon_ws/src/physical_ai_tools/lerobot
+cd ai_worker
+./docker/container.sh enter
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 ### Run the following command to start recording your Hugging Face dataset:

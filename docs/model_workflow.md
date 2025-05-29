@@ -12,7 +12,7 @@ Open a new terminal and navigate to the `lerobot` directory:
 
 ```bash
 container
-cd /root/colcon_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 Then run the following command:
@@ -93,7 +93,7 @@ Open a new terminal and navigate to the lerobot directory:
 
 ```bash
 container
-cd /root/colcon_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 Then run the following command to evaluate your trained policy:

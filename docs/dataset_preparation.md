@@ -44,7 +44,9 @@ bringup
 
   <img src="/imitation_learning/web_ui_topic_selection.png" alt="Web UI Topic Selection" style="width: 50%; ">
 
-  4. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button.
+  4. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button. Once selected, the image stream will appear as shown below:
+
+  <img src="/imitation_learning/web_ui_after_topic_selection.png" alt="Web UI" style="width: 100%; ">
 
 ### 4. Open a new terminal and navigate to the `lerobot` directory:
 

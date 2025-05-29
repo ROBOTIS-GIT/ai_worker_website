@@ -4,6 +4,8 @@
 
 ### Authenticate with Hugging Face
 
+> **Note:** If you do not wish to use Hugging Face, you may skip this step. Instructions for preparing the dataset without Hugging Face will be provided in the following sections.
+
 To create a Hugging Face dataset, you first need to log in using a **write access token**, which can be generated from your [Hugging Face settings](https://huggingface.co/settings/tokens):
 
 ```bash
@@ -13,40 +15,49 @@ huggingface-cli login --token ${HUGGINGFACE_TOKEN} --add-to-git-credential
 Store your Hugging Face username in a variable:
 
 ```bash
-HF_USER=$(huggingface-cli whoami | head -n 1)
+export HF_USER=$(huggingface-cli whoami | head -n 1)
 echo $HF_USER
 ```
 
 ## Record Your Datasets
 
-### Launch the ROS 2 teleoperation node:
-
+### 1. Open a terminal and run Docker container:
 ```bash
-container
+cd ai_worker
+./docker/container.sh enter
+```
+
+### 2. Launch the ROS 2 teleoperation node inside the Docker container:
+```bash
 bringup
 ```
-### Visualize RGB images from the head-mounted Mini-ZED and the wrist-mounted Intel RealSense cameras.
 
-1. You can find the AI Worker's serial number in the `~/.serial_number` file. This value is used as the device's hostname.
+### 3. Visualize RGB images from the cameras:
 
-2. You will see the web UI once you open `http://{hostname}` in your web browser as shown below.
+  1. You can find the AI Worker's serial number in the `~/.serial_number` file. This serial number also serves as the device's `hostname`, which you'll use to access the web interface.
 
-<img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
+  2. Open your web browser and go to `http://{hostname}`, replacing `{hostname}` with the serial number you found in step 1. You should then see the web UI, as shown below.
 
-3. Click the '+' button to open a pop-up where you can select a camera image topic as shown below:
+  <img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
 
-<img src="/imitation_learning/web_ui_topic_selection.png" alt="Web UI Topic Selection" style="width: 50%; ">
+  3. Click the '+' button to open a pop-up where you can select a camera image topic as shown below:
 
-4. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button.
+  <img src="/imitation_learning/web_ui_topic_selection.png" alt="Web UI Topic Selection" style="width: 50%; ">
 
-### Open a new terminal and navigate to the `lerobot` directory:
+  4. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button.
+
+### 4. Open a new terminal and navigate to the `lerobot` directory:
 
 ```bash
-container
+cd ai_worker
+./docker/container.sh enter
+```
+
+```bash
 cd /root/colcon_ws/src/physical_ai_tools/lerobot
 ```
 
-### Run the following command to start recording your Hugging Face dataset:
+### 5. Run the following command to start recording your Hugging Face dataset:
 
 ```bash
 python lerobot/scripts/control_robot.py \
@@ -66,10 +77,10 @@ python lerobot/scripts/control_robot.py \
 
 ::: tip
 - Make sure to replace `${HF_USER}` with your actual Hugging Face username.
-- To save the dataset locally without uploading to the Hugging Face Hub, set `--control.push_to_hub=false`.
+- To save the dataset locally without uploading to the Hugging Face Hub, set `--control.push_to_hub=false`. This option is essential if you choose not to use Hugging Face.
 :::
 
-### Key Parameters to Customize
+#### Key Parameters to Customize
 
 To create your own dataset, here are some important parameters you may want to adjust:
 

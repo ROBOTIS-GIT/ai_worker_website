@@ -8,14 +8,19 @@ After [preparing your dataset](/dataset_preparation), you can train a policy usi
 
 ### Training on NVIDIA Jetson AGX Orin
 
-Open a new terminal and navigate to the `lerobot` directory:
+#### 1. Open a new terminal and enter the Docker container:
+```bash
+cd ai_worker
+./docker/container.sh enter
+```
+
+#### 2. Navigate to the lerobot directory inside the Docker container:
 
 ```bash
-container
 cd /root/colcon_ws/src/physical_ai_tools/lerobot
 ```
 
-Then run the following command:
+#### 3. Run the training script with the following command:
 
 ```bash
 python lerobot/scripts/train.py \
@@ -28,7 +33,7 @@ python lerobot/scripts/train.py \
   --save_freq=1000
 ```
 
-### Key Training Parameters
+##### Key Training Parameters
 
 | Parameter | Description |
 |-----------|-------------|
@@ -40,11 +45,7 @@ python lerobot/scripts/train.py \
 | `--log_freq` | How often to log training statistics (in iterations) |
 | `--save_freq` | How often to save model checkpoints (in iterations) |
 
-### Training on Your PC
-
-First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally. Once installed, you can train the policy using the same command as above.
-
-### Expected Training Output
+##### Expected Training Output
 
 During training, you'll see output like this:
 
@@ -61,9 +62,24 @@ INFO 2025-05-28 12:13:48 ts/train.py:232 step:2K smpl:14K ep:29 epch:1.47 loss:1
 ...
 ```
 
+### Training on Your PC
+
+First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally. Once installed, you can train the policy using the same command as above.
+
+```bash
+python lerobot/scripts/train.py \
+  --dataset.repo_id=${HF_USER}/ffw_test \
+  --policy.type=act \
+  --output_dir=outputs/train/act_ffw_test \
+  --job_name=act_ffw_test \
+  --policy.device=cuda \
+  --log_freq=100 \
+  --save_freq=1000
+```
+
 Training time depends on your hardware and dataset size, but typically ranges from a few hours to a day.
 
-### (Optional) Uploading Checkpoints to Hugging Face
+#### (Optional) Uploading Checkpoints to Hugging Face
 
 To upload the latest trained checkpoint to the Hugging Face Hub:
 
@@ -78,26 +94,29 @@ This makes your model accessible from anywhere and simplifies deployment.
 
 Once your model is trained, you can deploy it on the AI Worker for inference.
 
-### 1. Launch the ROS 2 Follower
-
-First, launch the robot follower node:
-
+### 1. Open a terminal and run Docker container:
 ```bash
-container
+cd ai_worker
+./docker/container.sh enter
+```
+
+### 2. Launch the ROS 2 Follower inside the Docker container:
+```bash
 follower
 ```
 
-### 2. Run Model Inference
-
-Open a new terminal and navigate to the lerobot directory:
-
+### 3. Open a new terminal and run Docker container:
 ```bash
-container
+cd ai_worker
+./docker/container.sh enter
+```
+
+### 4. Navigate to the lerobot directory inside the Docker container:
+```bash
 cd /root/colcon_ws/src/physical_ai_tools/lerobot
 ```
 
-Then run the following command to evaluate your trained policy:
-
+### 5. Run the following command to evaluate your trained policy:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=ffw \
@@ -114,7 +133,7 @@ python lerobot/scripts/control_robot.py \
   --control.play_sounds=false
 ```
 
-### Key Inference Parameters
+#### Key Inference Parameters
 
 | Parameter | Description |
 |-----------|-------------|
@@ -123,7 +142,7 @@ python lerobot/scripts/control_robot.py \
 | `--control.episode_time_s` | Duration of each inference episode (in seconds) |
 | `--control.repo_id` | Where to save evaluation results (different from training dataset) |
 
-### Visualizing Inference Results
+## Visualizing Inference Results
 
 After running inference, you can visualize the results using the same visualization tool used for datasets:
 

@@ -4,7 +4,7 @@
 
 ### Authenticate with Hugging Face
 
-> **Note:** If you do not wish to use Hugging Face, you may skip this step. Instructions for preparing the dataset without Hugging Face will be provided in the following sections.
+> **Note:** If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
 
 To create a Hugging Face dataset, you first need to log in using a **write access token**, which can be generated from your [Hugging Face settings](https://huggingface.co/settings/tokens):
 
@@ -21,7 +21,19 @@ echo $HF_USER
 You should see an output similar to the following:
 
 ```
-YourHFTokken
+YourUserName
+```
+### Prerequisite without Hugging Face
+
+If you do not intend to use the Hugging Face Hub, you can still define a placeholder username for local dataset handling:
+```bash
+export HF_USER=AnyNameYouWant
+echo $HF_USER
+```
+You should see an output like:
+
+```
+AnyNameYouWant
 ```
 
 ## Record Your Datasets

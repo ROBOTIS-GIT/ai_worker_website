@@ -4,7 +4,9 @@ This guide explains the process of training and deploying imitation learning mod
 
 ## Model Training
 
-After [preparing your dataset](/dataset_preparation), you can train a policy using either your local PC or an NVIDIA Jetson AGX Orin device.
+> **Note:** You can train a policy using either your local PC or an NVIDIA Jetson AGX Orin device
+
+After [preparing your dataset](/dataset_preparation), you can proceed to train the policy model.
 
 ### Training on NVIDIA Jetson AGX Orin
 

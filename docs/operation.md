@@ -35,7 +35,7 @@ ros2 launch ffw_bringup ffw_bg2_ai.launch.py
 ```
 or use the shortcut command:
 ```bash
-bringup
+ffw_bg2_ai
 ```
 
 ### Option 2: Separate Launches
@@ -48,7 +48,7 @@ If you want to run the `Leader` and `Follower` separately in different terminals
    ```
    or use the shortcut:
    ```bash
-   leader
+   ffw_lg2_leader_ai
    ```
 
 2. **Launch the teleoperation `Follower`**:
@@ -57,7 +57,7 @@ If you want to run the `Leader` and `Follower` separately in different terminals
    ```
    or use the shortcut:
    ```bash
-   follower
+   ffw_bg2_follower_ai
    ```
 
 If you want to run the system without launching the cameras, you can set the `launch_cameras` parameter to `false`:

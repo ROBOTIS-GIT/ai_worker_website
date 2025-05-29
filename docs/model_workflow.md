@@ -11,7 +11,8 @@ After [preparing your dataset](/dataset_preparation), you can train a policy usi
 Open a new terminal and navigate to the `lerobot` directory:
 
 ```bash
-container
+cd ai_worker
+./docker/container.sh enter
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
@@ -83,8 +84,9 @@ Once your model is trained, you can deploy it on the AI Worker for inference.
 First, launch the robot follower node:
 
 ```bash
-container
-follower
+cd ai_worker
+./docker/container.sh enter
+ffw_bg2_follower_ai
 ```
 
 ### 2. Run Model Inference
@@ -92,7 +94,8 @@ follower
 Open a new terminal and navigate to the lerobot directory:
 
 ```bash
-container
+cd ai_worker
+./docker/container.sh enter
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 

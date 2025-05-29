@@ -22,7 +22,8 @@ echo $HF_USER
 ### Launch the ROS 2 teleoperation node:
 
 ```bash
-container
+cd ai_worker
+./docker/container.sh enter
 bringup
 ```
 ### Visualize RGB images from the head-mounted Mini-ZED and the wrist-mounted Intel RealSense cameras.

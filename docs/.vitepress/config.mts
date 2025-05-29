@@ -19,7 +19,7 @@ export default defineConfig({
     ['meta', { property: 'og:image', content: ogImage }],
     [
       'script',
-      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-1ZL2D7EBQB' }
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=GTM-P7L347G7' }
     ],
     [
       'script',
@@ -27,7 +27,7 @@ export default defineConfig({
       `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-1ZL2D7EBQB');`
+      gtag('config', 'GTM-P7L347G7');`
     ]
   ],
   themeConfig: {
@@ -93,18 +93,19 @@ export default defineConfig({
         ]
       },
       {
-        text: 'OpenSource & Community',
+        text: 'Resources',
         items: [
-          { text: 'OpenSource', link: '/opensource' },
-          { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
+          { text: 'Open Source', link: '/opensource' },
+          { text: 'Release Notes', link: '/release_notes'},
         ]
       },
       {
           text: 'Support',
           items: [
-            { text: 'Contact Us', link: '/contact' },
+            { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
             { text: 'Issues', link: '/issues' },
-            { text: 'FAQ', link: '/faq' }
+            { text: 'FAQ', link: '/faq' },
+            { text: 'Contact Us', link: '/contact' },
           ]
         }
     ],

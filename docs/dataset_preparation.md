@@ -18,10 +18,15 @@ Store your Hugging Face username in a variable:
 export HF_USER=$(huggingface-cli whoami | head -n 1)
 echo $HF_USER
 ```
+You should see an output similar to the following:
+
+```
+YourHFTokken
+```
 
 ## Record Your Datasets
 
-### 1. Open a terminal and run Docker container:
+### 1. Open a terminal and start the Docker container:
 ```bash
 cd ai_worker
 ./docker/container.sh enter
@@ -34,9 +39,22 @@ bringup
 
 ### 3. Visualize RGB images from the cameras:
 
-  1. You can find the AI Worker's serial number in the `~/.serial_number` file. This serial number also serves as the device's `hostname`, which you'll use to access the web interface.
+  a. You can find the AI Worker's serial number with the following command. 
 
-  2. Open your web browser and go to `http://ffw-{hostname}.local`, replacing `{hostname}` with the serial number you found in step 1. For example, if the serial number is `12345`, the address becomes `http://ffw-12345.local`. Once connected, you should see the web UI as shown below.
+  ```bash
+  cat ~/.serial_number
+  ```
+  An output should be like:
+  ```
+  SNPR44B9039
+  ```
+  This serial number also serves as the device's `hostname`, which you'll use to access the web interface.
+
+  b. Open your web browser and go to `http://ffw-{hostname}.local`, replacing `{hostname}` with the serial number from the previous step. 
+  
+  In this example, the address becomes `http://ffw-SNPR44B9039.local`. 
+  
+  Once connected, you should see the web UI as shown below.
 
   <img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
 

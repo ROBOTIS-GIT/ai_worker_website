@@ -36,7 +36,7 @@ bringup
 
   1. You can find the AI Worker's serial number in the `~/.serial_number` file. This serial number also serves as the device's `hostname`, which you'll use to access the web interface.
 
-  2. Open your web browser and go to `http://{hostname}`, replacing `{hostname}` with the serial number you found in step 1. You should then see the web UI, as shown below.
+  2. Open your web browser and go to `http://ffw-{hostname}.local`, replacing `{hostname}` with the serial number you found in step 1. You should then see the web UI, as shown below.
 
   <img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
 

@@ -19,7 +19,7 @@ cd ai_worker
 #### 2. Navigate to the lerobot directory inside the Docker container:
 
 ```bash
-cd /root/colcon_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 #### 3. Run the training script with the following command:
@@ -112,7 +112,7 @@ cd ai_worker
 
 ### 2. Launch the ROS 2 Follower inside the Docker container:
 ```bash
-follower
+ffw_bg2_follower_ai
 ```
 
 ### 3. Open a new terminal and run Docker container:

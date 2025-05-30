@@ -4,7 +4,7 @@ This guide explains the process of training and deploying imitation learning mod
 
 ## Model Training
 
-> **Note:** You can train a policy using either your local PC or an NVIDIA Jetson AGX Orin device
+> **Note:** You can train the policy either on your local PC or on an NVIDIA Jetson AGX Orin device.
 
 After [preparing your dataset](/dataset_preparation), you can proceed to train the policy model.
 
@@ -22,7 +22,7 @@ cd ai_worker
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
-#### 3. Run the training script with the following command:
+#### 3. Run the training script using the following command:
 
 ```bash
 python lerobot/scripts/train.py \
@@ -49,7 +49,7 @@ python lerobot/scripts/train.py \
 
 ##### Expected Training Output
 
-During training, you'll see output like this:
+During training, you will see output like this:
 
 ```
 INFO 2025-05-28 12:12:40 ts/train.py:232 step:200 smpl:2K ep:3 epch:0.16 loss:7.490 grdn:154.502 lr:1.0e-05 updt_s:0.047 data_s:0.002
@@ -70,8 +70,9 @@ INFO 2025-05-28 12:13:48 ts/train.py:232 step:2K smpl:14K ep:29 epch:1.47 loss:1
 
 #### 2. Transfer your dataset directory using scp:
 
+> **Note:** Replace `${HF_USER}` with your Hugging Face username and `ffw_test` with your actual dataset repository ID.
 ```bash
-scp -r /home/robotis/Desktop/ai_worker/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
+scp -r ~/ai_worker/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
 ```
 
 #### 3. You can train the policy using the same command as above:
@@ -87,7 +88,7 @@ python lerobot/scripts/train.py \
   --save_freq=1000
 ```
 
-Training time depends on your hardware and dataset size, but typically ranges from a few hours to a day.
+Training time depends on your hardware and dataset size, but typically ranges from several hours to a full day.
 
 #### (Optional) Uploading Checkpoints to Hugging Face
 
@@ -128,7 +129,7 @@ cd ai_worker
 
 ### 5. Navigate to the lerobot directory inside the Docker container:
 ```bash
-cd /root/colcon_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 ### 6. Run the following command to evaluate your trained policy:
@@ -155,7 +156,7 @@ python lerobot/scripts/control_robot.py \
 | `--control.type=record` | Records the policy performance for later evaluation |
 | `--control.policy.path` | Path to your trained model checkpoint |
 | `--control.episode_time_s` | Duration of each inference episode (in seconds) |
-| `--control.repo_id` | Where to save evaluation results (different from training dataset) |
+| `--control.repo_id` | Hugging Face repo where evaluation results will be saved |
 
 ## Visualizing Inference Results
 

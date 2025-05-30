@@ -21,8 +21,6 @@ ffw_bg2_ai
 
   In this example, the serial number is `SNPR48A0000`.
 
-  This serial number serves as the device's hostname, which you'll use to access the web interface.
-
   b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step. 
   
   In this example, the address becomes `http://ffw-SNPR48A0000.local`.
@@ -130,7 +128,7 @@ To create your own dataset, here are some important parameters you may want to a
 | Parameter                  | Description | Example |
 |----------------------------|-------------|---------|
 | `--control.repo_id`        | The Hugging Face dataset repository ID in the format `<username>/<dataset_name>` | `username/ffw_pick_place` |
-| `--control.single_task`    | The name of the task you're performing | "pick and place objects" |
+| `--control.single_task`    | The name of the task you are performing | "pick and place objects" |
 | `--control.fps`            | Frame rate for dataset recording | 15 (recommended) |
 | `--control.episode_time_s` | Duration (in seconds) to record each episode | 30-60 for simple tasks |
 | `--control.reset_time_s`   | Time allocated (in seconds) for resetting between episodes | 10-20 seconds |

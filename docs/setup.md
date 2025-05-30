@@ -29,7 +29,7 @@ The software setup instructions below are intended for development on a `user PC
 
 ### Prerequisites
 - **Operating System**: Ubuntu environment<br>
-(The AI WORKER software runs inside a Docker container based on `Ubuntu 24.04 (Jazzy)`. Therefore, the Ubuntu version of the user PC does not need to match and is not critical.)
+(The AI WORKER software runs inside a Docker container based on `Ubuntu 24.04 (ROS 2 Jazzy)`. Therefore, the Ubuntu version of the user PC does not need to match and is not critical.)
 - **Container Engine**: Docker Engine
   - Follow the [official Docker installation guide](https://docs.docker.com/engine/install/ubuntu/)
   - Complete the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
@@ -58,7 +58,7 @@ The software setup instructions below are intended for development on a `user PC
 
 #### 1. USB Serial Setup
 1. **Prepare Configuration**
-   - Obtain the provided serial data
+   - Obtain the provided USB serial information
    - Create a new udev rule file:
      ```bash
      sudo nano /etc/udev/rules.d/99-ai-worker.rules
@@ -143,7 +143,7 @@ The `container.sh` script provides easy container management:
 ```
 
 ## Accessing the Robot PC via SSH
-AI WORKER supports mDNS, allowing you to connect without manually checking the IP address.
+AI Worker supports mDNS, allowing you to connect without manually checking the IP address.
 
 1. Connect the SBC (robot PC) to the same network as your user PC using a LAN cable.
 

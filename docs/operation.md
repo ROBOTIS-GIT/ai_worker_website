@@ -5,8 +5,7 @@ This guide explains how to set up and operate the AI Worker using teleoperation.
 ## Prerequisites
 
 Before starting teleoperation, make sure:
-- The AI Worker is properly set up and powered on
-- The Docker environment is running
+- The follower(AI Worker) is properly set up and powered on
 
 ### Steps for Teleoperation Setup (Leader)
 (*The term `Leader` refers to the control device in the AI WORKER system)
@@ -26,9 +25,26 @@ Before starting teleoperation, make sure:
 ## Running Teleoperation
 The following teleoperation commands are executed on the `robot PC`.
 You can either connect a keyboard and mouse directly to the Nvidia Orin, or access it via SSH (see the Setup Guide for instructions).<br>
-⚠️While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
+
+If no containers are running when you execute `docker ps -a` on the robot PC,
+start the container using:
+
+```bash
+cd ai_worker
+```
+
+```bash
+./docker/container.sh start without_gz
+```
+
+If a container is already running, enter the **ai\_worker** Docker container with:
+
+```bash
+./docker/container.sh enter
+```
 
 ### Option 1: All-in-One Launch
+⚠️While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
 
 To start both the `Leader` and `Follower` simultaneously:
 
@@ -72,6 +88,8 @@ If you want to run the system without launching the cameras, you can set the `la
 1. Once both systems are running, the `Follower` will begin to mirror your movements.
 2. Start with slow, gentle movements to get familiar with the response.
 3. The grip buttons on the `Leader` control the gripper actions on the `Follower`.
+4. The `right joystick` controls the up and down motion of the `lift`,
+while the `left joystick` controls the`head` section of the robot.
 
 ## Stopping Teleoperation
 

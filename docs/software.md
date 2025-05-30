@@ -90,38 +90,48 @@ By default, all joints operate in **position mode**.
 
 The last joint in each arm controller corresponds to the **gripper**.
 
-## Controller YAML Example ([link](https://github.com/ROBOTIS-GIT/ai_worker/blob/main/ffw_bringup/config/follower_with_rh_hardware_controller.yaml))
+## Controller YAML Example ([link](https://github.com/ROBOTIS-GIT/ai_worker/blob/main/ffw_bringup/config/ffw_bg2_rev4_follower/ffw_bg2_follower_ai_hardware_controller.yaml))
 
 ```yaml
-controller_manager:
-  ros__parameters:
-    update_rate: 100
-    arm_l_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-    arm_r_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-    head_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-    lift_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-    joint_state_broadcaster:
-      type: joint_state_broadcaster/JointStateBroadcaster
+/**:
+  controller_manager:
+    ros__parameters:
+      use_sim_time: False
+      update_rate: 100  # Hz
 
-arm_l_controller:
-  ros__parameters:
-    joints:
-      - arm_l_joint1
-      - arm_l_joint2
-      - arm_l_joint3
-      - arm_l_joint4
-      - arm_l_joint5
-      - arm_l_joint6
-      - arm_l_joint7
-      - gripper_l_joint1  # left gripper
-    command_interfaces: [position]
-    state_interfaces: [position, velocity]
-    allow_nonzero_velocity_at_trajectory_end: true
+      arm_l_controller:
+        type: joint_trajectory_controller/JointTrajectoryController
 
+      arm_r_controller:
+        type: joint_trajectory_controller/JointTrajectoryController
+
+      head_controller:
+        type: joint_trajectory_controller/JointTrajectoryController
+
+      lift_controller:
+        type: joint_trajectory_controller/JointTrajectoryController
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+/**:
+  arm_l_controller:
+    ros__parameters:
+      joints:
+        - arm_l_joint1
+        - arm_l_joint2
+        - arm_l_joint3
+        - arm_l_joint4
+        - arm_l_joint5
+        - arm_l_joint6
+        - arm_l_joint7
+        - gripper_l_joint1
+      command_interfaces:
+        - position
+      state_interfaces:
+        - position
+        - velocity
+      allow_nonzero_velocity_at_trajectory_end: true
 ```
 
 ## Debugging & Visualization Tools

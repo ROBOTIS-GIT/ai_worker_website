@@ -66,7 +66,7 @@ INFO 2025-05-28 12:13:48 ts/train.py:232 step:2K smpl:14K ep:29 epch:1.47 loss:1
 
 ### Training on Your PC
 
-#### 1. First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally. 
+#### 1. First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally.
 
 #### 2. Transfer your dataset directory using scp:
 
@@ -108,6 +108,10 @@ Once your model is trained, you can deploy it on the AI Worker for inference.
 ### 1. Change file ownership (on the host machine, not inside the Docker container):
 ```bash
 sudo chown -R robotis ./
+```
+Move your model folder to the model folder on the robot PC.
+```bash
+scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/ai_worker/docker/lerobot/outputs/train
 ```
 
 ### 2. Open a terminal and run Docker container:
@@ -164,10 +168,12 @@ After running inference, you can visualize the results using the same visualizat
 
 ```bash
 python lerobot/scripts/visualize_dataset_html.py \
+  --host 0.0.0.0 \
+  --port 9091 \
   --repo-id ${HF_USER}/eval_ffw_test
 ```
 
-Then open [http://127.0.0.1:9090](http://127.0.0.1:9090) in your browser to see how your model performed.
+Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see how your model performed.
 
 ## Troubleshooting
 

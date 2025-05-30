@@ -1,7 +1,8 @@
 # Dataset Preparation
 
 ## Record Your Datasets
-
+Access the `Robot PC` either directly or via SSH, and follow the steps below.
+(Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 ### 1. Open a terminal and start the Docker container:
 ```bash
 cd ai_worker
@@ -16,15 +17,13 @@ ffw_bg2_ai
 ### 3. Visualize RGB images from the cameras (on the host machine, not inside the Docker container):
 
   a. Check the AI Worker's serial number
-  
-  Refer to the [Setup Guide](/setup) to find the AI Worker's serial number. 
 
   In this example, the serial number is `SNPR48A0000`.
 
-  b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step. 
-  
+  b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
+
   In this example, the address becomes `http://ffw-SNPR48A0000.local`.
-  
+
   Once connected, you should see the web UI as shown below.
 
   <img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
@@ -98,6 +97,9 @@ AnyNameYouWant
 :::
 
 ### 6. Run the following command to start recording your Hugging Face dataset:
+```bash
+cd ~/physical_ai_tools/lerobot/
+```
 
 ```bash
 python lerobot/scripts/control_robot.py \
@@ -117,8 +119,8 @@ python lerobot/scripts/control_robot.py \
 
 ::: tip
 - To save the dataset locally without uploading to the Hugging Face Hub, set `--control.push_to_hub=false`. This option is essential if you choose not to use Hugging Face.
-- If you are controlling the robot remotely via VSCode or SSH, the arrow keys may not work during data recording due to a pynput limitation. In this case, it's recommended to set --control.episode_time_s=30 and --control.reset_time_s=10 appropriately. 
-- To use the arrow keys for teleoperation, connect a monitor and keyboard directly to the robot.
+- If you are controlling the robot remotely via VSCode or SSH, the `arrow keys` may not work during data recording due to a pynput limitation. In this case, it's recommended to set --control.episode_time_s and --control.reset_time_s appropriately.
+- To use the `arrow keys` for teleoperation, connect a monitor and keyboard directly to the robot (Right arrow key: Save immediately, Left arrow key: Cancel).
 :::
 
 #### Key Parameters to Customize
@@ -136,12 +138,21 @@ To create your own dataset, here are some important parameters you may want to a
 
 Of course, you can modify additional parameters as needed to fit your specific use case.
 
+The dataset is located at:
+
+`~/ai_worker/docker/huggingface/lerobot/`
+
 ## Dataset Visualization
 
 Once data collection is complete, you can preview and inspect your recorded dataset using the following command:
+```bash
+cd ~/physical_ai_tools/lerobot/
+```
 
 ```bash
 python lerobot/scripts/visualize_dataset_html.py \
+  --host 0.0.0.0 \
+  --port 9091 \
   --repo-id ${HF_USER}/ffw_test
 ```
 
@@ -156,10 +167,10 @@ INFO 2025-05-15 16:18:07 set_html.py:364 Output directory already exists. Loadin
  * Serving Flask app 'visualize_dataset_html'
  * Debug mode: off
 INFO 2025-05-15 16:18:07 _internal.py:97 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on http://127.0.0.1:9090
+ * Running on http://127.0.0.1:9091
 INFO 2025-05-15 16:18:07 _internal.py:97 Press CTRL+C to quit
 ```
 
 ::: tip
-Once the server is running, open [http://127.0.0.1:9090](http://127.0.0.1:9090) in your browser to preview the dataset.
+Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to preview the dataset.
 :::

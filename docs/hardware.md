@@ -32,7 +32,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Operating time              | Up to 8 hours                          | Continuous operation<br>(AC powered via SMPS)|
 | Ambient Operating Temperature | 0 ~ 40℃                             | 0 ~ 40℃                                |
 | Exterior Materials          | Aluminum, Plastic                      | Aluminum, Plastic                      |
-| Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU        | RGBD Camera x 3                        |
+| Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU<br>(see [Camera Specification](#camera-specification))| RGBD Camera x 3<br>(see [Camera Specification](#camera-specification))|
 | Host Interface              | Ethernet<br>(Wi-Fi router up to 1Gbps)    | Ethernet<br>(Direct connection to host PC)|
 | Internal Communications     | RS-485                                 | RS-485                                 |
 | Communication Baudrate      | 4 Mbps                                 | 4 Mbps                                 |
@@ -61,16 +61,50 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
     </div>
 </div>
 
+
+
 | Properties               | Specification (FFW-LG2)                 | Specification (FFW-LH5)                |
 |--------------------------|-----------------------------------------|----------------------------------------|
-| Dimensions               | TBD (WxDxH, mm)<br>TBD (WxDxH, inch)    | TBD (WxDxH, mm)<br>TBD (WxDxH, inch)   |
-| Weight                   | TBD kg (TBD lb)                         | TBD kg (TBD lb)                        |
+| Dimensions (WxDxH)       | 598x146x705 (mm)<br>23.5x5.7x27.8 (inch)| 597x211x842 (mm)<br>23.5x8.3x33.2 (inch)|
+| Weight                   | 3 kg (6.6 lb)                           | 3 kg (6.6 lb)                          |
 | Actuator                 | Joint 1~7: DYNAMIXEL-X                  | Joint 1~7: DYNAMIXEL-X                 |
 | Degrees of Freedom       | - Total: 22 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- JoyStick: 3 DOF x 2 | - Total: 60 DOF<br>- Arm: 7 DOF x 2<br>- Hand: 20 DOF x 2<br>- JoyStick: 3 DOF x 2 |
 | Exterior Materials       | Aluminum, Plastic                       | Aluminum, Plastic                      |
 | Internal Communications  | RS-485                                  | RS-485                                 |
 | Communication Baudrate   | 4 Mbps                                  | 4 Mbps                                 |
 | Software                 | ROS 2 Support, Python, C++              | ROS 2 Support, Python, C++             |
+
+## Camera Specification
+
+The AI Worker utilizes a multi-camera system for robust perception and manipulation capabilities.
+
+### Head Camera: Stereolabs ZED Mini
+
+A ZED Mini camera is mounted on the head for wide-area environmental understanding and navigation.
+
+| Feature           | Specification                                      |
+|-------------------|----------------------------------------------------|
+| Model Name        | Stereolabs ZED Mini                                |
+| Type              | Stereoscopic RGBD with 6DoF IMU                    |
+| Key Use           | Wide-angle depth perception, SLAM, obstacle avoidance |
+| Field of View     | 102°(H) x 57°(V)                                   |
+| Max Resolution    | 2208 x 1242                                        |
+| Depth Range       | 0.1m to 9m (3.9inch to 354.3inch)                  |
+| More Information  | [Stereolabs ZED Mini Details](https://www.stereolabs.com/store/products/zed-mini) |
+
+### Hand Cameras: Intel RealSense D405 (x2)
+
+Two Intel RealSense D405 cameras are integrated into the robot's hands/grippers, providing precise, short-range depth data for manipulation tasks.
+
+| Feature           | Specification                                      |
+|-------------------|----------------------------------------------------|
+| Model Name        | Intel RealSense D405                               |
+| Type              | Stereoscopic RGBD                                  |
+| Key Use           | Close-range depth sensing for grasping & manipulation |
+| Field of View     | 87°(H) × 58°(V)                                    |
+| Max Resolution    | 1280 x 720                                         |
+| Depth Range       | 7cm to 50cm (2.7inch to 19.6inch)                  |
+| More Information  | [Intel RealSense D405 Details](https://www.intelrealsense.com/depth-camera-d405/) |
 
 ## Gripper Specification
 ![model_rh_p12_rn](/specifications/model_rh_p12_rn.png)
@@ -159,6 +193,16 @@ For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS D
 ### FFW-BG2
 <a href="/specifications/dimension_ffw_bg2.png" target="_blank">
   <img src="/specifications/dimension_ffw_bg2.png" alt="Dimensions" width="100%">
+</a>
+
+### FFW-LG2
+<a href="/specifications/dimension_ffw_lg2.png" target="_blank">
+  <img src="/specifications/dimension_ffw_lg2.png" alt="Dimensions" width="100%">
+</a>
+
+### FFW-LH5
+<a href="/specifications/dimension_ffw_lh5.png" target="_blank">
+  <img src="/specifications/dimension_ffw_lh5.png" alt="Dimensions" width="100%">
 </a>
 
 ## Workspace

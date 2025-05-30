@@ -56,25 +56,7 @@ The software setup instructions below are intended for development on a `user PC
 ---
 ### Configuration
 
-#### 1. USB Serial Setup
-1. **Prepare Configuration**
-   - Obtain the provided USB serial information
-   - Create a new udev rule file:
-     ```bash
-     sudo nano /etc/udev/rules.d/99-ai-worker.rules
-     ```
-   - Paste the serial data into the file
-   - Save and exit the editor
-
-2. **Apply Configuration**
-   ```bash
-   sudo udevadm control --reload
-   sudo udevadm trigger
-   ```
-
-#### 2. Docker Environment
-
-#### Volume Management
+#### Docker Volume Management
 The Docker container uses the following volume mappings for data persistence and hardware access:
 
 ```yaml

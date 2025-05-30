@@ -71,7 +71,7 @@ INFO 2025-05-28 12:13:48 ts/train.py:232 step:2K smpl:14K ep:29 epch:1.47 loss:1
 #### 2. Transfer your dataset directory using scp:
 
 ```bash
-scp -r huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
+scp -r /home/robotis/Desktop/ai_worker/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
 ```
 
 #### 3. You can train the policy using the same command as above:

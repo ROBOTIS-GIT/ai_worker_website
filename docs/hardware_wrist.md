@@ -19,9 +19,9 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 |-----------------------------|----------------------------------------|----------------------------------------|
 | Dimensions (WxDxH)          | 604x602x1,623 (mm)<br>23.8x23.7x63.8 (inch)| 604x564x1,607 (mm)<br>23.8x22.2x63.2 (inch)|
 | Weight                      | 90 kg (198 lb)                         | 85 kg (187 lb)                         |
-| Actuator                    | Arm Joint 1~6: DYNAMIXEL-Y<br>Arm Joint 7: DYNAMIXEL-P<br>Head: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~6: DYNAMIXEL-Y<br>Arm Joint 7: DYNAMIXEL-P<br>Head: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details)) |
+| Actuator                    | Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~5: DYNAMIXEL-Y<br>Arm Joint 6: DYNAMIXEL-X<br>Arm Joint 7: DYNAMIXEL-P<br>Neck: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details)) |
 | Degrees of Freedom          | - Total: 25 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1<br>- Mobile: 6 DOF | - Total: 19 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1 |
-| Arm Reach                   | 641 mm (to wrist) + hand               | 641 mm (to wrist) + hand               |
+| Arm Reach                   | 630 mm (to wrist) + hand               | 630 mm (to wrist) + hand               |
 | Arm Payload                 | 1.5 kg (without Hand)                  | 1.5 kg (without Hand)                  |
 | Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
 | Joint Range                 | (see [Joint Configuration](#joint-configuration))| (see [Joint Configuration](#joint-configuration))|
@@ -80,8 +80,8 @@ The [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) is a mu
 Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under development. These hands are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future as development is completed. Please contact us for more information about upcoming dexterous hand availability.
 
 ## Joint Configuration and Nomenclature
-<a href="/specifications/joints.png" target="_blank">
-  <img src="/specifications/joints.png" alt="Dimensions" width="100%">
+<a href="/specifications/joints_wrist.png" target="_blank">
+  <img src="/specifications/joints_wrist.png" alt="Dimensions" width="100%">
 </a>
 
 | ID  | Joint Name            | Technical Name  | Range        |
@@ -91,16 +91,16 @@ Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under de
 | 3   | Right Shoulder Yaw    | arm_r_joint3    | -180° ~ 180° |
 | 4   | Right Elbow           | arm_r_joint4    | -170° ~ 65°  |
 | 5   | Right Wrist Yaw       | arm_r_joint5    | -180° ~ 180° |
-| 6   | Right Wrist Pitch     | arm_r_joint6    | -105° ~ 105° |
-| 7   | Right Wrist Roll      | arm_r_joint7    | -120° ~ 90°  |
+| 6   | Right Wrist Pitch     | arm_r_joint6    | -95° ~ 100°  |
+| 7   | Right Wrist Roll      | arm_r_joint7    | -95° ~ 130°  |
 | 8   | Right Gripper         | gripper_r_joint1| 0 ~ 107.6 mm |
 | 31  | Left Shoulder Pitch   | arm_l_joint1    | -180° ~ 180° |
 | 32  | Left Shoulder Roll    | arm_l_joint2    | -10° ~ 190°  |
 | 33  | Left Shoulder Yaw     | arm_l_joint3    | -180° ~ 180° |
 | 34  | Left Elbow            | arm_l_joint4    | -170° ~ 65°  |
 | 35  | Left Wrist Yaw        | arm_l_joint5    | -180° ~ 180° |
-| 36  | Left Wrist Pitch      | arm_l_joint6    | -105° ~ 105° |
-| 37  | Left Wrist Roll       | arm_l_joint7    | -90° ~ 120°  |
+| 36  | Left Wrist Pitch      | arm_l_joint6    | -95° ~ 100°  |
+| 37  | Left Wrist Roll       | arm_l_joint7    | -130° ~ 95°  |
 | 38  | Left Gripper          | gripper_l_joint1| 0 ~ 107.6 mm |
 | 61  | Head Pitch            | head_joint1     | -50° ~ 30°   |
 | 62  | Head Yaw              | head_joint2     | -20° ~ 20°   |
@@ -140,7 +140,8 @@ The AI Worker utilizes various DYNAMIXEL actuators, each selected for specific j
 | Joints         | DYNAMIXEL Series | DYNAMIXEL Model                                                                   |
 |----------------|------------------|-----------------------------------------------------------------------------------|
 | Arm Joints 1~3 | DYNAMIXEL-Y      | [YM080-230-R099-RH](https://emanual.robotis.com/docs/en/dxl/y/ym080-230-r099-rh/) |
-| Arm Joints 4~6 | DYNAMIXEL-Y      | [YM070-210-R099-RH](https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r099-rh/) |
+| Arm Joints 4~5 | DYNAMIXEL-Y      | [YM070-210-R099-RH](https://emanual.robotis.com/docs/en/dxl/y/ym070-210-r099-rh/) |
+| Arm Joint 6    | DYNAMIXEL-X      | [XH540-V270-R](https://emanual.robotis.com/docs/en/dxl/x/xh540-v270/)             |
 | Arm Joint 7    | DYNAMIXEL-P      | [PH42-020-S300-R](https://emanual.robotis.com/docs/en/dxl/p/ph42-020-s300-r/)     |
 | Gripper        | Robot Hands      | [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/)              |
 | Head Pitch     | DYNAMIXEL-X      | [XH540-V150-R](https://emanual.robotis.com/docs/en/dxl/x/xh540-v150/)             |
@@ -152,13 +153,13 @@ For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS D
 
 ## Dimension
 ### FFW-SG2
-<a href="/specifications/dimension_ffw_sg2.png" target="_blank">
-  <img src="/specifications/dimension_ffw_sg2.png" alt="Dimensions" width="100%">
+<a href="/specifications/dimension_ffw_sg2_wrist.png" target="_blank">
+  <img src="/specifications/dimension_ffw_sg2_wrist.png" alt="Dimensions" width="100%">
 </a>
 
 ### FFW-BG2
-<a href="/specifications/dimension_ffw_bg2.png" target="_blank">
-  <img src="/specifications/dimension_ffw_bg2.png" alt="Dimensions" width="100%">
+<a href="/specifications/dimension_ffw_bg2_wrist.png" target="_blank">
+  <img src="/specifications/dimension_ffw_bg2_wrist.png" alt="Dimensions" width="100%">
 </a>
 
 ## Workspace

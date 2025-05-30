@@ -95,6 +95,10 @@ You should see an output like:
 AnyNameYouWant
 ```
 
+::: tip
+- Make sure to replace `${HF_USER}` with your actual Hugging Face username.
+:::
+
 ### 6. Run the following command to start recording your Hugging Face dataset:
 
 ```bash
@@ -114,8 +118,9 @@ python lerobot/scripts/control_robot.py \
 ```
 
 ::: tip
-- Make sure to replace `${HF_USER}` with your actual Hugging Face username.
 - To save the dataset locally without uploading to the Hugging Face Hub, set `--control.push_to_hub=false`. This option is essential if you choose not to use Hugging Face.
+- If you are controlling the robot remotely via VSCode or SSH, the arrow keys may not work during data recording due to a pynput limitation. In this case, it's recommended to set --control.episode_time_s=30 and --control.reset_time_s=10 appropriately. 
+- To use the arrow keys for teleoperation, connect a monitor and keyboard directly to the robot.
 :::
 
 #### Key Parameters to Customize

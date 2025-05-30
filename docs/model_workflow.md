@@ -104,29 +104,34 @@ This makes your model accessible from anywhere and simplifies deployment.
 
 Once your model is trained, you can deploy it on the AI Worker for inference.
 
-### 1. Open a terminal and run Docker container:
+### 1. Change file ownership (on the host machine, not inside the Docker container):
+```bash
+sudo chown -R robotis ./
+```
+
+### 2. Open a terminal and run Docker container:
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-### 2. Launch the ROS 2 Follower inside the Docker container:
+### 3. Launch the ROS 2 Follower inside the Docker container:
 ```bash
 ffw_bg2_follower_ai
 ```
 
-### 3. Open a new terminal and run Docker container:
+### 4. Open a new terminal and run Docker container:
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-### 4. Navigate to the lerobot directory inside the Docker container:
+### 5. Navigate to the lerobot directory inside the Docker container:
 ```bash
 cd /root/colcon_ws/src/physical_ai_tools/lerobot
 ```
 
-### 5. Run the following command to evaluate your trained policy:
+### 6. Run the following command to evaluate your trained policy:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=ffw \

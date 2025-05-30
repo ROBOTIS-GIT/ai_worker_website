@@ -60,11 +60,11 @@ bringup
   ```
   SNPR44B9039
   ```
-  This serial number also serves as the device's `hostname`, which you'll use to access the web interface.
+  This serial number also serves as the device's `serial number`, which you'll use to access the web interface.
 
-  b. Open your web browser and go to `http://ffw-{hostname}.local`, replacing `{hostname}` with the serial number from the previous step. 
+  b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step. 
   
-  In this example, the address becomes `http://ffw-SNPR44B9039.local`. 
+  In this example, the address becomes `http://ffw-SNPR44B9039.local`.
   
   Once connected, you should see the web UI as shown below.
 
@@ -96,7 +96,7 @@ python lerobot/scripts/control_robot.py \
   --robot.type=ffw \
   --control.type=record \
   --control.single_task="pick and place objects" \
-  --control.fps=30 \
+  --control.fps=15 \
   --control.repo_id=${HF_USER}/ffw_test \
   --control.tags='["tutorial"]' \
   --control.warmup_time_s=5 \

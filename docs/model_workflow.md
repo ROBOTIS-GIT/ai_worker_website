@@ -124,7 +124,7 @@ python lerobot/scripts/control_robot.py \
   --robot.type=ffw \
   --control.type=record \
   --control.single_task="pick and place objects" \
-  --control.fps=30 \
+  --control.fps=15 \
   --control.repo_id=${HF_USER}/eval_ffw_test \
   --control.tags='["tutorial"]' \
   --control.episode_time_s=20 \

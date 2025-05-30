@@ -7,24 +7,26 @@ This guide explains how to set up and operate the AI Worker using teleoperation.
 Before starting teleoperation, make sure:
 - The AI Worker is properly set up and powered on
 - The Docker environment is running
-- You have enough space for comfortable movement
 
-## Preparation
+### Steps for Teleoperation Setup (Leader)
+(*The term `Leader` refers to the control device in the AI WORKER system)
+![Back of the Leader](/quick_start_guide/back_of_the_leader.png)
+1. `Power Cable`: Connect the power adapter to supply power to the U2D2 device.
+2. `U2D2 ON/OFF`: This switch is located inside a small recessed hole. The device is turned on when the inner white-dotted button is pressed.
+3. `USB Cable`: Connect a USB cable from the U2D2 to one of the USB ports on the back of the `Follower`.
 
-1. Place the `Follower` robot in a spacious area with enough room for movement.
-2. Ensure the `Leader` device is powered on and ready for use.
-3. Wear the `Leader` device according to the instructions below.
 
+### How to wear the Leader
 ![Leader's wearing appearance](/quick_start_guide/leader_wearing_appearance.png)
-
-### How to wear the Leader:
 
 1. Put both arms through the `Leader`'s `shoulder straps`.
 2. Fasten the chest belt buckle and `hip belt buckle`.
 3. Adjust the length of the `shoulder straps`, `chest belt`, and `hip belt` so that the `Leader` is securely fixed on your back.
-4. Face the `red sticker` attached to the `Leader` to set the initial position.
 
 ## Running Teleoperation
+The following teleoperation commands are executed on the `robot PC`.
+You can either connect a keyboard and mouse directly to the Nvidia Orin, or access it via SSH (see the Setup Guide for instructions).<br>
+⚠️While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
 
 ### Option 1: All-in-One Launch
 

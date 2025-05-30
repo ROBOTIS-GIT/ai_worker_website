@@ -3,35 +3,33 @@
 This guide will walk you through the process of setting up your AI Worker hardware and software environment.
 
 ## Hardware Setup
+(*The term `Follower` refers to the body of the AI WORKER robot)
+### Powering On the follower
+![Back of the Follower](/quick_start_guide/back_of_the_base.png)
+1. Toggle the `Power Supply Switch` to the right.
+2. Insert the `Key Switch` and turn it to the 12 o'clock position.
+3. Press and hold the `Power Button` for 3 seconds. When you hear a beep, the system is powered on. (You should see the robot’s head light up at this point.)
 
-### Follower
-![Back of the Follower](/quick_start_guide/back_of_the_follower.png)
-1. Connect all three battery charging cables to the charging terminals on the back of the `Follower`.
-2. Connect the `Follower`'s HDMI port to a monitor.
-3. If you need internet access, connect a LAN cable to the LAN port.
-4. Press and hold the Power button on the back of the `Follower` for about 3 seconds to turn on the board.
-5. After you hear a beep, check that the monitor displays the screen.
 
-### Leader
-![Back of the Leader](/quick_start_guide/back_of_the_leader.png)
+### Hardware Ports (Follower)
+![Back of the Follower](/quick_start_guide/back_of_the_body.png)
+The back of the Follower body includes several ports for system access and external connections. These include:
+- `LAN Port`: Used to access the robot PC via SSH or remote desktop.
 
-### Setup Steps
-1. **USB Connection**
-   - Connect the USB cable to the rear USB port of the `Follower`
+- `USB Ports`: For connecting peripherals such as a keyboard, mouse, or USB drive.
 
-2. **Power Setup**
-   - Plug the power cable into an electrical outlet
+- `HDMI Port`: Allows direct video output for connecting a monitor.
 
-3. **U2D2 Activation**
-   - Locate the U2D2 switch inside the hole
-   - Slide the switch toward the white dot to turn on the U2D2
+## Software Setup
+AI WORKER relies on two main repositories:
+- [ai_worker](https://github.com/ROBOTIS-GIT/ai_worker): Provides support for controlling DYNAMIXEL actuators using ros2_control and enables teleoperation functionality.
+- [physical_ai_tools](https://github.com/ROBOTIS-GIT/physical_ai_tools): A set of tools for imitation learning, including data collection, training, model inference, and visualization utilities.
 
----
+The software setup instructions below are intended for development on a `user PC`. **_Note that the robot PC on the AI WORKER is already pre-configured with the same setup._**
 
-# Software Setup
-
-## Prerequisites
-- **Operating System**: Ubuntu environment
+### Prerequisites
+- **Operating System**: Ubuntu environment<br>
+(The AI WORKER software runs inside a Docker container based on `Ubuntu 24.04 (Jazzy)`. Therefore, the Ubuntu version of the user PC does not need to match and is not critical.)
 - **Container Engine**: Docker Engine
   - Follow the [official Docker installation guide](https://docs.docker.com/engine/install/ubuntu/)
   - Complete the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
@@ -42,21 +40,23 @@ This guide will walk you through the process of setting up your AI Worker hardwa
     4. Verify installation with `docker run hello-world`
 - **Version Control**: Git
 - **Graphics Support**:
-  - NVIDIA Graphics Driver
-    - Install nvidia-driver-570-server-open for CUDA 12.8
+  - NVIDIA Graphics Driver<br>
+  (In Docker-based environments, the container is generally isolated from the host system. However, the graphics driver version on the host can have a direct impact on performance and compatibility—especially when using GPU acceleration. We recommend using the following driver version(s) for best results)
+    - Install `nvidia-driver-570-server-open` for `CUDA 12.8`
     - Verify installation with `nvidia-smi`
   - NVIDIA Container Toolkit
     - Follow the [official installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
     - Required steps:
       1. Configure the production repository
-      2. Install nvidia-container-toolkit
+      2. Install `nvidia-container-toolkit`
       3. Configure Docker runtime using `nvidia-ctk`
       4. Restart Docker daemon
     - For detailed configuration, see the [Docker configuration guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker)
 
-## Configuration
+---
+### Configuration
 
-### 1. USB Serial Setup
+#### 1. USB Serial Setup
 1. **Prepare Configuration**
    - Obtain the provided serial data
    - Create a new udev rule file:
@@ -72,7 +72,7 @@ This guide will walk you through the process of setting up your AI Worker hardwa
    sudo udevadm trigger
    ```
 
-### 2. Docker Environment
+#### 2. Docker Environment
 
 #### Volume Management
 The Docker container uses the following volume mappings for data persistence and hardware access:
@@ -121,11 +121,11 @@ volumes:
    ./docker/container.sh stop
    ```
 
-## Docker Command Guide
+### Docker Command Guide
 
 The `container.sh` script provides easy container management:
 
-### Available Commands
+#### Available Commands
 - `help`: Display help message
 - `start [with_gz|without_gz]`: Start container
   - `with_gz`: Include Gazebo support
@@ -133,7 +133,7 @@ The `container.sh` script provides easy container management:
 - `enter`: Enter running container
 - `stop`: Stop container
 
-### Usage Examples
+#### Usage Examples
 ```bash
 ./container.sh help                 # Show help
 ./container.sh start with_gz        # Start with Gazebo
@@ -141,3 +141,16 @@ The `container.sh` script provides easy container management:
 ./container.sh enter                # Enter container
 ./container.sh stop                 # Stop container
 ```
+
+## Accessing the Robot PC via SSH
+AI WORKER supports mDNS, allowing you to connect without manually checking the IP address.
+
+1. Connect the SBC (robot PC) to the same network as your user PC using a LAN cable.
+
+2. On your user PC terminal, use the following command to connect via SSH:
+ ```bash
+  ssh root@ffw-SNPR48A0000.local
+ ```
+(Replace SNPR48A0000 with the serial number printed on the back of the robot body.)
+![Back of the Follower](/quick_start_guide/serial_number.png)
+

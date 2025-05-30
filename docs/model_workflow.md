@@ -4,18 +4,25 @@ This guide explains the process of training and deploying imitation learning mod
 
 ## Model Training
 
-After [preparing your dataset](/dataset_preparation), you can train a policy using either your local PC or an NVIDIA Jetson AGX Orin device.
+> **Note:** You can train the policy either on your local PC or on an NVIDIA Jetson AGX Orin device.
+
+After [preparing your dataset](/dataset_preparation), you can proceed to train the policy model.
 
 ### Training on NVIDIA Jetson AGX Orin
 
-Open a new terminal and navigate to the `lerobot` directory:
-
+#### 1. Open a new terminal and enter the Docker container:
 ```bash
-container
-cd /root/colcon_ws/src/physical_ai_tools/lerobot
+cd ai_worker
+./docker/container.sh enter
 ```
 
-Then run the following command:
+#### 2. Navigate to the lerobot directory inside the Docker container:
+
+```bash
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
+```
+
+#### 3. Run the training script using the following command:
 
 ```bash
 python lerobot/scripts/train.py \
@@ -28,7 +35,7 @@ python lerobot/scripts/train.py \
   --save_freq=1000
 ```
 
-### Key Training Parameters
+##### Key Training Parameters
 
 | Parameter | Description |
 |-----------|-------------|
@@ -40,13 +47,9 @@ python lerobot/scripts/train.py \
 | `--log_freq` | How often to log training statistics (in iterations) |
 | `--save_freq` | How often to save model checkpoints (in iterations) |
 
-### Training on Your PC
+##### Expected Training Output
 
-First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally. Once installed, you can train the policy using the same command as above.
-
-### Expected Training Output
-
-During training, you'll see output like this:
+During training, you will see output like this:
 
 ```
 INFO 2025-05-28 12:12:40 ts/train.py:232 step:200 smpl:2K ep:3 epch:0.16 loss:7.490 grdn:154.502 lr:1.0e-05 updt_s:0.047 data_s:0.002
@@ -61,9 +64,33 @@ INFO 2025-05-28 12:13:48 ts/train.py:232 step:2K smpl:14K ep:29 epch:1.47 loss:1
 ...
 ```
 
-Training time depends on your hardware and dataset size, but typically ranges from a few hours to a day.
+### Training on Your PC
 
-### (Optional) Uploading Checkpoints to Hugging Face
+#### 1. First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally.
+
+#### 2. Transfer your dataset directory using scp:
+
+> **Note:** Replace `${HF_USER}` with your Hugging Face username and `ffw_test` with your actual dataset repository ID.
+```bash
+scp -r ~/ai_worker/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
+```
+
+#### 3. You can train the policy using the same command as above:
+
+```bash
+python lerobot/scripts/train.py \
+  --dataset.repo_id=${HF_USER}/ffw_test \
+  --policy.type=act \
+  --output_dir=outputs/train/act_ffw_test \
+  --job_name=act_ffw_test \
+  --policy.device=cuda \
+  --log_freq=100 \
+  --save_freq=1000
+```
+
+Training time depends on your hardware and dataset size, but typically ranges from several hours to a full day.
+
+#### (Optional) Uploading Checkpoints to Hugging Face
 
 To upload the latest trained checkpoint to the Hugging Face Hub:
 
@@ -78,32 +105,44 @@ This makes your model accessible from anywhere and simplifies deployment.
 
 Once your model is trained, you can deploy it on the AI Worker for inference.
 
-### 1. Launch the ROS 2 Follower
-
-First, launch the robot follower node:
-
+### 1. Change file ownership (on the host machine, not inside the Docker container):
 ```bash
-container
-follower
+sudo chown -R robotis ./
+```
+Move your model folder to the model folder on the robot PC.
+```bash
+scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/ai_worker/docker/lerobot/outputs/train
 ```
 
-### 2. Run Model Inference
-
-Open a new terminal and navigate to the lerobot directory:
-
+### 2. Open a terminal and run Docker container:
 ```bash
-container
-cd /root/colcon_ws/src/physical_ai_tools/lerobot
+cd ai_worker
+./docker/container.sh enter
 ```
 
-Then run the following command to evaluate your trained policy:
+### 3. Launch the ROS 2 Follower inside the Docker container:
+```bash
+ffw_bg2_follower_ai
+```
 
+### 4. Open a new terminal and run Docker container:
+```bash
+cd ai_worker
+./docker/container.sh enter
+```
+
+### 5. Navigate to the lerobot directory inside the Docker container:
+```bash
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
+```
+
+### 6. Run the following command to evaluate your trained policy:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=ffw \
   --control.type=record \
   --control.single_task="pick and place objects" \
-  --control.fps=30 \
+  --control.fps=15 \
   --control.repo_id=${HF_USER}/eval_ffw_test \
   --control.tags='["tutorial"]' \
   --control.episode_time_s=20 \
@@ -114,25 +153,27 @@ python lerobot/scripts/control_robot.py \
   --control.play_sounds=false
 ```
 
-### Key Inference Parameters
+#### Key Inference Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | `--control.type=record` | Records the policy performance for later evaluation |
 | `--control.policy.path` | Path to your trained model checkpoint |
 | `--control.episode_time_s` | Duration of each inference episode (in seconds) |
-| `--control.repo_id` | Where to save evaluation results (different from training dataset) |
+| `--control.repo_id` | Hugging Face repo where evaluation results will be saved |
 
-### Visualizing Inference Results
+## Visualizing Inference Results
 
 After running inference, you can visualize the results using the same visualization tool used for datasets:
 
 ```bash
 python lerobot/scripts/visualize_dataset_html.py \
+  --host 0.0.0.0 \
+  --port 9091 \
   --repo-id ${HF_USER}/eval_ffw_test
 ```
 
-Then open [http://127.0.0.1:9090](http://127.0.0.1:9090) in your browser to see how your model performed.
+Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see how your model performed.
 
 ## Troubleshooting
 

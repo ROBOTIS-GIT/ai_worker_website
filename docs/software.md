@@ -22,7 +22,7 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 > External teleoperation or trajectory commands are received via ROS 2 topics, processed in real time by `ros2_control`, and executed by DYNAMIXEL actuators over RS‑485.
 >
 
-![softwate_architecture](/specifications/software_architecture.png)
+![softwate_architecture](/specifications/software_architecture2.png)
 
 | Layer | Component | Description |
 | --- | --- | --- |
@@ -80,8 +80,8 @@ DYNAMIXEL Actuators
 | --- | --- | --- | --- |
 | `arm_l_controller` | Left arm (w/ gripper) | 8 | `/leader/joint_trajectory_command_broadcaster_left` |
 | `arm_r_controller` | Right arm (w/ gripper) | 8 | `/leader/joint_trajectory_command_broadcaster_right` |
-| `neck_controller` | Head (pan/tilt) | 2 | `/leader/joystick_controller_left` |
-| `body_controller` | Vertical lift | 1 | `/leader/joystick_controller_right` |
+| `head_controller` | Head (pan/tilt) | 2 | `/leader/joystick_controller_left` |
+| `lift_controller` | Vertical lift | 1 | `/leader/joystick_controller_right` |
 | `joint_state_broadcaster` | All joints | – | Publishes to `/joint_states` |
 
 All controllers (except `joint_state_broadcaster`) use the **`JointTrajectoryController`** type.
@@ -100,9 +100,9 @@ controller_manager:
       type: joint_trajectory_controller/JointTrajectoryController
     arm_r_controller:
       type: joint_trajectory_controller/JointTrajectoryController
-    neck_controller:
+    head_controller:
       type: joint_trajectory_controller/JointTrajectoryController
-    body_controller:
+    lift_controller:
       type: joint_trajectory_controller/JointTrajectoryController
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -117,7 +117,7 @@ arm_l_controller:
       - arm_l_joint5
       - arm_l_joint6
       - arm_l_joint7
-      - l_rh_r1_joint  # left gripper
+      - gripper_l_joint1  # left gripper
     command_interfaces: [position]
     state_interfaces: [position, velocity]
     allow_nonzero_velocity_at_trajectory_end: true

@@ -60,7 +60,7 @@ bringup
   ```
   SNPR44B9039
   ```
-  This serial number also serves as the device's `serial number`, which you'll use to access the web interface.
+  This serial number serves as the device's hostname, which you'll use to access the web interface.
 
   b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step. 
   

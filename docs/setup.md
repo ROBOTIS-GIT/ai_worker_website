@@ -131,7 +131,7 @@ AI Worker supports mDNS, allowing you to connect without manually checking the I
 
 2. On your user PC terminal, use the following command to connect via SSH:
  ```bash
-  ssh root@ffw-SNPR48A0000.local
+  ssh robotis@ffw-SNPR48A0000.local
  ```
 (Replace SNPR48A0000 with the serial number printed on the back of the robot body.)
 ![Back of the Follower](/quick_start_guide/serial_number.png)

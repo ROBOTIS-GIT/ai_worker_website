@@ -98,7 +98,7 @@ AnyNameYouWant
 
 ### 6. Run the following command to start recording your Hugging Face dataset:
 ```bash
-cd ~/physical_ai_tools/lerobot/
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 ```bash
@@ -146,7 +146,7 @@ The dataset is located at:
 
 Once data collection is complete, you can preview and inspect your recorded dataset using the following command:
 ```bash
-cd ~/physical_ai_tools/lerobot/
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 ```bash

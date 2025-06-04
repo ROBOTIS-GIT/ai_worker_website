@@ -15,8 +15,8 @@ For seamless integration with the ROS ecosystem, URDF (Unified Robot Description
 
 ![AI Worker URDF model in RViz or Gazebo](/simulation/simulation_urdf.png)
 
-*   **Model Formats**: URDF, SDF
-*   **Primary Tools**: Gazebo Sim, RViz
+*   **Model Formats**: [URDF](https://docs.ros.org/en/rolling/Tutorials/Intermediate/URDF/URDF-Main.html), [SDF](http://sdformat.org/)
+*   **Primary Tools**: [Gazebo Sim](https://gazebosim.org/), [RViz](https://docs.ros.org/en/rolling/Tutorials/Intermediate/RViz/RViz-Main.html)
 *   **Purpose**: General robotics simulation, ROS-based algorithm testing, visualization.
 *   **Link**: [AI Worker URDF on GitHub](https://github.com/ROBOTIS-GIT/ai_worker/tree/main/ffw_description/urdf)
 
@@ -25,8 +25,8 @@ For high-fidelity physics simulation, particularly favored in reinforcement lear
 
 ![AI Worker MJCF model in MuJoCo](/simulation/simulation_mujoco.png)
 
-*   **Model Format**: MJCF
-*   **Primary Tool**: MuJoCo (by Google DeepMind)
+*   **Model Format**: [MJCF](https://mujoco.readthedocs.io/en/stable/XMLreference.html)
+*   **Primary Tool**: [MuJoCo (by Google DeepMind)](https://mujoco.org/)
 *   **Purpose**: High-fidelity physics simulation, reinforcement learning, advanced dynamics research.
 *   **Link**: [ROBOTIS MuJoCo Menagerie](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)
 
@@ -35,8 +35,8 @@ Support for NVIDIA Isaac Sim is an exciting upcoming feature. Isaac Sim utilizes
 
 ![AI Worker USD model in NVIDIA Isaac Sim (Coming Soon)](/simulation/simulation_isaac_sim.png)
 
-*   **Model Format**: USD
-*   **Primary Tool**: NVIDIA Isaac Sim
+*   **Model Format**: [USD](https://docs.isaacsim.omniverse.nvidia.com/latest/omniverse_usd/open_usd.html)
+*   **Primary Tool**: [NVIDIA Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/)
 *   **Purpose**: Photorealistic simulation, advanced physics, synthetic data generation, AI-driven robotics development.
-*   **Status**: Coming Soon
-*   **Link**: (TBD)
+*   **Status**: We are actively developing support for NVIDIA Isaac Sim, with a targeted release in alignment with the launch of NVIDIA Isaac Sim 5.0.
+*   **Link**: (Coming Soon)

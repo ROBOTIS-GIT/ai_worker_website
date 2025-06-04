@@ -28,7 +28,7 @@ For high-fidelity physics simulation, particularly favored in reinforcement lear
 *   **Model Format**: [MJCF](https://mujoco.readthedocs.io/en/stable/XMLreference.html)
 *   **Primary Tool**: [MuJoCo (by Google DeepMind)](https://mujoco.org/)
 *   **Purpose**: High-fidelity physics simulation, reinforcement learning, advanced dynamics research.
-*   **Link**: [ROBOTIS MuJoCo Menagerie](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)
+*   **Link**: [ROBOTIS MuJoCo Menagerie on GitHub](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)
 
 ### NVIDIA Isaac Sim (USD)
 Support for NVIDIA Isaac Sim is an exciting upcoming feature. Isaac Sim utilizes the USD (Universal Scene Description) format for photorealistic rendering and advanced physics simulation, tightly integrated with NVIDIA's AI and robotics SDKs.

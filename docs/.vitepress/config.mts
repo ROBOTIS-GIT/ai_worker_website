@@ -23,6 +23,7 @@ export default defineConfig({
     ['meta', { property: 'og:image:width', content: '1200' }],
     ['meta', { property: 'og:image:height', content: '630' }],
     ['meta', { property: 'og:image:alt', content: 'AI Worker Logo' }],
+    ['meta', { property: 'og:updated_time', content: '1749184547' }],
     ['meta', { name: 'twitter:title', content: title }],
     ['meta', { name: 'twitter:description', content: description }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],

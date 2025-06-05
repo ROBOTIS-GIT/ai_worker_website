@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 const title = 'AI Worker'
 const description = 'Documentations for AI Worker'
 const ogUrl = 'https://ai.robotis.com/'
-const ogImage = `${ogUrl}og.png`
+const ogImage = `${ogUrl}og_image.png`
 
 export default defineConfig({
   title: title,
@@ -23,7 +23,6 @@ export default defineConfig({
     ['meta', { property: 'og:image:width', content: '1200' }],
     ['meta', { property: 'og:image:height', content: '630' }],
     ['meta', { property: 'og:image:alt', content: 'AI Worker Logo' }],
-    ['meta', { property: 'og:updated_time', content: '1749184547' }],
     ['meta', { name: 'twitter:title', content: title }],
     ['meta', { name: 'twitter:description', content: description }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],

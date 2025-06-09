@@ -20,6 +20,32 @@ For seamless integration with the ROS ecosystem, URDF (Unified Robot Description
 *   **Purpose**: General robotics simulation, ROS-based algorithm testing, visualization.
 *   **Link**: [AI Worker URDF on GitHub](https://github.com/ROBOTIS-GIT/ai_worker/tree/main/ffw_description/urdf)
 
+#### How to Launch
+
+You can launch Gazebo and RViz individually, or launch RViz together with the physical hardware.
+
+*   **Launch Gazebo simulation:**
+    Use this command to run a dynamic simulation of the AI Worker in the Gazebo simulator.
+    ```bash
+    # Launch Gazebo with the AI Worker Follower model (FFW-BG2)
+    ros2 launch ffw_bringup ffw_bg2_follower_gazebo.launch.py
+    ```
+
+*   **View model in RViz only:**
+    Use this command when you want to visualize the robot model in RViz without running a full simulation or the physical hardware.
+    ```bash
+    # Launch RViz with the AI Worker model
+    ros2 launch ffw_description model_view.launch.py
+    ```
+
+*   **Launch RViz with physical hardware:**
+    Use this command when you want to operate the physical AI Worker hardware and monitor its status in RViz. This command will launch RViz alongside the hardware interface.
+    ```bash
+    # Launch the AI Worker Follower (FFW-BG2) hardware interface and RViz
+    ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
+    ```
+    *   **Note:** This command is the same as the `Follower` launch command in the [`Teleoperation Guide`](/operation#option-2-separate-launches) and will also launch the cameras by default. To run without cameras, you can add the `launch_cameras:=false` argument.
+
 ### MuJoCo (MJCF)
 For high-fidelity physics simulation, particularly favored in reinforcement learning research and biomechanics, models in MJCF (MuJoCo XML Format) are available. MuJoCo offers fast and accurate physics, ideal for training complex behaviors.
 

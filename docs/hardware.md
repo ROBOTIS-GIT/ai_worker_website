@@ -25,7 +25,7 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Arm Payload                 | 1.5 kg (without Hand)                  | 1.5 kg (without Hand)                  |
 | Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
 | Joint Range                 | (see [Joint Configuration](#joint-configuration))| (see [Joint Configuration](#joint-configuration))|
-| Gripper/Hand                | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous hands in development, see [Hand Specification](#hand-specification)) | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous hands in development, see [Hand Specification](#hand-specification)) |
+| Gripper/Hand                | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous Finger Actuator in development, see [Finger Actuator Specification](#finger-actuator-specification)) | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous Finger Actuator in development, see [Finger Actuator Specification](#finger-actuator-specification)) |
 | Mobile Type                 | Swerve Drive                           | None                                   |
 | Mobile Operation Velocity   | 1.5 m/s                                | None                                   |
 | Power                       | Battery: 25V, 80Ah (2,040Wh)           | SMPS: 24VDC, 80A, 1,920W               |
@@ -110,8 +110,8 @@ Two Intel RealSense D405 cameras are integrated into the robot's hands/grippers,
 ![model_rh_p12_rn](/specifications/model_rh_p12_rn.png)
 The [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) is a multi-functional, 1-DOF two-fingered robot hand. It features an adaptive gripping design with passive joints, allowing it to grasp objects of various shapes. The hand utilizes a 10W DC motor and offers torque control and current-based position control, enabling it to handle objects made of different materials. Key features of the RH-P12-RN include its lightweight design (500g) and high payload capacity (5kg). It also has detachable fingertips that can be easily replaced with customized ones. The RH-P12-RN is designed for easy integration with the AI Worker platform, making it suitable for various applications in industrial environments.
 
-## Hand Specification
-Advanced 4 and 5 finger dexterous hands for the AI Worker are currently under development. These hands are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future as development is completed. Please contact us for more information about upcoming dexterous hand availability.
+## Finger Actuator Specification
+Advanced finger actuators for the AI Worker are currently under development. These finger actuators are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future once development is completed. Please contact us for more information about the availability of upcoming dexterous finger actuators.
 
 ## Joint Configuration and Nomenclature
 <a href="/specifications/joints.png" target="_blank">

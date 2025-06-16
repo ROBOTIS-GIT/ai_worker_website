@@ -49,17 +49,23 @@ Once connected, you should see the web UI as shown below.
 
 c. Select robot type in `Home` page
 
-Once you select robot type, you can go to `Record` Page
+Once you select robot type, now you can go to `Record` Page
 
   <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 50%; ">
 
 d. Go to `Record` page
 
+The Record page consists of three main sections:
+
+- Image Streaming Area (Center): View real-time streams from the robot cameras.
+
+- Task Info Panel (Right side): Enter task name, task instruction, time values, etc. [(details)](#_6-enter-task-information)
+
+- Control Panel (Bottom): Start/stop recording and manage data collection. [(details)](#_7-start-recording)
+
+The selected robot type is also displayed in the top left corner.
+
   <img src="/imitation_learning/web_ui_record_page.png" alt="Web UI" style="width: 100%; ">
-
-The selected robot type will be displayed as follows
-
-  <img src="/imitation_learning/robot_type.png" alt="Web UI" style="width: 30%; ">
 
 ### 5. Visualize RGB images from the cameras:
 

@@ -110,6 +110,12 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Ecosystem',
+        items: [
+          { text: 'Community Showcase', link: '/community_showcase' },
+        ]
+      },
+      {
           text: 'Support',
           items: [
             { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },

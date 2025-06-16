@@ -5,7 +5,7 @@ For sales inquiries or to request detailed product information about the AI Work
 ## Sales Inquiries
 
 For sales inquiries, please reach out to our sales team:
-- Email: willson@robotis.com
+- Email: paulpark@robotis.com
 
 ## Office Locations
 

@@ -1,51 +1,107 @@
 # Dataset Preparation
 
 ## Record Your Datasets
-Access the `Robot PC` either directly or via SSH, and follow the steps below.
-(Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
+
+### Option 1 (Using Physical AI Tools)
+
 ### 1. Open a terminal and start the Docker container:
+
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
 ### 2. Launch the ROS 2 teleoperation node inside the Docker container:
+
+```bash
+ffw_bg2_ai
+```
+
+### 3. Open another terminal and Launch Physical AI Server:
+
+```bash
+ai_server
+```
+
+### 4. Open Physical AI Manager (Web UI):
+
+a. Check the AI Worker's serial number
+
+In this example, the serial number is `SNPR48A0000`.
+
+b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
+
+In this example, the address becomes `http://ffw-SNPR48A0000.local`.
+
+Once connected, you should see the web UI as shown below.
+
+  <img src="/imitation_learning/web_ui_home_page.png" alt="Web UI" style="width: 100%; ">
+
+c. Select robot type in `Home` page
+
+Once you select robot type, you can go to `Record` Page
+
+  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 50%; ">
+
+d. Go to `Record` page
+
+  <img src="/imitation_learning/web_ui_record_page.png" alt="Web UI" style="width: 100%; ">
+
+The selected robot type will be displayed as follows
+
+  <img src="/imitation_learning/robot_type.png" alt="Web UI" style="width: 30%; ">
+
+The image streaming will be displayed automatically. You can remove the currently displayed image stream and select a different image stream to display..
+
+### Option 2 (Using the lerobot CLI)
+
+Access the `Robot PC` either directly or via SSH, and follow the steps below.
+(Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
+
+### 1. Open a terminal and start the Docker container:
+
+```bash
+cd ai_worker
+./docker/container.sh enter
+```
+
+### 2. Launch the ROS 2 teleoperation node inside the Docker container:
+
 ```bash
 ffw_bg2_ai
 ```
 
 ### 3. Visualize RGB images from the cameras (on the host machine, not inside the Docker container):
 
-  a. Check the AI Worker's serial number
+a. Check the AI Worker's serial number
 
-  In this example, the serial number is `SNPR48A0000`.
+In this example, the serial number is `SNPR48A0000`.
 
-  b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
+b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 
-  In this example, the address becomes `http://ffw-SNPR48A0000.local`.
+In this example, the address becomes `http://ffw-SNPR48A0000.local`.
 
-  Once connected, you should see the web UI as shown below.
+Once connected, you should see the web UI as shown below.
 
   <img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
 
-  c. Click the '+' button to open a pop-up where you can select a camera image topic as shown below:
+c. Click the '+' button to open a pop-up where you can select a camera image topic as shown below:
 
   <img src="/imitation_learning/web_ui_topic_selection.png" alt="Web UI Topic Selection" style="width: 50%; ">
 
-  d. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button. Once selected, the image stream will appear as shown below:
+d. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button. Once selected, the image stream will appear as shown below:
 
   <img src="/imitation_learning/web_ui_after_topic_selection.png" alt="Web UI" style="width: 100%; ">
 
-  ::: tip
-  Image topics:
+::: tip
+Image topics:
 
-  - Left wrist camera: /camera_left/camera_left/color/image_rect_raw
+- Left wrist camera: /camera_left/camera_left/color/image_rect_raw
 
-  - Right wrist camera: /camera_right/camera_right/color/image_rect_raw
+- Right wrist camera: /camera_right/camera_right/color/image_rect_raw
 
-  - Head camera: /zed/zed_node/rgb/image_rect_color
+- Head camera: /zed/zed_node/rgb/image_rect_color
   :::
-
 
 ### 4. Open a new terminal and navigate to the `lerobot` directory:
 
@@ -74,18 +130,22 @@ Store your Hugging Face username in a variable:
 export HF_USER=$(huggingface-cli whoami | head -n 1)
 echo $HF_USER
 ```
+
 You should see an output similar to the following:
 
 ```
 YourUserName
 ```
+
 #### Prerequisite without Hugging Face
 
 If you do not intend to use the Hugging Face Hub, you can still define a placeholder username for local dataset handling:
+
 ```bash
 export HF_USER=AnyNameYouWant
 echo $HF_USER
 ```
+
 You should see an output like:
 
 ```
@@ -93,10 +153,12 @@ AnyNameYouWant
 ```
 
 ::: tip
+
 - Make sure to replace `${HF_USER}` with your actual Hugging Face username.
-:::
+  :::
 
 ### 6. Run the following command to start recording your Hugging Face dataset:
+
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
@@ -118,23 +180,24 @@ python lerobot/scripts/control_robot.py \
 ```
 
 ::: tip
+
 - To save the dataset locally without uploading to the Hugging Face Hub, set `--control.push_to_hub=false`. This option is essential if you choose not to use Hugging Face.
 - If you are controlling the robot remotely via VSCode or SSH, the `arrow keys` may not work during data recording due to a pynput limitation. In this case, it's recommended to set --control.episode_time_s and --control.reset_time_s appropriately.
 - To use the `arrow keys` for teleoperation, connect a monitor and keyboard directly to the robot (Right arrow key: Save immediately, Left arrow key: Cancel).
-:::
+  :::
 
 #### Key Parameters to Customize
 
 To create your own dataset, here are some important parameters you may want to adjust:
 
-| Parameter                  | Description | Example |
-|----------------------------|-------------|---------|
-| `--control.repo_id`        | The Hugging Face dataset repository ID in the format `<username>/<dataset_name>` | `username/ffw_pick_place` |
-| `--control.single_task`    | The name of the task you are performing | "pick and place objects" |
-| `--control.fps`            | Frame rate for dataset recording | 15 (recommended) |
-| `--control.episode_time_s` | Duration (in seconds) to record each episode | 30-60 for simple tasks |
-| `--control.reset_time_s`   | Time allocated (in seconds) for resetting between episodes | 10-20 seconds |
-| `--control.num_episodes`   | Total number of episodes to record | 10-50 depending on task complexity |
+| Parameter                  | Description                                                                      | Example                            |
+| -------------------------- | -------------------------------------------------------------------------------- | ---------------------------------- |
+| `--control.repo_id`        | The Hugging Face dataset repository ID in the format `<username>/<dataset_name>` | `username/ffw_pick_place`          |
+| `--control.single_task`    | The name of the task you are performing                                          | "pick and place objects"           |
+| `--control.fps`            | Frame rate for dataset recording                                                 | 15 (recommended)                   |
+| `--control.episode_time_s` | Duration (in seconds) to record each episode                                     | 30-60 for simple tasks             |
+| `--control.reset_time_s`   | Time allocated (in seconds) for resetting between episodes                       | 10-20 seconds                      |
+| `--control.num_episodes`   | Total number of episodes to record                                               | 10-50 depending on task complexity |
 
 Of course, you can modify additional parameters as needed to fit your specific use case.
 
@@ -145,6 +208,7 @@ The dataset is located at:
 ## Dataset Visualization
 
 Once data collection is complete, you can preview and inspect your recorded dataset using the following command:
+
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```

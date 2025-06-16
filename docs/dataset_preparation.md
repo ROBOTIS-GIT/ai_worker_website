@@ -25,6 +25,8 @@ ai_server
 
 ### 4. Open Physical AI Manager (Web UI):
 
+> [!WARNING] On the host machine, not inside the Docker container
+
 a. Check the AI Worker's serial number
 
 In this example, the serial number is `SNPR48A0000`.
@@ -51,7 +53,118 @@ The selected robot type will be displayed as follows
 
   <img src="/imitation_learning/robot_type.png" alt="Web UI" style="width: 30%; ">
 
-The image streaming will be displayed automatically. You can remove the currently displayed image stream and select a different image stream to display..
+### 5. Visualize RGB images from the cameras:
+
+The image streaming will be displayed automatically. You can remove the currently displayed image stream and select a different image stream to display. To select an image topic, click the + button and choose from the popup window.
+
+  <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 50%; ">
+
+### 6. Enter Task Information:
+
+Enter the task information in the panel located on the right side of the page.
+
+  <img src="/imitation_learning/web_ui_task_info.png" alt="Web UI" style="width: 50%; ">
+
+a. `Task Name`
+
+It is used for folder name of dataset
+
+b. `Task Instruction`
+
+It is a sentence that instructs the robot what action to perform, such as "pick and place object".
+
+c. `Push to hub`
+
+If you want to push the dataset to the Hugging Face Hub, check this box. This will allow you to share your dataset with others and use it for training models.
+
+::: tip
+To push to the Hugging Face Hub, you need to:
+
+1. Have a Hugging Face account
+2. Have the necessary permissions to push to the repository
+   :::
+
+d. `Private Mode`
+
+This option is only available when "Push to hub" is checked. If you want to keep your dataset private on Hugging Face and not share it with others, check this box.
+
+e. `User ID`
+
+This is your Hugging Face account username, which will also be used as the folder name for storing the dataset.
+
+- If you're not using Hugging Face, you can use any name of your choice.
+
+- If you are using Hugging Face, click the "Load" button to fetch and select from the list of available User IDs registered in the system.
+
+- If there are no registered User IDs or if you want to use a different User ID, click the "Change" button and enter your Hugging Face token in the popup window to register a new User ID in the system.
+
+  <img src="/imitation_learning/web_ui_enter_hf_token.png" alt="Web UI" style="width: 50%; ">
+
+- If you have a Hugging Face account registered in the system but haven't checked "Push to hub", you can either:
+
+  1. Load a registered User ID by clicking the "Load" button
+  2. Manually enter any User ID of your choice
+
+f. `FPS`
+
+Frame rate for dataset recording. Recommended value is 15.
+
+g. `Tags`
+
+Tags are keywords that help categorize and organize your dataset in hub. You can add multiple tags. These tags will be useful when searching for or filtering datasets later.
+
+h. `Warmup Time`
+
+Duration (in seconds) to warm up the robot before starting the recording
+
+i. `Episode Time`
+
+Duration (in seconds) to record each episode
+
+j. `Reset Time`
+
+Time allocated (in seconds) for resetting between episodes
+
+k. `Num Episodes`
+
+Total number of episodes to record
+
+l. `Optimized Save`
+
+If enabled, this option uses RAM for faster dataset encoding processing.
+
+### 7. Start Recording:
+
+To start recording, use the control panel at the bottom of the page:
+
+  <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
+
+1. Click the "Start" button to begin recording. The system will:
+
+   - Warm up the robot for the specified warmup time
+   - Record each episode for the specified episode time
+   - Reset between episodes for the specified reset time
+   - Repeat for the specified number of episodes
+
+2. During recording:
+
+   - The "Stop" button allows you to stop recording at any time
+   - The "Retry" button cancels the current episode and restarts recording for that episode
+   - The "Next" button ends the current episode early and moves to the next episode
+   - The "Finish" button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
+
+3. After recording:
+   - The dataset will be saved locally
+   - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face
+   - You can find the recorded dataset in the specified location
+
+::: tip
+
+- Make sure all required fields are filled before starting
+- Keep the robot in a safe position during warmup
+- Monitor the recording progress through the web UI
+- You can monitor system resources (CPU, RAM, storage) during recording
+  :::
 
 ### Option 2 (Using the lerobot CLI)
 

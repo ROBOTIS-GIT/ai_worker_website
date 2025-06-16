@@ -143,7 +143,7 @@ To start recording, use the control panel at the bottom of the page:
 - Make sure all required fields are filled before starting
 - Keep the robot in a safe position during warmup
 - Monitor the recording progress through the web UI
-- You can monitor system resources (CPU, RAM, storage) during recording
+- You can monitor system resources (CPU, RAM, Storage) during recording
   :::
 
 ### Option 2 (Using the lerobot CLI)

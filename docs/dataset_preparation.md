@@ -54,11 +54,13 @@ Once connected, you should see the web UI as shown below.
 
 c. Select robot type in `Home` page
 
-Once you select robot type, now you can go to `Record` Page
-
   <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 50%; ">
 
 d. Go to `Record` page
+
+> [!note]  
+> You cannot go to **Record** page unless you have set the robot type on the **Home** page.  
+> Please make sure to select the robot type on the Home page.
 
 The Record page consists of three main sections:
 

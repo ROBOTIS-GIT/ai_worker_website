@@ -2,7 +2,10 @@
 
 ## Record Your Datasets
 
-### Option 1 (Using Physical AI Tools)
+### Option 1 (Using Physical AI Server)
+
+Access the `Robot PC` either directly or via SSH, and follow the steps below.
+(Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 
 ### 1. Open a terminal and start the Docker container:
 
@@ -18,6 +21,11 @@ ffw_bg2_ai
 ```
 
 ### 3. Open another terminal and Launch Physical AI Server:
+
+```bash
+cd ai_worker
+./docker/container.sh enter
+```
 
 ```bash
 ai_server
@@ -55,7 +63,7 @@ The selected robot type will be displayed as follows
 
 ### 5. Visualize RGB images from the cameras:
 
-The image streaming will be displayed automatically. You can remove the currently displayed image stream and select a different image stream to display. To select an image topic, click the + button and choose from the popup window.
+The image streaming will be displayed automatically. You can remove the currently displayed image stream and select a different image stream to display. To select an image topic, click the **+** button and choose from the popup window.
 
   <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 50%; ">
 
@@ -94,15 +102,15 @@ This is your Hugging Face account username, which will also be used as the folde
 
 - If you're not using Hugging Face, you can use any name of your choice.
 
-- If you are using Hugging Face, click the "Load" button to fetch and select from the list of available User IDs registered in the system.
+- If you are using Hugging Face, click the "**Load**" button to fetch and select from the list of available User IDs registered in the system.
 
-- If there are no registered User IDs or if you want to use a different User ID, click the "Change" button and enter your Hugging Face token in the popup window to register a new User ID in the system.
+- If there are no registered User IDs or if you want to use a different User ID, click the "**Change**" button and enter your Hugging Face token in the popup window to register a new User ID in the system.
 
   <img src="/imitation_learning/web_ui_enter_hf_token.png" alt="Web UI" style="width: 50%; ">
 
 - If you have a Hugging Face account registered in the system but haven't checked "Push to hub", you can either:
 
-  1. Load a registered User ID by clicking the "Load" button
+  1. Load a registered User ID by clicking the "**Load**" button
   2. Manually enter any User ID of your choice
 
 f. `FPS`
@@ -139,7 +147,7 @@ To start recording, use the control panel at the bottom of the page:
 
   <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
 
-1. Click the "Start" button to begin recording. The system will:
+1. Click the "**Start**" button to begin recording. The system will:
 
    - Warm up the robot for the specified warmup time
    - Record each episode for the specified episode time
@@ -148,12 +156,24 @@ To start recording, use the control panel at the bottom of the page:
 
 2. During recording:
 
-   - The "Stop" button allows you to stop recording at any time
-   - The "Retry" button cancels the current episode and restarts recording for that episode
-   - The "Next" button ends the current episode early and moves to the next episode
-   - The "Finish" button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
+   - The "**Stop**" button allows you to stop recording at any time
+   - The "**Retry**" button cancels the current episode and restarts recording for that episode
+   - The "**Next**" button ends the current episode early and moves to the next episode
+   - The "**Finish**" button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
 
-3. After recording:
+::: info
+
+- The current recording stage is displayed in the control panel:
+
+  - 📍 Ready to start (Standby)
+  - 🔥 Warmup in progress (Warmup Time)
+  - 🏠 Reset in progress (Reset Time)
+  - 🔴 Recording in progress (Episode Time)
+  - 💾 Saving... (Encoding the episode)
+
+  :::
+
+1. After recording:
    - The dataset will be saved locally
    - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face
    - You can find the recorded dataset in the specified location
@@ -184,39 +204,7 @@ cd ai_worker
 ffw_bg2_ai
 ```
 
-### 3. Visualize RGB images from the cameras (on the host machine, not inside the Docker container):
-
-a. Check the AI Worker's serial number
-
-In this example, the serial number is `SNPR48A0000`.
-
-b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
-
-In this example, the address becomes `http://ffw-SNPR48A0000.local`.
-
-Once connected, you should see the web UI as shown below.
-
-  <img src="/imitation_learning/web_ui.png" alt="Web UI" style="width: 100%; ">
-
-c. Click the '+' button to open a pop-up where you can select a camera image topic as shown below:
-
-  <img src="/imitation_learning/web_ui_topic_selection.png" alt="Web UI Topic Selection" style="width: 50%; ">
-
-d. For example, to visualize the 'camera_left/camera_left/color/image_rect_raw' topic, simply click the button. Once selected, the image stream will appear as shown below:
-
-  <img src="/imitation_learning/web_ui_after_topic_selection.png" alt="Web UI" style="width: 100%; ">
-
-::: tip
-Image topics:
-
-- Left wrist camera: /camera_left/camera_left/color/image_rect_raw
-
-- Right wrist camera: /camera_right/camera_right/color/image_rect_raw
-
-- Head camera: /zed/zed_node/rgb/image_rect_color
-  :::
-
-### 4. Open a new terminal and navigate to the `lerobot` directory:
+### 3. Open a new terminal and navigate to the `lerobot` directory:
 
 ```bash
 cd ai_worker
@@ -227,7 +215,7 @@ cd ai_worker
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
-### 5. Authenticate with Hugging Face
+### 4. Authenticate with Hugging Face
 
 > **Note:** If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
 
@@ -270,7 +258,7 @@ AnyNameYouWant
 - Make sure to replace `${HF_USER}` with your actual Hugging Face username.
   :::
 
-### 6. Run the following command to start recording your Hugging Face dataset:
+### 5. Run the following command to start recording your Hugging Face dataset:
 
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot

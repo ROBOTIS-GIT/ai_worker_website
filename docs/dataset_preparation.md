@@ -79,73 +79,20 @@ Enter the task information in the panel located on the right side of the page.
 
   <img src="/imitation_learning/web_ui_task_info.png" alt="Web UI" style="width: 50%; ">
 
-a. `Task Name`
-
-It is used for folder name of dataset
-
-b. `Task Instruction`
-
-It is a sentence that instructs the robot what action to perform, such as "pick and place object".
-
-c. `Push to hub`
-
-If you want to push the dataset to the Hugging Face Hub, check this box. This will allow you to share your dataset with others and use it for training models.
-
-::: tip
-To push to the Hugging Face Hub, you need to:
-
-1. Have a Hugging Face account
-2. Have the necessary permissions to push to the repository
-   :::
-
-d. `Private Mode`
-
-This option is only available when "Push to hub" is checked. If you want to keep your dataset private on Hugging Face and not share it with others, check this box.
-
-e. `User ID`
-
-This is your Hugging Face account username, which will also be used as the folder name for storing the dataset.
-
-- If you're not using Hugging Face, you can use any name of your choice.
-
-- If you are using Hugging Face, click the "**Load**" button to fetch and select from the list of available User IDs registered in the system.
-
-- If there are no registered User IDs or if you want to use a different User ID, click the "**Change**" button and enter your Hugging Face token in the popup window to register a new User ID in the system.
-
-  <img src="/imitation_learning/web_ui_enter_hf_token.png" alt="Web UI" style="width: 50%; ">
-
-- If you have a Hugging Face account registered in the system but haven't checked "Push to hub", you can either:
-
-  1. Load a registered User ID by clicking the "**Load**" button
-  2. Manually enter any User ID of your choice
-
-f. `FPS`
-
-Frame rate for dataset recording. Recommended value is 15.
-
-g. `Tags`
-
-Tags are keywords that help categorize and organize your dataset in hub. You can add multiple tags. These tags will be useful when searching for or filtering datasets later.
-
-h. `Warmup Time`
-
-Duration (in seconds) to warm up the robot before starting the recording
-
-i. `Episode Time`
-
-Duration (in seconds) to record each episode
-
-j. `Reset Time`
-
-Time allocated (in seconds) for resetting between episodes
-
-k. `Num Episodes`
-
-Total number of episodes to record
-
-l. `Optimized Save`
-
-If enabled, this option uses RAM for faster dataset encoding processing.
+| Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Task Name**        | It is used for the folder name of the dataset                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Task Instruction** | It is a sentence that instructs the robot what action to perform, such as "pick and place object"                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Push to hub**      | If you want to push the dataset to the Hugging Face Hub, check this box. This allows sharing and training. <br>**To push to the Hugging Face Hub, you need to:**<br>1. Have a Hugging Face account<br>2. Have the necessary permissions to push to the repository                                                                                                                                                                                                                 |
+| **Private Mode**     | Only available when "Push to hub" is checked. Keeps your dataset private on Hugging Face.                                                                                                                                                                                                                                                                                                                                                                                         |
+| **User ID**          | Your Hugging Face account username, also used as the folder name for the dataset.<br>- If **not** using Hugging Face, you can use any name.<br>- If using Hugging Face, click "Load" to select from registered User IDs.<br>- If no User IDs or want a different one, click "Change" and enter your Hugging Face token.<br>- If you have a registered account but haven't checked "Push to hub", you can either:<br>1. Load a registered User ID<br>2. Manually enter any User ID |
+| **FPS**              | Frame rate for dataset recording. Recommended value is 15.                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Tags**             | Keywords to categorize and organize your dataset in the hub. Multiple tags can be added. Useful for searching or filtering later.                                                                                                                                                                                                                                                                                                                                                 |
+| **Warmup Time**      | Duration (in seconds) to warm up the robot before starting the recording                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Episode Time**     | Duration (in seconds) to record each episode                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Reset Time**       | Time allocated (in seconds) for resetting between episodes                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Num Episodes**     | Total number of episodes to record                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Optimized Save**   | If enabled, uses RAM for faster dataset encoding processing                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ### 7. Start Recording:
 

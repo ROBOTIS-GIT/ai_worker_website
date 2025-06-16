@@ -2,6 +2,11 @@
 
 ## Record Your Datasets
 
+you can choose one of the following options
+
+<a href="#option-1-using-physical-ai-server" class="button-dataset-preparation-option"> Option 1 (Using Physical AI Server)</a>
+<a href="#option-2-using-the-lerobot-cli" class="button-dataset-preparation-option">Option 2 (Using the lerobot CLI)</a>
+
 ### Option 1 (Using Physical AI Server)
 
 Access the `Robot PC` either directly or via SSH, and follow the steps below.

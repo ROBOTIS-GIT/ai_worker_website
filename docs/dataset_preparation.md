@@ -14,7 +14,7 @@ Access the `Robot PC` either directly or via SSH, and follow the steps below.
 
 ### 1. Launch the ROS 2 teleoperation node:
 
-Open a new terminal and enter the Docker container.
+Open a new terminal and enter the Docker container
 
 ```bash
 cd ai_worker
@@ -165,14 +165,14 @@ Access the `Robot PC` either directly or via SSH, and follow the steps below.
 
 ### 1. Launch the ROS 2 teleoperation node:
 
-- Open a new terminal and enter the Docker container.
+Open a new terminal and enter the Docker container
 
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-- Launch the ROS 2 teleoperation node
+Launch the ROS 2 teleoperation node
 
 ```bash
 ffw_bg2_ai

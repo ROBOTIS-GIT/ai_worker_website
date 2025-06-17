@@ -12,31 +12,43 @@ you can choose one of the following options
 Access the `Robot PC` either directly or via SSH, and follow the steps below.
 (Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 
-### 1. Open a terminal and start the Docker container:
+### 1. Launch the ROS 2 teleoperation node:
+
+Open a new terminal and enter the Docker container.
 
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-### 2. Launch the ROS 2 teleoperation node inside the Docker container:
+Launch the ROS 2 teleoperation node
 
 ```bash
 ffw_bg2_ai
 ```
 
-### 3. Open another terminal and Launch Physical AI Server:
+### 2. Launch Physical AI Server:
+
+Open another terminal and enter the Docker container
 
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
+Launch Physical AI Server with the following command
+
+```bash
+ros2 launch physical_ai_server physical_ai_server_bringup.launch.py
+```
+
+or use the shortcut command:
+
 ```bash
 ai_server
 ```
 
-### 4. Open Physical AI Manager (Web UI):
+### 3. Open Physical AI Manager (Web UI):
 
 > [!WARNING] On the host machine, not inside the Docker container
 
@@ -64,23 +76,23 @@ d. Go to `Record` page
 
 The Record page consists of three main sections:
 
-- Image Streaming Area (Center): View real-time streams from the robot cameras.
+- **Image Streaming Area** (Center): View real-time streams from the robot cameras.
 
-- Task Info Panel (Right side): Enter task name, task instruction, time values, etc. [(details)](#_6-enter-task-information)
+- **Task Info Panel** (Right side): Enter task name, task instruction, time values, etc. [(details)](#_5-enter-task-information)
 
-- Control Panel (Bottom): Start/stop recording and manage data collection. [(details)](#_7-start-recording)
+- **Control Panel** (Bottom): Start/stop recording and manage data collection. [(details)](#_6-start-recording)
 
 The selected robot type is also displayed in the top left corner.
 
   <img src="/imitation_learning/web_ui_record_page.png" alt="Web UI" style="width: 100%; ">
 
-### 5. Visualize RGB images from the cameras:
+### 4. Visualize RGB images from the cameras:
 
 The image streaming will be displayed automatically. You can remove the currently displayed image stream and select a different image stream to display. To select an image topic, click the **+** button and choose from the popup window.
 
   <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 50%; ">
 
-### 6. Enter Task Information:
+### 5. Enter Task Information:
 
 Enter the task information in the panel located on the right side of the page.
 
@@ -101,13 +113,13 @@ Enter the task information in the panel located on the right side of the page.
 | **Num Episodes**     | Total number of episodes to record                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **Optimized Save**   | If enabled, uses RAM for faster dataset encoding processing                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
-### 7. Start Recording:
+### 6. Start Recording:
 
 To start recording, use the control panel at the bottom of the page:
 
   <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
 
-1. Click the "**Start**" button to begin recording. The system will:
+1. Click the `Start` button to begin recording. The system will:
 
    - Warm up the robot for the specified warmup time
    - Record each episode for the specified episode time
@@ -116,10 +128,10 @@ To start recording, use the control panel at the bottom of the page:
 
 2. During recording:
 
-   - The "**Stop**" button allows you to stop recording at any time
-   - The "**Retry**" button cancels the current episode and restarts recording for that episode
-   - The "**Next**" button ends the current episode early and moves to the next episode
-   - The "**Finish**" button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
+   - The `Stop` button allows you to stop recording at any time
+   - The `Retry` button cancels the current episode and restarts recording for that episode
+   - The `Next` button ends the current episode early and moves to the next episode
+   - The `Finish` button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
 
 ::: info
 
@@ -151,33 +163,37 @@ To start recording, use the control panel at the bottom of the page:
 Access the `Robot PC` either directly or via SSH, and follow the steps below.
 (Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 
-### 1. Open a terminal and start the Docker container:
+### 1. Launch the ROS 2 teleoperation node:
+
+- Open a new terminal and enter the Docker container.
 
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-### 2. Launch the ROS 2 teleoperation node inside the Docker container:
+- Launch the ROS 2 teleoperation node
 
 ```bash
 ffw_bg2_ai
 ```
 
-### 3. Open a new terminal and navigate to the `lerobot` directory:
+### 2. Authenticate with Hugging Face
+
+> **Note:** If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
+
+Open a new terminal and enter the Docker container.
 
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
+Navigate to the `lerobot` directory:
+
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
-
-### 4. Authenticate with Hugging Face
-
-> **Note:** If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
 
 To create a Hugging Face dataset, you first need to log in using a **write access token**, which can be generated from your [Hugging Face settings](https://huggingface.co/settings/tokens):
 
@@ -218,7 +234,11 @@ AnyNameYouWant
 - Make sure to replace `${HF_USER}` with your actual Hugging Face username.
   :::
 
-### 5. Run the following command to start recording your Hugging Face dataset:
+### 3. Start recording your Hugging Face dataset:
+
+> [!WARNING] Inside the Docker container
+
+To start recording, run the following command inside the Docker container.
 
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot

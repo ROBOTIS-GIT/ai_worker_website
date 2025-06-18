@@ -131,7 +131,7 @@ To start recording, use the control panel at the bottom of the page:
 
 2. During recording:
 
-   - The `Stop` button allows you to stop recording at any time
+   - The `Stop` button saves the current episode in progress and stops the recording. If you press the `Start` button again, recording will resume from the next episode.
    - The `Retry` button cancels the current episode and restarts recording for that episode
    - The `Next` button ends the current episode early and moves to the next episode
    - The `Finish` button ends the recording session and saves the current dataset, regardless of the remaining number of episodes

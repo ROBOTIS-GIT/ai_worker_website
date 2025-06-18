@@ -47,9 +47,6 @@ ai_server
 
 ### 3. Open the Web UI:
 
-> [!WARNING]
-> This step must be performed **on the host machine**, **not inside the Docker container**.
-
 > [!WARNING] On the host machine, or a device connected to the same network as the host machine.
 > Not inside the Docker container
 

@@ -154,6 +154,8 @@ INFO 2025-05-15 16:18:07 _internal.py:97 WARNING: This is a development server. 
  * Running on http://127.0.0.1:9091
 INFO 2025-05-15 16:18:07 _internal.py:97 Press CTRL+C to quit
 ```
+Access http://127.0.0.1:9091 to view the dataset. You should see a web interface similar to the one below:
+<img src="/imitation_learning/data_visualization.png" alt="Web UI" style="width: 100%; ">
 
 ::: tip
 Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to preview the dataset.

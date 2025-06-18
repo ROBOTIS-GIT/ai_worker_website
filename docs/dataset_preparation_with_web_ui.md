@@ -1,4 +1,4 @@
-# Dataset Preparation with Web UI tool
+# Dataset Preparation with Web UI
 
 ## Prerequisites
 
@@ -142,18 +142,18 @@ To start recording, use the control panel at the bottom of the page:
 
   :::
 
-1. After recording:
-   - The dataset will be saved locally
-   - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face
-   - You can find the recorded dataset in the specified location
-
-::: tip
+  ::: tip
 
 - Make sure all required fields are filled before starting
 - Keep the robot in a safe position during warmup
 - Monitor the recording progress through the web UI
 - You can monitor system resources (CPU, RAM, Storage) during recording
   :::
+
+3. After recording:
+   - The dataset will be saved locally
+   - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face
+   - You can find the recorded dataset in the specified location
 
 ## Dataset Visualization
 

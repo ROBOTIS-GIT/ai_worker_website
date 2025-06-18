@@ -126,7 +126,7 @@ To start recording, use the control panel at the bottom of the page:
 
    - Warm up the robot for the specified warmup time
    - Record each episode for the specified episode time
-   - Reset between episodes for the specified reset time
+   - Wait for the specified reset time between episodes
    - Repeat for the specified number of episodes
 
 2. During recording:

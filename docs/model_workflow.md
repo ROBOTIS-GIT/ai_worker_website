@@ -195,6 +195,12 @@ python lerobot/scripts/visualize_dataset_html.py \
 
 Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see how your model performed.
 
+::: tip
+If you have a another device connected to the same network as the host machine, open `http://ffw-{serial number}.local:9091` in your browser to see how your model performed.
+
+For example, `http://ffw-SNPR48A0000.local:9091`.
+:::
+
 ## Troubleshooting
 
 - **Out of memory errors**: Try reducing the batch size with `--train.batch_size=16` or lower

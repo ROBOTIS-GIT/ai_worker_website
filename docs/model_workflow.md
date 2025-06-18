@@ -43,7 +43,6 @@ python lerobot/scripts/train.py \
 ```
 
 ::: details :point_right: Key Training Parameters
-
 | Parameter | Description |
 |-----------|-------------|
 | `--dataset.repo_id` | The Hugging Face dataset ID you created in the data collection step |
@@ -56,9 +55,7 @@ python lerobot/scripts/train.py \
 :::
 
 ::: details :point_right: Expected Training Output
-
 During training, you will see output like this:
-
 ```
 INFO 2025-05-28 12:12:40 ts/train.py:232 step:200 smpl:2K ep:3 epch:0.16 loss:7.490 grdn:154.502 lr:1.0e-05 updt_s:0.047 data_s:0.002
 INFO 2025-05-28 12:12:48 ts/train.py:232 step:400 smpl:3K ep:7 epch:0.33 loss:3.128 grdn:85.109 lr:1.0e-05 updt_s:0.041 data_s:0.000

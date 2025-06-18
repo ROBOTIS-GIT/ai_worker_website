@@ -85,11 +85,12 @@ Use `scp` to copy the dataset directory from the Robot PC to your local machine:
 ```bash
 scp -r ~/ai_worker/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
 ```
-> Note:
->
-> - Replace ${HF_USER} with your Hugging Face username.
-> - Replace ffw_test with the actual dataset repository ID.
-> - `<USER>` and `<IP>` refer to your local machine’s SSH credentials.
+
+::: info
+- Replace ${HF_USER} with your Hugging Face username.
+- Replace ffw_test with the actual dataset repository ID.
+- `<USER>` and `<IP>` refer to your local machine’s SSH credentials.
+:::
 
 #### 3. Train the Policy
 

@@ -159,7 +159,13 @@ To start recording, use the control panel at the bottom of the page:
 3. After recording:
    - The dataset will be saved locally
    - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face
-   - You can find the recorded dataset in the specified location
+   - You can find the recorded dataset in the location below
+
+> [!WARNING] Outside the Docker container
+
+```
+~/ai_worker/docker/huggingface/lerobot
+```
 
 ## Dataset Visualization
 

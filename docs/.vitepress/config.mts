@@ -92,7 +92,17 @@ export default defineConfig({
         text: 'Imitation Learning',
         items: [
           { text: 'Overview', link: '/imitation_learning' },
-          { text: 'Dataset Preparation', link: '/dataset_preparation' },
+          {
+            text: 'Dataset Preparation',
+            link: '/dataset_preparation',
+            items: [
+              { text: 'With Web UI', link: '/dataset_preparation_with_web_ui' },
+              {
+                text: 'With LeRobot CLI (Optional)',
+                link: '/dataset_preparation_with_lerobot_cli',
+              },
+            ],
+          },
           { text: 'Model Workflow', link: '/model_workflow' },
         ]
       },

@@ -47,8 +47,9 @@ ai_server
 
 ### 3. Open the Web UI
 
-> [!WARNING] This step must be performed on the host machine (or another device on the same network).
-
+::: info
+This step must be performed on the **host machine** (or another device on the same network).
+:::
 
 Identify the serial number of the AI Worker device.
 In this example, the serial number is `SNPR48A0000`.
@@ -126,7 +127,6 @@ For detailed information on each field, expand the section below:
 | **Reset Time**       | Time allocated (in seconds) for resetting between episodes                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Num Episodes**     | Total number of episodes to record                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **Optimized Save**   | If enabled, uses RAM for faster dataset encoding processing                                                                                                                                                                                                                                                                                                                                                                                                                       |
-
 :::
 
 ### 5. Start Recording:
@@ -154,7 +154,6 @@ While recording is in progress, the following controls are available:
 - The `Finish` button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
 
 ::: info
-
 - The current recording stage is displayed in the control panel:
 
   - 📍 **Ready to start** — Standby mode before recording begins
@@ -162,16 +161,14 @@ While recording is in progress, the following controls are available:
   - 🔴 **Recording in progress** — Capturing data
   - 🏠 **Reset in progress** — Reset time between episodes
   - 💾 **Saving...** — Encoding and saving the episode
+:::
 
-  :::
-
-  ::: tip ✅ **Before You Start**
-
+::: tip
+- Before you start, keep the robot in a safe and ready position during warm-up
 - Make sure all required fields in the Task Info Panel are filled in
-- Keep the robot in a safe and ready position during warm-up
 - Monitor progress and status updates through the Web UI
 - System resources (CPU, RAM, Storage) are displayed during recording
-  :::
+:::
 
 #### Step 3. After recording:
 

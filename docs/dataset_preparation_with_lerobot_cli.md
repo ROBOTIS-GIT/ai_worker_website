@@ -22,7 +22,9 @@ ffw_bg2_ai
 
 ### 2. Authenticate with Hugging Face
 
-> **Note:** If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
+::: info
+If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
+:::
 
 Open a new terminal and enter the Docker container:
 
@@ -72,9 +74,8 @@ AnyNameYouWant
 ```
 
 ::: tip
-
 - Make sure to replace `${HF_USER}` with your actual Hugging Face username.
-  :::
+:::
 
 ## Record your dataset
 
@@ -101,11 +102,10 @@ python lerobot/scripts/control_robot.py \
 ```
 
 ::: tip
-
 - To save the dataset locally without uploading to the Hugging Face Hub, set `--control.push_to_hub=false`. This option is essential if you choose not to use Hugging Face.
 - If you are controlling the robot remotely via VSCode or SSH, the `arrow keys` may not work during data recording due to a pynput limitation. In this case, it's recommended to set --control.episode_time_s and --control.reset_time_s appropriately.
 - To use the `arrow keys` for teleoperation, connect a monitor and keyboard directly to the robot (Right arrow key: Save immediately, Left arrow key: Cancel).
-  :::
+:::
 
 
 ::: details :point_right: Key Parameters to Customize

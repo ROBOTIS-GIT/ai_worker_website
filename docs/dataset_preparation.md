@@ -6,7 +6,7 @@ Dataset Preparation consists of two main stages: **Dataset Recording** and **Dat
 
 In the Dataset Recording stage, you can collect datasets for training using either the Web UI or the Lerobot CLI method.
 
-you can choose one of the following options
+You can choose one of the following options
 
 ### 1. With Web UI (Physical AI Manager)
 

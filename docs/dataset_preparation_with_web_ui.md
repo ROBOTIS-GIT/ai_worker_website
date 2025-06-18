@@ -43,7 +43,8 @@ ai_server
 
 ### 3. Open Web UI (Physical AI Manager):
 
-> [!WARNING] On the host machine, not inside the Docker container
+> [!WARNING] On the host machine, or a device connected to the same network as the host machine.
+> Not inside the Docker container
 
 a. Check the AI Worker's serial number
 
@@ -199,4 +200,10 @@ INFO 2025-05-15 16:18:07 _internal.py:97 Press CTRL+C to quit
 
 ::: tip
 Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to preview the dataset.
+:::
+
+::: tip
+On a device connected to the same network as the host machine, open `http://ffw-{serial number}.local:9091` in your browser to preview the dataset.
+
+For example, `http://ffw-SNPR48A0000.local:9091`.
 :::

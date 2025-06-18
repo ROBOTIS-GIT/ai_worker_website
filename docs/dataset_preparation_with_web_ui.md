@@ -22,9 +22,9 @@ ffw_bg2_ai
 
 ### 2. Launch Physical AI Server
 
-> **Note:** 
->
-> The *Physical AI Server* is the backend that connects with the Web UI. It should be running to use the interface for data recording.
+::: info
+The _Physical AI Server_ is the backend that connects with the Web UI. It should be running to use the interface for data recording.
+:::
 
 Open another terminal and enter the Docker container:
 
@@ -53,7 +53,7 @@ ai_server
 Identify the serial number of the AI Worker device.
 In this example, the serial number is `SNPR48A0000`.
 
-#### b. Access the Web UI in Your Browser
+#### Access the Web UI in Your Browser
 
 Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 
@@ -73,9 +73,10 @@ On the **Home** page, select the type of robot you are using.
 
 ### 2. Go to `Record` page
 
-> [!note]  
-> You cannot access **Record** page unless a robot type has been selected on the **Home** page.  
-> Please ensure that the robot type is selected before proceeding.
+::: info
+You cannot access **Record** page unless a robot type has been selected on the **Home** page.  
+Please ensure that the robot type is selected before proceeding.
+:::
 
 The **Record** page is divided into three main sections:
 
@@ -138,29 +139,28 @@ To begin recording, use the **Control Panel** located at the bottom of the **Rec
 
 Click the `Start` button to begin the recording session. The system will automatically:
 
-   - Warm up the robot for the specified **Warm-up Time**
-   - Record each episode for the specified **Episode Time**
-   - Wait for the specified **Reset Time** between episodes
-   - Repeat the above steps for the specified **Number of Episodes**
+- Warm up the robot for the specified **Warm-up Time**
+- Record each episode for the specified **Episode Time**
+- Wait for the specified **Reset Time** between episodes
+- Repeat the above steps for the specified **Number of Episodes**
 
 #### Step 2: Monitor and Control During Recording
 
-
 While recording is in progress, the following controls are available:
 
-   - The `Stop` button saves the current episode in progress and stops the recording. If you press the `Start` button again, recording will resume from the next episode.
-   - The `Retry` button cancels the current episode and restarts recording for that episode
-   - The `Next` button ends the current episode early and moves to the next episode
-   - The `Finish` button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
+- The `Stop` button saves the current episode in progress and stops the recording. If you press the `Start` button again, recording will resume from the next episode.
+- The `Retry` button cancels the current episode and restarts recording for that episode
+- The `Next` button ends the current episode early and moves to the next episode
+- The `Finish` button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
 
-::: info NOTE
+::: info
 
 - The current recording stage is displayed in the control panel:
 
-  - 📍 **Ready to start** — Standby mode before recording begins  
-  - 🔥 **Warm-up in progress** — Robot is warming up  
-  - 🔴 **Recording in progress** — Capturing data  
-  - 🏠 **Reset in progress** — Reset time between episodes  
+  - 📍 **Ready to start** — Standby mode before recording begins
+  - 🔥 **Warm-up in progress** — Robot is warming up
+  - 🔴 **Recording in progress** — Capturing data
+  - 🏠 **Reset in progress** — Reset time between episodes
   - 💾 **Saving...** — Encoding and saving the episode
 
   :::
@@ -174,12 +174,14 @@ While recording is in progress, the following controls are available:
   :::
 
 #### Step 3. After recording:
-   - The dataset will be saved locally.
-   - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face.
-   - You can find the recorded dataset in the location below:
 
-> [!NOTE]  
-> This path refers to your **host system**, not inside the Docker container.
+- The dataset will be saved locally.
+- If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face.
+- You can find the recorded dataset in the location below:
+
+::: info
+This path refers to your **host system**, not inside the Docker container.
+:::
 
 ```
 ~/ai_worker/docker/huggingface/lerobot
@@ -214,9 +216,9 @@ INFO 2025-05-15 16:18:07 _internal.py:97 WARNING: This is a development server. 
  * Running on http://127.0.0.1:9091
 INFO 2025-05-15 16:18:07 _internal.py:97 Press CTRL+C to quit
 ```
+
 Access http://127.0.0.1:9091 to view the dataset. You should see a web interface similar to the one below:
 <img src="/imitation_learning/data_visualization.png" alt="Web UI" style="width: 100%; ">
-
 
 ::: tip
 Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to preview the dataset.

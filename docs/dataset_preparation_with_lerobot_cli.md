@@ -122,8 +122,10 @@ Of course, you can modify additional parameters as needed to fit your specific u
 :::
 
 The dataset is located at:
-> [!NOTE]  
-> This path refers to your **host system**, not inside the Docker container.
+
+::: info
+This path refers to your **host system**, not inside the Docker container.
+:::
 
 ```
 ~/ai_worker/docker/huggingface/lerobot

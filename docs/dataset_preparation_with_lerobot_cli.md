@@ -78,8 +78,6 @@ AnyNameYouWant
 
 ## Record your dataset
 
-> [!WARNING] Inside the Docker container
-
 To start recording, run the following command inside the Docker container.
 
 ```bash
@@ -109,10 +107,8 @@ python lerobot/scripts/control_robot.py \
 - To use the `arrow keys` for teleoperation, connect a monitor and keyboard directly to the robot (Right arrow key: Save immediately, Left arrow key: Cancel).
   :::
 
-#### Key Parameters to Customize
 
-To create your own dataset, here are some important parameters you may want to adjust:
-
+::: details :point_right: Key Parameters to Customize
 | Parameter                  | Description                                                                      | Example                            |
 | -------------------------- | -------------------------------------------------------------------------------- | ---------------------------------- |
 | `--control.repo_id`        | The Hugging Face dataset repository ID in the format `<username>/<dataset_name>` | `username/ffw_pick_place`          |
@@ -120,9 +116,10 @@ To create your own dataset, here are some important parameters you may want to a
 | `--control.fps`            | Frame rate for dataset recording                                                 | 15 (recommended)                   |
 | `--control.episode_time_s` | Duration (in seconds) to record each episode                                     | 30-60 for simple tasks             |
 | `--control.reset_time_s`   | Time allocated (in seconds) for resetting between episodes                       | 10-20 seconds                      |
-| `--control.num_episodes`   | Total number of episodes to record                                               | 10-50 depending on task complexity |
+| `--control.num_episodes`   | Total number of episodes to record                                               | 10-50 depending on task complexity |                                                                              |
 
 Of course, you can modify additional parameters as needed to fit your specific use case.
+:::
 
 The dataset is located at:
 

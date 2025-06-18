@@ -5,7 +5,7 @@
 To begin, access the `Robot PC` either directly or via SSH.  
 (Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 
-### 1. Launch the ROS 2 teleoperation node:
+### 1. Launch the ROS 2 teleoperation node
 
 Open a new terminal and enter the Docker container:
 
@@ -20,7 +20,7 @@ Launch the ROS 2 teleoperation node:
 ffw_bg2_ai
 ```
 
-### 2. Launch Physical AI Server:
+### 2. Launch Physical AI Server
 
 > **Note:** 
 >
@@ -45,10 +45,9 @@ Or, use shortcut command:
 ai_server
 ```
 
-### 3. Open the Web UI:
+### 3. Open the Web UI
 
-> [!WARNING] On the host machine, or a device connected to the same network as the host machine.
-> Not inside the Docker container
+> [!WARNING] This step must be performed on the host machine (or another device on the same network).
 
 
 Identify the serial number of the AI Worker device.
@@ -175,11 +174,12 @@ While recording is in progress, the following controls are available:
   :::
 
 #### Step 3. After recording:
-   - The dataset will be saved locally
-   - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face
-   - You can find the recorded dataset in the location below
+   - The dataset will be saved locally.
+   - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face.
+   - You can find the recorded dataset in the location below:
 
-> [!WARNING] Outside the Docker container
+> [!NOTE]  
+> This path refers to your **host system**, not inside the Docker container.
 
 ```
 ~/ai_worker/docker/huggingface/lerobot

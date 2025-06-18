@@ -8,9 +8,6 @@ In the Dataset Recording stage, you can collect datasets for training using eith
 
 you can choose one of the following options
 
-1. With Web UI (Physical AI Manager) `Recommanded`
-2. With LeRobot CLI `Optional`
-
 ### 1. With Web UI (Physical AI Manager)
 
 You can record your dataset with Web UI (Physical AI Manager).

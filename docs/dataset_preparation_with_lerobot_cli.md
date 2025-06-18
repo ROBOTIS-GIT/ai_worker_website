@@ -5,7 +5,7 @@
 Access the `Robot PC` either directly or via SSH, and follow the steps below.
 (Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 
-### 1. Launch the ROS 2 teleoperation node:
+### 1. Launch the ROS 2 teleoperation node
 
 Open a new terminal and enter the Docker container
 

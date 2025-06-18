@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the AI Worker platform and the Hugging Face Hub, equipped with a user-friendly web GUI designed to streamline interaction and improve accessibility.
+This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the AI Worker platform and the Hugging Face Hub and includes a user-friendly web GUI designed to streamline interaction and improve accessibility.
 
 ### 1. Data Collection
 

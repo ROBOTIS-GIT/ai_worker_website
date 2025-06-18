@@ -26,14 +26,14 @@ ffw_bg2_ai
 >
 > The *Physical AI Server* is the backend that connects with the Web UI. It should be running to use the interface for data recording.
 
-Open another terminal and enter the Docker container
+Open another terminal and enter the Docker container:
 
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-Launch Physical AI Server with the following command
+Launch Physical AI Server with the following command:
 
 ```bash
 ros2 launch physical_ai_server physical_ai_server_bringup.launch.py
@@ -68,14 +68,14 @@ Once connected, you should see the web UI as shown below.
 
 ### 1. Select the Robot Type
 
-On the '**Home**' page, select the type of robot you are using.
+On the **Home** page, select the type of robot you are using.
 
   <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
 
 ### 2. Go to `Record` page
 
 > [!note]  
-> You cannot acess **Record** page unless a robot type has been selected on the **Home** page.  
+> You cannot access **Record** page unless a robot type has been selected on the **Home** page.  
 > Please ensure that the robot type is selected before proceeding.
 
 The **Record** page is divided into three main sections:
@@ -104,7 +104,7 @@ To change the image topic:
 
 ### 4. Enter Task Information:
 
-Fill out the task-related fields in the **Task Info Panel**, located on the right side of the '**Record**' page.
+Fill out the task-related fields in the **Task Info Panel**, located on the right side of the **Record** page.
 
   <img src="/imitation_learning/web_ui_task_info.png" alt="Web UI" style="width: 40%; ">
 
@@ -174,7 +174,7 @@ While recording is in progress, the following controls are available:
 - System resources (CPU, RAM, Storage) are displayed during recording
   :::
 
-3. After recording:
+#### Step 3. After recording:
    - The dataset will be saved locally
    - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face
    - You can find the recorded dataset in the location below

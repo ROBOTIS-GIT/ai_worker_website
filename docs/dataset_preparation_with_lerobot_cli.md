@@ -116,14 +116,18 @@ python lerobot/scripts/control_robot.py \
 | `--control.fps`            | Frame rate for dataset recording                                                 | 15 (recommended)                   |
 | `--control.episode_time_s` | Duration (in seconds) to record each episode                                     | 30-60 for simple tasks             |
 | `--control.reset_time_s`   | Time allocated (in seconds) for resetting between episodes                       | 10-20 seconds                      |
-| `--control.num_episodes`   | Total number of episodes to record                                               | 10-50 depending on task complexity |                                                                              |
+| `--control.num_episodes`   | Total number of episodes to record                                               | 10-50 depending on task complexity |
 
 Of course, you can modify additional parameters as needed to fit your specific use case.
 :::
 
 The dataset is located at:
+> [!NOTE]  
+> This path refers to your **host system**, not inside the Docker container.
 
-`~/ai_worker/docker/huggingface/lerobot/`
+```
+~/ai_worker/docker/huggingface/lerobot
+```
 
 ## Dataset Visualization
 

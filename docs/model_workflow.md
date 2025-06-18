@@ -10,19 +10,24 @@ After [preparing your dataset](/dataset_preparation), you can proceed to train t
 
 ### Training on NVIDIA Jetson AGX Orin
 
-#### 1. Open a new terminal and enter the Docker container:
+#### 1. Enter the Docker Container
+
+Open a terminal on the Jetson device and enter the Docker container:
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-#### 2. Navigate to the lerobot directory inside the Docker container:
+#### 2. Navigate to the LeRobot Directory
 
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
-#### 3. Run the training script using the following command:
+#### 3. Train the Policy
+
+Execute the following command to start training:
+
 
 ```bash
 python lerobot/scripts/train.py \
@@ -35,7 +40,7 @@ python lerobot/scripts/train.py \
   --save_freq=1000
 ```
 
-##### Key Training Parameters
+::: details :point_right: Key Training Parameters
 
 | Parameter | Description |
 |-----------|-------------|
@@ -46,8 +51,9 @@ python lerobot/scripts/train.py \
 | `--policy.device` | Device to use for training ('cuda' for GPU, 'cpu' for CPU) |
 | `--log_freq` | How often to log training statistics (in iterations) |
 | `--save_freq` | How often to save model checkpoints (in iterations) |
+:::
 
-##### Expected Training Output
+::: details :point_right: Expected Training Output
 
 During training, you will see output like this:
 
@@ -63,19 +69,31 @@ INFO 2025-05-28 12:13:40 ts/train.py:232 step:2K smpl:13K ep:26 epch:1.30 loss:1
 INFO 2025-05-28 12:13:48 ts/train.py:232 step:2K smpl:14K ep:29 epch:1.47 loss:1.454 grdn:53.859 lr:1.0e-05 updt_s:0.042 data_s:0.000
 ...
 ```
+:::
+
 
 ### Training on Your PC
 
-#### 1. First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally.
+#### 1. Set Up the LeRobot Framework
 
-#### 2. Transfer your dataset directory using scp:
+First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally.
 
-> **Note:** Replace `${HF_USER}` with your Hugging Face username and `ffw_test` with your actual dataset repository ID.
+#### 2. Transfer Your Dataset to Your Local Machine
+
+Use `scp` to copy the dataset directory from the Robot PC to your local machine:
+
 ```bash
 scp -r ~/ai_worker/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
 ```
+> **Note:** 
+>
+> - Replace ${HF_USER} with your Hugging Face username.
+> - Replace ffw_test with the actual dataset repository ID.
+> - `<USER>` and `<IP>` refer to your local machine’s SSH credentials.
 
-#### 3. You can train the policy using the same command as above:
+#### 3. Train the Policy
+
+Once the dataset has been transferred, you can train a policy using the following command:
 
 ```bash
 python lerobot/scripts/train.py \
@@ -105,38 +123,40 @@ This makes your model accessible from anywhere and simplifies deployment.
 
 Once your model is trained, you can deploy it on the AI Worker for inference.
 
-### 1. Change file ownership (on the host machine, not inside the Docker container):
+### 1. Change File Ownership:
+> [!WARNING]
+> This step must be performed **on the robot PC**, **not inside the Docker container**.
 ```bash
 sudo chown -R robotis ./
 ```
-Move your model folder to the model folder on the robot PC.
+Move your trained model folder from your local PC to the model directory on the Robot PC using `scp`.
 ```bash
 scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/ai_worker/docker/lerobot/outputs/train
 ```
 
-### 2. Open a terminal and run Docker container:
+### 2. Open a Terminal and Enter Docker Container:
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-### 3. Launch the ROS 2 Follower inside the Docker container:
+### 3. Launch the ROS 2 Follower Node:
 ```bash
 ffw_bg2_follower_ai
 ```
 
-### 4. Open a new terminal and run Docker container:
+### 4. Open a new terminal and run Docker Container:
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-### 5. Navigate to the lerobot directory inside the Docker container:
+### 5. Navigate to the `LeRobot` Directory:
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
-### 6. Run the following command to evaluate your trained policy:
+### 6. Run the Following Command for Evaluation:
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=ffw \
@@ -152,8 +172,7 @@ python lerobot/scripts/control_robot.py \
   --control.policy.path=outputs/train/act_ffw_test/checkpoints/last/pretrained_model \
   --control.play_sounds=false
 ```
-
-#### Key Inference Parameters
+::: details :point_right: Key Inference Parameters
 
 | Parameter | Description |
 |-----------|-------------|
@@ -161,6 +180,7 @@ python lerobot/scripts/control_robot.py \
 | `--control.policy.path` | Path to your trained model checkpoint |
 | `--control.episode_time_s` | Duration of each inference episode (in seconds) |
 | `--control.repo_id` | Hugging Face repo where evaluation results will be saved |
+:::
 
 ## Visualizing Inference Results
 

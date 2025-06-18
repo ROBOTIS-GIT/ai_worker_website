@@ -96,9 +96,9 @@ export default defineConfig({
             text: 'Dataset Preparation',
             link: '/dataset_preparation',
             items: [
-              { text: 'With Web UI', link: '/dataset_preparation_with_web_ui' },
+              { text: 'Web UI', link: '/dataset_preparation_with_web_ui' },
               {
-                text: 'With LeRobot CLI (Optional)',
+                text: 'LeRobot CLI',
                 link: '/dataset_preparation_with_lerobot_cli',
               },
             ],

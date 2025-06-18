@@ -2,11 +2,11 @@
 
 ## Overview
 
-This overview outlines the end-to-end imitation learning pipeline using the AI Worker platform and the Hugging Face Hub. 
+This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the AI Worker platform and the Hugging Face Hub, equipped with a user-friendly web GUI designed to streamline interaction and improve accessibility.
 
 ### 1. Data Collection
 
-Human operators use a wearable skeletal leader device to demonstrate motions and collect data consisting of images and joint positions. The collected data can be uploaded to and downloaded from the Hugging Face Hub.
+Human operators use a wearable skeletal leader device to demonstrate motions, collecting image and joint position data. The web-based GUI plays a key role in streamlining this process by providing real-time visualization and control. The collected data can be uploaded to and downloaded from the Hugging Face Hub. 
 
 ### 2. Data Visualization
 

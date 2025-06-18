@@ -2,25 +2,29 @@
 
 ## Prerequisites
 
-Access the `Robot PC` either directly or via SSH, and follow the steps below.
+To begin, access the `Robot PC` either directly or via SSH.  
 (Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 
 ### 1. Launch the ROS 2 teleoperation node:
 
-Open a new terminal and enter the Docker container
+Open a new terminal and enter the Docker container:
 
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-Launch the ROS 2 teleoperation node
+Launch the ROS 2 teleoperation node:
 
 ```bash
 ffw_bg2_ai
 ```
 
 ### 2. Launch Physical AI Server:
+
+> **Note:** 
+>
+> The *Physical AI Server* is the backend that connects with the Web UI. It should be running to use the interface for data recording.
 
 Open another terminal and enter the Docker container
 
@@ -35,22 +39,27 @@ Launch Physical AI Server with the following command
 ros2 launch physical_ai_server physical_ai_server_bringup.launch.py
 ```
 
-or use the shortcut command:
+Or, use shortcut command:
 
 ```bash
 ai_server
 ```
 
-### 3. Open Web UI (Physical AI Manager):
+### 3. Open the Web UI:
+
+> [!WARNING]
+> This step must be performed **on the host machine**, **not inside the Docker container**.
 
 > [!WARNING] On the host machine, or a device connected to the same network as the host machine.
 > Not inside the Docker container
 
-a. Check the AI Worker's serial number
 
+Identify the serial number of the AI Worker device.
 In this example, the serial number is `SNPR48A0000`.
 
-b. Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
+#### b. Access the Web UI in Your Browser
+
+Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 
 In this example, the address becomes `http://ffw-SNPR48A0000.local`.
 
@@ -60,21 +69,21 @@ Once connected, you should see the web UI as shown below.
 
 ## Record your dataset
 
-### 1. Select robot type
+### 1. Select the Robot Type
 
-Select robot type in `Home` page
+On the '**Home**' page, select the type of robot you are using.
 
   <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
 
 ### 2. Go to `Record` page
 
 > [!note]  
-> You cannot go to **Record** page unless you have set the robot type on the **Home** page.  
-> Please make sure to select the robot type on the Home page.
+> You cannot acess **Record** page unless a robot type has been selected on the **Home** page.  
+> Please ensure that the robot type is selected before proceeding.
 
-The Record page consists of three main sections:
+The **Record** page is divided into three main sections:
 
-- **Image Streaming Area** (Center): View real-time streams from the robot cameras.
+- **Image Streaming Area** (Center): Displays real-time camera streams from the robot.
 
 - **Task Info Panel** (Right side): Enter task name, task instruction, time values, etc. [(details)](#_4-enter-task-information)
 
@@ -86,19 +95,25 @@ The selected robot type is also displayed in the top left corner.
 
 ### 3. Visualize RGB images from the cameras:
 
-The image streaming will be displayed automatically. You can remove the currently displayed image stream and select a different image stream to display. To select an image topic, click the **+** button and choose from the popup window.
+The image stream is displayed automatically upon entering the **Record** page.  
+You can remove the current stream and select a different one as needed.
+
+To change the image topic:
+
+1. Click the **+** button in the Image Streaming Area.
+2. Choose a topic from the popup window.
 
   <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 40%; ">
 
 ### 4. Enter Task Information:
 
-Enter the task information in the panel located on the right side of the page.
+Fill out the task-related fields in the **Task Info Panel**, located on the right side of the '**Record**' page.
 
   <img src="/imitation_learning/web_ui_task_info.png" alt="Web UI" style="width: 40%; ">
 
-For a detailed description of each field, see below.
+For detailed information on each field, expand the section below:
 
-::: details :point_right: Task information field descriptions
+::: details :point_right: Task Information Field Descriptions
 
 | Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -119,18 +134,23 @@ For a detailed description of each field, see below.
 
 ### 5. Start Recording:
 
-To start recording, use the control panel at the bottom of the page:
+To begin recording, use the **Control Panel** located at the bottom of the **Record** page:
 
   <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
 
-1. Click the `Start` button to begin recording. The system will:
+#### Step 1: Click the `Start` Button
 
-   - Warm up the robot for the specified warmup time
-   - Record each episode for the specified episode time
-   - Wait for the specified reset time between episodes
-   - Repeat for the specified number of episodes
+Click the `Start` button to begin the recording session. The system will automatically:
 
-2. During recording:
+   - Warm up the robot for the specified **Warm-up Time**
+   - Record each episode for the specified **Episode Time**
+   - Wait for the specified **Reset Time** between episodes
+   - Repeat the above steps for the specified **Number of Episodes**
+
+#### Step 2: Monitor and Control During Recording
+
+
+While recording is in progress, the following controls are available:
 
    - The `Stop` button saves the current episode in progress and stops the recording. If you press the `Start` button again, recording will resume from the next episode.
    - The `Retry` button cancels the current episode and restarts recording for that episode
@@ -141,20 +161,20 @@ To start recording, use the control panel at the bottom of the page:
 
 - The current recording stage is displayed in the control panel:
 
-  - 📍 Ready to start (Standby)
-  - 🔥 Warmup in progress (Warmup Time)
-  - 🏠 Reset in progress (Reset Time)
-  - 🔴 Recording in progress (Episode Time)
-  - 💾 Saving... (Encoding the episode)
+  - 📍 **Ready to start** — Standby mode before recording begins  
+  - 🔥 **Warm-up in progress** — Robot is warming up  
+  - 🔴 **Recording in progress** — Capturing data  
+  - 🏠 **Reset in progress** — Reset time between episodes  
+  - 💾 **Saving...** — Encoding and saving the episode
 
   :::
 
-  ::: tip
+  ::: tip ✅ **Before You Start**
 
-- Make sure all required fields are filled before starting
-- Keep the robot in a safe position during warmup
-- Monitor the recording progress through the web UI
-- You can monitor system resources (CPU, RAM, Storage) during recording
+- Make sure all required fields in the Task Info Panel are filled in
+- Keep the robot in a safe and ready position during warm-up
+- Monitor progress and status updates through the Web UI
+- System resources (CPU, RAM, Storage) are displayed during recording
   :::
 
 3. After recording:

@@ -1,4 +1,4 @@
-# Dataset Preparation with LeRobot CLI (Optional)
+# Dataset Preparation with LeRobot CLI
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ ffw_bg2_ai
 
 > **Note:** If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
 
-Open a new terminal and enter the Docker container.
+Open a new terminal and enter the Docker container:
 
 ```bash
 cd ai_worker

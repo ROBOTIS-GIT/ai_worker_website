@@ -1,29 +1,32 @@
 # Dataset Preparation
 
-Dataset Preparation consists of two main stages: **Dataset Recording** and **Dataset Visualization**.
+The following sections describe the dataset preparation workflow for Imitation Learning, which consists of two main stages: **Dataset Recording** and **Dataset Visualization**.
+The recording stage explains how to collect data using either the Web GUI or the LeRobot CLI.
+The visualization stage focuses on verifying data quality by allowing users to inspect the recorded dataset.
 
 ## Dataset Recording
 
-In the Dataset Recording stage, you can collect datasets for training using either the Web UI or the Lerobot CLI method.
+You can record your own dataset using **one of the following methods**:
 
-You can choose one of the following options
+### 1. Web UI (Physical AI Manager) – *Recommended*
 
-### 1. With Web UI (Physical AI Manager)
-
-You can record your dataset with Web UI (Physical AI Manager).
+You can record your dataset using the Web UI provided by the Physical AI Manager.  
+This option is ideal for users who prefer an intuitive interface and real-time visualization.
 
 <a href="/dataset_preparation_with_web_ui" class="button-dataset-preparation-option">
-Option 1<br>With Web UI (Recommanded)
+Option 1<br>Web UI (Recommended)
 </a>
 
-### 2. With LeRobot CLI
+### 2. LeRobot CLI – *Optional*
 
-You can also record your dataset with LeRobot command line interface(CLI)
+Alternatively, you can use the LeRobot Command Line Interface (CLI) to record your dataset.  
+This method is suitable for advanced users or automated workflows.
 
 <a href="/dataset_preparation_with_lerobot_cli" class="button-dataset-preparation-option">
-Option 2<br>With LeRobot CLI (Optinal)
+Option 2<br>LeRobot CLI (Optional)
 </a>
 
 ## Dataset Visualization
 
-In the Dataset Visualization stage, you can visually inspect the collected dataset to ensure it has been properly acquired.
+In the **Dataset Visualization** stage, you can visually inspect the collected dataset  
+to ensure its quality.

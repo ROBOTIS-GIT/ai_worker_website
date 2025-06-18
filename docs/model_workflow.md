@@ -85,7 +85,7 @@ Use `scp` to copy the dataset directory from the Robot PC to your local machine:
 ```bash
 scp -r ~/ai_worker/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
 ```
-> **Note:** 
+> Note:
 >
 > - Replace ${HF_USER} with your Hugging Face username.
 > - Replace ffw_test with the actual dataset repository ID.
@@ -129,7 +129,7 @@ Once your model is trained, you can deploy it on the AI Worker for inference.
 ```bash
 sudo chown -R robotis ./
 ```
-Move your trained model folder from your local PC to the model directory on the Robot PC using `scp`.
+Move your model folder from your local PC to the model directory on the Robot PC using `scp`.
 ```bash
 scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/ai_worker/docker/lerobot/outputs/train
 ```
@@ -145,7 +145,7 @@ cd ai_worker
 ffw_bg2_follower_ai
 ```
 
-### 4. Open a new terminal and run Docker Container
+### 4. Open a New Terminal and Run Docker Container
 ```bash
 cd ai_worker
 ./docker/container.sh enter

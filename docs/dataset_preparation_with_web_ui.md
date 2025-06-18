@@ -63,7 +63,7 @@ Once connected, you should see the web UI as shown below.
 
 Select robot type in `Home` page
 
-  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 50%; ">
+  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
 
 ### 2. Go to `Record` page
 
@@ -87,13 +87,17 @@ The selected robot type is also displayed in the top left corner.
 
 The image streaming will be displayed automatically. You can remove the currently displayed image stream and select a different image stream to display. To select an image topic, click the **+** button and choose from the popup window.
 
-  <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 50%; ">
+  <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 40%; ">
 
 ### 4. Enter Task Information:
 
 Enter the task information in the panel located on the right side of the page.
 
-  <img src="/imitation_learning/web_ui_task_info.png" alt="Web UI" style="width: 50%; ">
+  <img src="/imitation_learning/web_ui_task_info.png" alt="Web UI" style="width: 40%; ">
+
+For a detailed description of each field, see below.
+
+::: details :point_right: Task information field descriptions
 
 | Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -109,6 +113,8 @@ Enter the task information in the panel located on the right side of the page.
 | **Reset Time**       | Time allocated (in seconds) for resetting between episodes                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Num Episodes**     | Total number of episodes to record                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **Optimized Save**   | If enabled, uses RAM for faster dataset encoding processing                                                                                                                                                                                                                                                                                                                                                                                                                       |
+
+:::
 
 ### 5. Start Recording:
 
@@ -130,7 +136,7 @@ To start recording, use the control panel at the bottom of the page:
    - The `Next` button ends the current episode early and moves to the next episode
    - The `Finish` button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
 
-::: info
+::: info NOTE
 
 - The current recording stage is displayed in the control panel:
 

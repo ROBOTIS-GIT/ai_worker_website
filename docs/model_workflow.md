@@ -4,7 +4,9 @@ This guide explains the process of training and deploying imitation learning mod
 
 ## Model Training
 
-> **Note:** You can train the policy either on your local PC or on an NVIDIA Jetson AGX Orin device.
+::: info
+You can train the policy either on your local PC or on an NVIDIA Jetson AGX Orin device.
+:::
 
 After [preparing your dataset](/dataset_preparation), you can proceed to train the policy model.
 
@@ -125,8 +127,9 @@ This makes your model accessible from anywhere and simplifies deployment.
 Once your model is trained, you can deploy it on the AI Worker for inference.
 
 ### 1. Change File Ownership
-> [!WARNING]
-> This step must be performed **on the robot PC**, **not inside the Docker container**.
+::: info
+This step must be performed **on the robot PC**, **not inside the Docker container**.
+:::
 ```bash
 sudo chown -R robotis ./
 ```
@@ -174,7 +177,6 @@ python lerobot/scripts/control_robot.py \
   --control.play_sounds=false
 ```
 ::: details :point_right: Key Inference Parameters
-
 | Parameter | Description |
 |-----------|-------------|
 | `--control.type=record` | Records the policy performance for later evaluation |

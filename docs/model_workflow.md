@@ -148,7 +148,7 @@ ffw_bg2_follower_ai
 
 ### 4. Run Inference
 
-You can use one of the following methods for inference
+You can choose one of the following methods to run inference:
 
 <a href="#option-1-web-ui" class="button-dataset-preparation-option">
 Option 1<br>Web UI (Recommended)
@@ -163,17 +163,17 @@ Option 2<br>LeRobot CLI (Optional)
 #### a. Launch Physical AI Server 
 
 ::: warning
-If the Physical AI Server is already running, you can pass this sequence.
+If the Physical AI Server is already running, you can skip this step.
 ::: 
 
-Open another terminal and enter the Docker container:
+Open a new terminal and enter the Docker container:
 
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-Launch Physical AI Server with the following command:
+Then, launch the Physical AI Server with the following command:
 
 ```bash
 ai_server
@@ -181,7 +181,7 @@ ai_server
 
 #### b. Open the Web UI
 
-Open your web browser and open Web UI (Physical AI Manager).
+Open your web browser and open the Web UI (Physical AI Manager).
 
 (Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/dataset_preparation_with_web_ui/#_3-open-the-web-ui))
 
@@ -191,7 +191,7 @@ On the **Home** page, select the type of robot you are using.
 
 #### c. Enter Task Instruction and Policy Path
 
-Go to `Infence` Page.
+Go to `Inference` Page.
 
 Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, located on the right side of the page.
 
@@ -200,8 +200,8 @@ Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, locat
 ::: details :point_right: Task Information Field Descriptions
 | Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Task Instruction** | It is a sentence that instructs the robot what action to perform, such as "pick and place object"                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Policy Path**      | Path to your trained model checkpoint. This should point to the directory containing your trained model files (e.g., `outputs/train/act_ffw_test/checkpoints/last/pretrained_model`)                                                                                                                                                                                                                                                                                                |
+| **Task Instruction** | A sentence that tells the robot what action to perform, such as `"pick and place object"`.                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Policy Path**      | The path to your trained model checkpoint. This should point to the directory containing your trained model files (e.g., `outputs/train/act_ffw_test/checkpoints/last/pretrained_model`).                                                                                                                                                                                                                                                                                                |
 :::
 
 #### d. Start Inference
@@ -210,8 +210,8 @@ To begin inference, use the **Control Panel** located at the bottom of the page:
 
   <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
 
-  - The `Start` button runs inference
-  - The `Finish` button stops inference
+  - The `Start` button begins inference.
+  - The `Finish` button stops inference.
 
 
 ### Option 2. LeRobot CLI

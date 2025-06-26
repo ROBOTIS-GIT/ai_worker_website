@@ -17,7 +17,10 @@ cd ai_worker
 Launch the ROS 2 teleoperation node:
 
 ```bash
+# For bg2 type
 ffw_bg2_ai
+# For sg2 type
+ffw_sg2_ai
 ```
 
 ### 2. Launch Physical AI Server

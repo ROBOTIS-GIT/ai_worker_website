@@ -143,7 +143,10 @@ cd ai_worker
 
 ### 3. Launch the ROS 2 Follower Node
 ```bash
+# For bg2 type
 ffw_bg2_follower_ai
+# For sg2 type
+ffw_sg2_follower_ai
 ```
 
 ### 4. Run Inference

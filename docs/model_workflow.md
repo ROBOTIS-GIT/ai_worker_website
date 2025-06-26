@@ -146,18 +146,88 @@ cd ai_worker
 ffw_bg2_follower_ai
 ```
 
-### 4. Open a New Terminal and Run Docker Container
+### 4. Run Inference
+
+You can use one of the following methods for inference
+
+<a href="#option-1-web-ui" class="button-dataset-preparation-option">
+Option 1<br>Web UI (Recommended)
+</a>
+
+<a href="#option-2-lerobot-cli" class="button-dataset-preparation-option">
+Option 2<br>LeRobot CLI (Optional)
+</a>
+
+### Option 1. Web UI
+
+#### a. Launch Physical AI Server 
+
+::: warning
+If the Physical AI Server is already running, you can pass this sequence.
+::: 
+
+Open another terminal and enter the Docker container:
+
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-### 5. Navigate to the `LeRobot` Directory
+Launch Physical AI Server with the following command:
+
+```bash
+ai_server
+```
+
+#### b. Open the Web UI
+
+Open your web browser and open Web UI (Physical AI Manager).
+
+(Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/dataset_preparation_with_web_ui/#_3-open-the-web-ui))
+
+On the **Home** page, select the type of robot you are using.
+
+  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
+
+#### c. Enter Task Instruction and Policy Path
+
+Go to `Infence` Page.
+
+Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, located on the right side of the page.
+
+<img src="/imitation_learning/web_ui_inference_task_info.png" alt="Web UI" style="width: 50%; ">
+
+::: details :point_right: Task Information Field Descriptions
+| Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Task Instruction** | It is a sentence that instructs the robot what action to perform, such as "pick and place object"                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Policy Path**      | Path to your trained model checkpoint. This should point to the directory containing your trained model files (e.g., `outputs/train/act_ffw_test/checkpoints/last/pretrained_model`)                                                                                                                                                                                                                                                                                                |
+:::
+
+#### d. Start Inference
+
+To begin inference, use the **Control Panel** located at the bottom of the page:
+
+  <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
+
+  - The `Start` button runs inference
+  - The `Finish` button stops inference
+
+
+### Option 2. LeRobot CLI
+
+#### a. Open a New Terminal and Run Docker Container
+```bash
+cd ai_worker
+./docker/container.sh enter
+```
+
+#### b. Navigate to the `LeRobot` Directory
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
-### 6. Run the Following Command for Evaluation
+#### c. Run the Following Command for Evaluation
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=ffw \

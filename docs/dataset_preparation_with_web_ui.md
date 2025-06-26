@@ -55,7 +55,7 @@ This step must be performed on the **host machine** (or another device on the sa
 Identify the serial number of the AI Worker device.
 In this example, the serial number is `SNPR48A0000`.
 
-#### b. Access the Web UI in Your Browser
+#### Access the Web UI in Your Browser
 
 Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 

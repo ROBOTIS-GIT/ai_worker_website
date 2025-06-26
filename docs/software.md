@@ -83,10 +83,11 @@ DYNAMIXEL Actuators
 | `head_controller` | Head (pan/tilt) | 2 | `/leader/joystick_controller_left` |
 | `lift_controller` | Vertical lift | 1 | `/leader/joystick_controller_right` |
 | `joint_state_broadcaster` | All joints | – | Publishes to `/joint_states` |
+| `swerve_drive_controller` | Mobile base | 6 | `/cmd_vel` |
 
-All controllers (except `joint_state_broadcaster`) use the **`JointTrajectoryController`** type.
+All controllers (except `joint_state_broadcaster` and `swerve_drive_controller`) use the **`JointTrajectoryController`** type.
 
-By default, all joints operate in **position mode**.
+By default, all joints operate in **position mode**, except for the mobile base which operates in **velocity mode**.
 
 The last joint in each arm controller corresponds to the **gripper**.
 
@@ -113,6 +114,9 @@ The last joint in each arm controller corresponds to the **gripper**.
 
       joint_state_broadcaster:
         type: joint_state_broadcaster/JointStateBroadcaster
+
+      swerve_drive_controller:
+        type: ffw_swerve_drive_controller/SwerveDriveController
 
 /**:
   arm_l_controller:

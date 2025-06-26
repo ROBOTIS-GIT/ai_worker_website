@@ -143,21 +143,98 @@ cd ai_worker
 
 ### 3. Launch the ROS 2 Follower Node
 ```bash
+# For bg2 type
 ffw_bg2_follower_ai
+# For sg2 type
+ffw_sg2_follower_ai
 ```
 
-### 4. Open a New Terminal and Run Docker Container
+### 4. Run Inference
+
+You can choose one of the following methods to run inference:
+
+<a href="#option-1-web-ui" class="button-dataset-preparation-option">
+Option 1<br>Web UI (Recommended)
+</a>
+
+<a href="#option-2-lerobot-cli" class="button-dataset-preparation-option">
+Option 2<br>LeRobot CLI (Optional)
+</a>
+
+### Option 1. Web UI
+
+#### a. Launch Physical AI Server 
+
+::: warning
+If the Physical AI Server is already running, you can skip this step.
+::: 
+
+Open a new terminal and enter the Docker container:
+
 ```bash
 cd ai_worker
 ./docker/container.sh enter
 ```
 
-### 5. Navigate to the `LeRobot` Directory
+Then, launch the Physical AI Server with the following command:
+
+```bash
+ai_server
+```
+
+#### b. Open the Web UI
+
+Open your web browser and open the Web UI (Physical AI Manager).
+
+(Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/dataset_preparation_with_web_ui/#_3-open-the-web-ui))
+
+On the **Home** page, select the type of robot you are using.
+
+  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
+
+#### c. Enter Task Instruction and Policy Path
+
+Go to `Inference` Page.
+
+Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, located on the right side of the page.
+
+  <img src="/imitation_learning/web_ui_inference_task_info.png" alt="Web UI" style="width: 50%; ">
+
+::: details :point_right: Task Information Field Descriptions
+| Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Task Instruction** | A sentence that tells the robot what action to perform, such as `"pick and place object"`.                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Policy Path**      | The **absolute** path to your trained model checkpoint directory. This should point to the folder containing your trained model files such as `config.json`, `model.safetensors`, and `train_config.json`. (e.g., `/root/trained_model/ffw_act/pretrained/`).                                                                                                                                                                                                                                                                                                |
+:::
+
+::: info
+Recording during inference will be supported in a future update. Coming soon!
+:::
+
+#### d. Start Inference
+
+To begin inference, use the **Control Panel** located at the bottom of the page:
+
+  <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
+
+  - The `Start` button begins inference.
+  - The `Finish` button stops inference.
+
+
+### Option 2. LeRobot CLI
+
+#### a. Open a New Terminal and Run Docker Container
+```bash
+cd ai_worker
+./docker/container.sh enter
+```
+
+#### b. Navigate to the `LeRobot` Directory
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
-### 6. Run the Following Command for Evaluation
+#### c. Run the Following Command for Evaluation
 ```bash
 python lerobot/scripts/control_robot.py \
   --robot.type=ffw \

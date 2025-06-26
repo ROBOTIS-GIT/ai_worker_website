@@ -9,7 +9,7 @@ Before starting teleoperation, make sure:
 
 ### Steps for Teleoperation Setup (Leader)
 (*The term `Leader` refers to the control device in the AI WORKER system)
-![Back of the Leader](/quick_start_guide/back_of_the_leader.png)
+![Back of the LG2 Leader](/quick_start_guide/back_of_the_LG2_leader.png)
 1. `Power Cable`: Connect the power adapter to supply power to the U2D2 device.
 2. `U2D2 ON/OFF`: This switch is located inside a small recessed hole. The device is turned on when the inner white-dotted button is pressed.
 3. `USB Cable`: Connect a USB cable from the U2D2 to one of the USB ports on the back of the `Follower`.
@@ -46,14 +46,24 @@ If a container is already running, enter the **ai\_worker** Docker container wit
 ### Option 1: All-in-One Launch
 ⚠️While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
 
-To start both the `Leader` and `Follower` simultaneously:
-
+To start both the `Leader` and `Follower(BG2/SG2)` simultaneously:
+* FFW_BG2
 ```bash
 ros2 launch ffw_bringup ffw_bg2_ai.launch.py
 ```
 or use the shortcut command:
 ```bash
 ffw_bg2_ai
+```
+
+* FFW_SG2
+
+```bash
+ros2 launch ffw_bringup ffw_sg2_ai.launch.py
+```
+or use the shortcut command:
+```bash
+fffw_sg2_ai
 ```
 
 ### Option 2: Separate Launches
@@ -64,12 +74,14 @@ If you want to run the `Leader` and `Follower` separately in different terminals
    ```bash
    ros2 launch ffw_bringup ffw_bg2_leader_ai.launch.py
    ```
+
    or use the shortcut:
    ```bash
    ffw_lg2_leader_ai
    ```
-
 2. **Launch the teleoperation `Follower`**:
+
+* FFW_BG2
    ```bash
    ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
    ```
@@ -78,18 +90,39 @@ If you want to run the `Leader` and `Follower` separately in different terminals
    ffw_bg2_follower_ai
    ```
 
+* FFW_SG2
+   ```bash
+   ros2 launch ffw_bringup ffw_sg2_leader_ai.launch.py
+   ```
+   or use the shortcut:
+   ```bash
+   ffw_sg2_leader_ai
+   ```
+
 If you want to run the system without launching the cameras, you can set the `launch_cameras` parameter to `false`:
    ```bash
    ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py launch_cameras:=false
    ```
 
 ## Basic Operation
-
+* FFW_BG2
 1. Once both systems are running, the `Follower` will begin to mirror your movements.
 2. Start with slow, gentle movements to get familiar with the response.
 3. The grip buttons on the `Leader` control the gripper actions on the `Follower`.
 4. The `right joystick` controls the up and down motion of the `lift`,
 while the `left joystick` controls the`head` section of the robot.
+
+* FFW_SG2
+1. Once both systems are running, the `Follower` will begin to mirror your movements.
+2. Start with slow, gentle movements to get familiar with the response.
+3. The grip buttons on the `Leader` control the gripper actions on the `Follower`.
+4. The `right joystick` controls the up and down motion of the `lift`,
+while the `left joystick` controls the`head` section of the robot.
+5. Pressing both switches simultaneously switches to `SWERVE DRIVE MODE`.
+6. In `SWERVE DRIVE MODE`, the left joystick controls: X-axis: Linear x, Y-axis: Linear y
+   The right joystick controls: Y-axis: Angular z
+![Swerve joystick Control](/quick_start_guide/LG2_Joystick.png)
+> **Warning**: In swerve mode, the arms continue to move. Please be careful.
 
 ## Stopping Teleoperation
 

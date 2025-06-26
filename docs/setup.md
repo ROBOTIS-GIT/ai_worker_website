@@ -4,21 +4,44 @@ This guide will walk you through the process of setting up your AI Worker hardwa
 
 ## Hardware Setup
 (*The term `Follower` refers to the body of the AI WORKER robot)
-### Powering On the follower
-![Back of the Follower](/quick_start_guide/back_of_the_base.png)
+
+> **Note**: Please check the type of robot you are using.
+
+### FFW-BG2
+#### Powering On the FFW_BG2 follower
+![Back of the Follower](/quick_start_guide/back_of_the_BG2_base.png)
 1. Toggle the `Power Supply Switch` to the right.
 2. Insert the `Key Switch` and turn it to the 12 o'clock position.
 3. Press and hold the `Power Button` for 3 seconds. When you hear a beep, the system is powered on. (You should see the robot’s head light up at this point.)
 
 
-### Hardware Ports (Follower)
-![Back of the Follower](/quick_start_guide/back_of_the_body.png)
+#### Hardware Ports (FFW_BG2 Follower)
+![Back of the BG2](/quick_start_guide/back_of_the_BG2_body.png)
 The back of the Follower body includes several ports for system access and external connections. These include:
 - `LAN Port`: Used to access the robot PC via SSH or remote desktop.
 
 - `USB Ports`: For connecting peripherals such as a keyboard, mouse, or USB drive.
 
 - `HDMI Port`: Allows direct video output for connecting a monitor.
+
+
+
+### FFW-SG2
+#### Powering On the FFW_SG2 follower
+![Back of the Follower](/quick_start_guide/back_of_the_SG2_base.png)
+1. Insert the `Key Switch` and turn it to the 12 o'clock position.
+2. Press and hold the `Power Button` for 3 seconds. When you hear a beep, the system is powered on. (You should see the robot’s head light up at this point.)
+
+#### Hardware Ports (FFW_SG2 Follower)
+![Back of the SG2](/quick_start_guide/back_of_the_SG2_body.png)
+The back of the Follower body includes several ports for system access and external connections. These include:
+- `LAN Port`: Used to access the robot PC via SSH or remote desktop.
+
+- `USB Ports`: For connecting peripherals such as a keyboard, mouse, or USB drive.
+
+- `HDMI Port`: Allows direct video output for connecting a monitor.
+
+- `Charge Port`: Used for battery charging.
 
 ## Software Setup
 AI WORKER relies on two main repositories:
@@ -93,8 +116,8 @@ volumes:
 
 2. **Container Operations**
    ```bash
-   # Start container (without Gazebo)
-   ./docker/container.sh start without_gz
+   # Start container
+   ./docker/container.sh start
 
    # Enter running container
    ./docker/container.sh enter
@@ -109,17 +132,14 @@ The `container.sh` script provides easy container management:
 
 #### Available Commands
 - `help`: Display help message
-- `start [with_gz|without_gz]`: Start container
-  - `with_gz`: Include Gazebo support
-  - `without_gz`: Exclude Gazebo support
+- `start`: Start container
 - `enter`: Enter running container
 - `stop`: Stop container
 
 #### Usage Examples
 ```bash
 ./container.sh help                 # Show help
-./container.sh start with_gz        # Start with Gazebo
-./container.sh start without_gz     # Start without Gazebo
+./container.sh start                # Start container
 ./container.sh enter                # Enter container
 ./container.sh stop                 # Stop container
 ```

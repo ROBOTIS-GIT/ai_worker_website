@@ -198,7 +198,7 @@ Go to `Inference` Page.
 
 Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, located on the right side of the page.
 
-<img src="/imitation_learning/web_ui_inference_task_info.png" alt="Web UI" style="width: 50%; ">
+  <img src="/imitation_learning/web_ui_inference_task_info.png" alt="Web UI" style="width: 50%; ">
 
 ::: details :point_right: Task Information Field Descriptions
 | Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |

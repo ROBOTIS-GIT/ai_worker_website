@@ -74,6 +74,7 @@ If you want to run the `Leader` and `Follower` separately in different terminals
    ```bash
    ros2 launch ffw_bringup ffw_bg2_leader_ai.launch.py
    ```
+
    or use the shortcut:
    ```bash
    ffw_lg2_leader_ai

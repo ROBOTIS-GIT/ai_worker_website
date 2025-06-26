@@ -116,8 +116,8 @@ volumes:
 
 2. **Container Operations**
    ```bash
-   # Start container (without Gazebo)
-   ./docker/container.sh start without_gz
+   # Start container
+   ./docker/container.sh start
 
    # Enter running container
    ./docker/container.sh enter
@@ -132,17 +132,14 @@ The `container.sh` script provides easy container management:
 
 #### Available Commands
 - `help`: Display help message
-- `start [with_gz|without_gz]`: Start container
-  - `with_gz`: Include Gazebo support
-  - `without_gz`: Exclude Gazebo support
+- `start`: Start container
 - `enter`: Enter running container
 - `stop`: Stop container
 
 #### Usage Examples
 ```bash
 ./container.sh help                 # Show help
-./container.sh start with_gz        # Start with Gazebo
-./container.sh start without_gz     # Start without Gazebo
+./container.sh start                # Start container
 ./container.sh enter                # Enter container
 ./container.sh stop                 # Stop container
 ```

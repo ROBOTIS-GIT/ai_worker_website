@@ -26,7 +26,7 @@ The back of the Follower body includes several ports for system access and exter
 
 
 
-### FFW-SG2G
+### FFW-SG2
 #### Powering On the FFW_SG2 follower
 ![Back of the Follower](/quick_start_guide/back_of_the_SG2_base.png)
 1. Insert the `Key Switch` and turn it to the 12 o'clock position.

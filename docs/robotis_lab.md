@@ -49,7 +49,7 @@ This repository currently depends on **IsaacLab v2.0.0** or higher.
   ```
 
   Once the installation is complete, the available training tasks will be displayed as shown below:
-  ![run list_env](/simulation/simulaton_isaaclab_list_envs.png)
+  ![run list_env](/simulation/simulation_isaaclab_list_envs.png)
 
 ## Try examples
 ![AI Worker in NVIDIA Isaac Lab](/simulation/simulation_isaac_lab_ffw2.png)

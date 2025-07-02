@@ -34,7 +34,7 @@ cd ai_worker
 ```
 
 ```bash
-./docker/container.sh start without_gz
+./docker/container.sh start
 ```
 
 If a container is already running, enter the **ai\_worker** Docker container with:

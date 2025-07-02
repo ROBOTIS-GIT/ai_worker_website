@@ -34,7 +34,7 @@ cd ai_worker
 ```
 
 ```bash
-./docker/container.sh start without_gz
+./docker/container.sh start
 ```
 
 If a container is already running, enter the **ai\_worker** Docker container with:
@@ -63,7 +63,7 @@ ros2 launch ffw_bringup ffw_sg2_ai.launch.py
 ```
 or use the shortcut command:
 ```bash
-fffw_sg2_ai
+ffw_sg2_ai
 ```
 
 ### Option 2: Separate Launches
@@ -72,7 +72,7 @@ If you want to run the `Leader` and `Follower` separately in different terminals
 
 1. **Launch the teleoperation `Leader`**:
    ```bash
-   ros2 launch ffw_bringup ffw_bg2_leader_ai.launch.py
+   ros2 launch ffw_bringup ffw_lg2_leader_ai.launch.py
    ```
 
    or use the shortcut:
@@ -92,11 +92,11 @@ If you want to run the `Leader` and `Follower` separately in different terminals
 
 * FFW_SG2
    ```bash
-   ros2 launch ffw_bringup ffw_sg2_leader_ai.launch.py
+   ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
    ```
    or use the shortcut:
    ```bash
-   ffw_sg2_leader_ai
+   ffw_sg2_follower_ai
    ```
 
 If you want to run the system without launching the cameras, you can set the `launch_cameras` parameter to `false`:

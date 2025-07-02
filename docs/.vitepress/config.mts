@@ -111,7 +111,7 @@ export default defineConfig({
         items: [
           { text: 'Simulation', link: '/simulation',
             items: [
-              { text: 'IsaacLab', link: '/robotis_lab_ui' },
+              { text: 'IsaacLab', link: '/robotis_lab' },
             ]
            },
         ]

@@ -5,9 +5,9 @@
 **robotis_lab** is a research-oriented repository based on [Isaac Lab](https://isaac-sim.github.io/IsaacLab), designed to enable reinforcement learning (RL) and imitation learning (IL) experiments using Robotis robots in simulation.
 This project provides simulation environments, configuration tools, and task definitions tailored for Robotis hardware, leveraging NVIDIA Isaac Sim’s powerful GPU-accelerated physics engine and Isaac Lab’s modular RL pipeline.
 
-> [!IMPORTANT]
-> This repository currently depends on **IsaacLab v2.0.0** or higher.
->
+::: info
+This repository currently depends on **IsaacLab v2.0.0** or higher.
+:::
 
 ## Installation
 
@@ -19,7 +19,7 @@ This project provides simulation environments, configuration tools, and task def
   git clone https://github.com/isaac-sim/IsaacLab.git
   ```
 
-3. start and enter the Docker container:
+3. Start and enter the Docker container:
   ```bash
   # start
   ./IsaacLab/docker/container.py start base

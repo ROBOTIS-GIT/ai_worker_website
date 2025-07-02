@@ -109,7 +109,11 @@ export default defineConfig({
       {
         text: 'Simulation',
         items: [
-          { text: 'Simulation', link: '/simulation' },
+          { text: 'Simulation', link: '/simulation',
+            items: [
+              { text: 'IsaacLab', link: '/robotis_lab' },
+            ]
+           },
         ]
       },
       {

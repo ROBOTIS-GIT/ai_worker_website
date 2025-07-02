@@ -64,5 +64,17 @@ Support for NVIDIA Isaac Sim is an exciting upcoming feature. Isaac Sim utilizes
 *   **Model Format**: [USD](https://docs.isaacsim.omniverse.nvidia.com/latest/omniverse_usd/open_usd.html)
 *   **Primary Tool**: [NVIDIA Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/)
 *   **Purpose**: Photorealistic simulation, advanced physics, synthetic data generation, AI-driven robotics development.
-*   **Status**: We are actively developing support for NVIDIA Isaac Sim, with a targeted release in alignment with the launch of NVIDIA Isaac Sim 5.0.
-*   **Link**: (Coming Soon)
+
+### NVIDIA Isaac Lab
+Isaac Lab is an advanced reinforcement learning framework built on top of NVIDIA Isaac Sim. It provides a scalable infrastructure for training and evaluating robotic agents in high-fidelity simulated environments.
+
+![AI Worker in NVIDIA Isaac Lab](/simulation/simulation_isaac_lab_ffw.gif)
+
+*   **Primary Tool**: [NVIDIA Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/)
+*   **Framework**: [NVIDIA Isaac Lab](https://github.com/isaac-sim/IsaacLab/)
+*   **Purpose**: Specialized framework for reinforcement and imitation learning using Isaac Sim.
+*   **Link**: [robotis_lab](https://github.com/ROBOTIS-GIT/robotis_lab/)
+
+<a href="/robotis_lab" class="button-isaaclab-option">
+robotis_lab Development Environment Information
+</a>

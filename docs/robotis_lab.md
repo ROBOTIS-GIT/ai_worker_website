@@ -1,4 +1,4 @@
-# Robotis Lab Web UI
+# Getting Started with robotis_lab
 
 ## Overview
 

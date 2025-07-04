@@ -54,7 +54,7 @@ For high-fidelity physics simulation, particularly favored in reinforcement lear
 *   **Model Format**: [MJCF](https://mujoco.readthedocs.io/en/stable/XMLreference.html)
 *   **Primary Tool**: [MuJoCo (by Google DeepMind)](https://mujoco.org/)
 *   **Purpose**: High-fidelity physics simulation, reinforcement learning, advanced dynamics research.
-*   **Link**: [ROBOTIS MuJoCo Menagerie on GitHub](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)
+*   **Link**: [AI Worker MJCF on GitHub](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)
 
 ### NVIDIA Isaac Sim (USD)
 Support for NVIDIA Isaac Sim is an exciting upcoming feature. Isaac Sim utilizes the USD (Universal Scene Description) format for photorealistic rendering and advanced physics simulation, tightly integrated with NVIDIA's AI and robotics SDKs.
@@ -64,6 +64,7 @@ Support for NVIDIA Isaac Sim is an exciting upcoming feature. Isaac Sim utilizes
 *   **Model Format**: [USD](https://docs.isaacsim.omniverse.nvidia.com/latest/omniverse_usd/open_usd.html)
 *   **Primary Tool**: [NVIDIA Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/)
 *   **Purpose**: Photorealistic simulation, advanced physics, synthetic data generation, AI-driven robotics development.
+*   **Link**: [AI Worker USD on GitHub](https://github.com/ROBOTIS-GIT/robotis_lab/tree/main/source/robotis_lab/data/robots)
 
 ### NVIDIA Isaac Lab
 Isaac Lab is an advanced reinforcement learning framework built on top of NVIDIA Isaac Sim. It provides a scalable infrastructure for training and evaluating robotic agents in high-fidelity simulated environments.
@@ -73,8 +74,8 @@ Isaac Lab is an advanced reinforcement learning framework built on top of NVIDIA
 *   **Primary Tool**: [NVIDIA Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/)
 *   **Framework**: [NVIDIA Isaac Lab](https://github.com/isaac-sim/IsaacLab/)
 *   **Purpose**: Specialized framework for reinforcement and imitation learning using Isaac Sim.
-*   **Link**: [robotis_lab](https://github.com/ROBOTIS-GIT/robotis_lab/)
+*   **Link**: [ROBOTIS Lab on GitHub](https://github.com/ROBOTIS-GIT/robotis_lab/)
 
 <a href="/robotis_lab" class="button-isaaclab-option">
-robotis_lab Development Environment Information
+ROBOTIS Lab Development Environment Information
 </a>

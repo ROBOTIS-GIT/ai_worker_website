@@ -12,6 +12,8 @@ Explore AI Worker through our collection of videos showcasing its capabilities, 
 
 <YouTube videoId="GHkyxmOy5-I" />
 
+<YouTube videoId="WNpRlIr4zbw" />
+
 <!-- <div class="video-grid">
   <div class="video-item">
     <YouTube videoId="hnJpFX2G3P4" />

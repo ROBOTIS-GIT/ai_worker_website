@@ -10,18 +10,18 @@ You can record your own dataset using **one of the following methods**:
 
 ### 1. Web UI (Physical AI Manager) – *Recommended*
 
-You can record your dataset using the Web UI provided by the Physical AI Manager. This option is ideal for users who prefer an intuitive interface and real-time visualization.
+You can record your dataset using the Web UI provided by the Physical AI Manager.
 
 <a href="/dataset_preparation_with_web_ui" class="button-dataset-preparation-option">
 Option 1<br>Web UI (Recommended)
 </a>
 
-### 2. LeRobot CLI – *Optional*
+### 2. LeRobot CLI – *Deprecated (legacy use only)*
 
-Alternatively, you can use the LeRobot Command Line Interface (CLI) to record your dataset. This method is suitable for advanced users or automated workflows.
+This method is no longer officially supported, but remains available for legacy users or automated workflows.
 
 <a href="/dataset_preparation_with_lerobot_cli" class="button-dataset-preparation-option">
-Option 2<br>LeRobot CLI (Optional)
+Option 2<br>LeRobot CLI
 </a>
 
 ## Dataset Visualization

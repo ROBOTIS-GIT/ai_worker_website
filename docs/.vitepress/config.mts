@@ -103,7 +103,23 @@ export default defineConfig({
               },
             ],
           },
-          { text: 'Model Workflow', link: '/model_workflow' },
+          { text: 'Model Training', link: '/model_training',
+            items: [
+              {
+                text: 'LeRobot CLI',
+                link: '/model_training_with_lerobot_cli',
+              },
+            ],
+           },
+          { text: 'Model Inference', link: '/model_inference',
+            items: [
+              { text: 'Web UI', link: '/model_inference_with_web_ui' },
+              {
+                text: 'LeRobot CLI',
+                link: '/model_inference_with_lerobot_cli',
+              },
+            ],
+           },
         ]
       },
       {

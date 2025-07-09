@@ -1,4 +1,4 @@
-# ROBOTIS Physical AI Lineup: AI Worker & AI Manipulator Series
+# ROBOTIS Physical AI Lineup<br>: AI Worker & AI Manipulator Series
 
 We offer a complete lineup of research-friendly robots for **Physical AI development** — from affordable manipulators to semi humanoid platforms.
 
@@ -6,9 +6,9 @@ We offer a complete lineup of research-friendly robots for **Physical AI develop
 
 The ROBOTIS Physical AI Lineup consists of three scalable levels of research-focused robots:
 
-- `Level 1`: Cost-effective AI Manipulators (**OMX-AI**) [**Coming Soon**]
-- `Level 2`: Advanced AI Manipulators (**OMY**)
-- `Level 3`: Semi-humanoid robot systems (**AI Worker**)
+- `Level 1` **OMX**: Cost-effective AI Manipulators [**Coming Soon**]
+- `Level 2` **OMY**: Advanced AI Manipulators
+- `Level 3` **AI Worker**: Semi-humanoid robot systems
 
 Each level supports a progressive research journey in Physical AI — from basic motion learning to full-body imitation and autonomous operation.
 
@@ -39,18 +39,18 @@ This approach enables learning that is grounded in reality — shaped by frictio
 ## 3. Lineup Breakdown
 
 ### 3.1 OMX Series (Entry Level) [Comming Soon]
-- Affordable, lightweight AI manipulators`(5 DOF robot arm)`
+- Affordable, lightweight AI manipulators`(5 DOF robot arm + gripper)`
 - Ideal for educational and basic RL/IL experiments
 - Compatible with ROS 2 and Physical AI Tools
 
 ### 3.2 OMY Series (Middle Level)
-- Collaborative robot style arms `(6 DOF robot arm)`
+- Collaborative robot style arms `(6 DOF robot arm + gripper)`
 - Gravity compensation, self-collision detection
 - Suitable for advanced control
 - Compatible with ROS 2 and Physical AI Tools
 
 ### 3.3 AI Worker Series (Enterprise Level)
-- Full-body semi-humanoid platform `(7 DOF robot arm)`
+- Full-body semi-humanoid platform `(19 DOF ~ 25 DOF robot body)`
 - Supports bimanual manipulation
 - Designed for imitation learning and autonomous policy training
 - Compatible with ROS 2 and Physical AI Tools
@@ -61,17 +61,16 @@ The ROBOTIS Physical AI Lineup is purpose-built to support a wide range of real-
 
 It enables:
 
-- ✅ **Imitation Learning**  
+- ✅ **Imitation Learning**
   Leader-Follower setups, VR teleoperation, and human demonstrations
-- ✅ **Reinforcement Learning**  
+- ✅ **Reinforcement Learning**
   Policy training in Isaac Sim, Mujoco, and sim-to-real deployment
-- ✅ **Teleoperation & Real-Time Feedback**  
+- ✅ **Teleoperation & Real-Time Feedback**
   Human-in-the-loop learning, safe experimentation, and closed-loop control
-- ✅ **Physical Deployment of AI Policies**  
+- ✅ **Physical Deployment of AI Policies**
   Execute real-world tasks through physically grounded learning systems
 
 Whether you're training a single robotic arm or orchestrating full-body behavior in a humanoid, our lineup is designed to scale with your research needs — from learning motion to achieving intelligent physical interaction.
 
-> 🧩 **Start with manipulators. Advance to whole-body intelligence.**  
+> 🧩 **Start with manipulators. Advance to whole-body intelligence.**
 > The ROBOTIS Physical AI Lineup supports every step of your research journey.
-

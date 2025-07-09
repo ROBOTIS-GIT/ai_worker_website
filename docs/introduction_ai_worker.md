@@ -1,4 +1,5 @@
 # About AI Worker
+
 <img src="/aiworker_front.png" width="300"/>
 
 The ROBOTIS AI Worker is a cutting-edge semi-humanoid robot powered by `physical AI`. Designed to seamlessly integrate into industrial environments, it learns from human demonstrations and refines its skills through `imitation learning` and `reinforcement learning`. This innovative robot excels at performing intricate tasks like wiring harness assembly, welding, and inspection, offering a powerful solution to boost productivity and overcome labor shortages.

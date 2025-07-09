@@ -18,7 +18,7 @@ scp -r <your model folder's directory> robotis@<your robot's serial number>.loca
 ```
 
 ### 2. Open a Terminal and Enter Docker Container
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
@@ -30,7 +30,7 @@ cd open_manipulator && ./docker/container.sh enter
 ::: warning
 Please deactivate the ROS 2 teleoperation node launched in the `Before You Begin` section before proceeding.
 :::
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 ffw_bg2_follower_ai
 == SG2 Type
@@ -41,15 +41,15 @@ ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
 
 ### 4. Run Inference
 
-#### a. Launch Physical AI Server 
+#### a. Launch Physical AI Server
 
 ::: warning
 If the Physical AI Server is already running, you can skip this step.
-::: 
+:::
 
 Open a new terminal and enter the Docker container:
 
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type

@@ -13,7 +13,7 @@ After [preparing your dataset](/dataset_preparation), you can proceed to train t
 ### 1. Enter the Docker Container
 
 Open a terminal on the Jetson device and enter the Docker container:
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type

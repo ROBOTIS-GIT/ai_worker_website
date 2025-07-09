@@ -13,7 +13,7 @@ If you do not wish to use Hugging Face, you may skip this step and proceed to th
 
 Open a terminal and enter the Docker container:
 
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
@@ -116,7 +116,7 @@ The dataset is located at:
 This path refers to the **host system**.
 :::
 
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 ~/ai_worker/docker/huggingface/lerobot
 == SG2 Type

@@ -18,7 +18,7 @@ scp -r <your model folder's directory> robotis@<your robot's serial number>.loca
 ```
 
 ### 2. Open a Terminal and Enter the Docker container
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
@@ -28,7 +28,7 @@ cd open_manipulator && ./docker/container.sh enter
 :::
 
 ### 3. Launch the ROS 2 Follower Node
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 ffw_bg2_follower_ai
 == SG2 Type
@@ -41,7 +41,7 @@ ros2 launch open_manipulator_bringup hardware_y.launch.py
 
 #### a. Open a New Terminal and Run Docker Container
 Open a terminal on the Jetson device and enter the Docker container:
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type

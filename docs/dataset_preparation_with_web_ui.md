@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-To begin, access the `Robot PC` either directly or via SSH.  
+To begin, access the `Robot PC` either directly or via SSH.
 (Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 
 ### 1. Launch Physical AI Server
@@ -13,7 +13,7 @@ The _Physical AI Server_ is the backend that connects with the Web UI. It should
 
 Open a terminal and enter the Docker container:
 
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
@@ -66,8 +66,8 @@ On the **Home** page, select the type of robot you are using.
 
 ### 2. Go to `Record` page
 
-> [!note]  
-> You cannot access **Record** page unless a robot type has been selected on the **Home** page.  
+> [!note]
+> You cannot access **Record** page unless a robot type has been selected on the **Home** page.
 > Please ensure that the robot type is selected before proceeding.
 
 The **Record** page is divided into three main sections:
@@ -84,7 +84,7 @@ The selected robot type is also displayed in the top left corner.
 
 ### 3. Visualize RGB images from the cameras:
 
-The image stream is displayed automatically upon entering the **Record** page.  
+The image stream is displayed automatically upon entering the **Record** page.
 You can remove the current stream and select a different one as needed.
 
 To change the image topic:
@@ -147,10 +147,10 @@ While recording is in progress, the following controls are available:
 ::: info
 - The current recording stage is displayed in the control panel:
 
-  - 📍 **Ready to start** — Standby mode before recording begins  
-  - 🔥 **Warm-up in progress** — Robot is warming up  
-  - 🔴 **Recording in progress** — Capturing data  
-  - 🏠 **Reset in progress** — Reset time between episodes  
+  - 📍 **Ready to start** — Standby mode before recording begins
+  - 🔥 **Warm-up in progress** — Robot is warming up
+  - 🔴 **Recording in progress** — Capturing data
+  - 🏠 **Reset in progress** — Reset time between episodes
   - 💾 **Saving...** — Encoding and saving the episode
 :::
 
@@ -171,7 +171,7 @@ While recording is in progress, the following controls are available:
 This path refers to the **host system**, not inside the Docker container.
 :::
 
-:::tabs
+:::tabs key:robot-type
 == BG2 Type
 ~/ai_worker/docker/huggingface/lerobot
 == SG2 Type

@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 const title = 'AI Worker'
 const description = 'Documentations for AI Worker'
@@ -40,6 +41,11 @@ export default defineConfig({
       gtag('config', 'GTM-P7L347G7');`
     ]
   ],
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
+    }
+  },
   themeConfig: {
     // logo: '/logo_aiworker.svg',
     logo: '/favicon.svg',

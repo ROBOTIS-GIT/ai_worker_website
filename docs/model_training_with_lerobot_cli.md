@@ -1,9 +1,9 @@
 # Model Training with LeRobot CLI
 
-This guide walks you through the training process of imitation learning models for the AI Worker, based on datasets collected via the LeRobot CLI.
+This guide walks you through the training imitation learning models for the AI Worker, based on datasets collected via the LeRobot CLI.
 
 ::: info
-You can train the policy either on your local PC or on an NVIDIA Jetson AGX Orin device.
+You can train the policy either on your local PC or an NVIDIA Jetson AGX Orin device.
 :::
 
 After [preparing your dataset](/dataset_preparation), you can proceed to train the policy model.
@@ -13,10 +13,14 @@ After [preparing your dataset](/dataset_preparation), you can proceed to train t
 ### 1. Enter the Docker Container
 
 Open a terminal on the Jetson device and enter the Docker container:
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
+:::tabs
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+== OMY
+cd open_manipulator && ./docker/container.sh enter
+:::
 
 ### 2. Navigate to the LeRobot Directory
 
@@ -45,7 +49,6 @@ python lerobot/scripts/train.py \
 | `--dataset.repo_id` | The Hugging Face dataset ID you created in the data collection step |
 | `--policy.type` | Model architecture to use (e.g., 'act' for Action Chunking Transformer) |
 | `--output_dir` | Where to save model checkpoints and logs |
-| `--job_name` | Name of the training run (useful for tracking) |
 | `--policy.device` | Device to use for training ('cuda' for GPU, 'cpu' for CPU) |
 | `--log_freq` | How often to log training statistics (in iterations) |
 | `--save_freq` | How often to save model checkpoints (in iterations) |

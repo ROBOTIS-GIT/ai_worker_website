@@ -98,7 +98,7 @@ export default defineConfig({
         text: 'Imitation Learning',
         items: [
           { text: 'Overview', link: '/imitation_learning' },
-          { text: 'Prerequisites', link: '/imitation_learning _prerequisites' },
+          { text: 'Before You Begin', link: '/imitation_learning_before_you_begin' },
           {
             text: 'Dataset Preparation',
             link: '/dataset_preparation',

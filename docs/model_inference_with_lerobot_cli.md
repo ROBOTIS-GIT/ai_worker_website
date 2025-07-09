@@ -17,27 +17,38 @@ Move your model folder from your local PC to the model directory on the Robot PC
 scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/ai_worker/docker/lerobot/outputs/train
 ```
 
-### 2. Open a Terminal and Enter Docker Container
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
+### 2. Open a Terminal and Enter the Docker container
+:::tabs
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+== OMY
+cd open_manipulator && ./docker/container.sh enter
+:::
 
 ### 3. Launch the ROS 2 Follower Node
-```bash
-# For bg2 type
+:::tabs
+== BG2 Type
 ffw_bg2_follower_ai
-# For sg2 type
+== SG2 Type
 ffw_sg2_follower_ai
-```
+== OMY
+ros2 launch open_manipulator_bringup hardware_y.launch.py
+:::
 
 ### 4. Run Inference
 
 #### a. Open a New Terminal and Run Docker Container
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
+Open a terminal on the Jetson device and enter the Docker container:
+:::tabs
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+== OMY
+cd open_manipulator && ./docker/container.sh enter
+:::
 
 #### b. Navigate to the `LeRobot` Directory
 ```bash
@@ -83,7 +94,7 @@ python lerobot/scripts/visualize_dataset_html.py \
 Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see how your model performed.
 
 ::: tip
-If you have a another device connected to the same network as the host machine, open `http://ffw-{serial number}.local:9091` in your browser to see how your model performed.
+If you have another device connected to the same network as the host machine, open `http://{robot type}-{serial number}.local:9091` in your browser to see how your model performed.
 
 For example, `http://ffw-SNPR48A0000.local:9091`.
 :::

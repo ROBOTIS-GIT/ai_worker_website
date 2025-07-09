@@ -18,18 +18,26 @@ scp -r <your model folder's directory> robotis@<your robot's serial number>.loca
 ```
 
 ### 2. Open a Terminal and Enter Docker Container
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
-
+:::tabs
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+== OMY
+cd open_manipulator && ./docker/container.sh enter
+:::
 ### 3. Launch the ROS 2 Follower Node
-```bash
-# For bg2 type
+::: warning
+Please deactivate the ROS 2 teleoperation node launched in the `Before You Begin` section before proceeding.
+:::
+:::tabs
+== BG2 Type
 ffw_bg2_follower_ai
-# For sg2 type
+== SG2 Type
 ffw_sg2_follower_ai
-```
+== OMY
+ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
+:::
 
 ### 4. Run Inference
 
@@ -41,10 +49,14 @@ If the Physical AI Server is already running, you can skip this step.
 
 Open a new terminal and enter the Docker container:
 
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
+:::tabs
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+== OMY
+cd open_manipulator && ./docker/container.sh enter
+:::
 
 Then, launch the Physical AI Server with the following command:
 
@@ -54,7 +66,7 @@ ai_server
 
 #### b. Open the Web UI
 
-Open your web browser and open the Web UI (Physical AI Manager).
+Open your web browser and navigate the Web UI (Physical AI Manager).
 
 (Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/dataset_preparation_with_web_ui#_3-open-the-web-ui))
 
@@ -64,7 +76,7 @@ On the **Home** page, select the type of robot you are using.
 
 #### c. Enter Task Instruction and Policy Path
 
-Go to `Inference` Page.
+Go to the `Inference` Page.
 
 Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, located on the right side of the page.
 
@@ -104,7 +116,7 @@ python lerobot/scripts/visualize_dataset_html.py \
 Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see how your model performed.
 
 ::: tip
-If you have a another device connected to the same network as the host machine, open `http://ffw-{serial number}.local:9091` in your browser to see how your model performed.
+If you have another device connected to the same network as the host machine, open `http://{robot type}-{serial number}.local:9091` in your browser to see how your model performed.
 
 For example, `http://ffw-SNPR48A0000.local:9091`.
 :::

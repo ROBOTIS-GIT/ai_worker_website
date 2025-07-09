@@ -5,36 +5,22 @@
 To begin, access the `Robot PC` either directly or via SSH.  
 (Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
 
-### 1. Launch the ROS 2 teleoperation node
-
-Open a new terminal and enter the Docker container:
-
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
-
-Launch the ROS 2 teleoperation node:
-
-```bash
-# For bg2 type
-ffw_bg2_ai
-# For sg2 type
-ffw_sg2_ai
-```
-
-### 2. Launch Physical AI Server
+### 1. Launch Physical AI Server
 
 ::: info
 The _Physical AI Server_ is the backend that connects with the Web UI. It should be running to use the interface for data recording.
 :::
 
-Open another terminal and enter the Docker container:
+Open a terminal and enter the Docker container:
 
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
+:::tabs
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+== OMY
+cd open_manipulator && ./docker/container.sh enter
+:::
 
 Launch Physical AI Server with the following command:
 
@@ -48,7 +34,7 @@ Or, use shortcut command:
 ai_server
 ```
 
-### 3. Open the Web UI
+### 2. Open the Web UI
 
 ::: info
 This step must be performed on the **host machine** (or another device on the same network).
@@ -60,9 +46,11 @@ In this example, the serial number is `SNPR48A0000`.
 
 #### Access the Web UI in Your Browser
 
-Open your web browser and go to `http://ffw-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
+Open your web browser and go to `http://{robot type}-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 
-In this example, the address becomes `http://ffw-SNPR48A0000.local`.
+For example:
+- For an AI Worker: `http://ffw-SNPR48A0000.local`
+- For an OMY: `http://omy-SNPR48A0000.local`
 
 Once connected, you should see the web UI as shown below.
 
@@ -180,12 +168,17 @@ While recording is in progress, the following controls are available:
    - You can find the recorded dataset in the location below:
 
 ::: info
-This path refers to your **host system**, not inside the Docker container.
+This path refers to the **host system**, not inside the Docker container.
 :::
 
-```
+:::tabs
+== BG2 Type
 ~/ai_worker/docker/huggingface/lerobot
-```
+== SG2 Type
+~/ai_worker/docker/huggingface/lerobot
+== OMY
+~/open_manipulator/docker/huggingface/lerobot
+:::
 
 ## Dataset Visualization
 

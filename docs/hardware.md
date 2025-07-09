@@ -1,45 +1,40 @@
 # Hardware
+Explore the **hardware specifications** of the ROBOTIS Physical AI Lineup — including our AI Manipulator series (`OMX`, `OMY`) and the full-body semi-humanoid platform (`AI Worker`).
+This overview summarizes key mechanical and control features.
+Detailed specifications are provided on each product’s dedicated page.
 
-The AI Worker and OMY platforms represent ROBOTIS's advanced robotics solutions designed for industrial applications and research. These systems combine cutting-edge hardware with intelligent software to deliver high-performance robotic capabilities.
+## Product Lineup
 
-## AI Worker
+### OMX Series – Entry-Level Manipulator [Comming Soon]
+- Lightweight, modular arms for basic Physical AI research
+- Designed for education, simulation, and learning-by-doing
+- Coming Soon
 
-The AI Worker is a semi-humanoid robot platform featuring dual 7-DOF arms, mobile base with swerve drive, and comprehensive sensor suite. Built around NVIDIA Jetson AGX Orin and DYNAMIXEL actuators, it's designed for complex manipulation tasks through imitation learning and reinforcement learning.
+---
 
-![hardware_overview](/specifications/hardware_overview.png)
+### [OMY Series – Advanced AI Manipulator](/hardware_omy.md)
+- 6-DOF manipulator with DYNAMIXEL-Y actuators
+- Supports imitation learning, precision manipulation, and visual servoing
+- ROS 2-native with gripper and depth camera options
 
-### Key Features
-- **Dual 7-DOF Arms**: High-precision manipulation with 3kg payload per arm
-- **Mobile Base**: Swerve drive system for omnidirectional movement
-- **Advanced Sensors**: RGBD cameras and LiDAR for environmental perception
-- **AI-Ready**: Integrated NVIDIA Jetson AGX Orin for real-time AI processing
-- **Modular Design**: Scalable architecture supporting various configurations
+---
 
-### Product Models
-- **FFW-SG2**: Mobile version with swerve drive (Available July 2025)
-- **FFW-BG2**: Stationary version for fixed installations (Available September 2025)
+### [AI Worker – Semi-Humanoid Platform](/hardware_ai_worker.md)
+- Full-body Physical AI platform with mobility, lift, arms, and head
+- Designed for complex task learning, locomotion, and whole-body interaction
+- Real-time ROS 2 control system, swerve/omni base, and modular extensions
 
-## OMY
+---
 
-The OMY system provides precise teleoperation capabilities through a master-slave architecture, enabling safe remote control of industrial robots in hazardous environments.
+## Compatibility Summary
 
-![omy_product](/specifications/omy/omy_product.png)
+| Feature                     | OMX-AI         | OMY         | AI Worker     |
+|-----------------------------|-------------|-------------|---------------|
+| ROS 2 Native                | ✅          | ✅          | ✅            |
+| DYNAMIXEL Series            | X-Series    | Y-Series    | Y / XM-Series |
+| Imitation Learning Support  | Full        | Full        | Full          |
+| Gripper / Vision Support    | Optional    | Integrated  | Multi-Sensor  |
+| Teleoperation Ready         | ✅          | ✅          | ✅            |
+| Mobility Base               | ❌          | ❌          | Optional      |
 
-### Key Features
-- **Master-Slave Control**: Intuitive leader device controlling follower robot
-- **High Precision**: Sub-millimeter repeatability for industrial applications
-- **Safety Focused**: Designed for hazardous environment teleoperation
-- **Industrial Grade**: Robust construction with DYNAMIXEL-Y actuators
-
-### System Components
-- **OMY-F3M**: 6-DOF industrial robot arm (follower)
-- **OMY-L100**: 6-DOF ergonomic control device (leader)
-
-## Technology Foundation
-
-Both platforms leverage ROBOTIS's core technologies:
-
-- **DYNAMIXEL Actuators**: High-performance, networkable servo motors
-- **ROS 2 Integration**: Full compatibility with Robot Operating System 2
-- **Modular Architecture**: Scalable and customizable configurations
-- **Open Source**: Comprehensive software stack available for development
+> 📌 **Note:** For detailed mechanical drawings, payload specs, and dimensional data, please refer to the individual product pages.

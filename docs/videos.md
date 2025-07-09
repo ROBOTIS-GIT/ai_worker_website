@@ -1,11 +1,13 @@
 # Video Gallery
 
-Explore AI Worker through our collection of videos showcasing its capabilities, use cases, and technical details.
-
+Explore the ROBOTIS Physical AI Lineup through our collection of videos featuring key capabilities, use cases, and technical insights across all platforms — from manipulators to full-body robots.
 ## Product Overview
 
 ### AI Worker Introduction
 <YouTube videoId="DX7DEf9s3Eg" />
+
+### AI Manipulator Introduction
+<YouTube videoId="3x-eN36pNns" />
 
 ## Tutorials & Demonstrations
 <YouTube videoId="hnJpFX2G3P4" />

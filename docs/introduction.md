@@ -1,78 +1,77 @@
-# Introduction
+# ROBOTIS Physical AI Lineup: AI Worker & AI Manipulator Series
 
-## About AI Worker
-The ROBOTIS AI Worker is a cutting-edge semi-humanoid robot powered by physical AI. Designed to seamlessly integrate into industrial environments, it learns from human demonstrations and refines its skills through imitation learning and reinforcement learning. This innovative robot excels at performing intricate tasks like wiring harness assembly, welding, and inspection, offering a powerful solution to boost productivity and overcome labor shortages.
+We offer a complete lineup of research-friendly robots for **Physical AI development** — from affordable manipulators to semi humanoid platforms.
 
-Featuring a mobile base, dual arms, and utilizing ROBOTIS' core technologies, the AI Worker delivers high performance and reliability with an intuitive user interface. Get ready for a new era of intelligent automation!
+## 1. Overview of the ROBOTIS Physical AI Lineup
 
-## Key Features
+The ROBOTIS Physical AI Lineup consists of three scalable levels of research-focused robots:
 
-<div class="features">
-  <div class="feature-item">
-    <div class="feature-icon">🧠</div>
-    <h3>Physical AI-based Human Action Imitation Learning</h3>
-    <p>The AI Worker, grounded in Physical AI technology, learns tasks by interacting with the real environment through human demonstration. This enables intuitive teaching of new skills to the robot and flexible adaptation to various environmental changes.</p>
-  </div>
+- `Level 1`: Cost-effective AI Manipulators (**OMX-AI**) [**Coming Soon**]
+- `Level 2`: Advanced AI Manipulators (**OMY**)
+- `Level 3`: Semi-humanoid robot systems (**AI Worker**)
 
-  <div class="feature-item">
-    <div class="feature-icon">⚡</div>
-    <h3>Real-time Intelligent Task Performance</h3>
-    <p>The robot perceives its surrounding environment in real-time and infers its next actions based on learned intelligence to perform tasks immediately. This ensures high applicability in complex and dynamic real-world work environments.</p>
-  </div>
+Each level supports a progressive research journey in Physical AI — from basic motion learning to full-body imitation and autonomous operation.
 
-  <div class="feature-item">
-    <div class="feature-icon">🦾</div>
-    <h3>High-DOF Dual-Arm & Dexterous Hand System</h3>
-    <p>The high-performance hands, targeting 16 to 20 Degrees of Freedom (DOF) per hand, along with 7-DOF dual arms, enables human-like, highly precise and complex object manipulation, contributing to automating delicate processes in various industrial sites.</p>
-  </div>
+<img src="/overview/physical_ai_lineup.png" alt="ROBOTIS Physical AI Lineup" style="border-radius: 12px; width: 800px;" />
 
-  <div class="feature-item">
-    <div class="feature-icon">🔄</div>
-    <h3>Integrated Pipeline for the Entire Imitation Learning Process</h3>
-    <p>AI Worker provides an integrated pipeline that encompasses the entire imitation learning process, from intuitive teleoperation-based data collection and visualization to model inference, allowing efficient management of collected data and learning models.</p>
-  </div>
+> *Progressing toward advanced Physical AI through a scalable research lineup.*
 
-  <div class="feature-item">
-    <div class="feature-icon">🧭</div>
-    <h3>Swerve Drive-based Optimized Mobility</h3>
-    <p>The AI Worker adopts a Swerve Drive system to exhibit excellent omnidirectional maneuverability even in limited work environments, providing more accurate and reliable movement than existing wheel methods.</p>
-  </div>
 
-  <div class="feature-item">
-    <div class="feature-icon">🤩</div>
-    <h3>Fully Open-Source Platform</h3>
-    <p>All source code, simulation models, tutorials, educational videos, and training data related to the AI Worker are publicly available as open source, encouraging active participation from the developer and researcher community.</p>
-  </div>
-</div>
+## 2. What is Physical AI?
 
-## Product Overview Video
+`Physical AI` refers to artificial intelligence that learns and acts through **real-world physical interaction** using robotic bodies.
 
-<YouTube videoId="DX7DEf9s3Eg" />
+Unlike traditional AI, which operates purely in simulation or digital environments, Physical AI:
+- Receives feedback through motion, contact, and force
+- Learns by interacting with the environment in real time
+- Uses robotic hardware to sense, move, and adapt
 
-## Product Brochures
+This approach enables learning that is grounded in reality — shaped by friction, gravity, uncertainty, and the complexity of the `physical world`.
 
-<div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
-  <div style="flex: 1; min-width: 300px;">
-    <a href="/overview/aiworker_brochure1.jpg" target="_blank">
-      <img src="/overview/aiworker_brochure1.jpg" alt="AI Worker Brochure Page 1" style="width: 100%; border: 1px solid #eee; border-radius: 8px;">
-    </a>
-  </div>
-  <div style="flex: 1; min-width: 300px;">
-    <a href="/overview/aiworker_brochure2.jpg" target="_blank">
-      <img src="/overview/aiworker_brochure2.jpg" alt="AI Worker Brochure Page 2" style="width: 100%; border: 1px solid #eee; border-radius: 8px;">
-    </a>
-  </div>
-</div>
+`Physical AI` allows us to:
+- Train robots to perform real-world tasks with precision
+- Collect meaningful demonstrations through human guidance (teleoperation, VR)
+- Deploy policies that bridge simulation and reality
 
-<div style="text-align: center; margin-bottom: 40px;">
-  <a href="/overview/aiworker_brochure_v1.0.pdf" download class="button-download">Download Full Brochure</a>
-</div>
+> By embedding intelligence into physical systems, we open the door to AI that can not only understand the world — but act in it safely and effectively.
 
-## Next Steps
-<div style="margin-top: 30px; text-align: center;">
-  <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-    <a href="/hardware" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">View Hardware Specs</a>
-    <a href="/videos" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">Watch Demo Videos</a>
-    <a href="/contact" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">Request Information</a>
-  </div>
-</div>
+
+## 3. Lineup Breakdown
+
+### 3.1 OMX Series (Entry Level) [Comming Soon]
+- Affordable, lightweight AI manipulators`(5 DOF robot arm)`
+- Ideal for educational and basic RL/IL experiments
+- Compatible with ROS 2 and Physical AI Tools
+
+### 3.2 OMY Series (Middle Level)
+- Collaborative robot style arms `(6 DOF robot arm)`
+- Gravity compensation, self-collision detection
+- Suitable for advanced control
+- Compatible with ROS 2 and Physical AI Tools
+
+### 3.3 AI Worker Series (Enterprise Level)
+- Full-body semi-humanoid platform `(7 DOF robot arm)`
+- Supports bimanual manipulation
+- Designed for imitation learning and autonomous policy training
+- Compatible with ROS 2 and Physical AI Tools
+
+## 4. Built for Physical AI Research
+
+The ROBOTIS Physical AI Lineup is purpose-built to support a wide range of real-world research applications — from foundational studies to advanced full-body AI.
+
+It enables:
+
+- ✅ **Imitation Learning**  
+  Leader-Follower setups, VR teleoperation, and human demonstrations
+- ✅ **Reinforcement Learning**  
+  Policy training in Isaac Sim, Mujoco, and sim-to-real deployment
+- ✅ **Teleoperation & Real-Time Feedback**  
+  Human-in-the-loop learning, safe experimentation, and closed-loop control
+- ✅ **Physical Deployment of AI Policies**  
+  Execute real-world tasks through physically grounded learning systems
+
+Whether you're training a single robotic arm or orchestrating full-body behavior in a humanoid, our lineup is designed to scale with your research needs — from learning motion to achieving intelligent physical interaction.
+
+> 🧩 **Start with manipulators. Advance to whole-body intelligence.**  
+> The ROBOTIS Physical AI Lineup supports every step of your research journey.
+

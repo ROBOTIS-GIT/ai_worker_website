@@ -76,7 +76,12 @@ export default defineConfig({
       {
         text: 'Overview',
         items: [
-          { text: 'Introduction', link: '/introduction' },
+          { text: 'Introduction', link: '/introduction' ,
+            items: [
+              { text: 'AI Worker', link: '/introduction_ai_worker' },
+              { text: 'OMY', link: '/introduction_omy' },
+            ]
+          },
           { text: 'Video Gallery', link: '/videos' },
         ]
       },
@@ -89,7 +94,12 @@ export default defineConfig({
               { text: 'OMY', link: '/hardware_omy' },
             ]
           },
-          { text: 'Software', link: '/software' },
+          { text: 'Software', link: '/software',
+        items: [
+              { text: 'AI Worker', link: '/software_ai_worker' },
+              { text: 'OMY', link: '/hardware_omy' },
+            ]
+          },
         ]
       },
       {

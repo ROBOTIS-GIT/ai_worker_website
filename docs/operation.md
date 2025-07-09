@@ -144,3 +144,4 @@ To stop the teleoperation:
 - **Delayed movements**: Check for any obstructions or if you're reaching joint limits
 - **Unresponsive gripper**: Ensure proper calibration and connection
 - **System unresponsive**: Check ROS topic connections with `ros2 topic list` and `ros2 topic echo`
+

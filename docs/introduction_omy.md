@@ -1,5 +1,4 @@
-
-## About OMY
+# About OMY
 
 <img src="/overview/omy_product.png" width="400"/>
 
@@ -39,7 +38,7 @@ Its ROS 2-native design supports real-time control, intuitive customization, and
 OMY's lightweight frame and intuitive interface make it ideal for labs, classrooms, and automation setups.
 It empowers developers and researchers to test, iterate, and deploy advanced control policies with ease.
 
-### OMY Lineup Overview
+## OMY Lineup Overview
 
 <img src="/overview/omy_models.png" width="800"/>
 

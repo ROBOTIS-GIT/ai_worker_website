@@ -83,7 +83,12 @@ export default defineConfig({
       {
         text: 'Specifications',
         items: [
-          { text: 'Hardware', link: '/hardware' },
+          { text: 'Hardware', link: '/hardware',
+            items: [
+              { text: 'AI Worker', link: '/hardware_ai_worker' },
+              { text: 'OMY', link: '/hardware_omy' },
+            ]
+          },
           { text: 'Software', link: '/software' },
         ]
       },

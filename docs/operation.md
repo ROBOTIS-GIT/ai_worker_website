@@ -16,11 +16,20 @@ Before starting teleoperation, make sure:
 
 
 ### How to wear the Leader
+**First leader version**
 ![Leader's wearing appearance](/quick_start_guide/leader_wearing_appearance.png)
 
 1. Put both arms through the `Leader`'s `shoulder straps`.
 2. Fasten the chest belt buckle and `hip belt buckle`.
 3. Adjust the length of the `shoulder straps`, `chest belt`, and `hip belt` so that the `Leader` is securely fixed on your back.
+
+**Second leader version**  
+It can be worn more easily by users with different body types.
+
+<img src="/quick_start_guide/new_fixed_belt.png" alt="Web UI" style="width: 40%; ">
+
+1. First, pull the inner belt tightly and fasten it around the waist.
+2. Then, pull the outer belt and attach it over the inner belt using the Velcro.
 
 ## Running Teleoperation
 The following teleoperation commands are executed on the `robot PC`.

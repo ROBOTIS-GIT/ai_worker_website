@@ -113,7 +113,14 @@ export default defineConfig({
               { text: 'OMY', link: '/setup_guide_omy' }
             ]
           },
-          { text: 'Teleoperation Guide', link: '/operation' }
+          {
+            text: 'Operation Guide',
+            link: '/operation_ai_worker',
+            items: [
+              { text: 'AI Worker', link: '/operation_ai_worker' },
+              { text: 'OMY', link: '/operation_omy' }
+            ]
+          }
         ]
       },
       {

@@ -161,11 +161,12 @@ export default defineConfig({
       {
         text: 'Simulation',
         items: [
-          { text: 'Simulation', link: '/simulation',
+          { text: 'AI Worker Simulation', link: '/simulation_ai_worker',
             items: [
               { text: 'IsaacLab', link: '/robotis_lab' },
             ]
-           },
+          },
+          {  text: 'OMY Simulation', link: '/simulation_omy' },
         ]
       },
       {

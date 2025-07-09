@@ -2,39 +2,45 @@
 
 ## Overview
 
-This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the AI Worker platform and the Hugging Face Hub and includes a user-friendly web GUI designed to streamline interaction and improve accessibility.
+This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the ROBOTIS Open Platform and the Hugging Face Hub and features a user-friendly web GUI designed to streamline interaction and enhance accessibility.
 
 ### 1. Data Collection
 
-Human operators use a wearable skeletal leader device to demonstrate motions, collecting image and joint position data. The web-based GUI plays a key role in streamlining this process by providing real-time visualization and control. The collected data can be uploaded to and downloaded from the Hugging Face Hub. 
+Human operators use a wearable skeletal leader device to demonstrate motions, collecting image and joint position data. The web-based GUI plays a key role in streamlining the process by providing real-time visualization and control. The collected data can be uploaded to and downloaded from the Hugging Face Hub. 
 
 ### 2. Data Visualization
 
-Collected data is visualized to inspect motion trajectories and images, helping identify potential errors before training.
+Collected data is visualized to inspect motion trajectories and images, helping to identify potential errors prior to training.
 
 ### 3. Model Training
 
-The verified dataset is then used to train an action policy model. Training can be performed on local GPUs or on embedded platforms such as NVIDIA Jetson. The resulting model can be uploaded to and downloaded from the Hugging Face Hub.
+The verified dataset is then used to train an action policy model. Training can be performed on local GPUs or on embedded platforms such as the NVIDIA Jetson. The resulting model can be uploaded to and downloaded from the Hugging Face Hub.
 
 ### 4. Model Inference
 
-Once trained, the models are deployed on the AI Worker to execute real-time inference for tasks such as picking, placing, and obstacle avoidance.
+Once trained, the models are deployed on the ROBOTIS Open Platform to execute real-time inference for tasks such as picking, placing, and obstacle avoidance.
 
 ## End-to-End Imitation Learning Workflow
-- The diagram below shows the full imitation learning workflow using the AI Worker and Hugging Face.
+- The diagram below shows the full imitation learning workflow using the ROBOTIS Open Platform and Hugging Face.
 
 
 <img src="/imitation_learning/end_to_end_imitation_learning_workflow.png" alt="Imitation Learning Workflow" style="width: 100%; ">
 
-- Tutorial Video: End-to-End Imitation Learning Workflow
+## Tutorial Videos: End-to-End Imitation Learning Workflow
 
-This video illustrates the full imitation learning workflow using the AI Worker, including teleoperation, dataset creation, and real-time inference with a trained model:
+The videos illustrate the full imitation learning workflow using the ROBOTIS Open Platform, including teleoperation, dataset creation, and real-time inference with a trained model:
+
+1. Full imitation learning workflow using the ROBOTIS AI Worker and the LeRobot CLI.
 
 <YouTube videoId="hnJpFX2G3P4" />
 
+2. Full imitation learning workflow using the OMY and the Web GUI.
+
+<YouTube videoId="3x-eN36pNns" />
+
 - Dataset Schema
 
-The dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the AI Worker via ROS 2 teleoperation using the [lerobot](https://github.com/huggingface/lerobot) framework.
+The dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the ROBOTIS Open Platform via ROS 2 teleoperation using the [LeRobot](https://github.com/huggingface/lerobot) framework.
 
 | Field              | Type            | Description          |
 |--------------------|-----------------|----------------------|

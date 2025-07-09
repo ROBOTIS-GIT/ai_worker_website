@@ -1,8 +1,10 @@
-# Hardware
+# OMY
 
-The OMY hardware platform is a teleoperation system designed for precise remote control of industrial robots. It consists of two main components: the OMY-F3M follower robot arm and the OMY-L100 leader device. The follower robot features a 6-DOF industrial arm with high-precision DYNAMIXEL-Y actuators, capable of handling payloads up to 3kg with sub-millimeter repeatability. The leader device provides intuitive 7-DOF control through a lightweight, ergonomic design that translates human hand movements into precise robot commands. This master-slave system enables safe and efficient teleoperation for applications requiring human expertise in hazardous or remote environments, with real-time communication via Ethernet and high-resolution joint control.
+The OMY hardware platform is a teleoperation system designed for precise remote control of industrial robots. It consists of two main components: the OMY-F3M follower robot arm and the OMY-L100 leader device. The follower robot features a 6-DOF industrial arm with high-precision DYNAMIXEL-Y actuators, capable of handling payloads up to 3kg with sub-millimeter repeatability. The leader device provides intuitive 6-DOF control through a lightweight, ergonomic design that translates human hand movements into precise robot commands. This master-slave system enables safe and efficient teleoperation for applications requiring human expertise in hazardous or remote environments, with real-time communication via Ethernet and high-resolution joint control.
 
-## Hardware Overview
+![omy_f3m](/specifications/omy/omy_product.png)
+
+## [Follower] Hardware Overview
 ![](/specifications/omy/omy_f3m.png)
 
 | Item | OMY-F3M |
@@ -177,13 +179,13 @@ The OMY hardware platform is a teleoperation system designed for precise remote 
 
 ![](/specifications/omy/omy_follower_end_panel.png)
 
-## [Leader] Hardware
+## [Leader] Hardware Overview
 
 ![](/specifications/omy/omy_l100.png)
 
 | Item | OMY-L100 |
 |:---:|:---:|
-| DOF | 7 |
+| DOF | 6 |
 | Reach | 560 [mm] |
 | Weight | 1.46 [kg] |
 | Operating Voltage | 12 [VDC] |

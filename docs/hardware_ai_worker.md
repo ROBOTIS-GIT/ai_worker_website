@@ -1,6 +1,5 @@
-# Hardware
+# AI Worker
 
-## Hardware Overview
 The AI Worker hardware platform combines advanced robotics with AI-powered capabilities to create a versatile semi-humanoid robot. Built around ROBOTIS [DYNAMIXEL](https://dynamixel.com/) actuators, it features a mobile base with swerve drive, dual 7-DOF arms with dexterous hand/grippers, and a sensor suite that includes RGBD cameras and LiDARs. The system is powered by an NVIDIA Jetson AGX Orin computer to handle complex computations and AI tasks. The robot is designed for industrial applications, capable of performing tasks such as assembly, inspection, and logistics in dynamic environments.
 This comprehensive hardware design enables the AI Worker to perform complex manipulation tasks through imitation learning and reinforcement learning in various industrial environments.
 

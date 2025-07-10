@@ -3,7 +3,7 @@
 This guide will walk you through the process of setting up your AI Worker hardware and software environment.
 
 ## Hardware Setup
-::: warning Note
+::: info
 - The term `Follower` refers to the body of the AI WORKER robot
 - Please check the type of robot you are using.
 :::

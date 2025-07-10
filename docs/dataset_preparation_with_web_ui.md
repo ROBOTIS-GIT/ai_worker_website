@@ -66,9 +66,10 @@ On the **Home** page, select the type of robot you are using.
 
 ### 2. Go to `Record` page
 
-> [!note]
-> You cannot access **Record** page unless a robot type has been selected on the **Home** page.
-> Please ensure that the robot type is selected before proceeding.
+::: info
+You cannot access **Record** page unless a robot type has been selected on the **Home** page.
+Please ensure that the robot type is selected before proceeding.
+:::
 
 The **Record** page is divided into three main sections:
 

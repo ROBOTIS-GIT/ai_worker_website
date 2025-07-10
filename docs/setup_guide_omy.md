@@ -110,9 +110,9 @@ volumes:
   # Development and data directories
   - ./workspace:/workspace
   - ../:/root/ros2_ws/src/open_manipulator/
-````
+```
 
-::: tip Data Persistence Tips
+::: tip
 Store your development code in `/workspace` to preserve your codes.
 :::
 

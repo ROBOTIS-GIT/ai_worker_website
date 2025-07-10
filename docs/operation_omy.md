@@ -15,17 +15,16 @@ After these steps, the Leader-Follower system will be operational.
 ![](/quick_start_guide/ai_teleop.gif)
 
 
-> **NOTE:**
+
 > AI Teleoperation is only supported between OMY_F3M and OMY_L100 models.
 
 ---
-:::warning IMPORTANT
-> The basic commands in this manual are written for **OMY_F3M**.
-> When running with the **OMY_3M** model, replace `omy_f3m` with `omy_3m` in the commands.
-> Example:
-> ```
-> ros2 launch open_manipulator_bringup omy_3m.launch.py
-> ```
+::: info
+The basic commands in this manual are written for **OMY_F3M**.
+When running with the **OMY_3M** model, replace `omy_f3m` with `omy_3m` in the commands.
+Example:
+```
+ros2 launch open_manipulator_bringup omy_3m.launch.py
 :::
 
 ## Launch Bringup
@@ -122,7 +121,7 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 ## Keyboard Teleop
 Control the manipulator (simulation or hardware) using your keyboard
 
-:::warning Notice
+::: info
 After launching the real robot or Gazebo bringup, enter the following command in the new container:
 :::
 ```bash

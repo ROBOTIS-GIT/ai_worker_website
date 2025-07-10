@@ -1,13 +1,13 @@
 # OMY-AI
 
-The OMY-AI hardware platform is a teleoperation system specifically designed for imitation learning applications. It consists of two main components: the OMY-AI-F3M follower robot arm and the OMY-AI-L100 leader device. The follower robot features a 6-DOF industrial arm with high-precision DYNAMIXEL-Y actuators, capable of handling payloads up to 3kg with sub-millimeter repeatability. The leader device provides intuitive 6-DOF control through a lightweight, ergonomic design that translates human hand movements into precise robot commands. This master-slave system enables human operators to demonstrate complex manipulation tasks that can be learned and replicated by AI systems, with real-time communication via Ethernet and high-resolution joint control for accurate data collection.
+The OMY-AI hardware platform is a teleoperation system specifically designed for imitation learning applications. It consists of two main components: the OMY-F3M follower robot arm and the OMY-L100 leader device. The follower robot features a 6-DOF industrial arm with high-precision DYNAMIXEL-Y actuators, capable of handling payloads up to 3kg with sub-millimeter repeatability. The leader device provides intuitive 6-DOF control through a lightweight, ergonomic design that translates human hand movements into precise robot commands. This master-slave system enables human operators to demonstrate complex manipulation tasks that can be learned and replicated by AI systems, with real-time communication via Ethernet and high-resolution joint control for accurate data collection.
 
 ![omy_f3m](/specifications/omy/omy_product.png)
 
 ## [Follower] Hardware Overview
 ![](/specifications/omy/omy_f3m.png)
 
-| Item | OMY-AI-F3M |
+| Item | OMY-F3M |
 |:---:|:---:|
 | DOF | 6 |
 | Payload | 3 [kg] |
@@ -183,7 +183,7 @@ The OMY-AI hardware platform is a teleoperation system specifically designed for
 
 ![](/specifications/omy/omy_l100.png)
 
-| Item | OMY-AI-L100 |
+| Item | OMY-L100 |
 |:---:|:---:|
 | DOF | 6 |
 | Reach | 560 [mm] |

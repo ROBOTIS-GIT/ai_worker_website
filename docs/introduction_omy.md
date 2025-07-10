@@ -5,10 +5,7 @@
 The ROBOTIS **OMY-AI** is a 6-DOF robotic manipulator designed for **physical AI research** and intelligent automation.  
 Built with high-performance **DYNAMIXEL-Y** series actuators, OMY-AI enables skill acquisition through human demonstration. It supports both imitation learning and reinforcement learning for increasingly complex manipulation tasks.
 
-Optimized for pick-and-place, assembly, and inspection in academic, industrial, and development environments, OMY-AI delivers high torque, smooth motion, and precise control.  
-Its compact structure, modular design, and full **ROS 2 compatibility** make it a robust platform for AI-driven robotics development.
-
-> Discover the future of intelligent manipulation with **OMY-AI** and the **DYNAMIXEL-Y** series.
+Optimized for pick-and-place, assembly, and inspection in academic, industrial, and development environments, OMY-AI delivers high torque, smooth motion, and precise control. Its compact structure, modular design, and full **ROS 2 compatibility** make it a robust platform for AI-driven robotics development.
 
 ### 🧠 Physical AI-based Skill Acquisition
 
@@ -44,12 +41,12 @@ It empowers developers and researchers to test, iterate, and deploy advanced con
 
 The OMY-AI series offers multiple configurations for various teleoperation and manipulation tasks:
 
-- `OMY-AI-L100`  
+- `OMY-L100`  
   Leader unit for teleoperation. Provides an intuitive interface for remotely controlling other OMY-AI units.
 
-- `OMY-AI-F3M`  
+- `OMY-F3M`  
   Equipped with a 2-finger gripper and Intel RealSense D405 depth camera.  
   Ideal for object manipulation and perception tasks.
 
-- `OMY-AI-3M`  
+- `OMY-3M`  
   Base configuration without a gripper. Suitable for general motion control or custom end-effector integration.

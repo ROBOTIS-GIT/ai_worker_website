@@ -16,12 +16,12 @@ After these steps, the Leader-Follower system will be operational.
 
 
 
-> AI Teleoperation is only supported between OMY-AI_F3M and OMY-AI_L100 models.
+> AI Teleoperation is only supported between OMY_F3M and OMY_L100 models.
 
 ---
 ::: info
-The basic commands in this manual are written for **OMY-AI_F3M**.
-When running with the **OMY-AI_3M** model, replace `omy_f3m` with `omy_3m` in the commands.
+The basic commands in this manual are written for **OMY_F3M**.
+When running with the **OMY_3M** model, replace `omy_f3m` with `omy_3m` in the commands.
 Example:
 ```
 ros2 launch open_manipulator_bringup omy_3m.launch.py

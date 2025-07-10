@@ -1,12 +1,8 @@
 # Software
 
-The **ROBOTIS Physical AI Lineup** is built upon a unified software architecture designed to support cutting-edge research in real-world robotics, imitation learning, and intelligent control.  
-Each platform provides a **ROS 2-based interface** optimized for modular development, real-time control, and seamless integration with simulators and learning frameworks.
+The **ROBOTIS Physical AI Lineup** is built upon a unified software architecture designed to support cutting-edge research in real-world robotics, imitation learning, and intelligent control. Each platform provides a **ROS 2-based interface** optimized for modular development, real-time control, and seamless integration with simulators and learning frameworks.
 
-This page provides an overview of the software capabilities shared across the lineup.  
-For platform-specific packages and APIs, refer to each product’s dedicated software page below.
-
----
+This page provides an overview of the software capabilities shared across the lineup. For platform-specific packages and APIs, refer to each product’s dedicated software page below.
 
 ## Software Stack Highlights
 

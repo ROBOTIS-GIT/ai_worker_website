@@ -24,7 +24,7 @@ ssh root@omy-SNPR44B9999.local
 ## Docker Setup
 1. Connect to the OMY-AI via SSH.
 2. Check running containers using `docker ps`.
-3. Docker-related files are located in `/data/docker/open_manipulator/docker`. Navigate to this location using `cd`.
+3. Docker-related files are located in `/data/docker/open_manipulator/docker`. Navigate to this location using `cd`:
 ```bash
 cd /data/docker/open_manipulator/docker
 ```
@@ -43,17 +43,19 @@ The `/workspace` folder inside the container is volume mapped (a feature that li
 :::
 
 When you first receive the OMY-AI, the manipulator is folded as shown in the image below.
-You can move it to the initial position by running the following command for unpacking:
+
 ![omy_pack](/setup_guide/omy/omy_pack.png)
 
-The image below shows the initial position after UNPACKING.
+You can move it to the initial position by running the following command for **UNPACKING**:
 
-![omy_unpack](/setup_guide/omy/omy_unpack.png)
-
-This is the command to UNPACK the manipulator,
 ```bash
 ros2 launch open_manipulator_bringup unpack_y.launch.py
 ```
+
+The image below shows the initial position after **UNPACKING**.
+
+![omy_unpack](/setup_guide/omy/omy_unpack.png)
+
 
 and the following is the command to PACK it back into it's folded configuration.
 ```bash

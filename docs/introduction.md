@@ -13,8 +13,7 @@ The ROBOTIS Physical AI Lineup consists of three scalable levels of research-foc
 Each level supports a progressive research journey in Physical AI — from basic motion learning to full-body imitation and autonomous operation.
 
 <img src="/overview/physical_ai_lineup.png" alt="ROBOTIS Physical AI Lineup" style="border-radius: 12px; width: 800px;" />
-
-> *Progressing toward advanced Physical AI through a scalable research lineup.*
+<p align="center"><em>Progressing toward advanced Physical AI through a scalable research lineup</em></p>
 
 
 ## 2. What is Physical AI?
@@ -70,7 +69,4 @@ It enables:
 - ✅ **Physical Deployment of AI Policies**
   Execute real-world tasks through physically grounded learning systems
 
-Whether you're training a single robotic arm or orchestrating full-body behavior in a humanoid, our lineup is designed to scale with your research needs — from learning motion to achieving intelligent physical interaction.
-
-> 🧩 **Start with manipulators. Advance to whole-body intelligence.**
-> The ROBOTIS Physical AI Lineup supports every step of your research journey.
+Whether you're training a single robotic arm or orchestrating full-body behavior in a humanoid, our lineup is designed to scale with your research needs — from learning motion to achieving intelligent physical interaction. It supports every step of your journey, starting with manipulators and advancing toward whole-body intelligence.

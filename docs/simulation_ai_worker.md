@@ -27,7 +27,7 @@ You can launch Gazebo and RViz individually, or launch RViz together with the ph
 *   **Launch Gazebo simulation:**
     Use this command to run a dynamic simulation of the AI Worker in the Gazebo simulator.
     ```bash
-    ros2 launch ffw_bringup ffw_bg2_follower_gazebo.launch.py  
+    ros2 launch ffw_bringup ffw_bg2_follower_gazebo.launch.py
     # Launch Gazebo with the AI Worker Follower model (FFW-BG2)
     ```
 

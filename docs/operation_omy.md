@@ -2,7 +2,7 @@
 
 ## Teleoperation
 After accessing the Docker container, use the following command:
-```
+```bash
 ros2 launch open_manipulator_bringup omy_ai.launch.py
 ```
 This command will sequentially execute the following procedures:
@@ -19,7 +19,7 @@ After these steps, the Leader-Follower system will be operational. **AI Teleoper
 The basic commands in this manual are written for **OMY_F3M**.
 When running with the **OMY_3M** model, replace `omy_f3m` with `omy_3m` in the commands.
 Example:
-```
+```bash
 ros2 launch open_manipulator_bringup omy_3m.launch.py
 :::
 

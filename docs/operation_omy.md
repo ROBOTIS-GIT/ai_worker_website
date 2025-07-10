@@ -10,7 +10,7 @@ This command will sequentially execute the following procedures:
 2. Start Leader's gravity compensation
 3. Synchronize Leader and Follower
 
-After these steps, the Leader-Follower system will be operational. AI Teleoperation is only supported between OMY_F3M and OMY_L100 models.
+After these steps, the Leader-Follower system will be operational. **AI Teleoperation** is only supported between OMY_F3M and OMY_L100 models.
 
 ![](/quick_start_guide/ai_teleop.gif)
 
@@ -101,7 +101,8 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 
 5. Create a task constructor with OMY-AI.
 - Click the `Read task` button to prepare for saving tasks.
-(You can create or modify the pre-saved joint values in the **robot_joint_log.csv** file. The file's load path can be checked in the terminal when the GUI node is launched.)
+  - You can create or modify the pre-saved joint values in the `robot_joint_log.csv` file.
+  - The file's load path can be checked in the terminal when the GUI node is launched.
 - Adjust the manipulator's posture and save it by clicking `Save pose`.
 - Save multiple postures to complete the preparation.
 ![](/quick_start_guide/OMY_GUI5.png)

@@ -191,7 +191,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 | Operating Voltage | 12 [VDC] |
 | Joint Resolution | -π(rad) ~ π(rad), -2,048 ~ 2,048 [pulse/rev] |
 | Joint Range | Joint 1 : ±180°<br>Joint 2 : -70° ~ +100°<br>Joint 3, 4, 5, 6 : ±180°<br>Joint 7 : -90° ~ +60° |
-| DYNAMIXEL-Y Specification | Joint 1,23 : XH540-W150<br>Joint 4,5,6 : XC330-T288<br>Joint 7 : XC330-T181 |
+| DYNAMIXEL-Y Specification | Joint 1, 2, 3 : XH540-W150<br>Joint 4,5,6 : XC330-T288<br>Joint 7 : XC330-T181 |
 | Host Interface | U2D2 (USB 2.0) |
 | Internal Communications | TTL Multidrop Bus |
 | Communication Baudrate | 4 [Mbps] |

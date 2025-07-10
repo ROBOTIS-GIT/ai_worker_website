@@ -72,7 +72,7 @@ Featuring a mobile base, dual arms, and utilizing ROBOTIS' core technologies, th
 ## Next Steps
 <div style="margin-top: 30px; text-align: center;">
   <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-    <a href="/hardware" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">View Hardware Specs</a>
+    <a href="/hardware_ai_worker" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">View Hardware Specs</a>
     <a href="/videos" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">Watch Demo Videos</a>
     <a href="/contact" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">Request Information</a>
   </div>

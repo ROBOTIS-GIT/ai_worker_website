@@ -3,38 +3,24 @@
 ## Prerequisites
 
 Access the `Robot PC` either directly or via SSH, and follow the steps below.
-(Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
+(Refer to the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.)
 
-### 1. Launch the ROS 2 teleoperation node
-
-Open a new terminal and enter the Docker container
-
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
-
-Launch the ROS 2 teleoperation node
-
-```bash
-# For bg2 type
-ffw_bg2_ai
-# For sg2 type
-ffw_sg2_ai
-```
-
-### 2. Authenticate with Hugging Face
+### Authenticate with Hugging Face
 
 ::: info
 If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
 :::
 
-Open a new terminal and enter the Docker container:
+Open a terminal and enter the Docker container:
 
-```bash
-cd ai_worker
-./docker/container.sh enter
-```
+:::tabs key:robot-type
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+== OMY
+cd open_manipulator && ./docker/container.sh enter
+:::
 
 Navigate to the `lerobot` directory:
 
@@ -82,7 +68,7 @@ AnyNameYouWant
 
 ## Record your dataset
 
-To start recording, run the following command inside the Docker container.
+Run the following command from inside the Docker container.
 
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
@@ -107,7 +93,7 @@ python lerobot/scripts/control_robot.py \
 ::: tip
 - To save the dataset locally without uploading to the Hugging Face Hub, set `--control.push_to_hub=false`. This option is essential if you choose not to use Hugging Face.
 - If you are controlling the robot remotely via VSCode or SSH, the `arrow keys` may not work during data recording due to a pynput limitation. In this case, it's recommended to set --control.episode_time_s and --control.reset_time_s appropriately.
-- To use the `arrow keys` for teleoperation, connect a monitor and keyboard directly to the robot (Right arrow key: Save immediately, Left arrow key: Cancel).
+- To use `arrow keys` for teleoperation, connect a monitor and keyboard directly to the robot (Right arrow key: Save immediately, Left arrow key: Cancel).
 :::
 
 
@@ -127,12 +113,17 @@ Of course, you can modify additional parameters as needed to fit your specific u
 The dataset is located at:
 
 ::: info
-This path refers to your **host system**, not inside the Docker container.
+This path refers to the **host system**.
 :::
 
-```
+:::tabs key:robot-type
+== BG2 Type
 ~/ai_worker/docker/huggingface/lerobot
-```
+== SG2 Type
+~/ai_worker/docker/huggingface/lerobot
+== OMY
+~/open_manipulator/docker/huggingface/lerobot
+:::
 
 ## Dataset Visualization
 
@@ -171,7 +162,7 @@ Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) 
 :::
 
 ::: tip
-If you have a another device connected to the same network as the host machine, open `http://ffw-{serial number}.local:9091` in your browser to preview the dataset.
+If you have another device connected to the same network as the host machine, open `http://ffw-{serial number}.local:9091` in your browser to preview the dataset.
 
 For example, `http://ffw-SNPR48A0000.local:9091`.
 :::

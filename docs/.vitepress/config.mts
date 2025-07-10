@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 const title = 'AI Worker'
 const description = 'Documentations for AI Worker'
@@ -40,6 +41,11 @@ export default defineConfig({
       gtag('config', 'GTM-P7L347G7');`
     ]
   ],
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
+    }
+  },
   themeConfig: {
     // logo: '/logo_aiworker.svg',
     logo: '/favicon.svg',
@@ -70,28 +76,58 @@ export default defineConfig({
       {
         text: 'Overview',
         items: [
-          { text: 'Introduction', link: '/introduction' },
+          { text: 'Introduction', link: '/introduction' ,
+            items: [
+              { text: 'AI Worker', link: '/introduction_ai_worker' },
+              { text: 'OMY', link: '/introduction_omy' },
+            ]
+          },
           { text: 'Video Gallery', link: '/videos' },
         ]
       },
       {
         text: 'Specifications',
         items: [
-          { text: 'Hardware', link: '/hardware' },
-          { text: 'Software', link: '/software' },
+          { text: 'Hardware', link: '/hardware',
+            items: [
+              { text: 'AI Worker', link: '/hardware_ai_worker' },
+              { text: 'OMY', link: '/hardware_omy' },
+            ]
+          },
+          { text: 'Software', link: '/software',
+            items: [
+              { text: 'AI Worker', link: '/software_ai_worker' },
+              { text: 'OMY', link: '/software_omy' },
+            ]
+          },
         ]
       },
       {
         text: 'Quick Start Guide',
         items: [
-          { text: 'Setup Guide', link: '/setup' },
-          { text: 'Teleoperation Guide', link: '/operation' }
+          {
+            text: 'Setup Guide',
+            link: '/setup_guide_ai_worker',
+            items: [
+              { text: 'AI Worker', link: '/setup_guide_ai_worker' },
+              { text: 'OMY', link: '/setup_guide_omy' }
+            ]
+          },
+          {
+            text: 'Operation Guide',
+            link: '/operation_ai_worker',
+            items: [
+              { text: 'AI Worker', link: '/operation_ai_worker' },
+              { text: 'OMY', link: '/operation_omy' }
+            ]
+          }
         ]
       },
       {
         text: 'Imitation Learning',
         items: [
           { text: 'Overview', link: '/imitation_learning' },
+          { text: 'Before You Begin', link: '/imitation_learning_before_you_begin' },
           {
             text: 'Dataset Preparation',
             link: '/dataset_preparation',
@@ -125,11 +161,12 @@ export default defineConfig({
       {
         text: 'Simulation',
         items: [
-          { text: 'Simulation', link: '/simulation',
+          { text: 'AI Worker Simulation', link: '/simulation_ai_worker',
             items: [
               { text: 'IsaacLab', link: '/robotis_lab' },
             ]
-           },
+          },
+          { text: 'OMY Simulation', link: '/simulation_omy' },
         ]
       },
       {

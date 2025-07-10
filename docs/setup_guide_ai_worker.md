@@ -1,11 +1,12 @@
-# Setup Guide
+# Setup Guide for AI Worker
 
 This guide will walk you through the process of setting up your AI Worker hardware and software environment.
 
 ## Hardware Setup
-(*The term `Follower` refers to the body of the AI WORKER robot)
-
-> **Note**: Please check the type of robot you are using.
+::: info
+- The term `Follower` refers to the body of the AI WORKER robot
+- Please check the type of robot you are using.
+:::
 
 ### FFW-BG2
 #### Powering On the FFW_BG2 follower

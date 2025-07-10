@@ -15,15 +15,15 @@ Before starting teleoperation, make sure:
 3. `USB Cable`: Connect a USB cable from the U2D2 to one of the USB ports on the back of the `Follower`.
 
 
-### How to wear the Leader
-**First leader version**
+### How to Wear the Leader
+**First Leader Version**
 ![Leader's wearing appearance](/quick_start_guide/leader_wearing_appearance.png)
 
 1. Put both arms through the `Leader`'s `shoulder straps`.
 2. Fasten the chest belt buckle and `hip belt buckle`.
 3. Adjust the length of the `shoulder straps`, `chest belt`, and `hip belt` so that the `Leader` is securely fixed on your back.
 
-**Second leader version**  
+**Second Leader Version**  
 It can be worn more easily by users with different body types.
 
 <img src="/quick_start_guide/new_fixed_belt.png" alt="Web UI" style="width: 40%; ">
@@ -53,27 +53,26 @@ If a container is already running, enter the **ai\_worker** Docker container wit
 ```
 
 ### Option 1: All-in-One Launch
-⚠️While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
-
+::: warning
+While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
+:::
 To start both the `Leader` and `Follower(BG2/SG2)` simultaneously:
-* FFW_BG2
-```bash
+
+:::tabs key:robot-type
+== BG2 Type
 ros2 launch ffw_bringup ffw_bg2_ai.launch.py
-```
-or use the shortcut command:
-```bash
-ffw_bg2_ai
-```
-
-* FFW_SG2
-
-```bash
+== SG2 Type
 ros2 launch ffw_bringup ffw_sg2_ai.launch.py
-```
-or use the shortcut command:
-```bash
+:::
+
+Or use the shortcut:
+
+:::tabs key:robot-type
+== BG2 Type
+ffw_bg2_ai
+== SG2 Type
 ffw_sg2_ai
-```
+:::
 
 ### Option 2: Separate Launches
 
@@ -90,23 +89,21 @@ If you want to run the `Leader` and `Follower` separately in different terminals
    ```
 2. **Launch the teleoperation `Follower`**:
 
-* FFW_BG2
-   ```bash
-   ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
-   ```
-   or use the shortcut:
-   ```bash
-   ffw_bg2_follower_ai
-   ```
+:::tabs key:robot-type
+== BG2 Type
+ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
+== SG2 Type
+ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
+:::
 
-* FFW_SG2
-   ```bash
-   ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
-   ```
-   or use the shortcut:
-   ```bash
-   ffw_sg2_follower_ai
-   ```
+Or use the shortcut:
+
+:::tabs key:robot-type
+== BG2 Type
+ffw_bg2_follower_ai
+== SG2 Type
+ffw_sg2_follower_ai
+:::
 
 If you want to run the system without launching the cameras, you can set the `launch_cameras` parameter to `false`:
    ```bash
@@ -131,7 +128,10 @@ while the `left joystick` controls the`head` section of the robot.
 6. In `SWERVE DRIVE MODE`, the left joystick controls: X-axis: Linear x, Y-axis: Linear y
    The right joystick controls: Y-axis: Angular z
 ![Swerve joystick Control](/quick_start_guide/LG2_Joystick.png)
-> **Warning**: In swerve mode, the arms continue to move. Please be careful.
+
+::: warning
+In swerve mode, the arms continue to move. Please be careful.
+:::
 
 ## Stopping Teleoperation
 
@@ -144,3 +144,4 @@ To stop the teleoperation:
 - **Delayed movements**: Check for any obstructions or if you're reaching joint limits
 - **Unresponsive gripper**: Ensure proper calibration and connection
 - **System unresponsive**: Check ROS topic connections with `ros2 topic list` and `ros2 topic echo`
+

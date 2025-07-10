@@ -38,7 +38,7 @@ This approach enables learning that is grounded in reality — shaped by frictio
 ## 3. Lineup Breakdown
 
 ### 3.1 OMX Series (Entry Level) [Coming Soon]
-- Affordable, lightweight AI manipulators`(5 DOF robot arm + gripper)`
+- Affordable, lightweight AI manipulators `(5 DOF robot arm + gripper)`
 - Ideal for educational and basic RL/IL experiments
 - Compatible with ROS 2 and Physical AI Tools
 

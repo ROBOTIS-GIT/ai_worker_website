@@ -32,7 +32,7 @@ This approach enables learning that is grounded in reality — shaped by frictio
 - Collect meaningful demonstrations through human guidance (teleoperation, VR)
 - Deploy policies that bridge simulation and reality
 
-> By embedding intelligence into physical systems, we open the door to AI that can not only understand the world — but act in it safely and effectively.
+By embedding intelligence into physical systems, we open the door to AI that can not only understand the world — but act in it safely and effectively.
 
 
 ## 3. Lineup Breakdown

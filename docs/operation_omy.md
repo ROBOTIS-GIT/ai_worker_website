@@ -29,7 +29,7 @@ The OMY-AI controller has been restructured to utilize the ros2_control framewor
 Open a new OM Container and launch the OMY-AI packages.
 
 ```bash
-$ ros2 launch open_manipulator_bringup omy_f3m.launch.py
+ ros2 launch open_manipulator_bringup omy_f3m.launch.py
 ```
 
 ## MoveIt 2
@@ -39,7 +39,7 @@ MoveIt 2 is a set of packages for your robot to manipulate for Motion Planning, 
 Enable MoveIt 2 functionality for advanced motion planning in RViz.
 For more information about MoveIt 2, check out the [official documentation](https://moveit.picknik.ai/main/doc/how_to_guides/how_to_guides.html).
 ```bash
-$ ros2 launch open_manipulator_moveit_config omy_f3m_moveit.launch.py
+ ros2 launch open_manipulator_moveit_config omy_f3m_moveit.launch.py
 ```
 Move interactive markers to position the robotic arm, then click Plan and Execute.
 ![](/quick_start_guide/moveit2_core.png)

@@ -127,7 +127,10 @@ while the `left joystick` controls the`head` section of the robot.
 6. In `SWERVE DRIVE MODE`, the left joystick controls: X-axis: Linear x, Y-axis: Linear y
    The right joystick controls: Y-axis: Angular z
 ![Swerve joystick Control](/quick_start_guide/LG2_Joystick.png)
-> **Warning**: In swerve mode, the arms continue to move. Please be careful.
+
+::: warning
+In swerve mode, the arms continue to move. Please be careful.
+:::
 
 ## Stopping Teleoperation
 

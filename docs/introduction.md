@@ -1,6 +1,6 @@
 # ROBOTIS Physical AI Lineup<br>: AI Worker & AI Manipulator Series
 
-We offer a complete lineup of research-friendly robots for **Physical AI development** — from affordable manipulators to semi humanoid platforms.
+We offer a complete lineup of research-friendly robots for **Physical AI development**, ranging from affordable manipulators to semi humanoid platforms.
 
 ## 1. Overview of the ROBOTIS Physical AI Lineup
 
@@ -10,7 +10,7 @@ The ROBOTIS Physical AI Lineup consists of three scalable levels of research-foc
 - `Level 2` **OMY-AI**: Advanced AI Manipulators
 - `Level 3` **AI Worker**: Semi-humanoid robot systems
 
-Each level supports a progressive research journey in Physical AI — from basic motion learning to full-body imitation and autonomous operation.
+Each level supports a progressive research journey in Physical AI. It begins with basic motion learning and continues through full-body imitation to autonomous operation.
 
 <img src="/overview/physical_ai_lineup.png" alt="ROBOTIS Physical AI Lineup" style="border-radius: 12px; width: 800px;" />
 <p align="center"><em>Progressing toward advanced Physical AI through a scalable research lineup</em></p>
@@ -32,12 +32,12 @@ This approach enables learning that is grounded in reality — shaped by frictio
 - Collect meaningful demonstrations through human guidance (teleoperation, VR)
 - Deploy policies that bridge simulation and reality
 
-By embedding intelligence into physical systems, we open the door to AI that can not only understand the world — but act in it safely and effectively.
+ By embedding intelligence into physical systems, we open the door to AI that can not only understand the world, but also act in it safely and effectively.
 
 
 ## 3. Lineup Breakdown
 
-### 3.1 OMX-AI Series (Entry Level) [Comming Soon]
+### 3.1 OMX-AI Series (Entry Level) [Coming Soon]
 - Affordable, lightweight AI manipulators`(5 DOF robot arm + gripper)`
 - Ideal for educational and basic RL/IL experiments
 - Compatible with ROS 2 and Physical AI Tools
@@ -56,17 +56,20 @@ By embedding intelligence into physical systems, we open the door to AI that can
 
 ## 4. Built for Physical AI Research
 
-The ROBOTIS Physical AI Lineup is purpose-built to support a wide range of real-world research applications — from foundational studies to advanced full-body AI.
+The ROBOTIS Physical AI Lineup is purpose-built to support a wide range of real-world research applications, from foundational studies to advanced full-body AI.
 
 It enables:
 
-- ✅ **Imitation Learning**
+- ✅ **Imitation Learning**  
   Leader-Follower setups, VR teleoperation, and human demonstrations
-- ✅ **Reinforcement Learning**
+
+- ✅ **Reinforcement Learning**  
   Policy training in Isaac Sim, Mujoco, and sim-to-real deployment
-- ✅ **Teleoperation & Real-Time Feedback**
+
+- ✅ **Teleoperation & Real-Time Feedback**  
   Human-in-the-loop learning, safe experimentation, and closed-loop control
-- ✅ **Physical Deployment of AI Policies**
+
+- ✅ **Physical Deployment of AI Policies**  
   Execute real-world tasks through physically grounded learning systems
 
-Whether you're training a single robotic arm or orchestrating full-body behavior in a humanoid, our lineup is designed to scale with your research needs — from learning motion to achieving intelligent physical interaction. It supports every step of your journey, starting with manipulators and advancing toward whole-body intelligence.
+Whether you're training a single robotic arm or orchestrating full-body behavior in a humanoid, our lineup is designed to grow with your research. It supports every step of your journey, starting with manipulators and advancing toward whole-body intelligence.

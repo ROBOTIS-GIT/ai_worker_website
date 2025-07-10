@@ -53,8 +53,9 @@ If a container is already running, enter the **ai\_worker** Docker container wit
 ```
 
 ### Option 1: All-in-One Launch
-⚠️While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
-
+::: warning
+While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
+:::
 To start both the `Leader` and `Follower(BG2/SG2)` simultaneously:
 
 :::tabs key:robot-type

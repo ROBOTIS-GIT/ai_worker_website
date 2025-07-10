@@ -13,7 +13,7 @@ For detailed specifications, refer to each product’s dedicated page.
 
 ## Product Lineup
 
-### OMX Series – Entry-Level Manipulator [Comming Soon]
+### OMX Series – Entry-Level Manipulator [Coming Soon]
 - Lightweight, modular arms for basic Physical AI research
 - Designed for education, simulation, and learning-by-doing
 - Coming Soon

@@ -23,7 +23,7 @@ scp -r <your model folder's directory> robotis@<your robot's serial number>.loca
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY-AI
+== OMY
 cd open_manipulator && ./docker/container.sh enter
 :::
 
@@ -33,8 +33,8 @@ cd open_manipulator && ./docker/container.sh enter
 ffw_bg2_follower_ai
 == SG2 Type
 ffw_sg2_follower_ai
-== OMY-AI
-ros2 launch open_manipulator_bringup hardware_y.launch.py
+== OMY
+ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
 :::
 
 ### 4. Run Inference
@@ -46,7 +46,7 @@ Open a terminal on the Jetson device and enter the Docker container:
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY-AI
+== OMY
 cd open_manipulator && ./docker/container.sh enter
 :::
 

@@ -18,7 +18,7 @@ Open a terminal and enter the Docker container:
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY-AI
+== OMY
 cd open_manipulator && ./docker/container.sh enter
 :::
 
@@ -50,7 +50,7 @@ Open your web browser and go to `http://{robot type}-{serial number}.local`, rep
 
 For example:
 - For an AI Worker: `http://ffw-SNPR48A0000.local`
-- For an OMY-AI: `http://omy-SNPR48A0000.local`
+- For an OMY: `http://omy-SNPR48A0000.local`
 
 Once connected, you should see the web UI as shown below.
 
@@ -177,7 +177,7 @@ This path refers to the **host system**, not inside the Docker container.
 ~/ai_worker/docker/huggingface/lerobot
 == SG2 Type
 ~/ai_worker/docker/huggingface/lerobot
-== OMY-AI
+== OMY
 ~/open_manipulator/docker/huggingface/lerobot
 :::
 

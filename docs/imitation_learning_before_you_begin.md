@@ -12,7 +12,7 @@ a. Open a terminal and enter the Docker container:
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY-AI
+== OMY
 cd open_manipulator && ./docker/container.sh enter
 :::
 
@@ -23,13 +23,13 @@ b. Then, launch the ROS 2 teleoperation node using the appropriate command for y
 ffw_bg2_ai
 == SG2 Type
 ffw_sg2_ai
-== OMY-AI
+== OMY
 ros2 launch open_manipulator_bringup hardware_y.launch.py
 :::
 
 ## 2. Camera Setup
 ::: info
-This step is required only if your robot is an **OMY-AI** model.
+This step is required only if your robot is an **OMY** model.
 If you are using the **AI Worker**, you may skip this step.
 :::
 

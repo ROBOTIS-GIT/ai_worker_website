@@ -1,7 +1,7 @@
 # Launch Gazebo
 
 ::: info
-It is recommended to run this on a PC other than the OMY-AI device.
+It is recommended to run this on a PC other than the OMY device.
 :::
 
 ## 1. Prepare the OM Container
@@ -41,12 +41,12 @@ Refer to the **Operation** page to control the robot within the Gazebo environme
 
 ## Simulation Views
 
-### OMY-AI_F3M
+### OMY_F3M
 
-![OMY-AI F3M Simulation](/simulation/omy_f3m_gazebo.png)
+![OMY F3M Simulation](/simulation/omy_f3m_gazebo.png)
 
 
-### OMY-AI_3M
+### OMY_3M
 
-![OMY-AI 3M Simulation](/simulation/omy_3m_gazebo.png)
+![OMY 3M Simulation](/simulation/omy_3m_gazebo.png)
 

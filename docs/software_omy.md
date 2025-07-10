@@ -1,6 +1,6 @@
 # Software Overview
 
-**OMY** is a 6-DOF robotic manipulator designed for real-world **Physical AI** research.  
+**OMY-AI** is a 6-DOF robotic manipulator designed for real-world **Physical AI** research.  
 It supports teleoperation, trajectory learning, and deployment of AI policies through a unified ROS 2 control architecture.
 
 The platform runs on **ROS 2 Jazzy** and uses the **`ros2_control`** framework for real-time joint-level control.  
@@ -12,11 +12,11 @@ This system is designed for:
 - Training and testing trajectory-based AI models
 - Running learned or predefined trajectories on real hardware
 
-OMY provides an efficient and compact platform for Physical AI research in both academic and industrial environments.
+OMY-AI provides an efficient and compact platform for Physical AI research in both academic and industrial environments.
 
 ## System Architecture
 ::: info
- The diagram below illustrates the overall control structure of OMY.
+ The diagram below illustrates the overall control structure of OMY-AI.
  Teleoperation or AI-generated commands are processed through `ros2_control`, translated by the hardware interface, and executed by DYNAMIXEL actuators via RS‑485.
 :::
 
@@ -34,7 +34,7 @@ OMY provides an efficient and compact platform for Physical AI research in both 
 
 ## Why `ros2_control`?
 
-OMY uses `ros2_control` for modular, real-time control of its joints.
+OMY-AI uses `ros2_control` for modular, real-time control of its joints.
 
 - Clean separation between hardware and control logic
 - Supports multiple controller types (trajectory, GPIO, command)

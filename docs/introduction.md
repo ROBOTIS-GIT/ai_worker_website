@@ -6,8 +6,8 @@ We offer a complete lineup of research-friendly robots for **Physical AI develop
 
 The ROBOTIS Physical AI Lineup consists of three scalable levels of research-focused robots:
 
-- `Level 1` **OMX**: Cost-effective AI Manipulators [**Coming Soon**]
-- `Level 2` **OMY**: Advanced AI Manipulators
+- `Level 1` **OMX-AI**: Cost-effective AI Manipulators [**Coming Soon**]
+- `Level 2` **OMY-AI**: Advanced AI Manipulators
 - `Level 3` **AI Worker**: Semi-humanoid robot systems
 
 Each level supports a progressive research journey in Physical AI — from basic motion learning to full-body imitation and autonomous operation.
@@ -38,12 +38,12 @@ This approach enables learning that is grounded in reality — shaped by frictio
 
 ## 3. Lineup Breakdown
 
-### 3.1 OMX Series (Entry Level) [Comming Soon]
+### 3.1 OMX-AI Series (Entry Level) [Comming Soon]
 - Affordable, lightweight AI manipulators`(5 DOF robot arm + gripper)`
 - Ideal for educational and basic RL/IL experiments
 - Compatible with ROS 2 and Physical AI Tools
 
-### 3.2 OMY Series (Middle Level)
+### 3.2 OMY-AI Series (Middle Level)
 - Collaborative robot style arms `(6 DOF robot arm + gripper)`
 - Gravity compensation, self-collision detection
 - Suitable for advanced control

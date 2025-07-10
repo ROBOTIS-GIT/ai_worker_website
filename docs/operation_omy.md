@@ -16,21 +16,21 @@ After these steps, the Leader-Follower system will be operational.
 
 
 
-> AI Teleoperation is only supported between OMY_F3M and OMY_L100 models.
+> AI Teleoperation is only supported between OMY-AI_F3M and OMY-AI_L100 models.
 
 ---
 ::: info
-The basic commands in this manual are written for **OMY_F3M**.
-When running with the **OMY_3M** model, replace `omy_f3m` with `omy_3m` in the commands.
+The basic commands in this manual are written for **OMY-AI_F3M**.
+When running with the **OMY-AI_3M** model, replace `omy_f3m` with `omy_3m` in the commands.
 Example:
 ```
 ros2 launch open_manipulator_bringup omy_3m.launch.py
 :::
 
 ## Launch Bringup
-The OMY controller has been restructured to utilize the ros2_control framework and MoveIt 2 for enhanced flexibility, modularity, and usability. This updated controller allows for seamless integration with ROS 2-based systems, offering advanced features such as trajectory planning, real-time control, and state feedback.
+The OMY-AI controller has been restructured to utilize the ros2_control framework and MoveIt 2 for enhanced flexibility, modularity, and usability. This updated controller allows for seamless integration with ROS 2-based systems, offering advanced features such as trajectory planning, real-time control, and state feedback.
 
-Open a new OM Container and launch the OMY packages.
+Open a new OM Container and launch the OMY-AI packages.
 
 ```bash
 $ ros2 launch open_manipulator_bringup omy_f3m.launch.py
@@ -94,16 +94,16 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 1. Click the `Timer Start` button.
 ![](/quick_start_guide/OMY_GUI1.png)
 
-2. Check the status of OMY.
+2. Check the status of OMY-AI.
 ![](/quick_start_guide/OMY_GUI2.png)
 
-3. To manipulate OMY in the joint space, enter the joint angles and total time for the trajectory. Then click the `send` button to start the motion.
+3. To manipulate OMY-AI in the joint space, enter the joint angles and total time for the trajectory. Then click the `Send` button to start the motion.
 ![](/quick_start_guide/OMY_GUI3.png)
 
-4. To manipulate OMY in the task space, enter the kinematics pose of the OMY end-effector(tool) in the task space. Then click the `send` button to start the motion.
+4. To manipulate OMY-AI in the task space, enter the kinematics pose of the OMY-AI end-effector(tool) in the task space. Then click the `Send` button to start the motion.
 ![](/quick_start_guide/OMY_GUI4.png)
 
-5. Create a task constructor with OMY.
+5. Create a task constructor with OMY-AI.
 - Click the `Read task` button to prepare for saving tasks.
 (You can create or modify the pre-saved joint values in the **robot_joint_log.csv** file. The file's load path can be checked in the terminal when the GUI node is launched.)
 - Adjust the manipulator's posture and save it by clicking `Save pose`.
@@ -113,7 +113,7 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 6. Press the `Play` button to make the manipulator move sequentially according to the saved tasks. Completed tasks will have their status changed to <span style="color: green; font-weight: bold;">Done</span>
 ![](/quick_start_guide/OMY_GUI6.png)
 
-### OMY GUI Demo
+### OMY-AI GUI Demo
 ![](/quick_start_guide/omy_f3m_gui.gif)
 
 

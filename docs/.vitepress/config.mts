@@ -79,7 +79,7 @@ export default defineConfig({
           { text: 'Introduction', link: '/introduction' ,
             items: [
               { text: 'AI Worker', link: '/introduction_ai_worker' },
-              { text: 'OMY', link: '/introduction_omy' },
+              { text: 'OMY-AI', link: '/introduction_omy' },
             ]
           },
           { text: 'Video Gallery', link: '/videos' },
@@ -91,13 +91,13 @@ export default defineConfig({
           { text: 'Hardware', link: '/hardware',
             items: [
               { text: 'AI Worker', link: '/hardware_ai_worker' },
-              { text: 'OMY', link: '/hardware_omy' },
+              { text: 'OMY-AI', link: '/hardware_omy' },
             ]
           },
           { text: 'Software', link: '/software',
         items: [
               { text: 'AI Worker', link: '/software_ai_worker' },
-              { text: 'OMY', link: '/hardware_omy' },
+              { text: 'OMY-AI', link: '/software_omy' },
             ]
           },
         ]
@@ -110,7 +110,7 @@ export default defineConfig({
             link: '/setup_guide_ai_worker',
             items: [
               { text: 'AI Worker', link: '/setup_guide_ai_worker' },
-              { text: 'OMY', link: '/setup_guide_omy' }
+              { text: 'OMY-AI', link: '/setup_guide_omy' }
             ]
           },
           {
@@ -118,7 +118,7 @@ export default defineConfig({
             link: '/operation_ai_worker',
             items: [
               { text: 'AI Worker', link: '/operation_ai_worker' },
-              { text: 'OMY', link: '/operation_omy' }
+              { text: 'OMY-AI', link: '/operation_omy' }
             ]
           }
         ]
@@ -166,7 +166,7 @@ export default defineConfig({
               { text: 'IsaacLab', link: '/robotis_lab' },
             ]
           },
-          {  text: 'OMY Simulation', link: '/simulation_omy' },
+          {  text: 'OMY-AI Simulation', link: '/simulation_omy' },
         ]
       },
       {

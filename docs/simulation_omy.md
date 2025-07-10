@@ -1,14 +1,15 @@
 # Launch Gazebo
 
-> ⚠️ **Note:** It is recommended to run on a PC other than OMY.
+::: info
+It is recommended to run this on a PC other than the OMY-AI device.
+:::
+
+## 1. Prepare the OM Container
+
+Refer to the `Setup Guide` to configure the OM container environment.
 
 
-## 1. Prepare the OM container
-
-Refer to `Setup Guide` to configure the OM container environment.
-
-
-## 2. Enable GUI access
+## 2. Enable GUI Access
 
 Open a new terminal and run the following command:
 
@@ -17,7 +18,7 @@ xhost +
 ```
 
 
-## 3. Access the running container
+## 3. Access the Running Container
 
 ```bash
 ./docker/container.sh enter
@@ -33,19 +34,19 @@ ros2 launch open_manipulator_bringup omy_f3m_gazebo.launch.py
 ```
 
 
-## 5. Run MoveIt and GUI in simulation
+## 5. Run MoveIt and GUI in Simulation
 
-Refer to the Operation page to control the robot in Gazebo.
+Refer to the **Operation** page to control the robot within the Gazebo environment.
 
 
 ## Simulation Views
 
-### OMY_F3M
+### OMY-AI_F3M
 
-![OMY F3M Simulation](/simulation/omy_f3m_gazebo.png)
+![OMY-AI F3M Simulation](/simulation/omy_f3m_gazebo.png)
 
 
-### OMY_3M
+### OMY-AI_3M
 
-![OMY 3M Simulation](/simulation/omy_3m_gazebo.png)
+![OMY-AI 3M Simulation](/simulation/omy_3m_gazebo.png)
 

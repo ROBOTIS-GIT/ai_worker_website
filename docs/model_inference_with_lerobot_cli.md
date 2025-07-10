@@ -23,7 +23,7 @@ scp -r <your model folder's directory> robotis@<your robot's serial number>.loca
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY
+== OMY-AI
 cd open_manipulator && ./docker/container.sh enter
 :::
 
@@ -33,7 +33,7 @@ cd open_manipulator && ./docker/container.sh enter
 ffw_bg2_follower_ai
 == SG2 Type
 ffw_sg2_follower_ai
-== OMY
+== OMY-AI
 ros2 launch open_manipulator_bringup hardware_y.launch.py
 :::
 
@@ -46,7 +46,7 @@ Open a terminal on the Jetson device and enter the Docker container:
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY
+== OMY-AI
 cd open_manipulator && ./docker/container.sh enter
 :::
 

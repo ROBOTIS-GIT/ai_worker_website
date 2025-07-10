@@ -1,18 +1,26 @@
 # Hardware
-Explore the **hardware specifications** of the ROBOTIS Physical AI Lineup — including our AI Manipulator series (`OMX`, `OMY`) and the full-body semi-humanoid platform (`AI Worker`).
-This overview summarizes key mechanical and control features.
-Detailed specifications are provided on each product’s dedicated page.
+Explore the **hardware specifications** of the ROBOTIS Physical AI Lineup:
+
+- **AI Manipulator Series**
+  - `OMX-AI`
+  - `OMY-AI`
+
+- **Full-Body Semi-Humanoid Platform**
+  - `AI Worker`
+
+This section provides a summary of key **mechanical** and **control** features across the lineup.  
+For detailed specifications, refer to each product’s dedicated page.
 
 ## Product Lineup
 
-### OMX Series – Entry-Level Manipulator [Comming Soon]
+### OMX-AI Series – Entry-Level Manipulator [Comming Soon]
 - Lightweight, modular arms for basic Physical AI research
 - Designed for education, simulation, and learning-by-doing
 - Coming Soon
 
 ---
 
-### [OMY Series – Advanced AI Manipulator](/hardware_omy.md)
+### [OMY-AI Series – Advanced AI Manipulator](/hardware_omy.md)
 - 6-DOF manipulator with DYNAMIXEL-Y actuators
 - Supports imitation learning, precision manipulation, and visual servoing
 - ROS 2-native with gripper and depth camera options
@@ -28,7 +36,7 @@ Detailed specifications are provided on each product’s dedicated page.
 
 ## Compatibility Summary
 
-| Feature                     | OMX-AI         | OMY         | AI Worker     |
+| Feature                     | OMX-AI         | OMY-AI         | AI Worker     |
 |-----------------------------|-------------|-------------|---------------|
 | ROS 2 Native                | ✅          | ✅          | ✅            |
 | DYNAMIXEL Series            | X-Series    | Y-Series    | Y / XM-Series |

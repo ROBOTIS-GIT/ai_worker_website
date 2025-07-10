@@ -21,5 +21,5 @@ For platform-specific packages and APIs, refer to each product’s dedicated sof
 
 ## Product-Specific Software Pages
 
-- [OMY Series Software](./software_omy.md)
+- [OMY-AI Series Software](./software_omy.md)
 - [AI Worker Software](./software_ai_worker.md)

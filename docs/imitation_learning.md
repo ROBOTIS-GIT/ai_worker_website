@@ -30,7 +30,7 @@ Once trained, the models are deployed on the ROBOTIS Physical AI Lineup to execu
 
 The videos illustrate the full imitation learning workflow using the ROBOTIS Physical AI Lineup, including teleoperation, dataset creation, and real-time inference with a trained model:
 
-1. Full imitation learning workflow using **OMY** and the **Web GUI**.
+1. Full imitation learning workflow using **OMY-AI** and the **Web GUI**.
 
 <YouTube videoId="3x-eN36pNns" />
 

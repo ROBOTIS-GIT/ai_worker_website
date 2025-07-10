@@ -16,17 +16,6 @@ Explore the ROBOTIS Physical AI Lineup through our collection of videos featurin
 
 <YouTube videoId="WNpRlIr4zbw" />
 
-<!-- <div class="video-grid">
-  <div class="video-item">
-    <YouTube videoId="hnJpFX2G3P4" />
-    <p class="video-caption">Imitation Learning Demo - From Teleop to Inference</p>
-  </div>
-  <div class="video-item">
-    <YouTube videoId="hnJpFX2G3P4" />
-    <p class="video-caption">Imitation Learning Demo - From Teleop to Inference</p>
-  </div>
-</div> -->
-
 ## Use Cases
 
 <div class="coming-soon">

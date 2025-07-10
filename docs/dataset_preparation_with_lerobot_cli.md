@@ -18,7 +18,7 @@ Open a terminal and enter the Docker container:
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY
+== OMY-AI
 cd open_manipulator && ./docker/container.sh enter
 :::
 
@@ -121,7 +121,7 @@ This path refers to the **host system**.
 ~/ai_worker/docker/huggingface/lerobot
 == SG2 Type
 ~/ai_worker/docker/huggingface/lerobot
-== OMY
+== OMY-AI
 ~/open_manipulator/docker/huggingface/lerobot
 :::
 

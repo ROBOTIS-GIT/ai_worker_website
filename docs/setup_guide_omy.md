@@ -1,6 +1,6 @@
-# Setup Guide for OMY
+# Setup Guide for OMY-AI
 
-This guide will walk you through the process of setting up your OMY hardware and software environment.
+This guide will walk you through the process of setting up your OMY-AI hardware and software environment.
 
 ## Power connection
 ![omy_power](/setup_guide/omy/omy_power.png)
@@ -8,8 +8,8 @@ This guide will walk you through the process of setting up your OMY hardware and
 ## SSH connection
 
 ### Network Access Method
-Start by connecting the `robot pc` to the same network as the `user PC` using a LAN cable, then power on the OMY (press and release the power button until it turns white). The OMY OS uses mDNS technology to discover its IP address.
-Each time OMY OS boots, it sets the SBC’s hostname to the serial number (SN) written on the product (e.g., SNPR44B9999).
+Start by connecting the `robot pc` to the same network as the `user PC` using a LAN cable, then power on the OMY-AI (press and release the power button until it turns white). The OMY-AI OS uses mDNS technology to discover its IP address.
+Each time OMY-AI OS boots, it sets the SBC’s hostname to the serial number (SN) written on the product (e.g., SNPR44B9999).
 In environments where UDP Multicast is available (such as being on the same router), you can connect directly to the `robot pc` using the hostname. Static IP assignment and other network settings for more advanced connection options are supported through the Manager.
 
 ![omy_serial_number](/setup_guide/omy/omy_serial_number.png)
@@ -22,7 +22,7 @@ ssh root@omy-SNPR44B9999.local
 ```
 
 ## Docker Setup
-1. Connect to the OMY via SSH.
+1. Connect to the OMY-AI via SSH.
 2. Check running containers using `docker ps`.
 3. Docker-related files are located in `/data/docker/open_manipulator/docker`. Navigate to this location using `cd`.
 ```bash
@@ -42,7 +42,7 @@ The `/workspace` folder inside the container is volume mapped (a feature that li
 - **Run this script ONLY in the packed posture, running it in any other orientation may cause damage.**
 :::
 
-When you first receive the OMY, the manipulator is folded as shown in the image below.
+When you first receive the OMY-AI, the manipulator is folded as shown in the image below.
 You can move it to the initial position by running the following command for unpacking:
 ![omy_pack](/setup_guide/omy/omy_pack.png)
 
@@ -62,14 +62,14 @@ ros2 launch open_manipulator_bringup pack_y.launch.py
 
 ## Software Setup
 ::: warning
-This setup is intended for development on the **user PC**. The **robot PC** included with OMY comes pre-configured with the same software stack.
+This setup is intended for development on the **user PC**. The **robot PC** included with OMY-AI comes pre-configured with the same software stack.
 :::
 
-### Software Setup for OMY
+### Software Setup for OMY-AI
 
-The **ROBOTIS OMY** robotic arm utilizes two key software packages to enable intelligent manipulation through **Physical AI**:
+The **ROBOTIS OMY-AI** robotic arm utilizes two key software packages to enable intelligent manipulation through **Physical AI**:
 
-- **[open_manipulator](https://github.com/ROBOTIS-GIT/open_manipulator)**: Provides control of the **6-DOF OMY arm** via ros2_control using **DYNAMIXEL-Y** actuators. Supports teleoperation and low-level control.
+- **[open_manipulator](https://github.com/ROBOTIS-GIT/open_manipulator)**: Provides control of the **6-DOF OMY-AI arm** via ros2_control using **DYNAMIXEL-Y** actuators. Supports teleoperation and low-level control.
 - **[physical_ai_tools](https://github.com/ROBOTIS-GIT/physical_ai_tools)**: A toolkit for **imitation learning**, including modules for data collection, training, inference, and visualization.
 
 ### Prerequisites

@@ -10,13 +10,9 @@ This command will sequentially execute the following procedures:
 2. Start Leader's gravity compensation
 3. Synchronize Leader and Follower
 
-After these steps, the Leader-Follower system will be operational.
+After these steps, the Leader-Follower system will be operational. AI Teleoperation is only supported between OMY_F3M and OMY_L100 models.
 
 ![](/quick_start_guide/ai_teleop.gif)
-
-
-
-> AI Teleoperation is only supported between OMY_F3M and OMY_L100 models.
 
 ---
 ::: info

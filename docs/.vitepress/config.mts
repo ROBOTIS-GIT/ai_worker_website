@@ -95,7 +95,7 @@ export default defineConfig({
             ]
           },
           { text: 'Software', link: '/software',
-        items: [
+            items: [
               { text: 'AI Worker', link: '/software_ai_worker' },
               { text: 'OMY', link: '/software_omy' },
             ]
@@ -166,7 +166,7 @@ export default defineConfig({
               { text: 'IsaacLab', link: '/robotis_lab' },
             ]
           },
-          {  text: 'OMY Simulation', link: '/simulation_omy' },
+          { text: 'OMY Simulation', link: '/simulation_omy' },
         ]
       },
       {

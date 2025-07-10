@@ -3,7 +3,7 @@
 ## Prerequisites
 
 To begin, access the `Robot PC` either directly or via SSH.
-(Refer to the [Setup Guide](/setup) for instructions on how to connect via SSH.)
+(Refer to the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.)
 
 ### 1. Launch Physical AI Server
 

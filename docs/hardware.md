@@ -45,4 +45,6 @@ For detailed specifications, refer to each product’s dedicated page.
 | Teleoperation Ready         | ✅          | ✅          | ✅            |
 | Mobility Base               | ❌          | ❌          | Optional      |
 
-> 📌 **Note:** For detailed mechanical drawings, payload specs, and dimensional data, please refer to the individual product pages.
+::: info
+For detailed mechanical drawings, payload specs, and dimensional data, please refer to the individual product pages.
+:::

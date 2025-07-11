@@ -16,7 +16,7 @@ cd open_manipulator && ./docker/container.sh enter
 b. Then, launch the ROS 2 teleoperation node using the appropriate command for your robot type:
 
 ```bash
-ros2 launch open_manipulator_bringup hardware_y.launch.py
+ros2 launch open_manipulator_bringup omy_ai.launch.py
 ```
 ### 2. Camera Setup
 

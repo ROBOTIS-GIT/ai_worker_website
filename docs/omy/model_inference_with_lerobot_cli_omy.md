@@ -24,7 +24,7 @@ cd open_manipulator && ./docker/container.sh enter
 
 ### 3. Launch the ROS 2 Follower Node
 ```bash
-ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
+ros2 launch open_manipulator_bringup omy_f3m.launch.py
 ```
 
 ### 4. Run Inference

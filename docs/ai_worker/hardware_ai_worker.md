@@ -3,13 +3,13 @@
 The AI Worker hardware platform combines advanced robotics with AI-powered capabilities to create a versatile semi-humanoid robot. Built around ROBOTIS [DYNAMIXEL](https://dynamixel.com/) actuators, it features a mobile base with swerve drive, dual 7-DOF arms with dexterous hand/grippers, and a sensor suite that includes RGBD cameras and LiDARs. The system is powered by an NVIDIA Jetson AGX Orin computer to handle complex computations and AI tasks. The robot is designed for industrial applications, capable of performing tasks such as assembly, inspection, and logistics in dynamic environments.
 This comprehensive hardware design enables the AI Worker to perform complex manipulation tasks through imitation learning and reinforcement learning in various industrial environments.
 
-![hardware_overview](/specifications/hardware_overview.png)
+![hardware_overview](/specifications/ai_worker/hardware_overview.png)
 
 ## Product Models
-![model_name](/specifications/model_name.png)
+![model_name](/specifications/ai_worker/model_name.png)
 
 ## Follower Specification
-![model_lineup](/specifications/model_lineup.png)
+![model_lineup](/specifications/ai_worker/model_lineup.png)
 
 ::: info
 The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model is expected to be released in September 2025. Please note that the specifications provided below are preliminary and subject to change before the official product launch.
@@ -46,19 +46,19 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
     <div style="flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center;">
         <p style="margin: 0 0 10px 0; font-weight: bold;">FFW-LG2 Model</p>
         <div style="display: flex; align-items: center; justify-content: center; height: 280px;">
-            <img src="/specifications/model_ffw_lg2.png" alt="FFW-LG2 Model" style="max-height: 250px; width: auto; object-fit: contain;">
+            <img src="/specifications/ai_worker/model_ffw_lg2.png" alt="FFW-LG2 Model" style="max-height: 250px; width: auto; object-fit: contain;">
         </div>
         <div style="display: flex; align-items: center; justify-content: center; height: 280px; width: 100%;">
-            <img src="/specifications/model_ffw_lg2.gif" alt="FFW-LG2 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
+            <img src="/specifications/ai_worker/model_ffw_lg2.gif" alt="FFW-LG2 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
         </div>
     </div>
     <div style="flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center;">
         <p style="margin: 0 0 10px 0; font-weight: bold;">FFW-LH5 Model</p>
         <div style="display: flex; align-items: center; justify-content: center; height: 280px;">
-            <img src="/specifications/model_ffw_lh5.png" alt="FFW-LH5 Model" style="max-height: 250px; width: auto; object-fit: contain;">
+            <img src="/specifications/ai_worker/model_ffw_lh5.png" alt="FFW-LH5 Model" style="max-height: 250px; width: auto; object-fit: contain;">
         </div>
         <div style="display: flex; align-items: center; justify-content: center; height: 280px; width: 100%;">
-            <img src="/specifications/model_ffw_lh5.gif" alt="FFW-LH5 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
+            <img src="/specifications/ai_worker/model_ffw_lh5.gif" alt="FFW-LH5 Model Animation" style="max-height: 250px; width: 100%; object-fit: contain;">
         </div>
     </div>
 </div>
@@ -109,15 +109,15 @@ Two Intel RealSense D405 cameras are integrated into the robot's hands/grippers,
 | More Information  | [Intel RealSense D405 Details](https://www.intelrealsense.com/depth-camera-d405/) |
 
 ## Gripper Specification
-![model_rh_p12_rn](/specifications/model_rh_p12_rn.png)
+![model_rh_p12_rn](/specifications/ai_worker/model_rh_p12_rn.png)
 The [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) is a multi-functional, 1-DOF two-fingered robot hand. It features an adaptive gripping design with passive joints, allowing it to grasp objects of various shapes. The hand utilizes a 10W DC motor and offers torque control and current-based position control, enabling it to handle objects made of different materials. Key features of the RH-P12-RN include its lightweight design (500g) and high payload capacity (5kg). It also has detachable fingertips that can be easily replaced with customized ones. The RH-P12-RN is designed for easy integration with the AI Worker platform, making it suitable for various applications in industrial environments.
 
 ## Finger Actuator Specification
 Advanced finger actuators for the AI Worker are currently under development. These finger actuators are designed for complex manipulation tasks requiring human-like dexterity. Detailed specifications and options will be published in the near future once development is completed. Please contact us for more information about the availability of upcoming dexterous finger actuators.
 
 ## Joint Configuration and Nomenclature
-<a href="/specifications/joints.png" target="_blank">
-  <img src="/specifications/joints.png" alt="Dimensions" width="100%">
+<a href="/specifications/ai_worker/joints.png" target="_blank">
+  <img src="/specifications/ai_worker/joints.png" alt="Dimensions" width="100%">
 </a>
 
 | ID  | Joint Name            | Technical Name  | Range        |
@@ -188,28 +188,28 @@ For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS D
 
 ## Dimension
 ### FFW-SG2
-<a href="/specifications/dimension_ffw_sg2.png" target="_blank">
-  <img src="/specifications/dimension_ffw_sg2.png" alt="Dimensions" width="100%">
+<a href="/specifications/ai_worker/dimension_ffw_sg2.png" target="_blank">
+  <img src="/specifications/ai_worker/dimension_ffw_sg2.png" alt="Dimensions" width="100%">
 </a>
 
 ### FFW-BG2
-<a href="/specifications/dimension_ffw_bg2.png" target="_blank">
-  <img src="/specifications/dimension_ffw_bg2.png" alt="Dimensions" width="100%">
+<a href="/specifications/ai_worker/dimension_ffw_bg2.png" target="_blank">
+  <img src="/specifications/ai_worker/dimension_ffw_bg2.png" alt="Dimensions" width="100%">
 </a>
 
 ### FFW-LG2
-<a href="/specifications/dimension_ffw_lg2.png" target="_blank">
-  <img src="/specifications/dimension_ffw_lg2.png" alt="Dimensions" width="100%">
+<a href="/specifications/ai_worker/dimension_ffw_lg2.png" target="_blank">
+  <img src="/specifications/ai_worker/dimension_ffw_lg2.png" alt="Dimensions" width="100%">
 </a>
 
 ### FFW-LH5
-<a href="/specifications/dimension_ffw_lh5.png" target="_blank">
-  <img src="/specifications/dimension_ffw_lh5.png" alt="Dimensions" width="100%">
+<a href="/specifications/ai_worker/dimension_ffw_lh5.png" target="_blank">
+  <img src="/specifications/ai_worker/dimension_ffw_lh5.png" alt="Dimensions" width="100%">
 </a>
 
 ## Workspace
 The torso workspace is the same for both FFW-BG2 and FFW-SG2 models.
 
-<a href="/specifications/workspace.png" target="_blank">
-  <img src="/specifications/workspace.png" alt="Workspace" width="100%">
+<a href="/specifications/ai_worker/workspace.png" target="_blank">
+  <img src="/specifications/ai_worker/workspace.png" alt="Workspace" width="100%">
 </a>

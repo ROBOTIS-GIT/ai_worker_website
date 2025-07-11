@@ -22,7 +22,7 @@ scp -r <your model folder's directory> robotis@<your robot's serial number>.loca
 cd open_manipulator && ./docker/container.sh enter
 ```
 ```bash
-ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
+ros2 launch open_manipulator_bringup omy_f3m.launch.py
 ```
 
 ### 4. Run Inference

@@ -3,7 +3,7 @@
 ## Prerequisites
 
 Access the `Robot PC` either directly or via SSH, and follow the steps below.
-(Refer to the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.)
+(Refer to the [Setup Guide](/ai_worker/setup_guide_ai_worker) for instructions on how to connect via SSH.)
 
 ### Authenticate with Hugging Face
 

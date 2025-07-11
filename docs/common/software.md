@@ -18,5 +18,5 @@ This page provides an overview of the software capabilities shared across the li
 ## Product-Specific Software Pages
 
 - OMX Series Software (Coming soon)
-- [OMY Series Software](./software_omy.md)
-- [AI Worker Software](./software_ai_worker.md)
+- [OMY Series Software](/omy/software_omy)
+- [AI Worker Software](/ai_worker/software_ai_worker)

@@ -105,5 +105,3 @@ Here are some inspiring examples of robotic hand and gripper projects from our c
 The DYNAMIXEL community is a vibrant hub of innovation. If you have an open-source project that utilizes DYNAMIXEL actuators, we'd love to hear about it and potentially feature it here!
 
 Your Idea, Powered by DYNAMIXEL. Let's build the future together.
-
-[Contact us to share your project](/contact)

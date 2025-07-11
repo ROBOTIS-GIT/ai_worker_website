@@ -8,7 +8,7 @@ Explore the **hardware specifications** of the ROBOTIS Physical AI Lineup:
 - **Full-Body Semi-Humanoid Platform**
   - `AI Worker`
 
-This section provides a summary of key **mechanical** and **control** features across the lineup.  
+This section provides a summary of key **mechanical** and **control** features across the lineup.
 For detailed specifications, refer to each product’s dedicated page.
 
 ## Product Lineup
@@ -20,14 +20,14 @@ For detailed specifications, refer to each product’s dedicated page.
 
 ---
 
-### [OMY Series – Advanced AI Manipulator](/hardware_omy.md)
+### [OMY Series – Advanced AI Manipulator](/omy/hardware_omy.md)
 - 6-DOF manipulator with DYNAMIXEL-Y actuators
 - Supports imitation learning, precision manipulation, and visual servoing
 - ROS 2-native with gripper and depth camera options
 
 ---
 
-### [AI Worker – Semi-Humanoid Platform](/hardware_ai_worker.md)
+### [AI Worker – Semi-Humanoid Platform](/ai_worker/hardware_ai_worker.md)
 - Full-body Physical AI platform with mobility, lift, arms, and head
 - Designed for complex task learning, locomotion, and whole-body interaction
 - Real-time ROS 2 control system, swerve/omni base, and modular extensions

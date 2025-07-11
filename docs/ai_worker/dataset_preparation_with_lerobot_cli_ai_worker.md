@@ -3,7 +3,7 @@
 ## Prerequisites
 
 This section describes the necessary setup steps before starting data preparation.
-To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.
+To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/ai_worker/setup_guide_ai_worker) for instructions on how to connect via SSH.
 
 ## 1. Launch the ROS 2 teleoperation node
 

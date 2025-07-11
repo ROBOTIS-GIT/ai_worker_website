@@ -15,7 +15,8 @@ const commonDir = path.resolve(__dirname, '../common')
 const commonFiles = fs.readdirSync(commonDir).filter(file => file.endsWith('.md'))
 const dynamicRewrites = products.reduce((acc, product) => {
   commonFiles.forEach(file => {
-    const key = `${product}/${file}`
+    const baseName = file.replace('.md', '')
+    const key = `${product}/${baseName}.md`
     const value = `common/${file}`
     acc[key] = value
   })
@@ -129,8 +130,8 @@ export default defineConfig({
     logo: '/favicon.svg',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'AI Worker', link: '/ai_worker/introduction' },
-      { text: 'OMY', link: '/omy/introduction' },
+      { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
+      { text: 'OMY', link: '/omy/introduction_omy' },
       // { text: 'Documentations', link: '/introduction' },
       // { text: 'Videos', link: '/videos' },
       // {
@@ -157,46 +158,22 @@ export default defineConfig({
       {
         text: 'Overview',
         items: [
-          { text: 'Introduction', link: '/ai_worker/introduction' ,
-            items: [
-              { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
-            ]
-          },
+          { text: 'Introduction', link: '/ai_worker/introduction_ai_worker' },
           { text: 'Video Gallery', link: '/ai_worker/videos' },
         ]
       },
       {
         text: 'Specifications',
         items: [
-          { text: 'Hardware', link: '/ai_worker/hardware',
-            items: [
-              { text: 'AI Worker', link: '/ai_worker/hardware_ai_worker' },
-            ]
-          },
-          { text: 'Software', link: '/ai_worker/software',
-            items: [
-              { text: 'AI Worker', link: '/ai_worker/software_ai_worker' },
-            ]
-          },
+          { text: 'Hardware', link: '/ai_worker/hardware_ai_worker' },
+          { text: 'Software', link: '/ai_worker/software_ai_worker' },
         ]
       },
       {
         text: 'Quick Start Guide',
         items: [
-          {
-            text: 'Setup Guide',
-            link: '/ai_worker/setup_guide_ai_worker',
-            items: [
-              { text: 'AI Worker', link: '/ai_worker/ai_worker/setup_guide_ai_worker' },
-            ]
-          },
-          {
-            text: 'Operation Guide',
-            link: '/ai_worker/operation_ai_worker',
-            items: [
-              { text: 'AI Worker', link: '/ai_worker/operation_ai_worker' },
-            ]
-          }
+          { text: 'Setup Guide', link: '/ai_worker/setup_guide_ai_worker' },
+          { text: 'Operation Guide', link: '/ai_worker/operation_ai_worker' }
         ]
       },
       ...commonItems('ai_worker')
@@ -206,44 +183,22 @@ export default defineConfig({
       {
         text: 'Overview',
         items: [
-          { text: 'Introduction', link: '/omy/introduction' ,
-            items: [
-              { text: 'OMY', link: '/omy/introduction_omy' },
-            ]
-          },
+          { text: 'Introduction', link: '/omy/introduction_omy' },
           { text: 'Video Gallery', link: '/omy/videos' },
         ]
       },
       {
         text: 'Specifications',
         items: [
-          { text: 'Hardware', link: '/omy/hardware',
-            items: [
-              { text: 'OMY', link: '/omy/hardware_omy' },
-            ]
-          },
-          { text: 'Software', link: '/omy/software',
-            items: [
-              { text: 'OMY', link: '/omy/software_omy' },
-            ]
-          },
+          { text: 'Hardware', link: '/omy/hardware_omy' },
+          { text: 'Software', link: '/omy/software_omy' },
         ]
       },
       {
         text: 'Quick Start Guide',
         items: [
-          {
-            text: 'Setup Guide', link: '/omy/setup_guide_omy',
-            items: [
-              { text: 'OMY', link: '/omy/setup_guide_omy' }
-            ]
-          },
-          {
-            text: 'Operation Guide', link: '/omy/operation_omy',
-            items: [
-              { text: 'OMY', link: '/omy/operation_omy' }
-            ]
-          }
+          { text: 'Setup Guide', link: '/omy/setup_guide_omy' },
+          { text: 'Operation Guide', link: '/omy/operation_omy' }
         ]
       },
       ...commonItems('omy')

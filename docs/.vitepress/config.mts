@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 const title = 'ROBOTIS'
-const description = 'Documentations for AI Worker'
+const description = 'Website for AI Worker and AI Manipulator'
 const ogUrl = 'https://ai.robotis.com/'
 const ogImage = `${ogUrl}og_image.png`
 
@@ -15,7 +15,7 @@ export default defineConfig({
     ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
     ['meta', { name: 'author', content: 'ROBOTIS' }],
     ['meta', { name: 'description', content: description }],
-    ['meta', { name: 'keywords', content: 'AI Worker, AI, Robotics, Humanoid, ROS, Imitation Learning, Reinforcement Learning, Simulation, Open Source, ROBOTIS, Physical AI, AI Models, AI Datasets, Dual-Arm System, Robot Control, Robot Simulation, AI Robotics' }],
+    ['meta', { name: 'keywords', content: 'AI Worker, AI Manipulator, AI, Physical AI, Embodied AI, Imitation Learning, Reinforcement Learning, Robot, Robotics, Humanoid, ROS, Simulation, Open Source, ROBOTIS,  AI Models, AI Datasets, Dual-Arm System, Robot Control, Robot Simulation, AI Robotics' }],
     ['meta', { property: 'og:title', content: title }],
     ['meta', { property: 'og:url', content: ogUrl }],
     ['meta', { property: 'og:description', content: description }],
@@ -55,12 +55,15 @@ export default defineConfig({
       {
         text: 'OpenSource',
         items: [
-          { text: 'AI Worker Packages', link: 'https://github.com/ROBOTIS-GIT/ai_worker', target: '_blank' },
-          { text: 'AI Manipulator Packages', link: 'https://github.com/ROBOTIS-GIT/open_manipulator', target: '_blank' },
-          { text: 'MuJoCo Model Files', link: 'https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie', target: '_blank' },
+          { text: 'AI Worker ROS 2 Packages', link: 'https://github.com/ROBOTIS-GIT/ai_worker', target: '_blank' },
+          { text: 'AI Manipulator ROS 2 Packages', link: 'https://github.com/ROBOTIS-GIT/open_manipulator', target: '_blank' },
           { text: 'Physical AI Tools', link: 'https://github.com/ROBOTIS-GIT/physical_ai_tools', target: '_blank' },
-          { text: 'AI Models & Datasets', link: 'https://huggingface.co/ROBOTIS', target: '_blank' },
-          { text: 'Docker Files', link: 'https://hub.docker.com/r/robotis/ros/tags', target: '_blank' },
+          { text: 'Isaac Sim Models', link: 'https://github.com/ROBOTIS-GIT/robotis_lab/tree/main/source/robotis_lab/data/robots', target: '_blank' },
+          { text: 'MuJoCo Models', link: 'https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie', target: '_blank' },
+          { text: 'AI Worker URDF Models', link: 'https://github.com/ROBOTIS-GIT/ai_worker/tree/main/ffw_description/urdf', target: '_blank' },
+          { text: 'AI Manipulator URDF Models', link: 'https://github.com/ROBOTIS-GIT/open_manipulator/tree/main/open_manipulator_description/urdf', target: '_blank' },
+          { text: 'AI Models & Datasets (Hugging Face)', link: 'https://huggingface.co/ROBOTIS', target: '_blank' },
+          { text: 'Docker Images', link: 'https://hub.docker.com/r/robotis/ros/tags', target: '_blank' },
           { text: 'ROBOTIS Homepage', link: 'https://en.robotis.com/', target: '_blank' },
           { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
           { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
@@ -236,7 +239,7 @@ export default defineConfig({
       { icon: 'linkedin', link: 'https://www.linkedin.com/company/robotis/' }
     ],
     footer: {
-      message: 'AI Worker released under the Apache-2.0 license.',
+      message: 'AI Worker and AI Manipulator released under the Apache-2.0 license.',
       copyright: 'Copyright © 2025 ROBOTIS. All Rights Reserved.'
     }
   }

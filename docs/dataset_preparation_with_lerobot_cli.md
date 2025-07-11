@@ -2,10 +2,30 @@
 
 ## Prerequisites
 
-Access the `Robot PC` either directly or via SSH, and follow the steps below.
-(Refer to the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.)
+This section describes the necessary setup steps before starting data preparation.
+To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.
 
-### Authenticate with Hugging Face
+## 1. Launch the ROS 2 teleoperation node
+
+a. Open a terminal and enter the Docker container:
+
+:::tabs key:robot-type
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+:::
+
+b. Then, launch the ROS 2 teleoperation node using the appropriate command for your robot type:
+
+:::tabs key:robot-type
+== BG2 Type
+ffw_bg2_ai
+== SG2 Type
+ffw_sg2_ai
+:::
+
+### 2. Authenticate with Hugging Face
 
 ::: info
 If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
@@ -18,8 +38,6 @@ Open a terminal and enter the Docker container:
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY
-cd open_manipulator && ./docker/container.sh enter
 :::
 
 Navigate to the `lerobot` directory:
@@ -121,8 +139,6 @@ This path refers to the **host system**.
 ~/ai_worker/docker/huggingface/lerobot
 == SG2 Type
 ~/ai_worker/docker/huggingface/lerobot
-== OMY
-~/open_manipulator/docker/huggingface/lerobot
 :::
 
 ## Dataset Visualization

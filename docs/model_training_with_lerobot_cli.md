@@ -18,8 +18,6 @@ Open a terminal on the Jetson device and enter the Docker container:
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY
-cd open_manipulator && ./docker/container.sh enter
 :::
 
 ### 2. Navigate to the LeRobot Directory

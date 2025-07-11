@@ -2,14 +2,7 @@
 
 For sales inquiries or detailed product information about the Physical AI lineup, please contact us through one of the following channels:
 
-## Sales Inquiries
-
-For sales inquiries, please reach out to our sales team:
-- Email: paulpark@robotis.com
-
-## Office Locations
-
-### Global Headquarters
+## Global Headquarters
 - ROBOTIS Co., Ltd.
 - Address: 37, Magokjungang 5-ro 1-gil, Gangseo-gu, Seoul, Republic of Korea (Postal Code: 07594)
 - Website: [robotis.com](https://en.robotis.com)
@@ -17,7 +10,7 @@ For sales inquiries, please reach out to our sales team:
 - TEL: +82-70-8671-2609
 - FAX: +82-70-8230-1336
 
-### US Office
+## US Office
 - ROBOTIS Inc.
 - 4222 Green River Rd, Corona, CA 92880, United States
 - Website: [robotis.us](https://www.robotis.us)

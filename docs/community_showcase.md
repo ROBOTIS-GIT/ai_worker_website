@@ -1,4 +1,6 @@
-# Community Showcase: Inspiring Projects from Our Users
+# Community Showcase<br>: Inspiring Projects from Our Users
+<br>
+<YouTube videoId="XNSi9TzPXLs" />
 
 The DYNAMIXEL ecosystem thrives on the creativity and innovation of our users. We are thrilled to showcase some of the remarkable open-source projects developed by talented individuals, top universities, and pioneering companies around the world. These projects demonstrate the versatile capabilities of DYNAMIXEL actuators and how they empower developers to push the boundaries of robotics.
 

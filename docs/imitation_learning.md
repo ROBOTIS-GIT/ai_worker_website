@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the ROBOTIS Physical AI Lineup and the Hugging Face Hub and features a user-friendly web GUI designed to streamline interaction and enhance accessibility.
+This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the OMY and the Hugging Face Hub and features a user-friendly web GUI designed to streamline interaction and enhance accessibility.
 
 ### 1. Data Collection
 
@@ -18,10 +18,10 @@ The verified dataset is then used to train an action policy model. Training can 
 
 ### 4. Model Inference
 
-Once trained, the models are deployed on the ROBOTIS Physical AI Lineup to execute real-time inference for tasks such as picking, placing, and obstacle avoidance.
+Once trained, the models are deployed on the OMY to execute real-time inference for tasks such as picking, placing, and obstacle avoidance.
 
 ## End-to-End Imitation Learning Workflow
-- The diagram below shows the full imitation learning workflow using the ROBOTIS Physical AI Lineup and Hugging Face.
+- The diagram below shows the full imitation learning workflow using the OMY and Hugging Face.
 
 
 <img src="/imitation_learning/end_to_end_imitation_learning_workflow.png" alt="Imitation Learning Workflow" style="width: 100%; ">
@@ -36,7 +36,7 @@ The video illustrates the full imitation learning workflow using the OMY, includ
 
 - Dataset Schema
 
-The dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the ROBOTIS Physical AI Lineup via ROS 2 teleoperation using the [LeRobot](https://github.com/huggingface/lerobot) framework.
+The dataset follows the standard [🤗 Hugging Face datasets format](https://huggingface.co/docs/datasets/index) and contains imitation learning demonstrations collected from the OMY via ROS 2 teleoperation using the [LeRobot](https://github.com/huggingface/lerobot) framework.
 
 | Field              | Type            | Description          |
 |--------------------|-----------------|----------------------|

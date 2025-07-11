@@ -92,7 +92,7 @@ By embedding intelligence into physical systems, we open the door to AI that can
 - Suitable for advanced control
 - Compatible with ROS 2 and Physical AI Tools
 
-### 3. OMX-AI Series (Entry Level) [Coming Soon]
+### 3. OMX Series (Entry Level) [Coming Soon]
 - Affordable, lightweight AI manipulators`(5 DOF robot arm + gripper)`
 - Ideal for educational and basic RL/IL experiments
 - Compatible with ROS 2 and Physical AI Tools

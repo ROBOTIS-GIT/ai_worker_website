@@ -72,13 +72,13 @@ jobs:
             echo "Error: Build directory not found!"
             exit 1
           fi
-          
+
           # Check if index.html was generated
           if [ ! -f "docs/.vitepress/dist/index.html" ]; then
             echo "Error: index.html not found in build output!"
             exit 1
           fi
-          
+
           echo "Build verification completed successfully!"
 
       - name: Upload build artifacts (for debugging)

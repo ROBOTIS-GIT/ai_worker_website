@@ -6,9 +6,6 @@ Explore the ROBOTIS Physical AI Lineup through our collection of videos featurin
 ### AI Worker Introduction
 <YouTube videoId="DX7DEf9s3Eg" />
 
-### AI Manipulator Introduction
-<YouTube videoId="3x-eN36pNns" />
-
 ## Tutorials & Demonstrations
 <YouTube videoId="hnJpFX2G3P4" />
 

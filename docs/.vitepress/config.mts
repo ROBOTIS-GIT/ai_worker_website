@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
-const title = 'ROBOTIS AI'
+const title = 'ROBOTIS'
 const description = 'Documentations for AI Worker'
 const ogUrl = 'https://ai.robotis.com/'
 const ogImage = `${ogUrl}og_image.png`
@@ -51,6 +51,7 @@ export default defineConfig({
     nav: [
       { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
       { text: 'OMY', link: '/omy/introduction_omy' },
+      { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
       {
         text: 'OpenSource',
         items: [
@@ -65,7 +66,6 @@ export default defineConfig({
           { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
         ]
       },
-      { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
       { text: 'Contact', link: '/ai_worker/contact_ai_worker' },
     ],
     sidebar: {

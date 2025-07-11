@@ -3,7 +3,7 @@
 This guide will walk you through the process of setting up your OMY hardware and software environment.
 
 ## Power connection
-![omy_power](/setup_guide/omy/omy_power.png)
+![omy_power](/quick_start_guide/omy/omy_power.png)
 
 ## SSH connection
 
@@ -12,7 +12,7 @@ Start by connecting the `robot pc` to the same network as the `user PC` using a 
 Each time OMY OS boots, it sets the SBC’s hostname to the serial number (SN) written on the product (e.g., SNPR44B9999).
 In environments where UDP Multicast is available (such as being on the same router), you can connect directly to the `robot pc` using the hostname. Static IP assignment and other network settings for more advanced connection options are supported through the Manager.
 
-![omy_serial_number](/setup_guide/omy/omy_serial_number.png)
+![omy_serial_number](/quick_start_guide/omy/omy_serial_number.png)
 
 ### SSH Access Method
 (Assuming the SN is ‘SNPR44B9999’)
@@ -44,7 +44,7 @@ The `/workspace` folder inside the container is volume mapped (a feature that li
 
 When you first receive the OMY, the manipulator is folded as shown in the image below.
 
-![omy_pack](/setup_guide/omy/omy_pack.png)
+![omy_pack](/quick_start_guide/omy/omy_pack.png)
 
 You can move it to the initial position by running the following command for **UNPACKING**:
 
@@ -54,7 +54,7 @@ ros2 launch open_manipulator_bringup unpack_y.launch.py
 
 The image below shows the initial position after **UNPACKING**.
 
-![omy_unpack](/setup_guide/omy/omy_unpack.png)
+![omy_unpack](/quick_start_guide/omy/omy_unpack.png)
 
 
 and the following is the command to PACK it back into it's folded configuration.

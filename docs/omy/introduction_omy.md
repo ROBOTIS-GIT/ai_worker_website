@@ -50,12 +50,3 @@ The OMY series offers multiple configurations for various teleoperation and mani
 
 - `OMY-3M`  
   Base configuration without a gripper. Suitable for general motion control or custom end-effector integration.
-
-## Next Steps
-<div style="margin-top: 30px; text-align: center;">
-  <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-    <a href="/hardware_omy" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">View Hardware Specs</a>
-    <a href="/videos" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">Watch Demo Videos</a>
-    <a href="/contact" class="button-primary" style="color: white !important; text-decoration: none; display: inline-block; background-color: var(--vp-c-brand);">Request Information</a>
-  </div>
-</div>

@@ -1,7 +1,2 @@
-# ai_worker_website
-
-## How to run
-
-```bash
-docker-compose up
-```
+# ai_worker_websi
+- https://ai.robotis.com/

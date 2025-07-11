@@ -1,0 +1,92 @@
+name: CI
+
+# Trigger CI on pull requests and pushes to main branch
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# Set permissions for the workflow
+permissions:
+  contents: read
+  pull-requests: read
+
+# Cancel any in-progress workflow runs for the same branch
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Job to build and test the VitePress site
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history for better build context
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          # Use npm cache to speed up builds
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint code (if lint script exists)
+        run: |
+          if npm run --silent lint 2>/dev/null; then
+            echo "Running lint check..."
+            npm run lint
+          else
+            echo "No lint script found, skipping..."
+          fi
+        continue-on-error: false
+
+      - name: Type check (if type check script exists)
+        run: |
+          if npm run --silent type-check 2>/dev/null; then
+            echo "Running type check..."
+            npm run type-check
+          else
+            echo "No type-check script found, skipping..."
+          fi
+        continue-on-error: false
+
+      - name: Build VitePress site
+        run: npm run docs:build
+        env:
+          # Set NODE_OPTIONS to increase memory limit if needed
+          NODE_OPTIONS: --max_old_space_size=4096
+
+      - name: Check build output
+        run: |
+          # Verify that the build directory exists and contains files
+          if [ ! -d "docs/.vitepress/dist" ]; then
+            echo "Error: Build directory not found!"
+            exit 1
+          fi
+          
+          # Check if index.html was generated
+          if [ ! -f "docs/.vitepress/dist/index.html" ]; then
+            echo "Error: index.html not found in build output!"
+            exit 1
+          fi
+          
+          echo "Build verification completed successfully!"
+
+      - name: Upload build artifacts (for debugging)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: build-artifacts-${{ github.sha }}
+          path: |
+            docs/.vitepress/dist
+            docs/.vitepress/cache
+          retention-days: 7

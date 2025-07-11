@@ -44,7 +44,7 @@ You can launch Gazebo and RViz individually, or launch RViz together with the ph
     ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
     # Launch the AI Worker Follower (FFW-BG2) hardware interface and RViz
     ```
-    *   **Note:** This command is the same as the `Follower` launch command in the [`Teleoperation Guide`](/operation_ai_worker#option-2-separate-launches) and will also launch the cameras by default. To run without cameras, you can add the `launch_cameras:=false` argument.
+    *   **Note:** This command is the same as the `Follower` launch command in the [`Teleoperation Guide`](/ai_worker/operation_ai_worker) and will also launch the cameras by default. To run without cameras, you can add the `launch_cameras:=false` argument.
 
 ### MuJoCo (MJCF)
 For high-fidelity physics simulation, particularly favored in reinforcement learning research and biomechanics, models in MJCF (MuJoCo XML Format) are available. MuJoCo offers fast and accurate physics, ideal for training complex behaviors.

@@ -9,7 +9,7 @@ Before starting teleoperation, make sure:
 
 ### Steps for Teleoperation Setup (Leader)
 (*The term `Leader` refers to the control device in the AI WORKER system)
-![Back of the LG2 Leader](/quick_start_guide/back_of_the_LG2_leader.png)
+![Back of the LG2 Leader](/quick_start_guide/ai_worker/back_of_the_LG2_leader.png)
 1. `Power Cable`: Connect the power adapter to supply power to the U2D2 device.
 2. `U2D2 ON/OFF`: This switch is located inside a small recessed hole. The device is turned on when the inner white-dotted button is pressed.
 3. `USB Cable`: Connect a USB cable from the U2D2 to one of the USB ports on the back of the `Follower`.
@@ -17,7 +17,7 @@ Before starting teleoperation, make sure:
 
 ### How to Wear the Leader
 **First Leader Version**
-![Leader's wearing appearance](/quick_start_guide/leader_wearing_appearance.png)
+![Leader's wearing appearance](/quick_start_guide/ai_worker/leader_wearing_appearance.png)
 
 1. Put both arms through the `Leader`'s `shoulder straps`.
 2. Fasten the chest belt buckle and `hip belt buckle`.
@@ -26,7 +26,7 @@ Before starting teleoperation, make sure:
 **Second Leader Version**  
 It can be worn more easily by users with different body types.
 
-<img src="/quick_start_guide/new_fixed_belt.png" alt="Web UI" style="width: 40%; ">
+<img src="/quick_start_guide/ai_worker/new_fixed_belt.png" alt="Web UI" style="width: 40%; ">
 
 1. First, pull the inner belt tightly and fasten it around the waist.
 2. Then, pull the outer belt and attach it over the inner belt using the Velcro.
@@ -127,7 +127,7 @@ while the `left joystick` controls the`head` section of the robot.
 5. Pressing both switches simultaneously switches to `SWERVE DRIVE MODE`.
 6. In `SWERVE DRIVE MODE`, the left joystick controls: X-axis: Linear x, Y-axis: Linear y
    The right joystick controls: Y-axis: Angular z
-![Swerve joystick Control](/quick_start_guide/LG2_Joystick.png)
+![Swerve joystick Control](/quick_start_guide/ai_worker/LG2_Joystick.png)
 
 ::: warning
 In swerve mode, the arms continue to move. Please be careful.

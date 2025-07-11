@@ -12,7 +12,7 @@ This command will sequentially execute the following procedures:
 
 After these steps, the Leader-Follower system will be operational. **AI Teleoperation** is only supported between OMY_F3M and OMY_L100 models.
 
-![](/quick_start_guide/ai_teleop.gif)
+![](/quick_start_guide/omy/ai_teleop.gif)
 
 ---
 ::: info
@@ -42,7 +42,7 @@ For more information about MoveIt 2, check out the [official documentation](http
  ros2 launch open_manipulator_moveit_config omy_f3m_moveit.launch.py
 ```
 Move interactive markers to position the robotic arm, then click Plan and Execute.
-![](/quick_start_guide/moveit2_core.png)
+![](/quick_start_guide/omy/moveit2_core.png)
 
 **Simple Instructions for Using MOVEIT 2:**
 1. You can move the robot to your desired pose using the **Interactive Marker** visible in RViz.
@@ -88,16 +88,16 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 
 **Explore GUI Features**
 1. Click the `Timer Start` button.
-![](/quick_start_guide/OMY_GUI1.png)
+![](/quick_start_guide/omy/OMY_GUI1.png)
 
 2. Check the status of OMY.
-![](/quick_start_guide/OMY_GUI2.png)
+![](/quick_start_guide/omy/OMY_GUI2.png)
 
 3. To manipulate OMY in the joint space, enter the joint angles and total time for the trajectory. Then click the `Send` button to start the motion.
-![](/quick_start_guide/OMY_GUI3.png)
+![](/quick_start_guide/omy/OMY_GUI3.png)
 
 4. To manipulate OMY in the task space, enter the kinematics pose of the OMY end-effector(tool) in the task space. Then click the `Send` button to start the motion.
-![](/quick_start_guide/OMY_GUI4.png)
+![](/quick_start_guide/omy/OMY_GUI4.png)
 
 5. Create a task constructor with OMY.
 - Click the `Read task` button to prepare for saving tasks.
@@ -105,13 +105,13 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
   - The file's load path can be checked in the terminal when the GUI node is launched.
 - Adjust the manipulator's posture and save it by clicking `Save pose`.
 - Save multiple postures to complete the preparation.
-![](/quick_start_guide/OMY_GUI5.png)
+![](/quick_start_guide/omy/OMY_GUI5.png)
 
 6. Press the `Play` button to make the manipulator move sequentially according to the saved tasks. Completed tasks will have their status changed to <span style="color: green; font-weight: bold;">Done</span>
-![](/quick_start_guide/OMY_GUI6.png)
+![](/quick_start_guide/omy/OMY_GUI6.png)
 
 ### OMY GUI Demo
-![](/quick_start_guide/omy_f3m_gui.gif)
+![](/quick_start_guide/omy/omy_f3m_gui.gif)
 
 
 
@@ -137,4 +137,4 @@ ros2 run open_manipulator_teleop omy_f3m_teleop
 - `p` - Close gripper
 
 ### Keyboard Teleop Demo
-![](/quick_start_guide/omy_f3m_teleoperation.gif)
+![](/quick_start_guide/omy/omy_f3m_teleoperation.gif)

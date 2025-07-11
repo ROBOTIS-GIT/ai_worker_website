@@ -10,14 +10,14 @@ This guide will walk you through the process of setting up your AI Worker hardwa
 
 ### FFW-BG2
 #### Powering On the FFW_BG2 follower
-![Back of the BG2 Base](/quick_start_guide/back_of_the_BG2_base.png)
+![Back of the BG2 Base](/quick_start_guide/ai_worker/back_of_the_BG2_base.png)
 1. Toggle the `Power Supply Switch` to the right.
 2. Insert the `Key Switch` and turn it to the 12 o'clock position.
 3. Press and hold the `Power Button` for 3 seconds. When you hear a beep, the system is powered on. (You should see the robot’s head light up at this point.)
 
 
 #### Hardware Ports (FFW_BG2 Follower)
-![Back of the BG2 Body](/quick_start_guide/back_of_the_BG2_body.png)
+![Back of the BG2 Body](/quick_start_guide/ai_worker/back_of_the_BG2_body.png)
 The back of the Follower body includes several ports for system access and external connections. These include:
 - `LAN Port`: Used to access the robot PC via SSH or remote desktop.
 
@@ -29,12 +29,12 @@ The back of the Follower body includes several ports for system access and exter
 
 ### FFW-SG2
 #### Powering On the FFW_SG2 follower
-![Back of the SG2 Base](/quick_start_guide/back_of_the_SG2_base.png)
+![Back of the SG2 Base](/quick_start_guide/ai_worker/back_of_the_SG2_base.png)
 1. Insert the `Key Switch` and turn it to the 12 o'clock position.
 2. Press and hold the `Power Button` for 3 seconds. When you hear a beep, the system is powered on. (You should see the robot’s head light up at this point.)
 
 #### Hardware Ports (FFW_SG2 Follower)
-![Back of the SG2 body](/quick_start_guide/back_of_the_SG2_body.png)
+![Back of the SG2 body](/quick_start_guide/ai_worker/back_of_the_SG2_body.png)
 The back of the Follower body includes several ports for system access and external connections. These include:
 - `LAN Port`: Used to access the robot PC via SSH or remote desktop.
 
@@ -155,5 +155,5 @@ AI Worker supports mDNS, allowing you to connect without manually checking the I
   ssh robotis@ffw-SNPR48A0000.local
  ```
 (Replace SNPR48A0000 with the serial number printed on the back of the robot body.)
-![Back of the Follower](/quick_start_guide/serial_number.png)
+![Back of the Follower](/quick_start_guide/ai_worker/serial_number.png)
 

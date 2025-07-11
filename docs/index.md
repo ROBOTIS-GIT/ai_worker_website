@@ -11,16 +11,16 @@ hero:
   actions:
     - theme: brand
       text: Introduction
-      link: /introduction
+      link: /ai_worker/introduction_ai_worker
     - theme: alt
       text: Specification
-      link: /hardware
+      link: /ai_worker/hardware_ai_worker
     - theme: alt
       text: Open Source
-      link: /opensource
+      link: /ai_worker/opensource_ai_worker
     - theme: alt
       text: Purchase Inquiry
-      link: /contact
+      link: /ai_worker/contact_ai_worker
 
 features:
   - title: Physical AI with Imitation Learning
@@ -65,38 +65,35 @@ Each level supports a progressive research journey in Physical AI. It begins wit
 `Physical AI` refers to artificial intelligence that learns and acts through **real-world physical interaction** using robotic bodies.
 
 Unlike traditional AI, which operates purely in simulation or digital environments, Physical AI:
-- Receives feedback through motion, contact, and force  
-- Learns by interacting with the environment in real time  
-- Uses robotic hardware to sense, move, and adapt  
+- Receives feedback through motion, contact, and force
+- Learns by interacting with the environment in real time
+- Uses robotic hardware to sense, move, and adapt
 
 This approach enables learning that is grounded in reality — shaped by friction, gravity, uncertainty, and the complexity of the `physical world`.
 
 `Physical AI` allows us to:
-- Train robots to perform real-world tasks with precision  
-- Collect meaningful demonstrations through human guidance (teleoperation, VR)  
-- Deploy policies that bridge simulation and reality  
+- Train robots to perform real-world tasks with precision
+- Collect meaningful demonstrations through human guidance (teleoperation, VR)
+- Deploy policies that bridge simulation and reality
 
 By embedding intelligence into physical systems, we open the door to AI that can not only understand the world, but also act in it safely and effectively.
 
 ## Lineup Breakdown
 
 ### 1. [AI Worker Series (Enterprise Level)](/ai_worker/introduction_ai_worker)
-- Full-body semi-humanoid platform `(19 DOF ~ 25 DOF robot body)`  
-- Supports bimanual manipulation  
-- Designed for imitation learning and autonomous policy training  
-- Compatible with ROS 2 and Physical AI Tools  
+- Full-body semi-humanoid platform `(19 DOF ~ 25 DOF robot body)`
+- Supports bimanual manipulation
+- Designed for imitation learning and autonomous policy training
+- Compatible with ROS 2 and Physical AI Tools
 
 ### 2. [OMY Series (Middle Level)](/omy/introduction_omy)
-- Collaborative robot style arms `(6 DOF robot arm + gripper)`  
-- Gravity compensation, self-collision detection  
-- Suitable for advanced control  
-- Compatible with ROS 2 and Physical AI Tools  
+- Collaborative robot style arms `(6 DOF robot arm + gripper)`
+- Gravity compensation, self-collision detection
+- Suitable for advanced control
+- Compatible with ROS 2 and Physical AI Tools
 
 ### 3. OMY Series (Entry Level)
-- Collaborative robot style arms `(6 DOF robot arm + gripper)`  
-- Gravity compensation, self-collision detection  
-- Suitable for advanced control  
-- Compatible with ROS 2 and Physical AI Tools  
-
-
-
+- Collaborative robot style arms `(6 DOF robot arm + gripper)`
+- Gravity compensation, self-collision detection
+- Suitable for advanced control
+- Compatible with ROS 2 and Physical AI Tools

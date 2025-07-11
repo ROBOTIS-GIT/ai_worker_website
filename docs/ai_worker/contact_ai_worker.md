@@ -1,6 +1,6 @@
 # Contact Us
 
-For sales inquiries or to request detailed product information about the AI Worker, please contact us through one of the following channels:
+For sales inquiries or detailed product information about the Physical AI lineup, please contact us through one of the following channels:
 
 ## Sales Inquiries
 

@@ -6,7 +6,7 @@ The following sections describe how to run inference using your trained imitatio
 
 You can run inference directly through the Web UI provided by the Physical AI Manager.
 
-<a href="/model_inference_with_web_ui" class="button-dataset-preparation-option">
+<a href="/ai_worker/model_inference_with_web_ui_ai_worker" class="button-dataset-preparation-option">
 Option 1<br>Web UI (Recommended)
 </a>
 
@@ -14,7 +14,7 @@ Option 1<br>Web UI (Recommended)
 
 This method is no longer officially supported, but remains available for legacy users or automated workflows.
 
-<a href="/model_inference_with_lerobot_cli" class="button-dataset-preparation-option">
+<a href="/ai_worker/model_inference_with_lerobot_cli_ai_worker" class="button-dataset-preparation-option">
 Option 2<br>LeRobot CLI
 </a>
 

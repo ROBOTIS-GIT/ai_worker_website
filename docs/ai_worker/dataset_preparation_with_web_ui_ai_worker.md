@@ -2,10 +2,30 @@
 
 ## Prerequisites
 
-To begin, access the `Robot PC` either directly or via SSH.
-(Refer to the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.)
+This section describes the necessary setup steps before starting data preparation.
+To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.
 
-### 1. Launch Physical AI Server
+### 1. Launch the ROS 2 teleoperation node
+
+a. Open a terminal and enter the Docker container:
+
+:::tabs key:robot-type
+== BG2 Type
+cd ai_worker && ./docker/container.sh enter
+== SG2 Type
+cd ai_worker && ./docker/container.sh enter
+:::
+
+b. Then, launch the ROS 2 teleoperation node using the appropriate command for your robot type:
+
+:::tabs key:robot-type
+== BG2 Type
+ffw_bg2_ai
+== SG2 Type
+ffw_sg2_ai
+:::
+
+### 2. Launch Physical AI Server
 
 ::: info
 The _Physical AI Server_ is the backend that connects with the Web UI. It should be running to use the interface for data recording.
@@ -18,8 +38,6 @@ Open a terminal and enter the Docker container:
 cd ai_worker && ./docker/container.sh enter
 == SG2 Type
 cd ai_worker && ./docker/container.sh enter
-== OMY
-cd open_manipulator && ./docker/container.sh enter
 :::
 
 Launch Physical AI Server with the following command:
@@ -34,7 +52,7 @@ Or, use shortcut command:
 ai_server
 ```
 
-### 2. Open the Web UI
+### 3. Open the Web UI
 
 ::: info
 This step must be performed on the **host machine** (or another device on the same network).
@@ -49,8 +67,7 @@ In this example, the serial number is `SNPR48A0000`.
 Open your web browser and go to `http://{robot type}-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 
 For example:
-- For an AI Worker: `http://ffw-SNPR48A0000.local`
-- For an OMY: `http://omy-SNPR48A0000.local`
+- `http://ffw-SNPR48A0000.local`
 
 Once connected, you should see the web UI as shown below.
 
@@ -177,8 +194,6 @@ This path refers to the **host system**, not inside the Docker container.
 ~/ai_worker/docker/huggingface/lerobot
 == SG2 Type
 ~/ai_worker/docker/huggingface/lerobot
-== OMY
-~/open_manipulator/docker/huggingface/lerobot
 :::
 
 ## Dataset Visualization

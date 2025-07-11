@@ -1,14 +1,14 @@
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
-const title = 'AI Worker'
+const title = 'ROBOTIS AI'
 const description = 'Documentations for AI Worker'
 const ogUrl = 'https://ai.robotis.com/'
 const ogImage = `${ogUrl}og_image.png`
 
 export default defineConfig({
-  title: title,
-  description: description,
+  title,
+  description,
   appearance: 'dark',
   head: [
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
@@ -47,151 +47,185 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    // logo: '/logo_aiworker.svg',
     logo: '/favicon.svg',
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Documentations', link: '/introduction' },
-      { text: 'Videos', link: '/videos' },
+      { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
+      { text: 'OMY', link: '/omy/introduction_omy' },
       {
         text: 'OpenSource',
         items: [
           { text: 'AI Worker Packages', link: 'https://github.com/ROBOTIS-GIT/ai_worker', target: '_blank' },
+          { text: 'AI Manipulator Packages', link: 'https://github.com/ROBOTIS-GIT/open_manipulator', target: '_blank' },
           { text: 'MuJoCo Model Files', link: 'https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie', target: '_blank' },
           { text: 'Physical AI Tools', link: 'https://github.com/ROBOTIS-GIT/physical_ai_tools', target: '_blank' },
           { text: 'AI Models & Datasets', link: 'https://huggingface.co/ROBOTIS', target: '_blank' },
           { text: 'Docker Files', link: 'https://hub.docker.com/r/robotis/ros/tags', target: '_blank' },
-          { text: 'ROBOTIS', link: 'https://en.robotis.com/', target: '_blank' },
+          { text: 'ROBOTIS Homepage', link: 'https://en.robotis.com/', target: '_blank' },
           { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
-          { text: 'Manual', link: 'https://ai.robotis.com', target: '_blank' },
           { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
         ]
       },
-      { text: 'Contact Us', link: '/contact' },
+      { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
+      { text: 'Contact', link: '/ai_worker/contact_ai_worker' },
     ],
-    search: {
-      provider: 'local',
-    },
-    sidebar: [
-      {
-        text: 'Overview',
-        items: [
-          { text: 'Introduction', link: '/introduction' ,
-            items: [
-              { text: 'AI Worker', link: '/introduction_ai_worker' },
-              { text: 'OMY', link: '/introduction_omy' },
-            ]
-          },
-          { text: 'Video Gallery', link: '/videos' },
-        ]
-      },
-      {
-        text: 'Specifications',
-        items: [
-          { text: 'Hardware', link: '/hardware',
-            items: [
-              { text: 'AI Worker', link: '/hardware_ai_worker' },
-              { text: 'OMY', link: '/hardware_omy' },
-            ]
-          },
-          { text: 'Software', link: '/software',
-            items: [
-              { text: 'AI Worker', link: '/software_ai_worker' },
-              { text: 'OMY', link: '/software_omy' },
-            ]
-          },
-        ]
-      },
-      {
-        text: 'Quick Start Guide',
-        items: [
-          {
-            text: 'Setup Guide',
-            link: '/setup_guide_ai_worker',
-            items: [
-              { text: 'AI Worker', link: '/setup_guide_ai_worker' },
-              { text: 'OMY', link: '/setup_guide_omy' }
-            ]
-          },
-          {
-            text: 'Operation Guide',
-            link: '/operation_ai_worker',
-            items: [
-              { text: 'AI Worker', link: '/operation_ai_worker' },
-              { text: 'OMY', link: '/operation_omy' }
-            ]
-          }
-        ]
-      },
-      {
-        text: 'Imitation Learning',
-        items: [
-          { text: 'Overview', link: '/imitation_learning' },
-          { text: 'Before You Begin', link: '/imitation_learning_before_you_begin' },
-          {
-            text: 'Dataset Preparation',
-            link: '/dataset_preparation',
-            items: [
-              { text: 'Web UI', link: '/dataset_preparation_with_web_ui' },
-              {
-                text: 'LeRobot CLI',
-                link: '/dataset_preparation_with_lerobot_cli',
-              },
-            ],
-          },
-          { text: 'Model Training', link: '/model_training',
-            items: [
-              {
-                text: 'LeRobot CLI',
-                link: '/model_training_with_lerobot_cli',
-              },
-            ],
-           },
-          { text: 'Model Inference', link: '/model_inference',
-            items: [
-              { text: 'Web UI', link: '/model_inference_with_web_ui' },
-              {
-                text: 'LeRobot CLI',
-                link: '/model_inference_with_lerobot_cli',
-              },
-            ],
-           },
-        ]
-      },
-      {
-        text: 'Simulation',
-        items: [
-          { text: 'AI Worker Simulation', link: '/simulation_ai_worker',
-            items: [
-              { text: 'IsaacLab', link: '/robotis_lab' },
-            ]
-          },
-          { text: 'OMY Simulation', link: '/simulation_omy' },
-        ]
-      },
-      {
-        text: 'Resources',
-        items: [
-          { text: 'Open Source', link: '/opensource' },
-          { text: 'Release Notes', link: '/release_notes'},
-        ]
-      },
-      {
-        text: 'Ecosystem',
-        items: [
-          { text: 'Community Showcase', link: '/community_showcase' },
-        ]
-      },
-      {
+    sidebar: {
+      '/ai_worker/': [
+        {
+          text: 'AI Worker',
+          items: [
+            { text: 'Introduction', link: '/ai_worker/introduction_ai_worker' },
+            { text: 'Video Gallery', link: '/ai_worker/videos_ai_worker' }
+          ]
+        },
+        {
+          text: 'Specifications',
+          items: [
+            { text: 'Hardware', link: '/ai_worker/hardware_ai_worker' },
+            { text: 'Software', link: '/ai_worker/software_ai_worker' }
+          ]
+        },
+        {
+          text: 'Quick Start Guide',
+          items: [
+            { text: 'Setup Guide', link: '/ai_worker/setup_guide_ai_worker' },
+            { text: 'Operation Guide', link: '/ai_worker/operation_ai_worker' }
+          ]
+        },
+        {
+          text: 'Imitation Learning',
+          items: [
+            { text: 'Overview', link: '/ai_worker/imitation_learning_ai_worker/' },
+            {
+              text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation_ai_worker',
+              items: [
+                { text: 'Web UI', link: '/ai_worker/dataset_preparation_with_web_ui_ai_worker' },
+                { text: 'LeRobot CLI', link: '/ai_worker/dataset_preparation_with_lerobot_cli_ai_worker' }
+              ]
+            },
+            {
+              text: 'Model Training', link: '/ai_worker/model_training_ai_worker',
+              items: [
+                { text: 'LeRobot CLI', link: '/ai_worker/model_training_with_lerobot_cli_ai_worker' }
+              ]
+            },
+            {
+              text: 'Model Inference', link:'/ai_worker/model_inference_ai_worker',
+              items: [
+                { text: 'Web UI', link: '/ai_worker/model_inference_with_web_ui_ai_worker' },
+                { text: 'LeRobot CLI', link: '/ai_worker/model_inference_with_lerobot_cli_ai_worker' }
+              ]
+            }
+          ]
+        },
+        {
+          text: 'Simulation',
+          items: [
+            { text: 'Overview', link: '/ai_worker/simulation_ai_worker',
+              items: [
+                { text: 'IsaacLab', link: '/ai_worker/robotis_lab_ai_worker' },
+              ]
+            }
+          ]
+        },
+        {
+          text: 'Resources',
+          items: [
+            { text: 'Open Source', link: '/ai_worker/opensource_ai_worker' },
+            { text: 'Release Notes', link: '/ai_worker/release_notes_ai_worker' }
+          ]
+        },
+        {
           text: 'Support',
           items: [
-            { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
-            { text: 'Issues', link: '/issues' },
-            { text: 'FAQ', link: '/faq' },
-            { text: 'Contact Us', link: '/contact' },
+            { text: 'Community Forum', link: 'https://forum.robotis.com/', target: '_blank' },
+            { text: 'Issues', link: '/ai_worker/issues_ai_worker' },
+            { text: 'FAQ', link: '/ai_worker/faq_ai_worker' },
+            { text: 'Contact Us', link: '/ai_worker/contact_ai_worker' }
           ]
         }
-    ],
+      ],
+
+      '/omy/': [
+        {
+          text: 'OMY',
+          items: [
+            { text: 'Introduction', link: '/omy/introduction_omy' },
+            { text: 'Video Gallery', link: '/omy/videos_omy' }
+          ]
+        },
+        {
+          text: 'Specifications',
+          items: [
+            { text: 'Hardware', link: '/omy/hardware_omy' },
+            { text: 'Software', link: '/omy/software_omy' }
+          ]
+        },
+        {
+          text: 'Quick Start Guide',
+          items: [
+            { text: 'Setup Guide', link: '/omy/setup_guide_omy' },
+            { text: 'Operation Guide', link: '/omy/operation_omy' }
+          ]
+        },
+        {
+          text: 'Imitation Learning',
+          items: [
+            { text: 'Overview', link: '/omy/imitation_learning_omy/' },
+            {
+              text: 'Dataset Preparation', link: '/omy/dataset_preparation_omy',
+              items: [
+                { text: 'Web UI', link: '/omy/dataset_preparation_with_web_ui_omy' },
+                { text: 'LeRobot CLI', link: '/omy/dataset_preparation_with_lerobot_cli_omy' }
+              ]
+            },
+            {
+              text: 'Model Training', link: '/omy/model_training_omy',
+              items: [
+                { text: 'LeRobot CLI', link: '/omy/model_training_with_lerobot_cli_omy' }
+              ]
+            },
+            {
+              text: 'Model Inference', link:'/omy/model_inference_omy',
+              items: [
+                { text: 'Web UI', link: '/omy/model_inference_with_web_ui_omy' },
+                { text: 'LeRobot CLI', link: '/omy/model_inference_with_lerobot_cli_omy' }
+              ]
+            }
+          ]
+        },
+        {
+          text: 'Simulation',
+          items: [
+            { text: 'Overview', link: '/omy/simulation_omy'}
+          ]
+        },
+        {
+          text: 'Resources',
+          items: [
+            { text: 'Open Source', link: '/omy/opensource_omy' },
+            { text: 'Release Notes', link: '/omy/release_notes_omy' }
+          ]
+        },
+        {
+          text: 'Support',
+          items: [
+            { text: 'Community Forum', link: 'https://forum.robotis.com/', target: '_blank' },
+            { text: 'Issues', link: '/omy/issues_omy' },
+            { text: 'FAQ', link: '/omy/faq_omy' },
+            { text: 'Contact Us', link: '/omy/contact_omy' }
+          ]
+        }
+      ],
+
+      '/': [
+        {
+          text: 'Ecosystem',
+          items: [
+            { text: 'Community Showcase', link: '/community_showcase' }
+          ]
+        }
+      ]
+    },
     socialLinks: [
       { icon: '/favicon.svg', link: 'https://en.robotis.com/' },
       { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/ai_worker' },
@@ -199,11 +233,11 @@ export default defineConfig({
       { icon: 'x', link: 'https://x.com/ROBOTISAmerica' },
       { icon: 'instagram', link: 'https://www.instagram.com/robotis_global/' },
       { icon: 'facebook', link: 'https://www.facebook.com/robotis.company' },
-      { icon: 'linkedin', link: 'https://www.linkedin.com/company/robotis/' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/company/robotis/' }
     ],
     footer: {
       message: 'AI Worker released under the Apache-2.0 license.',
-      copyright: 'Copyright © 2025 ROBOTIS. All Rights Reserved.',
-    },
+      copyright: 'Copyright © 2025 ROBOTIS. All Rights Reserved.'
+    }
   }
 })

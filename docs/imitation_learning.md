@@ -28,15 +28,11 @@ Once trained, the models are deployed on the ROBOTIS Physical AI Lineup to execu
 
 ## Tutorial Videos: End-to-End Imitation Learning Workflow
 
-The videos illustrate the full imitation learning workflow using the ROBOTIS Physical AI Lineup, including teleoperation, dataset creation, and real-time inference with a trained model:
+The video illustrates the full imitation learning workflow using the OMY, including teleoperation, dataset creation, and real-time inference with a trained model:
 
-1. Full imitation learning workflow using **OMYH** and the **Web GUI**.
+- Full imitation learning workflow using **OMY** and the **Web GUI**.
 
 <YouTube videoId="3x-eN36pNns" />
-
-2. Full imitation learning workflow using the **ROBOTIS AI Worker** and the **LeRobot CLI**.
-
-<YouTube videoId="hnJpFX2G3P4" />
 
 - Dataset Schema
 

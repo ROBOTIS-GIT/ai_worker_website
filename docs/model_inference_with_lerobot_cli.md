@@ -1,6 +1,6 @@
 # Model Inference with LeRobot CLI
 
-Once your model is trained, you can deploy it on the AI Worker for inference.
+Once your model is trained, you can deploy it on the OMY for inference.
 
 ## Model Deployment and Inference
 
@@ -14,41 +14,26 @@ sudo chown -R robotis ./
 ```
 Move your model folder from your local PC to the model directory on the Robot PC using `scp`:
 ```bash
-scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/ai_worker/docker/lerobot/outputs/train
+scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/open_manipulator/docker/lerobot/outputs/train
 ```
 
 ### 2. Open a Terminal and Enter the Docker container
-:::tabs key:robot-type
-== BG2 Type
-cd ai_worker && ./docker/container.sh enter
-== SG2 Type
-cd ai_worker && ./docker/container.sh enter
-== OMY
+```bash
 cd open_manipulator && ./docker/container.sh enter
-:::
+```
 
 ### 3. Launch the ROS 2 Follower Node
-:::tabs key:robot-type
-== BG2 Type
-ffw_bg2_follower_ai
-== SG2 Type
-ffw_sg2_follower_ai
-== OMY
+```bash
 ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
-:::
+```
 
 ### 4. Run Inference
 
 #### a. Open a New Terminal and Run Docker Container
 Open a terminal on the Jetson device and enter the Docker container:
-:::tabs key:robot-type
-== BG2 Type
-cd ai_worker && ./docker/container.sh enter
-== SG2 Type
-cd ai_worker && ./docker/container.sh enter
-== OMY
+```bash
 cd open_manipulator && ./docker/container.sh enter
-:::
+```
 
 #### b. Navigate to the `LeRobot` Directory
 ```bash
@@ -58,17 +43,17 @@ cd /root/ros2_ws/src/physical_ai_tools/lerobot
 #### c. Run the Following Command for Evaluation
 ```bash
 python lerobot/scripts/control_robot.py \
-  --robot.type=ffw \
+  --robot.type=omy \
   --control.type=record \
   --control.single_task="pick and place objects" \
   --control.fps=15 \
-  --control.repo_id=${HF_USER}/eval_ffw_test \
+  --control.repo_id=${HF_USER}/eval_omy_test \
   --control.tags='["tutorial"]' \
   --control.episode_time_s=20 \
   --control.reset_time_s=10 \
   --control.num_episodes=10 \
   --control.push_to_hub=true \
-  --control.policy.path=outputs/train/act_ffw_test/checkpoints/last/pretrained_model \
+  --control.policy.path=outputs/train/act_omy_test/checkpoints/last/pretrained_model \
   --control.play_sounds=false
 ```
 ::: details :point_right: Key Inference Parameters
@@ -88,7 +73,7 @@ After running inference, you can visualize the results using the same visualizat
 python lerobot/scripts/visualize_dataset_html.py \
   --host 0.0.0.0 \
   --port 9091 \
-  --repo-id ${HF_USER}/eval_ffw_test
+  --repo-id ${HF_USER}/eval_omy_test
 ```
 
 Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see how your model performed.
@@ -96,7 +81,7 @@ Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see 
 ::: tip
 If you have another device connected to the same network as the host machine, open `http://{robot type}-{serial number}.local:9091` in your browser to see how your model performed.
 
-For example, `http://ffw-SNPR48A0000.local:9091`.
+For example, `http://omy-SNPR48A0000.local:9091`.
 :::
 
 ## Troubleshooting

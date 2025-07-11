@@ -2,10 +2,39 @@
 
 ## Prerequisites
 
-To begin, access the `Robot PC` either directly or via SSH.
-(Refer to the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.)
+This section describes the necessary setup steps before starting data preparation.
+To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.
 
-### 1. Launch Physical AI Server
+### 1. Launch the ROS 2 teleoperation node
+
+a. Open a terminal and enter the Docker container:
+
+```bash
+cd open_manipulator && ./docker/container.sh enter
+```
+
+b. Then, launch the ROS 2 teleoperation node using the appropriate command for your robot type:
+
+```bash
+ros2 launch open_manipulator_bringup hardware_y.launch.py
+```
+### 2. Camera Setup
+
+a. Open a new terminal and enter the Docker container:
+
+```bash
+cd open_manipulator
+./docker/container.sh enter
+```
+b. Launch the camera node:
+```bash
+ros2 launch realsense2_camera rs_launch.py
+```
+
+You can also use other camera models such as ZED2 or USB cameras, if needed.
+
+
+### 3. Launch Physical AI Server
 
 ::: info
 The _Physical AI Server_ is the backend that connects with the Web UI. It should be running to use the interface for data recording.
@@ -13,14 +42,9 @@ The _Physical AI Server_ is the backend that connects with the Web UI. It should
 
 Open a terminal and enter the Docker container:
 
-:::tabs key:robot-type
-== BG2 Type
-cd ai_worker && ./docker/container.sh enter
-== SG2 Type
-cd ai_worker && ./docker/container.sh enter
-== OMY
+```bash
 cd open_manipulator && ./docker/container.sh enter
-:::
+```
 
 Launch Physical AI Server with the following command:
 
@@ -34,23 +58,22 @@ Or, use shortcut command:
 ai_server
 ```
 
-### 2. Open the Web UI
+### 4. Open the Web UI
 
 ::: info
 This step must be performed on the **host machine** (or another device on the same network).
 :::
 
 
-Identify the serial number of the AI Worker device.
+Identify the serial number of the OMY device.
 In this example, the serial number is `SNPR48A0000`.
 
 #### Access the Web UI in Your Browser
 
-Open your web browser and go to `http://{robot type}-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
+Open your web browser and go to `http://omy-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 
 For example:
-- For an AI Worker: `http://ffw-SNPR48A0000.local`
-- For an OMY: `http://omy-SNPR48A0000.local`
+- `http://omy-SNPR48A0000.local`
 
 Once connected, you should see the web UI as shown below.
 
@@ -172,14 +195,9 @@ While recording is in progress, the following controls are available:
 This path refers to the **host system**, not inside the Docker container.
 :::
 
-:::tabs key:robot-type
-== BG2 Type
-~/ai_worker/docker/huggingface/lerobot
-== SG2 Type
-~/ai_worker/docker/huggingface/lerobot
-== OMY
+```bash
 ~/open_manipulator/docker/huggingface/lerobot
-:::
+```
 
 ## Dataset Visualization
 
@@ -193,7 +211,7 @@ cd /root/ros2_ws/src/physical_ai_tools/lerobot
 python lerobot/scripts/visualize_dataset_html.py \
   --host 0.0.0.0 \
   --port 9091 \
-  --repo-id ${HF_USER}/ffw_test
+  --repo-id ${HF_USER}/omy_test
 ```
 
 You should see an output similar to the following:
@@ -219,7 +237,7 @@ Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) 
 :::
 
 ::: tip
-On a device connected to the same network as the host machine, open `http://ffw-{serial number}.local:9091` in your browser to preview the dataset.
+On a device connected to the same network as the host machine, open `http://omy-{serial number}.local:9091` in your browser to preview the dataset.
 
-For example, `http://ffw-SNPR48A0000.local:9091`.
+For example, `http://omy-SNPR48A0000.local:9091`.
 :::

@@ -1,6 +1,6 @@
 # Model Training with LeRobot CLI
 
-This guide walks you through the training imitation learning models for the AI Worker, based on datasets collected via the LeRobot CLI.
+This guide walks you through the training imitation learning models for the OMY, based on datasets collected via the LeRobot CLI.
 
 ::: info
 You can train the policy either on your local PC or an NVIDIA Jetson AGX Orin device.
@@ -13,14 +13,9 @@ After [preparing your dataset](/dataset_preparation), you can proceed to train t
 ### 1. Enter the Docker Container
 
 Open a terminal on the Jetson device and enter the Docker container:
-:::tabs key:robot-type
-== BG2 Type
-cd ai_worker && ./docker/container.sh enter
-== SG2 Type
-cd ai_worker && ./docker/container.sh enter
-== OMY
+```bash
 cd open_manipulator && ./docker/container.sh enter
-:::
+```
 
 ### 2. Navigate to the LeRobot Directory
 
@@ -35,9 +30,9 @@ Execute the following command to start training:
 
 ```bash
 python lerobot/scripts/train.py \
-  --dataset.repo_id=${HF_USER}/ffw_test \
+  --dataset.repo_id=${HF_USER}/omy_test \
   --policy.type=act \
-  --output_dir=outputs/train/act_ffw_test \
+  --output_dir=outputs/train/act_omy_test \
   --policy.device=cuda \
   --log_freq=100 \
   --save_freq=1000
@@ -82,12 +77,12 @@ First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS
 Use `scp` to copy the dataset directory from the Robot PC to your local machine:
 
 ```bash
-scp -r ~/ai_worker/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
+scp -r ~/open_manipulator/docker/huggingface/lerobot/${HF_USER}/omy_test/ <USER>@<IP>:/home/.cache/huggingface/lerobot/${HF_USER}/
 ```
 
 ::: info
 - Replace ${HF_USER} with your Hugging Face username.
-- Replace ffw_test with the actual dataset repository ID.
+- Replace omy_test with the actual dataset repository ID.
 - `<USER>` and `<IP>` refer to your local machine’s SSH credentials.
 :::
 
@@ -97,9 +92,9 @@ Once the dataset has been transferred, you can train a policy using the followin
 
 ```bash
 python lerobot/scripts/train.py \
-  --dataset.repo_id=${HF_USER}/ffw_test \
+  --dataset.repo_id=${HF_USER}/omy_test \
   --policy.type=act \
-  --output_dir=outputs/train/act_ffw_test \
+  --output_dir=outputs/train/act_omy_test \
   --policy.device=cuda \
   --log_freq=100 \
   --save_freq=1000
@@ -112,8 +107,8 @@ Training time depends on your hardware and dataset size, but typically ranges fr
 To upload the latest trained checkpoint to the Hugging Face Hub:
 
 ```bash
-huggingface-cli upload ${HF_USER}/act_ffw_test \
-  outputs/train/act_ffw_test/checkpoints/last/pretrained_model
+huggingface-cli upload ${HF_USER}/act_omy_test \
+  outputs/train/act_omy_test/checkpoints/last/pretrained_model
 ```
 
 This makes your model accessible from anywhere and simplifies deployment.

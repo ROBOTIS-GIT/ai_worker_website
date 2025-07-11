@@ -1,6 +1,6 @@
 # Model Inference with Web UI
 
-Once your model is trained, you can deploy it on the AI Worker for inference.
+Once your model is trained, you can deploy it on the OMY for inference.
 
 ## Model Deployment and Inference
 
@@ -14,30 +14,16 @@ sudo chown -R robotis ./
 ```
 Move your model folder from your local PC to the model directory on the Robot PC using `scp`:
 ```bash
-scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/ai_worker/docker/lerobot/outputs/train
+scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/open_manipulator/docker/lerobot/outputs/train
 ```
 
 ### 2. Open a Terminal and Enter Docker Container
-:::tabs key:robot-type
-== BG2 Type
-cd ai_worker && ./docker/container.sh enter
-== SG2 Type
-cd ai_worker && ./docker/container.sh enter
-== OMY
+```bash
 cd open_manipulator && ./docker/container.sh enter
-:::
-### 3. Launch the ROS 2 Follower Node
-::: warning
-Please deactivate the ROS 2 teleoperation node launched in the `Before You Begin` section before proceeding.
-:::
-:::tabs key:robot-type
-== BG2 Type
-ffw_bg2_follower_ai
-== SG2 Type
-ffw_sg2_follower_ai
-== OMY
+```
+```bash
 ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
-:::
+```
 
 ### 4. Run Inference
 
@@ -49,14 +35,9 @@ If the Physical AI Server is already running, you can skip this step.
 
 Open a new terminal and enter the Docker container:
 
-:::tabs key:robot-type
-== BG2 Type
-cd ai_worker && ./docker/container.sh enter
-== SG2 Type
-cd ai_worker && ./docker/container.sh enter
-== OMY
+```bash
 cd open_manipulator && ./docker/container.sh enter
-:::
+```
 
 Then, launch the Physical AI Server with the following command:
 
@@ -86,7 +67,7 @@ Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, locat
 | Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Task Instruction** | A sentence that tells the robot what action to perform, such as `"pick and place object"`.                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Policy Path**      | The **absolute** path to your trained model checkpoint directory. This should point to the folder containing your trained model files such as `config.json`, `model.safetensors`, and `train_config.json`. (e.g., `/root/trained_model/ffw_act/pretrained/`).                                                                                                                                                                                                                                                                                                |
+| **Policy Path**      | The **absolute** path to your trained model checkpoint directory. This should point to the folder containing your trained model files such as `config.json`, `model.safetensors`, and `train_config.json`. (e.g., `/root/trained_model/omy_act/pretrained/`).                                                                                                                                                                                                                                                                                                |
 :::
 
 ::: info
@@ -110,7 +91,7 @@ After running inference, you can visualize the results using the same visualizat
 python lerobot/scripts/visualize_dataset_html.py \
   --host 0.0.0.0 \
   --port 9091 \
-  --repo-id ${HF_USER}/eval_ffw_test
+  --repo-id ${HF_USER}/eval_omy_test
 ```
 
 Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see how your model performed.
@@ -118,7 +99,7 @@ Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see 
 ::: tip
 If you have another device connected to the same network as the host machine, open `http://{robot type}-{serial number}.local:9091` in your browser to see how your model performed.
 
-For example, `http://ffw-SNPR48A0000.local:9091`.
+For example, `http://omy-SNPR48A0000.local:9091`.
 :::
 
 ## Troubleshooting

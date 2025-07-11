@@ -127,7 +127,6 @@ export default defineConfig({
         text: 'Imitation Learning',
         items: [
           { text: 'Overview', link: '/imitation_learning' },
-          { text: 'Before You Begin', link: '/imitation_learning_before_you_begin' },
           {
             text: 'Dataset Preparation',
             link: '/dataset_preparation',

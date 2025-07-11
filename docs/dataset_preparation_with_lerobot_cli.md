@@ -2,10 +2,38 @@
 
 ## Prerequisites
 
-Access the `Robot PC` either directly or via SSH, and follow the steps below.
-(Refer to the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.)
+This section describes the necessary setup steps before starting data preparation.
+To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/setup_guide_ai_worker) for instructions on how to connect via SSH.
 
-### Authenticate with Hugging Face
+### 1. Launch the ROS 2 teleoperation node
+
+a. Open a terminal and enter the Docker container:
+
+```bash
+cd open_manipulator && ./docker/container.sh enter
+```
+
+b. Then, launch the ROS 2 teleoperation node using the appropriate command for your robot type:
+
+```bash
+ros2 launch open_manipulator_bringup hardware_y.launch.py
+```
+### 2. Camera Setup
+
+a. Open a new terminal and enter the Docker container:
+
+```bash
+cd open_manipulator
+./docker/container.sh enter
+```
+b. Launch the camera node:
+```bash
+ros2 launch realsense2_camera rs_launch.py
+```
+
+You can also use other camera models such as ZED2 or USB cameras, if needed.
+
+### 3. Authenticate with Hugging Face
 
 ::: info
 If you do not wish to use Hugging Face, you may skip this step and proceed to the next section, "Prerequisite without Hugging Face."
@@ -13,14 +41,9 @@ If you do not wish to use Hugging Face, you may skip this step and proceed to th
 
 Open a terminal and enter the Docker container:
 
-:::tabs key:robot-type
-== BG2 Type
-cd ai_worker && ./docker/container.sh enter
-== SG2 Type
-cd ai_worker && ./docker/container.sh enter
-== OMY
+```bash
 cd open_manipulator && ./docker/container.sh enter
-:::
+```
 
 Navigate to the `lerobot` directory:
 
@@ -76,11 +99,11 @@ cd /root/ros2_ws/src/physical_ai_tools/lerobot
 
 ```bash
 python lerobot/scripts/control_robot.py \
-  --robot.type=ffw \
+  --robot.type=omy \
   --control.type=record \
   --control.single_task="pick and place objects" \
   --control.fps=15 \
-  --control.repo_id=${HF_USER}/ffw_test \
+  --control.repo_id=${HF_USER}/omy_test \
   --control.tags='["tutorial"]' \
   --control.warmup_time_s=5 \
   --control.episode_time_s=30 \
@@ -100,7 +123,7 @@ python lerobot/scripts/control_robot.py \
 ::: details :point_right: Key Parameters to Customize
 | Parameter                  | Description                                                                      | Example                            |
 | -------------------------- | -------------------------------------------------------------------------------- | ---------------------------------- |
-| `--control.repo_id`        | The Hugging Face dataset repository ID in the format `<username>/<dataset_name>` | `username/ffw_pick_place`          |
+| `--control.repo_id`        | The Hugging Face dataset repository ID in the format `<username>/<dataset_name>` | `username/omy_pick_place`          |
 | `--control.single_task`    | The name of the task you are performing                                          | "pick and place objects"           |
 | `--control.fps`            | Frame rate for dataset recording                                                 | 15 (recommended)                   |
 | `--control.episode_time_s` | Duration (in seconds) to record each episode                                     | 30-60 for simple tasks             |
@@ -116,14 +139,9 @@ The dataset is located at:
 This path refers to the **host system**.
 :::
 
-:::tabs key:robot-type
-== BG2 Type
-~/ai_worker/docker/huggingface/lerobot
-== SG2 Type
-~/ai_worker/docker/huggingface/lerobot
-== OMY
+```bash
 ~/open_manipulator/docker/huggingface/lerobot
-:::
+```
 
 ## Dataset Visualization
 
@@ -137,7 +155,7 @@ cd /root/ros2_ws/src/physical_ai_tools/lerobot
 python lerobot/scripts/visualize_dataset_html.py \
   --host 0.0.0.0 \
   --port 9091 \
-  --repo-id ${HF_USER}/ffw_test
+  --repo-id ${HF_USER}/omy_test
 ```
 
 You should see an output similar to the following:
@@ -162,7 +180,7 @@ Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) 
 :::
 
 ::: tip
-If you have another device connected to the same network as the host machine, open `http://ffw-{serial number}.local:9091` in your browser to preview the dataset.
+If you have another device connected to the same network as the host machine, open `http://omy-{serial number}.local:9091` in your browser to preview the dataset.
 
-For example, `http://ffw-SNPR48A0000.local:9091`.
+For example, `http://omy-SNPR48A0000.local:9091`.
 :::

@@ -22,7 +22,7 @@ scp -r <your model folder's directory> robotis@<your robot's serial number>.loca
 cd open_manipulator && ./docker/container.sh enter
 ```
 ```bash
-ros2 launch open_manipulator_bringup omy_f3m.launch.py
+ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
 ```
 
 ### 4. Run Inference
@@ -49,7 +49,7 @@ ai_server
 
 Open your web browser and navigate the Web UI (Physical AI Manager).
 
-(Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/dataset_preparation_with_web_ui#_3-open-the-web-ui))
+(Refer to the [Dataset Preparation > Web UI > 4. Open the Web UI](/omy/dataset_preparation_with_web_ui_omy#_4-open-the-web-ui))
 
 On the **Home** page, select the type of robot you are using.
 

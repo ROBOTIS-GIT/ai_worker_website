@@ -6,7 +6,7 @@ This guide walks you through the training imitation learning models for the OMY,
 You can train the policy either on your local PC or an NVIDIA Jetson AGX Orin device.
 :::
 
-After [preparing your dataset](/dataset_preparation), you can proceed to train the policy model.
+After [preparing your dataset](/omy/dataset_preparation_omy), you can proceed to train the policy model.
 
 ## Training on NVIDIA Jetson AGX Orin
 

@@ -70,7 +70,7 @@ In this example, the serial number is `SNPR48A0000`.
 
 #### Access the Web UI in Your Browser
 
-Open your web browser and go to `http://omy-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
+Open your web browser and go to `http://{robot type}-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 
 For example:
 - `http://omy-SNPR48A0000.local`

@@ -49,7 +49,7 @@ ai_server
 
 Open your web browser and navigate the Web UI (Physical AI Manager).
 
-(Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/dataset_preparation_with_web_ui#_3-open-the-web-ui))
+(Refer to the [Dataset Preparation > Web UI > 4. Open the Web UI](/omy/dataset_preparation_with_web_ui_omy#_4-open-the-web-ui))
 
 On the **Home** page, select the type of robot you are using.
 

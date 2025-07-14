@@ -5,9 +5,16 @@ For sales inquiries or detailed product information about the Physical AI lineup
 ## Global Headquarters
 - ROBOTIS Co., Ltd.
 - Address: 37, Magokjungang 5-ro 1-gil, Gangseo-gu, Seoul, Republic of Korea (Postal Code: 07594)
-- Website: [robotis.com](https://en.robotis.com)
+- Website: https://en.robotis.com
 - Email: contactus2@robotis.com
-- TEL: +82-70-8671-2609
+- FAX: +82-70-8230-1336
+
+## Head Office, South Korea
+- ROBOTIS Co., Ltd.
+- Address: 37, Magokjungang 5-ro 1-gil, Gangseo-gu, Seoul, Republic of Korea (Postal Code: 07594)
+- Website: https://www.robotis.com/
+- Email: korea@robotis.com
+- TEL: +82-70-8671-2629
 - FAX: +82-70-8230-1336
 
 ## US Office
@@ -18,7 +25,7 @@ For sales inquiries or detailed product information about the Physical AI lineup
 - TEL: 949-377-0377
 
 ## Connect with Us
-For the latest updates, follow us on our social media channels or visit our [website](https://en.robotis.com).
+For the latest updates, follow us on our social media channels.
 
 <div class="contact-social-links">
   <a href="https://www.linkedin.com/company/robotis/" target="_blank">LinkedIn</a> |

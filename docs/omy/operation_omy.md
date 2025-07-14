@@ -13,6 +13,8 @@ This command will sequentially execute the following procedures:
 After these steps, the Leader-Follower system will be operational. **AI Teleoperation** is only supported between OMY_F3M and OMY_L100 models.
 
 ![](/quick_start_guide/omy/ai_teleop.gif)
+<p style="text-align: center;"><em>Real-time synchronized motion between Leader and Follower.</em></p>
+
 
 ---
 ::: info
@@ -22,6 +24,13 @@ Example:
 ```bash
 ros2 launch open_manipulator_bringup omy_3m.launch.py
 :::
+
+Leader-Follower mode is now active, and you can observe the `gravity compensation` functionality.
+Thanks to friction and static compensation, the Leader arm can be moved smoothly.
+Since inverse kinematics is applied to the Leader during operation, gravity compensation is maintained regardless of its position in real-time.
+
+![](/quick_start_guide/omy/gravity_compensation_demo.gif)
+<p style="text-align: center;"><em>Smooth, gravity-compensated motion of the Leader arm.</em></p>
 
 ## Launch Bringup
 The OMY controller has been restructured to utilize the ros2_control framework and MoveIt 2 for enhanced flexibility, modularity, and usability. This updated controller allows for seamless integration with ROS 2-based systems, offering advanced features such as trajectory planning, real-time control, and state feedback.

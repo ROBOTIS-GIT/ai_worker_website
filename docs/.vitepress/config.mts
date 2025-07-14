@@ -49,6 +49,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/favicon.svg',
     nav: [
+      { text: 'Home', link: '/' },
       { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
       { text: 'OMY', link: '/omy/introduction_omy' },
       { text: 'Dynamixel Ecosystem', link: '/community_showcase' },

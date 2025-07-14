@@ -2,6 +2,17 @@
 
 This guide will walk you through the process of setting up your OMY hardware and software environment.
 
+## Hardware Setup
+### OMY-3M
+![](/quick_start_guide/omy/hardware_setup_OMY-3M.jpg)
+### OMY-F3M
+![](/quick_start_guide/omy/hardware_setup_OMY-F3M.jpg)
+### OMY-L100
+![](/quick_start_guide/omy/hardware_setup_OMY-L100.jpg)
+### OMY-AI3M
+![](/quick_start_guide/omy/hardware_setup_OMY-AI3M.jpg)
+
+
 ## Power connection
 ![omy_power](/quick_start_guide/omy/omy_power.png)
 

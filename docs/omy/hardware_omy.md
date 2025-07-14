@@ -175,6 +175,15 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_follower_end_unit.png)
 
+### End Tool Support Specifications
+
+| Item | Specification |
+|:---:|:---:|
+| Power Output | 24V / 1A |
+| Interface | RS485, Max 4 Mbps |
+| Protocol | Dynamixel Protocol 2.0, Modbus-RTU(Only 30001~39999, 40001 ~ 49999) |
+| Connector | M8 8pin |
+
 ### Pin Assignment
 
 ![](/specifications/omy/omy_follower_end_panel.png)

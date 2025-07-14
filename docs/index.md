@@ -32,7 +32,7 @@ features:
     icon: ⚡
 
   - title: High-DOF Manipulation
-    details: Leverage 6- or 7-DOF robotic arms with dexterous grippers for precise and complex manipulation tasks.
+    details: Leverage 7-DOF robotic arms with dexterous grippers for precise and complex manipulation tasks.
     icon: 🦾
 
   - title: End-to-End Learning Pipeline

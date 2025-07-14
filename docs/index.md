@@ -32,7 +32,7 @@ features:
     icon: ⚡
 
   - title: High-DOF Manipulation
-    details: Leverage 6- or 7-DOF robotic arms with dexterous grippers for precise and complex manipulation tasks.
+    details: Leverage 7-DOF robotic arms with dexterous grippers for precise and complex manipulation tasks.
     icon: 🦾
 
   - title: End-to-End Learning Pipeline
@@ -48,7 +48,6 @@ features:
     icon: 🤩
 ---
 
-
 ## Overview of the ROBOTIS Physical AI Lineup
 <img src="/overview/physical_ai_lineup.png" alt="ROBOTIS Physical AI Lineup" style="border-radius: 12px; width: 800px; display: block; margin: auto;" />
 <p style="text-align: center;"><em>Progressing toward advanced Physical AI through a scalable research lineup</em></p>
@@ -59,24 +58,6 @@ The ROBOTIS Physical AI Lineup consists of three scalable levels of research-foc
 - `Level 1 (Entry):` **OMX**: Cost-effective AI Manipulators [**Coming Soon**]
 
 Each level supports a progressive research journey in Physical AI. It begins with basic motion learning and continues through full-body imitation to autonomous operation.
-
-## What is Physical AI?
-
-`Physical AI` refers to artificial intelligence that learns and acts through **real-world physical interaction** using robotic bodies.
-
-Unlike traditional AI, which operates purely in simulation or digital environments, Physical AI:
-- Receives feedback through motion, contact, and force
-- Learns by interacting with the environment in real time
-- Uses robotic hardware to sense, move, and adapt
-
-This approach enables learning that is grounded in reality — shaped by friction, gravity, uncertainty, and the complexity of the `physical world`.
-
-`Physical AI` allows us to:
-- Train robots to perform real-world tasks with precision
-- Collect meaningful demonstrations through human guidance (teleoperation, VR)
-- Deploy policies that bridge simulation and reality
-
-By embedding intelligence into physical systems, we open the door to AI that can not only understand the world, but also act in it safely and effectively.
 
 ## Lineup Breakdown
 
@@ -96,3 +77,34 @@ By embedding intelligence into physical systems, we open the door to AI that can
 - Affordable, lightweight AI manipulators`(5 DOF robot arm + gripper)`
 - Ideal for educational and basic RL/IL experiments
 - Compatible with ROS 2 and Physical AI Tools
+
+## Our Vision for Physical AI
+At ROBOTIS, our vision for `Physical AI` is to solve real-world industrial and societal problems that traditional, rule-based systems cannot. We believe that true intelligence emerges when **robots learn from humans, adapt to dynamic environments, and perform safely and autonomously in the physical world.**
+Through our scalable lineup from entry-level manipulators to full-body robots,
+
+we aim to:
+
+1. Lower the barriers to real-world AI research
+2. Accelerate the development of intelligent machines that move, sense, and learn like humans
+3. Empower researchers to build robots that are not just smart in code, but capable in the real world
+
+By embedding intelligence into physical systems, we take a step closer to a future where robots collaborate with people, extend human capabilities, and bring freedom from repetitive or dangerous labor.
+
+## What is Physical AI?
+
+`Physical AI` refers to artificial intelligence that learns and acts through **real-world physical interaction** using robotic bodies.
+
+Unlike traditional AI, which operates purely in simulation or digital environments, Physical AI:
+- Receives feedback through motion, contact, and force
+- Learns by interacting with the environment in real time
+- Uses robotic hardware to sense, move, and adapt
+
+This approach enables learning that is grounded in reality — shaped by friction, gravity, uncertainty, and the complexity of the `physical world`.
+
+`Physical AI` allows us to:
+- Train robots to perform real-world tasks with precision
+- Collect meaningful demonstrations through human guidance (teleoperation, VR)
+- Deploy policies that bridge simulation and reality
+
+By embedding intelligence into physical systems, we open the door to AI that can not only understand the world, but also act in it safely and effectively.
+

@@ -53,4 +53,4 @@ The OMY series offers multiple configurations for various teleoperation and mani
 
 - `OMY-AI3M`
   Complete teleoperation set including OMY-L100 leader unit and OMY-F3M follower unit.
-  Provides a full master-slave system for imitation learning and teleoperation applications.
+  Provides a full leader-follower system for imitation learning and teleoperation applications.

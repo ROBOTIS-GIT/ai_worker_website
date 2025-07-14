@@ -1,6 +1,6 @@
 # OMY
 
-The OMY hardware platform is a teleoperation system specifically designed for `imitation learning applications`. It consists of two main components: the OMY-F3M follower robot arm and the OMY-L100 leader device. The follower robot features a `6-DOF` robot arm with high-precision DYNAMIXEL-Y actuators, capable of handling payloads up to `3kg` with sub-millimeter repeatability. The leader device provides intuitive 6-DOF control through a lightweight, ergonomic design that translates human hand movements into precise robot commands. This master-slave system enables human operators to demonstrate complex manipulation tasks that can be learned and replicated by AI systems, with real-time communication via Ethernet and high-resolution joint control for accurate data collection.
+The OMY hardware platform is a teleoperation system specifically designed for `imitation learning applications`. It consists of two main components: the OMY-F3M follower robot arm and the OMY-L100 leader device. The follower robot features a `6-DOF` robot arm with high-precision DYNAMIXEL-Y actuators, capable of handling payloads up to `3kg` with sub-millimeter repeatability. The leader device provides intuitive 6-DOF control through a lightweight, ergonomic design that translates human hand movements into precise robot commands. This leader-follower system enables human operators to demonstrate complex manipulation tasks that can be learned and replicated by AI systems, with real-time communication via Ethernet and high-resolution joint control for accurate data collection.
 
 ![omy_f3m](/specifications/omy/omy_product.png)
 
@@ -40,13 +40,13 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_follower_joint1.png)
 
-- Volume [mm<sup>3</sup>] : 5.4693773e+05 
-- Surface Area [mm<sup>2</sup>] : 4.2183171e+05 
-- Average Density [gram / mm<sup>3</sup>] : 3.7753533e-03 
-- Mass [gram] : 2.0648832e+03 
+- Volume [mm<sup>3</sup>] : 5.4693773e+05
+- Surface Area [mm<sup>2</sup>] : 4.2183171e+05
+- Average Density [gram / mm<sup>3</sup>] : 3.7753533e-03
+- Mass [gram] : 2.0648832e+03
 - Center of Gravity [mm]
   - X : -1.1063615e-01
-  - Y : -5.4711270e+00 
+  - Y : -5.4711270e+00
   - Z : -1.5897733e+01
 - Inertia Tensor with respect to C1 coordinate frame: [gram * mm<sup>2</sup>]
   - Ixx Ixy Ixz :  3.6169019e+06  3.9294009e+03 -2.9605259e+02
@@ -61,13 +61,13 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_follower_joint2.png)
 
-- Volume [mm<sup>3</sup>] : 1.0121887e+06 
+- Volume [mm<sup>3</sup>] : 1.0121887e+06
 - Surface Area [mm<sup>2</sup>] : 7.9478493e+05
 - Average Density [gram / mm<sup>3</sup>] : 3.6352307e-03
 - Mass [gram] : 3.6795395e+03
 - Center of Gravity [mm]
   - X : 1.1405379e-02
-  - Y : 1.6184244e+01 
+  - Y : 1.6184244e+01
   - Z : 1.0360634e+02
 - Inertia Tensor with respect to C1 coordinate frame: [gram * mm<sup>2</sup>]
   - Ixx Ixy Ixz :  9.2192879e+07  1.7166852e+03  5.3545961e+04
@@ -84,8 +84,8 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 - Volume [mm<sup>3</sup>] : 7.4781397e+05
 - Surface Area [mm<sup>2</sup>] : 4.6677064e+05
-- Average Density [gram / mm<sup>3</sup>] : 3.1914242e-03 
-- Mass [gram] : 2.3865916e+03 
+- Average Density [gram / mm<sup>3</sup>] : 3.1914242e-03
+- Mass [gram] : 2.3865916e+03
 - Center of Gravity [mm]
   - X : 7.8148689e-02
   - Y : 1.0718481e+02
@@ -103,12 +103,12 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_follower_joint4.png)
 
-- Volume [mm<sup>3</sup>] : 3.8584923e+05 
-- Surface Area [mm<sup>2</sup>] : 3.3453626e+05 
-- Average Density [gram / mm<sup>3</sup>] : 3.6289686e-03 
-- Mass [gram] : 1.4002347e+03 
+- Volume [mm<sup>3</sup>] : 3.8584923e+05
+- Surface Area [mm<sup>2</sup>] : 3.3453626e+05
+- Average Density [gram / mm<sup>3</sup>] : 3.6289686e-03
+- Mass [gram] : 1.4002347e+03
 - Center of Gravity [mm]
-  - X : -1.3318256e-01 
+  - X : -1.3318256e-01
   - Y : -1.0746667e+02
   - Z : 1.9090688e+01
 - Inertia Tensor with respect to C1 coordinate frame: [gram * mm<sup>2</sup>]
@@ -124,10 +124,10 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_follower_joint5.png)
 
-- Volume [mm<sup>3</sup>] : 3.8584923e+05 
+- Volume [mm<sup>3</sup>] : 3.8584923e+05
 - Surface Area [mm<sup>2</sup>] : 3.3453626e+05
-- Average Density [gram / mm<sup>3</sup>] : 3.6289686e-03 
-- Mass [gram] : 1.4002347e+03 
+- Average Density [gram / mm<sup>3</sup>] : 3.6289686e-03
+- Mass [gram] : 1.4002347e+03
 - Center of Gravity [mm]
   - X :  1.3318256e-01
   - Y : -1.9090688e+01
@@ -145,9 +145,9 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_follower_joint6.png)
 
-- Volume [mm<sup>3</sup>] : 1.3218403e+05 
-- Surface Area [mm<sup>2</sup>] : 7.4349772e+04 
-- Average Density [gram / mm<sup>3</sup>] : 3.0272548e-03 
+- Volume [mm<sup>3</sup>] : 1.3218403e+05
+- Surface Area [mm<sup>2</sup>] : 7.4349772e+04
+- Average Density [gram / mm<sup>3</sup>] : 3.0272548e-03
 - Mass [gram] : 4.0015475e+02
 - Center of Gravity [mm]
   - X :  1.1080146e-02
@@ -218,9 +218,9 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 ![](/specifications/omy/omy_leader_joint1.png)
 
 - Volume [mm<sup>3</sup>] : 9.5973690e+04
-- Surface Area [mm<sup>2</sup>] : 2.5170342e+04 
+- Surface Area [mm<sup>2</sup>] : 2.5170342e+04
 - Average Density [gram / mm<sup>3</sup>] : 2.0622965e-03
-- Mass [gram] : 1.9792620e+02 
+- Mass [gram] : 1.9792620e+02
 - Center of Gravity [mm]
   - X : -1.5094777e+01
   - Y : -2.9152531e+00
@@ -243,7 +243,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 - Average Density [gram / mm<sup>3</sup>] : 2.2312703e-03
 - Mass [gram] : 4.9547242e+02
 - Center of Gravity [mm]
-  - X : -6.6509235e-02 
+  - X : -6.6509235e-02
   - Y :  2.2442703e+00
   - Z :  1.3349620e+02
 - Inertia Tensor with respect to C1 coordinate frame: [gram * mm<sup>2</sup>]
@@ -260,8 +260,8 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 ![](/specifications/omy/omy_leader_joint3.png)
 
 - Volume [mm<sup>3</sup>] : 5.0288334e+04
-- Surface Area [mm<sup>2</sup>] : 4.6160100e+04 
-- Average Density [gram / mm<sup>3</sup>] : 1.9618890e-03 
+- Surface Area [mm<sup>2</sup>] : 4.6160100e+04
+- Average Density [gram / mm<sup>3</sup>] : 1.9618890e-03
 - Mass [gram] : 9.8660130e+01
 - Center of Gravity [mm]
   - X : -1.7428771e-01
@@ -283,7 +283,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 - Volume [mm<sup>3</sup>] : 1.7190589e+04
 - Surface Area [mm<sup>2</sup>] : 1.2425496e+04
 - Average Density [gram / mm<sup>3</sup>] : 1.5524308e-03
-- Mass [gram] : 2.6687200e+01 
+- Mass [gram] : 2.6687200e+01
 - Center of Gravity [mm]
   - X :  2.6921263e-02
   - Y : -3.5455461e+01
@@ -301,9 +301,9 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_leader_joint5.png)
 
-- Volume [mm<sup>3</sup>] : 1.7190589e+04 
+- Volume [mm<sup>3</sup>] : 1.7190589e+04
 - Surface Area [mm<sup>2</sup>] : 1.2425496e+04
-- Average Density [gram / mm<sup>3</sup>] : 1.5524308e-03 
+- Average Density [gram / mm<sup>3</sup>] : 1.5524308e-03
 - Mass [gram] : 2.6687200e+01
 - Center of Gravity [mm]
   - X : -2.6921263e-02
@@ -322,12 +322,12 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_leader_joint6.png)
 
-- Volume [mm<sup>3</sup>] : 9.4664842e+04 
+- Volume [mm<sup>3</sup>] : 9.4664842e+04
 - Surface Area [mm<sup>2</sup>] : 4.7828529e+04
 - Average Density [gram / mm<sup>3</sup>] : 1.1527721e-03
-- Mass [gram] : 1.0912699e+02 
+- Mass [gram] : 1.0912699e+02
 - Center of Gravity [mm]
-  - X :  3.7567212e+00 
+  - X :  3.7567212e+00
   - Y : -7.7299588e+01
   - Z : -3.2079617e+01
 - Inertia Tensor with respect to C1 coordinate frame: [gram * mm<sup>2</sup>]
@@ -343,7 +343,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_leader_joint7.png)
 
-- Volume [mm<sup>3</sup>] : 2.6850137e+03 
+- Volume [mm<sup>3</sup>] : 2.6850137e+03
 - Surface Area [mm<sup>2</sup>] : 2.3221225e+03
 - Average Density [gram / mm<sup>3</sup>] : 1.5124377e-03
 - Mass [gram] : 4.0609159e+00

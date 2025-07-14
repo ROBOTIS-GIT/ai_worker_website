@@ -29,10 +29,11 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 ## [Follower] Layout
 ![](/specifications/omy/omy_follower_layout.png)
 
+- `Download` [PDF](https://www.robotis.com/service/download.php?no=2208), [DWG](https://www.robotis.com/service/download.php?no=2207), [STEP](https://www.robotis.com/service/download.php?no=2209)
 ## [Follower] Workspace
 
 ![](/specifications/omy/omy_follower_workspace.png)
-
+- `Download` [PDF](https://www.robotis.com/service/download.php?no=2213)
 ## [Follower] Inertia
 
 ### Joint 1
@@ -199,6 +200,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 ## [Leader] Layout
 
 ![](/specifications/omy/omy_leader_layout.png)
+- `Download` [PDF](https://www.robotis.com/service/download.php?no=2211), [DWG](https://www.robotis.com/service/download.php?no=2210), [STEP](https://www.robotis.com/service/download.php?no=2212)
 
 ## [Leader] Inertia
 

@@ -79,7 +79,7 @@ Each level supports a progressive research journey in Physical AI. It begins wit
 - Compatible with ROS 2 and Physical AI Tools
 
 ## Our Vision for Physical AI
-At ROBOTIS, our vision for `Physical AI` is to solve real-world industrial and societal problems that traditional, rule-based systems cannot. We believe that true intelligence emerges when <u>robots learn from humans, adapt to dynamic environments, and perform safely and autonomously in the physical world. </u>
+At ROBOTIS, our vision for `Physical AI` is to solve real-world industrial and societal problems that traditional, rule-based systems cannot. We believe that true intelligence emerges when **robots learn from humans, adapt to dynamic environments, and perform safely and autonomously in the physical world.**
 Through our scalable lineup from entry-level manipulators to full-body robots,
 
 we aim to:

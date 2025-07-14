@@ -15,7 +15,7 @@ For sales inquiries or detailed product information about the Physical AI lineup
 - Address: 37, Magokjungang 5-ro 1-gil, Gangseo-gu, Seoul, Republic of Korea (Postal Code: 07594)
 - Website: [robotis.com](https://www.robotis.com/)
 - Email: korea@robotis.com
-- TEL: +85-70-8671-2629
+- TEL: +82-70-8671-2629
 - FAX: +82-70-8230-1336
 
 ## US Office

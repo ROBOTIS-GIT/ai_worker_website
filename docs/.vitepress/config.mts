@@ -109,6 +109,7 @@ export default defineConfig({
             {
               text: 'Model Training', link: '/ai_worker/model_training_ai_worker',
               items: [
+                { text: 'Web UI', link: '/ai_worker/model_training_with_web_ui_ai_worker' },
                 { text: 'LeRobot CLI', link: '/ai_worker/model_training_with_lerobot_cli_ai_worker' }
               ]
             },

@@ -98,7 +98,7 @@ export default defineConfig({
         {
           text: 'Imitation Learning',
           items: [
-            { text: 'Overview', link: '/ai_worker/imitation_learning_ai_worker/' },
+            { text: 'Overview', link: '/ai_worker/imitation_learning_ai_worker' },
             {
               text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation_ai_worker',
               items: [
@@ -174,7 +174,7 @@ export default defineConfig({
         {
           text: 'Imitation Learning',
           items: [
-            { text: 'Overview', link: '/omy/imitation_learning_omy/' },
+            { text: 'Overview', link: '/omy/imitation_learning_omy' },
             {
               text: 'Dataset Preparation', link: '/omy/dataset_preparation_omy',
               items: [

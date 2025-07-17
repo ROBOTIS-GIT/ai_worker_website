@@ -3,6 +3,10 @@
 ## OMY
 https://github.com/ROBOTIS-GIT/open_manipulator
 
+### 4.0.6 (2025-07-15)
+* Renamed omx to open_manipulator_x
+* Contributors: Wonho Yun
+
 ### 4.0.5 (2025-07-02)
 * Added init_position_file argument to launch files
 * Updated profile time and acceleration time for OMY series
@@ -14,6 +18,10 @@ https://github.com/ROBOTIS-GIT/open_manipulator
 
 ## Physical AI Tools
 - https://github.com/ROBOTIS-GIT/physical_ai_tools
+
+### 0.5.10 (2025-07-15)
+* Added multi-tasking data recording support to the Physical AI Server
+* Contributors: Kiwoong Park, Seongwoo Kim
 
 ### 0.5.9 (2025-07-07)
 * Use global ROS connection instead of multiple instances

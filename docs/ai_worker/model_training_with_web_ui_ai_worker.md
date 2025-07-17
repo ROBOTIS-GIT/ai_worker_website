@@ -8,6 +8,13 @@ You can train the policy either on your local PC or an NVIDIA Jetson AGX Orin de
 
 After [preparing your dataset](/ai_worker/dataset_preparation_ai_worker), you can proceed to train the policy model.
 
+<a href="#training-on-nvidia-jetson-agx-orin" class="button-dataset-preparation-option">
+Training on NVIDIA Jetson AGX Orin 
+</a>
+<a href="#training-on-your-pc" class="button-dataset-preparation-option">
+Training on Your PC
+</a>
+
 ## Training on NVIDIA Jetson AGX Orin
 
 ### 1. Launch Physical AI Server 

@@ -8,7 +8,7 @@ You can launch Gazebo and RViz individually, or launch RViz together with the ph
 *   **Launch Gazebo simulation:**
     Use this command to run a dynamic simulation of the AI Worker in the Gazebo simulator.
     ```bash
-    ros2 launch ffw_bringup ffw_bg2_follower_gazebo.launch.py
+    ros2 launch ffw_bringup ffw_bg2_follower_ai_gazebo.launch.py
     # Launch Gazebo with the AI Worker Follower model (FFW-BG2)
     ```
 
@@ -26,3 +26,14 @@ You can launch Gazebo and RViz individually, or launch RViz together with the ph
     # Launch the AI Worker Follower (FFW-BG2) hardware interface and RViz
     ```
     *   **Note:** This command is the same as the `Follower` launch command in the [`Teleoperation Guide`](/ai_worker/operation_ai_worker) and will also launch the cameras by default. To run without cameras, you can add the `launch_cameras:=false` argument.
+
+## Simulation Views
+
+### FFW_BG2
+
+![FFW BG2 Simulation](/simulation/ai_worker/ffw_bg2_gazebo.png)
+
+
+### FFW_SG2
+
+![FFW SG2 Simulation](/simulation/ai_worker/ffw_sg2_gazebo.png)

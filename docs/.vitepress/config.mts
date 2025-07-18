@@ -126,7 +126,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/simulation_ai_worker'},
             { text: 'Gazebo', link: '/ai_worker/gazebo_ai_worker' },
-            { text: 'IsaacLab', link: '/ai_worker/robotis_lab_ai_worker' }
+            { text: 'Isaac Sim/Lab', link: '/ai_worker/robotis_lab_ai_worker' }
           ]
         },
         {
@@ -200,7 +200,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/omy/simulation_omy' },
             { text: 'Gazebo', link: '/omy/gazebo_omy' },
-            { text: 'IsaacLab', link: '/omy/robotis_lab_omy' }
+            { text: 'Isaac Sim/Lab', link: '/omy/robotis_lab_omy' }
           ]
         },
         {

@@ -51,6 +51,9 @@ AI WORKER relies on two main repositories:
 
 The software setup instructions below are intended for development on a `user PC`. **_Note that the robot PC on the AI WORKER is already pre-configured with the same setup._**
 
+::: danger
+⚠️ **On the AI Worker Orin:** Do not run `apt upgrade` command. Upgrading packages may cause conflicts and break robot functionality.
+:::
 ### Prerequisites
 - **Operating System**: Ubuntu environment<br>
 (The AI WORKER software runs inside a Docker container based on `Ubuntu 24.04 (ROS 2 Jazzy)`. Therefore, the Ubuntu version of the user PC does not need to match and is not critical.)

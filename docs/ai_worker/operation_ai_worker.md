@@ -75,7 +75,9 @@ ffw_sg2_ai
 :::
 
 ### Option 2: Separate Launches
-
+::: danger
+⚠️ When running teleoperation by launching the Leader and Follower separately, always start the `Follower` first and then the `Leader`. Otherwise, the robot may move abruptly.
+:::
 If you want to run the `Leader` and `Follower` separately in different terminals:
 
 1. **Launch the teleoperation `Leader`**:

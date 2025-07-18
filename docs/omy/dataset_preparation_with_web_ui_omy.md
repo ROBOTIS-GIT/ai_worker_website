@@ -20,7 +20,7 @@ If you're setting up for the first time, please navigate to the path where the D
 :::
 
 ### 1. Launch the ROS 2 teleoperation node
-#### a. Access the Robot PC
+#### a. Access the Robot PC (SBC)
 Access the Robot PC either directly or via SSH. For SSH connection instructions, refer to the [SSH connection](/omy/setup_guide_omy#ssh-connection). 
 
 #### b. Enter the Docker container
@@ -38,16 +38,21 @@ ros2 launch open_manipulator_bringup omy_ai.launch.py
 
 ### 2. Camera Setup
 
-a. Open a new terminal on your host machine and enter the Docker container:
+#### a. Enter the Docker container
+
+Open a new terminal on your host machine and enter the **Open Manipulator** Docker container:
 ```bash
 cd open_manipulator/docker && ./container.sh enter
 ```
-b. Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
+
+#### b. Setup ROS Domain ID
+
+Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
 ```bash
 echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
 source ~/.bashrc
 ```
-c. Launch the camera node:
+#### c. Launch the camera node:
 ```bash
 ros2 launch realsense2_camera rs_launch.py camera_name:='cam_wrist'
 ```
@@ -85,7 +90,7 @@ Enter the Docker container:
 ./container.sh enter
 ```
 
-#### b. Setup ROS DOMAIN ID
+#### b. Setup ROS Domain ID
 Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
 ```bash
 echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
@@ -106,18 +111,13 @@ ai_server
 
 ### 4. Open the Web UI
 
-::: info
-This step must be performed on the **host machine** (or another device on the same network).
-:::
-
-
-#### Access the Web UI in Your Browser
-Please enter the IP address of the PC running Physical AI into your web browser.  
-If you are running the server on the same computer, you can simply enter `localhost` instead.
+#### a. Access the Web UI in Your Browser
+Please enter the IP address of the PC running **Physical AI Server** (`physical_ai_server_bringup.launch.py`) into your web browser.  
+If you are running the **Physical AI Server** on the same computer, you can simply enter `localhost` instead.
 
 
 For example:
-- `192.168.0.1`  
+- If the PC running **Physical AI Server** has IP address `192.168.0.105`
 
   <img src="/imitation_learning/web_ui_home_page_address.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Enter the IP Address</em></p>  

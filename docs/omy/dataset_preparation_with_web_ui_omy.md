@@ -2,33 +2,52 @@
 
 ## Prerequisites
 
-This section describes the necessary setup steps before starting data preparation.
-To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/omy/setup_guide_omy) for instructions on how to connect via SSH.
+This section describes the necessary setup steps before starting data preparation.  
+We will use a total of three terminals, each responsible for a different ROS 2 node:
+- **[Terminal 1 - Teleoperation Node](/omy/dataset_preparation_with_web_ui_omy#_1-launch-the-ros-2-teleoperation-node)**  
+This terminal launches the ROS 2 teleoperation node that controls the manipulator.
+
+- **[Terminal 2 – Camera Node](/omy/dataset_preparation_with_web_ui_omy#_2-camera-setup)**  
+This terminal launches the RealSense camera node (or another supported camera) to stream visual data.
+
+- **[Terminal 3 – Physical AI Server](/omy/dataset_preparation_with_web_ui_omy#_3-launch-physical-ai-server)**  
+This terminal starts the backend server that connects to the Web UI.
+
+Make sure to follow the setup instructions for each terminal in the order shown.
+
+::: info
+If you're setting up for the first time, please navigate to the path where the Docker script is located and run `./container.sh start` before using `./container.sh enter` to access the container.
+:::
 
 ### 1. Launch the ROS 2 teleoperation node
+a. Access the Robot PC either directly or via SSH. For SSH connection instructions, refer to the [SSH connection](/omy/setup_guide_omy#ssh-connection).  
 
-a. Open a terminal and enter the Docker container:
-
+b. Enter the Docker container:
 ```bash
-cd open_manipulator && ./docker/container.sh enter
+cd /data/docker/open_manipulator/docker && ./container.sh enter
 ```
-
-b. Then, launch the ROS 2 teleoperation node using the appropriate command for your robot type:
-
+c. Then, launch the ROS 2 teleoperation node using the appropriate command for your robot type:
 ```bash
 ros2 launch open_manipulator_bringup omy_ai.launch.py
 ```
+::: warning
+Executing the code will cause OMY to move immediately. Please stay clear and be cautious.
+:::
+
 ### 2. Camera Setup
 
-a. Open a new terminal and enter the Docker container:
-
+a. Open a new terminal on your host machine and enter the Docker container:
 ```bash
-cd open_manipulator
-./docker/container.sh enter
+cd open_manipulator/docker && ./container.sh enter
 ```
-b. Launch the camera node:
+b. Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
 ```bash
-ros2 launch realsense2_camera rs_launch.py
+echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
+source ~/.bashrc
+```
+c. Launch the camera node:
+```bash
+ros2 launch realsense2_camera rs_launch.py camera_name:='cam_wrist'
 ```
 
 You can also use other camera models such as ZED2 or USB cameras, if needed.
@@ -40,18 +59,20 @@ You can also use other camera models such as ZED2 or USB cameras, if needed.
 The _Physical AI Server_ is the backend that connects with the Web UI. It should be running to use the interface for data recording.
 :::
 
-Open a terminal and enter the Docker container:
-
+a. Open a new terminal on your host machine and enter the Docker container:
 ```bash
-cd open_manipulator && ./docker/container.sh enter
+cd physical_ai_tools/docker && ./container.sh enter
 ```
-
-Launch Physical AI Server with the following command:
+b. Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
+```bash
+echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
+source ~/.bashrc
+```
+c. Launch Physical AI Server with the following command:
 
 ```bash
 ros2 launch physical_ai_server physical_ai_server_bringup.launch.py
 ```
-
 Or, use shortcut command:
 
 ```bash
@@ -65,19 +86,22 @@ This step must be performed on the **host machine** (or another device on the sa
 :::
 
 
-Identify the serial number of the OMY device.
-In this example, the serial number is `SNPR48A0000`.
-
 #### Access the Web UI in Your Browser
+Please enter the IP address of the PC running Physical AI into your web browser.  
+If you are running the server on the same computer, you can simply enter `localhost` instead.
 
-Open your web browser and go to `http://{robot type}-{serial number}.local`, replacing `{serial number}` with the serial number from the previous step.
 
 For example:
-- `http://omy-SNPR48A0000.local`
+- `192.168.0.1`  
 
-Once connected, you should see the web UI as shown below.
+  <img src="/imitation_learning/web_ui_home_page_address.png" alt="Web UI" style="width: 100%; ">
+  <p style="text-align: center;"><em>Enter the IP Address</em></p>  
 
-  <img src="/imitation_learning/web_ui_home_page.png" alt="Web UI" style="width: 100%; ">
+Once accessed, the following screen will appear with the `Disconnected` status.
+
+  <img src="/imitation_learning/web_ui_initial_home_page.png" alt="Web UI" style="width: 100%; ">
+  <p style="text-align: center;"><em>Initial Screen</em></p>  
+
 
 ## Record your dataset
 
@@ -85,7 +109,14 @@ Once connected, you should see the web UI as shown below.
 
 On the **Home** page, select the type of robot you are using.
 
-  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
+<div class="UI" style="width: 60%; margin: 0 auto;">
+  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 100%; ">
+</div>
+
+After clicking the **Set Robot Type** button, the status will change to `Connected`.
+
+   <img src="/imitation_learning/web_ui_connected_home_page.png" alt="Web UI" style="width: 100%; ">
+  <p style="text-align: center;"><em>Connected Screen</em></p>  
 
 ### 2. Go to `Record` page
 
@@ -93,6 +124,7 @@ On the **Home** page, select the type of robot you are using.
 You cannot access **Record** page unless a robot type has been selected on the **Home** page.
 Please ensure that the robot type is selected before proceeding.
 :::
+After the status changes to `Connected`, access to the **Record** page will be available through the button on the left sidebar.  
 
 The **Record** page is divided into three main sections:
 
@@ -105,6 +137,7 @@ The **Record** page is divided into three main sections:
 The selected robot type is also displayed in the top left corner.
 
   <img src="/imitation_learning/web_ui_record_page.png" alt="Web UI" style="width: 100%; ">
+  <p style="text-align: center;"><em>Record Screen</em></p> 
 
 ### 3. Visualize RGB images from the cameras:
 
@@ -113,18 +146,30 @@ You can remove the current stream and select a different one as needed.
 
 To change the image topic:
 
-1. Click the **+** button in the Image Streaming Area.
+1. Click the `+` button in the Image Streaming Area.
 2. Choose a topic from the popup window.
 
-  <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 40%; ">
+  <div class="UI" style="width: 60%; margin: 0 auto;">
+  <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 100%; ">
+</div>
 
 ### 4. Enter Task Information:
 
-Fill out the task-related fields in the **Task Info Panel**, located on the right side of the **Record** page.
+Fill out the task-related fields in the **Task Info Panel**, located on the right side of the **Record** page. The panel will initially appear blank, as shown in the left image, and should be completed to match the filled example shown on the right.
+<div style="display: flex; justify-content: center; gap: 40px;">
+  <div style="text-align: center;">
+    <img src="/imitation_learning/web_ui_task_info_initial.png" alt="Web UI" style="width: 100%; max-width: 300px;">
+    <p><em>Initial Panel</em></p>
+    
+  </div>
+  <div style="text-align: center;">
+    <img src="/imitation_learning/web_ui_task_info_filled.png" alt="Web UI" style="width: 94%; max-width: 300px;">
+    <p><em>Filled Panel</em></p>
+  </div>
+</div>
 
-  <img src="/imitation_learning/web_ui_task_info.png" alt="Web UI" style="width: 40%; ">
 
-For detailed information on each field, expand the section below:
+Refer to the descriptions below to complete each field in the Task Information Panel:
 
 ::: details :point_right: Task Information Field Descriptions
 | Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -133,7 +178,7 @@ For detailed information on each field, expand the section below:
 | **Task Instruction** | It is a sentence that instructs the robot what action to perform, such as "pick and place object"                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Push to hub**      | If you want to push the dataset to the Hugging Face Hub, check this box. This allows sharing and training. <br>**To push to the Hugging Face Hub, you need to:**<br>1. Have a Hugging Face account<br>2. Have the necessary permissions to push to the repository                                                                                                                                                                                                                 |
 | **Private Mode**     | Only available when "Push to hub" is checked. Keeps your dataset private on Hugging Face.                                                                                                                                                                                                                                                                                                                                                                                         |
-| **User ID**          | Your Hugging Face account username, also used as the folder name for the dataset.<br>- If **not** using Hugging Face, you can use any name.<br>- If using Hugging Face, click "Load" to select from registered User IDs.<br>- If no User IDs or want a different one, click "Change" and enter your Hugging Face token.<br>- If you have a registered account but haven't checked "Push to hub", you can either:<br>1. Load a registered User ID<br>2. Manually enter any User ID |
+| **User ID**          | Your Hugging Face account username, also used as the folder name for the dataset.<br>- If **not** using Hugging Face, you can use any name.<br>- If using Hugging Face, click `Load` to select from registered User IDs.<br>- If no User IDs or want a different one, click `Change` and enter your Hugging Face token.<br>- The Hugging Face token must have both **read** and **write** permissions enabled.<img src="/imitation_learning/web_ui_enter_hf_token.png" alt="Web UI" style="width: 100%; "><br>- If you have a registered account but haven't checked "Push to hub", you can either:<br>1. Load a registered User ID<br>2. Manually enter any User ID  |
 | **FPS**              | Frame rate for dataset recording. Recommended value is 15.                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Tags**             | Keywords to categorize and organize your dataset in the hub. Multiple tags can be added. Useful for searching or filtering later.                                                                                                                                                                                                                                                                                                                                                 |
 | **Warmup Time**      | Duration (in seconds) to warm up the robot before starting the recording                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -187,32 +232,38 @@ While recording is in progress, the following controls are available:
 :::
 
 #### Step 3. After recording:
-   - The dataset will be saved locally.
+   - The dataset will be saved on the **host machine**, not inside the **Docker container**.
    - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face.
-   - You can find the recorded dataset in the location below:
-
-::: info
-This path refers to the **host system**, not inside the Docker container.
-:::
+   - The recorded dataset can be accessed at the following path from the **host environment**:
 
 ```bash
-~/open_manipulator/docker/huggingface/lerobot
+~/physical_ai_tools/docker/huggingface/lerobot
 ```
+
 
 ## Dataset Visualization
 
-Once data collection is complete, you can preview and inspect your recorded dataset using the following command:
-
+Once data collection is complete, you can preview and inspect your recorded dataset using the following steps.  
+a. Access the **physical_ai_tools** Docker environment:
+```bash
+cd physical_ai_tools/docker && ./container.sh enter
+```
+b. Move to the directory where the dataset is stored inside the container:
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
-
+c. Run the following command to launch the dataset visualization tool:
 ```bash
 python lerobot/scripts/visualize_dataset_html.py \
   --host 0.0.0.0 \
   --port 9091 \
-  --repo-id ${HF_USER}/omy_test
+  --repo-id YOUR_REPO_ID
 ```
+  - Replace **YOUR_REPO_ID** with the dataset ID found under the **User ID** section in the right sidebar.
+  - For example: `ROBOTIS/omy_f3m_Test` 
+  <div class="UI" style="width: 50%; margin: 0 auto;">
+  <img src="/imitation_learning/web_ui_task_info_repo_id.png" alt="Web UI" style="width: 100%; ">
+</div>
 
 You should see an output similar to the following:
 

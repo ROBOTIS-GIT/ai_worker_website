@@ -141,13 +141,15 @@ For detailed information on each field, expand the section below:
 
 To begin recording, use the **Control Panel** located at the bottom of the **Record** page:
 
+:::tabs
+== Single Task Record
   <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
 
 #### Step 1: Click the `Start` Button
 
 Click the `Start` button to begin the recording session. The system will automatically:
 
-   - Warm up the robot for the specified **Warm-up Time**
+   - Wait for the specified **Warm-up Time**
    - Record each episode for the specified **Episode Time**
    - Wait for the specified **Reset Time** between episodes
    - Repeat the above steps for the specified **Number of Episodes**
@@ -157,10 +159,31 @@ Click the `Start` button to begin the recording session. The system will automat
 
 While recording is in progress, the following controls are available:
 
-   - The `Stop` button saves the current episode in progress and stops the recording. If you press the `Start` button again, recording will resume from the next episode.
+   - The `Stop` button saves the current episode in progress and stops the recording. If you press the `Start` button again, recording will resume from the next episode
    - The `Retry` button cancels the current episode and restarts recording for that episode
    - The `Next` button ends the current episode early and moves to the next episode
    - The `Finish` button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
+== Multi Task Record
+  <img src="/imitation_learning/web_ui_control_panel_multi_task.png" alt="Web UI" style="width: 100%; ">
+
+#### Step 1: Click the `Start` Button
+
+Click the `Start` button to begin the recording session. The system will automatically:
+
+   - Wait for the specified **Warm-up Time**
+   - Wait for the specified **Reset Time** between episodes
+
+#### Step 2: Monitor and Control During Recording
+
+
+While recording is in progress, the following controls are available:
+
+   - The `Stop` button stops the current recording task. If you press the `Start` button again, recording will resume from the current stopped task
+   - The `Skip Task` button cancels the current task and move to the next task
+   - The `Retry` button cancels the current task and restarts recording for that task
+   - The `Next` button ends the current task and moves to the next task
+   - The `Finish` button ends the recording session and saves the dataset
+:::
 
 ::: info
 - The current recording stage is displayed in the control panel:

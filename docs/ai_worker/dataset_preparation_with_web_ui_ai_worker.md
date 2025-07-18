@@ -204,12 +204,22 @@ Once data collection is complete, you can preview and inspect your recorded data
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
+:::tabs key:robot-type
+== BG2 Type
 ```bash
 python lerobot/scripts/visualize_dataset_html.py \
   --host 0.0.0.0 \
   --port 9091 \
-  --repo-id ${HF_USER}/ffw_test
+  --repo-id ${HF_USER}/ffw_bg2_rev4_test
 ```
+== SG2 Type
+```bash
+python lerobot/scripts/visualize_dataset_html.py \
+  --host 0.0.0.0 \
+  --port 9091 \
+  --repo-id ${HF_USER}/ffw_sg2_rev1_test
+```
+:::
 
 You should see an output similar to the following:
 

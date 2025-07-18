@@ -80,17 +80,7 @@ ffw_sg2_ai
 :::
 If you want to run the `Leader` and `Follower` separately in different terminals:
 
-1. **Launch the teleoperation `Leader`**:
-   ```bash
-   ros2 launch ffw_bringup ffw_lg2_leader_ai.launch.py
-   ```
-
-   or use the shortcut:
-   ```bash
-   ffw_lg2_leader_ai
-   ```
-2. **Launch the teleoperation `Follower`**:
-
+1. **Launch the teleoperation `Follower`**:
 :::tabs key:robot-type
 == BG2 Type
 ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
@@ -110,6 +100,16 @@ ffw_sg2_follower_ai
 If you want to run the system without launching the cameras, you can set the `launch_cameras` parameter to `false`:
    ```bash
    ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py launch_cameras:=false
+   ```
+
+2. **Launch the teleoperation `Leader`**:
+   ```bash
+   ros2 launch ffw_bringup ffw_lg2_leader_ai.launch.py
+   ```
+
+   Or use the shortcut:
+   ```bash
+   ffw_lg2_leader_ai
    ```
 
 ## Basic Operation

@@ -10,7 +10,7 @@ This repository currently depends on **IsaacLab v2.0.0** or higher.
 :::
 
 ## Installation
-[Youtube Guide](https://www.youtube.com/watch?v=GHkyxmOy5-I)
+[YouTube Guide](https://www.youtube.com/watch?v=GHkyxmOy5-I)
 
 1. Follow the [Isaac Lab installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html) to set up the environment.
   Instead of the recommended local installation, you can run Isaac Lab in a Docker container to simplify dependency management and ensure consistency across systems.
@@ -57,7 +57,7 @@ This repository currently depends on **IsaacLab v2.0.0** or higher.
 
 ### Reinforcement Learning
 
-You can train and run the **FFW-BG2 Reach Task** using the following commands:
+You can train and run the **OMY Reach Task** using the following commands:
 
 ```bash
 # Train

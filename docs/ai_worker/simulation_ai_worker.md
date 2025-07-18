@@ -55,5 +55,5 @@ Isaac Lab is an advanced reinforcement learning framework built on top of NVIDIA
 *   **Link**: [ROBOTIS Lab on GitHub](https://github.com/ROBOTIS-GIT/robotis_lab/)
 
 <a href="/ai_worker/robotis_lab_ai_worker" class="button-dataset-preparation-option">
-ROBOTIS LAB Information
+ROBOTIS Lab Information
 </a>

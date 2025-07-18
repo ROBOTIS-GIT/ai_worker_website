@@ -20,19 +20,21 @@ If you're setting up for the first time, please navigate to the path where the D
 :::
 
 ### 1. Launch the ROS 2 teleoperation node
-a. Access the Robot PC either directly or via SSH. For SSH connection instructions, refer to the [SSH connection](/omy/setup_guide_omy#ssh-connection).  
+#### a. Access the Robot PC
+Access the Robot PC either directly or via SSH. For SSH connection instructions, refer to the [SSH connection](/omy/setup_guide_omy#ssh-connection). 
 
-b. Enter the Docker container:
+#### b. Enter the Docker container
 ```bash
 cd /data/docker/open_manipulator/docker && ./container.sh enter
 ```
-c. Then, launch the ROS 2 teleoperation node using the appropriate command for your robot type:
-```bash
-ros2 launch open_manipulator_bringup omy_ai.launch.py
-```
+#### c. Launch the ROS 2 teleoperation node
+Then, launch the ROS 2 teleoperation node with following command:
 ::: warning
 Executing the code will cause OMY to move immediately. Please stay clear and be cautious.
 :::
+```bash
+ros2 launch open_manipulator_bringup omy_ai.launch.py
+```
 
 ### 2. Camera Setup
 

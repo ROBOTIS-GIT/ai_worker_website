@@ -59,16 +59,39 @@ You can also use other camera models such as ZED2 or USB cameras, if needed.
 The _Physical AI Server_ is the backend that connects with the Web UI. It should be running to use the interface for data recording.
 :::
 
-a. Open a new terminal on your host machine and enter the Docker container:
+#### a. Start and enter the Docker container:
+
+Open a new terminal on your host machine and move to **phisical_ai_tools/docker** directory. 
+
 ```bash
-cd physical_ai_tools/docker && ./container.sh enter
+cd physical_ai_tools/docker
 ```
-b. Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
+
+Start the **Physical AI Tools** Docker container with the following command:
+
+::: info
+Run `./container.sh start` only when starting the container for the first time.  
+If you have already started the container, you can skip this step.
+:::
+
+```bash
+./container.sh start
+```
+
+Enter the Docker container:
+```bash
+./container.sh enter
+```
+
+#### b. Setup ROS DOMAIN ID
+Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
 ```bash
 echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
 source ~/.bashrc
 ```
-c. Launch Physical AI Server with the following command:
+#### c. Launch Physical AI Server
+
+Launch Physical AI Server with the following command
 
 ```bash
 ros2 launch physical_ai_server physical_ai_server_bringup.launch.py

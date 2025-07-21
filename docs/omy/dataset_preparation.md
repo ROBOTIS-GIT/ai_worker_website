@@ -182,36 +182,53 @@ To change the image topic:
 ### 4. Enter Task Information:
 
 Fill out the task-related fields in the **Task Info Panel**, located on the right side of the **Record** page. The panel will initially appear blank, as shown in the left image, and should be completed to match the filled example shown on the right.
+
+::: tabs
+== Single Task Mode
 <div style="display: flex; justify-content: center; gap: 40px;">
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui_task_info_initial.png" alt="Web UI" style="width: 100%; max-width: 300px;">
+    <img src="/imitation_learning/web_ui_task_info_initial.png" alt="Web UI" style="width: 95%; max-width: 300px;">
     <p><em>Initial Panel</em></p>
     
   </div>
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui_task_info_filled.png" alt="Web UI" style="width: 94%; max-width: 300px;">
+    <img src="/imitation_learning/web_ui_task_info_filled.png" alt="Web UI" style="width: 95%; max-width: 300px;">
     <p><em>Filled Panel</em></p>
   </div>
 </div>
+
+== Multi Task Mode
+<div style="display: flex; justify-content: center; gap: 40px;">
+  <div style="text-align: center;">
+    <img src="/imitation_learning/web_ui_task_info_multi_task_initial.png" alt="Web UI" style="width: 95%; max-width: 300px;">
+    <p><em>Initial Panel</em></p>
+    
+  </div>
+  <div style="text-align: center;">
+    <img src="/imitation_learning/web_ui_task_info_multi_task_filled.png" alt="Web UI" style="width: 95%; max-width: 300px;">
+    <p><em>Filled Panel</em></p>
+  </div>
+</div>
+:::
 
 
 Refer to the descriptions below to complete each field in the Task Information Panel:
 
 ::: details :point_right: Task Information Field Descriptions
-| Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Task Name**        | It is used for the folder name of the dataset                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **Task Instruction** | It is a sentence that instructs the robot what action to perform, such as "pick and place object"                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Push to hub**      | If you want to push the dataset to the Hugging Face Hub, check this box. This allows sharing and training. <br>**To push to the Hugging Face Hub, you need to:**<br>1. Have a Hugging Face account<br>2. Have the necessary permissions to push to the repository                                                                                                                                                                                                                 |
-| **Private Mode**     | Only available when "Push to hub" is checked. Keeps your dataset private on Hugging Face.                                                                                                                                                                                                                                                                                                                                                                                         |
-| **User ID**          | Your Hugging Face account username, also used as the folder name for the dataset.<br>- If **not** using Hugging Face, you can use any name.<br>- If using Hugging Face, click `Load` to select from registered User IDs.<br>- If no User IDs or want a different one, click `Change` and enter your Hugging Face token.<br>- The Hugging Face token must have both **read** and **write** permissions enabled.<img src="/imitation_learning/web_ui_enter_hf_token.png" alt="Web UI" style="width: 100%; "><br>- If you have a registered account but haven't checked "Push to hub", you can either:<br>1. Load a registered User ID<br>2. Manually enter any User ID  |
-| **FPS**              | Frame rate for dataset recording. Recommended value is 15.                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| **Tags**             | Keywords to categorize and organize your dataset in the hub. Multiple tags can be added. Useful for searching or filtering later.                                                                                                                                                                                                                                                                                                                                                 |
-| **Warmup Time**      | Duration (in seconds) to warm up the robot before starting the recording                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **Episode Time**     | Duration (in seconds) to record each episode                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Reset Time**       | Time allocated (in seconds) for resetting between episodes                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| **Num Episodes**     | Total number of episodes to record                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Optimized Save**   | If enabled, uses RAM for faster dataset encoding processing                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|Item|Description|
+|---|---|
+| **Task Name** | It is used for the folder name of the dataset |
+| **Task Instruction** | It is a sentence that instructs the robot what action to perform, such as ***"pick and place object"***. <br> In **multi-task** mode, you can add Task Instructions by clicking the Add Instruction button. |
+| **Push to hub** | If you want to push the dataset to the Hugging Face Hub, check this box. This allows sharing and training. <br>**To push to the Hugging Face Hub, you need to:**<br>1. Have a Hugging Face account<br>2. Have the necessary permissions to push to the repository |
+| **Private Mode** | Only available when "Push to hub" is checked. Keeps your dataset private on Hugging Face. |
+| **User ID** | Your Hugging Face account username, also used as the folder name for the dataset.<br>- If **not** using Hugging Face, you can use any name.<br>- If using Hugging Face, click `Load` to select from registered User IDs.<br>- If no User IDs or want a different one, click `Change` and enter your Hugging Face token.<br>- The Hugging Face token must have both **read** and **write** permissions enabled.<img src="/imitation_learning/web_ui_enter_hf_token.png" alt="Web UI" style="width: 100%; "><br>- If you have a registered account but haven't checked "Push to hub", you can either:<br>1. Load a registered User ID<br>2. Manually enter any User ID  |
+| **FPS** | Frame rate for dataset recording. Recommended value is 15.|
+| **Tags** | Keywords to categorize and organize your dataset in the hub. Multiple tags can be added. Useful for searching or filtering later. |
+| **Warmup Time** | Duration (in seconds) to warm up the robot before starting the recording |
+| **Episode Time** | Duration (in seconds) to record each episode |
+| **Reset Time** | Time allocated (in seconds) for resetting between episodes |
+| **Num Episodes** | Total number of episodes to record |
+| **Optimized Save** | If enabled, uses RAM for faster dataset encoding processing |
 :::
 
 ### 5. Start Recording:

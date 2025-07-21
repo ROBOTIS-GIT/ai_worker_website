@@ -99,26 +99,16 @@ export default defineConfig({
           text: 'Imitation Learning',
           items: [
             { text: 'Overview', link: '/ai_worker/imitation_learning_ai_worker' },
+            { text: 'Data Preparation', link: '/ai_worker/dataset_preparation_with_web_ui_ai_worker' },
+            { text: 'Model Training', link: '/ai_worker/model_training_with_web_ui_ai_worker' },
+            { text: 'Model Inference', link: '/ai_worker/model_inference_with_web_ui_ai_worker' },
             {
-              text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation_ai_worker',
+              text: 'LeRobot CLI (legacy use only)', link: '/ai_worker/dataset_preparation_ai_worker',
               items: [
-                { text: 'Web UI', link: '/ai_worker/dataset_preparation_with_web_ui_ai_worker' },
-                { text: 'LeRobot CLI', link: '/ai_worker/dataset_preparation_with_lerobot_cli_ai_worker' }
+                { text: 'Data Preparation', link: '/ai_worker/dataset_preparation_with_lerobot_cli_ai_worker' },
+                { text: 'Model Workflow', link: '/ai_worker/model_training_with_lerobot_cli_ai_worker' },
               ]
             },
-            {
-              text: 'Model Training', link: '/ai_worker/model_training_ai_worker',
-              items: [
-                { text: 'LeRobot CLI', link: '/ai_worker/model_training_with_lerobot_cli_ai_worker' }
-              ]
-            },
-            {
-              text: 'Model Inference', link:'/ai_worker/model_inference_ai_worker',
-              items: [
-                { text: 'Web UI', link: '/ai_worker/model_inference_with_web_ui_ai_worker' },
-                { text: 'LeRobot CLI', link: '/ai_worker/model_inference_with_lerobot_cli_ai_worker' }
-              ]
-            }
           ]
         },
         {

@@ -250,6 +250,8 @@ Click the `Start` button to begin the recording session. The system will automat
 
    - Warm up the robot for the specified **Warm-up Time**
    - Start recording the first task 
+   - The `Episode` counter increments by 1 each time a task is completed.
+   - After completing all tasks, the `Scenario` counter increments by 1 and the cycle returns to the first task.
 
 #### Step 2: Monitor and Control During Recording
 

@@ -98,7 +98,7 @@ export default defineConfig({
         {
           text: 'Imitation Learning',
           items: [
-            { text: 'Overview', link: '/ai_worker/imitation_learning_ai_worker/' },
+            { text: 'Overview', link: '/ai_worker/imitation_learning_ai_worker' },
             {
               text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation_ai_worker',
               items: [
@@ -124,11 +124,9 @@ export default defineConfig({
         {
           text: 'Simulation',
           items: [
-            { text: 'Overview', link: '/ai_worker/simulation_ai_worker',
-              items: [
-                { text: 'IsaacLab', link: '/ai_worker/robotis_lab_ai_worker' },
-              ]
-            }
+            { text: 'Overview', link: '/ai_worker/simulation_ai_worker'},
+            { text: 'Gazebo', link: '/ai_worker/gazebo_ai_worker' },
+            { text: 'Isaac Sim/Lab', link: '/ai_worker/robotis_lab_ai_worker' }
           ]
         },
         {

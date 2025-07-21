@@ -3,6 +3,15 @@
 ## AI Worker
 https://github.com/ROBOTIS-GIT/ai_worker
 
+### 1.1.8 (2025-07-14)
+* Modified joystick controller to enable lift control while in swerve mode
+* Refactored joystick controller
+* Contributors: Wonho Yun
+
+### 1.1.7 (2025-07-11)
+* Added slow start feature for joint_trajectory_command_broadcaster
+* Contributors: Woojin Wie
+
 ### 1.1.6 (2025-07-07)
 * Updated ros2_control xacro file for ffw_bg2_rev4_follower
 * Fix header file name for tf2
@@ -102,6 +111,10 @@ https://github.com/ROBOTIS-GIT/ai_worker
 
 ## Physical AI Tools
 - https://github.com/ROBOTIS-GIT/physical_ai_tools
+
+### 0.5.10 (2025-07-15)
+* Added multi-tasking data recording support to the Physical AI Server
+* Contributors: Kiwoong Park, Seongwoo Kim
 
 ### 0.5.9 (2025-07-07)
 * Use global ROS connection instead of multiple instances

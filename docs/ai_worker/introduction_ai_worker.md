@@ -49,23 +49,3 @@ Featuring a mobile base, dual arms, and utilizing ROBOTIS' core technologies, th
 ## Product Overview Video
 
 <YouTube videoId="DX7DEf9s3Eg" />
-
-## Product Brochures
-
-<div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
-  <div style="flex: 1; min-width: 300px;">
-    <a href="/overview/aiworker_brochure1.jpg" target="_blank">
-      <img src="/overview/aiworker_brochure1.jpg" alt="AI Worker Brochure Page 1" style="width: 100%; border: 1px solid #eee; border-radius: 8px;">
-    </a>
-  </div>
-  <div style="flex: 1; min-width: 300px;">
-    <a href="/overview/aiworker_brochure2.jpg" target="_blank">
-      <img src="/overview/aiworker_brochure2.jpg" alt="AI Worker Brochure Page 2" style="width: 100%; border: 1px solid #eee; border-radius: 8px;">
-    </a>
-  </div>
-</div>
-
-<div style="text-align: center; margin-bottom: 40px;">
-  <a href="/overview/aiworker_brochure_v1.0.pdf" download class="button-download">Download Full Brochure</a>
-</div>
-

@@ -53,16 +53,16 @@ This repository currently depends on **IsaacLab v2.0.0** or higher.
   ![run list_env](/simulation/all/isaaclab_list_envs.png)
 
 ## Running Examples
-![AI Worker in NVIDIA Isaac Lab](/simulation/ai_worker/ffw_bg2_isaac_lab2.png)
+![OMY in NVIDIA Isaac Lab](/simulation/omy/omy_isaac_lab2.png)
 
 ### Reinforcement Learning
 
-You can train and run the **FFW-BG2 Reach Task** using the following commands:
+You can train and run the **OMY Reach Task** using the following commands:
 
 ```bash
 # Train
-python scripts/reinforcement_learning/rsl_rl/train.py --task RobotisLab-Reach-FFW-BG2-v0 --num_envs=512 --headless
+python scripts/reinforcement_learning/rsl_rl/train.py --task RobotisLab-Reach-OMY-v0 --num_envs=512 --headless
 
 # Play
-python scripts/reinforcement_learning/rsl_rl/play.py --task RobotisLab-Reach-FFW-BG2-v0 --num_envs=16
+python scripts/reinforcement_learning/rsl_rl/play.py --task RobotisLab-Reach-OMY-v0 --num_envs=16
 ```

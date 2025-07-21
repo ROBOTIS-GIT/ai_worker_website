@@ -91,14 +91,23 @@ Enter the Docker container:
 ```
 
 #### b. Setup ROS Domain ID
-Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
+Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication:
 ```bash
 echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
 source ~/.bashrc
 ```
-#### c. Launch Physical AI Server
 
-Launch Physical AI Server with the following command
+#### c. Build Physical AI Server
+
+Build the Physical AI Server with the following command:
+
+```bash
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+```
+
+#### d. Launch Physical AI Server
+
+Launch Physical AI Server with the following command:
 
 ```bash
 ros2 launch physical_ai_server physical_ai_server_bringup.launch.py
@@ -150,7 +159,10 @@ After clicking the `Set Robot Type` button, the status will change to `Connected
 You cannot access **Record** page unless a robot type has been selected on the **Home** page.
 Please ensure that the robot type is selected before proceeding.
 :::
-After the status changes to `Connected`, access to the **Record** page will be available through the button on the left sidebar.  
+
+After the status changes to `"Connected"`, you can access the **Record** page using the button on the left sidebar, as shown below.
+<img src="/imitation_learning/web_ui_record_page.png" alt="Web UI" style="width: 100%; ">
+<p style="text-align: center;"><em>Record Screen</em></p>
 
 The **Record** page is divided into three main sections:
 
@@ -161,9 +173,6 @@ The **Record** page is divided into three main sections:
 - **Control Panel** (Bottom): Start/stop recording and manage data collection. [(details)](#_5-start-recording)
 
 The selected robot type is also displayed in the top left corner.
-
-  <img src="/imitation_learning/web_ui_record_page.png" alt="Web UI" style="width: 100%; ">
-  <p style="text-align: center;"><em>Record Screen</em></p> 
 
 ### 3. Visualize RGB images from the cameras:
 
@@ -323,7 +332,7 @@ cd physical_ai_tools/docker && ./container.sh enter
 
 Move to the **physical_ai_tools/lerobot** directory inside the container:
 ```bash
-cd /root/.cache/huggingface/lerobot/
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 Run the following command to launch the dataset visualization tool:

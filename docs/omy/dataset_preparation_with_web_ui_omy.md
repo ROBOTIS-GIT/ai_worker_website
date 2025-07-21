@@ -113,6 +113,7 @@ ai_server
 
 #### a. Access the Web UI in Your Browser
 Please enter the IP address of the PC running **Physical AI Server** (`physical_ai_server_bringup.launch.py`) into your web browser.  
+
 If you are running the **Physical AI Server** on the same computer, you can simply enter `localhost` instead.
 
 
@@ -138,7 +139,7 @@ On the **Home** page, select the type of robot you are using.
   <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 100%; ">
 </div>
 
-After clicking the **Set Robot Type** button, the status will change to `Connected`.
+After clicking the `Set Robot Type` button, the status will change to `Connected`.
 
    <img src="/imitation_learning/web_ui_connected_home_page.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Connected Screen</em></p>  
@@ -256,7 +257,7 @@ While recording is in progress, the following controls are available:
 - System resources (CPU, RAM, Storage) are displayed during recording
 :::
 
-#### Step 3. After recording:
+### 6. After recording:
    - The dataset will be saved on the **host machine**, not inside the **Docker container**.
    - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face.
    - The recorded dataset can be accessed at the following path from the **host environment**:
@@ -269,15 +270,20 @@ While recording is in progress, the following controls are available:
 ## Dataset Visualization
 
 Once data collection is complete, you can preview and inspect your recorded dataset using the following steps.  
-a. Access the **physical_ai_tools** Docker environment:
+
+#### a. Access the **physical_ai_tools** Docker environment
 ```bash
 cd physical_ai_tools/docker && ./container.sh enter
 ```
-b. Move to the directory where the dataset is stored inside the container:
+
+#### b. Launch the dataset visualization tool:
+
+Move to the **physical_ai_tools/lerobot** directory inside the container:
 ```bash
-cd /root/ros2_ws/src/physical_ai_tools/lerobot
+cd /root/.cache/huggingface/lerobot/
 ```
-c. Run the following command to launch the dataset visualization tool:
+
+Run the following command to launch the dataset visualization tool:
 ```bash
 python lerobot/scripts/visualize_dataset_html.py \
   --host 0.0.0.0 \

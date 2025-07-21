@@ -174,7 +174,7 @@ export default defineConfig({
         {
           text: 'Imitation Learning',
           items: [
-            { text: 'Overview', link: '/omy/imitation_learning_overview/' },
+            { text: 'Overview', link: '/omy/imitation_learning_overview' },
             {
               text: 'Dataset Preparation', link: '/omy/dataset_preparation',
             },

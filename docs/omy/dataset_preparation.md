@@ -4,13 +4,13 @@
 
 This section describes the necessary setup steps before starting data preparation.  
 We will use a total of three terminals, each responsible for a different ROS 2 node:
-- **[Terminal 1 - Teleoperation Node](/omy/dataset_preparation_with_web_ui_omy#_1-launch-the-ros-2-teleoperation-node)**  
+- **[Terminal 1 - Teleoperation Node](/omy/dataset_preparation#_1-launch-the-ros-2-teleoperation-node)**  
 This terminal launches the ROS 2 teleoperation node that controls the manipulator.
 
-- **[Terminal 2 – Camera Node](/omy/dataset_preparation_with_web_ui_omy#_2-camera-setup)**  
+- **[Terminal 2 – Camera Node](/omy/dataset_preparation#_2-camera-setup)**  
 This terminal launches the RealSense camera node (or another supported camera) to stream visual data.
 
-- **[Terminal 3 – Physical AI Server](/omy/dataset_preparation_with_web_ui_omy#_3-launch-physical-ai-server)**  
+- **[Terminal 3 – Physical AI Server](/omy/dataset_preparation#_3-launch-physical-ai-server)**  
 This terminal starts the backend server that connects to the Web UI.
 
 Make sure to follow the setup instructions for each terminal in the order shown.

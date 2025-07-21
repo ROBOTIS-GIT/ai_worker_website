@@ -174,26 +174,15 @@ export default defineConfig({
         {
           text: 'Imitation Learning',
           items: [
-            { text: 'Overview', link: '/omy/imitation_learning_omy/' },
+            { text: 'Overview', link: '/omy/imitation_learning_overview/' },
             {
-              text: 'Dataset Preparation', link: '/omy/dataset_preparation_omy',
-              items: [
-                { text: 'Web UI', link: '/omy/dataset_preparation_with_web_ui_omy' },
-                { text: 'LeRobot CLI', link: '/omy/dataset_preparation_with_lerobot_cli_omy' }
-              ]
+              text: 'Dataset Preparation', link: '/omy/dataset_preparation',
             },
             {
-              text: 'Model Training', link: '/omy/model_training_omy',
-              items: [
-                { text: 'LeRobot CLI', link: '/omy/model_training_with_lerobot_cli_omy' }
-              ]
+              text: 'Model Training', link: '/omy/model_training',
             },
             {
-              text: 'Model Inference', link:'/omy/model_inference_omy',
-              items: [
-                { text: 'Web UI', link: '/omy/model_inference_with_web_ui_omy' },
-                { text: 'LeRobot CLI', link: '/omy/model_inference_with_lerobot_cli_omy' }
-              ]
+              text: 'Model Inference', link:'/omy/model_inference',
             }
           ]
         },

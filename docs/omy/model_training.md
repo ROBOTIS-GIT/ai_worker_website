@@ -1,6 +1,5 @@
-# Model Training with LeRobot CLI
-
-This guide walks you through the training imitation learning models for the OMY, based on datasets collected via the LeRobot CLI.
+# Model Training
+This guide walks you through the training imitation learning models for the OMY, based on datasets collected via Web UI.
 
 After [preparing your dataset](/omy/dataset_preparation_omy), you can proceed to train the policy model.
 
@@ -11,10 +10,24 @@ After [preparing your dataset](/omy/dataset_preparation_omy), you can proceed to
 
 The dataset to be used for training should be located at `/home/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
 
+::: info
+You can replace `${HF_USER}` with any folder name you prefer.
+:::
+
 ### 2. Setup Physical AI Tools
 ::: warning
 If the Physical AI Tools is already set, you can skip this step.
 :::
+
+```bash
+git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
+```
+```bash
+cd physical_ai_tools/docker
+```
+```bash
+./container start
+```
 
 ### 3. Train the Policy
 
@@ -23,10 +36,12 @@ If the Physical AI Tools is already set, you can skip this step.
 If the Physical AI Server is already running, you can skip this step.
 :::
 
-Enter the **Physical AI Tools** docker container:
+Go to **physical_ai_tools/docker** directory
 ```bash
 cd physical_ai_tools/docker
 ```
+Enter the **Physical AI Tools** docker container:
+
 ```bash
 container.sh enter
 ```

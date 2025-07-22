@@ -138,7 +138,7 @@ cd physical_ai_tools/docker
 Enter the **Physical AI Tools** Docker container:
 
 ```bash
-container.sh enter
+./container.sh enter
 ```
 
 Navigate to the LeRobot directory:

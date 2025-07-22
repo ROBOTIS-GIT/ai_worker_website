@@ -29,7 +29,7 @@ You can replace `${HF_USER}` with the exact folder name you specified during dat
 
 ### 2. Setup Physical AI Tools
 ::: warning
-If the Physical AI Tools Docker container is already running, you can skip this step.
+If the Physical AI Tools is already set up, you can skip this step.
 :::
 
 `USER PC`
@@ -59,7 +59,7 @@ cd physical_ai_tools/docker
 Enter the **Physical AI Tools** Docker container:
 
 ```bash
-container.sh enter
+./container.sh enter
 ```
 Then, launch the Physical AI Server with the following command:
 

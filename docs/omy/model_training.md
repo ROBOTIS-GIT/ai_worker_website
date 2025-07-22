@@ -132,8 +132,29 @@ Click `Start Training` to begin training the policy. The training results will b
 
 ### (Optional) Uploading Checkpoints to Hugging Face
 
+Go to **physical_ai_tools/docker** directory:
+
+`USER PC`
+```bash
+cd physical_ai_tools/docker
+```
+Enter the **Physical AI Tools** Docker container:
+
+`USER PC`
+```bash
+container.sh enter
+```
+
+Navigate to the LeRobot directory:
+
+`USER PC`
+```bash
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
+```
+
 To upload the latest trained checkpoint to the Hugging Face Hub:
 
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 huggingface-cli upload ${HF_USER}/act_omy_test \
   outputs/train/act_omy_test/checkpoints/last/pretrained_model

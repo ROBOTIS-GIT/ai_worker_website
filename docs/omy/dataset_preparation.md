@@ -1,4 +1,4 @@
-# Dataset Preparation with Web UI
+# Dataset Preparation
 
 ## Prerequisites
 

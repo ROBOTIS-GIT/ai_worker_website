@@ -175,6 +175,11 @@ export default defineConfig({
             { text: 'Overview', link: '/omy/imitation_learning_overview' },
             {
               text: 'Dataset Preparation', link: '/omy/dataset_preparation',
+              items: [
+                { text: 'Prerequisites', link: '/omy/dataset_preparation_prerequisites' },
+                { text: 'Recording', link: '/omy/dataset_preparation_recording' },
+                { text: 'Visualization', link: '/omy/dataset_preparation_visualization' }
+              ]
             },
             {
               text: 'Model Training', link: '/omy/model_training',

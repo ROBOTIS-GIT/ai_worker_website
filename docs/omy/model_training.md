@@ -1,10 +1,25 @@
 # Model Training
-This guide walks you through the training imitation learning models for the OMY, based on datasets collected via Web UI.
+This guide walks you through the training imitation learning models for the OMY, based on datasets collected via Web UI or Lerobot CLI
 
 After [preparing your dataset](/omy/dataset_preparation_omy), you can proceed to train the policy model.
 
+You can choose one of the following options:
 
-## Training on Your PC
+
+<div style='display: flex; justify-content: flex-start; gap: 30px;'>
+<a href="#model-training-with-web-ui" class="button-dataset-preparation-option">
+Option 1<br>Web UI (Recommended)
+</a>
+
+<a href="#model-training-with-lerobot-cli" class="button-dataset-preparation-option">
+Option 2<br>LeRobot CLI (Optional)
+</a>
+</div>
+
+---
+
+# Model Training With Web UI
+
 
 ### 1. Prepare Your Dataset
 
@@ -118,6 +133,50 @@ To upload the latest trained checkpoint to the Hugging Face Hub:
 ```bash
 huggingface-cli upload ${HF_USER}/act_omy_test \
   outputs/train/act_omy_test/checkpoints/last/pretrained_model
+```
+
+This makes your model accessible from anywhere and simplifies deployment.
+
+---
+
+# Model Training With LeRobot CLI
+
+### 1. Set Up the LeRobot Framework
+
+First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally.
+
+
+### 2. Prepare Your Dataset
+
+The dataset to be used for training should be located at `/home/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
+
+::: info
+You can replace `${HF_USER}` with any folder name you prefer.
+:::
+
+### 3. Train the Policy
+
+Once the dataset has been transferred, you can train a policy using the following command:
+
+```bash
+python lerobot/scripts/train.py \
+  --dataset.repo_id=${HF_USER}/ffw_test \
+  --policy.type=act \
+  --output_dir=outputs/train/act_ffw_test \
+  --policy.device=cuda \
+  --log_freq=100 \
+  --save_freq=1000
+```
+
+Training time depends on your hardware and dataset size, but typically ranges from several hours to a full day.
+
+### (Optional) Uploading Checkpoints to Hugging Face
+
+To upload the latest trained checkpoint to the Hugging Face Hub:
+
+```bash
+huggingface-cli upload ${HF_USER}/act_ffw_test \
+  outputs/train/act_ffw_test/checkpoints/last/pretrained_model
 ```
 
 This makes your model accessible from anywhere and simplifies deployment.

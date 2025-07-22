@@ -1,5 +1,5 @@
 # Model Training
-This guide walks you through the training imitation learning models for the OMY, based on datasets collected via Web UI.
+This guide walks you through training imitation learning models for OMY, based on datasets collected via the Web UI.
 
 Once [preparing your dataset](/omy/dataset_preparation_omy) is done, the policy model can be trained using either the Web UI or the LeRobot CLI.
 
@@ -87,7 +87,7 @@ Go to the `Training` page and follow the steps below:
 
   <img src="/imitation_learning/web_ui_training_page.png" alt="Web UI" style="width: 100%; ">
 
-- Step 1: Select the `Dataset` and `Policy Type` and `Device`.
+- Step 1: Select the `Dataset`, `Policy Type` and `Device`.
 - Step 2: Enter the `Output Folder Name`.
 - Step 3: (Optional) Modify `Additional Options` if needed.
 
@@ -128,8 +128,7 @@ style="width: 50%; ">
 | **save frequency** | How often (in steps) to save model checkpoints. Lower values create more backup points but use more storage space. |
 :::
 
-Click `Start Training` to begin training the policy.
-The training results will be saved in the `physical_ai_tools/lerobot/outputs/train/` directory.
+Click `Start Training` to begin training the policy. The training results will be saved in the `physical_ai_tools/lerobot/outputs/train/` directory.
 
 ### (Optional) Uploading Checkpoints to Hugging Face
 
@@ -184,5 +183,5 @@ python lerobot/scripts/train.py \
   --dataset.repo_id=${HF_USER}/ffw_test \
   --policy.type=act \
   --output_dir=outputs/train/act_ffw_test \
-  --policy.device=cuda \
+  --policy.device=cuda
 ```

@@ -4,18 +4,8 @@ Once your model is trained, you can deploy it on the OMY for inference.
 
 ## Model Deployment and Inference
 
-### 1. Transfer Model to Robot PC
-::: info
-If you trained your model directly on NVIDIA Jetson AGX Orin, you can skip this step.
-:::
-Change ownership of the model directory. This step must be performed **on the robot PC**, **not inside the Docker container**:
-```bash
-sudo chown -R robotis ./
-```
-Move your model folder from your local PC to the model directory on the Robot PC using `scp`:
-```bash
-scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/open_manipulator/docker/lerobot/outputs/train
-```
+### 1. Prepare your Model
+
 
 ### 2. Open a Terminal and Enter Docker Container
 ```bash

@@ -36,11 +36,9 @@ If the Physical AI Tools Docker container is already running, you can skip this 
 ```bash
 git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
 ```
-`USER PC`
 ```bash
 cd physical_ai_tools/docker
 ```
-`USER PC`
 ```bash
 ./container start
 ```
@@ -60,13 +58,12 @@ cd physical_ai_tools/docker
 ```
 Enter the **Physical AI Tools** Docker container:
 
-`USER PC`
 ```bash
 container.sh enter
 ```
 Then, launch the Physical AI Server with the following command:
 
-`USER PC`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 ai_server
 ```
@@ -140,21 +137,19 @@ cd physical_ai_tools/docker
 ```
 Enter the **Physical AI Tools** Docker container:
 
-`USER PC`
 ```bash
 container.sh enter
 ```
 
 Navigate to the LeRobot directory:
 
-`USER PC`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 To upload the latest trained checkpoint to the Hugging Face Hub:
 
-`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 huggingface-cli upload ${HF_USER}/act_omy_test \
   outputs/train/act_omy_test/checkpoints/last/pretrained_model
@@ -184,21 +179,19 @@ cd physical_ai_tools/docker
 ```
 Enter the **Physical AI Tools** Docker container:
 
-`USER PC`
 ```bash
 container.sh enter
 ```
 
 Navigate to the LeRobot directory:
 
-`USER PC`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 Once the dataset has been transferred, you can train a policy using the following command:
 
-`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 python lerobot/scripts/train.py \
   --dataset.repo_id=${HF_USER}/ffw_test \

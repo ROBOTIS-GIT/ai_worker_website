@@ -4,13 +4,39 @@ Once your model is trained, you can deploy it on the OMY for inference.
 
 ## Model Deployment and Inference
 
-### 1. Prepare your Model
+### 1. Setup Physical AI Tools
+::: warning
+If the Physical AI Tools is already set, you can skip this step.
+:::
 
+`USER PC`
+```bash
+git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
+```
+```bash
+cd physical_ai_tools/docker
+```
+```bash
+./container start
+```
 
-### 2. Open a Terminal and Enter Docker Container
+### 2. Prepare Your Model
+
+`USER PC`
+
+Please place your trained model in the `physical_ai_tools/lerobot/outputs/` directory.
+
+### 3. Bring up OMY follower node
+
+::: warning
+The robot will start moving when you run bringup. Please be careful.
+:::
+
+`ROBOT PC`
 ```bash
 cd open_manipulator && ./docker/container.sh enter
 ```
+`ROBOT PC` `🐋 OPEN MANIPULATOR`
 ```bash
 ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
 ```
@@ -23,14 +49,20 @@ ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
 If the Physical AI Server is already running, you can skip this step.
 :::
 
-Open a new terminal and enter the Docker container:
+Go to **physical_ai_tools/docker** directory:
+
+`USER PC`
+```bash
+cd physical_ai_tools/docker
+```
+Enter the **Physical AI Tools** Docker container:
 
 ```bash
-cd open_manipulator && ./docker/container.sh enter
+./container.sh enter
 ```
-
 Then, launch the Physical AI Server with the following command:
 
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 ai_server
 ```
@@ -73,24 +105,6 @@ To begin inference, use the **Control Panel** located at the bottom of the page:
   - The `Start` button begins inference.
   - The `Finish` button stops inference.
 
-## Visualizing Inference Results
-
-After running inference, you can visualize the results using the same visualization tool used for datasets:
-
-```bash
-python lerobot/scripts/visualize_dataset_html.py \
-  --host 0.0.0.0 \
-  --port 9091 \
-  --repo-id ${HF_USER}/eval_omy_test
-```
-
-Then open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to see how your model performed.
-
-::: tip
-If you have another device connected to the same network as the host machine, open `http://{robot type}-{serial number}.local:9091` in your browser to see how your model performed.
-
-For example, `http://omy-SNPR48A0000.local:9091`.
-:::
 
 ## Troubleshooting
 

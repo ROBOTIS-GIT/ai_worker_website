@@ -4,21 +4,14 @@ Once your model is trained, you can deploy it on the OMY for inference.
 
 ## Model Deployment and Inference
 
-### 1. Setup Physical AI Tools
+### 1. Setup Physical AI Tools Docker Container
 ::: warning
-If the Physical AI Tools is already set, you can skip this step.
+If the Physical AI Tools is already set up, you can skip this step.
 :::
 
-`USER PC`
-```bash
-git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
-```
-```bash
-cd physical_ai_tools/docker
-```
-```bash
-./container start
-```
+If you haven't set up the Physical AI Tools Docker container, please refer to the link below for setup instructions.
+
+[Setup Physical AI Tools Docker Container](/omy/dataset_preparation_prerequisites#setup-physical-ai-tools-docker-container)
 
 ### 2. Prepare Your Model
 

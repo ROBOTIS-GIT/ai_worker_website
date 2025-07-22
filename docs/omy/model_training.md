@@ -27,21 +27,14 @@ The dataset to be used for training should be located at `${HOME}/.cache/hugging
 You can replace `${HF_USER}` with the exact folder name you specified during dataset recording.
 :::
 
-### 2. Setup Physical AI Tools
+### 2. Setup Physical AI Tools Docker Container
 ::: warning
 If the Physical AI Tools is already set up, you can skip this step.
 :::
 
-`USER PC`
-```bash
-git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
-```
-```bash
-cd physical_ai_tools/docker
-```
-```bash
-./container start
-```
+If you haven't set up the Physical AI Tools Docker container, please refer to the link below for setup instructions.
+
+[Setup Physical AI Tools Docker Container](/omy/dataset_preparation_prerequisites#setup-physical-ai-tools-docker-container)
 
 ### 3. Train the Policy
 
@@ -129,13 +122,12 @@ Click `Start Training` to begin training the policy. The training results will b
 
 ### (Optional) Uploading Checkpoints to Hugging Face
 
-Go to **physical_ai_tools/docker** directory:
+Navigate to **physical_ai_tools/docker** directory and enter the Docker container:
 
 `USER PC`
 ```bash
 cd physical_ai_tools/docker
 ```
-Enter the **Physical AI Tools** Docker container:
 
 ```bash
 ./container.sh enter
@@ -156,8 +148,6 @@ huggingface-cli upload ${HF_USER}/act_omy_test \
 ```
 
 This makes your model accessible from anywhere and simplifies deployment.
-
----
 
 ## Model Training With LeRobot CLI
 

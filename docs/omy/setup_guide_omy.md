@@ -56,7 +56,7 @@ cd /data/docker/open_manipulator/docker
 ```
 4. Access the container.
 ```bash
-./container.sh start && /container.sh enter
+./container.sh start && ./container.sh enter
 ```
 
 ::: tip

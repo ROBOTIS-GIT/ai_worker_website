@@ -16,6 +16,12 @@ Then, launch the ROS 2 teleoperation node with following command:
 ::: warning
 Executing the code will cause OMY to move immediately. Please stay clear and be cautious.
 :::
+`USER PC` `PHYSICAL AI TOOLS DOCKER CONTAINER`
+```bash
+ros2 launch open_manipulator_bringup omy_ai.launch.py
+```
+
+`Robot SBC` `🐋 OPEN MANIPULATOR`
 ```bash
 ros2 launch open_manipulator_bringup omy_ai.launch.py
 ```
@@ -28,7 +34,6 @@ Open a new terminal on your host machine and enter the **Open Manipulator** Dock
 ```bash
 cd open_manipulator/docker && ./container.sh enter
 ```
-
 ### b. Setup ROS Domain ID
 
 Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.

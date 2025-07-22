@@ -56,7 +56,7 @@ The **Record** page is divided into three main sections:
 
 The selected robot type is also displayed in the top left corner.
 
-### 4. Visualize RGB images
+### 4. Visualize RGB Images
 
 The image stream is displayed automatically upon entering the **Record** page.
 You can remove the current stream and select a different one as needed.
@@ -178,10 +178,10 @@ While recording is in progress, the following controls are available:
 :::
 
 ## After Recording
-   - The dataset will be saved on the **host machine**, not inside the **Docker container**.
+   - The dataset will be saved on the **host machine**.
    - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face.
    - The recorded dataset can be accessed at the following path from the **host environment**:
 
 ```bash
-~/physical_ai_tools/docker/huggingface/lerobot
+${HOME}/.cache/huggingface/lerobot/
 ```

@@ -1,10 +1,9 @@
 # Model Training
-This guide walks you through the training imitation learning models for the OMY, based on datasets collected via Web UI or Lerobot CLI
+This guide walks you through the training imitation learning models for the OMY, based on datasets collected via Web UI.
 
-After [preparing your dataset](/omy/dataset_preparation_omy), you can proceed to train the policy model.
+Once [preparing your dataset](/omy/dataset_preparation_omy) is done, the policy model can be trained using either the Web UI or the LeRobot CLI.
 
 You can choose one of the following options:
-
 
 <div style='display: flex; justify-content: flex-start; gap: 30px;'>
 <a href="#model-training-with-web-ui" class="button-dataset-preparation-option">
@@ -18,28 +17,30 @@ Option 2<br>LeRobot CLI (Optional)
 
 ---
 
-# Model Training With Web UI
-
+## Model Training With Web UI
 
 ### 1. Prepare Your Dataset
 
-The dataset to be used for training should be located at `/home/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
+The dataset to be used for training should be located at `${HOME}/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
 
 ::: info
-You can replace `${HF_USER}` with any folder name you prefer.
+You can replace `${HF_USER}` with the exact folder name you specified during dataset recording.
 :::
 
 ### 2. Setup Physical AI Tools
 ::: warning
-If the Physical AI Tools is already set, you can skip this step.
+If the Physical AI Tools Docker container is already running, you can skip this step.
 :::
 
+`USER PC`
 ```bash
 git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
 ```
+`USER PC`
 ```bash
 cd physical_ai_tools/docker
 ```
+`USER PC`
 ```bash
 ./container start
 ```
@@ -48,28 +49,33 @@ cd physical_ai_tools/docker
 
 #### a. Launch Physical AI Server
 ::: warning
-If the Physical AI Server is already running, you can skip this step.
+If the Physical AI Tools Docker container is already running, you can skip this step.
 :::
 
-Go to **physical_ai_tools/docker** directory
+Go to **physical_ai_tools/docker** directory:
+
+`USER PC`
 ```bash
 cd physical_ai_tools/docker
 ```
-Enter the **Physical AI Tools** docker container:
+Enter the **Physical AI Tools** Docker container:
 
+`USER PC`
 ```bash
 container.sh enter
 ```
 Then, launch the Physical AI Server with the following command:
+
+`USER PC`
 ```bash
 ai_server
 ```
 
 #### b. Open the Web UI 
 
-Open your web browser and navigate the Web UI (Physical AI Manager).
+Open your web browser and navigate to the Web UI (Physical AI Manager).
 
-(Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/ai_worker/dataset_preparation_with_web_ui_ai_worker#_3-open-the-web-ui))
+(Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/omy/dataset_preparation_recording#_3-open-the-web-ui) for more details.)
 
 On the **Home** page, select the type of robot you are using.
 
@@ -77,31 +83,31 @@ On the **Home** page, select the type of robot you are using.
 
 #### c. Train the Policy
 
-Go to the `Training` page:
+Go to the `Training` page and follow the steps below:
 
   <img src="/imitation_learning/web_ui_training_page.png" alt="Web UI" style="width: 100%; ">
 
-- Select `Dataset` and `Policy type and device`
-- Enter `Output folder name`
-- Change `Additional Options` if you want
+- Step 1: Select the `Dataset` and `Policy Type` and `Device`.
+- Step 2: Enter the `Output Folder Name`.
+- Step 3: (Optional) Modify `Additional Options` if needed.
 
 :::tabs
 == Dataset
 
-The datasets located in the `~/.cache/huggingface/` (inside the Docker container, `/root/.cache/huggingface/`) directory will be displayed.
+The datasets stored in the `~/.cache/huggingface/` directory on the host (or `/root/.cache/huggingface/` inside the Docker container) will be listed automatically.
 <img src="/imitation_learning/web_ui_training_dataset_selection.png" alt="Web UI" style="width: 50%; ">
+
 == Policy type and device
-Select the policy algorithm and computation device for training your model.
-- **Policy Type**: Choose the imitation learning algorithm (e.g., act, pi0, etc.)
-- **Device**: Select the hardware for training (e.g. cuda, cpu, npu, etc.)
+Select the policy and computation device for training your model.
+- **Policy Type**: Choose the imitation learning algorithm (e.g., act, pi0, etc.).
+- **Device**: Select the hardware to be used for training (e.g. cuda, cpu, etc.)
 
 <img src="/imitation_learning/web_ui_training_policy_selection.png" alt="Web UI" style="width: 50%; ">
+
 == Output folder name 
 Specify the name of the folder where your trained model will be saved. Then, check for duplicates. 
-
-This folder will be created in the default output directory (`<your_workspace>/physical_ai_tools/docker/output/`).
-
-Choose a descriptive name to easily identify your trained model later.
+This folder will be created in the default output directory (`<your_workspace>/physical_ai_tools/lerobot/outputs/`).
+Choose a descriptive and meaningful name so you can easily identify the trained model later.
 
 <img src="/imitation_learning/web_ui_training_output_folder_input.png" alt="Web UI" style="width: 50%; ">
 
@@ -122,9 +128,8 @@ style="width: 50%; ">
 | **save frequency** | How often (in steps) to save model checkpoints. Lower values create more backup points but use more storage space. |
 :::
 
-Click `Start Training` to start
-
-Training results will be saved to the `physical_ai_tools/lerobot/outputs/train/` directory.
+Click `Start Training` to begin training the policy.
+The training results will be saved in the `physical_ai_tools/lerobot/outputs/train/` directory.
 
 ### (Optional) Uploading Checkpoints to Hugging Face
 
@@ -139,44 +144,45 @@ This makes your model accessible from anywhere and simplifies deployment.
 
 ---
 
-# Model Training With LeRobot CLI
+## Model Training With LeRobot CLI
 
-### 1. Set Up the LeRobot Framework
-
-First, follow the [LeRobot installation instructions](https://github.com/ROBOTIS-GIT/lerobot) to set up the framework locally.
-
-
-### 2. Prepare Your Dataset
+### 1. Prepare Your Dataset
 
 The dataset to be used for training should be located at `/home/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
 
 ::: info
-You can replace `${HF_USER}` with any folder name you prefer.
+You can replace `${HF_USER}` with the folder name you used when recording your dataset.
 :::
 
-### 3. Train the Policy
+### 2. Train the Policy
+
+Go to **physical_ai_tools/docker** directory:
+
+`USER PC`
+```bash
+cd physical_ai_tools/docker
+```
+Enter the **Physical AI Tools** Docker container:
+
+`USER PC`
+```bash
+container.sh enter
+```
+
+Navigate to the LeRobot directory:
+
+`USER PC`
+```bash
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
+```
 
 Once the dataset has been transferred, you can train a policy using the following command:
 
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 python lerobot/scripts/train.py \
   --dataset.repo_id=${HF_USER}/ffw_test \
   --policy.type=act \
   --output_dir=outputs/train/act_ffw_test \
   --policy.device=cuda \
-  --log_freq=100 \
-  --save_freq=1000
 ```
-
-Training time depends on your hardware and dataset size, but typically ranges from several hours to a full day.
-
-### (Optional) Uploading Checkpoints to Hugging Face
-
-To upload the latest trained checkpoint to the Hugging Face Hub:
-
-```bash
-huggingface-cli upload ${HF_USER}/act_ffw_test \
-  outputs/train/act_ffw_test/checkpoints/last/pretrained_model
-```
-
-This makes your model accessible from anywhere and simplifies deployment.

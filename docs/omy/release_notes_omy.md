@@ -19,6 +19,10 @@ https://github.com/ROBOTIS-GIT/open_manipulator
 ## Physical AI Tools
 - https://github.com/ROBOTIS-GIT/physical_ai_tools
 
+### 0.6.1 (2025-07-23)
+* Implemented robust error handling during data collection to prevent server crashes due to incorrect robot type configuration
+* Contributors: Seongwoo Kim
+
 ### 0.6.0 (2025-07-23)
 * Added training-related service types and message types
 * Added a new training page for training imitation learning models

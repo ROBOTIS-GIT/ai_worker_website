@@ -97,11 +97,3 @@ To begin inference, use the **Control Panel** located at the bottom of the page:
 
   - The `Start` button begins inference.
   - The `Finish` button stops inference.
-
-
-## Troubleshooting
-
-- **Out of memory errors**: Try reducing the batch size with `--train.batch_size=16` or lower
-- **Low performance**: Consider collecting more diverse training data or increasing training duration
-- **Robot not responding**: Ensure the follower node is running and communication is established
-- **Training divergence**: Check your dataset quality and try decreasing the learning rate

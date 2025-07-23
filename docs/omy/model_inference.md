@@ -125,11 +125,33 @@ Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, locat
 
   <img src="/imitation_learning/web_ui_inference_task_info.png" alt="Web UI" style="width: 50%; ">
 
-::: details :point_right: Task Information Field Descriptions
-| Item                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Task Instruction** | A sentence that tells the robot what action to perform, such as `"pick and place object"`.                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Policy Path**      | The **absolute** path to your trained model checkpoint directory. This should point to the folder containing your trained model files such as `config.json`, `model.safetensors`, and `train_config.json`. (e.g., `/root/trained_model/omy_act/pretrained/`).                                                                                                                                                                                                                                                                                                |
+- Task Information Field Descriptions
+
+| Item | Description |
+| -------- | --- |
+| **Task Instruction** | A sentence that tells the robot what action to perform, such as `"pick and place object"`.|
+| **Policy Path** <br>`🐋 PHYSICAL AI TOOLS`| The **absolute** path to your trained model directory **inside the Docker container**(`🐋 PHYSICAL AI TOOLS`). This should point to the folder containing your trained model files such as `config.json`, `model.safetensors`, and `train_config.json`. <br>See the **Policy Path Example** below for reference. |
+
+::: details Policy Path Example
+
+```
+/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/
+└── example_model_folder/
+         ├── pretrained_model/    # ← This folder contains config.json, model.safetensors, train_config.json
+         │   ├── config.json
+         │   ├── model.safetensors
+         │   └── train_config.json
+         └── training_state/
+             ├── optimizer_param_groups.json
+             ├── optimizer_state.safetensors
+             ├── rng_state.safetensors
+             └── training_step.json
+
+```
+For a model folder structure like the one above, the **Policy Path** would be:
+
+`/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/example_model_folder/pretrained_model/`
+
 :::
 
 ::: info

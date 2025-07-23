@@ -2,6 +2,15 @@
 
 This section describes the necessary setup steps before starting data preparation.
 
+:::info
+When executing terminal commands in this document, refer to the indicators below to run them on the correct PC/container:
+
+- `USER PC`: Your PC with the camera connected, used for dataset collection with Physical AI Tools
+- `ROBOT PC`: The embedded SBC (Raspberry Pi) inside the OMY robot
+- `🐋 OPEN MANIPULATOR`: Open Manipulator Docker container
+- `🐋 PHYSICAL AI TOOLS`: Physical AI Tools Docker container
+:::
+
 ## Setup Open Manipulator Docker Container
 
 ::: warning

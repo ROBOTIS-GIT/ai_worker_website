@@ -179,8 +179,8 @@ While recording is in progress, the following controls are available:
 
 ## After Recording
    - The dataset will be saved on the **host machine**.
-   - If "Push to hub" is enabled, the dataset will be uploaded to Hugging Face.
-   - The recorded dataset can be accessed at the following path from the **host environment**:
+   - If **"Push to Hub"** is enabled, the dataset will be uploaded to Hugging Face.
+   - You can access the recorded dataset at the following path from from the **host environment** or **Docker container**:
 
 ```bash
 ${HOME}/.cache/huggingface/lerobot/

@@ -158,6 +158,7 @@ ros2 launch physical_ai_server physical_ai_server_bringup.launch.py
 ```
 Or, use shortcut command:
 
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 ai_server
 ```

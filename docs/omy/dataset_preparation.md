@@ -26,6 +26,10 @@ The following sections describe the dataset preparation workflow for imitation l
       <td>Requires a predefined number of episodes and recording duration</td>
       <td>No predefined limits; record freely until complete</td>
     </tr>
+    <tr>
+      <td>Only one task is recorded per session</td>
+      <td>Multiple tasks are recorded in a single session, grouped into a scenario that reflects how many scenarios have been captured</td>
+    </tr>
   </tbody>
 </table>
 

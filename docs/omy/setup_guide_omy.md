@@ -68,7 +68,7 @@ When you first receive the OMY, the manipulator is folded as shown in the image 
 You can move it to the initial position by running the following command for **UNPACKING**:
 
 ```bash
-ros2 launch open_manipulator_bringup unpack_y.launch.py
+ros2 launch open_manipulator_bringup omy_3m_unpack.launch.py
 ```
 
 The image below shows the initial position after **UNPACKING**.
@@ -78,7 +78,7 @@ The image below shows the initial position after **UNPACKING**.
 
 and the following is the command to PACK it back into it's folded configuration.
 ```bash
-ros2 launch open_manipulator_bringup pack_y.launch.py
+ros2 launch open_manipulator_bringup omy_3m_pack.launch.py
 ```
 
 ## Software Setup

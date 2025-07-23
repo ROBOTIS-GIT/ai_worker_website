@@ -34,7 +34,7 @@ ssh root@omy-SNPR44B9999.local
 
 ## Docker Setup
 1. Connect to the OMY via SSH.
-2. Docker-related files are located in `/data/docker/open_manipulator/docker`. Navigate to this location using `cd`:
+2. open_manipulator package is located in `/data/docker/open_manipulator`. Navigate to this location using `cd`:
 ```bash
 cd /data/docker/open_manipulator
 ```

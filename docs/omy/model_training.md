@@ -1,7 +1,7 @@
 # Model Training
 This guide walks you through training imitation learning models for OMY, based on datasets collected via the Web UI.
 
-Once [preparing your dataset](/omy/dataset_preparation_omy) is done, the policy model can be trained using either the Web UI or the LeRobot CLI.
+Once [preparing your dataset](/omy/dataset_preparation) is done, the policy model can be trained using either the Web UI or the LeRobot CLI.
 
 You can choose one of the following options:
 

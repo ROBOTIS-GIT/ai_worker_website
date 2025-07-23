@@ -15,17 +15,35 @@ Option 2<br>LeRobot CLI (Optional)
 </a>
 </div>
 
----
 
 ## Model Training With Web UI
 
 ### 1. Prepare Your Dataset
 
-The dataset to be used for training should be located at `${HOME}/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
+The dataset to be used for training should be located at
+
+ `${HOME}/.cache/huggingface/lerobot/${HF_USER}/`
+ 
+Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
 
 ::: info
-You can replace `${HF_USER}` with the exact folder name you specified during dataset recording.
+`${HF_USER}` can be any folder name you prefer.
 :::
+
+Please refer to the folder structure tree below:
+
+```
+~/.cache/huggingface/lerobot/
+  ├── USER_A/           # ← ${HF_USER} folder
+  │   ├── dataset_1/    # ← Dataset
+  │   │   ├── data/
+  │   │   ├── meta/
+  │   │   └── videos/
+  │   └── dataset_2/
+  └── USER_B/
+      └── dataset_3/
+
+```
 
 ### 2. Setup Physical AI Tools Docker Container
 ::: warning

@@ -17,7 +17,54 @@ If you haven't set up the Physical AI Tools Docker container, please refer to th
 
 `USER PC`
 
-Please place your trained model in the `physical_ai_tools/lerobot/outputs/` directory.
+Please place your trained model in the following directory:
+
+`<Your workspace>/physical_ai_tools/lerobot/outputs/train/`
+
+Models trained using Physical AI Tools are automatically saved to that path. However, if you downloaded the model from a hub or copied it from another PC, you need to move the model to that location. 
+
+
+::: details Available Folder Structures
+Please refer to the folder structure tree below:
+
+The following folder structures are all valid (example_model_folder_1, 2, 3).
+
+```
+<Your workspace>/physical_ai_tools/lerobot/outputs/train/
+├── example_model_folder_1
+│   └── checkpoints/
+│       ├── 000250/
+│       │   ├── pretrained_model/
+│       │   │   ├── config.json
+│       │   │   ├── model.safetensors
+│       │   │   └── train_config.json
+│       │   └── training_state
+│       │       ├── optimizer_param_groups.json
+│       │       ├── optimizer_state.safetensors
+│       │       ├── rng_state.safetensors
+│       │       └── training_step.json
+│       └── 000500/
+│           ├── pretrained_model/
+|           │   └─ (...)
+│           └── training_state/
+|               └─ (...)
+├── example_model_folder_2/
+│        ├── pretrained_model/
+|        |   └─ (...)
+│        └── training_state
+|            └─ (...)
+└── example_model_folder_3/
+        ├── config.json
+        ├── model.safetensors
+        └── train_config.json
+```
+:::
+
+::: info
+After placing the model in the above directory, you can access it from within the Docker container at:
+
+`/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/`
+:::
 
 ### 3. Bring up OMY follower node
 

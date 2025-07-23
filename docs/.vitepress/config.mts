@@ -192,7 +192,9 @@ export default defineConfig({
         {
           text: 'Simulation',
           items: [
-            { text: 'Overview', link: '/omy/simulation_omy'}
+            { text: 'Overview', link: '/omy/simulation_omy'},
+            { text: 'Gazebo', link: '/omy/gazebo_omy' },
+            { text: 'Isaac Sim/Lab', link: '/omy/robotis_lab_omy' }
           ]
         },
         {

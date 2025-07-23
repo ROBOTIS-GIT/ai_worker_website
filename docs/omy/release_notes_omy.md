@@ -37,7 +37,6 @@ https://github.com/ROBOTIS-GIT/open_manipulator
 * Added functionality for evaluating trained models
 * Contributors: Dongyun Kim
 
-
 ### 0.5.10 (2025-07-15)
 * Added multi-tasking data recording support to the Physical AI Server
 * Contributors: Kiwoong Park, Seongwoo Kim

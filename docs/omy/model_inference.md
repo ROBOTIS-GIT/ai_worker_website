@@ -27,11 +27,11 @@ The robot will start moving when you run bringup. Please be careful.
 
 `ROBOT PC`
 ```bash
-cd open_manipulator && ./docker/container.sh enter
+cd /data/docker/open_manipulator/docker && ./container.sh enter
 ```
 `ROBOT PC` `🐋 OPEN MANIPULATOR`
 ```bash
-ros2 launch open_manipulator_bringup hardware_y_follower.launch.py
+ros2 launch open_manipulator_bringup omy_f3m_follower_ai.launch.py ros2_control_type:=omy_f3m_smooth
 ```
 
 ### 4. Run Inference

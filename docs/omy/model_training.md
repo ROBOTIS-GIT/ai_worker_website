@@ -49,8 +49,10 @@ Go to **physical_ai_tools/docker** directory:
 ```bash
 cd physical_ai_tools/docker
 ```
+
 Enter the **Physical AI Tools** Docker container:
 
+`USER PC`
 ```bash
 ./container.sh enter
 ```

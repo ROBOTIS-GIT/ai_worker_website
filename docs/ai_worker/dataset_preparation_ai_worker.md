@@ -12,7 +12,7 @@ You can record your own dataset using **one of the following methods**:
 
 You can record your dataset using the Web UI provided by the Physical AI Manager.
 
-<a href="/ai_worker/dataset_preparation_with_web_ui_ai_worker" class="button-dataset-preparation-option">
+<a href="/ai_worker/dataset_preparation_with_web_ui_ai_worker" class="button-shortcut">
 Option 1<br>Web UI (Recommended)
 </a>
 
@@ -20,7 +20,7 @@ Option 1<br>Web UI (Recommended)
 
 This method is no longer officially supported, but remains available for legacy users or automated workflows.
 
-<a href="/ai_worker/dataset_preparation_with_lerobot_cli_ai_worker" class="button-dataset-preparation-option">
+<a href="/ai_worker/dataset_preparation_with_lerobot_cli_ai_worker" class="button-shortcut">
 Option 2<br>LeRobot CLI
 </a>
 

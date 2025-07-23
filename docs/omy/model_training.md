@@ -6,11 +6,11 @@ Once [preparing your dataset](/omy/dataset_preparation_omy) is done, the policy 
 You can choose one of the following options:
 
 <div style='display: flex; justify-content: flex-start; gap: 30px;'>
-<a href="#model-training-with-web-ui" class="button-dataset-preparation-option">
+<a href="#model-training-with-web-ui" class="button-shortcut">
 Option 1<br>Web UI (Recommended)
 </a>
 
-<a href="#model-training-with-lerobot-cli" class="button-dataset-preparation-option">
+<a href="#model-training-with-lerobot-cli" class="button-shortcut">
 Option 2<br>LeRobot CLI (Optional)
 </a>
 </div>

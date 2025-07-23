@@ -186,8 +186,8 @@ Once the dataset has been transferred, you can train a policy using the followin
 
 ```bash
 python lerobot/scripts/train.py \
-  --dataset.repo_id=${HF_USER}/ffw_test \
+  --dataset.repo_id=${HF_USER}/omy_test \
   --policy.type=act \
-  --output_dir=outputs/train/act_ffw_test \
+  --output_dir=outputs/train/act_omy_test \
   --policy.device=cuda
 ```

@@ -34,15 +34,21 @@ ssh root@omy-SNPR44B9999.local
 
 ## Docker Setup
 1. Connect to the OMY via SSH.
-2. Check running containers using `docker ps`.
-3. Docker-related files are located in `/data/docker/open_manipulator/docker`. Navigate to this location using `cd`:
+2. Docker-related files are located in `/data/docker/open_manipulator/docker`. Navigate to this location using `cd`:
 ```bash
-cd /data/docker/open_manipulator/docker
+cd /data/docker/open_manipulator
 ```
-4. Access the container using `./container.sh enter`.
+3. Update the package and recreate the container with the latest docker image:
+```bash
+git checkout jazzy && git pull && ./docker/container.sh start
+```
+4. Access the container:
+```bash
+./docker/container.sh enter
+```
 
 ::: tip
-The `/workspace` folder inside the container is volume mapped (a feature that links file systems) to `/data/docker/open_manipulator/workspace` on the host. All other areas are volatile and will be lost if the container is damaged or deleted.
+The `/workspace` folder inside the container is volume mapped (a feature that links file systems) to `/data/docker/open_manipulator/workspace` on the host. All other areas are volatile and will be lost if the container is damaged or deleted. For more details, see the [Docker Volume Configuration](#docker-volume-configuration) section.
 :::
 
 
@@ -151,8 +157,11 @@ cd open_manipulator
 
 # Stop the container
 ./docker/container.sh stop
-```
 
+```
+::: warning
+Stopping the container with `./container.sh stop` will remove the container. Any files that are not located in the volume-mapped directories (such as `/workspace` or other mapped paths) will be permanently deleted. Make sure to save your important files in the appropriate volume-mapped locations to avoid data loss. For more details, see the [Docker Volume Configuration](#docker-volume-configuration) section.
+:::
 ### Docker Command Reference
 
 | Command            | Description                    |
@@ -160,7 +169,7 @@ cd open_manipulator
 | `help`             | Display usage help             |
 | `start`    | Start container     |
 | `enter`            | Enter the running container    |
-| `stop`             | Stop the container             |
+| `stop`             | Stop and remove the container             |
 
 ### Example Usage
 

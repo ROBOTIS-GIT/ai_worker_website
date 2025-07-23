@@ -53,9 +53,3 @@ Access http://127.0.0.1:9091 to view the dataset. You should see a web interface
 ::: tip
 Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to preview the dataset.
 :::
-
-::: tip
-On a device connected to the same network as the host machine, open `http://omy-{serial number}.local:9091` in your browser to preview the dataset.
-
-For example, `http://omy-SNPR48A0000.local:9091`.
-:::

@@ -5,12 +5,15 @@
 ### 1. Open the Web UI
 
 #### a. Access the Web UI in Your Browser
-Please enter the IP address of the PC running **Physical AI Server** (`physical_ai_server_bringup.launch.py`) into your web browser.  
+Please enter the IP address of the PC running **Physical AI Server** (`physical_ai_server_bringup.launch.py` or `ai_server`) into your web browser.  
 
-If you are running the **Physical AI Server** on the same computer, you can simply enter `localhost` instead.
+::: tip
+If you are running the **Physical AI Server** and opening the web browser on the same computer,<br>you can simply enter `http://localhost`
+
+:::
 
 ##### For example:
-- If the PC running **Physical AI Server** has IP address `192.168.0.105`
+- If the PC running **Physical AI Server** has IP address 192.168.0.105<br>Access `http://192.168.0.105` as shown below:
 
   <img src="/imitation_learning/web_ui_home_page_address.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Enter the IP Address</em></p>

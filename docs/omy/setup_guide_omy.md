@@ -40,7 +40,9 @@ cd /data/docker/open_manipulator
 ```
 3. Update the package and recreate the container with the latest docker image:
 ```bash
-git checkout jazzy && git pull && ./docker/container.sh start
+git checkout jazzy
+git pull
+./docker/container.sh start
 ```
 4. Access the container:
 ```bash

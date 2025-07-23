@@ -102,30 +102,7 @@ Build the Physical AI Server with the following command:
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 
-## Launch the ROS 2 Teleoperation Node
-
-### 1. Access the Robot PC
-Access the Robot PC either directly or via SSH. For SSH connection instructions, refer to the [SSH connection](/omy/setup_guide_omy#ssh-connection). 
-
-### 2. Launch the ROS 2 Teleoperation Node
-
-Enter the Docker Container
-
-`ROBOT PC`
-```bash
-cd /data/docker/open_manipulator/docker && ./container.sh enter
-```
-
-Then, launch the ROS 2 teleoperation node with following command:
-::: warning
-Executing the code will cause OMY to move immediately. Please stay clear and be cautious.
-:::
-`ROBOT PC` `🐋 OPEN MANIPULATOR`
-```bash
-ros2 launch open_manipulator_bringup omy_ai.launch.py
-```
-
-## Start the Camera Node
+## Launch the Camera Node
 
 Navigate to **open_manipulator/docker** directory and enter the Docker container:
 
@@ -147,7 +124,7 @@ ros2 launch realsense2_camera rs_launch.py camera_name:='cam_wrist'
 You can also use other camera models such as ZED2 or USB cameras, if needed.
 
 
-## Launch Physical AI Server
+## Launch the Physical AI Server
 
 Navigate to **phisical_ai_tools/docker** directory and esnter the Docker Container:
 
@@ -169,4 +146,27 @@ Or, use shortcut command:
 
 ```bash
 ai_server
+```
+
+## Launch the ROS 2 Teleoperation Node
+
+### 1. Access the Robot PC
+Access the Robot PC either directly or via SSH. For SSH connection instructions, refer to the [SSH connection](/omy/setup_guide_omy#ssh-connection). 
+
+### 2. Launch the ROS 2 Teleoperation Node
+
+Enter the Docker Container
+
+`ROBOT PC`
+```bash
+cd /data/docker/open_manipulator/docker && ./container.sh enter
+```
+
+Then, launch the ROS 2 teleoperation node with following command:
+::: warning
+Executing the code will cause OMY to move immediately. Please stay clear and be cautious.
+:::
+`ROBOT PC` `🐋 OPEN MANIPULATOR`
+```bash
+ros2 launch open_manipulator_bringup omy_ai.launch.py
 ```

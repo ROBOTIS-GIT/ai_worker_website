@@ -108,10 +108,7 @@ export default defineConfig({
               ]
             },
             {
-              text: 'Model Training', link: '/ai_worker/model_training_ai_worker',
-              items: [
-                { text: 'LeRobot CLI', link: '/ai_worker/model_training_with_lerobot_cli_ai_worker' }
-              ]
+              text: 'Model Training', link: '/ai_worker/model_training',
             },
             {
               text: 'Model Inference', link:'/ai_worker/model_inference_ai_worker',

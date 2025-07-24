@@ -100,7 +100,7 @@ Go to the `Training` page and follow the steps below:
 - Step 2: Enter the `Output Folder Name`.
 - Step 3: (Optional) Modify `Additional Options` if needed.
 
-For more
+For more information about these **options**, please refer to the descriptions below.
 
 :::tabs
 == Dataset

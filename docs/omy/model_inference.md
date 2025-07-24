@@ -66,7 +66,7 @@ After placing the model in the above directory, you can access it from within th
 `/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/`
 :::
 
-### 3. Bring up OMY follower node
+### 3. Bring up OMY Follower Node
 
 ::: warning
 The robot will start moving when you run bringup. Please be careful.

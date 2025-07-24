@@ -13,7 +13,7 @@ cd ~/ai_worker && ./docker/container.sh enter
 
 Navigate to the **physical_ai_tools/lerobot** directory inside the container:
 
-`USER PC` `🐋 PHYSICAL AI TOOLS`
+`ROBOT PC` `🐋 AI WORKER`
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```

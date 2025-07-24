@@ -20,6 +20,7 @@ Once accessed, the following screen will appear with the `Disconnected` status.
   <img src="/imitation_learning/web_ui_initial_home_page.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Initial Screen</em></p>
 
+<Todo: 이미지 변경 필요 (상단 URL AI Worker 버전으로)>
 
 ### 2. Select the Robot Type
 

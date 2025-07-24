@@ -34,7 +34,7 @@ Train the model on your separate workstation
 == ROBOT PC
 **You can skip this step**
 == USER PC
-If the **Physical AI Tools** Docker container is already set up in your training PC, **you can skip this step**.
+If the **Physical AI Tools** is already set up in your training PC, **you can skip this step**.
 
 #### 1. Start the Docker Container:
 Clone the repository along with all required submodules:

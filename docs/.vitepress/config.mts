@@ -100,10 +100,11 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/imitation_learning_ai_worker' },
             {
-              text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation_ai_worker',
+              text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation',
               items: [
-                { text: 'Web UI', link: '/ai_worker/dataset_preparation_with_web_ui_ai_worker' },
-                { text: 'LeRobot CLI', link: '/ai_worker/dataset_preparation_with_lerobot_cli_ai_worker' }
+                { text: 'Prerequisites', link: '/ai_worker/dataset_preparation_prerequisites' },
+                { text: 'Recording', link: '/ai_worker/dataset_preparation_recording' },
+                { text: 'Visualization', link: '/ai_worker/dataset_preparation_visualization' }
               ]
             },
             {

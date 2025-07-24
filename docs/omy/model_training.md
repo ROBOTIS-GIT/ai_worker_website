@@ -70,7 +70,6 @@ cd physical_ai_tools/docker
 
 Enter the **Physical AI Tools** Docker container:
 
-`USER PC`
 ```bash
 ./container.sh enter
 ```
@@ -100,6 +99,8 @@ Go to the `Training` page and follow the steps below:
 - Step 1: Select the `Dataset`, `Policy Type` and `Device`.
 - Step 2: Enter the `Output Folder Name`.
 - Step 3: (Optional) Modify `Additional Options` if needed.
+
+For more
 
 :::tabs
 == Dataset

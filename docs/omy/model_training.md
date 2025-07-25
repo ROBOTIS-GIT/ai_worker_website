@@ -198,7 +198,7 @@ Navigate to the LeRobot directory:
 
 `USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
-cd /root/ros2_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot/src
 ```
 
 Once the dataset has been transferred, you can train a policy using the following command:

@@ -4,18 +4,18 @@ Once data collection is complete, you can preview and inspect your recorded data
 
 ## Launch the Dataset Visualization Tool:
 
-Enter the **physical_ai_tools** Docker container
+Enter the **Physical AI Tools** Docker container
 
 `ROBOT PC`
 ```bash
-cd ~/ai_worker && ./docker/container.sh enter
+cd ~/physical_ai_tools && ./docker/container.sh enter
 ```
 
 Navigate to the **physical_ai_tools/lerobot** directory inside the container:
 
-`ROBOT PC` `🐋 AI WORKER`
+`ROBOT PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
-cd /root/ros2_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot/src
 ```
 
 Run the following command to launch the dataset visualization tool:

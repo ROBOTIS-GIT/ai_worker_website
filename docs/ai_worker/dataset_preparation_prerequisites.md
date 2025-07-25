@@ -25,7 +25,7 @@ Open a terminal and enter the **Physical AI_Tools** Docker container:
 `ROBOT PC`
 
 ```bash
-cd ~/ai_worker && ./docker/container.sh enter
+cd ~/physical_ai_tools && ./docker/container.sh enter
 ```
 
 Launch Physical AI Server with the following command:

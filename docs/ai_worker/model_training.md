@@ -101,15 +101,15 @@ If the Physical AI Server is already running, you can skip this step.
 
 :::tabs key:pc-type
 == ROBOT PC
-Enter the **AI Worker** Docker container:
+Enter the **Physical AI Tools** Docker container:
 
 `ROBOT PC`
 ```bash
-cd ~/ai_worker && ./docker/container.sh enter
+cd ~/physical_ai_tools && ./docker/container.sh enter
 ```
 Then, launch the Physical AI Server with the following command:
 
-`ROBOT PC` `🐋 AI WORKER`
+`ROBOT PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 ai_server
 ```
@@ -209,7 +209,7 @@ Click `Start Training` to begin training the policy.
 
 :::tabs key:pc-type
 == ROBOT PC
-The training results will be saved in the `~/ai_worker/docker/lerobot/outputs/train/` directory.
+The training results will be saved in the `~/physical_ai_tools/lerobot/outputs/train/` directory.
 == USER PC
 The training results will be saved in the `physical_ai_tools/lerobot/outputs/train/` directory.
 :::
@@ -218,16 +218,16 @@ The training results will be saved in the `physical_ai_tools/lerobot/outputs/tra
 
 :::tabs key:pc-type
 == ROBOT PC
-Enter the **AI Worker** Docker container:
+Enter the **Physical AI Tools** Docker container:
 
 `ROBOT PC`
 ```bash
-cd ~/ai_worker && ./docker/container.sh enter
+cd ~/physical_ai_tools && ./docker/container.sh enter
 ```
 
 Navigate to the LeRobot directory:
 
-`ROBOT PC` `🐋 AI WORKER`
+`ROBOT PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
@@ -285,14 +285,14 @@ Enter the **AI Worker** Docker container:
 
 `ROBOT PC`
 ```bash
-cd ~/ai_worker && ./docker/container.sh enter
+cd ~/physical_ai_tools && ./docker/container.sh enter
 ```
 
 Navigate to the LeRobot directory:
 
-`USER PC` `🐋 AI WORKER`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
-cd /root/ros2_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot/src
 ```
 
 Once the dataset has been transferred, you can train a policy using the following command:

@@ -185,11 +185,11 @@ While recording is in progress, the following controls are available:
 
 `ROBOT PC` 
 ```
-~/ai_worker/docker/huggingface/lerobot/
+~/.cache/huggingface/lerobot/
 ```
 or
 
-`ROBOT PC` `🐋 AI WORKER`
+`ROBOT PC` `🐋 PHYSICAL AI TOOLS`
 ```
 /root/.cache/huggingface/lerobot/
 ```

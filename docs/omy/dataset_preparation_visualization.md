@@ -15,7 +15,7 @@ Move to the **physical_ai_tools/lerobot** directory inside the container:
 
 `USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
-cd /root/ros2_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot/src
 ```
 
 Run the following command to launch the dataset visualization tool:

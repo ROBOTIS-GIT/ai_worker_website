@@ -70,7 +70,6 @@ cd physical_ai_tools/docker
 
 Enter the **Physical AI Tools** Docker container:
 
-`USER PC`
 ```bash
 ./container.sh enter
 ```
@@ -100,6 +99,8 @@ Go to the `Training` page and follow the steps below:
 - Step 1: Select the `Dataset`, `Policy Type` and `Device`.
 - Step 2: Enter the `Output Folder Name`.
 - Step 3: (Optional) Modify `Additional Options` if needed.
+
+For more information about these **options**, please refer to the descriptions below.
 
 :::tabs
 == Dataset
@@ -197,7 +198,7 @@ Navigate to the LeRobot directory:
 
 `USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
-cd /root/ros2_ws/src/physical_ai_tools/lerobot
+cd /root/ros2_ws/src/physical_ai_tools/lerobot/src
 ```
 
 Once the dataset has been transferred, you can train a policy using the following command:

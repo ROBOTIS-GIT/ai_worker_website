@@ -23,7 +23,6 @@ Clone the necessary packages for OMY.
 git clone https://github.com/ROBOTIS-GIT/open_manipulator
 git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
 
-
 ```
 
 

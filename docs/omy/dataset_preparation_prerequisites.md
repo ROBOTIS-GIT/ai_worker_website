@@ -65,8 +65,6 @@ git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.
 ```
 
 Navigate to **phisical_ai_tools/docker** directory. 
-
-`USER PC`
 ```bash
 cd physical_ai_tools/docker
 ```
@@ -74,7 +72,7 @@ cd physical_ai_tools/docker
 Start the **Physical AI Tools** Docker container with the following command:
 
 ```bash
-./container start
+./container.sh start
 ```
 
 

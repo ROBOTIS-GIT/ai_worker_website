@@ -42,7 +42,6 @@ Please refer to the folder structure tree below:
   │   └── dataset_2/
   └── USER_B/
       └── dataset_3/
-
 ```
 
 ### 2. Setup Physical AI Tools Docker Container
@@ -80,7 +79,7 @@ Then, launch the Physical AI Server with the following command:
 ai_server
 ```
 
-#### b. Open the Web UI 
+#### b. Open the Web UI
 
 Open your web browser and navigate to the Web UI (Physical AI Manager).
 
@@ -115,7 +114,7 @@ Select the policy and computation device for training your model.
 
 <img src="/imitation_learning/web_ui_training_policy_selection.png" alt="Web UI" style="width: 50%; ">
 
-== Output folder name 
+== Output folder name
 Specify the name of the folder where your trained model will be saved. Then, check for duplicates. 
 This folder will be created in the default output directory (`<your_workspace>/physical_ai_tools/lerobot/outputs/`).
 Choose a descriptive and meaningful name so you can easily identify the trained model later.
@@ -206,7 +205,9 @@ Once the dataset has been transferred, you can train a policy using the followin
 ```bash
 python -m lerobot.scripts.train \
   --dataset.repo_id=${HF_USER}/omy_test \
-  --steps=20000 \
+  --policy.type=act \
   --output_dir=outputs/train/act_omy_test \
-  --policy.device=cuda
+  --policy.device=cuda \
+  --log_freq=100 \
+  --save_freq=1000
 ```

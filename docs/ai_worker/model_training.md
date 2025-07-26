@@ -89,7 +89,6 @@ Please refer to the folder structure tree below:
   │   └── dataset_2/
   └── USER_B/
       └── dataset_3/
-
 ```
 
 ### 3. Train the Policy
@@ -135,7 +134,7 @@ ai_server
 ```
 :::
 
-#### b. Open the Web UI 
+#### b. Open the Web UI
 
 Open your web browser and navigate to the Web UI (Physical AI Manager).
 
@@ -327,10 +326,12 @@ cd /root/ros2_ws/src/physical_ai_tools/lerobot
 Once the dataset has been transferred, you can train a policy using the following command:
 
 ```bash
-python lerobot/scripts/train.py \
-  --dataset.repo_id=${HF_USER}/omy_test \
+python -m lerobot.scripts.train \
+  --dataset.repo_id=${HF_USER}/ffw_test \
   --policy.type=act \
-  --output_dir=outputs/train/act_omy_test \
-  --policy.device=cuda
+  --output_dir=outputs/train/act_ffw_test \
+  --policy.device=cuda \
+  --log_freq=100 \
+  --save_freq=1000
 ```
 :::

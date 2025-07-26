@@ -116,7 +116,7 @@ To change the image topic:
 
 Fill out the task-related fields in the **Task Info Panel**, located on the right side of the **Record** page.
 
-  <img src="/imitation_learning/web_ui_task_info.png" alt="Web UI" style="width: 40%; ">
+  <img src="/imitation_learning/web_ui_task_info_initial.png" alt="Web UI" style="width: 40%; ">
 
 For detailed information on each field, expand the section below:
 

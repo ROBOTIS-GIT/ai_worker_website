@@ -16,6 +16,16 @@ This guide will walk you through the process of setting up your OMY hardware and
 ## Power connection
 ![omy_power](/quick_start_guide/omy/omy_power.png)
 
+
+## Download Repositories
+Clone the necessary packages for OMY.
+```bash
+git clone https://github.com/ROBOTIS-GIT/open_manipulator
+git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
+
+```
+
+
 ## SSH connection
 
 ### Network Access Method
@@ -26,11 +36,12 @@ In environments where UDP Multicast is available (such as being on the same rout
 ![omy_serial_number](/quick_start_guide/omy/omy_serial_number.png)
 
 ### SSH Access Method
-(Assuming the SN is ‘SNPR44B9999’)
+(Assuming the SN is `SNPR44B9999`)
 To access via SSH over the local network from a Linux environment, use the following command:
 ```bash
 ssh root@omy-SNPR44B9999.local
 ```
+
 
 ## Docker Setup
 1. Connect to the OMY via SSH.
@@ -54,16 +65,28 @@ The `/workspace` folder inside the container is volume mapped (a feature that li
 :::
 
 
+## Set ROS 2 Domain ID
+To allow ROS 2 nodes to communicate properly within the same network and avoid conflicts with other systems, you should set a consistent `ROS_DOMAIN_ID`.
+```bash
+echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
+source ~/.bashrc
+```
+
+
 ## Unpacking
 
 ::: danger
 - Following initial setup, the Unpacking script must be executed to prevent self-collision.
 - **Run this script ONLY in the packed posture, running it in any other orientation may cause damage.**
 :::
+::: warning
+- Executing the code will cause OMY to move immediately. Please stay clear and be cautious.
+:::
 
 When you first receive the OMY, the manipulator is folded as shown in the image below.
 
 ![omy_pack](/quick_start_guide/omy/omy_pack.png)
+<p style="text-align: center;"><em>Packed Position</em></p>  
 
 You can move it to the initial position by running the following command for **UNPACKING**:
 
@@ -74,9 +97,11 @@ ros2 launch open_manipulator_bringup omy_3m_unpack.launch.py
 The image below shows the initial position after **UNPACKING**.
 
 ![omy_unpack](/quick_start_guide/omy/omy_unpack.png)
+<p style="text-align: center;"><em>Initial Position</em></p>
 
+## Packing
 
-and the following is the command to PACK it back into it's folded configuration.
+To return to the packed pose, simply run the following command:
 ```bash
 ros2 launch open_manipulator_bringup omy_3m_pack.launch.py
 ```

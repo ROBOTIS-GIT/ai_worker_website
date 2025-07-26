@@ -289,19 +289,21 @@ cd ~/physical_ai_tools && ./docker/container.sh enter
 
 Navigate to the LeRobot directory:
 
-`USER PC` `🐋 PHYSICAL AI TOOLS`
+`ROBOT PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
-cd /root/ros2_ws/src/physical_ai_tools/lerobot/src
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
 
 Once the dataset has been transferred, you can train a policy using the following command:
 
 ```bash
-python lerobot/scripts/train.py \
-  --dataset.repo_id=${HF_USER}/omy_test \
+python -m lerobot.scripts.train \
+  --dataset.repo_id=${HF_USER}/ffw_test \
   --policy.type=act \
-  --output_dir=outputs/train/act_omy_test \
-  --policy.device=cuda
+  --output_dir=outputs/train/act_ffw_test \
+  --policy.device=cuda \
+  --log_freq=100 \
+  --save_freq=1000
 ```
 == USER PC
 Go to **physical_ai_tools/docker** directory:

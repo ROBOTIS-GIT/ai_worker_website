@@ -208,5 +208,5 @@ python -m lerobot.scripts.train \
   --dataset.repo_id=${HF_USER}/omy_test \
   --steps=20000 \
   --output_dir=outputs/train/act_omy_test \
-  --policy.device=cuda \
+  --policy.device=cuda
 ```

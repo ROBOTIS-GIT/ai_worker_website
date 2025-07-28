@@ -84,7 +84,7 @@ Please **deactivate the ROS 2 teleoperation node** launched in the [Prerequisite
 ```bash
 cd ~/ai_worker/docker && ./container.sh enter
 ```
-`ROBOT PC` `🐋 OPEN MANIPULATOR`
+`ROBOT PC` `🐋 AI WORKER`
 
 :::tabs key:robot-type
 == BG2 Type

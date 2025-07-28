@@ -11,7 +11,6 @@ When executing terminal commands in this document, refer to the indicators below
 - `🐋 PHYSICAL AI TOOLS`: Physical AI Tools Docker container
 :::
 
-This section describes the necessary setup steps before starting data preparation.
 To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/ai_worker/setup_guide_ai_worker) for instructions on how to connect via SSH.
 
 ## Launch Physical AI Server
@@ -20,7 +19,7 @@ To begin data preparation, access the `Robot PC` either directly or via SSH. See
 The _Physical AI Server_ is the backend that connects with the Web UI. It should be running to use the interface for data recording.
 :::
 
-Open a terminal and enter the **Physical AI_Tools** Docker container:
+Open a terminal and enter the **Physical AI Tools** Docker container:
 
 `ROBOT PC`
 

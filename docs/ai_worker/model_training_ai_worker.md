@@ -1,5 +1,5 @@
 # Model Training
-This guide walks you through training imitation learning models for OMY, based on datasets collected via the Web UI.
+This guide walks you through training imitation learning models for the AI Worker, based on datasets collected via the Web UI.
 
 Once [preparing your dataset](/ai_worker/dataset_preparation_ai_worker) is done, the policy model can be trained using either the Web UI or the LeRobot CLI.
 
@@ -45,7 +45,7 @@ git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.
 ```
 
 #### 2. Start the Docker Container:
-Navigate to **phisical_ai_tools/docker** directory and start docker container:
+Navigate to **physical_ai_tools/docker** directory and start docker container:
 ```bash
 cd physical_ai_tools/docker && ./container start
 ```
@@ -270,8 +270,8 @@ cd /root/ros2_ws/src/physical_ai_tools/lerobot
 To upload the latest trained checkpoint to the Hugging Face Hub:
 
 ```bash
-huggingface-cli upload ${HF_USER}/act_omy_test \
-  outputs/train/act_omy_test/checkpoints/last/pretrained_model
+huggingface-cli upload ${HF_USER}/act_ffw_test \
+  outputs/train/act_ffw_test/checkpoints/last/pretrained_model
 ```
 == USER PC
 Navigate to **physical_ai_tools/docker** directory and enter the Docker container:
@@ -295,8 +295,8 @@ cd /root/ros2_ws/src/physical_ai_tools/lerobot
 To upload the latest trained checkpoint to the Hugging Face Hub:
 
 ```bash
-huggingface-cli upload ${HF_USER}/act_omy_test \
-  outputs/train/act_omy_test/checkpoints/last/pretrained_model
+huggingface-cli upload ${HF_USER}/act_ffw_test \
+  outputs/train/act_ffw_test/checkpoints/last/pretrained_model
 ```
 :::
 
@@ -310,7 +310,7 @@ This makes your model accessible from anywhere and simplifies deployment.
 == ROBOT PC
 The dataset to be used for training should be located at:
 
-`/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`.
+`~/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`.
 
 If your dataset is in a different location, please move it to this path.
 == USER PC
@@ -329,7 +329,7 @@ You can replace `${HF_USER}` with the folder name you used when recording your d
 
 :::tabs key:pc-type
 == ROBOT PC
-Enter the **AI Worker** Docker container:
+Enter the **Physical AI Tools** Docker container:
 
 `ROBOT PC`
 ```bash

@@ -108,7 +108,7 @@ You can also use other camera models such as ZED2 or USB cameras, if needed.
 
 ## Launch the Physical AI Server
 
-Navigate to **phisical_ai_tools/docker** directory and esnter the Docker Container:
+Navigate to **phyical_ai_tools/docker** directory and esnter the Docker Container:
 
 `USER PC`
 ```bash

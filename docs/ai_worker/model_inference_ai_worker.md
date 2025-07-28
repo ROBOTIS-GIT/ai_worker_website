@@ -51,6 +51,23 @@ The following folder structures are all valid (example_model_folder_1, 2, 3).
 ```
 :::
 
+::: tip
+To copy your model from the `User PC` to the `Robot PC`, use the following command:
+
+- Change ownership of the model directory. 
+
+`ROBOT PC`  (**not inside the Docker container**)
+```bash
+sudo chown -R robotis ./
+```
+- Copy the model from the User PC to the Robot PC using the `scp` command:
+
+`USER PC`
+```bash
+scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/physical_ai_tools/lerobot/outputs/train
+```
+:::
+
 ::: info
 After placing the model in the above directory, you can access it from within the Docker container at:
 

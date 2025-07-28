@@ -94,7 +94,7 @@ The dataset to be used for training should be located at:
 
 `<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`
 
-Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
+If you downloaded the dataset from a hub or copied it from the Robot PC, you need to move the dataset to that location. 
 
 Please refer to the folder structure tree below:
 
@@ -109,7 +109,15 @@ Please refer to the folder structure tree below:
   └── USER_B/
       └── dataset_3/
 ```
+
+::: tip
+To copy your dataset from `Robot PC` to `User PC`, use the following `scp` command:
+
+```bash
+scp -r ~/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/
+```
 :::
+
 
 ::: info
 - `${HF_USER}` can be any folder name you prefer.

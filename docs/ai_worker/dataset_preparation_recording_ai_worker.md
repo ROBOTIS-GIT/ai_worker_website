@@ -15,6 +15,11 @@ Open your web browser and access
 
 (Replacing `{serial number}` with the serial number from the previous step)
 
+<div class="UI" style="width: 80%; margin: 0 auto;">
+  <img src="/imitation_learning/web_ui_url_ffw.png" alt="Web UI" style="width: 100%; ">
+</div>
+<p style="text-align: center;"><em>Enter the IP Address</em></p>
+  
 Once accessed, the following screen will appear with the `Disconnected` status.
 
   <img src="/imitation_learning/web_ui_initial_home_page.png" alt="Web UI" style="width: 100%; ">

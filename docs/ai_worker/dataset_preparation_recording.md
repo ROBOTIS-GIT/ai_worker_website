@@ -184,8 +184,8 @@ While recording is in progress, the following controls are available:
    - You can access the recorded dataset at the following path
 
 `ROBOT PC` 
-```
-~/.cache/huggingface/lerobot/
+```bash
+~/physical_ai_tools/docker/.cache/huggingface/lerobot/
 ```
 or
 

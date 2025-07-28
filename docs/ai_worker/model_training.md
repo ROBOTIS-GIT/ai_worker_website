@@ -67,20 +67,19 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 ### 2. Prepare Your Dataset
 
-The dataset to be used for training should be located at
+:::tabs key:pc-type
+== ROBOT PC
 
- `${HOME}/.cache/huggingface/lerobot/${HF_USER}/`
- 
+The dataset to be used for training should be located at:
+
+`~/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`
+
 Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
-
-::: info
-`${HF_USER}` can be any folder name you prefer.
-:::
 
 Please refer to the folder structure tree below:
 
 ```
-~/.cache/huggingface/lerobot/
+~/physical_ai_tools/docker/.cache/huggingface/lerobot/
   ├── USER_A/           # ← ${HF_USER} folder
   │   ├── dataset_1/    # ← Dataset
   │   │   ├── data/
@@ -90,6 +89,32 @@ Please refer to the folder structure tree below:
   └── USER_B/
       └── dataset_3/
 ```
+== USER PC
+The dataset to be used for training should be located at:
+
+`<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`
+
+Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
+
+Please refer to the folder structure tree below:
+
+```
+<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/
+  ├── USER_A/           # ← ${HF_USER} folder
+  │   ├── dataset_1/    # ← Dataset
+  │   │   ├── data/
+  │   │   ├── meta/
+  │   │   └── videos/
+  │   └── dataset_2/
+  └── USER_B/
+      └── dataset_3/
+```
+:::
+
+::: info
+- `${HF_USER}` can be any folder name you prefer.
+- `<your_workspace>` is the directory containing physical_ai_tools
+:::
 
 ### 3. Train the Policy
 
@@ -270,7 +295,20 @@ This makes your model accessible from anywhere and simplifies deployment.
 
 ### 1. Prepare Your Dataset
 
-The dataset to be used for training should be located at `/home/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
+:::tabs key:pc-type
+== ROBOT PC
+The dataset to be used for training should be located at:
+
+`/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`.
+
+If your dataset is in a different location, please move it to this path.
+== USER PC
+The dataset to be used for training should be located at:
+
+`<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`.
+
+If your dataset is in a different location, please move it to this path.
+:::
 
 ::: info
 You can replace `${HF_USER}` with the folder name you used when recording your dataset.

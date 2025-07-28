@@ -69,22 +69,14 @@ Start the **Physical AI Tools** Docker container with the following command:
 cd physical_ai_tools/docker && ./container.sh start
 ```
 
-### 2. Setup ROS Domain ID
-Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication:
+### 2. Build the Physical AI Server
+
+Enter the docker container:
 
 `USER PC`
 ```bash
 ./container.sh enter
 ```
-
-`USER PC` `🐋 PHYSICAL AI TOOLS`
-```bash
-echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
-source ~/.bashrc
-```
-
-### 3. Build Physical AI Server
-
 Build the Physical AI Server with the following command:
 
 `USER PC` `🐋 PHYSICAL AI TOOLS`

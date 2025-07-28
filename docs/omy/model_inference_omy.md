@@ -30,7 +30,7 @@ Please refer to the folder structure tree below:
 The following folder structures are all valid (example_model_folder_1, 2, 3).
 
 ```
-<Your workspace>/physical_ai_tools/lerobot/outputs/train/
+<your_workspace>/physical_ai_tools/lerobot/outputs/train/
 ├── example_model_folder_1
 │   └── checkpoints/
 │       ├── 000250/

@@ -36,28 +36,31 @@ Train the model on your separate workstation
 == USER PC
 If the **Physical AI Tools** is already set up in your training PC, **you can skip this step**.
 
-#### 1. Start the Docker Container:
+#### 1. Clone the Physical AI Tools repository:
 Clone the repository along with all required submodules:
 
 `USER PC`
 ```bash
 git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
 ```
+
+#### 2. Start the Docker Container:
 Navigate to **phisical_ai_tools/docker** directory and start docker container:
 ```bash
 cd physical_ai_tools/docker && ./container start
 ```
-#### 2. Setup ROS Domain ID
+
+#### 3. Build Physical AI Server
+
+Enter the docker container:
+
 `USER PC`
 ```bash
 ./container.sh enter
 ```
-`USER PC` `🐋 PHYSICAL AI TOOLS`
-```bash
-echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
-source ~/.bashrc
-```
-#### 3. Build Physical AI Server
+
+Build with the following command:
+
 `USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release

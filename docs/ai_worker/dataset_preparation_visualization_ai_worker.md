@@ -29,10 +29,8 @@ python lerobot/scripts/visualize_dataset_html.py \
   - Replace **YOUR_REPO_ID** with the dataset ID found under the **User ID** section in the right sidebar.
   - For example: `ROBOTIS/ffw_sg2_f3m_Test` 
   <div class="UI" style="width: 50%; margin: 0 auto;">
-  <img src="/imitation_learning/web_ui_task_info_repo_id.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui_task_info_repo_id_ffw.png" alt="Web UI" style="width: 100%; ">
 </div>
-
-<Todo: 위 이미지 AI worker 버전으로 변경 필요>
 
 You should see an output similar to the following:
 

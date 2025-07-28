@@ -185,6 +185,13 @@ While recording is in progress, the following controls are available:
    - If **"Push to Hub"** is enabled, the dataset will be uploaded to Hugging Face.
    - You can access the recorded dataset at the following path from from the **host environment** or **Docker container**:
 
+`USER PC`
+```bash
+<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/
+```
+or
+
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 ${HOME}/.cache/huggingface/lerobot/
 ```

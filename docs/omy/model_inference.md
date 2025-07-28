@@ -19,7 +19,7 @@ If you haven't set up the Physical AI Tools Docker container, please refer to th
 
 Please place your trained model in the following directory:
 
-`<Your workspace>/physical_ai_tools/lerobot/outputs/train/`
+`<your_workspace>/physical_ai_tools/lerobot/outputs/train/`
 
 Models trained using Physical AI Tools are automatically saved to that path. However, if you downloaded the model from a hub or copied it from another PC, you need to move the model to that location. 
 

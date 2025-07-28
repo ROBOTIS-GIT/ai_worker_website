@@ -22,18 +22,22 @@ Option 2<br>LeRobot CLI (Optional)
 
 The dataset to be used for training should be located at
 
- `${HOME}/.cache/huggingface/lerobot/${HF_USER}/`
+`USER PC`
+
+ `<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`
  
 Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
 
 ::: info
-`${HF_USER}` can be any folder name you prefer.
+- `${HF_USER}` can be any folder name you prefer.
+- `<your_workspace>` is the directory containing physical_ai_tools
+
 :::
 
 Please refer to the folder structure tree below:
 
 ```
-~/.cache/huggingface/lerobot/
+<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/
   ├── USER_A/           # ← ${HF_USER} folder
   │   ├── dataset_1/    # ← Dataset
   │   │   ├── data/
@@ -173,11 +177,13 @@ This makes your model accessible from anywhere and simplifies deployment.
 
 ### 1. Prepare Your Dataset
 
-The dataset to be used for training should be located at `/home/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
+The dataset to be used for training should be located at `<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
 
 ::: info
-You can replace `${HF_USER}` with the folder name you used when recording your dataset.
+- You can replace `${HF_USER}` with the folder name you used when recording your dataset.
+- `<your_workspace>` is the directory containing physical_ai_tools
 :::
+
 
 ### 2. Train the Policy
 

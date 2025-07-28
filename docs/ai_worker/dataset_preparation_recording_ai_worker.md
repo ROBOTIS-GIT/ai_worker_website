@@ -51,9 +51,9 @@ The **Record** page is divided into three main sections:
 
 - **Image Streaming Area** (Center): Displays real-time camera streams from the robot.
 
-- **Task Info Panel** (Right side): Enter task name, task instruction, time values, etc. [(details)](#_4-enter-task-information)
+- **Task Info Panel** (Right side): Enter task name, task instruction, time values, etc.
 
-- **Control Panel** (Bottom): Start/stop recording and manage data collection. [(details)](#_5-start-recording)
+- **Control Panel** (Bottom): Start/stop recording and manage data collection.
 
 The selected robot type is also displayed in the top left corner.
 

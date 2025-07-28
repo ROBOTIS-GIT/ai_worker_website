@@ -100,18 +100,18 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/imitation_learning_ai_worker' },
             {
-              text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation',
+              text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation_ai_worker',
               items: [
-                { text: 'Prerequisites', link: '/ai_worker/dataset_preparation_prerequisites' },
-                { text: 'Recording', link: '/ai_worker/dataset_preparation_recording' },
-                { text: 'Visualization', link: '/ai_worker/dataset_preparation_visualization' }
+                { text: 'Prerequisites', link: '/ai_worker/dataset_preparation_prerequisites_ai_worker' },
+                { text: 'Recording', link: '/ai_worker/dataset_preparation_recording_ai_worker' },
+                { text: 'Visualization', link: '/ai_worker/dataset_preparation_visualization_ai_worker' }
               ]
             },
             {
-              text: 'Model Training', link: '/ai_worker/model_training',
+              text: 'Model Training', link: '/ai_worker/model_training_ai_worker',
             },
             {
-              text: 'Model Inference', link:'/ai_worker/model_inference',
+              text: 'Model Inference', link:'/ai_worker/model_inference_ai_worker',
             }
           ]
         },

@@ -168,18 +168,18 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/omy/imitation_learning_overview' },
             {
-              text: 'Dataset Preparation', link: '/omy/dataset_preparation',
+              text: 'Dataset Preparation', link: '/omy/dataset_preparation_omy',
               items: [
-                { text: 'Prerequisites', link: '/omy/dataset_preparation_prerequisites' },
-                { text: 'Recording', link: '/omy/dataset_preparation_recording' },
-                { text: 'Visualization', link: '/omy/dataset_preparation_visualization' }
+                { text: 'Prerequisites', link: '/omy/dataset_preparation_prerequisites_omy' },
+                { text: 'Recording', link: '/omy/dataset_preparation_recording_omy' },
+                { text: 'Visualization', link: '/omy/dataset_preparation_visualization_omy' }
               ]
             },
             {
-              text: 'Model Training', link: '/omy/model_training',
+              text: 'Model Training', link: '/omy/model_training_omy',
             },
             {
-              text: 'Model Inference', link:'/omy/model_inference',
+              text: 'Model Inference', link:'/omy/model_inference_omy',
             }
           ]
         },

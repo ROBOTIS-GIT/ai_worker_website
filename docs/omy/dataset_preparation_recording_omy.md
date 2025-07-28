@@ -15,7 +15,7 @@ If you are running the **Physical AI Server** and opening the web browser on the
 ##### For example:
 - If the PC running **Physical AI Server** has IP address 192.168.0.105<br>Access `http://192.168.0.105` as shown below:
 
-  <img src="/imitation_learning/web_ui_home_page_address.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui_url_omy.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Enter the IP Address</em></p>
 
 - Once accessed, the following screen will appear with the `Disconnected` status.

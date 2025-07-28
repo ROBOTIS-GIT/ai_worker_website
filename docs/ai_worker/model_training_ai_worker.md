@@ -7,6 +7,6 @@ At present, **training is only available through the LeRobot CLI**. Support for 
 
 You can train your policy using the LeRobot CLI. Click the button below to view detailed instructions.
 
-<a href="/ai_worker/model_training_with_lerobot_cli_ai_worker" class="button-dataset-preparation-option">
+<a href="/ai_worker/model_training_with_lerobot_cli_ai_worker" class="button-shortcut">
 Option 1<br>LeRobot CLI
 </a>

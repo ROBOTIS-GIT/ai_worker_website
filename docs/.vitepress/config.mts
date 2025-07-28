@@ -176,29 +176,23 @@ export default defineConfig({
             {
               text: 'Dataset Preparation', link: '/omy/dataset_preparation_omy',
               items: [
-                { text: 'Web UI', link: '/omy/dataset_preparation_with_web_ui_omy' },
-                { text: 'LeRobot CLI', link: '/omy/dataset_preparation_with_lerobot_cli_omy' }
+                { text: 'Prerequisites', link: '/omy/dataset_preparation_prerequisites_omy' },
+                { text: 'Recording', link: '/omy/dataset_preparation_recording_omy' },
+                { text: 'Visualization', link: '/omy/dataset_preparation_visualization_omy' }
               ]
             },
             {
               text: 'Model Training', link: '/omy/model_training_omy',
-              items: [
-                { text: 'LeRobot CLI', link: '/omy/model_training_with_lerobot_cli_omy' }
-              ]
             },
             {
               text: 'Model Inference', link:'/omy/model_inference_omy',
-              items: [
-                { text: 'Web UI', link: '/omy/model_inference_with_web_ui_omy' },
-                { text: 'LeRobot CLI', link: '/omy/model_inference_with_lerobot_cli_omy' }
-              ]
             }
           ]
         },
         {
           text: 'Simulation',
           items: [
-            { text: 'Overview', link: '/omy/simulation_omy' },
+            { text: 'Overview', link: '/omy/simulation_omy'},
             { text: 'Gazebo', link: '/omy/gazebo_omy' },
             { text: 'Isaac Sim/Lab', link: '/omy/robotis_lab_omy' }
           ]

@@ -20,7 +20,7 @@ For seamless integration with the ROS ecosystem, URDF (Unified Robot Description
 *   **Purpose**: General robotics simulation, ROS-based algorithm testing, visualization.
 *   **Link**: [AI Worker URDF on GitHub](https://github.com/ROBOTIS-GIT/ai_worker/tree/main/ffw_description/urdf)
 
-<a href="/ai_worker/gazebo_ai_worker" class="button-dataset-preparation-option">
+<a href="/ai_worker/gazebo_ai_worker" class="button-shortcut">
 Gazebo Information
 </a>
 
@@ -54,6 +54,6 @@ Isaac Lab is an advanced reinforcement learning framework built on top of NVIDIA
 *   **Purpose**: Specialized framework for reinforcement and imitation learning using Isaac Sim.
 *   **Link**: [ROBOTIS Lab on GitHub](https://github.com/ROBOTIS-GIT/robotis_lab/)
 
-<a href="/ai_worker/robotis_lab_ai_worker" class="button-dataset-preparation-option">
+<a href="/ai_worker/robotis_lab_ai_worker" class="button-shortcut">
 ROBOTIS Lab Information
 </a>

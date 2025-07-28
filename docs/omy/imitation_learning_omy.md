@@ -6,7 +6,7 @@ This document provides an overview of the complete ROS 2-based imitation learnin
 
 ### 1. Data Collection
 
-Human operators use a wearable skeletal leader device to demonstrate motions, collecting image and joint position data. The web-based GUI plays a key role in streamlining the process by providing real-time visualization and control. The collected data can be uploaded to and downloaded from the Hugging Face Hub. 
+Human operators use a leader device to demonstrate motions, collecting image and joint position data. The web-based GUI plays a key role in streamlining the process by providing real-time visualization and control. The collected data can be uploaded to and downloaded from the Hugging Face Hub. 
 
 ### 2. Data Visualization
 

@@ -64,21 +64,13 @@ Clone the repository along with all required submodules:
 git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
 ```
 
-Navigate to **phisical_ai_tools/docker** directory. 
-```bash
-cd physical_ai_tools/docker
-```
-
 Start the **Physical AI Tools** Docker container with the following command:
-
 ```bash
-./container.sh start
+cd physical_ai_tools/docker && ./container.sh start
 ```
-
 
 ### 2. Setup ROS Domain ID
 Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication:
-
 
 `USER PC`
 ```bash

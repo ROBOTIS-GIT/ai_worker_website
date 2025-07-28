@@ -64,7 +64,7 @@ sudo chown -R robotis ./
 
 `USER PC`
 ```bash
-scp -r <your model folder's directory> robotis@<your robot's serial number>.local:~/physical_ai_tools/lerobot/outputs/train
+scp -r <your model folder's directory> robotis@ffw-<your robot's serial number>.local:~/physical_ai_tools/lerobot/outputs/train
 ```
 :::
 

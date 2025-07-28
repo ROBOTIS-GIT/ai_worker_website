@@ -334,6 +334,7 @@ python -m lerobot.scripts.train \
   --output_dir=outputs/train/act_ffw_test \
   --policy.device=cuda \
   --log_freq=100 \
-  --save_freq=1000
+  --save_freq=1000 \
+  --policy.push_to_hub=false
 ```
 :::

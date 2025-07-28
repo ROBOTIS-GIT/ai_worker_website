@@ -34,17 +34,16 @@ python lerobot/scripts/visualize_dataset_html.py \
 
 You should see an output similar to the following:
 
-```
-Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 3457.79it/s]
-.gitattributes: 100%|██████████| 2.46k/2.46k [00:00<00:00, 45.9MB/s]
-Fetching 126 files: 100%|██████████| 126/126 [00:00<00:00, 266.66it/s]
-Resolving data files: 100%|██████████| 30/30 [00:00<00:00, 662258.53it/s]
-INFO 2025-05-15 16:18:07 set_html.py:364 Output directory already exists. Loading from it: '/tmp/lerobot_visualize_dataset_uo6ddbb1'
+```bash
+WARNING:root:'torchcodec' is not available in your platform, falling back to 'pyav' as a default decoder
+INFO 2025-07-28 06:55:31 set_html.py:364 Output directory already exists. Loading from it: '/tmp/lerobot_visualize_dataset_772b0wso'
  * Serving Flask app 'visualize_dataset_html'
  * Debug mode: off
-INFO 2025-05-15 16:18:07 _internal.py:97 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+INFO 2025-07-28 06:55:31 _internal.py:97 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:9091
-INFO 2025-05-15 16:18:07 _internal.py:97 Press CTRL+C to quit
+ * Running on http://192.168.50.127:9091
+INFO 2025-07-28 06:55:31 _internal.py:97 Press CTRL+C to quit
 ```
 Access http://127.0.0.1:9091 to view the dataset. You should see a web interface similar to the one below:
 <img src="/imitation_learning/data_visualization.png" alt="Web UI" style="width: 100%; ">

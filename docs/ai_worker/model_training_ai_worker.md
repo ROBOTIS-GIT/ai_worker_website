@@ -171,7 +171,7 @@ ai_server
 
 Open your web browser and navigate to the Web UI (Physical AI Manager).
 
-(Refer to the [Dataset Preparation > Web UI > 3. Open the Web UI](/ai_worker/dataset_preparation_recording_ai_worker#_3-open-the-web-ui) for more details.)
+(Refer to the [Dataset Preparation > Web UI > 1. Open the Web UI](/ai_worker/dataset_preparation_recording_ai_worker#_1-open-the-web-ui) for more details.)
 
 :::tabs key:pc-type
 == ROBOT PC

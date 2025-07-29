@@ -188,7 +188,7 @@ While recording is in progress, the following controls are available:
 
 `ROBOT PC` 
 ```bash
-~/physical_ai_tools/docker/.cache/huggingface/lerobot/
+~/physical_ai_tools/docker/huggingface/lerobot/
 ```
 or
 

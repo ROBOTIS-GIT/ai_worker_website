@@ -75,14 +75,14 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 The dataset to be used for training should be located at:
 
-`~/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`
+`~/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/`
 
 Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
 
 Please refer to the folder structure tree below:
 
 ```
-~/physical_ai_tools/docker/.cache/huggingface/lerobot/
+~/physical_ai_tools/docker/huggingface/lerobot/
   ├── USER_A/           # ← ${HF_USER} folder
   │   ├── dataset_1/    # ← Dataset
   │   │   ├── data/
@@ -95,14 +95,14 @@ Please refer to the folder structure tree below:
 == USER PC
 The dataset to be used for training should be located at:
 
-`<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`
+`<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/`
 
 If you downloaded the dataset from a hub or copied it from the Robot PC, you need to move the dataset to that location. 
 
 Please refer to the folder structure tree below:
 
 ```
-<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/
+<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/
   ├── USER_A/           # ← ${HF_USER} folder
   │   ├── dataset_1/    # ← Dataset
   │   │   ├── data/
@@ -116,9 +116,28 @@ Please refer to the folder structure tree below:
 ::: tip
 To copy your dataset from `Robot PC` to `User PC`, use the following `scp` command:
 
+
+- If the **lerobot** folder does not exist in the `<your_workspace>/physical_ai_tools/docker/huggingface/` path, please create the folder with the following command:
+
+`USER PC`
 ```bash
-scp -r ~/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/ffw_test/ <USER>@<IP>:<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/
+cd <your_workspace>/physical_ai_tools/docker/huggingface && mkdir lerobot
 ```
+
+- Change ownership of the model directory. 
+
+```bash
+cd <your_workspace>/physical_ai_tools && sudo chown -R ${USER} ./
+```
+
+`ROBOT PC`
+
+```bash
+scp -r ~/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/ffw_test <USER>@<IP>:<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/
+```
+
+::: warning
+Do not add a trailing slash (/) at the end of `${HF_USER}/ffw_test` in the scp command.
 :::
 
 
@@ -206,7 +225,7 @@ Go to the `Training` page and follow the steps below:
 :::tabs
 == Dataset
 
-The datasets stored in the `~/.cache/huggingface/` directory on the host (or `/root/.cache/huggingface/` inside the Docker container) will be listed automatically.
+The datasets stored in the `~/physical_ai_tools/docker/huggingface/` directory on the host (or `/root/.cache/huggingface/` inside the Docker container) will be listed automatically.
 <img src="/imitation_learning/web_ui_training_dataset_selection.png" alt="Web UI" style="width: 50%; ">
 
 == Policy type and device
@@ -310,13 +329,13 @@ This makes your model accessible from anywhere and simplifies deployment.
 == ROBOT PC
 The dataset to be used for training should be located at:
 
-`~/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`.
+`~/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/`.
 
 If your dataset is in a different location, please move it to this path.
 == USER PC
 The dataset to be used for training should be located at:
 
-`<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`.
+`<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/`.
 
 If your dataset is in a different location, please move it to this path.
 :::
@@ -352,7 +371,8 @@ python -m lerobot.scripts.train \
   --output_dir=outputs/train/act_ffw_test \
   --policy.device=cuda \
   --log_freq=100 \
-  --save_freq=1000
+  --save_freq=1000 \
+  --policy.push_to_hub=false
 ```
 == USER PC
 Go to **physical_ai_tools/docker** directory:

@@ -11,7 +11,7 @@ When executing terminal commands in this document, refer to the indicators below
 - `🐋 PHYSICAL AI TOOLS`: Physical AI Tools Docker container
 :::
 
-To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/ai_worker/setup_guide_ai_worker) for instructions on how to connect via SSH.
+To begin data preparation, access the `Robot PC` either directly or via SSH. See the [Setup Guide](/ai_worker/setup_guide_ai_worker#accessing-the-robot-pc-via-ssh) for instructions on how to connect via SSH.
 
 ## Launch Physical AI Server
 

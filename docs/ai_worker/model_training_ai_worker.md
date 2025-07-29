@@ -265,7 +265,7 @@ Click `Start Training` to begin training the policy.
 == ROBOT PC
 The training results will be saved in the `~/physical_ai_tools/lerobot/outputs/train/` directory.
 == USER PC
-The training results will be saved in the `physical_ai_tools/lerobot/outputs/train/` directory.
+The training results will be saved in the `<your_workspace>/physical_ai_tools/lerobot/outputs/train/` directory.
 :::
 
 ### (Optional) Uploading Checkpoints to Hugging Face

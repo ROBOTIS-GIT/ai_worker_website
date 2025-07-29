@@ -24,7 +24,7 @@ The dataset to be used for training should be located at
 
 `USER PC`
 
- `<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`
+ `<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/`
  
 Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
 
@@ -37,7 +37,7 @@ Datasets collected using Physical AI Tools are automatically saved to that path.
 Please refer to the folder structure tree below:
 
 ```
-<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/
+<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/
   ├── USER_A/           # ← ${HF_USER} folder
   │   ├── dataset_1/    # ← Dataset
   │   │   ├── data/
@@ -108,7 +108,7 @@ For more information about these **options**, please refer to the descriptions b
 :::tabs
 == Dataset
 
-The datasets stored in the `~/.cache/huggingface/` directory on the host (or `/root/.cache/huggingface/` inside the Docker container) will be listed automatically.
+The datasets stored in the `<your_workspace>/physical_ai_tools/docker/huggingface/` directory on the host (or `/root/.cache/huggingface/` inside the Docker container) will be listed automatically.
 <img src="/imitation_learning/web_ui_training_dataset_selection.png" alt="Web UI" style="width: 50%; ">
 
 == Policy type and device
@@ -177,7 +177,7 @@ This makes your model accessible from anywhere and simplifies deployment.
 
 ### 1. Prepare Your Dataset
 
-The dataset to be used for training should be located at `<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
+The dataset to be used for training should be located at `<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/`. If your dataset is in a different location, please move it to this path.
 
 ::: info
 - You can replace `${HF_USER}` with the folder name you used when recording your dataset.

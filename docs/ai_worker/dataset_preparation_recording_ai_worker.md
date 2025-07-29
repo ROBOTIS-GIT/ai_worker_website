@@ -5,26 +5,25 @@
 ### 1. Open the Web UI
 
 #### a. Access the Web UI in Your Browser
-Please enter the IP address of the PC running **Physical AI Server** (`physical_ai_server_bringup.launch.py` or `ai_server`) into your web browser.  
 
-::: tip
-If you are running the **Physical AI Server** and opening the web browser on the same computer,<br>you can simply enter `http://localhost`
+Identify the **serial number** of the AI Worker device.<br>In this example, the serial number is `SNPR48A0000`.
 
-:::
 
-##### For example:
-- If the PC running **Physical AI Server** has IP address 192.168.0.105<br>Access `http://192.168.0.105` as shown below:
+Open your web browser and access
+
+`http://ffw-{serial number}.local`
+
+(Replacing `{serial number}` with the serial number from the previous step)
 
 <div class="UI" style="width: 80%; margin: 0 auto;">
-  <img src="/imitation_learning/web_ui_url_omy.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui_url_ffw.png" alt="Web UI" style="width: 100%; ">
 </div>
 <p style="text-align: center;"><em>Enter the IP Address</em></p>
-
-- Once accessed, the following screen will appear with the `Disconnected` status.
+  
+Once accessed, the following screen will appear with the `Disconnected` status.
 
   <img src="/imitation_learning/web_ui_initial_home_page.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Initial Screen</em></p>
-
 
 ### 2. Select the Robot Type
 
@@ -183,17 +182,17 @@ While recording is in progress, the following controls are available:
 :::
 
 ## After Recording
-   - The dataset will be saved on the **host machine**.
+   - The dataset will be saved on the **ROBOT PC**.
    - If **"Push to Hub"** is enabled, the dataset will be uploaded to Hugging Face.
-   - You can access the recorded dataset at the following path from from the **host environment** or **Docker container**:
+   - You can access the recorded dataset at the following path
 
-`USER PC`
+`ROBOT PC` 
 ```bash
-<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/
+~/physical_ai_tools/docker/huggingface/lerobot/
 ```
 or
 
-`USER PC` `🐋 PHYSICAL AI TOOLS`
-```bash
-${HOME}/.cache/huggingface/lerobot/
+`ROBOT PC` `🐋 PHYSICAL AI TOOLS`
+```
+/root/.cache/huggingface/lerobot/
 ```

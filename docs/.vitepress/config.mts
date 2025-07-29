@@ -102,22 +102,16 @@ export default defineConfig({
             {
               text: 'Dataset Preparation', link: '/ai_worker/dataset_preparation_ai_worker',
               items: [
-                { text: 'Web UI', link: '/ai_worker/dataset_preparation_with_web_ui_ai_worker' },
-                { text: 'LeRobot CLI', link: '/ai_worker/dataset_preparation_with_lerobot_cli_ai_worker' }
+                { text: 'Prerequisites', link: '/ai_worker/dataset_preparation_prerequisites_ai_worker' },
+                { text: 'Recording', link: '/ai_worker/dataset_preparation_recording_ai_worker' },
+                { text: 'Visualization', link: '/ai_worker/dataset_preparation_visualization_ai_worker' }
               ]
             },
             {
               text: 'Model Training', link: '/ai_worker/model_training_ai_worker',
-              items: [
-                { text: 'LeRobot CLI', link: '/ai_worker/model_training_with_lerobot_cli_ai_worker' }
-              ]
             },
             {
               text: 'Model Inference', link:'/ai_worker/model_inference_ai_worker',
-              items: [
-                { text: 'Web UI', link: '/ai_worker/model_inference_with_web_ui_ai_worker' },
-                { text: 'LeRobot CLI', link: '/ai_worker/model_inference_with_lerobot_cli_ai_worker' }
-              ]
             }
           ]
         },

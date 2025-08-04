@@ -52,6 +52,16 @@ If a container is already running, enter the **ai\_worker** Docker container wit
 ./docker/container.sh enter
 ```
 
+::: warning IMPORTANT NOTICE
+**For ai_worker source code version 1.1.9 or earlier:**
+- When launching separately, always start the `Follower` first and then the `Leader`. Otherwise, the robot may move abruptly.
+- The teleoperator should begin in a `standing position` with both arms lowered.
+
+**For ai_worker source code version 1.1.10 (25-08-05) and later:**
+- The robot will not move until you push **both hand triggers** for more than 2 seconds.
+- When you push both triggers forward, the follower will slowly move to the leader's position, and once it comes within a certain error range, it will move quickly.
+:::
+
 ### Option 1: All-in-One Launch
 ::: warning
 While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
@@ -113,6 +123,13 @@ If you want to run the system without launching the cameras, you can set the `la
    ```
 
 ## Basic Operation
+::: warning NOTICE
+For ai_worker source code version 1.1.10 (25-08-05) and later:
+You must push **both hand triggers** for more than 2 seconds for the follower to start moving. When you push both triggers forward, the follower will slowly move to the leader's position, and once it comes within a certain error range, it will move quickly.
+
+<img src="/quick_start_guide/ai_worker/push_trigger_ai_worker.gif" alt="Push Trigger" style="width: 60%;"> 
+:::
+
 * FFW_BG2
 1. Once both systems are running, the `Follower` will begin to mirror your movements.
 2. Start with slow, gentle movements to get familiar with the response.

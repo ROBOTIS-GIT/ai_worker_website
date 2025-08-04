@@ -152,11 +152,17 @@ while the `left joystick` controls the`head` section of the robot.
 In swerve mode, the arms continue to move. Please be careful.
 :::
 
+## Pause Teleoperation
+
+To temporarily pause teleoperation:
+1. Push both hand triggers for more than 2 seconds
+2. The follower will stop and hold its current position
+
 ## Stopping Teleoperation
 
-To stop the teleoperation:
-1. Return to a neutral position
-2. Press Ctrl+C in the terminal running the launch file
+To stop teleoperation:
+1. Return to a neutral position or pause the system.
+2. Press `Ctrl+C` in the terminal where the launch file is running.
 
 ## Troubleshooting
 

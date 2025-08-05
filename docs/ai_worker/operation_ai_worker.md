@@ -52,20 +52,12 @@ If a container is already running, enter the **ai\_worker** Docker container wit
 ./docker/container.sh enter
 ```
 
-::: warning IMPORTANT NOTICE
-**For ai_worker source code version 1.1.9 or earlier:**
-- When launching separately, always start the `Follower` first and then the `Leader`. Otherwise, the robot may move abruptly.
-- The teleoperator should begin in a `standing position` with both arms lowered.
-
-**For ai_worker source code version 1.1.10 (25-08-05) and later:**
-- The robot will not move until you push **both hand triggers** for more than 2 seconds.
-- When you push both triggers forward, the follower will slowly move to the leader's position, and once it comes within a certain error range, it will move quickly.
-:::
-
 ### Option 1: All-in-One Launch
-::: warning
-While the command is entered in the terminal, the teleoperator should begin in a `standing position` with both arms lowered.
+
+::: tip NOTICE
+After execution, the follower will not move until you push both hand triggers for more than 2 seconds. Once you do, the follower will slowly move toward the leader's position, and after reaching a certain proximity, it will move more quickly. This behavior is the same even when launching the leader and follower separately.
 :::
+
 To start both the `Leader` and `Follower(BG2/SG2)` simultaneously:
 
 :::tabs key:robot-type
@@ -85,9 +77,6 @@ ffw_sg2_ai
 :::
 
 ### Option 2: Separate Launches
-::: danger
-⚠️ When running teleoperation by launching the Leader and Follower separately, always start the `Follower` first and then the `Leader`. Otherwise, the robot may move abruptly.
-:::
 If you want to run the `Leader` and `Follower` separately in different terminals:
 
 1. **Launch the teleoperation `Follower`**:
@@ -123,11 +112,10 @@ If you want to run the system without launching the cameras, you can set the `la
    ```
 
 ## Basic Operation
-::: warning NOTICE
-For ai_worker source code version 1.1.10 (25-08-05) and later:
+::: tip NOTICE
 You must push **both hand triggers** for more than 2 seconds for the follower to start moving. When you push both triggers forward, the follower will slowly move to the leader's position, and once it comes within a certain error range, it will move quickly.
 
-<img src="/quick_start_guide/ai_worker/push_trigger_ai_worker.gif" alt="Push Trigger" style="width: 60%;"> 
+<img src="/quick_start_guide/ai_worker/push_trigger_ai_worker.gif" alt="Push Trigger" style="width: 50%;">
 :::
 
 * FFW_BG2
@@ -169,4 +157,5 @@ To stop teleoperation:
 - **Delayed movements**: Check for any obstructions or if you're reaching joint limits
 - **Unresponsive gripper**: Ensure proper calibration and connection
 - **System unresponsive**: Check ROS topic connections with `ros2 topic list` and `ros2 topic echo`
+- **Trigger pause function not available**: Please update the ai_worker source code to version `1.1.10` or higher
 

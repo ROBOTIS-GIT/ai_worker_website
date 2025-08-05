@@ -157,5 +157,4 @@ To stop teleoperation:
 - **Delayed movements**: Check for any obstructions or if you're reaching joint limits
 - **Unresponsive gripper**: Ensure proper calibration and connection
 - **System unresponsive**: Check ROS topic connections with `ros2 topic list` and `ros2 topic echo`
-- **Trigger pause function not available**: Please update the ai_worker source code to version `1.1.10` or higher
-
+- **Trigger pause function not available or robot moves immediately upon startup**: Please update the ai_worker source code to version `1.1.10` or higher

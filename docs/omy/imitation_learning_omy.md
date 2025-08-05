@@ -28,11 +28,13 @@ Once trained, the models are deployed on the OMY to execute real-time inference 
 
 ## Tutorial Videos: End-to-End Imitation Learning Workflow
 
-The video illustrates the full imitation learning workflow using the OMY, including teleoperation, dataset creation, and real-time inference with a trained model:
+The videos illustrate the full imitation learning workflow using the OMY, including teleoperation, dataset creation, and real-time inference with a trained model:
 
 - Full imitation learning workflow using **OMY** and the **Web GUI**.
 
 <YouTube videoId="3x-eN36pNns" />
+
+<YouTube videoId="KswAongVdSk" />
 
 - Dataset Schema
 

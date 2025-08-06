@@ -139,4 +139,13 @@ dist
 .vitepress/cache
 .vitepress/dist
 
+# Version build temp directories
+docs/.vitepress/temp-builds/
+temp-builds/
+build-temp/
+
+# Dynamically generated version files
+docs/public/versions.json
+versions.json
+
 # user-specific files

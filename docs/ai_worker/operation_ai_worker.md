@@ -23,7 +23,7 @@ Before starting teleoperation, make sure:
 2. Fasten the chest belt buckle and `hip belt buckle`.
 3. Adjust the length of the `shoulder straps`, `chest belt`, and `hip belt` so that the `Leader` is securely fixed on your back.
 
-**Second Leader Version**  
+**Second Leader Version**
 It can be worn more easily by users with different body types.
 
 <img src="/quick_start_guide/ai_worker/new_fixed_belt.png" alt="Web UI" style="width: 40%; ">
@@ -96,10 +96,27 @@ ffw_bg2_follower_ai
 ffw_sg2_follower_ai
 :::
 
-If you want to run the system without launching the cameras, you can set the `launch_cameras` parameter to `false`:
-   ```bash
-   ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py launch_cameras:=false
-   ```
+#### Optional Parameters
+
+You can customize the follower launch behavior with optional parameters:
+
+**Disable Camera Launch**
+To run the system without launching the cameras, set the `launch_cameras` parameter to `false`:
+```bash
+ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py launch_cameras:=false
+```
+
+**Disable Position Initialization**
+To start the system without initializing the position, set the `init_position` parameter to `false`:
+```bash
+ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py init_position:=false
+```
+
+**Combine Multiple Parameters**
+You can use both parameters together:
+```bash
+ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py launch_cameras:=false init_position:=false
+```
 
 2. **Launch the teleoperation `Leader`**:
    ```bash
@@ -118,14 +135,14 @@ You must push **both hand triggers** for more than 2 seconds for the follower to
 <img src="/quick_start_guide/ai_worker/push_trigger_ai_worker.gif" alt="Push Trigger" style="width: 50%;">
 :::
 
-* FFW_BG2
+### FFW_BG2
 1. Once both systems are running, the `Follower` will begin to mirror your movements.
 2. Start with slow, gentle movements to get familiar with the response.
 3. The grip buttons on the `Leader` control the gripper actions on the `Follower`.
 4. The `right joystick` controls the up and down motion of the `lift`,
 while the `left joystick` controls the`head` section of the robot.
 
-* FFW_SG2
+### FFW_SG2
 1. Once both systems are running, the `Follower` will begin to mirror your movements.
 2. Start with slow, gentle movements to get familiar with the response.
 3. The grip buttons on the `Leader` control the gripper actions on the `Follower`.

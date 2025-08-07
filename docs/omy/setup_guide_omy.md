@@ -42,6 +42,9 @@ To access via SSH over the local network from a Linux environment, use the follo
 ssh root@omy-SNPR44B9999.local
 ```
 
+::: tip
+No password is required to access OMY via SSH. Please verify that you have entered the command `ssh root@omy-SNPR44B9999.local` correctly, and ensure that the **username** `root` was typed without any mistakes.
+:::
 
 ## Docker Setup
 1. Connect to the OMY via SSH.

@@ -43,7 +43,7 @@ ssh root@omy-SNPR44B9999.local
 ```
 
 ::: tip
-No password is required to access OMY via SSH. Please verify that you have entered the command `ssh root@omy-SNPR44B9999.local` correctly, and ensure that the **username** `root` was typed without any mistakes.
+No password is required for SSH access. If you have connection issues, please double-check that you have entered the command correctly, especially the **username** `root`.
 :::
 
 ## Docker Setup

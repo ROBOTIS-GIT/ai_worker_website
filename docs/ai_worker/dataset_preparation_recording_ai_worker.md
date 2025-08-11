@@ -79,7 +79,28 @@ To change the image topic:
 Fill out the task-related fields in the **Task Info Panel**, as shown below. For more information about what each field means in the **Task Info Panel**, please refer to **:point_right: Task Information Field Descriptions** below.
 
 ::: info
-If you enable **Push to Hub** as shown below, a wired connection to the AI Worker is required to upload your recorded dataset to the Hugging Face Hub. If you cannot connect via a wired connection during data recording, disable **Push to Hub** and upload your dataset afterward, following the same procedure described in [After Recording](/ai_worker/dataset_preparation_recording_ai_worker#after-recording).
+If you enable **Push to Hub** as shown below, a wired connection to the AI Worker is required to upload your recorded dataset to the Hugging Face Hub. If a wired connection is not available during data recording, disable **Push to Hub** and upload your dataset afterward using the `huggingface-cli` (see the guide on sharing a dataset via CLI).
+* **CLI upload guide**: 
+
+You can upload files or folders to the Hugging Face Hub using the `huggingface-cli upload` command—for example:
+
+* Your Hugging Face username is `robotis-ai`
+* Your dataset repository name is `bottle-pick-and-place`
+* Move to the directory:
+
+`ROBOT PC` `🐋 PHYSICAL AI TOOLS`
+  ```bash
+  cd /root/.cache/huggingface/lerobot/robotis-ai/bottle-pick-and-place
+  ```
+
+You can upload it to the Hugging Face Hub with:
+
+```bash
+huggingface-cli upload robotis-ai/bottle-pick-and-place \
+  /root/.cache/huggingface/lerobot/robotis-ai/bottle-pick-and-place \
+  / \
+  --repo-type=dataset
+```
 :::
 
 ::: tabs

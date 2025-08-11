@@ -78,6 +78,10 @@ To change the image topic:
 
 Fill out the task-related fields in the **Task Info Panel**, as shown below. For more information about what each field means in the **Task Info Panel**, please refer to **:point_right: Task Information Field Descriptions** below.
 
+::: info
+If you enable **Push to Hub** as shown below, a wired connection to the AI Worker is required to upload your recorded dataset to the Hugging Face Hub. If you cannot connect via a wired connection during data recording, disable **Push to Hub** and upload your dataset afterward, following the same procedure described in [After Recording](/ai_worker/dataset_preparation_recording_ai_worker#after-recording).
+:::
+
 ::: tabs
 == Single Task Mode
 <div style="display: flex; justify-content: center; gap: 40px;">

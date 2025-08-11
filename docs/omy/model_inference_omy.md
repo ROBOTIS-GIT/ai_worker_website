@@ -137,9 +137,9 @@ Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, locat
 
 You can either click the `Browse Policy Path` button to select the desired model folder, or directly enter the desired path in the text input field.
 
- <img src="/imitation_learning/web_ui_inference_browse_button.png" alt="Web UI" style="width: 30%; ">
- <br>
- <img src="/imitation_learning/web_ui_inference_file_browse.png" alt="Web UI" style="width: 100%; ">
+<img src="/imitation_learning/web_ui_inference_browse_button.png" alt="Web UI" style="width: 30%; ">
+<br>
+<img src="/imitation_learning/web_ui_inference_file_browse.png" alt="Web UI" style="width: 100%; ">
 :::
 
 ::: info

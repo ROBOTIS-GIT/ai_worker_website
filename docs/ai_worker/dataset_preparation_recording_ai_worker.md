@@ -79,8 +79,9 @@ To change the image topic:
 Fill out the task-related fields in the **Task Info Panel**, as shown below. For more information about what each field means in the **Task Info Panel**, please refer to **:point_right: Task Information Field Descriptions** below.
 
 ::: info
-If you enable **Push to Hub** as shown below, the AI Worker requires a **wired connection to the Internet** to upload your recorded dataset to the Hugging Face Hub. If a wired connection is not available during data recording, disable **Push to Hub** and upload your dataset afterward using the `huggingface-cli` (see the guide on sharing a dataset via CLI).
-* **CLI upload guide**: 
+If you enable **Push to Hub** as shown below, the AI Worker requires a **wired connection to the Internet** to upload your recorded dataset to the Hugging Face Hub. If a wired connection is not available during data recording, disable **Push to Hub** and upload your dataset afterward using the `huggingface-cli` (see the  CLI upload guide below).
+
+**CLI Upload Guide**: 
 
 You can upload files or folders to the Hugging Face Hub using the `huggingface-cli upload` command—for example:
 

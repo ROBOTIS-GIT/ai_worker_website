@@ -3,6 +3,13 @@
 ## AI Worker
 https://github.com/ROBOTIS-GIT/ai_worker
 
+### 1.1.9 (2025-07-18)
+* Added robot manager ros2 controller
+* Added Swerve Steer initialization feature
+* Fixed Gazebo simulation issue
+* Added error code reading feature for Dynamixel
+* Contributors: Woojin Wie
+
 ### 1.1.8 (2025-07-14)
 * Modified joystick controller to enable lift control while in swerve mode
 * Refactored joystick controller
@@ -111,6 +118,37 @@ https://github.com/ROBOTIS-GIT/ai_worker
 
 ## Physical AI Tools
 - https://github.com/ROBOTIS-GIT/physical_ai_tools
+
+### 0.6.3 (2025-07-25)
+* Fixed a bug to allow setting the output folder path to a specified location.
+* Fixed a bug that did not guarantee the order of messages.
+* Contributors: Dongyun Kim, Seongwoo Kim, Woojin Wie
+
+### 0.6.2 (2025-07-24)
+* Updated Lerobot to the latest version and modified related functionalities.
+* Contributors: Dongyun Kim, Seongwoo Kim, Woojin Wie
+
+### 0.6.1 (2025-07-23)
+* Implemented robust error handling during data collection to prevent server crashes due to incorrect robot type configuration
+* Contributors: Seongwoo Kim
+
+### 0.6.0 (2025-07-23)
+* Added training-related service types and message types
+* Added a new training page for training imitation learning models
+* Implemented a Training Manager to support model training through the Web UI
+* Contributors: Kiwoong Park, Seongwoo Kim
+
+### 0.5.13 (2025-07-21)
+* Updated Docker volume mount paths from /root to ${HOME} for improved portability and compatibility
+* Contributors: Seongwoo Kim
+
+### 0.5.12 (2025-07-18)
+* Enabled appending video encodings without overwriting existing data in multi-task mode
+* Contributors: Seongwoo Kim
+
+### 0.5.11 (2025-07-16)
+* Added functionality for evaluating trained models
+* Contributors: Dongyun Kim
 
 ### 0.5.10 (2025-07-15)
 * Added multi-tasking data recording support to the Physical AI Server

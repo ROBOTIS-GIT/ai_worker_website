@@ -5,6 +5,12 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 
 ![hardware_overview](/specifications/ai_worker/hardware_overview.png)
 
+## Product Components
+![product_components](/specifications/ai_worker/product_components.png)
+
+* Extra Included Items
+  - **FFW-SG2**: Battery Charger
+
 ## Product Models
 ![model_name](/specifications/ai_worker/model_name.png)
 

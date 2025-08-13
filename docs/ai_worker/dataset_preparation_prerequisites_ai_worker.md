@@ -41,7 +41,7 @@ Or, use shortcut command:
 ai_server
 ```
 
-## Launch the ROS 2 teleoperation node
+## Launch the ROS 2 Teleoperation Node
 
 Open a terminal and enter the Docker container:
 

@@ -132,6 +132,16 @@ Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, locat
 | **Task Instruction** | A sentence that tells the robot what action to perform, such as `"pick and place object"`.|
 | **Policy Path** <br>`🐋 PHYSICAL AI TOOLS`| The **absolute** path to your trained model directory **inside the Docker container**(`🐋 PHYSICAL AI TOOLS`). This should point to the folder containing your trained model files such as `config.json`, `model.safetensors`, and `train_config.json`. <br>See the **Policy Path Example** below for reference. |
 
+::: tip
+**Entering Policy Path**
+
+You can either click the `Browse Policy Path` button to select the desired model folder, or directly enter the desired path in the text input field.
+
+<img src="/imitation_learning/web_ui_inference_browse_button.png" alt="Web UI" style="width: 30%; ">
+<br>
+<img src="/imitation_learning/web_ui_inference_file_browse.png" alt="Web UI" style="width: 100%; ">
+:::
+
 ::: info
 **Policy Path Example**
 

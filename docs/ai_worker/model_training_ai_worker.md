@@ -210,7 +210,7 @@ or<br>
 
 On the **Home** page, select the type of robot you are using.
 
-  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
+  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 50%; display: block; margin: 0 auto;">
 
 #### c. Train the Policy
 
@@ -267,6 +267,9 @@ The training results will be saved in the `~/physical_ai_tools/lerobot/outputs/t
 == USER PC
 The training results will be saved in the `<your_workspace>/physical_ai_tools/lerobot/outputs/train/` directory.
 :::
+
+You can monitor the training loss while training is in progress.
+<img src="/imitation_learning/web_ui_training_loss.png" alt="Web UI" style="width: 50%; display: block; margin: 0 auto;">
 
 ### (Optional) Uploading Checkpoints to Hugging Face
 

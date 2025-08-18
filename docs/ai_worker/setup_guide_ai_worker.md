@@ -29,7 +29,7 @@ The back of the Follower body includes several ports for system access and exter
 == FFW-SG2
 #### Powering On the FFW_SG2 Follower
 ![Back of the SG2 Base](/quick_start_guide/ai_worker/back_of_the_SG2_base.png)
-1. Insert the `Key Switch` and turn it to the 14 o'clock position.
+1. Insert the `Key Switch` and turn it to the 2 o'clock position.
 2. Press and hold the `Power Button` for 3 seconds. When you hear a beep, the system is powered on. (You should see the robot’s head light up at this point.)
 
 #### Hardware Ports (FFW_SG2 Follower)

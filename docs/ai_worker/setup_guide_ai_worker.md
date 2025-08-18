@@ -61,10 +61,10 @@ Replace SNPR48A0000 with the serial number printed on the back of the robot body
 
 == FFW-SG2
 
-1. Check the serial number printed on the back of the robot body. In this example, the serial number is **0000**.
+1. Check the serial number printed on the back of the robot body. In this example, the number you need to check is **0000**.
 ![Back of the Follower](/quick_start_guide/ai_worker/serial_number.png)
 
-2. Connect the Wi-Fi network named **AIWORKER(Serial Number)**. In this example, the network name is **AIWORKER0000**.
+2. Connect the Wi-Fi network named **AIWORKER(Number)**. In this example, the network name is **AIWORKER0000**.
     - The **Wi-Fi password** is identical to the **network name (SSID)**.
 
 3. On your user PC terminal, use the following command to connect via SSH:

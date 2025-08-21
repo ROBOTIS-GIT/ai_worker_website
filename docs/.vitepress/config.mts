@@ -221,22 +221,22 @@ export default defineConfig({
           text: 'OMX',
           items: [
             { text: 'Introduction', link: '/omx/introduction_omx' },
-            { text: 'Video Gallery', link: '/omx/videos_omx' }
+            // { text: 'Video Gallery', link: '/omx/videos_omx' }
           ]
         },
-        {
-          text: 'Specifications',
-          items: [
-            { text: 'Hardware', link: '/omx/hardware_omx' },
-            { text: 'Software', link: '/omx/software_omx' }
-          ]
-        },
+        // {
+        //   text: 'Specifications',
+        //   items: [
+        //     { text: 'Hardware', link: '/omx/hardware_omx' },
+        //     { text: 'Software', link: '/omx/software_omx' }
+        //   ]
+        // },
         {
           text: 'Quick Start Guide',
           items: [
             { text: 'Assembly Guide', link: '/omx/assembly_guide_omx' },
             { text: 'Setup Guide', link: '/omx/setup_guide_omx' },
-            { text: 'Operation Guide', link: '/omx/operation_omx' }
+            // { text: 'Operation Guide', link: '/omx/operation_omx' }
           ]
         },
         {
@@ -263,21 +263,20 @@ export default defineConfig({
               text: 'Option 2: LeRobot',
               collapsed: false,
               items: [
-                { text: 'LeRobot Guide', link: '/omx/lerobot_omx' },
-                { text: 'Model Training', link: '/omx/model_training_lerobot_omx' },
-                { text: 'Model Inference', link: '/omx/model_inference_lerobot_omx' }
+                { text: 'Installation', link: '/omx/lerobot_omx' },
+                { text: 'Imitation Learning', link: '/omx/lerobot_imitation_learning_omx' }
               ]
             }
           ]
         },
-        {
-          text: 'Simulation',
-          items: [
-            { text: 'Overview', link: '/omx/simulation_omx'},
-            { text: 'Gazebo', link: '/omx/gazebo_omx' },
-            { text: 'Isaac Sim/Lab', link: '/omx/robotis_lab_omx' }
-          ]
-        },
+        // {
+        //   text: 'Simulation',
+        //   items: [
+        //     { text: 'Overview', link: '/omx/simulation_omx'},
+        //     { text: 'Gazebo', link: '/omx/gazebo_omx' },
+        //     { text: 'Isaac Sim/Lab', link: '/omx/robotis_lab_omx' }
+        //   ]
+        // },
         {
           text: 'Resources',
           items: [

@@ -76,9 +76,9 @@ The robot will start moving when you run bringup. Please be careful.
 ```bash
 cd /data/docker/open_manipulator/docker && ./container.sh enter
 ```
-`ROBOT PC` `🐋 OPEN MANIPULATOR`
+`ROBOT PC` ➔ `🐋 OPEN MANIPULATOR`
 ```bash
-ros2 launch open_manipulator_bringup omx_f_follower_ai.launch.py ros2_control_type:=omx_f_smooth
+ros2 launch open_manipulator_bringup omx_f_follower_ai.launch.py
 ```
 
 ### 4. Run Inference
@@ -98,3 +98,72 @@ cd physical_ai_tools/docker
 Enter the **Physical AI Tools** Docker container:
 
 ```bash
+./container.sh enter
+```
+Then, launch the Physical AI Server with the following command:
+
+`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
+```bash
+ai_server
+```
+
+#### b. Open the Web UI
+
+Open your web browser and navigate the Web UI (Physical AI Manager).
+
+(Refer to the [Dataset Preparation > Recording > 1. Open the Web UI](/omy/dataset_preparation_recording_omy#_1-open-the-web-ui))
+
+On the **Home** page, select the type of robot you are using.
+
+  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
+
+#### c. Enter Task Instruction and Policy Path
+
+Go to the `Inference` Page.
+
+Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, located on the right side of the page.
+
+  <img src="/imitation_learning/web_ui_inference_task_info.png" alt="Web UI" style="width: 50%; ">
+
+- Task Information Field Descriptions
+
+| Item | Description |
+| -------- | --- |
+| **Task Instruction** | A sentence that tells the robot what action to perform, such as `"pick and place object"`.|
+| **Policy Path** <br>`🐋 PHYSICAL AI TOOLS`| The **absolute** path to your trained model directory **inside the Docker container**(`🐋 PHYSICAL AI TOOLS`). This should point to the folder containing your trained model files such as `config.json`, `model.safetensors`, and `train_config.json`. <br>See the **Policy Path Example** below for reference. |
+
+::: info
+**Policy Path Example**
+
+```
+/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/
+└── example_model_folder/
+         ├── pretrained_model/    # ← This folder contains config.json, model.safetensors, train_config.json
+         │   ├── config.json
+         │   ├── model.safetensors
+         │   └── train_config.json
+         └── training_state/
+             ├── optimizer_param_groups.json
+             ├── optimizer_state.safetensors
+             ├── rng_state.safetensors
+             └── training_step.json
+
+```
+For a model folder structure like the one above, the **Policy Path** would be:
+
+`/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/example_model_folder/pretrained_model/`
+
+:::
+
+::: info
+Recording during inference will be supported in a future update. Coming soon!
+:::
+
+#### d. Start Inference
+
+To begin inference, use the **Control Panel** located at the bottom of the page:
+
+  <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
+
+  - The `Start` button begins inference.
+  - The `Finish` button stops inference.

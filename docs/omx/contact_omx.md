@@ -1,50 +1,39 @@
-# Contact
+# Contact Us
 
-## Support
+For sales inquiries or detailed product information about the Physical AI lineup, please contact us through one of the following channels:
 
-For technical support and inquiries about OMX, please contact us through the following channels:
+## Global Headquarters
+- ROBOTIS Co., Ltd.
+- Address: 37, Magokjungang 5-ro 1-gil, Gangseo-gu, Seoul, Republic of Korea (Postal Code: 07594)
+- Website: [en.robotis.com](https://en.robotis.com)
+- Online Shop: [en.robotis.com/shop_en](https://en.robotis.com/shop_en/list.php?ca_id=4060)
+- Email: contactus2@robotis.com
+- FAX: +82-70-8230-1336
 
-### Email Support
-- **Technical Support**: support@robotis.com
-- **Sales Inquiries**: sales@robotis.com
-- **General Inquiries**: info@robotis.com
+## Head Office, South Korea
+- ROBOTIS Co., Ltd.
+- Address: 37, Magokjungang 5-ro 1-gil, Gangseo-gu, Seoul, Republic of Korea (Postal Code: 07594)
+- Website: [www.robotis.com](https://www.robotis.com/)
+- Online Shop: [www.robotis.com/shop](https://www.robotis.com/shop/list.php?ca_id=4060)
+- Email: korea@robotis.com
+- TEL: +82-70-8671-2629
+- FAX: +82-70-8230-1336
 
-### Documentation
-- **Official Documentation**: [https://docs.robotis.com](https://docs.robotis.com)
-- **GitHub Repository**: [https://github.com/ROBOTIS-GIT/open_manipulator](https://github.com/ROBOTIS-GIT/open_manipulator)
+## US Office
+- ROBOTIS Inc.
+- 4222 Green River Rd, Corona, CA 92880, United States
+- Website: [www.robotis.us](https://www.robotis.us)
+- Online Shop: [www.robotis.us/omy](https://www.robotis.us/omy/)
+- Email: america@robotis.com
+- TEL: 949-377-0377
 
-### Community
-- **Forum**: [https://forum.robotis.com](https://forum.robotis.com)
-- **Discord**: [https://discord.gg/robotis](https://discord.gg/robotis)
+## Connect with Us
+For the latest updates, follow us on our social media channels.
 
-### Social Media
-- **YouTube**: [https://www.youtube.com/@ROBOTIS](https://www.youtube.com/@ROBOTIS)
-- **Twitter**: [https://twitter.com/ROBOTIS](https://twitter.com/ROBOTIS)
-- **LinkedIn**: [https://www.linkedin.com/company/robotis](https://www.linkedin.com/company/robotis)
-
-## Office Locations
-
-### Headquarters
-**ROBOTIS Co., Ltd.**
-- Address: 5F, 319, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea
-- Phone: +82-2-6944-4500
-- Fax: +82-2-6944-4501
-
-### International Offices
-**ROBOTIS America**
-- Address: 1000 N. Rand Rd., Suite 214, Wauconda, IL 60084, USA
-- Phone: +1-847-415-8888
-- Email: info@robotis.us
-
-**ROBOTIS Japan**
-- Address: 3-1-1, Shibaura, Minato-ku, Tokyo 108-0023, Japan
-- Phone: +81-3-5444-8888
-- Email: info@robotis.jp
-
-## Technical Support Hours
-
-- **Monday - Friday**: 9:00 AM - 6:00 PM (KST)
-- **Saturday**: 9:00 AM - 1:00 PM (KST)
-- **Sunday**: Closed
-
-For urgent technical issues outside of business hours, please email support@robotis.com with "URGENT" in the subject line. 
+<div class="contact-social-links">
+  <a href="https://www.linkedin.com/company/robotis/" target="_blank">LinkedIn</a> |
+  <a href="https://www.facebook.com/robotis.company" target="_blank">Facebook</a> |
+  <a href="https://x.com/ROBOTISAmerica" target="_blank">X (Twitter)</a> |
+  <a href="https://www.instagram.com/robotis_global/" target="_blank">Instagram</a> |
+  <a href="https://www.youtube.com/@ROBOTISOpenSourceTeam" target="_blank">YouTube</a>
+</div> 

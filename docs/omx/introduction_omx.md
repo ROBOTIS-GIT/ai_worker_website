@@ -1,50 +1,71 @@
 # About OMX
 
-<img src="/overview/omy_product.png" width="400"/>
+<img src="/quick_start_guide/omx/main_image.webp" alt="OMX Overview" style="max-width: 860px; width: 100%; margin: 8px 0 16px;" />
 
-The ROBOTIS **OMX** is a 5-DOF robotic manipulator designed for **entry-level physical AI research** and intelligent automation.
-Built with high-performance **DYNAMIXEL-X** series actuators, OMX enables skill acquisition through human demonstration. It supports both imitation learning and reinforcement learning for increasingly complex manipulation tasks.
+<div style="font-size: 1.65rem; font-weight: 800; line-height: 1.25; margin: 4px 0 18px;">
+  <span class="title--purple-gradient">Entry-level, low-cost Physical AI manipulation sets</span>
+  
+</div>
 
-Optimized for pick-and-place, assembly, and inspection in academic, industrial, and development environments, OMX delivers low cost, accuracy, extremely lightweight design, and extended movement range and workspace. Its compact structure and full **ROS 2 compatibility** make it a robust platform for AI-driven robotics development.
+<div style="margin: 8px 0 18px; font-size: 1.05rem; opacity: .95;">
+At ROBOTIS, we strive to offer <strong>exceptional convenience</strong> for aspiring Physical AI Developer who want to <strong>collect and compare datasets hands‑on</strong> and step into the world of Physical AI with confidence.
+</div>
 
-### 🦾 5-DOF Arm with DYNAMIXEL-X Actuators
 
-Built with the high-performance **DYNAMIXEL-X** series, OMX provides smooth, precise motion across 5 degrees of freedom.
-It enables accurate and repeatable manipulation for research and educational applications.
 
-### ⚖️ Ultra-Lightweight Design
+The ROBOTIS <strong>OMX</strong> is a compact 5-DOF manipulator tailored for entry-level Physical AI. Built on <strong>DYNAMIXEL-X</strong>, it supports full IL/RL pipelines and ROS 2-native workflows.
 
-OMX features an extremely lightweight construction, making it ideal for educational environments and basic RL/IL experiments. The reduced weight enhances safety and portability while maintaining performance.
+<!-- styles consolidated to docs/.vitepress/theme/custom.css -->
 
-### 🔄 360°+ Base Rotation with Extended Position Structure
+## Why OMX ? — Advantages
 
-The OMX base offers extended position capabilities with over 360 degrees of rotation, providing exceptional workspace coverage and flexibility for various manipulation tasks.
-
-### 🎯 Support Gripper Spring for Enhanced Learning Experience
-
-OMX incorporates a Support Gripper spring mechanism that provides an incredibly convenient user experience during learning sessions. This feature makes demonstration and training significantly more intuitive and user-friendly.
-
-### 🎛️ Special Trigger Design
-
-OMX features a unique trigger design that enables access to a much wider workspace version. This special trigger mechanism allows users to utilize an expanded range of motion while maintaining safety and control.
-
-### 🔄 End-to-End Imitation Learning Pipeline
-
-OMX supports the full imitation learning process—from demonstration-based data collection to policy inference—offering a seamless pipeline for training and deploying intelligent motion behaviors.
-
-### 📦 Modular & ROS 2 Native
-
-OMX's modular architecture allows flexible integration with sensors and tools.
-Its ROS 2-native design supports real-time control, intuitive customization, and access to a robust open-source ecosystem.
-
-### 🤖 Compact, Deployable, and Developer-Friendly
-
-OMX's lightweight frame and intuitive interface make it ideal for labs, classrooms, and automation setups.
-It empowers developers and researchers to test, iterate, and deploy advanced control policies with ease.
+<div class="features-grid">
+  <div class="feature-btn">
+    <div class="glow"></div>
+    <div class="feature-title">⚙️ DYNAMIXEL Advantage</div>
+    <div class="badge-row">
+      <span class="pill">No Calibration</span>
+      <span class="pill pill-green">No ID Setting</span>
+    </div>
+    <div class="feature-sub"><strong>Factory‑ready</strong>: calibration and ID settings done. Plug and play.</div>
+  </div>
+  <div class="feature-btn">
+    <div class="glow"></div>
+    <div class="feature-title">🪶 Light Weight</div>
+    <div class="feature-sub">Featherweight <strong>OMX‑L</strong> makes long‑hour <strong>dataset collection</strong> effortless.</div>
+  </div>
+  <div class="feature-btn">
+    <div class="glow"></div>
+    <div class="feature-title">🧭 Extended Position Base</div>
+    <div class="feature-sub">Extended position mode enables a <strong>vast workspace</strong> with 360° base rotation.</div>
+  </div>
+  <div class="feature-btn">
+    <div class="glow"></div>
+    <div class="feature-title">🤝 Gripper Spring Controller</div>
+    <div class="feature-sub">Improved <strong>comfort and consistency</strong> in teleop gripping.</div>
+  </div>
+  <div class="feature-btn">
+    <div class="glow"></div>
+    <div class="feature-title">🧰 Any Workflow</div>
+    <div class="feature-sub" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;">
+      <span class="chip-soft chip-amber"><span class="dot"></span> Physical AI Tools (GUI)</span>
+      <span class="chip-soft chip-pink"><span class="dot"></span> LeRobot Native</span>
+      <span class="chip-soft"><span class="dot"></span> Custom Pipelines</span>
+    </div>
+  </div>
+  <div class="feature-btn">
+    <div class="glow"></div>
+    <div class="feature-title">🛠️ Detail‑Driven UX</div>
+    <div class="feature-sub">
+      • Gripper design optimized for <strong>feature acquisition</strong><br/>
+      • <strong>Initial point</strong> that assists training
+    </div>
+  </div>
+</div>
 
 ## OMX Lineup Overview
 
-<img src="/overview/omy_models.png" width="800"/>
+<img src="/overview/omx_models.png" width="800"/>
 
 The OMX series offers multiple configurations for various teleoperation and manipulation tasks:
 

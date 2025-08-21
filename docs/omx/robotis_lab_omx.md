@@ -1,31 +1,68 @@
-# ROBOTIS Lab
+# Getting Started with ROBOTIS Lab
 
 ## Overview
 
-ROBOTIS Lab is the official research and development center for advanced robotics, including the OMX platform. The lab focuses on developing new algorithms, hardware, and applications for intelligent manipulation and teleoperation.
+**ROBOTIS Lab** is a research-oriented repository based on [Isaac Lab](https://isaac-sim.github.io/IsaacLab), designed to enable reinforcement learning and imitation learning experiments using Robotis robots in simulation.
+This project provides simulation environments, configuration tools, and task definitions tailored for Robotis hardware, leveraging NVIDIA Isaac Sim’s powerful GPU-accelerated physics engine and Isaac Lab’s modular RL pipeline.
 
-## Research Areas
-- Physical AI and skill acquisition
-- Imitation learning and reinforcement learning
-- Teleoperation and human-robot interaction
-- Advanced control and planning
+::: info
+This repository currently depends on **IsaacLab v2.0.0** or higher.
+:::
 
-## Facilities
-- State-of-the-art robotics testbeds
-- Motion capture and sensor suites
-- High-performance computing resources
+## Installation
+[YouTube Guide](https://www.youtube.com/watch?v=GHkyxmOy5-I)
 
-## Collaboration
-- Academic and industrial partnerships
-- Open-source contributions
-- Joint research projects
+1. Follow the [Isaac Lab installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html) to set up the environment.
+  Instead of the recommended local installation, you can run Isaac Lab in a Docker container to simplify dependency management and ensure consistency across systems.
 
-## Publications
-- [ROBOTIS Research Publications](https://www.robotis.com/)
+2. Clone the Isaac Lab Repository:
+  ```bash
+  git clone https://github.com/isaac-sim/IsaacLab.git
+  ```
 
-## Contact
-- Email: research@robotis.com
-- Forum: [https://forum.robotis.com](https://forum.robotis.com)
+3. Start and enter the Docker container:
+  ```bash
+  # start
+  ./IsaacLab/docker/container.py start base
 
-## Visit
-- ROBOTIS Lab, 5F, 319, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea 
+  # enter
+  ./IsaacLab/docker/container.py enter base
+  ```
+
+
+4. Clone the robotis_lab repository (outside the IsaacLab directory):
+
+  ```bash
+  cd /workspace && git clone https://github.com/ROBOTIS-GIT/robotis_lab.git
+  ```
+
+5. Install the robotis_lab Package.
+
+  ```bash
+  cd robotis_lab
+  python -m pip install -e source/robotis_lab
+  ```
+
+6. Verify that the extension is correctly installed by listing all available environments:
+
+  ```bash
+  python scripts/tools/list_envs.py
+  ```
+
+  Once the installation is complete, the available training tasks will be displayed as shown below:
+  ![run list_env](/simulation/all/isaaclab_list_envs.png)
+
+## Running Examples
+![OMY in NVIDIA Isaac Lab](/simulation/omy/omy_isaac_lab2.png)
+
+### Reinforcement Learning
+
+You can train and run the **OMY Reach Task** using the following commands:
+
+```bash
+# Train
+python scripts/reinforcement_learning/rsl_rl/train.py --task RobotisLab-Reach-OMY-v0 --num_envs=512 --headless
+
+# Play
+python scripts/reinforcement_learning/rsl_rl/play.py --task RobotisLab-Reach-OMY-v0 --num_envs=16
+```

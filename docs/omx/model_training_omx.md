@@ -1,22 +1,10 @@
 # Model Training
 This guide walks you through training imitation learning models for OMX, based on datasets collected via the Web UI.
 
-Once [preparing your dataset](/omx/dataset_preparation_omx) is done, the policy model can be trained using either the Web UI or the LeRobot CLI.
-
-You can choose one of the following options:
-
-<div style='display: flex; justify-content: flex-start; gap: 30px;'>
-<a href="#model-training-with-web-ui" class="button-shortcut">
-Option 1<br>Web UI (Recommended)
-</a>
-
-<a href="#model-training-with-lerobot-cli" class="button-shortcut">
-Option 2<br>LeRobot CLI (Optional)
-</a>
-</div>
+Once [preparing your dataset](/omx/dataset_preparation_omx) is done, the policy model can be trained using the Web UI.
 
 
-## Model Training With Web UI
+## Model Training
 
 ### 1. Prepare Your Dataset
 
@@ -24,7 +12,7 @@ The dataset to be used for training should be located at
 
 `USER PC`
 
- `<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/${HF_USER}/`
+ `<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/`
  
 Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
 
@@ -61,7 +49,7 @@ If you haven't set up the Physical AI Tools Docker container, please refer to th
 
 #### a. Launch Physical AI Server
 ::: warning
-If the Physical AI Tools Docker container is already running, you can skip this step.
+If the **ai_server** is already running, you can skip this step.
 :::
 
 Go to **physical_ai_tools/docker** directory:
@@ -78,7 +66,7 @@ Enter the **Physical AI Tools** Docker container:
 ```
 Then, launch the Physical AI Server with the following command:
 
-`USER PC` `🐋 PHYSICAL AI TOOLS`
+`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
 ```bash
 ai_server
 ```
@@ -98,3 +86,76 @@ On the **Home** page, select the type of robot you are using.
 Go to the `Training` page and follow the steps below:
 
   <img src="/imitation_learning/web_ui_training_page.png" alt="Web UI" style="width: 100%; "> 
+  - Step 1: Select the `Dataset`, `Policy Type` and `Device`.
+- Step 2: Enter the `Output Folder Name`.
+- Step 3: (Optional) Modify `Additional Options` if needed.
+
+For more information about these **options**, please refer to the descriptions below.
+
+:::tabs
+== Dataset
+
+The datasets stored in the `~/.cache/huggingface/` directory on the host (or `/root/.cache/huggingface/` inside the Docker container) will be listed automatically.
+<img src="/imitation_learning/web_ui_training_dataset_selection.png" alt="Web UI" style="width: 50%; ">
+
+== Policy type and device
+Select the policy and computation device for training your model.
+- **Policy Type**: Choose the imitation learning algorithm (e.g., act, pi0, etc.).
+- **Device**: Select the hardware to be used for training (e.g. cuda, cpu, etc.)
+
+<img src="/imitation_learning/web_ui_training_policy_selection.png" alt="Web UI" style="width: 50%; ">
+
+== Output folder name
+Specify the name of the folder where your trained model will be saved. Then, check for duplicates. 
+This folder will be created in the default output directory (`<your_workspace>/physical_ai_tools/lerobot/outputs/`).
+Choose a descriptive and meaningful name so you can easily identify the trained model later.
+
+<img src="/imitation_learning/web_ui_training_output_folder_input.png" alt="Web UI" style="width: 50%; ">
+
+== Additional options
+<img src="/imitation_learning/web_ui_training_additional_options.png" alt="Web UI" 
+style="width: 50%; ">
+
+- Additional Option Descriptions
+
+| Parameter | Description |
+|-----------|-------------|
+| **seed** | Random seed for reproducible training results. Setting the same seed ensures consistent model training across different runs. |
+| **num workers** | Number of worker processes for data loading. Higher values can speed up training but consume more memory. Recommended: 4-8 for most systems. |
+| **batch size** | Number of training samples processed simultaneously. Larger batch sizes can improve training stability but require more GPU memory. |
+| **steps** | Total number of training steps to perform. This determines how long the training will run. |
+| **eval frequency** | How often (in steps) to evaluate the model on validation data. Lower values provide more frequent monitoring but slow down training. |
+| **log frequency** | How often (in steps) to log training metrics and losses. Used for monitoring training progress. |
+| **save frequency** | How often (in steps) to save model checkpoints. Lower values create more backup points but use more storage space. |
+:::
+
+Click `Start Training` to begin training the policy. The training results will be saved in the `physical_ai_tools/lerobot/outputs/train/` directory.
+
+### (Optional) Uploading Checkpoints to Hugging Face
+
+Navigate to **physical_ai_tools/docker** directory and enter the Docker container:
+
+`USER PC`
+```bash
+cd physical_ai_tools/docker
+```
+
+```bash
+./container.sh enter
+```
+
+Navigate to the LeRobot directory:
+
+`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
+```bash
+cd /root/ros2_ws/src/physical_ai_tools/lerobot
+```
+
+To upload the latest trained checkpoint to the Hugging Face Hub:
+
+```bash
+huggingface-cli upload ${HF_USER}/act_omy_test \
+  outputs/train/act_omy_test/checkpoints/last/pretrained_model
+```
+
+This makes your model accessible from anywhere and simplifies deployment.

@@ -13,7 +13,7 @@ cd physical_ai_tools/docker && ./container.sh enter
 
 Move to the **physical_ai_tools/lerobot** directory inside the container:
 
-`USER PC` `🐋 PHYSICAL AI TOOLS`
+`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot/src
 ```

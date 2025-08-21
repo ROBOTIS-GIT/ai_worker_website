@@ -93,34 +93,28 @@ Please exit the Docker container and return to your host terminal for the next s
 
 ## Launch the Camera Node
 
-Navigate to **open_manipulator/docker** directory and enter the Docker container:
+Navigate to **phisical_ai_tools/docker** directory and esnter the Docker Container:
 
 `USER PC`
 ```bash
-cd open_manipulator/docker
+cd physical_ai_tools/docker
 ```
 ```bash
 ./container.sh enter
 ```
+`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
 
-Launch the Camera Node:
-
-`USER PC` ➔ `🐋 OPEN MANIPULATOR`
-
-**Option 1: USB Camera (Recommended)**
+**Option 1: USB Camera**
 ```bash
-ros2 launch usb_cam usb_cam_launch.py camera_name:='cam_wrist'
+ros2 launch ffw_bringup camera_usb.launch.py 실제로는 변경
 ```
 
 **Option 2: RealSense Camera**
 ```bash
-ros2 launch realsense2_camera rs_launch.py camera_name:='cam_wrist'
+ros2 launch realsense2_camera rs_launch.py  실제로는 변경
 ```
 
-
-
 Choose the appropriate option based on your camera hardware.
-
 
 ## Launch the Physical AI Server
 
@@ -136,7 +130,7 @@ cd physical_ai_tools/docker
 
 Launch Physical AI Server with the following command:
 
-`USER PC` `🐋 PHYSICAL AI TOOLS`
+`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
 ```bash
 ros2 launch physical_ai_server physical_ai_server_bringup.launch.py
 ```
@@ -148,23 +142,21 @@ ai_server
 
 ## Launch the ROS 2 Teleoperation Node
 
-### 1. Access the Robot PC
-Access the Robot PC either directly or via SSH. For SSH connection instructions, refer to the [SSH connection](/omx/setup_guide_omx#ssh-connection). 
+Navigate to **open_manipulator/docker** directory and enter the Docker container:
 
-### 2. Launch the ROS 2 Teleoperation Node
-
-Enter the Docker Container
-
-`ROBOT PC`
+`USER PC`
 ```bash
-cd /data/docker/open_manipulator/docker && ./container.sh enter
+cd open_manipulator/docker
 ```
-
+```bash
+./container.sh enter
+```
 Then, launch the ROS 2 teleoperation node with following command:
 ::: warning
 Executing the code will cause OMX to move immediately. Please stay clear and be cautious.
 :::
-`ROBOT PC` `🐋 OPEN MANIPULATOR`
+
+`USER PC` ➔ `🐋 OPEN MANIPULATOR`
 ```bash
 ros2 launch open_manipulator_bringup omx_ai.launch.py
 ``` 

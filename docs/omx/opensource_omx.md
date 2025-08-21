@@ -1,30 +1,17 @@
-# Open Source
+# Open Source Project
 
-OMX is developed with open-source software and hardware principles. The following resources are available for users and developers:
+AI Manipulator is an open-source project that provides comprehensive resources for users to explore and utilize. The project includes source code, simulation models, tutorials, and training data, all designed to foster a user-friendly environment and promote ecosystem growth.
 
-## GitHub Repositories
-- [open_manipulator](https://github.com/ROBOTIS-GIT/open_manipulator)
-- [physical_ai_tools](https://github.com/ROBOTIS-GIT/physical_ai_tools)
+## Available Resources
 
-## License
-OMX software and documentation are released under the Apache 2.0 License. Please refer to the LICENSE file in each repository for details.
+| Resource | Description | Link |
+|----------|-------------|------|
+| **AI Manipulator** | ROS 2 Packages for operating the AI Manipulator | [GitHub](https://github.com/ROBOTIS-GIT/open_manipulator) |
+| **Physical AI Tools** | ROS 2 package for generating datasets in LeRobotDataset format | [GitHub](https://github.com/ROBOTIS-GIT/physical_ai_tools) |
+| **Simulation Models** | URDF(ROS), MJCF(MuJoCo) and USD(Isaac Sim/Lab) model files for simulation | [URDF](https://github.com/ROBOTIS-GIT/open_manipulator/tree/main/open_manipulator_description/urdf)<br>[MJCF](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)<br>[USD](https://github.com/ROBOTIS-GIT/robotis_lab/tree/main/source/robotis_lab/data/robots) |
+| **AI Models & Datasets** | Pre-trained models and training datasets | [Hugging Face](https://huggingface.co/ROBOTIS) |
+| **Docker Images** | Ready-to-use development environments | [Docker Hub](https://hub.docker.com/r/robotis/ros/tags) |
+| **Documentation** | Official manual and documentation | [ai.robotis.com](https://ai.robotis.com) |
+| **Tutorial Videos** | Educational content and demonstrations | [YouTube](https://www.youtube.com/@ROBOTISOpenSourceTeam) |
 
-## Contributing
-We welcome contributions from the community! To contribute:
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Submit a pull request
-
-## Reporting Issues
-If you find a bug or have a feature request, please open an issue on the relevant GitHub repository.
-
-## Community
-- [ROBOTIS Forum](https://forum.robotis.com)
-- [Discord](https://discord.gg/robotis)
-
-## Documentation
-- [Official Documentation](https://docs.robotis.com)
-
-## Acknowledgements
-OMX development is supported by the open-source robotics community and contributors worldwide. 
+We welcome contributions from the community to help improve and expand the AI Manipulator ecosystem.

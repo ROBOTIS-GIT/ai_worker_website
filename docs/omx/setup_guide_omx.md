@@ -4,42 +4,38 @@ This guide will walk you through the process of setting up your OMX hardware and
 
 ## Hardware Setup
 ### OMX-F
-![](/quick_start_guide/omy/hardware_setup_OMY-3M.jpg)
+![](/quick_start_guide/omx/hardware_setup_OMX_F.png)
 ### OMX-L
-![](/quick_start_guide/omy/hardware_setup_OMY-F3M.jpg)
+![](/quick_start_guide/omx/hardware_setup_OMX_L.png)
 ### OMX-AI
-![](/quick_start_guide/omy/hardware_setup_OMY-L100.jpg)
+![](/quick_start_guide/omx/hardware_setup_OMX_AI.png)
 
-
-## Power connection
-![omy_power](/quick_start_guide/omy/omy_power.png)
 
 
 ## Download Repositories
 Clone the necessary packages for OMX.
 ```bash
 git clone https://github.com/ROBOTIS-GIT/open_manipulator
-git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
-
 ```
 
 ## Docker Setup
-1. Connect to the OMX via SSH.
+1. Connect the OMX to your computer via a USB‑C cable.
 2. open_manipulator package is located in `/data/docker/open_manipulator`. Navigate to this location using `cd`:
 ```bash
 cd /data/docker/open_manipulator
 ```
 3. Update the package and recreate the container with the latest docker image:
 ```bash
-git checkout jazzy
-git pull
 ./docker/container.sh start
 ```
 4. Access the container:
 ```bash
 ./docker/container.sh enter
 ```
-
+5. Start the Teleop node:
+```bash
+ros2 launch open_manipulator_bringup omx_ai.launch.py
+```
 ::: tip
 The `/workspace` folder inside the container is volume mapped (a feature that links file systems) to `/data/docker/open_manipulator/workspace` on the host. All other areas are volatile and will be lost if the container is damaged or deleted. For more details, see the [Docker Volume Configuration](#docker-volume-configuration) section.
 :::

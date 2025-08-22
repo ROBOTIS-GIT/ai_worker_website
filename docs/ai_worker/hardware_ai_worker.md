@@ -28,8 +28,8 @@ The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model
 | Actuator                    | Arm Joint 1~6: DYNAMIXEL-Y<br>Arm Joint 7: DYNAMIXEL-P<br>Head: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~6: DYNAMIXEL-Y<br>Arm Joint 7: DYNAMIXEL-P<br>Head: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details)) |
 | Degrees of Freedom          | - Total: 25 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1<br>- Mobile: 6 DOF | - Total: 19 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1 |
 | Arm Reach                   | 641 mm (to wrist) + hand               | 641 mm (to wrist) + hand               |
-| Arm Payload<br>(Nominal)       | 3.0 kg (single arm)<br>6.0 kg (dual arm)¹  | 3.0 kg (single arm)<br>6.0 kg (dual arm)¹  |
-| Arm Payload<br>(Peak)          | 5.0 kg (single arm)<br>10.0 kg (dual arm)¹ | 5.0 kg (single arm)<br>10.0 kg (dual arm)¹ |
+| Arm Payload<br>(Nominal)       | 3.0 kg (single arm)<br>6.0 kg (dual arm)  | 3.0 kg (single arm)<br>6.0 kg (dual arm)  |
+| Arm Payload¹<br>(Peak)          | 5.0 kg (single arm)<br>10.0 kg (dual arm) | 5.0 kg (single arm)<br>10.0 kg (dual arm) |
 | Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
 | Joint Range                 | (see [Joint Configuration](#joint-configuration-and-nomenclature))| (see [Joint Configuration](#joint-configuration-and-nomenclature))|
 | Gripper/Hand                | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous Finger Actuator in development, see [Finger Actuator Specification](#finger-actuator-specification)) | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous Finger Actuator in development, see [Finger Actuator Specification](#finger-actuator-specification)) |

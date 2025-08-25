@@ -66,7 +66,7 @@ Click the **folder button** to open the file explorer and select your desired fo
 Enter the name for the merged result dataset folder.
 
 <div style="display: flex; justify-content: center;">
-  <img src="/imitation_learning/web_ui/edit_dataset_output/enter_folder_name.png" alt="Web UI" style="width: 80%; max-width: 550px;">
+  <img src="/imitation_learning/web_ui/edit_dataset/enter_output_folder_name.png" alt="Web UI" style="width: 80%; max-width: 550px;">
 </div>
 
 Finally, click the `Merge` button to merge the datasets. 
@@ -84,20 +84,20 @@ You can remove episodes that were incorrectly recorded during the data collectio
 Navigate to the `Edit Dataset` page.
 
 <div style="display: flex; justify-content: center;">
-  <img src="/imitation_learning/web_ui_edit_dataset_delete_episodes.png" alt="Web UI" style="width: 80%; max-width: 550px;">
+  <img src="/imitation_learning/web_ui/edit_dataset/delete_episodes.png" alt="Web UI" style="width: 80%; max-width: 550px;">
 </div>
 
 In the `Delete Episodes` section, click the **folder button** to open the file explorer and select your desired dataset. (You can also type the path directly in the text input field)
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui_edit_dataset_folder_button.png" alt="Web UI" style="width: 100%; max-width: 60px;">
+    <img src="/imitation_learning/web_ui/edit_dataset/folder_button.png" alt="Web UI" style="width: 100%; max-width: 60px;">
   </div>
   <div style="font-size: 30px; text-align: center;">
     ↓
   </div>
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui_edit_dataset_browse_merge_input.png" alt="Web UI" style="width: 100%; max-width: 550px;">
+    <img src="/imitation_learning/web_ui/edit_dataset/browse_merge_input.png" alt="Web UI" style="width: 100%; max-width: 550px;">
   </div>
 </div>
 
@@ -106,7 +106,7 @@ In the `Delete Episodes` section, click the **folder button** to open the file e
 Enter the episode numbers you want to remove in the input field. You can remove multiple episodes at once by separating the numbers with commas.
 
 <div style="display: flex; justify-content: center;">
-  <img src="/imitation_learning/web_ui_edit_dataset_delete_episodes_write_episode_num.png" alt="Web UI" style="width: 80%; max-width: 550px;">
+  <img src="/imitation_learning/web_ui/edit_dataset/delete_episodes_write_episode_num.png" alt="Web UI" style="width: 80%; max-width: 550px;">
 </div>
 
 ::: info

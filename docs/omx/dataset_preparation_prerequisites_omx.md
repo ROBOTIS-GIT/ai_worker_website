@@ -10,7 +10,7 @@ When executing terminal commands in this document, refer to the indicators below
 - `🐋 PHYSICAL AI TOOLS`: Physical AI Tools Docker container
 :::
 
-## Setup Open Manipulator Docker Container
+## Set up Open Manipulator Docker Container
 
 ::: warning
 If the **Open Manipulator** Docker container is already set up, **you can skip this step**.
@@ -30,7 +30,7 @@ Start the container with the following command:
 cd open_manipulator/docker && ./container.sh start
 ```
 
-### 2. Setup ROS Domain ID
+### 2. Set up ROS Domain ID
 Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
 
 
@@ -41,24 +41,23 @@ Enter the **Open Manipulator** Docker container:
 ./container.sh enter
 ```
 
-`USER PC` ➔ `🐋 OPEN MANIPULATOR`
+`USER PC` `🐋 OPEN MANIPULATOR`
 
 ```bash
 echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
 source ~/.bashrc
 ```
-::: tip 🎉 Open Manipulator Container Setup Complete!
+🎉 Open Manipulator Container Setup Complete!
 
 Please exit the Docker container and return to your host terminal for the next steps.
-:::
 
-## Setup Physical AI Tools Docker Container
+## Set up Physical AI Tools Docker Container
 
 ::: warning
 If the **Physical AI Tools** Docker container is already set up, **you can skip this step**.
 :::
 
-### 1. Start the Docker Container:
+### 1. Start the Docker container
 
 Clone the repository along with all required submodules:
 
@@ -74,7 +73,7 @@ cd physical_ai_tools/docker && ./container.sh start
 
 ### 2. Build the Physical AI Server
 
-Enter the docker container:
+Enter the Docker container:
 
 `USER PC`
 ```bash
@@ -82,43 +81,36 @@ Enter the docker container:
 ```
 Build the Physical AI Server with the following command:
 
-`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
-::: tip 🎉 Physical AI Tools Container Setup Complete!
+
+🎉 Physical AI Tools Container Setup Complete!
 
 Please exit the Docker container and return to your host terminal for the next steps.
-:::
 
 ## Launch the Camera Node
 
-Navigate to **phisical_ai_tools/docker** directory and esnter the Docker Container:
+Navigate to **open_manipulator/docker** directory and enter the Docker container:
 
 `USER PC`
 ```bash
-cd physical_ai_tools/docker
+cd open_manipulator/docker
 ```
 ```bash
 ./container.sh enter
 ```
-`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
+`USER PC` `🐋 OPEN MANIPULATOR`
 
-**Option 1: USB Camera**
+Then, launch the wrist USB camera node:
 ```bash
-ros2 launch ffw_bringup camera_usb.launch.py 실제로는 변경
+ros2 launch camera_bringup usb_camera_launch.py
 ```
-
-**Option 2: RealSense Camera**
-```bash
-ros2 launch realsense2_camera rs_launch.py  실제로는 변경
-```
-
-Choose the appropriate option based on your camera hardware.
 
 ## Launch the Physical AI Server
 
-Navigate to **phisical_ai_tools/docker** directory and esnter the Docker Container:
+Navigate to **physical_ai_tools/docker** directory and enter the Docker Container:
 
 `USER PC`
 ```bash
@@ -130,7 +122,7 @@ cd physical_ai_tools/docker
 
 Launch Physical AI Server with the following command:
 
-`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 ros2 launch physical_ai_server physical_ai_server_bringup.launch.py
 ```
@@ -151,12 +143,12 @@ cd open_manipulator/docker
 ```bash
 ./container.sh enter
 ```
-Then, launch the ROS 2 teleoperation node with following command:
+Then, launch the ROS 2 teleoperation node with the following command:
 ::: warning
 Executing the code will cause OMX to move immediately. Please stay clear and be cautious.
 :::
 
-`USER PC` ➔ `🐋 OPEN MANIPULATOR`
+`USER PC` `🐋 OPEN MANIPULATOR`
 ```bash
 ros2 launch open_manipulator_bringup omx_ai.launch.py
 ``` 

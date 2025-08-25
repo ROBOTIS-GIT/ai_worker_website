@@ -34,7 +34,7 @@ After clicking the `Set Robot Type` button, the status will change to `Connected
 ### 3. Go to `Record` page
 
 ::: info
-You cannot access **Record** page unless a robot type has been selected on the **Home** page.
+You cannot access the **Record** page unless a robot type has been selected on the **Home** page.
 Please ensure that the robot type is selected before proceeding.
 :::
 
@@ -158,14 +158,14 @@ Click the `Start` button to begin the recording session. The system will automat
 While recording is in progress, the following controls are available:
 
    - The `Stop` button stops the current recording task. If you press the `Start` button again, recording will resume from the next task
-   - The `Skip Task` button cancels the current task and move to the next task
+   - The `Skip Task` button cancels the current task and moves to the next task
    - The `Retry` button cancels the current task and restarts recording for that task
    - The `Next` button ends the current task and moves to the next task
    - The `Finish` button ends the recording session and saves the dataset
 :::
 
 ::: info
-- The current recording stage is displayed in the control panel:
+- The current recording stage is displayed in the Control Panel:
 
   - 📍 **Ready to start** — Standby mode before recording begins
   - 🔥 **Warm-up in progress** — Robot is warming up
@@ -177,7 +177,7 @@ While recording is in progress, the following controls are available:
 ## After Recording
    - The dataset will be saved on the **host machine**.
    - If **"Push to Hub"** is enabled, the dataset will be uploaded to Hugging Face.
-   - You can access the recorded dataset at the following path from from the **host environment**:
+   - You can access the recorded dataset at the following path from the **host environment**:
 
 `USER PC`
 ```bash

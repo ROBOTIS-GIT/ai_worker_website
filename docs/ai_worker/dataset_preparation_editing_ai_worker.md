@@ -1,9 +1,9 @@
 # Dataset Preparation - Editing
 
-After collecting data, you can modify your dataset by combining multiple datasets or removing unwanted episodes. This section guides you through these basic dataset operations.
+After collecting data, you can modify your dataset by merging multiple datasets or removing unwanted episodes. This section guides you through these basic dataset operations.
 
-## Combining Datasets
-You can combine multiple datasets into a single dataset. 
+## Merging Datasets
+You can merge multiple datasets into a single dataset. 
 
 ### 1. Enter datasets to merge
 
@@ -48,7 +48,7 @@ In the Enter Output Path section, select the path where the merged dataset resul
   <img src="/imitation_learning/web_ui_edit_dataset_enter_output_path.png" alt="Web UI" style="width: 70%; ">
 </div>
 
-Click the **folder button** to open the file explorer and select your desired folder, or type the path directly in the text input field.
+Click the **folder button** to open the file explorer and select your desired folder (Or, type the path directly in the text input field.)
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
   <div style="text-align: center;">
@@ -69,6 +69,10 @@ Enter the name for the merged result dataset folder.
   <img src="/imitation_learning/web_ui_edit_dataset_output_folder_name.png" alt="Web UI" style="width: 80%; max-width: 550px;">
 </div>
 
-Click the Merge button to combine the datasets. 
+Finally, click the `Merge` button to merge the datasets. 
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui_edit_dataset_merge_button.png" alt="Web UI" style="width: 20%; max-width: 550px;">
+</div>
 
 ## Removing Unwanted Episodes

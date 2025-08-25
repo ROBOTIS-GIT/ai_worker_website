@@ -42,13 +42,13 @@ Repeat the above steps to add as many datasets as needed.
 
 ### 2. Enter output path
 
-In the Enter Output Path section, select the path where the merged dataset result will be saved.
+In the `Enter Output Path` section, select the path where the merged dataset result will be saved.
 
 <div style="display: flex; justify-content: center;">
   <img src="/imitation_learning/web_ui/edit_dataset/enter_output_path.png" alt="Web UI" style="width: 70%; ">
 </div>
 
-Click the **folder button** to open the file explorer and select your desired folder (Or, type the path directly in the text input field.)
+Click the **folder button** to open the file explorer and select your desired folder. (You can also type the path directly in the text input field)
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
   <div style="text-align: center;">
@@ -113,4 +113,8 @@ Enter the episode numbers you want to remove in the input field. You can remove 
 After deletion, the remaining episode numbers and metadata will be automatically reorganized and reindexed.
 :::
 
-Click the `Delete` button to remove the specified episodes from the dataset.
+Finally, click the `Delete` button to remove the specified episodes from the dataset.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/delete_button.png" alt="Web UI" style="width: 20%; max-width: 550px;">
+</div>

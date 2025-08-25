@@ -195,7 +195,6 @@ Click the `Start` button to begin the recording session. The system will automat
 
 ### Step 2: Monitor and Control During Recording
 
-
 While recording is in progress, the following controls are available:
 
    - The `Stop` button stops the current recording task. If you press the `Start` button again, recording will resume from the next task
@@ -213,6 +212,21 @@ While recording is in progress, the following controls are available:
   - 🔴 **Recording in progress** — Capturing data
   - 🏠 **Reset in progress** — Reset time between episodes
   - 💾 **Saving...** — Encoding and saving the episode
+:::
+
+
+---
+
+### Recording Tips
+
+During data collection, the following features are available to assist you:
+
+::: info
+- 🔊 A beep alarm will sound at the start of each recording to indicate the timing.
+- You can use the buttons on the wearable skeletal leader device to control the recording state:
+  - **Left button**: 🔄 **Retry** the current episode
+  - **Right button**: ➡️ **Next** episode
+<img src="/imitation_learning/data_collection_button.png" alt="Web UI" style="width: 70%; ">
 :::
 
 ## After Recording

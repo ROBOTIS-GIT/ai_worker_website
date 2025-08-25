@@ -87,14 +87,14 @@ python -m lerobot.teleoperate \
 
 ### 3. Record Dataset
 
-We use the Hugging Face hub features for uploading your dataset. If you haven’t previously used the Hub, make sure you can login via the cli using a write-access token, this token can be generated from the Hugging Face settings.
+We use the Hugging Face hub features for uploading your dataset. If you haven’t previously used the Hub, make sure you can login via the CLI using a write-access token, this token can be generated from the Hugging Face settings.
 
 Add your token to the CLI by running this command:
 
 ```bash
 huggingface-cli login --token ${HUGGINGFACE_TOKEN} --add-to-git-credential
 ```
-Then store your Hugging Face repository name in a variable:
+Then store your Hugging Face username in a variable:
 
 ```bash
 HF_USER=$(hf auth whoami | head -n 1)
@@ -144,7 +144,7 @@ echo https://huggingface.co/datasets/${HF_USER}/record-test
 ```
 
 **Additional behavior:**
-- Push to Hub can be disabled with `--dataset.push_to_hub=false`
+- Disable automatic push to the Hub with `--dataset.push_to_hub=false`
 - Resume a failed/interrupted session with `--resume=true`
   - When resuming, set `--dataset.num_episodes` to the number of additional episodes to record (not the final total)
 
@@ -225,7 +225,7 @@ python -m lerobot.record \
   --policy.path=${HF_USER}/omx_policy
 ```
 
-Note: use an `eval_*` dataset name (e.g., `eval_omx`) to clearly separate evaluation runs.
+**Note**: use an `eval_*` dataset name (e.g., `eval_omx`) to clearly separate evaluation runs.
 
 As you can see, it’s almost the same command as previously used to record your training dataset. Two things changed:
 

@@ -75,4 +75,42 @@ Finally, click the `Merge` button to merge the datasets.
   <img src="/imitation_learning/web_ui_edit_dataset_merge_button.png" alt="Web UI" style="width: 20%; max-width: 550px;">
 </div>
 
-## Removing Unwanted Episodes
+## Removing Episodes
+
+You can remove episodes that were incorrectly recorded during the data collection process.
+
+### 1. Select dataset to edit
+
+Navigate to the `Edit Dataset` page.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui_edit_dataset_delete_episodes.png" alt="Web UI" style="width: 80%; max-width: 550px;">
+</div>
+
+In the `Delete Episodes` section, click the **folder button** to open the file explorer and select your desired dataset. (You can also type the path directly in the text input field)
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+  <div style="text-align: center;">
+    <img src="/imitation_learning/web_ui_edit_dataset_folder_button.png" alt="Web UI" style="width: 100%; max-width: 60px;">
+  </div>
+  <div style="font-size: 30px; text-align: center;">
+    ↓
+  </div>
+  <div style="text-align: center;">
+    <img src="/imitation_learning/web_ui_edit_dataset_browse_merge_input.png" alt="Web UI" style="width: 100%; max-width: 550px;">
+  </div>
+</div>
+
+### 2. Specify episodes to remove
+
+Enter the episode numbers you want to remove in the input field. You can remove multiple episodes at once by separating the numbers with commas.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui_edit_dataset_delete_episodes_write_episode_num.png" alt="Web UI" style="width: 80%; max-width: 550px;">
+</div>
+
+::: info
+After deletion, the remaining episode numbers and metadata will be automatically reorganized and reindexed.
+:::
+
+Click the `Delete` button to remove the specified episodes from the dataset.

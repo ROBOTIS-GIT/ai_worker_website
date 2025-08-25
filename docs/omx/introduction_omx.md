@@ -48,7 +48,7 @@ The ROBOTIS <strong>OMX</strong> is a compact 5-DOF manipulator tailored for ent
     <div class="glow"></div>
     <div class="feature-title">🧰 Any Workflow</div>
     <div class="feature-sub" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;">
-      <span class="chip-soft chip-amber"><span class="dot"></span> Physical AI Tools (GUI)</span>
+      <span class="chip-soft chip-amber"><span class="dot"></span> Physical AI Tools</span>
       <span class="chip-soft chip-pink"><span class="dot"></span> LeRobot Native</span>
       <span class="chip-soft"><span class="dot"></span> Custom Pipelines</span>
     </div>

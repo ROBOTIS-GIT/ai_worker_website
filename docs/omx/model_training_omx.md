@@ -8,7 +8,7 @@ Once [preparing your dataset](/omx/dataset_preparation_omx) is done, the policy 
 
 ### 1. Prepare Your Dataset
 
-The dataset to be used for training should be located at
+The dataset to be used for training should be located at:
 
 `USER PC`
 
@@ -66,7 +66,7 @@ Enter the **Physical AI Tools** Docker container:
 ```
 Then, launch the Physical AI Server with the following command:
 
-`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 ai_server
 ```
@@ -85,8 +85,9 @@ On the **Home** page, select the type of robot you are using.
 
 Go to the `Training` page and follow the steps below:
 
-  <img src="/imitation_learning/web_ui_training_page.png" alt="Web UI" style="width: 100%; "> 
-  - Step 1: Select the `Dataset`, `Policy Type` and `Device`.
+<img src="/imitation_learning/web_ui_training_page.png" alt="Web UI" style="width: 100%; ">
+
+- Step 1: Select the `Dataset`, `Policy Type` and `Device`.
 - Step 2: Enter the `Output Folder Name`.
 - Step 3: (Optional) Modify `Additional Options` if needed.
 
@@ -98,25 +99,25 @@ For more information about these **options**, please refer to the descriptions b
 The datasets stored in the `~/.cache/huggingface/` directory on the host (or `/root/.cache/huggingface/` inside the Docker container) will be listed automatically.
 <img src="/imitation_learning/web_ui_training_dataset_selection.png" alt="Web UI" style="width: 50%; ">
 
-== Policy type and device
+== Policy Type and Device
 Select the policy and computation device for training your model.
 - **Policy Type**: Choose the imitation learning algorithm (e.g., act, pi0, etc.).
 - **Device**: Select the hardware to be used for training (e.g. cuda, cpu, etc.)
 
 <img src="/imitation_learning/web_ui_training_policy_selection.png" alt="Web UI" style="width: 50%; ">
 
-== Output folder name
+== Output Folder Name
 Specify the name of the folder where your trained model will be saved. Then, check for duplicates. 
 This folder will be created in the default output directory (`<your_workspace>/physical_ai_tools/lerobot/outputs/`).
 Choose a descriptive and meaningful name so you can easily identify the trained model later.
 
 <img src="/imitation_learning/web_ui_training_output_folder_input.png" alt="Web UI" style="width: 50%; ">
 
-== Additional options
+== Additional Options
 <img src="/imitation_learning/web_ui_training_additional_options.png" alt="Web UI" 
 style="width: 50%; ">
 
-- Additional Option Descriptions
+- Descriptions of additional options
 
 | Parameter | Description |
 |-----------|-------------|
@@ -146,7 +147,7 @@ cd physical_ai_tools/docker
 
 Navigate to the LeRobot directory:
 
-`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 cd /root/ros2_ws/src/physical_ai_tools/lerobot
 ```
@@ -154,8 +155,8 @@ cd /root/ros2_ws/src/physical_ai_tools/lerobot
 To upload the latest trained checkpoint to the Hugging Face Hub:
 
 ```bash
-huggingface-cli upload ${HF_USER}/act_omy_test \
-  outputs/train/act_omy_test/checkpoints/last/pretrained_model
+huggingface-cli upload ${HF_USER}/act_omx_test \
+  outputs/train/act_omx_test/checkpoints/last/pretrained_model
 ```
 
 This makes your model accessible from anywhere and simplifies deployment.

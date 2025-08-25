@@ -4,14 +4,14 @@ Once your model is trained, you can deploy it on the OMX for inference.
 
 ## Model Deployment and Inference
 
-### 1. Setup Physical AI Tools Docker Container
+### 1. Set up Physical AI Tools Docker Container
 ::: warning
 If the Physical AI Tools is already set up, you can skip this step.
 :::
 
 If you haven't set up the Physical AI Tools Docker container, please refer to the link below for setup instructions.
 
-[Setup Physical AI Tools Docker Container](/omx/dataset_preparation_prerequisites_omx#setup-physical-ai-tools-docker-container)
+[Set up Physical AI Tools Docker Container](/omx/dataset_preparation_prerequisites_omx#setup-physical-ai-tools-docker-container)
 
 ### 2. Prepare Your Model
 
@@ -66,17 +66,17 @@ After placing the model in the above directory, you can access it from within th
 `/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/`
 :::
 
-### 3. Bring up OMX Follower Node
+### 3. Bring up the OMX Follower Node
 
 ::: warning
-The robot will start moving when you run bringup. Please be careful.
+When you launch the bringup, the robot will start moving. Please be careful, and double-check that the teleoperation node used during dataset recording has been disabled.
 :::
 
 `ROBOT PC`
 ```bash
 cd /data/docker/open_manipulator/docker && ./container.sh enter
 ```
-`ROBOT PC` ➔ `🐋 OPEN MANIPULATOR`
+`ROBOT PC` `🐋 OPEN MANIPULATOR`
 ```bash
 ros2 launch open_manipulator_bringup omx_f_follower_ai.launch.py
 ```
@@ -102,14 +102,14 @@ Enter the **Physical AI Tools** Docker container:
 ```
 Then, launch the Physical AI Server with the following command:
 
-`USER PC` ➔ `🐋 PHYSICAL AI TOOLS`
+`USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
 ai_server
 ```
 
 #### b. Open the Web UI
 
-Open your web browser and navigate the Web UI (Physical AI Manager).
+Open your web browser and navigate to the Web UI (Physical AI Manager).
 
 (Refer to the [Dataset Preparation > Recording > 1. Open the Web UI](/omy/dataset_preparation_recording_omy#_1-open-the-web-ui))
 

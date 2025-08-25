@@ -6,6 +6,35 @@ This tutorial explains how to train a neural network to control OMX autonomously
 
 By following these steps, you'll be able to replicate tasks such as picking up objects and placing them with high success rates.
 
+## Before You Begin
+
+First, identify the bus servo adapter ports for the leader and follower by running the following command:
+```bash
+lerobot-find-port
+```
+
+You will see an output similar to:
+
+```bash
+(lerobot) username@username:~/lerobot$ lerobot-find-port
+Finding all available ports for the MotorsBus.
+Ports before disconnecting: ['/dev/ttyACM1', '/dev/ttyACM0', ...]
+Remove the USB cable from your MotorsBus and press Enter when done.
+```
+
+Next, disconnect the USB cable from either the leader or the follower and press Enter to determine the corresponding port.
+The output will look like this:
+
+```bash
+The port of this MotorsBus is '/dev/ttyACM1'
+Reconnect the USB cable.
+
+```
+
+For the purposes of this tutorial, we assume:
+- Follower’s port → /dev/ttyACM0
+- Leader’s port → /dev/ttyACM1
+
 ## Data Collection
 <div style="font-size: 1.65rem; font-weight: 800; line-height: 1.25; margin: 4px 0 18px;">
   <span style="
@@ -31,10 +60,10 @@ Start teleoperation with OMX:
 ```bash
 python -m lerobot.teleoperate \
     --robot.type=omx_follower \
-    --robot.port=/dev/ttyACM1 \
+    --robot.port=/dev/ttyACM0 \
     --robot.id=omx_follower_arm \
     --teleop.type=omx_leader \
-    --teleop.port=/dev/ttyACM0 \
+    --teleop.port=/dev/ttyACM1 \
     --teleop.id=omx_leader_arm
 ```
 
@@ -47,11 +76,11 @@ For camera integration:
 ```bash
 python -m lerobot.teleoperate \
     --robot.type=omx_follower \
-    --robot.port=/dev/ttyACM1 \
+    --robot.port=/dev/ttyACM0 \
     --robot.id=omx_follower_arm \
     --robot.cameras="{ front: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30}}" \
     --teleop.type=omx_leader \
-    --teleop.port=/dev/ttyACM0 \
+    --teleop.port=/dev/ttyACM1 \
     --teleop.id=omx_leader_arm \
     --display_data=true
 ```

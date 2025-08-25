@@ -91,7 +91,7 @@ Open your web browser and navigate to the Web UI (Physical AI Manager).
 
 On the **Home** page, select the type of robot you are using.
 
-  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 50%; display: block; margin: 0 auto;">
+  <img src="/imitation_learning/web_ui/home/robot_type_selection.png" alt="Web UI" style="width: 50%; display: block; margin: 0 auto;">
 
 #### c. Train the Policy
 

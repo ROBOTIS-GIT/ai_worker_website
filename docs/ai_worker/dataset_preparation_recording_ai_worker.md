@@ -214,7 +214,6 @@ While recording is in progress, the following controls are available:
   - 💾 **Saving...** — Encoding and saving the episode
 :::
 
-
 ---
 
 ### Recording Tips

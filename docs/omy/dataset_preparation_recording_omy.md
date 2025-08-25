@@ -182,6 +182,10 @@ While recording is in progress, the following controls are available:
   - 💾 **Saving...** — Encoding and saving the episode
 :::
 
+::: tip
+- 🔊 A beep alarm will sound at the start of each recording to indicate the timing.
+:::
+
 ## After Recording
    - The dataset will be saved on the **host machine**.
    - If **"Push to Hub"** is enabled, the dataset will be uploaded to Hugging Face.

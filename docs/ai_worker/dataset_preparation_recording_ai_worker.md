@@ -223,8 +223,8 @@ During data collection, the following features are available to assist you:
 ::: info
 - 🔊 A beep alarm will sound at the start of each recording to indicate the timing.
 - You can use the buttons on the wearable skeletal leader device to control the recording state:
-  - **Left button**: 🔄 **Retry** the current episode
-  - **Right button**: ➡️ **Next** episode
+  - **Left button press**: 🔄 **Retry** the current episode
+  - **Right button press**: ➡️ **Next** episode
 
   <img src="/imitation_learning/data_collection_button.png" alt="Web UI" style="width: 70%; margin: 30px 0;">
 :::

@@ -226,7 +226,8 @@ During data collection, the following features are available to assist you:
 - You can use the buttons on the wearable skeletal leader device to control the recording state:
   - **Left button**: 🔄 **Retry** the current episode
   - **Right button**: ➡️ **Next** episode
-<img src="/imitation_learning/data_collection_button.png" alt="Web UI" style="width: 70%; ">
+
+  <img src="/imitation_learning/data_collection_button.png" alt="Web UI" style="width: 70%; margin: 30px 0;">
 :::
 
 ## After Recording

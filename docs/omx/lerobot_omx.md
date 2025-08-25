@@ -53,11 +53,6 @@ pip install lerobot
 pip install -e ".[dynamixel]"
 ```
 
-#### 8) Find bus servo adapter ports
-```bash
-lerobot-find-port
-```
-
 ### Troubleshooting
 
 If you encounter build errors, you may need to install additional dependencies: cmake, build-essential, and FFmpeg libs. To install these for Linux run:

@@ -8,8 +8,9 @@ This guide will walk you through the process of setting up your AI Worker hardwa
 - Please check the type of robot you are using.
 :::
 
-### FFW-BG2
-#### Powering On the FFW_BG2 follower
+:::tabs key:robot-type
+== FFW-BG2
+#### Powering On the FFW_BG2 Follower
 ![Back of the BG2 Base](/quick_start_guide/ai_worker/back_of_the_BG2_base.png)
 1. Toggle the `Power Supply Switch` to the right.
 2. Insert the `Key Switch` and turn it to the 12 o'clock position.
@@ -25,12 +26,10 @@ The back of the Follower body includes several ports for system access and exter
 
 - `HDMI Port`: Allows direct video output for connecting a monitor.
 
-
-
-### FFW-SG2
-#### Powering On the FFW_SG2 follower
+== FFW-SG2
+#### Powering On the FFW_SG2 Follower
 ![Back of the SG2 Base](/quick_start_guide/ai_worker/back_of_the_SG2_base.png)
-1. Insert the `Key Switch` and turn it to the 12 o'clock position.
+1. Insert the `Key Switch` and turn it to the 2 o'clock position.
 2. Press and hold the `Power Button` for 3 seconds. When you hear a beep, the system is powered on. (You should see the robot’s head light up at this point.)
 
 #### Hardware Ports (FFW_SG2 Follower)
@@ -43,6 +42,42 @@ The back of the Follower body includes several ports for system access and exter
 - `HDMI Port`: Allows direct video output for connecting a monitor.
 
 - `Charge Port`: Used for battery charging.
+:::
+
+## Accessing the Robot PC via SSH
+
+AI Worker supports mDNS, allowing you to connect without manually checking the IP address.
+
+:::tabs key:robot-type
+== FFW-BG2
+1. Connect the SBC (robot PC) to the same network as your user PC using a LAN cable.
+
+2. On your user PC terminal, use the following command to connect via SSH:
+ ```bash
+  ssh robotis@ffw-SNPR48A0000.local
+ ```
+Replace SNPR48A0000 with the serial number printed on the back of the robot body.
+![Back of the Follower](/quick_start_guide/ai_worker/serial_number.png)
+
+== FFW-SG2
+
+1. Check the serial number printed on the back of the robot body. In this example, the number you need to check is **0000**.
+![Back of the Follower](/quick_start_guide/ai_worker/serial_number.png)
+
+2. Connect the Wi-Fi network named **AIWORKER(Number)**. In this example, the network name is **AIWORKER0000**.
+    - The **Wi-Fi password** is identical to the **network name (SSID)**.
+
+3. On your user PC terminal, use the following command to connect via SSH:
+ ```bash
+  ssh robotis@ffw-SNPR48A0000.local
+ ```
+ Replace SNPR48A0000 with the serial number printed on the back of the robot body.
+
+4. When prompted, enter the system password.
+
+::: info
+Both the Wi-Fi and system passwords are initially configured by ROBOTIS. For security purposes, you may change these passwords if necessary.
+:::
 
 ## Software Setup
 AI WORKER relies on two main repositories:
@@ -54,6 +89,7 @@ The software setup instructions below are intended for development on a `user PC
 ::: danger
 ⚠️ **On the AI Worker Orin:** Do not run `apt upgrade` command. Upgrading packages may cause conflicts and break robot functionality.
 :::
+
 ### Prerequisites
 - **Operating System**: Ubuntu environment<br>
 (The AI WORKER software runs inside a Docker container based on `Ubuntu 24.04 (ROS 2 Jazzy)`. Therefore, the Ubuntu version of the user PC does not need to match and is not critical.)
@@ -147,16 +183,3 @@ The `container.sh` script provides easy container management:
 ./container.sh enter                # Enter container
 ./container.sh stop                 # Stop container
 ```
-
-## Accessing the Robot PC via SSH
-AI Worker supports mDNS, allowing you to connect without manually checking the IP address.
-
-1. Connect the SBC (robot PC) to the same network as your user PC using a LAN cable.
-
-2. On your user PC terminal, use the following command to connect via SSH:
- ```bash
-  ssh robotis@ffw-SNPR48A0000.local
- ```
-(Replace SNPR48A0000 with the serial number printed on the back of the robot body.)
-![Back of the Follower](/quick_start_guide/ai_worker/serial_number.png)
-

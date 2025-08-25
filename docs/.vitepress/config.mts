@@ -104,7 +104,8 @@ export default defineConfig({
               items: [
                 { text: 'Prerequisites', link: '/ai_worker/dataset_preparation_prerequisites_ai_worker' },
                 { text: 'Recording', link: '/ai_worker/dataset_preparation_recording_ai_worker' },
-                { text: 'Visualization', link: '/ai_worker/dataset_preparation_visualization_ai_worker' }
+                { text: 'Visualization', link: '/ai_worker/dataset_preparation_visualization_ai_worker' },
+                { text: 'Editing', link: '/ai_worker/dataset_preparation_editing_ai_worker' }
               ]
             },
             {
@@ -172,7 +173,8 @@ export default defineConfig({
               items: [
                 { text: 'Prerequisites', link: '/omy/dataset_preparation_prerequisites_omy' },
                 { text: 'Recording', link: '/omy/dataset_preparation_recording_omy' },
-                { text: 'Visualization', link: '/omy/dataset_preparation_visualization_omy' }
+                { text: 'Visualization', link: '/omy/dataset_preparation_visualization_omy' },
+                { text: 'Editing', link: '/omy/dataset_preparation_editing_omy' }
               ]
             },
             {

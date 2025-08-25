@@ -4,14 +4,14 @@
 
 LeRobot is an open-source framework for robotics that provides tools for imitation learning. It can be used with OMX for training and deploying AI models.
 
-## Installation LeRobot
+## Install LeRobot
 
-#### 1) Create Virtual Environment (Miniconda, Python 3.10)
+#### 1) Create a Virtual Environment (Miniconda, Python 3.10)
 ```bash
 conda create -y -n lerobot python=3.10
 ```
 
-#### 2) Activate Environment
+#### 2) Activate the Environment
 ```bash
 conda activate lerobot
 ```

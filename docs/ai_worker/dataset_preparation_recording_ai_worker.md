@@ -16,13 +16,13 @@ Open your web browser and access
 (Replacing `{serial number}` with the serial number from the previous step)
 
 <div class="UI" style="width: 80%; margin: 0 auto;">
-  <img src="/imitation_learning/web_ui_url_ffw.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui/url_ffw.png" alt="Web UI" style="width: 100%; ">
 </div>
 <p style="text-align: center;"><em>Enter the IP Address</em></p>
   
 Once accessed, the following screen will appear with the `Disconnected` status.
 
-  <img src="/imitation_learning/web_ui_initial_home_page.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui/home/initial_page.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Initial Screen</em></p>
 
 ### 2. Select the Robot Type
@@ -30,12 +30,12 @@ Once accessed, the following screen will appear with the `Disconnected` status.
 On the **Home** page, select the type of robot you are using.
 
 <div class="UI" style="width: 60%; margin: 0 auto;">
-  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui/home/robot_type_selection.png" alt="Web UI" style="width: 100%; ">
 </div>
 
 After clicking the `Set Robot Type` button, the status will change to `Connected`.
 
-   <img src="/imitation_learning/web_ui_connected_home_page.png" alt="Web UI" style="width: 100%; ">
+   <img src="/imitation_learning/web_ui/home/connected_ffw_sg2_rev.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Connected Screen</em></p>  
 
 ### 3. Go to `Record` page
@@ -47,7 +47,7 @@ Please ensure that the robot type is selected before proceeding.
 
 After the status changes to `Connected`, you can access the **Record** page using the button on the left sidebar, as shown below.
 
-<img src="/imitation_learning/web_ui_record_page.png" alt="Web UI" style="width: 100%; ">
+<img src="/imitation_learning/web_ui/record/page.png" alt="Web UI" style="width: 100%; ">
 <p style="text-align: center;"><em>Record Screen</em></p>
 
 The **Record** page is divided into three main sections:
@@ -71,7 +71,7 @@ To change the image topic:
 2. Choose a topic from the popup window.
 
   <div class="UI" style="width: 60%; margin: 0 auto;">
-  <img src="/imitation_learning/web_ui_select_image_topic.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui/record/select_image_topic.png" alt="Web UI" style="width: 100%; ">
 </div>
 
 ### 5. Enter Task Information
@@ -116,7 +116,7 @@ huggingface-cli upload robotis-ai/bottle-pick-and-place \
 == Single Task Mode
 <div style="display: flex; justify-content: center; gap: 40px;">
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui_task_info_filled.png" alt="Web UI" style="width: 95%; max-width: 300px;">
+    <img src="/imitation_learning/web_ui/record/task_info_filled.png" alt="Web UI" style="width: 95%; max-width: 300px;">
     <p><em>Filled Panel</em></p>
   </div>
 </div>
@@ -129,7 +129,7 @@ You can remove an instruction by simply clicking the `X` button on the right.
 
 <div style="display: flex; justify-content: center; gap: 40px;">
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui_task_info_multi_task_filled.png" alt="Web UI" style="width: 95%; max-width: 300px;">
+    <img src="/imitation_learning/web_ui/record/task_info_multi_task_filled.png" alt="Web UI" style="width: 95%; max-width: 300px;">
     <p><em>Filled Panel</em></p>
   </div>
 </div>
@@ -142,7 +142,7 @@ You can remove an instruction by simply clicking the `X` button on the right.
 | **Task Instruction** | It is a sentence that instructs the robot what action to perform, such as ***"pick and place object"***. <br> In **multi-task** mode, you can add Task Instructions by clicking the Add Instruction button. |
 | **Push to hub** | If you want to push the dataset to the Hugging Face Hub, check this box. This allows sharing and training. <br>**To push to the Hugging Face Hub, you need to:**<br>1. Have a Hugging Face account<br>2. Have the necessary permissions to push to the repository |
 | **Private Mode** | Only available when "Push to hub" is checked. Keeps your dataset private on Hugging Face. |
-| **User ID** | Your Hugging Face account username, also used as the folder name for the dataset.<br>- If **not** using Hugging Face, you can use any name.<br>- If using Hugging Face, click `Load` to select from registered User IDs.<br>- If no User IDs or want a different one, click `Change` and enter your Hugging Face token.<br>- The Hugging Face token must have both **read** and **write** permissions enabled.<img src="/imitation_learning/web_ui_enter_hf_token.png" alt="Web UI" style="width: 100%; "><br>- If you have a registered account but haven't checked "Push to hub", you can either:<br>1. Load a registered User ID<br>2. Manually enter any User ID  |
+| **User ID** | Your Hugging Face account username, also used as the folder name for the dataset.<br>- If **not** using Hugging Face, you can use any name.<br>- If using Hugging Face, click `Load` to select from registered User IDs.<br>- If no User IDs or want a different one, click `Change` and enter your Hugging Face token.<br>- The Hugging Face token must have both **read** and **write** permissions enabled.<img src="/imitation_learning/web_ui/record/enter_hf_token.png" alt="Web UI" style="width: 100%; "><br>- If you have a registered account but haven't checked "Push to hub", you can either:<br>1. Load a registered User ID<br>2. Manually enter any User ID  |
 | **FPS** | Frame rate for dataset recording. Recommended value is 15.|
 | **Tags** | Keywords to categorize and organize your dataset in the hub. Multiple tags can be added. Useful for searching or filtering later. |
 | **Warmup Time** | Duration (in seconds) to warm up the robot before starting the recording |
@@ -160,7 +160,7 @@ To begin recording, use the **Control Panel** located at the bottom of the **Rec
 
 :::tabs
 == Single Task Record
-  <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui/record/control_panel.png" alt="Web UI" style="width: 100%; ">
 
 ### Step 1: Click the `Start` Button
 
@@ -182,7 +182,7 @@ While recording is in progress, the following controls are available:
    - The `Finish` button ends the recording session and saves the current dataset, regardless of the remaining number of episodes
 
 == Multi Task Record
-<img src="/imitation_learning/web_ui_control_panel_multi_task.png" alt="Web UI" style="width: 100%; ">
+<img src="/imitation_learning/web_ui/record/control_panel_multi_task.png" alt="Web UI" style="width: 100%; ">
 
 ### Step 1: Click the `Start` Button
 
@@ -194,7 +194,6 @@ Click the `Start` button to begin the recording session. The system will automat
    - After completing all tasks, the `Scenario` counter increments by 1 and the cycle returns to the first task.
 
 ### Step 2: Monitor and Control During Recording
-
 
 While recording is in progress, the following controls are available:
 
@@ -213,6 +212,21 @@ While recording is in progress, the following controls are available:
   - 🔴 **Recording in progress** — Capturing data
   - 🏠 **Reset in progress** — Reset time between episodes
   - 💾 **Saving...** — Encoding and saving the episode
+:::
+
+---
+
+### Recording Tips
+
+During data collection, the following features are available to assist you:
+
+::: info
+- 🔊 A beep alarm will sound at the start of each recording to indicate the timing.
+- You can use the buttons on the wearable skeletal leader device to control the recording state:
+  - **Left button press**: 🔄 **Retry** the current episode
+  - **Right button press**: ➡️ **Next** episode
+
+  <img src="/imitation_learning/data_collection_button.png" alt="Web UI" style="width: 70%; margin: 30px 0;">
 :::
 
 ## After Recording

@@ -1,7 +1,7 @@
 # Getting Started with Gazebo
 
 ## Overview
-You can launch Gazebo and RViz individually, or launch RViz together with the physical hardware.
+You can launch Gazebo and RViz(Moveit) individually, or launch RViz together with the physical hardware.
 
 ## Launch Gazebo
 
@@ -37,3 +37,18 @@ You can launch Gazebo and RViz individually, or launch RViz together with the ph
 ### FFW_SG2
 
 ![FFW SG2 Simulation](/simulation/ai_worker/ffw_sg2_gazebo.png)
+
+## Launch Moveit
+*   **Launch Moveit:**
+    You can use the following command to launch Moveit for both FFW-SG2 and FFW-BG2:
+    ```bash
+    ros2 launch ffw_moveit_config moveit.launch.py
+    # Launch Moveit with the AI Worker Follower model (FFW-BG2, FFW-SG2)
+    ```
+
+    If you are using Gazebo, you should add the argument `use_sim:=true`:
+    ```bash
+    ros2 launch ffw_moveit_config moveit.launch.py use_sim:=true
+    # Launch Moveit in simulation mode
+    ```
+<img src="/release_note/ai_worker/ffw_moveit.gif" alt="AI Worker MoveIt">

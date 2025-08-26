@@ -18,7 +18,7 @@ conda activate lerobot
 
 #### 3) Install FFmpeg
 ```bash
-conda install ffmpeg -c conda-forge
+conda install -c conda-forge ffmpeg=6.1.1 -y
 ```
 
 ::: tip FFmpeg Installation Options

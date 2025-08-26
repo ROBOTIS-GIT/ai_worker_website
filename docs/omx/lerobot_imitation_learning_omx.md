@@ -67,7 +67,7 @@ python -m lerobot.teleoperate \
     --teleop.id=omx_leader_arm
 ```
 
-Note: the `--robot.id/--teleop.id` values persist metadata (e.g., calibrations/settings). Use consistent IDs across teleop, recording, and evaluation for the same setup.
+> **Note**: the `--robot.id/--teleop.id` values persist metadata (e.g., calibrations/settings). Use consistent IDs across teleop, recording, and evaluation for the same setup.
 
 ### 2. Teleoperate with cameras
 
@@ -87,7 +87,7 @@ python -m lerobot.teleoperate \
 
 ### 3. Record Dataset
 
-We use the Hugging Face hub features for uploading your dataset. If you haven’t previously used the Hub, make sure you can login via the CLI using a write-access token, this token can be generated from the Hugging Face settings.
+We use the Hugging Face hub features for uploading your dataset. If you haven’t previously used the Hub, make sure you can log in via the CLI using a write-access token, this token can be generated from the Hugging Face settings.
 
 Add your token to the CLI by running this command:
 
@@ -181,30 +181,35 @@ Train your imitation learning model:
 lerobot-train \
   --dataset.repo_id=${HF_USER}/record-test \
   --policy.type=act \
-  --output_dir=outputs/train/act_record-test \
+  --output_dir=outputs/train/omx_act_policy \
   --job_name=act_record-test \
   --policy.device=cuda \
   --wandb.enable=true \
-  --policy.repo_id=${HF_USER}/my_policy
+  --policy.repo_id=${HF_USER}/omx_act_policy
 ```
+
+::: tip
+If you do not want to push your trained model to the Hugging Face Hub,
+use the option `--policy.push_to_hub=false` instead of `--policy.repo_id=${HF_USER}/omx_act_policy`.
+:::
 
 ### 2. Resume Training
 
-Resume from checkpoint:
+To resume training from the latest checkpoint:
 
 ```bash
 python -m lerobot.scripts.train \
-  --config_path=outputs/train/act_omx/checkpoints/last/pretrained_model/train_config.json \
+  --config_path=outputs/train/omx_act_policy/checkpoints/last/pretrained_model/train_config.json \
   --resume=true
 ```
 
-### 3. Upload Checkpoints
+### 3. Upload Checkpoints (Optional)
 
-Upload trained model:
+To upload your trained model to the Hugging Face Hub:
 
 ```bash
 huggingface-cli upload ${HF_USER}/omx_policy \
-  outputs/train/act_omx/checkpoints/last/pretrained_model
+  outputs/train/omx_act_policy/checkpoints/last/pretrained_model
 ```
 
 ## Model Evaluation
@@ -220,14 +225,14 @@ python -m lerobot.record \
   --robot.cameras="{ front: {type: opencv, index_or_path: 0, width: 1920, height: 1080, fps: 30}}" \
   --robot.id=omx_follower_arm \
   --display_data=false \
-  --dataset.repo_id=${HF_USER}/eval_omx \
+  --dataset.repo_id=${HF_USER}/eval_act_omx \
   --dataset.single_task="Pick and place object" \
-  --policy.path=${HF_USER}/omx_policy
+  --policy.path=${HF_USER}/omx_act_policy
 ```
 
-**Note**: use an `eval_*` dataset name (e.g., `eval_omx`) to clearly separate evaluation runs.
+**Note**: use an `eval_*` dataset name (e.g., `eval_act_omx`) to clearly separate evaluation runs.
 
-As you can see, it’s almost the same command as previously used to record your training dataset. Two things changed:
+As you can see, it’s almost the same command as previously used to record your training dataset. Two things have changed:
 
-- There is an additional `--control.policy.path` argument which indicates the path to your policy checkpoint (e.g., `outputs/train/eval_act_omx/checkpoints/last/pretrained_model`). You can also use the model repository if you uploaded a model checkpoint to the hub (e.g., `${HF_USER}/act_omx`).
+- There is an additional `--control.policy.path` argument which indicates the path to your policy checkpoint (e.g., `outputs/train/eval_act_omx/checkpoints/last/pretrained_model`). You can also use the model repository if you uploaded a model checkpoint to the hub (e.g., `${HF_USER}/omx_act_policy`).
 - The dataset name begins with `eval_` to reflect that you are running inference (e.g., `${HF_USER}/eval_act_omx`).

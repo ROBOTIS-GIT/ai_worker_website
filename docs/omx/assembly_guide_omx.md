@@ -7,7 +7,7 @@ nextText: Setup Guide
 
 Step-by-Step Assembly Guide for OMX
 
-:::: danger Important
+:::: danger
 - Assemble exactly as shown in the **official manual video** (posture, **cable routing**, **torque**)
 - When **all joints are at 0°**, the posture must match the following reference image exactly.
 <div style="text-align: center; font-size: 3.8rem; line-height: 1; margin: 50px 0 8px; letter-spacing: 2px;">⭣   ⭣</div>

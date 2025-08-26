@@ -345,12 +345,156 @@ html.dark .chip-tip {
   --omx-card-bg: #f7f8fb;         /* soft light */
 }
 
+/* Product-scoped theme overrides */
+.theme-omx {
+  --omx-gui-accent: #06b6d4; /* cyan */
+  --omx-cli-accent: #8b5cf6; /* violet */
+}
+.theme-omy {
+  --omx-gui-accent: #6366f1; /* indigo */
+  --omx-cli-accent: #22c55e; /* green */
+}
+.theme-aiw {
+  --omx-gui-accent: #3b82f6; /* blue-500 */
+  --omx-cli-accent: #facc15; /* yellow-400 */
+}
+
 /* Reusable purple gradient title, matching top slogan */
 .title--purple-gradient{
   background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+/* Per-product gradient overrides for the headline */
+.theme-omx .title--purple-gradient {
+  background: linear-gradient(90deg, #22d3ee, #8b5cf6, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.theme-omy .title--purple-gradient {
+  background: linear-gradient(90deg, #6366f1, #84cc16, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.theme-aiw .title--purple-gradient {
+  background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 35%, #facc15 70%, #fde047 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =============================
+   Per-Product Feature Card Skins
+   ============================= */
+/* OMY: indigo/green accent on intro feature cards */
+.theme-omy .feature-btn {
+  border-color: rgba(0, 0, 0, 0.10);
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--omx-gui-accent) 10%, transparent),
+      color-mix(in srgb, var(--omx-cli-accent) 8%, transparent))
+    , var(--omx-card-bg);
+}
+.theme-omy .feature-btn:hover { border-color: var(--omx-gui-accent); }
+.theme-omy .feature-btn::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4, #22c55e, #06b6d4);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: .55;
+}
+.theme-omy .feature-title { color: #ffffff; }
+.theme-omy .feature-btn .glow {
+  opacity: 0.55;
+  background: conic-gradient(
+    from 0deg,
+    color-mix(in srgb, #6366f1 60%, transparent),
+    color-mix(in srgb, #06b6d4 60%, transparent),
+    color-mix(in srgb, #22c55e 60%, transparent),
+    color-mix(in srgb, #6366f1 60%, transparent)
+  );
+}
+
+/* AI Worker: amber/rose accent on intro feature cards */
+.theme-aiw .feature-btn {
+  border-color: rgba(0, 0, 0, 0.10);
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--omx-gui-accent) 12%, transparent),
+      color-mix(in srgb, var(--omx-cli-accent) 10%, transparent))
+    , var(--omx-card-bg);
+}
+.theme-aiw .feature-btn:hover { border-color: var(--omx-gui-accent); }
+.theme-aiw .feature-btn::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6, #facc15, #fde047, #3b82f6);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: .55;
+}
+.theme-aiw .feature-title { color: #ffffff; }
+
+/* Light mode: titles should be dark for readability */
+html:not(.dark) .theme-omy .feature-title { color: #0f172a; }
+html:not(.dark) .theme-aiw .feature-title { color: #0f172a; }
+.theme-aiw .feature-btn .glow {
+  opacity: 0.55;
+  background: conic-gradient(
+    from 0deg,
+    color-mix(in srgb, #60a5fa 60%, transparent),
+    color-mix(in srgb, #3b82f6 60%, transparent),
+    color-mix(in srgb, #facc15 60%, transparent),
+    color-mix(in srgb, #fde047 60%, transparent),
+    color-mix(in srgb, #60a5fa 60%, transparent)
+  );
+}
+/* Unified card look (match OMX) */
+.theme-omy .feature-btn,
+.theme-aiw .feature-btn {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--vp-c-divider, rgba(255, 255, 255, 0.12));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.theme-omy .feature-btn::before,
+.theme-aiw .feature-btn::before { display: none; }
+.theme-omy .feature-btn .glow,
+.theme-aiw .feature-btn .glow {
+  background: conic-gradient(
+    from 0deg,
+    #60a5fa55,
+    #a78bfa55,
+    #f472b655,
+    #60a5fa55
+  );
+}
+.theme-omy .feature-btn:hover,
+.theme-aiw .feature-btn:hover {
+  border-color: var(--vp-c-divider, rgba(255, 255, 255, 0.12));
+}
+html:not(.dark) .theme-omy .feature-btn,
+html:not(.dark) .theme-aiw .feature-btn {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+html:not(.dark) .theme-omy .feature-btn:hover,
+html:not(.dark) .theme-aiw .feature-btn:hover {
+  border-color: rgba(0, 0, 0, 0.08);
 }
 html.dark {
   --omx-text-subtle: #cbd5e1;     /* slate-300 */

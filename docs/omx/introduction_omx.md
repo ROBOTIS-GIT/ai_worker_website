@@ -1,8 +1,8 @@
-# About OMX
+# <div class="theme-omx">About OMX</div>
 
 <img src="/quick_start_guide/omx/main_image.webp" alt="OMX Overview" style="max-width: 860px; width: 100%; margin: 8px 0 16px;" />
 
-<div style="font-size: 1.65rem; font-weight: 800; line-height: 1.25; margin: 4px 0 18px;">
+<div class="theme-omx" style="font-size: 1.65rem; font-weight: 800; line-height: 1.25; margin: 4px 0 18px;">
   <span class="title--purple-gradient">Entry-level, low-cost Physical AI manipulation sets</span>
   
 </div>
@@ -50,7 +50,6 @@ The ROBOTIS <strong>OMX</strong> is a compact 5-DOF manipulator tailored for ent
     <div class="feature-sub" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;">
       <span class="chip-soft chip-amber"><span class="dot"></span> Physical AI Tools (GUI)</span>
       <span class="chip-soft chip-pink"><span class="dot"></span> LeRobot Native</span>
-      <span class="chip-soft"><span class="dot"></span> Custom Pipelines</span>
     </div>
   </div>
   <div class="feature-btn">

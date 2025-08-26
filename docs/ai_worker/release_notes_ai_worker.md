@@ -177,7 +177,7 @@ Web UI-based ROS 2 data acquisition system for LeRobot.
 > 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.0.8)
 
 AI Worker Hardware REV-4 Release.
-<img src="/release_note/ai_worker/ffw_rev4.png" alt="AI Worker REV-4" style="width: 50%; ">
+<img src="/release_note/ai_worker/ffw_rev4.png" alt="AI Worker REV-4" style="width: 100%; ">
 
 - **REV-4**: New outer design, Orin relocated to the chest, ZED camera mounted on the head, and wrist camera with tilt functionality
 - **REV-3**: Improved wrist joint

@@ -2,9 +2,11 @@
 
 ## Overview
 
-LeRobot is an open-source framework for robotics that provides tools for imitation learning. It can be used with OMX for training and deploying AI models.
+LeRobot is an open-source robotics framework with utilities for imitation learning. With OMX, you can train control policies and deploy them to the robot.
 
 ## Install LeRobot
+
+Prerequisite: Install Miniconda first. See the [Miniconda Quick command line install](https://www.anaconda.com/docs/getting-started/miniconda/install#quick-command-line-install).
 
 #### 1) Create a Virtual Environment (Miniconda, Python 3.10)
 ```bash
@@ -21,16 +23,16 @@ conda activate lerobot
 conda install -c conda-forge ffmpeg=6.1.1 -y
 ```
 
-::: tip FFmpeg Installation Options
-This usually installs FFmpeg 7.X for your platform compiled with the libsvtav1 encoder. If libsvtav1 is not supported (check supported encoders with `ffmpeg -encoders`), you can:
+:::: tip FFmpeg Installation Options
+This typically installs FFmpeg 7.X on your system with the libsvtav1 encoder enabled. If libsvtav1 isn't available (check with `ffmpeg -encoders`), use one of the options below:
 
 **[On any platform]** Explicitly install FFmpeg 7.X using:
 ```bash
 conda install ffmpeg=7.1.1 -c conda-forge
 ```
 
-**[On Linux only]** If you want to bring your own FFmpeg: Install FFmpeg build dependencies and compile FFmpeg from source with libsvtav1, and make sure you use the corresponding FFmpeg binary to your install with `which ffmpeg`.
-:::
+**[On Linux only]** To build FFmpeg yourself: install the build dependencies and compile it with libsvtav1, then ensure your shell uses that binary (verify with `which ffmpeg`).
+::::
 
 #### 4) Clone Source (feature-omx-devel) and Enter Directory
 ```bash
@@ -55,10 +57,10 @@ pip install -e ".[dynamixel]"
 
 ### Troubleshooting
 
-If you encounter build errors, you may need to install additional dependencies: cmake, build-essential, and FFmpeg libs. To install these for Linux run:
+If you encounter build errors, you may need additional packages such as cmake, build-essential, and FFmpeg libraries. On Linux, install them with:
 
 ```bash
 sudo apt-get install cmake build-essential python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libswresample-dev libavfilter-dev pkg-config
 ```
 
-For other systems, see: [Compiling PyAV](https://pyav.org/docs/stable/overview/installation.html)
+For other platforms, see: [Compiling PyAV](https://pyav.org/docs/stable/overview/installation.html)

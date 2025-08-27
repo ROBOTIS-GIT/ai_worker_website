@@ -5,12 +5,20 @@
 ### 1. Open the Web UI
 
 #### a. Access the Web UI in Your Browser
+Please enter the IP address of the PC running **Physical AI Server** (`physical_ai_server_bringup.launch.py` or `ai_server`) into your web browser.
+
 ::: tip
-you can simply enter `http://localhost`
+If you are running the **Physical AI Server** and opening the web browser on the same computer,<br>you can simply enter `http://localhost`
 
 :::
 
+##### For example:
+- If the PC running **Physical AI Server** has IP address 192.168.0.105<br>Access `http://192.168.0.105` as shown below:
 
+<div class="UI" style="width: 80%; margin: 0 auto;">
+  <img src="/imitation_learning/web_ui_url_omy.png" alt="Web UI" style="width: 100%; ">
+</div>
+<p style="text-align: center;"><em>Enter the IP Address</em></p>
 
 - Once accessed, the following screen will appear with the `Disconnected` status.
 
@@ -29,7 +37,7 @@ On the **Home** page, select the type of robot you are using.
 After clicking the `Set Robot Type` button, the status will change to `Connected`.
 
    <img src="/imitation_learning/web_ui_connected_omx_home_page.png" alt="Web UI" style="width: 100%; ">
-  <p style="text-align: center;"><em>Connected Screen</em></p>  
+  <p style="text-align: center;"><em>Connected Screen</em></p>
 
 ### 3. Go to `Record` page
 
@@ -148,7 +156,7 @@ While recording is in progress, the following controls are available:
 Click the `Start` button to begin the recording session. The system will automatically:
 
    - Warm up the robot for the specified **Warm-up Time**
-   - Start recording the first task 
+   - Start recording the first task
    - The `Episode` counter increments by 1 each time a task is completed.
    - After completing all tasks, the `Scenario` counter increments by 1 and the cycle returns to the first task.
 
@@ -181,5 +189,11 @@ While recording is in progress, the following controls are available:
 
 `USER PC`
 ```bash
-<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/
+<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/
+```
+or
+
+`USER PC` `🐋 PHYSICAL AI TOOLS`
+```bash
+${HOME}/.cache/huggingface/lerobot/
 ```

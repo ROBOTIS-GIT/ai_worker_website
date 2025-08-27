@@ -4,26 +4,19 @@
 
 This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the OMX and the Hugging Face Hub. OMX offers two powerful approaches for imitation learning:
 
-<div class="workflow-cards">
-  <a class="workflow-card workflow-card--gui" href="/omx/dataset_preparation_omx">
-    <div class="workflow-card-header">
-      <img class="workflow-card__mark" src="/favicon.svg" alt="GUI mark" />
-      <h4>Physical AI Tools (GUI)</h4>
-    </div>
-    <p>User‑friendly web interface for streamlined interaction and accessibility.</p>
-  </a>
-  <a class="workflow-card workflow-card--cli" href="/omx/lerobot_omx">
-    <div class="workflow-card-header">
-      <img class="workflow-card__mark" src="/lerobot_logo.jpeg" alt="LeRobot mark" />
-      <h4>LeRobot Native (CLI)</h4>
-    </div>
-    <p>Direct control with scripts/CLI for advanced users and automation.</p>
-  </a>
+<div style='display: flex; justify-content: flex-start; gap: 30px;'>
+<a href="/omx/dataset_preparation_omx.html" class="button-shortcut">
+Option 1<br>Web UI (Recommended)
+</a>
+
+<a href="/omx/lerobot_omx.html" class="button-shortcut">
+Option 2<br>LeRobot CLI (Optional)
+</a>
 </div>
 
 ### 1. Data Collection
 
-Human operators use a leader device to demonstrate motions, collecting image and joint position data. 
+Human operators use a leader device to demonstrate motions, collecting image and joint position data.
 The collected data can be uploaded to and downloaded from the Hugging Face Hub.
 
 ### 2. Data Visualization

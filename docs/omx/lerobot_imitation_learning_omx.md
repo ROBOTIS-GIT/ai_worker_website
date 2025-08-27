@@ -36,22 +36,6 @@ For the purposes of this tutorial, we assume:
 - Leader’s port → /dev/ttyACM1
 
 ## Data Collection
-<div style="font-size: 1.65rem; font-weight: 800; line-height: 1.25; margin: 4px 0 18px;">
-  <span style="
-    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    text-shadow: 0 0 20px rgba(164, 120, 255, .25);
-  ">Plug and Play!</span>
-</div>
-
-<div class="feature-btn">
-  <div class="feature-title">OMX Advantage</div>
-  <div class="badge-row">
-    <span class="pill">No Calibration</span>
-    <span class="pill pill-green">No ID Setting</span>
-  </div>
-  <div class="feature-sub">Start using LeRobot for imitation learning immediately without manual setup or calibration.</div>
-</div>
 
 ### 1. Teleoperate OMX
 

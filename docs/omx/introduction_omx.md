@@ -1,67 +1,41 @@
 # About OMX
 
-<img src="/quick_start_guide/omx/main_image.webp" alt="OMX Overview" style="max-width: 860px; width: 100%; margin: 8px 0 16px;" />
+<img src="/quick_start_guide/omx/main_image.webp" width="600"/>
 
-<div style="font-size: 1.65rem; font-weight: 800; line-height: 1.25; margin: 4px 0 18px;">
-  <span class="title--purple-gradient">Entry-level, low-cost Physical AI manipulation sets</span>
-  
-</div>
+The ROBOTIS **OMX** is an entry‑level Physical AI manipulator designed for hands‑on dataset collection and comparison, helping newcomers step into Physical AI with confidence. This compact 5‑DOF platform, built on **DYNAMIXEL‑X**, supports end‑to‑end IL/RL pipelines and **ROS 2‑native** workflows.
 
-<div style="margin: 8px 0 18px; font-size: 1.05rem; opacity: .95;">
-At ROBOTIS, we strive to offer <strong>exceptional convenience</strong> for aspiring Physical AI Developer who want to <strong>collect and compare datasets hands‑on</strong> and step into the world of Physical AI with confidence.
-</div>
+### ⚙️ No Motor Setup
+All IDs, BAUD RATE, drive modes, gains, and parameters are preconfigured at the factory—no hardware or software setup required. You can connect immediately and start using the robot arm without any additional preparation.
 
+### 🔌 No Calibration
+Every DYNAMIXEL actuator is factory-calibrated, so users never need to perform calibration themselves. Both hardware and software are fully supported, making it a true plug-and-play experience, even when using LeRobot.
 
+### 🛡️ Safe Bring-Up with Homing
+The follower arm can safely return to its initial pose from any position during bring-up. This ensures stable, predictable operation and minimizes risks, even for first-time users.
 
-The ROBOTIS <strong>OMX</strong> is a compact 5-DOF manipulator tailored for entry-level Physical AI. Built on <strong>DYNAMIXEL-X</strong>, it supports full IL/RL pipelines and ROS 2-native workflows.
+### 🧭 Extended Position Base
+The base motor uses an extended-position design, providing full 360° rotation. With extended cabling, it can rotate indefinitely—expanding the usable workspace for more flexible manipulation.
 
-<!-- styles consolidated to docs/.vitepress/theme/custom.css -->
+### 🪶 Lightweight Design
+OMX is engineered to be extremely lightweight, allowing it to be carried easily and deployed anywhere. The reduced weight also means less fatigue during extended use while maintaining robust performance.
 
-## Why OMX ? — Advantages
+### ✨ Low-Friction Leader
+A special low-friction design makes the leader smooth and easy to operate. Even children can control it safely, and fine movements feel natural with minimal effort.
 
-<div class="features-grid">
-  <div class="feature-btn">
-    <div class="glow"></div>
-    <div class="feature-title">⚙️ DYNAMIXEL Advantage</div>
-    <div class="badge-row">
-      <span class="pill">No Calibration</span>
-      <span class="pill pill-green">No ID Setting</span>
-    </div>
-    <div class="feature-sub"><strong>Factory‑ready</strong>: calibration and ID settings done. Plug and play.</div>
-  </div>
-  <div class="feature-btn">
-    <div class="glow"></div>
-    <div class="feature-title">🪶 Light Weight</div>
-    <div class="feature-sub">Featherweight <strong>OMX‑L</strong> makes long‑hour <strong>dataset collection</strong> effortless.</div>
-  </div>
-  <div class="feature-btn">
-    <div class="glow"></div>
-    <div class="feature-title">🧭 Extended Position Base</div>
-    <div class="feature-sub">Extended position mode enables a <strong>vast workspace</strong> with 360° base rotation.</div>
-  </div>
-  <div class="feature-btn">
-    <div class="glow"></div>
-    <div class="feature-title">🤝 Gripper Spring Controller</div>
-    <div class="feature-sub">Improved <strong>comfort and consistency</strong> in teleop gripping.</div>
-  </div>
-  <div class="feature-btn">
-    <div class="glow"></div>
-    <div class="feature-title">🧰 Any Workflow</div>
-    <div class="feature-sub" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;">
-      <span class="chip-soft chip-amber"><span class="dot"></span> Physical AI Tools</span>
-      <span class="chip-soft chip-pink"><span class="dot"></span> LeRobot Native</span>
-      <span class="chip-soft"><span class="dot"></span> Custom Pipelines</span>
-    </div>
-  </div>
-  <div class="feature-btn">
-    <div class="glow"></div>
-    <div class="feature-title">🛠️ Detail‑Driven UX</div>
-    <div class="feature-sub">
-      • Gripper design optimized for <strong>feature acquisition</strong><br/>
-      • <strong>Initial point</strong> that assists training
-    </div>
-  </div>
-</div>
+### 🔋 Powerless Leader
+Unlike conventional robot arms, the leader works with just a single USB-C connection. This enables simple laptop use for simulation or quick trials without requiring external power supplies.
+
+### 🎯 Spring Gripper
+A spring-assisted control mechanism provides a comfortable, repeatable grip. Users experience consistent tactile feedback, making long data-collection sessions easier and less fatiguing.
+
+### 🎛️ UX-Driven Design
+Thoughtful details improve real-world performance, from a honeycomb gripper design that reduces occlusion to a clear base point for initial poses. These features ensure consistent data, better labeling, and reproducibility across sessions.
+
+### 🤖 Supported ROS2
+OMX officially supports ROS2, with compatibility across existing packages. Developers can integrate with ROS2-based software stacks to unlock advanced robotics functions.
+
+### 🔄 AI Workflows
+Fully compatible with ROBOTIS Physical AI Tools and native LeRobot workflows. Users can choose either environment and seamlessly build a wide range of AI-driven applications out of the box.
 
 ## OMX Lineup Overview
 
@@ -73,8 +47,8 @@ The OMX series offers multiple configurations for various teleoperation and mani
   Leader unit for teleoperation. Provides an intuitive interface for remotely controlling other OMX units.
 
 - `OMX-F`
-  Gripper + 5-DOF robot arm. Ideal for object manipulation and perception tasks.
+  Gripper + 5‑DOF robot arm. Ideal for object manipulation and perception tasks.
 
 - `OMX-AI`
   Complete teleoperation set including OMX-L leader unit and OMX-F follower unit.
-  Provides a full leader-follower system for imitation learning and teleoperation applications. 
+  Provides a full leader-follower system for imitation learning and teleoperation applications.

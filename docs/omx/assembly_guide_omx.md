@@ -45,7 +45,7 @@ The following table summarizes the actuator models per joint for both arms.
 <!-- styles consolidated to docs/.vitepress/theme/custom.css -->
 
 
-## Leader — Assembly Guide <span class="chip-soft chip-amber"><span class="dot"></span> OMX‑L</span>
+## Leader — Assembly Guide
 
 <div class="video-container">
   <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
@@ -55,7 +55,7 @@ The following table summarizes the actuator models per joint for both arms.
 </div>
 
 
-## Follower — Assembly Guide <span class="chip-soft chip-pink"><span class="dot"></span> OMX‑F</span>
+## Follower — Assembly Guide
 
 <div class="video-container">
   <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
@@ -71,6 +71,5 @@ Below is a short video that summarizes the assembly steps and shows how to conne
 
 <YouTube videoId="dQw4w9WgXcQ" /> -->
 
-::: tip 🎉 Assembly Complete
+🎉 Assembly Complete
 Your OMX assembly is complete. Continue to the Setup Guide to power on, configure networking, and run initial checks.
-:::

@@ -49,7 +49,7 @@ The following table summarizes the actuator models per joint for both arms.
 
 <div class="video-container">
   <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
-    <source src="/assembly_guide/Joint1_v2.mp4" type="video/mp4" />
+    <source src="/assembly_guide/omx_l_assembly_video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 </div>
@@ -59,7 +59,7 @@ The following table summarizes the actuator models per joint for both arms.
 
 <div class="video-container">
   <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
-    <source src="/assembly_guide/Joint1_v2.mp4" type="video/mp4" />
+    <source src="/assembly_guide/omx_f_assembly_video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 </div>

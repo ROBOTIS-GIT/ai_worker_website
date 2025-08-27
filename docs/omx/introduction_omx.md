@@ -29,7 +29,7 @@ Unlike conventional robot arms, the leader works with just a single USB-C connec
 A spring-assisted control mechanism provides a comfortable, repeatable grip. Users experience consistent tactile feedback, making long data-collection sessions easier and less fatiguing.
 
 ### 🎛️ Design for Improving UX
-Thoughtful details improve real-world performance, from a honeycomb gripper design that reduces occlusion to a clear base point for initial poses. These features ensure consistent data, better labeling, and reproducibility across sessions.
+Thoughtful details improve real-world performance, from a opened gripper design that reduces occlusion to a clear base point for initial poses. These features ensure consistent data, better labeling, and reproducibility across sessions.
 
 ### 🤖 Supported ROS2
 OMX officially supports ROS2, with compatibility across existing packages. Developers can integrate with ROS2-based software stacks to unlock advanced robotics functions.

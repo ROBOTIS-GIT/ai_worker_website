@@ -16,7 +16,7 @@ The follower arm can safely return to its initial pose from any position during 
 ### 🧭 Extended Position Base
 The base motor uses an extended-position design, providing full 360° rotation. With extended cabling, it can rotate indefinitely—expanding the usable workspace for more flexible manipulation.
 
-### 🪶 Lightweight Design
+### 🪶 Lightweight
 OMX is engineered to be extremely lightweight, allowing it to be carried easily and deployed anywhere. The reduced weight also means less fatigue during extended use while maintaining robust performance.
 
 ### ✨ Low-Friction Leader
@@ -28,7 +28,7 @@ Unlike conventional robot arms, the leader works with just a single USB-C connec
 ### 🎯 Spring Gripper
 A spring-assisted control mechanism provides a comfortable, repeatable grip. Users experience consistent tactile feedback, making long data-collection sessions easier and less fatiguing.
 
-### 🎛️ UX-Driven Design
+### 🎛️ Design for Improving UX
 Thoughtful details improve real-world performance, from a honeycomb gripper design that reduces occlusion to a clear base point for initial poses. These features ensure consistent data, better labeling, and reproducibility across sessions.
 
 ### 🤖 Supported ROS2

@@ -5,7 +5,7 @@
 The ROBOTIS **OMX** is an entry‑level Physical AI manipulator designed for hands‑on dataset collection and comparison, helping newcomers step into Physical AI with confidence. This compact 5‑DOF platform, built on **DYNAMIXEL‑X**, supports end‑to‑end IL/RL pipelines and **ROS 2‑native** workflows.
 
 ### ⚙️ No Motor Setup
-All IDs, BAUD RATE, drive modes, gains, and parameters are preconfigured at the factory—no hardware or software setup required. You can connect immediately and start using the robot arm without any additional preparation.
+All motor parameters are preconfigured at the factory—no hardware or software setup required. You can connect immediately and start using the robot arm without any additional preparation.
 
 ### 🔌 No Calibration
 Every DYNAMIXEL actuator is factory-calibrated, so users never need to perform calibration themselves. Both hardware and software are fully supported, making it a true plug-and-play experience, even when using LeRobot.

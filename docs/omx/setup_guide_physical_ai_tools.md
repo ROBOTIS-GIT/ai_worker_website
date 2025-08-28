@@ -7,43 +7,83 @@ next: false
 ## Overview
 This guide shows how to set up and operate OMX using Physical AI Tools (Web UI). Follow the steps to prepare repositories, configure Docker, and run the teleoperation node.
 
-## Download Repositories
-Clone the necessary packages for OMX.
+## Set up Open Manipulator Docker Container
+
+::: warning
+If the **Open Manipulator** Docker container is already set up, **you can skip this step**.
+:::
+
+### 1. Start the Docker Container:
+
+Clone the repository:
+
+`USER PC`
 ```bash
 git clone https://github.com/ROBOTIS-GIT/open_manipulator
 ```
+Start the container with the following command:
 
-## Docker Setup
-1. Connect the OMX to your computer via a USB‑C cable.
-2. open_manipulator package is located in `/data/docker/open_manipulator`. Navigate to this location using `cd`:
 ```bash
-cd /data/docker/open_manipulator
+cd open_manipulator/docker && ./container.sh start
 ```
-3. Update the package and recreate the container with the latest docker image:
-```bash
-./docker/container.sh start
-```
-4. Access the container:
-```bash
-./docker/container.sh enter
-```
-5. Start the Teleop node:
-```bash
-ros2 launch open_manipulator_bringup omx_ai.launch.py
-```
-::: tip
-The `/workspace` folder inside the container is volume mapped (a feature that links file systems) to `/data/docker/open_manipulator/workspace` on the host. All other areas are volatile and will be lost if the container is damaged or deleted. For more details, see the [Docker Volume Configuration](#docker-volume-configuration) section.
-:::
+
+### 2. Set up ROS Domain ID
+Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
 
 
-## Set ROS 2 Domain ID
-To allow ROS 2 nodes to communicate properly within the same network and avoid conflicts with other systems, you should set a consistent `ROS_DOMAIN_ID`.
+Enter the **Open Manipulator** Docker container:
+
+`USER PC`
+```bash
+./container.sh enter
+```
+
+`USER PC` `🐋 OPEN MANIPULATOR`
+
 ```bash
 echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
 source ~/.bashrc
 ```
+🎉 Open Manipulator Container Setup Complete!
 
-🎉 Physical AI Tools Setup Complete!
+Please exit the Docker container and return to your host terminal for the next steps.
+
+## Set up Physical AI Tools Docker Container
+
+::: warning
+If the **Physical AI Tools** Docker container is already set up, **you can skip this step**.
+:::
+
+### 1. Start the Docker container
+
+Clone the repository along with all required submodules:
+
+`USER PC`
+```bash
+git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.git
+```
+
+Start the **Physical AI Tools** Docker container with the following command:
+```bash
+cd physical_ai_tools/docker && ./container.sh start
+```
+
+### 2. Build the Physical AI Server
+
+Enter the Docker container:
+
+`USER PC`
+```bash
+./container.sh enter
+```
+Build the Physical AI Server with the following command:
+
+`USER PC` `🐋 PHYSICAL AI TOOLS`
+```bash
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+```
+
+🎉 Physical AI Tools Container Setup Complete!
 
 Click the button below to start Imitation Learning.
 

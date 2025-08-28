@@ -36,7 +36,7 @@ On the **Home** page, select the type of robot you are using.
 
 After clicking the `Set Robot Type` button, the status will change to `Connected`.
 
-   <img src="/imitation_learning/web_ui_connected_omx_home_page.png" alt="Web UI" style="width: 100%; ">
+   <img src="/imitation_learning/web_ui/home/connected_omx_f.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Connected Screen</em></p>
 
 ### 3. Go to `Record` page
@@ -180,6 +180,10 @@ While recording is in progress, the following controls are available:
   - 🔴 **Recording in progress** — Capturing data
   - 🏠 **Reset in progress** — Reset time between episodes
   - 💾 **Saving...** — Encoding and saving the episode
+:::
+
+::: tip
+- 🔊 A beep alarm will sound at the start of each recording to indicate the timing.
 :::
 
 ## After Recording

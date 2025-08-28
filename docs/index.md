@@ -49,7 +49,7 @@ features:
 ---
 
 ## Overview of the ROBOTIS Physical AI Lineup
-<img src="/overview/physical_ai_lineup.png" alt="ROBOTIS Physical AI Lineup" style="border-radius: 12px; width: 800px; display: block; margin: auto;" />
+<img src="/overview/physical_ai_lineup.webp" alt="ROBOTIS Physical AI Lineup" style="border-radius: 12px; width: 800px; display: block; margin: auto;" />
 <p style="text-align: center;"><em>Progressing toward advanced Physical AI through a scalable research lineup</em></p>
 
 The ROBOTIS Physical AI Lineup consists of three scalable levels of research-focused robots:

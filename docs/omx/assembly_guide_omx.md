@@ -184,7 +184,7 @@ Below is a short video that summarizes the assembly steps and shows how to conne
 
 🎉 Assembly Complete
 
-Your OMX assembly is complete. Continue to the Setup Guide to power on
+Your OMX assembly is complete. Continue to the Setup Guide to power on.
 
 ## Appendix
 

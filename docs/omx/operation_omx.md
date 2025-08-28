@@ -41,4 +41,4 @@ ros2 launch open_manipulator_bringup omx_3m_bringup.launch.py
 
 ## Documentation
 - [Official Documentation](https://docs.robotis.com)
-- [GitHub Repository](https://github.com/ROBOTIS-GIT/open_manipulator) 
+- [GitHub Repository](https://github.com/ROBOTIS-GIT/open_manipulator)

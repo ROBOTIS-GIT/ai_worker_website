@@ -1,6 +1,6 @@
 # Dataset Preparation - Visualization
 
-Once data collection is complete, you can preview and inspect your recorded dataset using the following steps.  
+Once data collection is complete, you can preview and inspect your recorded dataset using the following steps.
 
 ## Launch the Dataset Visualization Tool:
 
@@ -27,7 +27,7 @@ python lerobot/scripts/visualize_dataset_html.py \
   --repo-id YOUR_REPO_ID
 ```
   - Replace **YOUR_REPO_ID** with the dataset ID found under the **User ID** section in the right sidebar.
-  - For example: `ROBOTIS/omx_f_Test` 
+  - For example: `ROBOTIS/omx_f_Test`
   <div class="UI" style="width: 50%; margin: 0 auto;">
   <img src="/imitation_learning/web_ui_task_info_repo_id.png" alt="Web UI" style="width: 100%; ">
 </div>
@@ -51,4 +51,4 @@ Access http://127.0.0.1:9091 to view the dataset. You should see a web interface
 
 ::: tip
 Once the server is running, open [http://127.0.0.1:9091](http://127.0.0.1:9091) in your browser to preview the dataset.
-::: 
+:::

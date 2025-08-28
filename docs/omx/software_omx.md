@@ -1,9 +1,9 @@
 # Software Overview
 
-**OMX** is a 5-DOF robotic manipulator designed for real-world **Physical AI** research.  
+**OMX** is a 5-DOF robotic manipulator designed for real-world **Physical AI** research.
 It supports teleoperation, trajectory learning, and deployment of AI policies through a unified ROS 2 control architecture.
 
-The platform runs on **ROS 2 Jazzy** and uses the **`ros2_control`** framework for real-time joint-level control.  
+The platform runs on **ROS 2 Jazzy** and uses the **`ros2_control`** framework for real-time joint-level control.
 The arm is driven by **DYNAMIXEL-X series actuators** connected over RS-485 using the **Dynamixel SDK**.
 
 This system is designed for:
@@ -146,4 +146,3 @@ DYNAMIXEL-X Actuators
 - Joint limits are defined in the URDF and enforced at the controller layer
 - Velocity/position clamping can be configured per joint
 - Communication errors are detected by the Dynamixel hardware interface
-

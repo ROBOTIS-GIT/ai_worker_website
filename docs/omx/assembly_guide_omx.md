@@ -73,3 +73,13 @@ Below is a short video that summarizes the assembly steps and shows how to conne
 
 🎉 Assembly Complete
 Your OMX assembly is complete. Continue to the Setup Guide to power on, configure networking, and run initial checks.
+
+## Appendix
+
+:::: tip
+- Applying anti-slip tape to the gripper/contact surfaces, as shown below, can significantly improve grasp efficiency.
+
+<div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/assembly_guide/anti-slip.jpg" alt="Example of anti-slip tape applied" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+</div>
+::::

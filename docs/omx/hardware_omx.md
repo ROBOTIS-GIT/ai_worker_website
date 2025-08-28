@@ -332,5 +332,3 @@ The OMX hardware platform is a teleoperation system specifically designed for `i
   - Ixx Ixy Ixz :  2.9876543e+06 -1.2109876e+02 -2.5432109e+03
   - Iyx Iyy Iyz : -1.2109876e+02  2.5432109e+06  2.5432109e+04
   - Izx Izy Izz : -2.5432109e+03  2.5432109e+04  3.5432109e+05
-
- 

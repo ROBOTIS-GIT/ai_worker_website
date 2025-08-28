@@ -36,4 +36,4 @@ For the latest updates, follow us on our social media channels.
   <a href="https://x.com/ROBOTISAmerica" target="_blank">X (Twitter)</a> |
   <a href="https://www.instagram.com/robotis_global/" target="_blank">Instagram</a> |
   <a href="https://www.youtube.com/@ROBOTISOpenSourceTeam" target="_blank">YouTube</a>
-</div> 
+</div>

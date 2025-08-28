@@ -151,4 +151,4 @@ Executing the code will cause OMX to move immediately. Please stay clear and be 
 `USER PC` `🐋 OPEN MANIPULATOR`
 ```bash
 ros2 launch open_manipulator_bringup omx_ai.launch.py
-``` 
+```

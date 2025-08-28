@@ -2,8 +2,8 @@
 
 The following sections describe the dataset preparation workflow for imitation learning, which consists of three main stages: **Prerequisites**, **Recording**, and **Visualization**.
 
-- The **Prerequisites** stage outlines the necessary setup steps before you begin recording your dataset.  
-- The **Recording** stage explains how to collect data using the Web UI.  
+- The **Prerequisites** stage outlines the necessary setup steps before you begin recording your dataset.
+- The **Recording** stage explains how to collect data using the Web UI.
   Two recording modes are available. The table below summarizes the key differences between these modes:
 
 <table>
@@ -40,4 +40,4 @@ The following sections describe the dataset preparation workflow for imitation l
 
 You will learn more about how to use each mode in the **Recording** section.
 
-- The **Visualization** stage focuses on verifying data quality by allowing users to inspect the recorded dataset. 
+- The **Visualization** stage focuses on verifying data quality by allowing users to inspect the recorded dataset.

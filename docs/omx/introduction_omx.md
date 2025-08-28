@@ -16,7 +16,7 @@ The follower arm can safely return to its initial pose from any position during 
 ### 🧭 Extended Position Base
 The base motor uses an extended-position design, providing full 360° rotation. With extended cabling, it can rotate indefinitely—expanding the usable workspace for more flexible manipulation.
 
-### 🪶 Lightweight
+### 🪶 Light Weight
 OMX is engineered to be extremely lightweight, allowing it to be carried easily and deployed anywhere. The reduced weight also means less fatigue during extended use while maintaining robust performance.
 
 ### ✨ Low-Friction Leader
@@ -31,8 +31,8 @@ A spring-assisted control mechanism provides a comfortable, repeatable grip. Use
 ### 🎛️ Design for Improving UX
 Thoughtful details improve real-world performance, from a opened gripper design that reduces occlusion to a clear base point for initial poses. These features ensure consistent data, better labeling, and reproducibility across sessions.
 
-### 🤖 Supported ROS2
-OMX officially supports ROS2, with compatibility across existing packages. Developers can integrate with ROS2-based software stacks to unlock advanced robotics functions.
+### 🤖 Supported ROS 2
+OMX officially supports ROS 2, with compatibility across existing packages. Developers can integrate with ROS 2-based software stacks to unlock advanced robotics functions.
 
 ### 🔄 AI Workflows
 Fully compatible with ROBOTIS Physical AI Tools and native LeRobot workflows. Users can choose either environment and seamlessly build a wide range of AI-driven applications out of the box.

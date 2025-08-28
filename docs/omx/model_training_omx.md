@@ -13,8 +13,8 @@ The dataset to be used for training should be located at:
 `USER PC`
 
  `<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/${HF_USER}/`
- 
-Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location. 
+
+Datasets collected using Physical AI Tools are automatically saved to that path. However, if you downloaded the dataset from a hub or copied it from another PC, you need to move the dataset to that location.
 
 ::: info
 - `${HF_USER}` can be any folder name you prefer.
@@ -107,14 +107,14 @@ Select the policy and computation device for training your model.
 <img src="/imitation_learning/web_ui_training_policy_selection.png" alt="Web UI" style="width: 50%; ">
 
 == Output Folder Name
-Specify the name of the folder where your trained model will be saved. Then, check for duplicates. 
+Specify the name of the folder where your trained model will be saved. Then, check for duplicates.
 This folder will be created in the default output directory (`<your_workspace>/physical_ai_tools/lerobot/outputs/`).
 Choose a descriptive and meaningful name so you can easily identify the trained model later.
 
 <img src="/imitation_learning/web_ui_training_output_folder_input.png" alt="Web UI" style="width: 50%; ">
 
 == Additional Options
-<img src="/imitation_learning/web_ui_training_additional_options.png" alt="Web UI" 
+<img src="/imitation_learning/web_ui_training_additional_options.png" alt="Web UI"
 style="width: 50%; ">
 
 - Descriptions of additional options

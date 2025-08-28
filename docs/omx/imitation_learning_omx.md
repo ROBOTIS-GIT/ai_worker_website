@@ -10,7 +10,7 @@ Option 1<br>Physical AI tools (Recommended)
 </a>
 
 <a href="/omx/lerobot_imitation_learning_omx.html" class="button-shortcut">
-Option 2<br>Native Lerobot
+Option 2<br>Lerobot
 </a>
 </div>
 

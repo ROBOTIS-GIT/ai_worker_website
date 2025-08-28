@@ -2,7 +2,7 @@
 next: false
 ---
 
-# Setup Guide — Physical AI Tools (OMX)
+# Setup Guide — ROS 2 (Physical AI Tools)
 
 ## Overview
 This guide shows how to set up and operate OMX using Physical AI Tools (Web UI). Follow the steps to prepare repositories, configure Docker, and run the teleoperation node.

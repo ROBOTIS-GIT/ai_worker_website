@@ -236,7 +236,7 @@ export default defineConfig({
               link: '/omx/setup_guide_omx',
               collapsed: false,
               items: [
-                { text: 'Physical AI Tools', link: '/omx/setup_guide_physical_ai_tools' },
+                { text: 'ROS 2 (Physical AI Tools)', link: '/omx/setup_guide_physical_ai_tools' },
                 { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
               ]
             }
@@ -248,7 +248,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/omx/imitation_learning_omx' },
             {
-              text: 'Physical AI Tools',
+              text: 'ROS 2 (Physical AI Tools)',
               collapsed: false,
               items: [
                 {

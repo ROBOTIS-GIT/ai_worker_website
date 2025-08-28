@@ -1,4 +1,4 @@
-# Setup Guide — LeRobot (OMX)
+# Setup Guide — LeRobot
 
 ## Overview
 

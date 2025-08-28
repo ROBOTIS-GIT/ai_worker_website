@@ -19,6 +19,7 @@ This guide will walk you through the process of setting up your OMX hardware and
 Two options are available for controlling your OMX robot:
 
 #### ROS 2 Workflow with Physical AI Tools (Recommended)
+![](/quick_start_guide/omx/physical_ai_tools.png)
 **Physical AI Tools** is a ROS 2 package that provides a comprehensive web-based interface for imitation learning. It works as a ROS 2 workflow that combines the Open Manipulator package with Physical AI Tools to enable every feature of LeRobot and extends them with additional capabilities:
 
 - **Web-based GUI**: Intuitive browser interface for easy interaction

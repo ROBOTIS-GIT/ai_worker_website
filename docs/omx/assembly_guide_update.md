@@ -3,7 +3,7 @@ next: setup_guide
 nextText: Setup Guide
 ---
 
-# Assembly Guide (OMX)
+# Assembly Guide
 
 Step-by-Step Assembly Guide for OMX
 

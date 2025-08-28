@@ -1,4 +1,4 @@
-# LeRobot for OMX
+# Setup Guide — LeRobot (OMX)
 
 ## Overview
 
@@ -23,7 +23,7 @@ conda activate lerobot
 conda install -c conda-forge ffmpeg=6.1.1 -y
 ```
 
-:::: tip FFmpeg Installation Options
+::::: tip FFmpeg Installation Options
 This typically installs FFmpeg 7.X on your system with the libsvtav1 encoder enabled. If libsvtav1 isn't available (check with `ffmpeg -encoders`), use one of the options below:
 
 **[On any platform]** Explicitly install FFmpeg 7.X using:
@@ -32,11 +32,11 @@ conda install ffmpeg=7.1.1 -c conda-forge
 ```
 
 **[On Linux only]** To build FFmpeg yourself: install the build dependencies and compile it with libsvtav1, then ensure your shell uses that binary (verify with `which ffmpeg`).
-::::
+:::::
 
-#### 4) Clone Source (feature-omx-devel) and Enter Directory
+#### 4) Clone Source and Enter Directory
 ```bash
-git clone -b feature-omx-devel https://github.com/ROBOTIS-GIT/lerobot.git
+git clone https://github.com/ROBOTIS-GIT/lerobot.git
 cd lerobot
 ```
 
@@ -64,3 +64,7 @@ sudo apt-get install cmake build-essential python-dev pkg-config libavformat-dev
 ```
 
 For other platforms, see: [Compiling PyAV](https://pyav.org/docs/stable/overview/installation.html)
+
+🎉 Lerobot Setup Complete!
+
+Click the button below to start Imitation Learning.

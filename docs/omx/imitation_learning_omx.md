@@ -6,11 +6,11 @@ This document provides an overview of the complete ROS 2-based imitation learnin
 
 <div style='display: flex; justify-content: flex-start; gap: 30px;'>
 <a href="/omx/dataset_preparation_omx.html" class="button-shortcut">
-Option 1<br>Web UI (Recommended)
+Option 1<br>Physical AI tools (Recommended)
 </a>
 
-<a href="/omx/lerobot_omx.html" class="button-shortcut">
-Option 2<br>LeRobot CLI (Optional)
+<a href="/omx/lerobot_imitation_learning_omx.html" class="button-shortcut">
+Option 2<br>Native Lerobot
 </a>
 </div>
 

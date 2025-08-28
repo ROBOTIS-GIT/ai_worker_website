@@ -231,7 +231,15 @@ export default defineConfig({
           text: 'Quick Start Guide',
           items: [
             { text: 'Assembly Guide', link: '/omx/assembly_guide_omx' },
-            { text: 'Setup Guide', link: '/omx/setup_guide_omx' },
+            {
+              text: 'Setup Guide',
+              link: '/omx/setup_guide_omx',
+              collapsed: false,
+              items: [
+                { text: 'Physical AI Tools', link: '/omx/setup_guide_physical_ai_tools' },
+                { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
+              ]
+            }
             // { text: 'Operation Guide', link: '/omx/operation_omx' }
           ]
         },
@@ -240,7 +248,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/omx/imitation_learning_omx' },
             {
-              text: 'Option 1: Physical AI Tools',
+              text: 'Physical AI Tools',
               collapsed: false,
               items: [
                 {
@@ -255,14 +263,7 @@ export default defineConfig({
                 { text: 'Model Inference', link: '/omx/model_inference_omx' }
               ]
             },
-            {
-              text: 'Option 2: LeRobot',
-              collapsed: false,
-              items: [
-                { text: 'Installation', link: '/omx/lerobot_omx' },
-                { text: 'Imitation Learning', link: '/omx/lerobot_imitation_learning_omx' }
-              ]
-            }
+            { text: 'LeRobot', link: '/omx/lerobot_imitation_learning_omx' }
           ]
         },
         // {

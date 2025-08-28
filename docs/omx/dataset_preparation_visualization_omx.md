@@ -29,7 +29,7 @@ python lerobot/scripts/visualize_dataset_html.py \
   - Replace **YOUR_REPO_ID** with the dataset ID found under the **User ID** section in the right sidebar.
   - For example: `ROBOTIS/omx_f_Test`
   <div class="UI" style="width: 50%; margin: 0 auto;">
-  <img src="/imitation_learning/web_ui_task_info_repo_id.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui/record/task_info_repo_id.png" alt="Web UI" style="width: 100%; ">
 </div>
 
 You should see an output similar to the following:

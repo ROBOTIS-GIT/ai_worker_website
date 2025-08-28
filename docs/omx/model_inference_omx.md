@@ -115,7 +115,7 @@ Open your web browser and navigate to the Web UI (Physical AI Manager).
 
 On the **Home** page, select the type of robot you are using.
 
-  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
+  <img src="/imitation_learning/web_ui/home/robot_type_selection.png" alt="Web UI" style="width: 40%; ">
 
 #### c. Enter Task Instruction and Policy Path
 
@@ -123,7 +123,7 @@ Go to the `Inference` Page.
 
 Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, located on the right side of the page.
 
-  <img src="/imitation_learning/web_ui_inference_task_info.png" alt="Web UI" style="width: 50%; ">
+  <img src="/imitation_learning/web_ui/inference/task_info.png" alt="Web UI" style="width: 50%; ">
 
 - Task Information Field Descriptions
 
@@ -163,7 +163,7 @@ Recording during inference will be supported in a future update. Coming soon!
 
 To begin inference, use the **Control Panel** located at the bottom of the page:
 
-  <img src="/imitation_learning/web_ui_control_panel.png" alt="Web UI" style="width: 100%; ">
+  <img src="/imitation_learning/web_ui/record/control_panel.png" alt="Web UI" style="width: 100%; ">
 
   - The `Start` button begins inference.
   - The `Finish` button stops inference.

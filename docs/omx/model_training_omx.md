@@ -79,13 +79,13 @@ Open your web browser and navigate to the Web UI (Physical AI Manager).
 
 On the **Home** page, select the type of robot you are using.
 
-  <img src="/imitation_learning/web_ui_robot_type_selection.png" alt="Web UI" style="width: 40%; ">
+  <img src="/imitation_learning/web_ui/home/robot_type_selection.png" alt="Web UI" style="width: 40%; ">
 
 #### c. Train the Policy
 
 Go to the `Training` page and follow the steps below:
 
-<img src="/imitation_learning/web_ui_training_page.png" alt="Web UI" style="width: 100%; ">
+<img src="/imitation_learning/web_ui/training/page.png" alt="Web UI" style="width: 100%; ">
 
 - Step 1: Select the `Dataset`, `Policy Type` and `Device`.
 - Step 2: Enter the `Output Folder Name`.
@@ -97,24 +97,24 @@ For more information about these **options**, please refer to the descriptions b
 == Dataset
 
 The datasets stored in the `~/.cache/huggingface/` directory on the host (or `/root/.cache/huggingface/` inside the Docker container) will be listed automatically.
-<img src="/imitation_learning/web_ui_training_dataset_selection.png" alt="Web UI" style="width: 50%; ">
+<img src="/imitation_learning/web_ui/training/dataset_selection.png" alt="Web UI" style="width: 50%; ">
 
 == Policy Type and Device
 Select the policy and computation device for training your model.
 - **Policy Type**: Choose the imitation learning algorithm (e.g., act, pi0, etc.).
 - **Device**: Select the hardware to be used for training (e.g. cuda, cpu, etc.)
 
-<img src="/imitation_learning/web_ui_training_policy_selection.png" alt="Web UI" style="width: 50%; ">
+<img src="/imitation_learning/web_ui/training/policy_selection.png" alt="Web UI" style="width: 50%; ">
 
 == Output Folder Name
 Specify the name of the folder where your trained model will be saved. Then, check for duplicates.
 This folder will be created in the default output directory (`<your_workspace>/physical_ai_tools/lerobot/outputs/`).
 Choose a descriptive and meaningful name so you can easily identify the trained model later.
 
-<img src="/imitation_learning/web_ui_training_output_folder_input.png" alt="Web UI" style="width: 50%; ">
+<img src="/imitation_learning/web_ui/training/output_folder_input.png" alt="Web UI" style="width: 50%; ">
 
 == Additional Options
-<img src="/imitation_learning/web_ui_training_additional_options.png" alt="Web UI"
+<img src="/imitation_learning/web_ui/training/additional_options.png" alt="Web UI"
 style="width: 50%; ">
 
 - Descriptions of additional options

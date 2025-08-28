@@ -29,27 +29,76 @@ OMX-AI is operated as a leader–follower system. Each arm has a dedicated role 
 - Follower: OMX-F (omx-f)
   - Role: Executes the leader's motion precisely in real time
 
-### Motor Configuration Summary
-The following table summarizes the actuator models per joint for both arms.
-
-| Joint | OMX-L (Leader) Motor | OMX-F (Follower) Motor |
-|:---:|:-----------------------:|:-------------------------:|
-| 1    | XL330-M288           | XL430-W250-T            |
-| 2    | XL330-M288           | XL430-W250-T            |
-| 3    | XL330-M288           | XL430-W250-T            |
-| 4    | XL330-M288           | XL330-M288             |
-| 5    | XL330-M288           | XL330-M288             |
-| 6    | XL330-M077           | XL330-M288             |
-
-
 <!-- styles consolidated to docs/.vitepress/theme/custom.css -->
 
 
 ## Leader — Assembly Guide
 
+### Motor Configuration (Leader)
+<div style="overflow-x: auto;">
+  <table style="width: 100%; text-align: center; border-collapse: separate; border-spacing: 10px 8px;">
+    <thead>
+      <tr>
+        <th style="padding: 8px 12px;">Joint</th>
+        <th style="padding: 8px 12px;">Motor</th>
+        <th style="padding: 8px 12px;">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 8px 12px;">1</td><td style="padding: 8px 12px;">XL330-M288</td><td style="padding: 8px 12px;">1</td></tr>
+      <tr><td style="padding: 8px 12px;">2</td><td style="padding: 8px 12px;">XL330-M288</td><td style="padding: 8px 12px;">2</td></tr>
+      <tr><td style="padding: 8px 12px;">3</td><td style="padding: 8px 12px;">XL330-M288</td><td style="padding: 8px 12px;">3</td></tr>
+      <tr><td style="padding: 8px 12px;">4</td><td style="padding: 8px 12px;">XL330-M288</td><td style="padding: 8px 12px;">4</td></tr>
+      <tr><td style="padding: 8px 12px;">5</td><td style="padding: 8px 12px;">XL330-M288</td><td style="padding: 8px 12px;">5</td></tr>
+      <tr><td style="padding: 8px 12px;">6</td><td style="padding: 8px 12px;">XL330-M077</td><td style="padding: 8px 12px;">6</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+### Step 1
 <div class="video-container">
   <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
-    <source src="/assembly_guide/omx_l_assembly_video.mp4" type="video/mp4" />
+    <source src="/assembly_guide/omx_l/OMX-L_1.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 2
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_l/OMX-L_2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 3
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_l/OMX-L_3.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 4
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_l/OMX-L_4.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 5
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_l/OMX-L_5.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 6
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_l/OMX-L_6.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 </div>
@@ -57,9 +106,71 @@ The following table summarizes the actuator models per joint for both arms.
 
 ## Follower — Assembly Guide
 
+### Motor Configuration (Follower)
+<div style="overflow-x: auto;">
+  <table style="width: 100%; text-align: center; border-collapse: separate; border-spacing: 10px 8px;">
+    <thead>
+      <tr>
+        <th style="padding: 8px 12px;">Joint</th>
+        <th style="padding: 8px 12px;">Motor</th>
+        <th style="padding: 8px 12px;">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 8px 12px;">1</td><td style="padding: 8px 12px;">XL430-W250-T</td><td style="padding: 8px 12px;">11</td></tr>
+      <tr><td style="padding: 8px 12px;">2</td><td style="padding: 8px 12px;">XL430-W250-T</td><td style="padding: 8px 12px;">12</td></tr>
+      <tr><td style="padding: 8px 12px;">3</td><td style="padding: 8px 12px;">XL430-W250-T</td><td style="padding: 8px 12px;">13</td></tr>
+      <tr><td style="padding: 8px 12px;">4</td><td style="padding: 8px 12px;">XL330-M288</td><td style="padding: 8px 12px;">14</td></tr>
+      <tr><td style="padding: 8px 12px;">5</td><td style="padding: 8px 12px;">XL330-M288</td><td style="padding: 8px 12px;">15</td></tr>
+      <tr><td style="padding: 8px 12px;">6</td><td style="padding: 8px 12px;">XL330-M288</td><td style="padding: 8px 12px;">16</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+### Step 1
 <div class="video-container">
   <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
-    <source src="/assembly_guide/omx_f_assembly_video.mp4" type="video/mp4" />
+    <source src="/assembly_guide/omx_f/OMX-F_1.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 2
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_f/OMX-F_2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 3
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_f/OMX-F_3.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 4
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_f/OMX-F_4.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 5
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_f/OMX-F_5.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+### Step 6
+<div class="video-container">
+  <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
+    <source src="/assembly_guide/omx_f/OMX-F_6.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 </div>
@@ -72,7 +183,8 @@ Below is a short video that summarizes the assembly steps and shows how to conne
 <YouTube videoId="dQw4w9WgXcQ" /> -->
 
 🎉 Assembly Complete
-Your OMX assembly is complete. Continue to the Setup Guide to power on, configure networking, and run initial checks.
+
+Your OMX assembly is complete. Continue to the Setup Guide to power on
 
 ## Appendix
 

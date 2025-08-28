@@ -256,7 +256,8 @@ export default defineConfig({
                   items: [
                     { text: 'Prerequisites', link: '/omx/dataset_preparation_prerequisites_omx' },
                     { text: 'Recording', link: '/omx/dataset_preparation_recording_omx' },
-                    { text: 'Visualization', link: '/omx/dataset_preparation_visualization_omx' }
+                    { text: 'Visualization', link: '/omx/dataset_preparation_visualization_omx' },
+                    { text: 'Editing', link: '/omx/dataset_preparation_editing_omx' }
                   ]
                 },
                 { text: 'Model Training', link: '/omx/model_training_omx' },

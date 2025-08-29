@@ -217,7 +217,7 @@ export default defineConfig({
           text: 'OMX',
           items: [
             { text: 'Introduction', link: '/omx/introduction_omx' },
-            // { text: 'Video Gallery', link: '/omx/videos_omx' }
+            { text: 'Video Gallery', link: '/omx/videos_omx' }
           ]
         },
         // {

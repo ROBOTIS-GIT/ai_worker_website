@@ -1,3 +1,7 @@
+---
+next: false
+---
+
 # Model Inference with Web UI
 
 Once your model is trained, you can deploy it on the OMX for inference.
@@ -111,7 +115,7 @@ ai_server
 
 Open your web browser and navigate to the Web UI (Physical AI Manager).
 
-(Refer to the [Dataset Preparation > Recording > 1. Open the Web UI](/omy/dataset_preparation_recording_omy#_1-open-the-web-ui))
+(Refer to the [Dataset Preparation > Recording > 1. Open the Web UI](/omx/dataset_preparation_recording_omx#_1-open-the-web-ui))
 
 On the **Home** page, select the type of robot you are using.
 
@@ -177,3 +181,9 @@ To begin inference, use the **Control Panel** located at the bottom of the page:
 
   - The `Start` button begins inference.
   - The `Finish` button stops inference.
+
+<div style='display: flex; justify-content: flex-start; gap: 30px; margin-top: 24px;'>
+<a href="/omx/opensource_omx.html" class="button-shortcut">
+Overview
+</a>
+</div>

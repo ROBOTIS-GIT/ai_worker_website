@@ -1,239 +1,204 @@
 # Release Notes
 
-## AI Worker
-https://github.com/ROBOTIS-GIT/ai_worker
+<details>
+<summary>2025.08.14</summary>
 
-### 1.1.9 (2025-07-18)
-* Added robot manager ros2 controller
-* Added Swerve Steer initialization feature
-* Fixed Gazebo simulation issue
-* Added error code reading feature for Dynamixel
-* Contributors: Woojin Wie
+📦 **AI Worker**
+> **Version:** `1.1.10`
+> **Released:** 2025-08-14
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.1.10)
 
-### 1.1.8 (2025-07-14)
-* Modified joystick controller to enable lift control while in swerve mode
-* Refactored joystick controller
-* Contributors: Wonho Yun
+Added start/pause feature for ffw_joint_trajectory_command_broadcaster.
+- Pushing the trigger will start and stop the teleop.
 
-### 1.1.7 (2025-07-11)
-* Added slow start feature for joint_trajectory_command_broadcaster
-* Contributors: Woojin Wie
+Added ffw_robot_manager ROS 2 controller.
+- Head LED Control
+  - FFW Robot Manager detects Dynamixel hardware error and changes LED.
+  <img src="/release_note/ai_worker/ffw_head_led.gif" alt="AI Worker Head LED">
 
-### 1.1.6 (2025-07-07)
-* Updated ros2_control xacro file for ffw_bg2_rev4_follower
-* Fix header file name for tf2
-* Contributors: Woojin Wie
+- Dynamixel Torque Control
+  - Provides torque disable option when the Dynamixel hardware error is detected.
 
-### 1.1.5 (2025-06-30)
-* Updated ros2_control xacro file for ffw_bg2_rev2_follower
-* Contributors: Woojin Wie
+Added ZED mini to URDF.
+<img src="/release_note/ai_worker/ffw_zed_urdf.png" alt="AI Worker ZED URDF">
 
-### 1.1.4 (2025-06-27)
-* Added ROS_DOMAIN_ID to the Dockerfile
-* Contributors: Woojin Wie
+Support MoveIt for FFW SG2.
+<img src="/release_note/ai_worker/ffw_moveit.gif" alt="AI Worker MoveIt">
 
-### 1.1.3 (2025-06-26)
-* Modified jog scale for ffw_lg2_leader
-* Added dependencies to the package.xml file for image_transport_plugins
-* Contributors: Woojin Wie
 
-### 1.1.2 (2025-06-26)
-* Added dependencies to the package.xml file
-* Contributors: Woojin Wie
+📦 **Physical AI Tools**
+> **Version:** `0.6.6`
+> **Released:** 2025-08-12
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.6.6)
 
-### 1.1.1 (2025-06-26)
-* Reordered pip install order in Dockerfile to fix the numpy version issue
-* Added Current Limit parameter to the ros2_control xacro file for ffw_sg2_rev1
-* Contributors: Woojin Wie
+Training loss display in Web UI.
+- Added current training loss value display to the Training page in Web UI.
+<img src="/release_note/ai_worker/ffw_training_loss.png" alt="Physical AI Tools Training Loss">
 
-### 1.1.0 (2025-06-16)
-* Add installation of some ROS 2 packages for physical AI tools in Dockerfile
-* Add an alias command in Dockerfile for running the physical AI server
-* Support ffw_sg2_rev1 Model
-* Add swerve drive controller package for ffw_sg2_rev1
-* Modify joystick controller to support swerve mode
-* Contributors: Kiwoong Park, Woojin Wie, Geonhee Lee, Wonho Yun
+Enhanced policy model selection for inference.
+- Added file browsing functionality to make policy model path selection more intuitive and convenient when performing inference.
+<img src="/release_note/ai_worker/ffw_policy_path.png" alt="Physical AI Tools Policy Path">
 
-### 1.0.9 (2025-06-09)
-* Updated urdf files for ffw_bg2_rev4
-* Modified Gazebo launch file
-* Contributors: Woojin Wie, Wonho Yun
 
-### 1.0.8 (2025-06-02)
-* Updated Model files for ffw_bg2_rev4
-* Contributors: Woojin Wie
+📦 **ROBOTIS LAB**
+> **Version:** `0.1.2`
+> **Released:** 2025-08-11
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/robotis_lab)
 
-### 1.0.7 (2025-05-30)
-* Updated Model files for ffw_bg2_rev4
-* Contributors: Woojin Wie
+Added FFW BG2 Pick-and-Place Imitation Learning Environment.
+- Built an imitation learning environment for cylindrical rod pick-and-place using the FFW BG2 robot.
+<img src="/release_note/ai_worker/ffw_imitation_learning_env.png" alt="Robotis Lab Imitation Learning Environment">
+</details>
 
-### 1.0.6 (2025-05-28)
-* Modified Docker volume mapping
-* Created RealSense and ZED launch files
-* Adjusted joint names
-* Improved file structure
-* Removed deprecated files
-* Contributors: Woojin Wie
 
-### 1.0.5 (2025-05-09)
-* Fixed Dockerfile
-* Updated Camera URDF
-* Contributors: Woojin Wie
+<details>
+<summary>2025.07.17</summary>
 
-### 1.0.4 (2025-05-08)
-* Fixed Dockerfile
-* Updated ros2 control xacro file to support async
-* Contributors: Woojin Wie
+📦 **AI Worker**
+> **Version:** `1.1.8`
+> **Released:** 2025-07-14
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.1.8)
 
-### 1.0.3 (2025-04-28)
+Added slow start feature for joint_trajectory_command_broadcaster.
+- Modified joystick controller to enable lift control while in swerve mode.
 
-* Added support for Joystick controller
-* Added ffw_spring_actuator_controller
-* Contributors: Woojin Wie
+📦 **Physical AI Tools**
+> **Version:** `0.6.0`
+> **Released:** 2025-07-16
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.6.0)
 
-### 1.0.2 (2025-04-16)
-* Added support for ROBOTIS RH Gripper
-* Added differentiation between slow and fast versions
-* Updated codebase to comply with flake8 linting standards
-* Contributors: Wonho Yun
+Added the training module.
+- Model policy training is now supported via the Web GUI.
+<img src="/release_note/ai_worker/ffw_training.png" alt="Physical AI Tools Training">
 
-### 1.0.1 (2025-04-07)
-* Modified the profile velocity parameters for enhanced arm and hand teleoperation performance
-* Modified the README file to reflect usage instructions for this package
-* Removed unused files and redundant comments to streamline the codebase
-* Contributors: Wonho Yun, Pyo
+Added an evaluation for trained models.  
+<img src="/release_note/ai_worker/ffw_policy_evaluation.png" alt="Physical AI Tools Policy Evaluation">  
+<img src="/release_note/ai_worker/ffw_policy_evaluation_2.png" alt="Physical AI Tools Policy Evaluation">
 
-### 1.0.0 (2025-04-06)
-* Added the initial version of the FFW ROS package
-* Added arm and hand teleoperation support for FFW
-* Added integrated controller compatibility for Inspire Robot Hand
-* Contributors: Sungho Woo, Woojin Wie, Wonho Yun, Pyo
+Added multi-tasking support.
+- Multi-tasking data collection is now supported via the Web GUI.
+<img src="/release_note/ai_worker/ffw_multi_task.png" alt="Physical AI Tools Multi-Task">
 
-### 0.1.0 (2025-03-27)
-* Added bringup scripts for system initialization
-* Added robot description files for visualization and planning
-* Added base controller functionalities
-* Added MoveIt for motion planning support
-* Contributors: Sungho Woo, Woojin Wie
+- It is possible to specify an arbitrary number of task instructions from now on.
+<img src="/release_note/ai_worker/ffw_multi_task_2.png" alt="Physical AI Tools Multi-Task">
 
-## Physical AI Tools
-- https://github.com/ROBOTIS-GIT/physical_ai_tools
 
-### 0.6.3 (2025-07-25)
-* Fixed a bug to allow setting the output folder path to a specified location.
-* Fixed a bug that did not guarantee the order of messages.
-* Contributors: Dongyun Kim, Seongwoo Kim, Woojin Wie
+📦 **ROBOTIS LAB**  
+> **Version:** `0.1.1`  
+> **Released:** 2025-07-16  
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/robotis_lab)
 
-### 0.6.2 (2025-07-24)
-* Updated Lerobot to the latest version and modified related functionalities.
-* Contributors: Dongyun Kim, Seongwoo Kim, Woojin Wie
+Added Sim2Real functionality to the OMY reach task.  
+- Development and deployment of Sim2Real capabilities with the OMY robot and NVIDIA Isaac Sim.  
+  - ISAAC SIM  
+  <img src="/release_note/ai_worker/ffw_isaac_sim.png" alt="ROBOTIS Lab Isaac Sim">  
+  - Real World  
+  <img src="/release_note/ai_worker/ffw_real_world.png" alt="ROBOTIS Lab Real World">
+</details>
 
-### 0.6.1 (2025-07-23)
-* Implemented robust error handling during data collection to prevent server crashes due to incorrect robot type configuration
-* Contributors: Seongwoo Kim
 
-### 0.6.0 (2025-07-23)
-* Added training-related service types and message types
-* Added a new training page for training imitation learning models
-* Implemented a Training Manager to support model training through the Web UI
-* Contributors: Kiwoong Park, Seongwoo Kim
+<details>
+<summary>2025.07.03</summary>
 
-### 0.5.13 (2025-07-21)
-* Updated Docker volume mount paths from /root to ${HOME} for improved portability and compatibility
-* Contributors: Seongwoo Kim
+📦 **AI Worker**
+> **Version:** `1.1.5`
+> **Released:** 2025-06-30
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.1.5)
 
-### 0.5.12 (2025-07-18)
-* Enabled appending video encodings without overwriting existing data in multi-task mode
-* Contributors: Seongwoo Kim
+Updated FFW-SG2 model with latest configurations and improvements.
+- Integrated ROS 2 controller for swerve drive support. 
+- Added joystick control functionality for swerve drive.
+- Updated robot configuration for improved system stability.
+<img src="/release_note/ai_worker/ffw_sg2.png" alt="AI Worker SG2">
 
-### 0.5.11 (2025-07-16)
-* Added functionality for evaluating trained models
-* Contributors: Dongyun Kim
 
-### 0.5.10 (2025-07-15)
-* Added multi-tasking data recording support to the Physical AI Server
-* Contributors: Kiwoong Park, Seongwoo Kim
+📦 **Physical AI Tools**
+> **Version:** `0.5.7`
+> **Released:** 2025-06-30
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.5.7)
 
-### 0.5.9 (2025-07-07)
-* Use global ROS connection instead of multiple instances
-* Add proper cleanup for image streams to prevent accumulation
-* Remove unnecessary scrollbars in Chrome browser
-* Contributors: Kiwoong Park
+Enhanced policy inference via Web UI.
+- Enable AI model inference directly from the inference page without CLI.
+<img src="/release_note/ai_worker/ffw_inference.png" alt="Physical AI Tools Inference">
 
-### 0.5.8 (2025-07-07)
-* Applied Redux Toolkit for better state management
-* Added heartbeat status to the UI
-* Added heartbeat topic publishing to monitor alive status of Physical AI Server
-* Contributors: Kiwoong Park, Dongyun Kim
 
-### 0.5.7 (2025-06-26)
-* Added Image Transport Plugin and fixed missing Gstreamer components
-* Contributors: Dongyun Kim
+📦 **ROBOTIS LAB**
+> **Version:** `0.1.0`
+> **Released:** 2025-07-01
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/robotis_lab)
 
-### 0.5.6 (2025-06-26)
-* Reordered pip install order in Dockerfile to fix the numpy version issue
-* Contributors: Woojin Wie
+Released robotis_lab repository.
+- Newly created simulation and RL/IL research toolkit for Robotis robots built on Isaac Lab.
+<img src="/release_note/ai_worker/ffw_robotis_lab.png" alt="Robotis Lab">
 
-### 0.5.5 (2025-06-26)
-* Fixed control panel button states not reflecting correct taskType when switching between Record and Inference pages
-* Contributors: Kiwoong Park
+- Added instructions for the AI Worker homepage.
+<img src="/release_note/ai_worker/ffw_robotis_lab_documentation.png" alt="Robotis Lab">
+</details>
 
-### 0.5.4 (2025-06-25)
-* Added support for inference mode in the physical AI Server, including a new InferencePage and related UI components.
-* Changed the robot naming format.
-* Added Robot Config to support FFW-SG2 robot.
-* Added Msg Topic and data acquisition functionality to support Mobile Robot.
-* Fixed minor errors in the data acquisition process to improve software stability.
-* Added a new inference page for running and monitoring inference tasks.
-* Added inference-related msgs and srv types.
-* Contributors: Dongyun Kim, Kiwoong Park
 
-### 0.5.3 (2025-06-16)
-* Refactored Physical AI Server for improved data collection capabilities
-* Implemented data acquisition functionality using ROS2 topics
-* Modified configuration system to allow flexible robot type selection
-* Updated data collection method to utilize image buffers for efficiency
-* Overall UI improvements for physical_ai_manager
-* Added status information display from physical_ai_server
-* Added functionality to receive task information from users and send commands to physical_ai_server
-* Added bringup launch file that runs physical_ai_server with rosbridge_server and webvideo_server
-* Contributors: Dongyun Kim, Kiwoong Park
+<details>
+<summary>2025.06.19</summary>
 
-### 0.5.2 (2025-05-29)
-* Adjusted the waiting timeout for joint states.
-* Contributors: Dongyun Kim
+📦 **AI Worker**
+> **Version:** `1.0.9`
+> **Released:** 2025-06-18
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.0.9)
 
-### 0.5.1 (2025-05-29)
-* Added quality and transport parameters to image streaming URL
-* Added a Docker setup for physical AI server
-* Contributors: Kiwoong Park
+Added Gazebo simulation support for the AI Worker.
+- Included inertial properties in the URDF and XACRO files for the follower model.
+<img src="/release_note/ai_worker/ffw_gazebo_sim.png" alt="AI Worker Gazebo Sim">
 
-### 0.5.0 (2025-05-20)
-* Added a web UI for physical AI data collection
-* Removed unnecessary dependencies and cleaned up the codebase
-* Updated the LeRobot submodule to the latest version
-* Refactored to a scalable structure that supports N cameras and various joint configurations
-* Contributors: Dongyun Kim, Kiwoong Park, Woojin Wie, Seongwoo Kim
 
-### 0.4.0 (2025-05-15)
-* Added a pipeline for data collection and inference based on ROS2
-* Refactored to a scalable structure that supports N cameras and various joint configurations
-* Contributors: Dongyun Kim
+📦 **Physical AI Tools**
+> **Version:** `0.5.3`
+> **Released:** 2025-06-18
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.5.3)
 
-### 0.3.1 (2025-05-08)
-* Updated the LeRobot submodule to the latest version
-* Contributors: Woojin Wie
+Web UI-based ROS 2 data acquisition system for LeRobot.
+- From CLI to UI: Data collection now operates through an intuitive web-based UI using Physical AI Manager.
+- From fixed configs to flexible launch: Robot types can now be selected dynamically.
+- From manual commands to task flow: Users can input tasks, and the system sends commands to the Physical AI Server.
+- From raw topic reading to buffered capture: Improved image acquisition using efficient buffering.
+<img src="/release_note/ai_worker/ffw_data_collection.png" alt="Physical AI Tools Data Collection">
 
-### 0.3.0 (2025-04-25)
-* Unified multiple launch files into a single configurable launch file for better usability
-* Contributors: Seongwoo Kim
+- Episode tracking during data collection.
+- Real-time monitoring of system resource (CPU, RAM and disk usage).
+- Easy parameter configuration for each data session.
+- Simple control via Start / Stop / Retry / Next / Finish buttons.
+</details>
 
-### 0.2.0 (2025-04-08)
-* Added a time stamper node for data synchronization purposes
-* Removed unused joints and motors bus config
-* Contributors: Seongwoo Kim, Hyungyu Kim
 
-### 0.1.0 (2025-04-07)
-* Added a full workflow for recording and visualizing datasets using the LeRobot interface
-* Added bringup scripts for system initialization
-* Contributors: Seongwoo Kim, Pyo
+<details>
+<summary>2025.06.05</summary>
+
+📦 **AI Worker**
+> **Version:** `1.0.8`
+> **Released:** 2025-06-02
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.0.8)
+
+AI Worker Hardware REV-4 Release.
+<img src="/release_note/ai_worker/ffw_rev4.png" alt="AI Worker REV-4" style="width: 100%; ">
+
+- **REV-4**: New outer design, Orin relocated to the chest, ZED camera mounted on the head, and wrist camera with tilt functionality
+- **REV-3**: Improved wrist joint
+- **REV-2**: Internal development version
+- **REV-1**: Initial version equipped with the INSPIRE hand
+
+
+📦 **Physical AI Tools**
+> **Version:** `0.5.2`
+> **Released:** 2025-05-29
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.5.2)
+
+Physical AI Manager – web app for data collection, training, and inference.
+- Added a web-based UI tool that shows live image streaming during data collection. You can monitor real-time image streaming through your web browser.
+<img src="/release_note/ai_worker/ffw_physical_ai_manager.png" alt="Physical AI Manager">
+
+
+📦 **AI Worker Website**
+> 🔗 [Website](https://ai.robotis.com/)
+
+**AI.ROBOTIS.COM launched**
+- Management of AI.ROBOTIS.COM has begun. The site includes hardware, software, setup guides, and imitation learning manuals for the AI Worker.
+<img src="/release_note/ai_worker/ffw_website.png" alt="Website">
+</details>

@@ -141,7 +141,7 @@ Enter the Docker Container
 
 `ROBOT PC`
 ```bash
-cd /data/docker/open_manipulator/docker && ./container.sh enter
+cd open_manipulator/docker && ./container.sh enter
 ```
 
 Then, launch the ROS 2 teleoperation node with following command:

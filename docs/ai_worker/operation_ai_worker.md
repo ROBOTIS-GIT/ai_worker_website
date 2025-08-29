@@ -54,7 +54,7 @@ If a container is already running, enter the **ai\_worker** Docker container wit
 
 ### Option 1: All-in-One Launch
 
-::: tip NOTICE
+::: tip
 After execution, the follower will not move until you push both hand triggers for more than 2 seconds. Once you do, the follower will slowly move toward the leader's position, and after reaching a certain proximity, it will move more quickly. This behavior is the same even when launching the leader and follower separately.
 :::
 
@@ -129,7 +129,7 @@ ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py launch_cameras:=false init
    ```
 
 ## Basic Operation
-::: tip NOTICE
+::: tip
 You must push **both hand triggers** for more than 2 seconds for the follower to start moving. When you push both triggers forward, the follower will slowly move to the leader's position, and once it comes within a certain error range, it will move quickly.
 
 <img src="/quick_start_guide/ai_worker/push_trigger_ai_worker.gif" alt="Push Trigger" style="width: 50%;">

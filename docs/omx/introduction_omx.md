@@ -25,7 +25,7 @@ A special low-friction design makes the leader smooth and easy to operate. Even 
 ### 🔋 Powerless Leader
 Unlike conventional robot arms, the leader works with just a single USB-C connection. This enables simple laptop use for simulation or quick trials without requiring external power supplies.
 
-### 🎯 Spring Gripper
+### 🎯 Spring-Effect Control
 A spring-assisted control mechanism provides a comfortable, repeatable grip. Users experience consistent tactile feedback, making long data-collection sessions easier and less fatiguing.
 
 ### 🎛️ Design for Improving UX

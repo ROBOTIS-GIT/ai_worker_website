@@ -13,7 +13,7 @@ Every DYNAMIXEL actuator is factory-calibrated, so users never need to perform c
 ### 🛡️ Safe Bring-Up with Homing
 The follower arm can safely return to its initial pose from any position during bring-up. This ensures stable, predictable operation and minimizes risks, even for first-time users.
 
-### 🧭 Extended Position Base
+### 🧭 360° Base Rotation
 The base motor uses an extended-position design, providing full 360° rotation. With extended cabling, it can rotate indefinitely—expanding the usable workspace for more flexible manipulation.
 
 ### 🪶 Light Weight
@@ -31,7 +31,7 @@ A spring-assisted control mechanism provides a comfortable, repeatable grip. Use
 ### 🎛️ Design for Improving UX
 Thoughtful details improve real-world performance, from a opened gripper design that reduces occlusion to a clear base point for initial poses. These features ensure consistent data, better labeling, and reproducibility across sessions.
 
-### 🤖 Supported ROS 2
+### 🤖 ROS 2 Supported
 OMX officially supports ROS 2, with compatibility across existing packages. Developers can integrate with ROS 2-based software stacks to unlock advanced robotics functions.
 
 ### 🔄 AI Workflows

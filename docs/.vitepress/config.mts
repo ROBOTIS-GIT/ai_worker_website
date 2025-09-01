@@ -272,7 +272,6 @@ export default defineConfig({
         //   items: [
         //     { text: 'Overview', link: '/omx/simulation_omx'},
         //     { text: 'Gazebo', link: '/omx/gazebo_omx' },
-        //     { text: 'Isaac Sim/Lab', link: '/omx/robotis_lab_omx' }
         //   ]
         // },
         {

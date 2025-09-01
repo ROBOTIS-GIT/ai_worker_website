@@ -3,7 +3,7 @@
 After collecting data, you can modify your dataset by merging multiple datasets or removing unwanted episodes. This section guides you through these basic dataset operations.
 
 ## Merging Datasets
-You can merge multiple datasets into a single dataset. 
+You can merge multiple datasets into a single dataset.
 
 ### 1. Enter datasets to merge
 
@@ -69,7 +69,7 @@ Enter the name for the merged result dataset folder.
   <img src="/imitation_learning/web_ui/edit_dataset/enter_output_folder_name.png" alt="Web UI" style="width: 80%; max-width: 550px;">
 </div>
 
-Finally, click the `Merge` button to merge the datasets. 
+Finally, click the `Merge` button to merge the datasets.
 
 <div style="display: flex; justify-content: center;">
   <img src="/imitation_learning/web_ui/edit_dataset/merge_button.png" alt="Web UI" style="width: 20%; max-width: 550px;">

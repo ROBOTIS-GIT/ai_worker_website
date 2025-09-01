@@ -44,7 +44,7 @@ The video illustrates the full imitation learning workflow using the OMX, includ
 - Full imitation learning workflow using **OMX** and the **Web GUI**.
 - LeRobot native workflow is also available for advanced users.
 
-<YouTube videoId="3x-eN36pNns" /> --> 
+<YouTube videoId="3x-eN36pNns" /> -->
 
 ## Dataset Schema
 

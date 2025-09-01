@@ -21,6 +21,14 @@ Step-by-Step Assembly Guide for OMX
 </div>
 :::
 
+::: info
+- We provide the camera frame and mounting bolts; <br> the camera itself is **not included in the package**. You can purchase it from the **ROBOTIS Shop**.
+
+<div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/assembly_guide/camera_info.jpg" alt="Example of anti-slip tape applied" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+</div>
+:::
+
 ## Overview
 OMX-AI is operated as a leader–follower system. Each arm has a dedicated role and naming:
 
@@ -184,7 +192,7 @@ Below is a short video that summarizes the assembly steps and shows how to conne
 
 🎉 Assembly Complete
 
-Your OMX assembly is complete. Continue to the Setup Guide to power on.
+Your OMX assembly is complete. Continue to the next step.
 
 ## Appendix
 

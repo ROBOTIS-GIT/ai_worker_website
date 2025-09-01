@@ -35,8 +35,9 @@ On the **Home** page, select the type of robot you are using.
 </div>
 
 After clicking the `Set Robot Type` button, the status will change to `Connected`.
-
-   <img src="/imitation_learning/web_ui/home/connected_omx_f.png" alt="Web UI" style="width: 100%; ">
+<div class="UI" style="width: 60%; margin: 0 auto;">
+  <img src="/imitation_learning/web_ui/home/connected_omx_f.png" alt="Web UI" style="width: 100%; ">
+</div>
   <p style="text-align: center;"><em>Connected Screen</em></p>
 
 ### 3. Go to `Record` page

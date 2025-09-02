@@ -10,7 +10,7 @@ All motor parameters are preconfigured at the factory—no hardware or software 
 ### 🔌 No Calibration Required
 Every DYNAMIXEL actuator is factory-calibrated, so users never need to perform calibration themselves. Both hardware and software are fully supported, making it a true plug-and-play experience, even when using LeRobot.
 
-### 🛡️ Safe Bring-Up with Homing
+### 🛡️ Safe Homing Bring-Up
 The follower arm can safely return to its initial pose from any position during bring-up. This ensures stable, predictable operation and minimizes risks, even for first-time users.
 
 ### 🧭 360° Base Rotation
@@ -22,16 +22,16 @@ OMX is engineered to be extremely lightweight, allowing it to be carried easily 
 ### ✨ Low-Friction Leader
 A special low-friction design makes the leader smooth and easy to operate. Even children can control it safely, and fine movements feel natural with minimal effort.
 
-### 🔋 Powerless Leader
+### 🔋 No Power Supply Required
 Unlike conventional robot arms, the leader works with just a single USB-C connection. This enables simple laptop use for simulation or quick trials without requiring external power supplies.
 
-### 🎯 Spring-Effect Control
+### 🎯 Spring-Effect Trigger
 A spring-assisted control mechanism provides a comfortable, repeatable grip. Users experience consistent tactile feedback, making long data-collection sessions easier and less fatiguing.
 
-### 🎛️ Design for Improving UX
+### 🎛️ User-Centric Design
 Thoughtful details improve real-world performance, from a opened gripper design that reduces occlusion to a clear base point for initial poses. These features ensure consistent data, better labeling, and reproducibility across sessions.
 
-### 🤖 ROS 2 Supported
+### 🤖 ROS 2 Integration
 OMX officially supports ROS 2, with compatibility across existing packages. Developers can integrate with ROS 2-based software stacks to unlock advanced robotics functions.
 
 ### 🔄 AI Workflows

@@ -30,7 +30,6 @@ cd open_manipulator/docker && ./container.sh start
 ### 2. Set up ROS Domain ID
 Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
 
-
 Enter the **Open Manipulator** Docker container:
 
 `USER PC`
@@ -44,6 +43,47 @@ Enter the **Open Manipulator** Docker container:
 echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
 source ~/.bashrc
 ```
+
+### 3. Set up launch file port
+
+Enter the **Open Manipulator** Docker container:
+
+`USER PC`
+```bash
+./container.sh enter
+```
+
+:::info
+You must enter the serial ID into the launch file's port name parameter. Please temporarily note the blue serial ID shown in the image.
+
+`USER PC` or `USER PC` `🐋 OPEN MANIPULATOR`
+```bash
+ls -al /dev/serial/by-id/
+```
+<div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/quick_start_guide/omx/serial_id_check.png" alt="Serial device by-id listing example" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+</div>
+:::
+
+`USER PC` `🐋 OPEN MANIPULATOR`
+
+```bash
+sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_f_follower_ai.launch.py
+```
+
+`USER PC` `🐋 OPEN MANIPULATOR`
+
+```bash
+sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_l_leader_ai.launch.py
+```
+
+:::info
+As shown in the image below, paste the serial ID you noted above into the port name parameter for both the **[leader]** and the **[follower]**, then save.
+<div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/quick_start_guide/omx/setup_port_name.png" alt="Serial device by-id listing example" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+</div>
+:::
+
 🎉 Open Manipulator Container Setup Complete!
 
 Please exit the Docker container and return to your host terminal for the next steps.

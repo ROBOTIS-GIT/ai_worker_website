@@ -63,6 +63,14 @@ OMX-AI is operated as a leader–follower system. Each arm has a dedicated role 
   </table>
   </div>
 
+::: warning
+- Always orient **the motor horn upward as shown in the photo.**<br>Assemble exactly as in the official manual video.
+
+<div style="max-width: 360px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/assembly_guide/motor_horn.png" alt="Motor horn orientation" style="width: 85%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+</div>
+:::
+
 ### Step 1
 <div class="video-container">
   <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
@@ -134,6 +142,14 @@ OMX-AI is operated as a leader–follower system. Each arm has a dedicated role 
     </tbody>
   </table>
   </div>
+
+::: warning
+- Always orient **the motor horn upward as shown in the photo.**<br>Assemble exactly as in the official manual video.
+
+<div style="max-width: 360px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/assembly_guide/motor_horn.png" alt="Motor horn orientation" style="width: 85%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+</div>
+:::
 
 ### Step 1
 <div class="video-container">

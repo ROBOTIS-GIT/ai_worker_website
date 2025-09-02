@@ -22,7 +22,7 @@ OMX is engineered to be extremely lightweight, allowing it to be carried easily 
 ### ✨ Low-Friction Leader
 A special low-friction design makes the leader smooth and easy to operate. Even children can control it safely, and fine movements feel natural with minimal effort.
 
-### 🔋 No Power Supply Required
+### 🔋 No Power Supply Required for Leader (OMX-L)
 Unlike conventional robot arms, the leader works with just a single USB-C connection. This enables simple laptop use for simulation or quick trials without requiring external power supplies.
 
 ### 🎯 Spring-Effect Trigger

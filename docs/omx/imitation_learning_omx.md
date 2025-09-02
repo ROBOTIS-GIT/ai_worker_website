@@ -1,18 +1,12 @@
+---
+next: false
+---
+
 # Imitation Learning
 
 ## Overview
 
 This document provides an overview of the complete ROS 2-based imitation learning pipeline built on the OMX and the Hugging Face Hub. OMX offers two powerful approaches for imitation learning:
-
-<div style='display: flex; justify-content: flex-start; gap: 30px;'>
-<a href="/omx/dataset_preparation_omx.html" class="button-shortcut">
-Option 1<br>Physical AI tools (Recommended)
-</a>
-
-<a href="/omx/lerobot_imitation_learning_omx.html" class="button-shortcut">
-Option 2<br>Lerobot
-</a>
-</div>
 
 ### 1. Data Collection
 
@@ -61,3 +55,13 @@ The dataset follows the standard [🤗 Hugging Face datasets format](https://hug
 | `episode_index`                      | `int64`   | Index of the episode |
 | `index`                              | `int64`   | Global index across the dataset |
 | `task_index`                         | `int64`   | Task identifier |
+
+<div style='display: flex; justify-content: flex-start; gap: 30px;'>
+<a href="/omx/dataset_preparation_omx.html" class="button-shortcut">
+Option 1<br>Physical AI tools (Recommended)
+</a>
+
+<a href="/omx/lerobot_imitation_learning_omx.html" class="button-shortcut">
+Option 2<br>Lerobot
+</a>
+</div>

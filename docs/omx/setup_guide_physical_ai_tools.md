@@ -78,7 +78,7 @@ sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_l_l
 
 
 :::info
-Second, connect only the **'Follower'** USB to the port, then check and copy the OpenRB serial ID.wer
+Second, connect only the **'Follower'** USB to the port, then check and copy the OpenRB serial ID.
 
 `USER PC` or `USER PC` `🐋 OPEN MANIPULATOR`
 ```bash

@@ -66,8 +66,13 @@ OMX-AI is operated as a leader–follower system. Each arm has a dedicated role 
 ::: warning
 - Always orient **the motor horn upward as shown in the photo.**<br>Assemble exactly as in the official manual video.
 
-<div style="max-width: 360px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
-  <img src="/assembly_guide/motor_horn.png" alt="Motor horn orientation" style="width: 85%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+<div style="max-width: 700px; margin: 12px auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: center;">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="/assembly_guide/motor_horn430.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="/assembly_guide/motor_horn330.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+  </div>
 </div>
 :::
 
@@ -146,8 +151,13 @@ OMX-AI is operated as a leader–follower system. Each arm has a dedicated role 
 ::: warning
 - Always orient **the motor horn upward as shown in the photo.**<br>Assemble exactly as in the official manual video.
 
-<div style="max-width: 360px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
-  <img src="/assembly_guide/motor_horn.png" alt="Motor horn orientation" style="width: 85%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+<div style="max-width: 700px; margin: 12px auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: center;">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="/assembly_guide/motor_horn430.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="/assembly_guide/motor_horn330.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+  </div>
 </div>
 :::
 

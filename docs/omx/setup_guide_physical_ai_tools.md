@@ -9,10 +9,6 @@ This guide shows how to set up and operate OMX using Physical AI Tools (Web UI).
 
 ## Set up Open Manipulator Docker Container
 
-::: warning
-If the **Open Manipulator** Docker container is already set up, **you can skip this step**.
-:::
-
 ### 1. Start the Docker Container:
 
 Clone the repository:
@@ -27,24 +23,7 @@ Start the container with the following command:
 cd open_manipulator/docker && ./container.sh start
 ```
 
-### 2. Set up ROS Domain ID
-Set a consistent `ROS_DOMAIN_ID` across terminals to enable ROS 2 node communication.
-
-Enter the **Open Manipulator** Docker container:
-
-`USER PC`
-```bash
-./container.sh enter
-```
-
-`USER PC` `🐋 OPEN MANIPULATOR`
-
-```bash
-echo 'export ROS_DOMAIN_ID=30' >> ~/.bashrc
-source ~/.bashrc
-```
-
-### 3. Set up launch file port
+### 2. Set up launch file port
 
 Enter the **Open Manipulator** Docker container:
 
@@ -119,10 +98,6 @@ Please exit the Docker container and return to your host terminal for the next s
 
 ## Set up Physical AI Tools Docker Container
 
-::: warning
-If the **Physical AI Tools** Docker container is already set up, **you can skip this step**.
-:::
-
 ### 1. Start the Docker container
 
 Clone the repository along with all required submodules:
@@ -135,21 +110,6 @@ git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.
 Start the **Physical AI Tools** Docker container with the following command:
 ```bash
 cd physical_ai_tools/docker && ./container.sh start
-```
-
-### 2. Build the Physical AI Server
-
-Enter the Docker container:
-
-`USER PC`
-```bash
-./container.sh enter
-```
-Build the Physical AI Server with the following command:
-
-`USER PC` `🐋 PHYSICAL AI TOOLS`
-```bash
-colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 
 🎉 Physical AI Tools Container Setup Complete!

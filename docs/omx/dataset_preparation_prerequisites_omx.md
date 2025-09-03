@@ -25,7 +25,7 @@ cd open_manipulator/docker
 
 Then, launch the wrist USB camera node:
 ```bash
-ros2 launch camera_bringup usb_camera_launch.py
+ros2 launch open_manipulator_bringup camera_usb_cam.launch.py
 ```
 
 ## Launch the Physical AI Server

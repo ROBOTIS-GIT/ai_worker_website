@@ -32,9 +32,9 @@ Step-by-Step Assembly Guide for OMX
 ## Overview
 OMX-AI is operated as a leader–follower system. Each arm has a dedicated role and naming:
 
-- Leader: OMX-L (omx-l)
+- Leader: OMX-L
   - Role: Human teleoperation input device that generates reference motions
-- Follower: OMX-F (omx-f)
+- Follower: OMX-F
   - Role: Executes the leader's motion precisely in real time
 
 <!-- styles consolidated to docs/.vitepress/theme/custom.css -->
@@ -64,15 +64,11 @@ OMX-AI is operated as a leader–follower system. Each arm has a dedicated role 
   </div>
 
 ::: warning
-- Always orient **the motor horn upward as shown in the photo.**<br>Assemble exactly as in the official manual video.
+- Always orient **the motor horn upward as shown in the photo.**<br>
+Assemble exactly as in the official manual video.
 
-<div style="max-width: 700px; margin: 12px auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: center;">
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <img src="/assembly_guide/motor_horn430.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
-  </div>
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <img src="/assembly_guide/motor_horn330.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
-  </div>
+<div style="max-width: 700px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/assembly_guide/motor_horn.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
 :::
 
@@ -149,15 +145,11 @@ OMX-AI is operated as a leader–follower system. Each arm has a dedicated role 
   </div>
 
 ::: warning
-- Always orient **the motor horn upward as shown in the photo.**<br>Assemble exactly as in the official manual video.
+- Always orient **the motor horn upward as shown in the photo.**<br>
+Assemble exactly as in the official manual video.
 
-<div style="max-width: 700px; margin: 12px auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: center;">
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <img src="/assembly_guide/motor_horn430.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
-  </div>
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <img src="/assembly_guide/motor_horn330.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
-  </div>
+<div style="max-width: 700px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/assembly_guide/motor_horn.png" alt="Motor horn orientation" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
 :::
 

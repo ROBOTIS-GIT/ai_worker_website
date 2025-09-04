@@ -220,13 +220,13 @@ export default defineConfig({
             { text: 'Video Gallery', link: '/omx/videos_omx' }
           ]
         },
-        // {
-        //   text: 'Specifications',
-        //   items: [
-        //     { text: 'Hardware', link: '/omx/hardware_omx' },
-        //     { text: 'Software', link: '/omx/software_omx' }
-        //   ]
-        // },
+        {
+          text: 'Specifications',
+          items: [
+            { text: 'Hardware', link: '/omx/hardware_omx' }
+            // { text: 'Software', link: '/omx/software_omx' }
+          ]
+        },
         {
           text: 'Quick Start Guide',
           items: [

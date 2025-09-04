@@ -45,4 +45,4 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 
 
 ## [Leader] Layout
-![](/specifications/omx/omx_follower_layout.png)
+![](/specifications/omx/omx_leader_layout.png)

@@ -22,6 +22,7 @@ The basic commands in this manual are written for **OMX_F**.
 Example:
 ```bash
 ros2 launch open_manipulator_bringup omx_f.launch.py
+```
 :::
 
 ## Launch Bringup

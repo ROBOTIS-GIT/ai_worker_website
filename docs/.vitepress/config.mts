@@ -52,6 +52,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
       { text: 'OMY', link: '/omy/introduction_omy' },
+      { text: 'OMX', link: '/omx/introduction_omx' },
       { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
       {
         text: 'OpenSource',
@@ -207,6 +208,86 @@ export default defineConfig({
             { text: 'Issues', link: '/omy/issues_omy' },
             { text: 'FAQ', link: '/omy/faq_omy' },
             { text: 'Contact Us', link: '/omy/contact_omy' }
+          ]
+        }
+      ],
+
+      '/omx/': [
+        {
+          text: 'OMX',
+          items: [
+            { text: 'Introduction', link: '/omx/introduction_omx' },
+            { text: 'Video Gallery', link: '/omx/videos_omx' }
+          ]
+        },
+        // {
+        //   text: 'Specifications',
+        //   items: [
+        //     { text: 'Hardware', link: '/omx/hardware_omx' },
+        //     { text: 'Software', link: '/omx/software_omx' }
+        //   ]
+        // },
+        {
+          text: 'Quick Start Guide',
+          items: [
+            { text: 'Assembly Guide', link: '/omx/assembly_guide_omx' },
+            {
+              text: 'Setup Guide',
+              link: '/omx/setup_guide_omx',
+              collapsed: false,
+              items: [
+                { text: 'ROS 2 (Physical AI Tools)', link: '/omx/setup_guide_physical_ai_tools' },
+                { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
+              ]
+            }
+            // { text: 'Operation Guide', link: '/omx/operation_omx' }
+          ]
+        },
+        {
+          text: 'Imitation Learning',
+          items: [
+            { text: 'Overview', link: '/omx/imitation_learning_omx' },
+            {
+              text: 'ROS 2 (Physical AI Tools)',
+              collapsed: false,
+              items: [
+                {
+                  text: 'Dataset Preparation', link: '/omx/dataset_preparation_omx',
+                  items: [
+                    { text: 'Prerequisites', link: '/omx/dataset_preparation_prerequisites_omx' },
+                    { text: 'Recording', link: '/omx/dataset_preparation_recording_omx' },
+                    { text: 'Visualization', link: '/omx/dataset_preparation_visualization_omx' },
+                    { text: 'Editing', link: '/omx/dataset_preparation_editing_omx' }
+                  ]
+                },
+                { text: 'Model Training', link: '/omx/model_training_omx' },
+                { text: 'Model Inference', link: '/omx/model_inference_omx' }
+              ]
+            },
+            { text: 'LeRobot', link: '/omx/lerobot_imitation_learning_omx' }
+          ]
+        },
+        // {
+        //   text: 'Simulation',
+        //   items: [
+        //     { text: 'Overview', link: '/omx/simulation_omx'},
+        //     { text: 'Gazebo', link: '/omx/gazebo_omx' },
+        //   ]
+        // },
+        {
+          text: 'Resources',
+          items: [
+            { text: 'Open Source', link: '/omx/opensource_omx' },
+            { text: 'Release Notes', link: '/omx/release_notes_omx' }
+          ]
+        },
+        {
+          text: 'Support',
+          items: [
+            { text: 'Community Forum', link: 'https://forum.robotis.com/', target: '_blank' },
+            { text: 'Issues', link: '/omx/issues_omx' },
+            { text: 'FAQ', link: '/omx/faq_omx' },
+            { text: 'Contact Us', link: '/omx/contact_omx' }
           ]
         }
       ],

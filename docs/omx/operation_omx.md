@@ -36,7 +36,7 @@ Open a new OM Container and launch the OMX packages.
 ## MoveIt 2
 MoveIt 2 is a set of packages for your robot to manipulate for Motion Planning, Manipulation, Inverse Kinematics, Control, 3D Perception and Collision Checking.
 
-###  Launching MoveIt 2
+### Launching MoveIt 2
 Enable MoveIt 2 functionality for advanced motion planning in RViz.
 For more information about MoveIt 2, check out the [official documentation](https://moveit.picknik.ai/main/doc/how_to_guides/how_to_guides.html).
 ```bash

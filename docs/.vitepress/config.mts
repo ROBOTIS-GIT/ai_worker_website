@@ -220,13 +220,13 @@ export default defineConfig({
             { text: 'Video Gallery', link: '/omx/videos_omx' }
           ]
         },
-        // {
-        //   text: 'Specifications',
-        //   items: [
-        //     { text: 'Hardware', link: '/omx/hardware_omx' },
-        //     { text: 'Software', link: '/omx/software_omx' }
-        //   ]
-        // },
+        {
+          text: 'Specifications',
+          items: [
+            { text: 'Hardware', link: '/omx/hardware_omx' }
+            // { text: 'Software', link: '/omx/software_omx' }
+          ]
+        },
         {
           text: 'Quick Start Guide',
           items: [
@@ -239,8 +239,8 @@ export default defineConfig({
                 { text: 'ROS 2 (Physical AI Tools)', link: '/omx/setup_guide_physical_ai_tools' },
                 { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
               ]
-            }
-            // { text: 'Operation Guide', link: '/omx/operation_omx' }
+            },
+            { text: 'Operation Guide (ROS 2)', link: '/omx/operation_omx' }
           ]
         },
         {

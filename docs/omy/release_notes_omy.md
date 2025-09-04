@@ -3,6 +3,22 @@
 ## OMY
 https://github.com/ROBOTIS-GIT/open_manipulator
 
+### 4.0.8 (2025-09-03)
+* Added camera_usb_cam launch file
+* Support OMX series
+* Removed unused use_sim_time parameter in the configuration files
+* Added OMY-F3M Leader and OMY-L100 Follower configuration files
+* Renamed ros2_control files to include operating mode
+* Added parameter for enabling spring effect
+* Added parameters about scaling factors for input joint velocities and accelerations
+* Added usb-cam package dependency in Dockerfile
+* Contributors: Woojin Wie, Junha Cha, Wonho Yun
+
+### 4.0.7 (2025-07-17)
+* Fixed joint offset functionality of joint trajectory command broadcaster
+* Updated launch files for OMY Packing and Unpacking
+* Contributors: Woojin Wie
+
 ### 4.0.6 (2025-07-15)
 * Renamed omx to open_manipulator_x
 * Contributors: Wonho Yun

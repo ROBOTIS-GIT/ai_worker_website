@@ -52,8 +52,3 @@ Move interactive markers to position the robotic arm, then click Plan and Execut
 3. Click **Execute** to move the robot according to the simulated motion.
 4. Set the **Planning Group** to `arm` and use the **Goal State** options `init` or `home` to move the robot to predefined poses.
 5. Change the **Planning Group** to **gripper** and use **Goal State** options such as `close` or `open` to open and close the gripper.
-
-### Launch MoveIt 2
-```bash
-ros2 launch open_manipulator_moveit_config omx_f_moveit.launch.py
-```

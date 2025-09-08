@@ -76,11 +76,11 @@ After placing the model in the above directory, you can access it from within th
 When you launch the bringup, the robot will start moving. Please be careful, and double-check that the teleoperation node used during dataset recording has been disabled.
 :::
 
-`ROBOT PC`
+`USER PC`
 ```bash
 cd open_manipulator/docker && ./container.sh enter
 ```
-`ROBOT PC` `🐋 OPEN MANIPULATOR`
+`USER PC` `🐋 OPEN MANIPULATOR`
 ```bash
 ros2 launch open_manipulator_bringup omx_f_follower_ai.launch.py
 ```

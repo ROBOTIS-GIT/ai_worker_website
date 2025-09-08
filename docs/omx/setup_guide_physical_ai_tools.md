@@ -7,6 +7,13 @@ next: false
 ## Overview
 This guide shows how to set up and operate OMX using Physical AI Tools (Web UI). Follow the steps to prepare repositories, configure Docker, and run the teleoperation node.
 
+:::info
+### System Requirements
+
+| Recommended OS | Ubuntu 24.04 |
+| --- | --- |
+:::
+
 ## Set up Open Manipulator Docker Container
 
 ### 1. Start the Docker Container:

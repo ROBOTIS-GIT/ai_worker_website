@@ -4,6 +4,14 @@
 
 LeRobot is an open-source robotics framework with utilities for imitation learning. With OMX, you can train control policies and deploy them to the robot.
 
+::::info
+### System Requirements
+
+| Recommended OS | Ubuntu 24.04 |
+| --- | --- |
+| Also Supported | macOS (LeRobot CLI) |
+::::
+
 ## Install LeRobot
 
 Prerequisite: Install Miniconda first. See the [Miniconda Quick command line install](https://www.anaconda.com/docs/getting-started/miniconda/install#quick-command-line-install).

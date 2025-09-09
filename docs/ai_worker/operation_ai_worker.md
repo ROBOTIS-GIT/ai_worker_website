@@ -35,22 +35,44 @@ It can be worn more easily by users with different body types.
 The following teleoperation commands are executed on the `robot PC`.
 You can either connect a keyboard and mouse directly to the Nvidia Orin, or access it via SSH (see the Setup Guide for instructions).<br>
 
-If no containers are running when you execute `docker ps -a` on the robot PC,
-start the container using:
+
+Enter the **ai\_worker** Docker container with:
 
 ```bash
-cd ai_worker
-```
-
-```bash
-./docker/container.sh start
-```
-
-If a container is already running, enter the **ai\_worker** Docker container with:
-
-```bash
+cd ~/ai_worker
 ./docker/container.sh enter
 ```
+
+::: info 
+
+**If you encounter this error:**
+```
+Error: Container is not running
+```
+
+Follow these troubleshooting steps:
+
+**Step 1: Check Container Status**
+```bash
+docker ps -a
+```
+
+**Step 2: Start the Container**
+If the `ai_worker` container is not running, navigate to the ai_worker directory and start the container:
+
+⚠️ **IMPORTANT** ⚠️
+
+Before starting the container, 
+
+**you MUST ensure that the AI Worker is connected to the internet via LAN cable**. 
+
+Starting the container without internet connection may cause ZED calibration data to be lost.
+
+```bash
+cd ~/ai_worker
+./docker/container.sh start
+```
+:::
 
 ### Option 1: All-in-One Launch
 

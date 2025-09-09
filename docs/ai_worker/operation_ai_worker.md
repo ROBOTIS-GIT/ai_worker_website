@@ -72,6 +72,11 @@ Starting the container without internet connection may cause ZED calibration dat
 cd ~/ai_worker
 ./docker/container.sh start
 ```
+
+:::
+
+::: warning
+If you executed `./docker/container.sh start` in the previous step, **keep the internet connection active during the first execution** of the commands below. The system needs to download and initialize components including ZED calibration data on the first run.
 :::
 
 ### Option 1: All-in-One Launch

@@ -35,20 +35,11 @@ It can be worn more easily by users with different body types.
 The following teleoperation commands are executed on the `robot PC`.
 You can either connect a keyboard and mouse directly to the Nvidia Orin, or access it via SSH (see the Setup Guide for instructions).<br>
 
-If no containers are running when you execute `docker ps -a` on the robot PC,
-start the container using:
+
+Enter the **ai_worker** Docker container with:
 
 ```bash
-cd ai_worker
-```
-
-```bash
-./docker/container.sh start
-```
-
-If a container is already running, enter the **ai\_worker** Docker container with:
-
-```bash
+cd ~/ai_worker
 ./docker/container.sh enter
 ```
 

@@ -36,7 +36,7 @@ The following teleoperation commands are executed on the `robot PC`.
 You can either connect a keyboard and mouse directly to the Nvidia Orin, or access it via SSH (see the Setup Guide for instructions).<br>
 
 
-Enter the **ai\_worker** Docker container with:
+Enter the **ai_worker** Docker container with:
 
 ```bash
 cd ~/ai_worker

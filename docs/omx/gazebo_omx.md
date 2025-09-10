@@ -5,7 +5,7 @@ You can launch Gazebo and RViz individually, or launch RViz together with the ph
 
 ## 1. Prepare the OM Container
 
-Refer to the `Setup Guide` to configure the OM container environment.
+Refer to the [ROS 2 (Physical AI Tools) Setup Guide](/omx/setup_guide_physical_ai_tools.html) to configure the OM container environment.
 
 
 ## 2. Enable GUI Access

@@ -1,16 +1,20 @@
 # Setup Guide — LeRobot
 
+::: warning
+Do not use the orginal LeRobot code. Follow the install guide below and use the **ROBOTIS** LeRobot code that supports all OMX features.
+:::
+
 ## Overview
 
 LeRobot is an open-source robotics framework with utilities for imitation learning. With OMX, you can train control policies and deploy them to the robot.
 
-::::info
+:::info
 ### System Requirements
 
 | Recommended OS | Ubuntu 24.04 |
 | --- | --- |
-| Also Supported | macOS (LeRobot CLI) |
-::::
+| Also Supported | mac OS |
+:::
 
 ## Install LeRobot
 
@@ -31,7 +35,7 @@ conda activate lerobot
 conda install -c conda-forge ffmpeg=6.1.1 -y
 ```
 
-::::: tip FFmpeg Installation Options
+::: tip FFmpeg Installation Options
 This typically installs FFmpeg 7.X on your system with the libsvtav1 encoder enabled. If libsvtav1 isn't available (check with `ffmpeg -encoders`), use one of the options below:
 
 **[On any platform]** Explicitly install FFmpeg 7.X using:
@@ -40,7 +44,7 @@ conda install ffmpeg=7.1.1 -c conda-forge
 ```
 
 **[On Linux only]** To build FFmpeg yourself: install the build dependencies and compile it with libsvtav1, then ensure your shell uses that binary (verify with `which ffmpeg`).
-:::::
+:::
 
 #### 4) Clone Source and Enter Directory
 ```bash

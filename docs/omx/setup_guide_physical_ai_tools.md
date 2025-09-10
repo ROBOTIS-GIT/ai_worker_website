@@ -93,13 +93,13 @@ DeclareLaunchArgument(
 
 :::
 
-::::info
+:::info
 Ultimately, it will be changed as shown below.
 
 <div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
   <img src="/quick_start_guide/omx/setup_port_name.png" alt="Serial device by-id listing example" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
-::::
+:::
 
 🎉 Open Manipulator Container Setup Complete!
 
@@ -152,7 +152,7 @@ Then update the fields outlined in red in the UI to point to your desired camera
   <img src="/quick_start_guide/omx/setup_camera.png" alt="Configure camera topic in the UI" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
 
-::::info
+:::: info
 Note: The topic you set must always end with `compressed` <br>(for example, `camera1/image_raw/compressed`).
 ::::
 

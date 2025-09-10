@@ -1,7 +1,7 @@
 # Setup Guide — LeRobot
 
 ::: warning
-Do not use the orginal LeRobot code. Follow the install guide below and use the **ROBOTIS** LeRobot code that supports all OMX features.
+Do not use the original LeRobot code. Follow the install guide below and use the **ROBOTIS** LeRobot code that supports all OMX features.
 :::
 
 ## Overview

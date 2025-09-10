@@ -35,11 +35,11 @@ ros2 launch open_manipulator_bringup omx_f_gazebo.launch.py
 
 ## 5. Run MoveIt and GUI in Simulation
 
-Refer to the **Operation** page to control the robot within the Gazebo environment.
+Refer to the [Operation Guide](/omx/operation_omx.html) to control the robot within the Gazebo environment.
 
 
 ## Simulation Views
 
-### OMY_F3M
+### OMX_F
 
-![OMY F3M Simulation](/simulation/omx/omx_f_gazebo.png)
+![OMX F Simulation](/simulation/omx/omx_f_gazebo.png)

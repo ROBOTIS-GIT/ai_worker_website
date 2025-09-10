@@ -57,11 +57,13 @@ As shown in the image below, paste the serial ID you noted above into the port n
 sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_l_leader_ai.launch.py
 ```
 
-<div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
-  <img src="/quick_start_guide/omx/setup_port_name.png" alt="Serial device by-id listing example" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
-</div>
+<pre class="language-python"><code># omx_l_leader_ai.launch.py
+DeclareLaunchArgument(
+    'port_name',
+    default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">your_leader_serial_id</mark>',
+    description='Port name for hardware connection.',
+)</code></pre>
 :::
-
 
 :::info
 Second, connect only the **'Follower'** USB to the port, then check and copy the OpenRB serial ID.
@@ -82,22 +84,22 @@ As shown in the image below, paste the serial ID you noted above into the port n
 sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_f_follower_ai.launch.py
 ```
 
+<pre class="language-python"><code># omx_f_follower_ai.launch.py
+DeclareLaunchArgument(
+    'port_name',
+    default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">your_follower_serial_id</mark>',
+    description='Port name for hardware connection.',
+)</code></pre>
+
+:::
+
+::::info
+Ultimately, it will be changed as shown below.
+
 <div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
   <img src="/quick_start_guide/omx/setup_port_name.png" alt="Serial device by-id listing example" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
-:::
-
-
-
-
-
-
-
-
-
-
-
-
+::::
 
 🎉 Open Manipulator Container Setup Complete!
 
@@ -118,6 +120,41 @@ Start the **Physical AI Tools** Docker container with the following command:
 ```bash
 cd physical_ai_tools/docker && ./container.sh start
 ```
+
+### 2. Configure camera topics
+
+If you are using more than one camera or want to use a custom camera, list the available camera topics and choose the one you want to use:
+
+Enter the **Physical AI Tools** Docker container:
+
+`USER PC`
+```bash
+./container.sh enter
+```
+
+list the available topics to find your camera stream:
+
+`USER PC`
+```bash
+ros2 topic list
+```
+
+And open the configuration file and update it as described below:
+
+`USER PC` `🐋 PHYSICAL AI TOOLS`
+```bash
+sudo nano ~/ros2_ws/src/physical_ai_tools/physical_ai_server/config/omx_config.yaml
+```
+
+Then update the fields outlined in red in the UI to point to your desired camera topic.
+
+<div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/quick_start_guide/omx/setup_camera.png" alt="Configure camera topic in the UI" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+</div>
+
+::::info
+Note: The topic you set must always end with `compressed` <br>(for example, `camera1/image_raw/compressed`).
+::::
 
 🎉 Physical AI Tools Container Setup Complete!
 

@@ -27,7 +27,10 @@ Then, launch the wrist USB camera node:
 ```bash
 ros2 launch open_manipulator_bringup camera_usb_cam.launch.py
 ```
-
+Alternatively, you can customize the camera topic namespace and video device (serial). By default, `name=camera1` and `video_device=/dev/video0`.
+```bash
+ros2 launch open_manipulator_bringup camera_usb_cam.launch.py name:=camera1 video_device:=/dev/video0
+```
 ## Launch the Physical AI Server
 
 Navigate to **physical_ai_tools/docker** directory and enter the Docker Container:

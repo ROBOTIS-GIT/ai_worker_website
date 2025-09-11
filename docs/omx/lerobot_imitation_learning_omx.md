@@ -171,7 +171,16 @@ lerobot-train \
   --wandb.enable=true \
   --policy.repo_id=${HF_USER}/omx_act_policy
 ```
+Let’s break down the command:
 
+- **Dataset repo**: We point `--dataset.repo_id` to your training dataset. In this guide it’s `${HF_USER}/record-test`.
+- **Policy type**: `--policy.type=act` selects the ACT policy. It loads the appropriate configuration and automatically adapts to your robot’s setup (motor state/action dimensions and any cameras) as stored in the dataset.
+- **Compute device**: `--policy.device=cuda` runs on an NVIDIA GPU. On Apple Silicon, use `--policy.device=mps`.
+- **Experiment logging (optional)**: `--wandb.enable=true` enables Weights & Biases logging. If you use it, make sure you’re logged in first:
+
+  ```bash
+  wandb login
+  ```
 ::: tip
 If you do not want to push your trained model to the Hugging Face Hub,
 use the option `--policy.push_to_hub=false` instead of `--policy.repo_id=${HF_USER}/omx_act_policy`.

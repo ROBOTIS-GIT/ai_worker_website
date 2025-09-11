@@ -267,13 +267,13 @@ export default defineConfig({
             { text: 'LeRobot', link: '/omx/lerobot_imitation_learning_omx' }
           ]
         },
-        // {
-        //   text: 'Simulation',
-        //   items: [
-        //     { text: 'Overview', link: '/omx/simulation_omx'},
-        //     { text: 'Gazebo', link: '/omx/gazebo_omx' },
-        //   ]
-        // },
+        {
+          text: 'Simulation',
+          items: [
+            { text: 'Overview', link: '/omx/simulation_omx'},
+            { text: 'Gazebo', link: '/omx/gazebo_omx' },
+          ]
+        },
         {
           text: 'Resources',
           items: [

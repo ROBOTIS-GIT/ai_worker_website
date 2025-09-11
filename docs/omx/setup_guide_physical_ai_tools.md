@@ -7,6 +7,69 @@ next: false
 ## Overview
 This guide shows how to set up and operate OMX using Physical AI Tools (Web UI). Follow the steps to prepare repositories, configure Docker, and run the teleoperation node.
 
+:::info
+### System Requirements
+
+| Recommended OS | Ubuntu |
+| --- | --- |
+:::
+
+## Software Setup
+
+### Prerequisites
+
+* **Operating System**: Any Linux distribution
+
+  * The container runs **Ubuntu 24.04 + ROS 2 Jazzy**
+  * The Host OS version does **not** need to match.
+
+* **Docker Engine**
+
+  * Install using the [official Docker guide](https://docs.docker.com/engine/install/)
+  * After installation:
+
+    ```bash
+    sudo usermod -aG docker $USER
+    sudo systemctl enable docker
+    docker run hello-world
+    ```
+
+* **Git**
+
+  ```bash
+  sudo apt install git
+  ```
+
+* **NVIDIA Container Toolkit**
+  * Follow the [official installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
+    * Required steps:
+      1. Configure the production repository
+      2. Install `nvidia-container-toolkit`
+      3. Configure Docker runtime using `nvidia-ctk`
+      4. Restart Docker daemon
+
+    * For detailed configuration, see the [Docker configuration guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker)
+
+### Docker Volume Configuration
+
+The Docker container uses volume mappings for **hardware access**, **development**, and **data persistence**:
+
+```bash
+volumes:
+  # Hardware and system access
+  - /dev:/dev
+  - /tmp/.X11-unix:/tmp/.X11-unix:rw
+  - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+
+  # Development and data directories
+  - ./workspace:/workspace
+  - ../:/root/ros2_ws/src/open_manipulator/
+```
+
+::: tip
+Store your development code in `/workspace` to preserve your codes.
+:::
+
 ## Set up Open Manipulator Docker Container
 
 ### 1. Start the Docker Container:
@@ -50,11 +113,13 @@ As shown in the image below, paste the serial ID you noted above into the port n
 sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_l_leader_ai.launch.py
 ```
 
-<div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
-  <img src="/quick_start_guide/omx/setup_port_name.png" alt="Serial device by-id listing example" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
-</div>
+<pre class="language-python"><code># omx_l_leader_ai.launch.py
+DeclareLaunchArgument(
+    'port_name',
+    default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">{your_leader_serial_id}</mark>',
+    description='Port name for hardware connection.',
+)</code></pre>
 :::
-
 
 :::info
 Second, connect only the **'Follower'** USB to the port, then check and copy the OpenRB serial ID.
@@ -75,22 +140,22 @@ As shown in the image below, paste the serial ID you noted above into the port n
 sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_f_follower_ai.launch.py
 ```
 
+<pre class="language-python"><code># omx_f_follower_ai.launch.py
+DeclareLaunchArgument(
+    'port_name',
+    default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">{your_follower_serial_id}</mark>',
+    description='Port name for hardware connection.',
+)</code></pre>
+
+:::
+
+:::info
+Ultimately, it will be changed as shown below.
+
 <div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
   <img src="/quick_start_guide/omx/setup_port_name.png" alt="Serial device by-id listing example" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
 :::
-
-
-
-
-
-
-
-
-
-
-
-
 
 🎉 Open Manipulator Container Setup Complete!
 
@@ -111,6 +176,41 @@ Start the **Physical AI Tools** Docker container with the following command:
 ```bash
 cd physical_ai_tools/docker && ./container.sh start
 ```
+
+### 2. Configure camera topics
+
+If you are using more than one camera or want to use a custom camera, list the available camera topics and choose the one you want to use:
+
+Enter the **Physical AI Tools** Docker container:
+
+`USER PC`
+```bash
+./container.sh enter
+```
+
+list the available topics to find your camera stream:
+
+`USER PC`
+```bash
+ros2 topic list
+```
+
+And open the configuration file and update it as described below:
+
+`USER PC` `🐋 PHYSICAL AI TOOLS`
+```bash
+sudo nano ~/ros2_ws/src/physical_ai_tools/physical_ai_server/config/omx_config.yaml
+```
+
+Then update the fields outlined in red in the UI to point to your desired camera topic.
+
+<div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
+  <img src="/quick_start_guide/omx/setup_camera.png" alt="Configure camera topic in the UI" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
+</div>
+
+:::: info
+Note: The topic you set must always end with `compressed` <br>(for example, `camera1/image_raw/compressed`).
+::::
 
 🎉 Physical AI Tools Container Setup Complete!
 

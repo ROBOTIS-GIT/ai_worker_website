@@ -194,7 +194,7 @@ While recording is in progress, the following controls are available:
 
 `USER PC`
 ```bash
-<your_workspace>/physical_ai_tools/docker/.cache/huggingface/lerobot/
+<your_workspace>/physical_ai_tools/docker/huggingface/lerobot/
 ```
 or
 

@@ -3,9 +3,9 @@
 ## Overview
 You can launch Gazebo and RViz individually, or launch RViz together with the physical hardware.
 
-## 1. Prepare the OM Container
+## 1. Prepare the Open Manipulator Docker Container
 
-Refer to the [ROS 2 (Physical AI Tools) Setup Guide](/omx/setup_guide_physical_ai_tools.html) to configure the OM container environment.
+Refer to the [ROS 2 (Physical AI Tools) Setup Guide](/omx/setup_guide_physical_ai_tools.html) to configure the Open Manipulator Docker Container environment.
 
 
 ## 2. Enable GUI Access

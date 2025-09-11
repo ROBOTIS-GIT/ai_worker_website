@@ -10,8 +10,64 @@ This guide shows how to set up and operate OMX using Physical AI Tools (Web UI).
 :::info
 ### System Requirements
 
-| Recommended OS | Ubuntu 24.04 |
+| Recommended OS | Ubuntu |
 | --- | --- |
+:::
+
+## Software Setup
+
+### Prerequisites
+
+* **Operating System**: Any Linux distribution
+
+  * The container runs **Ubuntu 24.04 + ROS 2 Jazzy**
+  * The Host OS version does **not** need to match.
+
+* **Docker Engine**
+
+  * Install using the [official Docker guide](https://docs.docker.com/engine/install/)
+  * After installation:
+
+    ```bash
+    sudo usermod -aG docker $USER
+    sudo systemctl enable docker
+    docker run hello-world
+    ```
+
+* **Git**
+
+  ```bash
+  sudo apt install git
+  ```
+
+* **NVIDIA Container Toolkit**
+  * Follow the [official installation guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
+    * Required steps:
+      1. Configure the production repository
+      2. Install `nvidia-container-toolkit`
+      3. Configure Docker runtime using `nvidia-ctk`
+      4. Restart Docker daemon
+
+    * For detailed configuration, see the [Docker configuration guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker)
+
+### Docker Volume Configuration
+
+The Docker container uses volume mappings for **hardware access**, **development**, and **data persistence**:
+
+```bash
+volumes:
+  # Hardware and system access
+  - /dev:/dev
+  - /tmp/.X11-unix:/tmp/.X11-unix:rw
+  - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+
+  # Development and data directories
+  - ./workspace:/workspace
+  - ../:/root/ros2_ws/src/open_manipulator/
+```
+
+::: tip
+Store your development code in `/workspace` to preserve your codes.
 :::
 
 ## Set up Open Manipulator Docker Container
@@ -60,7 +116,7 @@ sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_l_l
 <pre class="language-python"><code># omx_l_leader_ai.launch.py
 DeclareLaunchArgument(
     'port_name',
-    default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">your_leader_serial_id</mark>',
+    default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">{your_leader_serial_id}</mark>',
     description='Port name for hardware connection.',
 )</code></pre>
 :::
@@ -87,7 +143,7 @@ sudo nano ~/ros2_ws/src/open_manipulator/open_manipulator_bringup/launch/omx_f_f
 <pre class="language-python"><code># omx_f_follower_ai.launch.py
 DeclareLaunchArgument(
     'port_name',
-    default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">your_follower_serial_id</mark>',
+    default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">{your_follower_serial_id}</mark>',
     description='Port name for hardware connection.',
 )</code></pre>
 

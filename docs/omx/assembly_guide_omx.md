@@ -203,11 +203,13 @@ Assemble exactly as in the official manual video.
 
 ---
 
+::: info
 ### Video: Assembly Cable & Camera
-Below is a short video that summarizes the assembly steps and shows how to connect camera and cables.
+Comming Soon!
+:::
 
-<YouTube videoId="dQw4w9WgXcQ" />
-<!-- 영상 첨부 -->
+<!-- <YouTube videoId="dQw4w9WgXcQ" />
+영상 첨부 -->
 
 🎉 Assembly Complete
 

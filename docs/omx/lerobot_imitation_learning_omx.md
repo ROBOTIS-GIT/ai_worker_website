@@ -57,7 +57,7 @@ python -m lerobot.teleoperate \
 
 > **Note**: the `--robot.id/--teleop.id` values persist metadata (e.g., calibrations/settings). Use consistent IDs across teleop, recording, and evaluation for the same setup.
 
-### 2. Teleoperate with camera
+### 2. Teleoperate with Camera
 
 For camera integration:
 

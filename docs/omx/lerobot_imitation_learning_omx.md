@@ -35,7 +35,9 @@ For the purposes of this tutorial, we assume:
 - Follower’s port → /dev/ttyACM0
 - Leader’s port → /dev/ttyACM1
 
-## Data Collection
+## Teleoperation
+
+You can test if OMX is working properly through teleoperation. 
 
 ### 1. Teleoperate OMX
 
@@ -53,7 +55,7 @@ python -m lerobot.teleoperate \
 
 > **Note**: the `--robot.id/--teleop.id` values persist metadata (e.g., calibrations/settings). Use consistent IDs across teleop, recording, and evaluation for the same setup.
 
-### 2. Teleoperate with cameras
+### 2. Teleoperate with camera
 
 For camera integration:
 
@@ -69,7 +71,9 @@ python -m lerobot.teleoperate \
     --display_data=true
 ```
 
-### 3. Record Dataset
+## Data Collection
+
+### 1. Record Dataset
 
 We use the Hugging Face hub features for uploading your dataset. If you haven’t previously used the Hub, make sure you can log in via the CLI using a write-access token, this token can be generated from the Hugging Face settings.
 
@@ -87,6 +91,8 @@ echo $HF_USER
 
 Record your first dataset:
 
+> **Note**: If you have teleoperation running from the previous step, please stop it first before running this command as it includes teleoperation with camera.
+
 ```bash
 lerobot-record \
     --robot.type=omx_follower \
@@ -102,18 +108,7 @@ lerobot-record \
     --dataset.single_task="Pick up the Dynamixel Motor"
 ```
 
-### 4. Dataset Management
-
-**Local Storage:**
-- Dataset stored in: `~/.cache/huggingface/lerobot/{repo-id}`
-
-**Dataset Upload:**
-```bash
-huggingface-cli upload ${HF_USER}/record-test ~/.cache/huggingface/lerobot/${HF_USER}/record-test --repo-type dataset
-echo https://huggingface.co/datasets/${HF_USER}/record-test
-```
-
-### 5. Recording Controls & Details
+### 2. Recording Controls & Details
 
 **Keyboard Shortcuts:**
 - **Right Arrow (→)**: End episode and move to next
@@ -131,6 +126,18 @@ echo https://huggingface.co/datasets/${HF_USER}/record-test
 - Disable automatic push to the Hub with `--dataset.push_to_hub=false`
 - Resume a failed/interrupted session with `--resume=true`
   - When resuming, set `--dataset.num_episodes` to the number of additional episodes to record (not the final total)
+
+
+### 3. Dataset Management
+
+**Local Storage:**
+- Dataset stored in: `~/.cache/huggingface/lerobot/{repo-id}`
+
+**Dataset Upload:**
+```bash
+huggingface-cli upload ${HF_USER}/record-test ~/.cache/huggingface/lerobot/${HF_USER}/record-test --repo-type dataset
+echo https://huggingface.co/datasets/${HF_USER}/record-test
+```
 
 ## Data Visualization
 

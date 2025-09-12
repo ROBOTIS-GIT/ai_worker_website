@@ -29,7 +29,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 ## [Follower] Layout
 ![](/specifications/omy/omy_follower_layout.png)
 
-### **Drawing**
+### **Drawing Files**
   
 | File Type | Download Link |
 |-----------|---------------|
@@ -41,7 +41,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_follower_workspace.png)
 
-### **Drawing**
+### **Drawing File**
   
 | File Type | Download Link |
 |-----------|---------------|
@@ -223,7 +223,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![](/specifications/omy/omy_leader_layout.png)
 
-### **Drawing**
+### **Drawing Files**
   
 | File Type | Download Link |
 |-----------|---------------|

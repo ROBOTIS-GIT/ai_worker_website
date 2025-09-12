@@ -80,7 +80,7 @@ Clone the repository:
 ```bash
 git clone https://github.com/ROBOTIS-GIT/open_manipulator
 ```
-Start the container with the following command:
+Start the **Open Manipulator** container with the following command:
 
 ```bash
 cd open_manipulator/docker && ./container.sh start

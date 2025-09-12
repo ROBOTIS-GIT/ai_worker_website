@@ -6,6 +6,8 @@ This tutorial explains how to train a neural network to control OMX autonomously
 
 By following these steps, you'll be able to replicate tasks such as picking up objects and placing them with high success rates.
 
+> **Note**: This tutorial is based on the [Hugging Face LeRobot documentation](https://huggingface.co/docs/lerobot/getting_started_real_world_robot) and adapted specifically for OMX hardware setup.
+
 ## Before You Begin
 
 First, identify the bus servo adapter ports for the leader and follower by running the following command:
@@ -123,7 +125,7 @@ lerobot-record \
 ```
 
 **Additional behavior:**
-- Disable automatic push to the Hub with `--dataset.push_to_hub=false`
+- Disable automatic push to the Hub with `--dataset.push_to_hub=false` (default: `true`)
 - Resume a failed/interrupted session with `--resume=true`
   - When resuming, set `--dataset.num_episodes` to the number of additional episodes to record (not the final total)
 
@@ -143,7 +145,7 @@ echo https://huggingface.co/datasets/${HF_USER}/record-test
 
 ### View Dataset Online
 
-If uploaded with `--control.push_to_hub=true`:
+If uploaded to the Hub (either by default behavior or with `--dataset.push_to_hub=true`), you can [visualize your dataset online](https://huggingface.co/spaces/lerobot/visualize_dataset) by copy pasting your repo id given by:
 
 ```bash
 echo ${HF_USER}/record-test
@@ -230,9 +232,9 @@ python -m lerobot.record \
   --policy.path=${HF_USER}/omx_act_policy
 ```
 
-**Note**: use an `eval_*` dataset name (e.g., `eval_act_omx`) to clearly separate evaluation runs.
+> **Note**: use an `eval_*` dataset name (e.g., `eval_act_omx`) to clearly separate evaluation runs.
 
 As you can see, it’s almost the same command as previously used to record your training dataset. Two things have changed:
 
-- There is an additional `--control.policy.path` argument which indicates the path to your policy checkpoint (e.g., `outputs/train/eval_act_omx/checkpoints/last/pretrained_model`). You can also use the model repository if you uploaded a model checkpoint to the hub (e.g., `${HF_USER}/omx_act_policy`).
+- There is an additional `--policy.path` argument which indicates the path to your policy checkpoint (e.g., `outputs/train/eval_act_omx/checkpoints/last/pretrained_model`). You can also use the model repository if you uploaded a model checkpoint to the hub (e.g., `${HF_USER}/omx_act_policy`).
 - The dataset name begins with `eval_` to reflect that you are running inference (e.g., `${HF_USER}/eval_act_omx`).

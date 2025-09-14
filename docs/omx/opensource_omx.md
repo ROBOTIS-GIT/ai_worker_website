@@ -9,6 +9,7 @@ AI Manipulator is an open-source project that provides comprehensive resources f
 | **AI Manipulator** | ROS 2 Packages for operating the AI Manipulator | [GitHub](https://github.com/ROBOTIS-GIT/open_manipulator) |
 | **Physical AI Tools** | ROS 2 package for generating datasets in LeRobotDataset format | [GitHub](https://github.com/ROBOTIS-GIT/physical_ai_tools) |
 | **Simulation Models** | URDF(ROS), MJCF(MuJoCo) and USD(Isaac Sim/Lab) model files for simulation | [URDF](https://github.com/ROBOTIS-GIT/open_manipulator/tree/main/open_manipulator_description/urdf)<br>[MJCF](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)<br>[USD](https://github.com/ROBOTIS-GIT/robotis_lab/tree/main/source/robotis_lab/data/robots) |
+| **Drawing Files** | Hardware design files and technical drawings | **OMX-F:**<br>[PDF](https://www.robotis.com/service/download.php?no=2223) / [STEP](https://www.robotis.com/service/download.php?no=2224)<br>**OMX-L:**<br>[PDF](https://www.robotis.com/service/download.php?no=2225) / [STEP](https://www.robotis.com/service/download.php?no=2226) |
 | **AI Models & Datasets** | Pre-trained models and training datasets | [Hugging Face](https://huggingface.co/ROBOTIS) |
 | **Docker Images** | Ready-to-use development environments | [Docker Hub](https://hub.docker.com/r/robotis/ros/tags) |
 | **Documentation** | Official manual and documentation | [ai.robotis.com](https://ai.robotis.com) |

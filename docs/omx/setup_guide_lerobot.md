@@ -1,3 +1,7 @@
+---
+next: false
+---
+
 # Setup Guide — LeRobot
 
 ::: warning

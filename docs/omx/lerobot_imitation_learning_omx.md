@@ -6,6 +6,8 @@ This tutorial explains how to train a neural network to control OMX autonomously
 
 By following these steps, you'll be able to replicate tasks such as picking up objects and placing them with high success rates.
 
+> **Note**: This tutorial is based on the [Hugging Face LeRobot documentation](https://huggingface.co/docs/lerobot/getting_started_real_world_robot) and adapted specifically for OMX hardware setup.
+
 ## Before You Begin
 
 First, identify the bus servo adapter ports for the leader and follower by running the following command:
@@ -35,7 +37,9 @@ For the purposes of this tutorial, we assume:
 - Follower’s port → /dev/ttyACM0
 - Leader’s port → /dev/ttyACM1
 
-## Data Collection
+## Teleoperation
+
+You can test if OMX is working properly through teleoperation. 
 
 ### 1. Teleoperate OMX
 
@@ -53,7 +57,7 @@ python -m lerobot.teleoperate \
 
 > **Note**: the `--robot.id/--teleop.id` values persist metadata (e.g., calibrations/settings). Use consistent IDs across teleop, recording, and evaluation for the same setup.
 
-### 2. Teleoperate with cameras
+### 2. Teleoperate with Camera
 
 For camera integration:
 
@@ -69,7 +73,9 @@ python -m lerobot.teleoperate \
     --display_data=true
 ```
 
-### 3. Record Dataset
+## Data Collection
+
+### 1. Record Dataset
 
 We use the Hugging Face hub features for uploading your dataset. If you haven’t previously used the Hub, make sure you can log in via the CLI using a write-access token, this token can be generated from the Hugging Face settings.
 
@@ -87,6 +93,8 @@ echo $HF_USER
 
 Record your first dataset:
 
+> **Note**: If you have teleoperation running from the previous step, please stop it first before running this command as it includes teleoperation with camera.
+
 ```bash
 lerobot-record \
     --robot.type=omx_follower \
@@ -102,18 +110,7 @@ lerobot-record \
     --dataset.single_task="Pick up the Dynamixel Motor"
 ```
 
-### 4. Dataset Management
-
-**Local Storage:**
-- Dataset stored in: `~/.cache/huggingface/lerobot/{repo-id}`
-
-**Dataset Upload:**
-```bash
-huggingface-cli upload ${HF_USER}/record-test ~/.cache/huggingface/lerobot/${HF_USER}/record-test --repo-type dataset
-echo https://huggingface.co/datasets/${HF_USER}/record-test
-```
-
-### 5. Recording Controls & Details
+### 2. Recording Controls & Details
 
 **Keyboard Shortcuts:**
 - **Right Arrow (→)**: End episode and move to next
@@ -128,15 +125,27 @@ echo https://huggingface.co/datasets/${HF_USER}/record-test
 ```
 
 **Additional behavior:**
-- Disable automatic push to the Hub with `--dataset.push_to_hub=false`
+- Disable automatic push to the Hub with `--dataset.push_to_hub=false` (default: `true`)
 - Resume a failed/interrupted session with `--resume=true`
   - When resuming, set `--dataset.num_episodes` to the number of additional episodes to record (not the final total)
+
+
+### 3. Dataset Management
+
+**Local Storage:**
+- Dataset stored in: `~/.cache/huggingface/lerobot/{repo-id}`
+
+**Dataset Upload:**
+```bash
+huggingface-cli upload ${HF_USER}/record-test ~/.cache/huggingface/lerobot/${HF_USER}/record-test --repo-type dataset
+echo https://huggingface.co/datasets/${HF_USER}/record-test
+```
 
 ## Data Visualization
 
 ### View Dataset Online
 
-If uploaded with `--control.push_to_hub=true`:
+If uploaded to the Hub (either by default behavior or with `--dataset.push_to_hub=true`), you can [visualize your dataset online](https://huggingface.co/spaces/lerobot/visualize_dataset) by copy pasting your repo id given by:
 
 ```bash
 echo ${HF_USER}/record-test
@@ -223,9 +232,9 @@ python -m lerobot.record \
   --policy.path=${HF_USER}/omx_act_policy
 ```
 
-**Note**: use an `eval_*` dataset name (e.g., `eval_act_omx`) to clearly separate evaluation runs.
+> **Note**: use an `eval_*` dataset name (e.g., `eval_act_omx`) to clearly separate evaluation runs.
 
 As you can see, it’s almost the same command as previously used to record your training dataset. Two things have changed:
 
-- There is an additional `--control.policy.path` argument which indicates the path to your policy checkpoint (e.g., `outputs/train/eval_act_omx/checkpoints/last/pretrained_model`). You can also use the model repository if you uploaded a model checkpoint to the hub (e.g., `${HF_USER}/omx_act_policy`).
+- There is an additional `--policy.path` argument which indicates the path to your policy checkpoint (e.g., `outputs/train/eval_act_omx/checkpoints/last/pretrained_model`). You can also use the model repository if you uploaded a model checkpoint to the hub (e.g., `${HF_USER}/omx_act_policy`).
 - The dataset name begins with `eval_` to reflect that you are running inference (e.g., `${HF_USER}/eval_act_omx`).

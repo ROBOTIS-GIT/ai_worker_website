@@ -22,7 +22,8 @@ Step-by-Step Assembly Guide for OMX
 :::
 
 ::: info
-- We provide the camera frame and mounting bolts; <br> the camera itself is **not included in the package**. You can purchase it from the **ROBOTIS Shop**.
+- Frame and mounting bolts are included, but the camera is sold separately. 
+<br>The **ROBOTIS** Shop product page provides links to external sellers.
 
 <div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
   <img src="/assembly_guide/camera_info.jpg" alt="Example of anti-slip tape applied" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />

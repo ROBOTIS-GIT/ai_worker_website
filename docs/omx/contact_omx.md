@@ -28,12 +28,15 @@ For sales inquiries or detailed product information about the Physical AI lineup
 - TEL: 949-377-0377
 
 ## Connect with Us
-For the latest updates, follow us on our social media channels.
+For the latest updates, follow us on our resources and social media channels.
 
 <div class="contact-social-links">
-  <a href="https://www.linkedin.com/company/robotis/" target="_blank">LinkedIn</a> |
-  <a href="https://www.facebook.com/robotis.company" target="_blank">Facebook</a> |
+  <a href="https://github.com/ROBOTIS-GIT/" target="_blank">GitHub</a> |
+  <a href="https://www.youtube.com/@ROBOTISOpenSourceTeam" target="_blank">YouTube</a> |
   <a href="https://x.com/ROBOTISAmerica" target="_blank">X (Twitter)</a> |
   <a href="https://www.instagram.com/robotis_global/" target="_blank">Instagram</a> |
-  <a href="https://www.youtube.com/@ROBOTISOpenSourceTeam" target="_blank">YouTube</a>
+  <a href="https://www.facebook.com/robotis.company" target="_blank">Facebook</a> |
+  <a href="https://www.linkedin.com/company/robotis/" target="_blank">LinkedIn</a> |
+  <a href="https://forum.robotis.com/" target="_blank">Forum</a> |
+  <a href="https://discord.gg/g2g52RVcQF" target="_blank">Discord</a>
 </div>

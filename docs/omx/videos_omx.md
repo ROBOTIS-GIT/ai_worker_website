@@ -5,12 +5,9 @@ Watch how OMX—our entry‑level Physical AI manipulator built on DYNAMIXEL‑X
 
 ### AI Manipulator Introduction
 <YouTube videoId="hJpc__-FVgQ" />
-<!-- ## Tutorials & Demonstrations
-<YouTube videoId="pSY0Gb5b5kI" />
-
-<YouTube videoId="22KPUWLBqGU" />
-
-<YouTube videoId="KswAongVdSk" />
+ 
+## Tutorials & Demonstrations
+<YouTube videoId="uxiOghvNLTs" />
 
 ## Use Cases
 
@@ -25,7 +22,7 @@ Watch how OMX—our entry‑level Physical AI manipulator built on DYNAMIXEL‑X
     </ul>
     <p>Check back soon or subscribe to our YouTube channel for updates.</p>
   </div>
-</div> -->
+</div>
 
 ## More Videos
 

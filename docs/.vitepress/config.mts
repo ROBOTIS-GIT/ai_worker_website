@@ -67,7 +67,8 @@ export default defineConfig({
           { text: 'AI Models & Datasets (Hugging Face)', link: 'https://huggingface.co/ROBOTIS', target: '_blank' },
           { text: 'Docker Images', link: 'https://hub.docker.com/r/robotis/ros/tags', target: '_blank' },
           { text: 'ROBOTIS Homepage', link: 'https://en.robotis.com/', target: '_blank' },
-          { text: 'Community', link: 'https://forum.robotis.com/', target: '_blank' },
+          { text: 'Community Forum', link: 'https://forum.robotis.com/', target: '_blank' },
+          { text: 'Discord Server', link: 'https://discord.gg/g2g52RVcQF', target: '_blank' },
           { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
         ]
       },
@@ -136,6 +137,7 @@ export default defineConfig({
           text: 'Support',
           items: [
             { text: 'Community Forum', link: 'https://forum.robotis.com/', target: '_blank' },
+            { text: 'Discord Server', link: 'https://discord.gg/g2g52RVcQF', target: '_blank' },
             { text: 'Issues', link: '/ai_worker/issues_ai_worker' },
             { text: 'FAQ', link: '/ai_worker/faq_ai_worker' },
             { text: 'Contact Us', link: '/ai_worker/contact_ai_worker' }
@@ -205,6 +207,7 @@ export default defineConfig({
           text: 'Support',
           items: [
             { text: 'Community Forum', link: 'https://forum.robotis.com/', target: '_blank' },
+            { text: 'Discord Server', link: 'https://discord.gg/g2g52RVcQF', target: '_blank' },
             { text: 'Issues', link: '/omy/issues_omy' },
             { text: 'FAQ', link: '/omy/faq_omy' },
             { text: 'Contact Us', link: '/omy/contact_omy' }
@@ -285,6 +288,7 @@ export default defineConfig({
           text: 'Support',
           items: [
             { text: 'Community Forum', link: 'https://forum.robotis.com/', target: '_blank' },
+            { text: 'Discord Server', link: 'https://discord.gg/g2g52RVcQF', target: '_blank' },
             { text: 'Issues', link: '/omx/issues_omx' },
             { text: 'FAQ', link: '/omx/faq_omx' },
             { text: 'Contact Us', link: '/omx/contact_omx' }
@@ -303,12 +307,14 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: '/favicon.svg', link: 'https://en.robotis.com/' },
-      { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/ai_worker' },
+      { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/' },
       { icon: 'youtube', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam' },
       { icon: 'x', link: 'https://x.com/ROBOTISAmerica' },
       { icon: 'instagram', link: 'https://www.instagram.com/robotis_global/' },
       { icon: 'facebook', link: 'https://www.facebook.com/robotis.company' },
-      { icon: 'linkedin', link: 'https://www.linkedin.com/company/robotis/' }
+      { icon: 'linkedin', link: 'https://www.linkedin.com/company/robotis/' },
+      { icon: 'discourse', link: 'https://forum.robotis.com/' },
+      { icon: 'discord', link: 'https://discord.gg/g2g52RVcQF' }
     ],
     footer: {
       message: 'AI Worker and AI Manipulator released under the Apache-2.0 license.',

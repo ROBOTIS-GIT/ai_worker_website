@@ -22,6 +22,43 @@ https://github.com/ROBOTIS-GIT/open_manipulator
 ## Physical AI Tools
 - https://github.com/ROBOTIS-GIT/physical_ai_tools
 
+### 0.6.9 (2025-09-18)
+* changed omx_config.yaml file
+* Contributors: Junha Cha
+
+### 0.6.8 (2025-08-21)
+* Added DatasetInfo.msg, EditDataset.srv, and GetDatasetInfo.srv interfaces for Data Edit communication.
+* Added UI features for editing datasets, including merge and delete functionality.
+* Added functionality to edit data in the Physical AI Server, including merge and delete operations.
+* Added ROS topics and services to receive parameters related to data editing.
+* Contributors: Dongyun Kim, Kiwoong Park
+
+### 0.6.7 (2025-08-18)
+* Added a beep sound to signal the start of recording.
+* Improved the convenience of data acquisition by using the AI Worker's buttons.
+* The right button moves to the next episode, and the left button is for cancellation.
+* Contributors: Dongyun Kim
+
+### 0.6.6 (2025-08-13)
+* Fixed an error in the data saving method based on Lerobot.
+* Contributors: Dongyun Kim
+
+### 0.6.5 (2025-08-11)
+* Added file browse-related message type
+* Added file browser component for policy selection in the inference page
+* Added file browsing service with target file checking for policy path selection
+* Contributors: Kiwoong Park
+
+### 0.6.4 (2025-08-07)
+* Added training loss display
+* Added publishing of current loss during training
+* Contributors: Kiwoong Park, Seongwoo Kim
+
+### 0.6.3 (2025-07-25)
+* Fixed a bug to allow setting the output folder path to a specified location.
+* Fixed a bug that did not guarantee the order of messages.
+* Contributors: Dongyun Kim, Seongwoo Kim, Woojin Wie
+
 ### 0.6.2 (2025-07-24)
 * Updated Lerobot to the latest version and modified related functionalities.
 * Contributors: Dongyun Kim, Seongwoo Kim, Woojin Wie

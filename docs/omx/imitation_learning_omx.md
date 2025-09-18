@@ -31,15 +31,6 @@ Once trained, the models are deployed on the OMX to execute real-time inference 
 
 <img src="/imitation_learning/end_to_end_imitation_learning_workflow.png" alt="Imitation Learning Workflow" style="width: 100%; ">
 
-<!-- ## Tutorial Videos: Physical AI tools
-
-The video illustrates the full imitation learning workflow using the OMX, including teleoperation, dataset creation, and real-time inference with a trained model:
-
-- Full imitation learning workflow using **OMX** and the **Web GUI**.
-- LeRobot native workflow is also available for advanced users.
-
-<YouTube videoId="3x-eN36pNns" /> -->
-
 ## Tutorial Videos: End-to-End Imitation Learning Workflow
 
 The video illustrates the full imitation learning workflow using the OMX, including teleoperation, dataset creation, and real-time inference with a trained model:

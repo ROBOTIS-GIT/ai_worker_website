@@ -7,12 +7,13 @@ next: false
 ## Overview
 This guide shows how to set up and operate OMX using Physical AI Tools (Web UI). Follow the steps to prepare repositories, configure Docker, and run the teleoperation node.
 
-:::info
+::::info
 ### System Requirements
 
 | Recommended OS | Ubuntu |
 | --- | --- |
-:::
+| Hardware requirement  | NVIDIA GPU (CUDA-capable) |
+::::
 
 ## Software Setup
 
@@ -66,9 +67,9 @@ volumes:
   - ../:/root/ros2_ws/src/open_manipulator/
 ```
 
-::: tip
+:::: tip
 Store your development code in `/workspace` to preserve your codes.
-:::
+::::
 
 ## Set up Open Manipulator Docker Container
 
@@ -94,7 +95,7 @@ Enter the **Open Manipulator** Docker container:
 ```bash
 ./container.sh enter
 ```
-:::info
+::::info
 First, connect only the **'Leader'** USB to the port, then check and copy the OpenRB serial ID.
 
 `USER PC` or `USER PC` `🐋 OPEN MANIPULATOR`
@@ -119,9 +120,9 @@ DeclareLaunchArgument(
     default_value='<mark style="background-color:#fff176; color:#000;">/dev/serial/by-id/</mark><mark style="background-color:#90caf9; color:#000;">{your_leader_serial_id}</mark>',
     description='Port name for hardware connection.',
 )</code></pre>
-:::
+::::
 
-:::info
+::::info
 Second, connect only the **'Follower'** USB to the port, then check and copy the OpenRB serial ID.
 
 `USER PC` or `USER PC` `🐋 OPEN MANIPULATOR`
@@ -147,15 +148,15 @@ DeclareLaunchArgument(
     description='Port name for hardware connection.',
 )</code></pre>
 
-:::
+::::
 
-:::info
+::::info
 Ultimately, it will be changed as shown below.
 
 <div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
   <img src="/quick_start_guide/omx/setup_port_name.png" alt="Serial device by-id listing example" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
-:::
+::::
 
 🎉 Open Manipulator Container Setup Complete!
 
@@ -208,9 +209,9 @@ Then update the fields outlined in red in the UI to point to your desired camera
   <img src="/quick_start_guide/omx/setup_camera.png" alt="Configure camera topic in the UI" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
 
-::: info
+:::: info
 Note: The topic you set must always end with `compressed` <br>(for example, `camera1/image_raw/compressed`).
-:::
+::::
 
 🎉 Physical AI Tools Container Setup Complete!
 

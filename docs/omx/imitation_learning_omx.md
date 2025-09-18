@@ -37,11 +37,7 @@ The video illustrates the full imitation learning workflow using the OMX, includ
 
 - Full imitation learning workflow using **OMX** and the **Physical AI tools (Web GUI)**.
 
-::: info
-Coming Soon!
-:::
-
-<!-- <YouTube videoId="uxiOghvNLTs" /> -->
+<YouTube videoId="8l21lGSDLgE" />
 
 - Full imitation learning workflow using **OMX** and the **LeRobot CLI**.
 

@@ -114,8 +114,7 @@ DYNAMIXEL-X Actuators
 |--------------|-------------|
 | `ros2 control list_controllers` | Check controller status |
 | `ros2 topic echo /joint_states` | Monitor joint position/velocity |
-| RViz2 | Visualize robot URDF and trajectory execution |
-| Rviz | 3D view of robot model (URDF), TF, and movement |
+| Rviz2 | 3D view of robot model (URDF), TF, and movement |
 
 
 ## Safety & Limits

@@ -14,23 +14,20 @@ This system is designed for:
 
 OMX provides an efficient and compact platform for Physical AI research in both academic and industrial environments.
 
-<!-- ## System Architecture
+## System Architecture
 ::: info
  The diagram below illustrates the overall control structure of OMX.
  Teleoperation or AI-generated commands are processed through `ros2_control`, translated by the hardware interface, and executed by DYNAMIXEL actuators via TTL.
 :::
 
-![software_architecture](/specifications/omy/omy_architecture.png)
+![software_architecture](/specifications/omx/omx_architecture.png)
 
 | Layer | Component | Description |
 | --- | --- | --- |
-| **Compute** | Raspberry Pi5 | ROS 2 Jazzy  |
-| **Motion Control** | `ros2_control` | Real-time joint control at 400Hz |
-| **Actuators** | DYNAMIXEL-Y series | High-torque servo via RS-485 |
-| **Communication** | RS‑485 | Dynamixel Protocol 2.0 |
-| **Networking** | Ethernet | Remote access |
-| **Sensors (optional)** | Intel RealSense D405 | Mounted on wrist (F3M only) | -->
-
+| **Compute** | User PC | ROS 2 Jazzy  |
+| **Motion Control** | `ros2_control` | joint control at 100Hz |
+| **Actuators** | DYNAMIXEL-X series | servo via TTL |
+| **Communication** | TTL | Dynamixel Protocol 2.0 |
 
 ## Why `ros2_control`?
 

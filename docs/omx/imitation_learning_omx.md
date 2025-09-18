@@ -47,7 +47,7 @@ The video illustrates the full imitation learning workflow using the OMX, includ
 - Full imitation learning workflow using **OMX** and the **Physical AI tools (Web GUI)**.
 
 ::: info
-Comming Soon!
+Coming Soon!
 :::
 
 <!-- <YouTube videoId="uxiOghvNLTs" /> -->

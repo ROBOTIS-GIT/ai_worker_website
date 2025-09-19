@@ -10,7 +10,6 @@ Step-by-Step Assembly Guide for OMX
 ::: info
 - Assemble exactly as shown in the **official manual video** (posture, **cable routing**, **torque**)
 - When **all joints are at 0°**, the posture must match the following reference image exactly.
-<div style="text-align: center; font-size: 3.8rem; line-height: 1; margin: 50px 0 8px; letter-spacing: 2px;">⭣   ⭣</div>
 <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: center;">
   <div style="width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;">
     <img src="/quick_start_guide/omx/omx_f_initial.webp" alt="Reference posture at all joints = 0° (Left)" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
@@ -22,7 +21,8 @@ Step-by-Step Assembly Guide for OMX
 :::
 
 ::: info
-- We provide the camera frame and mounting bolts; <br> the camera itself is **not included in the package**. You can purchase it from the **ROBOTIS Shop**.
+- While the frame and mounting bolts are included as standard, please note that the camera is sold separately.  Please find the **external vendor link** at the end note of the **ROBOTIS eShop** product detail page.
+
 
 <div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
   <img src="/assembly_guide/camera_info.jpg" alt="Example of anti-slip tape applied" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
@@ -203,13 +203,8 @@ Assemble exactly as in the official manual video.
 
 ---
 
-::: info
 ### Video: Assembly Cable & Camera
-Comming Soon!
-:::
-
-<!-- <YouTube videoId="dQw4w9WgXcQ" />
-영상 첨부 -->
+<YouTube videoId="HgvYZe6BHLE" />
 
 🎉 Assembly Complete
 
@@ -217,10 +212,10 @@ Your OMX assembly is complete. Continue to the next step.
 
 ## Appendix
 
-:::: tip
+::: tip
 - Applying anti-slip tape to the gripper/contact surfaces, as shown below, can significantly improve grasp efficiency.
 
 <div style="max-width: 650px; margin: 12px auto; display: flex; align-items: center; justify-content: center;">
   <img src="/assembly_guide/anti-slip.jpg" alt="Example of anti-slip tape applied" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 6px;" />
 </div>
-::::
+:::

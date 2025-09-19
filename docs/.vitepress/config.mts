@@ -226,8 +226,8 @@ export default defineConfig({
         {
           text: 'Specifications',
           items: [
-            { text: 'Hardware', link: '/omx/hardware_omx' }
-            // { text: 'Software', link: '/omx/software_omx' }
+            { text: 'Hardware', link: '/omx/hardware_omx' },
+            { text: 'Software', link: '/omx/software_omx' }
           ]
         },
         {

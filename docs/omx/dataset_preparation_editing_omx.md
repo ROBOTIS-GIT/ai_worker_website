@@ -1,15 +1,122 @@
-# Dataset Preparation - Editing
+# Data Tools
 
-After collecting data, you can modify your dataset by merging multiple datasets or removing unwanted episodes. This section guides you through these basic dataset operations.
-
-## Merging Datasets
-You can merge multiple datasets into a single dataset.
-
-### 1. Enter datasets to merge
-
-Navigate to the `Edit Dataset` page.
+The **Data Tools** page provides useful tools for editing and managing datasets/models as follows: 
 
 <img src="/imitation_learning/web_ui/edit_dataset/page.png" alt="Web UI" style="width: 100%; ">
+
+| Tool | Description |
+|---------|-------------|
+| **Hugging Face Upload & Download** | Upload your datasets/models to Hugging Face or download existing ones |
+| **Merging Datasets** | Combine multiple datasets into a single dataset |
+| **Removing Episodes** | Remove unwanted episodes from your dataset |
+
+
+## Hugging Face Upload & Download
+
+You can upload collected datasets or trained models to Hugging Face. You can also download datasets or models from Hugging Face.
+
+### 1. Upload
+
+First, select the Hugging Face user id and data type for upload
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/user_id_and_data_type.png" alt="Web UI" style="width: 50%;">
+</div>
+
+::: info
+If there is no registered User ID, click the `Change` button and enter your Hugging Face token to register a User ID.
+:::
+
+Set the toggle button to upload.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/section_selector_upload.png" alt="Web UI" style="width: 30%;">
+</div>
+
+Select the path of the dataset or model you want to upload in the right panel.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/enter_local_directory.png" alt="Web UI" style="width: 80%;">
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+  <div style="height: 10px;">
+  </div>
+  <div style="text-align: center;">
+    <img src="/imitation_learning/web_ui/edit_dataset/folder_button.png" alt="Web UI" style="width: 100%; max-width: 40px;">
+  </div>
+  <div style="font-size: 30px; text-align: center;">
+    ↓
+  </div>
+  <div style="text-align: center;">
+    <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/browse_local_dir_for_upload.png" alt="Web UI" style="width: 100%; max-width: 500px;">
+  </div>
+</div>
+
+
+Enter the repository name to be created on Hugging Face.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/upload_repo_id.png" alt="Web UI" style="width: 80%;">
+</div>
+
+Click the `Upload` button. The upload progress will be displayed.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/upload_progress.png" alt="Web UI" style="width: 80%;">
+</div>
+
+::: info
+You can cancel the upload by clicking `Cancel` during the upload process. However, the repository will still be created on Hugging Face.
+
+After canceling, clicking the Upload button again will resume the upload from where it left off.
+:::
+
+
+### 2. Download
+
+First, select the Hugging Face user id and data type for download
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/user_id_and_data_type.png" alt="Web UI" style="width: 50%;">
+</div>
+
+Set the toggle button to download.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/section_selector_download.png" alt="Web UI" style="width: 30%;">
+</div>
+
+Enter the repository to download.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/enter_download_repo.png" alt="Web UI" style="width: 80%;">
+</div>
+
+Click the `Download` button. The download progress will be displayed.
+
+<div style="display: flex; justify-content: center;">
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/download_progress.png" alt="Web UI" style="width: 80%;">
+</div>
+
+::: info
+You can cancel the download by clicking `Cancel` during the download process. However, the folder created in the local path will remain.
+:::
+
+::: info
+The download paths are as follows:
+
+- **Dataset:** `/root/.cache/huggingface/lerobot/`
+- **Model:** `/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/`
+
+(Paths within the **Physical AI Tools** Docker container)
+:::
+
+
+## Merging Datasets
+You can merge multiple datasets into a single dataset. 
+
+### 1. Enter datasets to merge
 
 In the `Merge Datasets` > `Enter Datasets to Merge` section:
 
@@ -22,7 +129,7 @@ Click the **folder button** to open the file explorer and select your desired da
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui/edit_dataset/folder_button.png" alt="Web UI" style="width: 100%; max-width: 60px;">
+    <img src="/imitation_learning/web_ui/edit_dataset/folder_button.png" alt="Web UI" style="width: 100%; max-width: 40px;">
   </div>
   <div style="font-size: 30px; text-align: center;">
     ↓
@@ -52,7 +159,7 @@ Click the **folder button** to open the file explorer and select your desired fo
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui/edit_dataset/folder_button.png" alt="Web UI" style="width: 100%; max-width: 60px;">
+    <img src="/imitation_learning/web_ui/edit_dataset/folder_button.png" alt="Web UI" style="width: 100%; max-width: 40px;">
   </div>
   <div style="font-size: 30px; text-align: center;">
     ↓
@@ -69,7 +176,7 @@ Enter the name for the merged result dataset folder.
   <img src="/imitation_learning/web_ui/edit_dataset/enter_output_folder_name.png" alt="Web UI" style="width: 80%; max-width: 550px;">
 </div>
 
-Finally, click the `Merge` button to merge the datasets.
+Finally, click the `Merge` button to merge the datasets. 
 
 <div style="display: flex; justify-content: center;">
   <img src="/imitation_learning/web_ui/edit_dataset/merge_button.png" alt="Web UI" style="width: 20%; max-width: 550px;">
@@ -80,12 +187,6 @@ Finally, click the `Merge` button to merge the datasets.
 You can remove episodes that were incorrectly recorded during the data collection process.
 
 ### 1. Select dataset to edit
-
-Navigate to the `Edit Dataset` page.
-
-<div style="display: flex; justify-content: center;">
-  <img src="/imitation_learning/web_ui/edit_dataset/delete_episodes.png" alt="Web UI" style="width: 80%; max-width: 550px;">
-</div>
 
 In the `Delete Episodes` section, click the **folder button** to open the file explorer and select your desired dataset. (You can also type the path directly in the text input field)
 

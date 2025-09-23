@@ -107,7 +107,6 @@ export default defineConfig({
                 { text: 'Prerequisites', link: '/ai_worker/dataset_preparation_prerequisites_ai_worker' },
                 { text: 'Recording', link: '/ai_worker/dataset_preparation_recording_ai_worker' },
                 { text: 'Visualization', link: '/ai_worker/dataset_preparation_visualization_ai_worker' },
-                { text: 'Editing', link: '/ai_worker/dataset_preparation_editing_ai_worker' }
               ]
             },
             {
@@ -115,6 +114,9 @@ export default defineConfig({
             },
             {
               text: 'Model Inference', link:'/ai_worker/model_inference_ai_worker',
+            },
+            {
+              text: 'Data Tools', link:'/ai_worker/dataset_preparation_editing_ai_worker',
             }
           ]
         },
@@ -177,7 +179,6 @@ export default defineConfig({
                 { text: 'Prerequisites', link: '/omy/dataset_preparation_prerequisites_omy' },
                 { text: 'Recording', link: '/omy/dataset_preparation_recording_omy' },
                 { text: 'Visualization', link: '/omy/dataset_preparation_visualization_omy' },
-                { text: 'Editing', link: '/omy/dataset_preparation_editing_omy' }
               ]
             },
             {
@@ -185,6 +186,9 @@ export default defineConfig({
             },
             {
               text: 'Model Inference', link:'/omy/model_inference_omy',
+            },
+            {
+              text: 'Data Tools', link:'/omy/dataset_preparation_editing_omy',
             }
           ]
         },
@@ -260,11 +264,13 @@ export default defineConfig({
                     { text: 'Prerequisites', link: '/omx/dataset_preparation_prerequisites_omx' },
                     { text: 'Recording', link: '/omx/dataset_preparation_recording_omx' },
                     { text: 'Visualization', link: '/omx/dataset_preparation_visualization_omx' },
-                    { text: 'Editing', link: '/omx/dataset_preparation_editing_omx' }
                   ]
                 },
                 { text: 'Model Training', link: '/omx/model_training_omx' },
-                { text: 'Model Inference', link: '/omx/model_inference_omx' }
+                { text: 'Model Inference', link: '/omx/model_inference_omx' },
+                {
+                  text: 'Data Tools', link:'/omx/dataset_preparation_editing_omx',
+                }
               ]
             },
             { text: 'LeRobot', link: '/omx/lerobot_imitation_learning_omx' }

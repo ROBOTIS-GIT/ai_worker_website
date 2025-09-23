@@ -115,9 +115,7 @@ export default defineConfig({
             {
               text: 'Model Inference', link:'/ai_worker/model_inference_ai_worker',
             },
-            {
-              text: 'Data Tools', link:'/ai_worker/dataset_preparation_editing_ai_worker',
-            }
+            { text: 'Data Tools', link:'/ai_worker/data_tools_ai_worker' },
           ]
         },
         {
@@ -187,9 +185,7 @@ export default defineConfig({
             {
               text: 'Model Inference', link:'/omy/model_inference_omy',
             },
-            {
-              text: 'Data Tools', link:'/omy/dataset_preparation_editing_omy',
-            }
+            { text: 'Data Tools', link:'/omy/data_tools_omy' },
           ]
         },
         {
@@ -268,9 +264,7 @@ export default defineConfig({
                 },
                 { text: 'Model Training', link: '/omx/model_training_omx' },
                 { text: 'Model Inference', link: '/omx/model_inference_omx' },
-                {
-                  text: 'Data Tools', link:'/omx/dataset_preparation_editing_omx',
-                }
+                { text: 'Data Tools', link:'/omx/data_tools_omx' },
               ]
             },
             { text: 'LeRobot', link: '/omx/lerobot_imitation_learning_omx' }

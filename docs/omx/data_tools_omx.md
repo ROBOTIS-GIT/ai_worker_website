@@ -192,7 +192,7 @@ In the `Delete Episodes` section, click the **folder button** to open the file e
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
   <div style="text-align: center;">
-    <img src="/imitation_learning/web_ui/edit_dataset/folder_button.png" alt="Web UI" style="width: 100%; max-width: 60px;">
+    <img src="/imitation_learning/web_ui/edit_dataset/folder_button.png" alt="Web UI" style="width: 100%; max-width: 40px;">
   </div>
   <div style="font-size: 30px; text-align: center;">
     ↓

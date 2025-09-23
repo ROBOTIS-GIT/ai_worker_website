@@ -25,7 +25,7 @@ Please place your trained model in the following directory:
 `~/physical_ai_tools/lerobot/outputs/train/`
 
 Models trained on the Robot PC using Physical AI Tools are automatically saved to this path. 
-However, if you downloaded the model from a hub(without Physical AI Tools) or copied it from another PC, you need to move the model to this location. 
+However, if you downloaded the model from a hub (without using Physical AI Tools) or copied it from another PC, you need to move the model to this location. 
 
 
 ::: details Available Folder Structures

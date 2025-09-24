@@ -93,11 +93,13 @@ Enter the repository to download.
   <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/enter_download_repo.png" alt="Web UI" style="width: 80%;">
 </div>
 
-Click the `Download` button. The download progress will be displayed.
+Click the `Download` button.
 
-<div style="display: flex; justify-content: center;">
+- **Dataset**: Progress bar is displayed
   <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/download_progress.png" alt="Web UI" style="width: 80%;">
-</div>
+
+- **Model**: Spinner is displayed
+  <img src="/imitation_learning/web_ui/edit_dataset/hugging_face/download_spinner.png" alt="Web UI" style="width: 50%;">
 
 ::: info
 You can cancel the download by clicking `Cancel` during the download process. However, the folder created in the local path will remain.
@@ -110,6 +112,12 @@ The download paths are as follows:
 - **Model:** `/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/`
 
 (Paths within the **Physical AI Tools** Docker container)
+:::
+
+::: tip
+⚠️ **Network recommendation**
+
+Policy models are typically large in size. When downloading a policy model, a **wired Ethernet connection** is **highly recommended** to ensure stable and fast download speeds.
 :::
 
 

@@ -181,7 +181,7 @@ Click the `Download Policy` button to open a popup for downloading a policy mode
 
 Select the Hugging Face User ID and enter the repository to download. 
 
-Click the `Download` button to start the download. A progress indicator will be displayed. 
+Click the `Download` button to start the download.
 
 When the download completes, click `Finish` to close the popup. 
 
@@ -190,7 +190,8 @@ The downloaded model path is automatically filled into Policy Path.
   <img src="/imitation_learning/web_ui/inference/downloaded_path_filled.png" alt="Web UI" style="width: 30%; ">
 
 
-💡 **Note — Progress indicator**: Progress is measured by the number of files completed. Policy models often include only a few very large files, so the progress bar may remain unchanged for a while.
+⚠️ **Important — Network recommendation**: Policy models are typically large in size. A **wired Ethernet connection** is **highly recommended** for downloading to ensure stable and fast download speeds.
+
 
 :::
 

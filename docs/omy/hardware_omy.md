@@ -33,9 +33,9 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
   
 | File Type | Download Link |
 |-----------|---------------|
-| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2208) |
-| DWG | [💾 Download DWG](https://www.robotis.com/service/download.php?no=2207) |
-| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2209) |
+| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2217) |
+| DWG | [💾 Download DWG](https://www.robotis.com/service/download.php?no=2216) |
+| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2218) |
 
 ## [Follower] Workspace
 
@@ -45,7 +45,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
   
 | File Type | Download Link |
 |-----------|---------------|
-| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2213) |
+| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2222) |
 
 ## [Follower] Inertia
 
@@ -227,9 +227,9 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
   
 | File Type | Download Link |
 |-----------|---------------|
-| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2211) |
-| DWG | [💾 Download DWG](https://www.robotis.com/service/download.php?no=2210) |
-| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2212) |
+| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2220) |
+| DWG | [💾 Download DWG](https://www.robotis.com/service/download.php?no=2219) |
+| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2221) |
 
 
 ## [Leader] Inertia

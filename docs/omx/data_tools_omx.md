@@ -107,12 +107,10 @@ You can cancel the download by clicking `Cancel` during the download process. Ho
 :::
 
 ::: info
-The download paths are as follows:
+The download paths are as follows (based on the Docker container’s file system):
 
 - **Dataset:** `/root/.cache/huggingface/lerobot/`
 - **Model:** `/root/ros2_ws/src/physical_ai_tools/lerobot/outputs/train/`
-
-(Paths within the **Physical AI Tools** Docker container)
 :::
 
 ::: tip
@@ -125,7 +123,7 @@ Policy models are typically large in size. When downloading a policy model, a **
 ## Merging Datasets
 You can merge multiple datasets into a single dataset. 
 
-### 1. Enter datasets to merge
+### 1. Enter Datasets to Merge
 
 In the `Merge Datasets` > `Enter Datasets to Merge` section:
 
@@ -156,7 +154,7 @@ Click the `+ Add Dataset` button to add a new dataset input field and select you
 
 Repeat the above steps to add as many datasets as needed.
 
-### 2. Enter output path
+### 2. Enter Output Path
 
 In the `Enter Output Path` section, select the path where the merged dataset result will be saved.
 
@@ -195,7 +193,7 @@ Finally, click the `Merge` button to merge the datasets.
 
 You can remove episodes that were incorrectly recorded during the data collection process.
 
-### 1. Select dataset to edit
+### 1. Select Dataset to Edit
 
 In the `Delete Episodes` section, click the **folder button** to open the file explorer and select your desired dataset. (You can also type the path directly in the text input field)
 
@@ -211,7 +209,7 @@ In the `Delete Episodes` section, click the **folder button** to open the file e
   </div>
 </div>
 
-### 2. Specify episodes to remove
+### 2. Specify Episodes to Remove
 
 Enter the episode numbers you want to remove in the input field. You can remove multiple episodes at once by separating the numbers with commas.
 

@@ -39,7 +39,7 @@ After clicking the `Set Robot Type` button, the status will change to `Connected
    <img src="/imitation_learning/web_ui/home/connected_omy_f3m.png" alt="Web UI" style="width: 100%; ">
   <p style="text-align: center;"><em>Connected Screen</em></p>  
 
-### 3. Go to `Record` page
+### 3. Go to `Record` Page
 
 ::: info
 You cannot access **Record** page unless a robot type has been selected on the **Home** page.

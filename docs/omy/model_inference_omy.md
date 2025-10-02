@@ -15,13 +15,25 @@ If you haven't set up the Physical AI Tools Docker container, please refer to th
 
 ### 2. Prepare Your Model
 
-`USER PC`
+Choose one of the following methods.
+
+**`Option 1)` Download your model from Hugging Face**
+
+You can download a policy model from Hugging Face. 
+Detailed steps are provided [below](#download-policy-model)
+
+You can proceed to the next step: 👉 [3. Bring up OMY Follower Node](#_3-bring-up-omy-follower-node)
+
+**`Option 2)` Manually copy your model to the target directory**
 
 Please place your trained model in the following directory:
 
+`USER PC`
+
 `<your_workspace>/physical_ai_tools/lerobot/outputs/train/`
 
-Models trained using Physical AI Tools are automatically saved to that path. However, if you downloaded the model from a hub or copied it from another PC, you need to move the model to that location. 
+Models trained using Physical AI Tools are automatically saved to that path.
+However, if you downloaded the model from a hub (without using Physical AI Tools) or copied it from another PC, you need to move the model to that location. 
 
 
 ::: details Available Folder Structures
@@ -140,6 +152,33 @@ You can either click the `Browse Policy Path` button to select the desired model
 <img src="/imitation_learning/web_ui/inference/browse_button.png" alt="Web UI" style="width: 30%; ">
 <br>
 <img src="/imitation_learning/web_ui/inference/file_browser.png" alt="Web UI" style="width: 100%; ">
+:::
+
+<a id="download-policy-model"></a>
+::: tip
+**Download Policy Model from Hugging Face**
+
+You can download your model from Hugging Face. 
+
+Click the `Download Policy` button to open a popup for downloading a policy model. 
+
+  <img src="/imitation_learning/web_ui/inference/download_policy_button.png" alt="Web UI" style="width: 50%; ">
+  <br>
+  <img src="/imitation_learning/web_ui/inference/download_policy_modal.png" alt="Web UI" style="width: 70%; ">
+
+Select the Hugging Face User ID and enter the repository to download. 
+
+Click the `Download` button to start the download. A progress indicator will be displayed. 
+
+When the download completes, click `Finish` to close the popup. 
+
+The downloaded model path is automatically filled into Policy Path. 
+
+  <img src="/imitation_learning/web_ui/inference/downloaded_path_filled.png" alt="Web UI" style="width: 30%; ">
+
+
+💡 **Note — Progress indicator**: Progress is measured by the number of files completed. Policy models often include only a few very large files, so the progress bar may remain unchanged for a while.
+
 :::
 
 ::: info

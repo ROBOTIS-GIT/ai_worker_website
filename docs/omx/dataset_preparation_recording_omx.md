@@ -40,7 +40,7 @@ After clicking the `Set Robot Type` button, the status will change to `Connected
 </div>
   <p style="text-align: center;"><em>Connected Screen</em></p>
 
-### 3. Go to `Record` page
+### 3. Go to `Record` Page
 
 ::: info
 You cannot access the **Record** page unless a robot type has been selected on the **Home** page.

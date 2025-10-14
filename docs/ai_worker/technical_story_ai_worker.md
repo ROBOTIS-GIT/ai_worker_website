@@ -328,7 +328,7 @@ This project provided valuable insights into deploying foundation models on real
 
 1. **Enhanced Visual Perception**: Integrate better color recognition under varied lighting, possibly with additional sensors
 2. **Grasp Detection**: Add proprioceptive feedback to detect successful grasps before attempting placement
-3. **More Training Data**: Collect additional edge cases to improve success rate to 85-90%
+3. **More Training Data**: Collect additional edge cases to improve success rate to 90-95%
 
 ---
 

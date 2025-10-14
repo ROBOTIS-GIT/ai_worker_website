@@ -15,7 +15,7 @@ Click on the card below to explore the AI technologies we've implemented:
 <details style="grid-column: 1 / -1;">
 <summary style="list-style: none; cursor: pointer;">
   <div style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 20px; transition: all 0.3s; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; min-height: 200px; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; width: calc(66.666% - 14px); vertical-align: top;">
-    <img src="/technical_story/isaac_gr00t_header_compress.png" alt="Isaac GROOT" style="height: 80px; margin-bottom: 15px; filter: brightness(0) invert(1);">
+    <img src="/technical_story/isaac_gr00t_header_compress.png" alt="Isaac GR00T" style="height: 80px; margin-bottom: 15px; filter: brightness(0) invert(1);">
     <h3 style="margin: 0 0 10px 0; border: none; color: white;">AI Worker x NVIDIA GR00T N1.5</h3>
     <div class="expand-indicator" style="margin-top: 15px; font-size: 12px; opacity: 0.8;">▼ Click to expand</div>
   </div>
@@ -28,7 +28,7 @@ Click on the card below to explore the AI technologies we've implemented:
   <iframe 
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
     src="https://www.youtube.com/embed/h2O57D7KGYg" 
-    title="AI Worker x NVIDIA Gr00t N1.5 Demo" 
+    title="AI Worker x NVIDIA GR00T N1.5 Demo" 
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
@@ -48,8 +48,8 @@ To achieve this goal, we leveraged **imitation learning** as our core methodolog
 **🎯 Public Demonstrations**
 
 We successfully showcased this system at two major robotics conferences:
-- **CoRL (Conference on Robot Learning)** 
-- **Humanoid Conference**
+- **CoRL 2025 (Conference on Robot Learning)** 
+- **Humanoid Conference 2025**
 
 </div>
 
@@ -57,7 +57,7 @@ We successfully showcased this system at two major robotics conferences:
 
 **📊 Performance Metrics**
 
-Through rigorous testing over 100 trials, our system achieved approximately **70% success rate**, demonstrating robust performance while also revealing areas for future improvement.
+Through rigorous testing over 100 trials, our system achieved approximately **85% success rate**, demonstrating robust performance while also revealing areas for future improvement.
 
 </div>
 
@@ -73,11 +73,11 @@ This project goes beyond simply using a foundation model – we've built a compl
 
 ### Model Architecture
 
-NVIDIA's Isaac Gr00t N1.5 is a vision-language-action (VLA) foundation model designed for robotic manipulation tasks. The model architecture consists of two main systems working in tandem to translate multimodal inputs into precise robot actions.
+NVIDIA's Isaac GR00T N1.5 is a vision-language-action (VLA) foundation model designed for robotic manipulation tasks. The model architecture consists of two main systems working in tandem to translate multimodal inputs into precise robot actions.
 
 <div style="text-align: center; margin: 30px 0;">
-  <img src="/technical_story/isaac_gr00t_architecture.png" alt="Isaac Gr00t N1.5 Architecture" style="max-width: 100%; border-radius: 8px; border: 2px solid #667eea;">
-  <p style="margin-top: 10px; font-size: 14px; color: #888; font-style: italic;">Figure: Isaac Gr00t N1.5 Architecture Overview</p>
+  <img src="/technical_story/isaac_gr00t_architecture.png" alt="Isaac GR00T N1.5 Architecture" style="max-width: 100%; border-radius: 8px; border: 2px solid #667eea;">
+  <p style="margin-top: 10px; font-size: 14px; color: #888; font-style: italic;">Figure: Isaac GR00T N1.5 Architecture Overview</p>
 </div>
 
 #### Input Modalities
@@ -262,7 +262,7 @@ We conducted extensive testing to evaluate the system's performance in real-worl
 
 **🎯 Task Success Rate**
 - **Test Trials**: 100 sorting attempts
-- **Success Rate**: ~70%
+- **Success Rate**: ~85%
 - **Test Environment**: Real exhibition hall conditions with varied lighting and backgrounds
 
 </div>
@@ -277,7 +277,7 @@ To achieve smooth and natural robot motion, we implemented several optimization 
 
 #### Failure Cases
 
-Understanding failure cases is critical for future improvements. We identified three primary failure patterns in the 30% unsuccessful trials:
+Understanding failure cases is critical for future improvements. We identified three primary failure patterns in the 15% unsuccessful trials:
 
 - **Color Misclassification (~50% of failures)**: Correctly grasped but placed in the wrong bin due to color recognition errors
 - **Grasping Failures (~30% of failures)**: Robot failed to successfully grasp the target object
@@ -311,7 +311,7 @@ This project provided valuable insights into deploying foundation models on real
 
 <div style="margin: 20px 0; padding: 20px; background: rgba(245, 87, 108, 0.1); border-left: 4px solid #f5576c; border-radius: 4px;">
 
-**70% Success Rate**
+**85% Success Rate**
 - While acceptable for demonstrations, production deployment would require higher reliability
 - Color misclassification remains the primary failure cause, indicating need for improved visual perception
 

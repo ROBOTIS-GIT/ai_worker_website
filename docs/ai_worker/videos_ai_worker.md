@@ -13,6 +13,10 @@ Explore the ROBOTIS Physical AI Lineup through our collection of videos featurin
 
 <YouTube videoId="WNpRlIr4zbw" />
 
+<YouTube videoId="_lBpeiHXzZs" />
+
+<YouTube videoId="h2O57D7KGYg" />
+
 ## Use Cases
 
 <div class="coming-soon">

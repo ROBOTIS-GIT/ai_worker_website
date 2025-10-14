@@ -130,7 +130,8 @@ export default defineConfig({
           text: 'Resources',
           items: [
             { text: 'Open Source', link: '/ai_worker/opensource_ai_worker' },
-            { text: 'Release Notes', link: '/ai_worker/release_notes_ai_worker' }
+            { text: 'Release Notes', link: '/ai_worker/release_notes_ai_worker' },
+            { text: 'Technical Story', link: '/ai_worker/technical_story_ai_worker' }
           ]
         },
         {

@@ -6,9 +6,9 @@ The DYNAMIXEL ecosystem thrives on the creativity and innovation of our users. W
 
 Discover how your peers are leveraging DYNAMIXEL technology to build the future, one groundbreaking project at a time. Many of these incredible advancements are proudly **Powered by DYNAMIXEL**.
 
-## Featured Open Source Hand & Gripper Projects
+## Featured Open Source Projects
 
-Here are some inspiring examples of robotic hand and gripper projects from our community:
+Here are some inspiring examples of robotics projects from our community:
 
 <div class="project-grid">
   <div class="project-card">
@@ -52,6 +52,20 @@ Here are some inspiring examples of robotic hand and gripper projects from our c
     <p><strong>Developed by:</strong> New York University</p>
     <p>An open-source, 3D-printable robotic hand designed for accessibility and research, often built with DYNAMIXEL actuators.</p>
     <a href="https://ruka-hand.github.io/" target="_blank" class="project-link">Learn More &rarr;</a>
+  </div>
+  <div class="project-card">
+    <img src="/community_showcase/LeKiwi-DYNAMIXEL.png" alt="LeKiwi Project Image" class="project-image">
+    <h3>LeKiwi-DYNAMIXEL</h3>
+    <p><strong>Developed by:</strong> SIG Robotics team at the University of Illinois Urbana-Champaign</p>
+    <p>LeKiwi – Low-Cost Mobile Manipulator (DYNAMIXEL Edition)</p>
+    <a href="https://github.com/SIGRobotics-UIUC/LeKiwi/tree/main/DynamixelLeKiwi" target="_blank" class="project-link">Learn More &rarr;</a>
+  </div>
+  <div class="project-card">
+    <img src="/community_showcase/gello.png" alt="GELLO Project Image" class="project-image">
+    <h3>GELLO</h3>
+    <p><strong>Developed by:</strong> University of California Berkeley</p>
+    <p>A General, Low-Cost, and Intuitive Teleoperation Framework for Robot Manipulators</p>
+    <a href="https://docs.google.com/document/d/1pzV8LDIGZh6zq8z-ZyKjUZ1ISkdCQctfu_05-ZY95eg/edit?usp=sharing" target="_blank" class="project-link">Learn More &rarr;</a>
   </div>
 </div>
 

@@ -200,7 +200,7 @@ And open the configuration file and update it as described below:
 
 `USER PC` `🐋 PHYSICAL AI TOOLS`
 ```bash
-sudo nano ~/ros2_ws/src/physical_ai_tools/physical_ai_server/config/omx_config.yaml
+sudo nano ~/ros2_ws/src/physical_ai_tools/physical_ai_server/config/omx_f_config.yaml
 ```
 
 Then update the fields outlined in red in the UI to point to your desired camera topic.

@@ -143,6 +143,7 @@ Enter **Task Instruction** and **Policy Path** in the **Task Info Panel**, locat
 | -------- | --- |
 | **Task Instruction** | A sentence that tells the robot what action to perform, such as `"pick and place object"`.|
 | **Policy Path** <br>`🐋 PHYSICAL AI TOOLS`| The **absolute** path to your trained model directory **inside the Docker container**(`🐋 PHYSICAL AI TOOLS`). This should point to the folder containing your trained model files such as `config.json`, `model.safetensors`, and `train_config.json`. <br>See the **Policy Path Example** below for reference. |
+| **FPS** | FPS should be set to the same FPS at which you collected the training data for your model, which serves as the control frequency.|
 
 ::: tip
 **Entering Policy Path**

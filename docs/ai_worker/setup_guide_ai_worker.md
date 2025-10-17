@@ -183,3 +183,35 @@ The `container.sh` script provides easy container management:
 ./container.sh enter                # Enter container
 ./container.sh stop                 # Stop container
 ```
+
+
+### SW Update Guide
+
+Follow these steps to update AI Worker or Physical AI Tools packages:
+
+- **Navigate to package directory**
+```bash
+cd /path/to/ai_worker_package
+# or
+cd /path/to/physical_ai_tools_package
+```
+
+- **Switch to jazzy branch**
+```bash
+git checkout jazzy
+```
+
+- **Update to latest code**
+```bash
+git pull
+```
+
+- **Restart container**
+```bash
+./docker/container.sh stop
+./docker/container.sh start
+```
+
+::: warning
+Data in areas without volume mapping will be lost during container restart. Make sure to save important data before restarting.
+:::

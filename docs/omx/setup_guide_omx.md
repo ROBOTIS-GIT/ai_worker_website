@@ -1,5 +1,7 @@
 ---
-next: false
+next:
+  text: Operation Guide
+  link: /omx/operation_omx
 ---
 
 # Setup Guide for OMX

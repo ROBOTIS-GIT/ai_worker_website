@@ -1,6 +1,5 @@
 ---
-next: setup_guide
-nextText: Setup Guide
+next: Setup Guide
 ---
 
 # Assembly Guide

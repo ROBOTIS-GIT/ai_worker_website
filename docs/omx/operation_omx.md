@@ -62,7 +62,7 @@ Move interactive markers to position the robotic arm, then click `Plan & Execute
 ## GUI
 
 ### Launch the OpenMANIPULATOR GUI
-After running bringup and MoveIt, launch the GUI.
+After running bringup and MoveIt 2, launch the GUI.
 ```bash
 ros2 launch open_manipulator_gui omx_f_gui.launch.py
 ```
@@ -114,10 +114,10 @@ ros2 launch open_manipulator_gui omx_f_gui.launch.py
 ![](/quick_start_guide/omx/omx_f_gui.gif)
 
 ## Keyboard Teleop
-Control the manipulator (simulation or hardware) using your keyboard.
+Control the manipulator(simulation or hardware) using your keyboard.
 
 ::: info
-After launching the real robot or Gazebo bringup, enter the following command in the new container:
+After launching the real robot or Gazebo bringup, enter the following command in the new Docker container:
 ```bash
 ros2 run open_manipulator_teleop omx_f_teleop
 ```

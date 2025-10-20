@@ -6,9 +6,9 @@ After accessing the Open Manipulator Docker container in `ROBOT PC`, use the fol
 ros2 launch open_manipulator_bringup omy_ai.launch.py
 ```
 This command will sequentially execute the following procedures:
-1. Move to Follower's initial position
-2. Start Leader's gravity compensation
-3. Synchronize Leader and Follower
+1. Move to Follower's initial position.
+2. Start Leader's gravity compensation.
+3. Synchronize Leader and Follower.
 
 After these steps, the Leader-Follower system will be operational. **AI Teleoperation** is only supported between OMY_F3M and OMY_L100 models.
 
@@ -30,7 +30,7 @@ Thanks to friction and static compensation, the Leader arm can be moved smoothly
 Since inverse kinematics is applied to the Leader during operation, gravity compensation is maintained regardless of its position in real-time.
 
 ![](/quick_start_guide/omy/gravity_compensation_demo.gif)
-<p style="text-align: center;"><em>Smooth, gravity-compensated motion of the Leader arm.</em></p>
+<p style="text-align: center;"><em>Smooth, gravity-compensated motion of the Leader arm</em></p>
 
 ## Launch Bringup
 The OMY controller has been restructured to utilize the ros2_control framework and MoveIt 2 for enhanced flexibility, modularity, and usability. This updated controller allows for seamless integration with ROS 2-based systems, offering advanced features such as trajectory planning, real-time control, and state feedback.
@@ -50,7 +50,7 @@ For more information about MoveIt 2, check out the [official documentation](http
 ```bash
  ros2 launch open_manipulator_moveit_config omy_f3m_moveit.launch.py
 ```
-Move interactive markers to position the robotic arm, then click Plan and Execute.
+Move interactive markers to position the robotic arm, then click `Plan & Execute`.
 ![](/quick_start_guide/omy/moveit2_core.png)
 
 **Simple Instructions for Using MoveIt 2:**
@@ -64,7 +64,7 @@ Move interactive markers to position the robotic arm, then click Plan and Execut
 ## GUI
 
 ### Launch the OpenMANIPULATOR GUI
-After running bringup and MoveIt, launch the GUI.
+After running bringup and MoveIt 2, launch the GUI.
 ```bash
 ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 ```
@@ -118,14 +118,15 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 
 
 ## Keyboard Teleop
-Control the manipulator (simulation or hardware) using your keyboard
+Control the manipulator(simulation or hardware) using your keyboard.
 
 ::: info
-After launching the real robot or Gazebo bringup, enter the following command in the new container:
-:::
+After launching the real robot or Gazebo bringup, enter the following command in the new Docker container:
 ```bash
 ros2 run open_manipulator_teleop omy_f3m_teleop
 ```
+:::
+
 **Joint Control**
 - `1` / `q` - Joint 1
 - `2` / `w` - Joint 2

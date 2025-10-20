@@ -109,7 +109,7 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 - Save multiple postures to complete the preparation.
 ![](/quick_start_guide/omy/OMY_GUI5.png)
 
-6. Press the `Play` button to make the manipulator move sequentially according to the saved tasks. Completed tasks will have their status changed to <span style="color: green; font-weight: bold;">Done</span>
+6. Press the `Play` button to make the manipulator move sequentially according to the saved tasks. Completed tasks will have their status changed to <span style="color: green; font-weight: bold;">Done</span>.
 ![](/quick_start_guide/omy/OMY_GUI6.png)
 
 ### OMY GUI Demo

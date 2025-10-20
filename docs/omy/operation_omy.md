@@ -1,7 +1,7 @@
 # Operation Guide
 
 ## Teleoperation
-After accessing the Docker container, use the following command:
+After accessing the Open Manipulator Docker container in `ROBOT PC`, use the following command:
 ```bash
 ros2 launch open_manipulator_bringup omy_ai.launch.py
 ```
@@ -35,7 +35,7 @@ Since inverse kinematics is applied to the Leader during operation, gravity comp
 ## Launch Bringup
 The OMY controller has been restructured to utilize the ros2_control framework and MoveIt 2 for enhanced flexibility, modularity, and usability. This updated controller allows for seamless integration with ROS 2-based systems, offering advanced features such as trajectory planning, real-time control, and state feedback.
 
-Open a new Open Manipulator Docker Containerand launch the OMY packages.
+Open a new Docker container and launch the OMY packages.
 
 ```bash
  ros2 launch open_manipulator_bringup omy_f3m.launch.py

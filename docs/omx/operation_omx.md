@@ -7,7 +7,7 @@ prev:
 # Operation Guide — ROS 2
 
 ## Teleoperation
-After accessing the Docker container, use the following command:
+After accessing the Open Manipulator Docker container, use the following command:
 ```bash
 ros2 launch open_manipulator_bringup omx_ai.launch.py
 ```
@@ -33,7 +33,7 @@ ros2 launch open_manipulator_bringup omx_f.launch.py
 ## Launch Bringup
 The OMX controller has been restructured to utilize the `ros2_control` framework and `MoveIt 2` for enhanced flexibility, modularity, and usability. This updated controller allows for seamless integration with ROS 2-based systems, offering advanced features such as trajectory planning, real-time control, and state feedback.
 
-Open a new Open Manipulator Docker Container and launch the OMX packages.
+Open a new Docker container and launch the OMX packages.
 
 ```bash
  ros2 launch open_manipulator_bringup omx_f.launch.py
@@ -48,7 +48,7 @@ For more information about MoveIt 2, check out the [official documentation](http
 ```bash
  ros2 launch open_manipulator_moveit_config omx_f_moveit.launch.py
 ```
-Move interactive markers to position the robotic arm, then click Plan and Execute.
+Move interactive markers to position the robotic arm, then click `Plan & Execute`.
 ![](/quick_start_guide/omx/moveit2_core.png)
 
 **Simple Instructions for Using MoveIt 2:**
@@ -114,14 +114,15 @@ ros2 launch open_manipulator_gui omx_f_gui.launch.py
 ![](/quick_start_guide/omx/omx_f_gui.gif)
 
 ## Keyboard Teleop
-Control the manipulator (simulation or hardware) using your keyboard
+Control the manipulator (simulation or hardware) using your keyboard.
 
 ::: info
 After launching the real robot or Gazebo bringup, enter the following command in the new container:
-:::
 ```bash
 ros2 run open_manipulator_teleop omx_f_teleop
 ```
+:::
+
 **Joint Control**
 - `1` / `q` - Joint 1
 - `2` / `w` - Joint 2

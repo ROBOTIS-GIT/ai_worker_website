@@ -53,7 +53,7 @@ For more information about MoveIt 2, check out the [official documentation](http
 Move interactive markers to position the robotic arm, then click Plan and Execute.
 ![](/quick_start_guide/omy/moveit2_core.png)
 
-**Simple Instructions for Using MOVEIT 2:**
+**Simple Instructions for Using MoveIt 2:**
 1. You can move the robot to your desired pose using the **Interactive Marker** visible in RViz.
 2. Use the **Plan** option in the Commands column to simulate the motion of the robotic arm.
 3. Click **Execute** to move the robot according to the simulated motion.

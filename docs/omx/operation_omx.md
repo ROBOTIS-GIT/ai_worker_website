@@ -97,7 +97,7 @@ ros2 launch open_manipulator_gui omx_f_gui.launch.py
 ![](/quick_start_guide/omx/OMX_GUI3.png)
 
 4. To manipulate OMX in the task space, enter the kinematics pose of the OMX end-effector(tool) in the task space. Then click the `Send` button to start the motion.
-![](/quick_start_guide/omy/OMY_GUI4.png)
+![](/quick_start_guide/omx/OMX_GUI4.png)
 
 5. Create a task constructor with OMX.
 - Click the `Read task` button to prepare for saving tasks.

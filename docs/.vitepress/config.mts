@@ -244,7 +244,7 @@ export default defineConfig({
                 { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
               ]
             },
-            { text: 'Operation Guide (ROS 2)', link: '/omx/operation_omx' }
+            { text: 'Operation Guide - ROS 2', link: '/omx/operation_omx' }
           ]
         },
         {

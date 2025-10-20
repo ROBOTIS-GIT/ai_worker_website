@@ -1,7 +1,3 @@
----
-next: Setup Guide
----
-
 # Assembly Guide
 
 Step-by-Step Assembly Guide for OMX

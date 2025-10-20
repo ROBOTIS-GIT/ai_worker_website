@@ -1,4 +1,4 @@
-# Teleoperation Guide
+# Operation Guide
 
 This guide explains how to set up and operate the AI Worker using teleoperation.
 

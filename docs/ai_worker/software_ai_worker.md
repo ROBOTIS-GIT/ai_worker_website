@@ -1,5 +1,5 @@
 
-## Software Overview
+# Software Overview
 
 **AI Worker** is a Jetson Orin–based robot platform built for real-world **Physical AI** research. It supports **full-body motion control** and enables smooth integration of both **teleoperation** and **AI policy execution**.
 

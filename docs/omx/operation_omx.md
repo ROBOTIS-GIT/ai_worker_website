@@ -22,7 +22,7 @@ After these steps, the Leader-Follower system will be operational.
 <p style="text-align: center;"><em>Real-time synchronized motion between Leader and Follower</em></p>
 
 :::info
-`Teleoperation` mode doesn’t support `MoveIt 2`, `GUI`, and `Keyboard Teleop`.   
+`Teleoperation` mode does not support `MoveIt 2`, `GUI`, and `Keyboard Teleop`.   
 Please follow the next steps to use these features.
 :::
 
@@ -110,7 +110,7 @@ ros2 launch open_manipulator_gui omx_f_gui.launch.py
 ![](/quick_start_guide/omx/omx_f_gui.gif)
 
 ## Keyboard Teleop
-Control the manipulator(simulation or hardware) using your keyboard.
+Control the manipulator (simulation or hardware) using your keyboard.
 
 ### Run the Keyboard Teleop
 After launching the **real robot** or **Gazebo bringup**, enter the following command in the new Docker container:

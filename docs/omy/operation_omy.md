@@ -120,12 +120,11 @@ ros2 launch open_manipulator_gui omy_f3m_gui.launch.py
 ## Keyboard Teleop
 Control the manipulator(simulation or hardware) using your keyboard.
 
-::: info
-After launching the real robot or Gazebo bringup, enter the following command in the new Docker container:
+### Run the Keyboard Teleop
+After launching the **real robot** or **Gazebo bringup**, enter the following command in the new Docker container:
 ```bash
 ros2 run open_manipulator_teleop omy_f3m_teleop
 ```
-:::
 
 **Joint Control**
 - `1` / `q` - Joint 1

@@ -21,19 +21,15 @@ After these steps, the Leader-Follower system will be operational.
 <img src="/quick_start_guide/omx/ai_teleop.gif" alt="AI Teleoperation" style="display:block;margin:0 auto;max-width:100%;width:720px;" />
 <p style="text-align: center;"><em>Real-time synchronized motion between Leader and Follower</em></p>
 
-
-::: info
-The basic commands in this manual are written for **OMX_F**.
-Example:
-```bash
-ros2 launch open_manipulator_bringup omx_f.launch.py
-```
+:::info
+`Teleoperation` mode doesn’t support `MoveIt 2`, `GUI`, and `Keyboard Teleop`.   
+Please follow the next steps to use these features.
 :::
 
 ## Launch Bringup
 The OMX controller has been restructured to utilize the `ros2_control` framework and `MoveIt 2` for enhanced flexibility, modularity, and usability. This updated controller allows for seamless integration with ROS 2-based systems, offering advanced features such as trajectory planning, real-time control, and state feedback.
 
-Open a new Docker container and launch the OMX packages.
+To use the `MoveIt 2`, `GUI`, and `Keyboard Teleop` features, open a new Docker container and launch the OMX packages.
 
 ```bash
  ros2 launch open_manipulator_bringup omx_f.launch.py
@@ -116,12 +112,11 @@ ros2 launch open_manipulator_gui omx_f_gui.launch.py
 ## Keyboard Teleop
 Control the manipulator(simulation or hardware) using your keyboard.
 
-::: info
-After launching the real robot or Gazebo bringup, enter the following command in the new Docker container:
+### Run the Keyboard Teleop
+After launching the **real robot** or **Gazebo bringup**, enter the following command in the new Docker container:
 ```bash
 ros2 run open_manipulator_teleop omx_f_teleop
 ```
-:::
 
 **Joint Control**
 - `1` / `q` - Joint 1

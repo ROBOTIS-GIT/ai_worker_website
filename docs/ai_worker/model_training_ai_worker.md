@@ -220,6 +220,8 @@ Go to the `Training` page and follow the steps below:
 
 At the bottom of the page, select either **New Training** or **Resume Training**.
 
+  <img src="/imitation_learning/web_ui/training/training_mode.png" alt="Web UI" style="width: 50%; ">
+
 | Training Type | Description | When to Use |
 |---------------|-------------|-------------|
 | **New Training** | Start training a new model | - First time training<br>- Starting with a new dataset<br>- Training with a different policy on the same dataset |
@@ -241,8 +243,13 @@ For new training, follow these steps:
 
 For resuming training, follow these steps:
 
-- **Step 1**: Select the **policy path to resume** with file browsing(📁) and click the **`Load`** button to load the training informations(Dataset, Policy, Device, Output Folder Name, and Additional Options) automatically.
-<img src="/imitation_learning/web_ui/training/resume_policy_path.png" alt="Web UI" style="width: 70%; ">
+- **Step 1**: Select the **checkpoint path to resume** with file browsing(📁) and click the **`Load`** button to load the training informations(Dataset, Policy, Device, Output Folder Name, and Additional Options) automatically.
+  - The checkpoint path should be the folder containing the `train_config.json` file.
+
+<img src="/imitation_learning/web_ui/training/checkpoint_path_to_resume.png" alt="Web UI" style="width: 60%; ">
+
+<img src="/imitation_learning/web_ui/training/select_checkpoint_path.png" alt="Web UI" style="width: 80%; ">
+
 - **Step 2**: (Optional) Change the training `Dataset` if needed.
 - **Step 3**: (Optional) Modify `Additional Options` if needed.
 :::

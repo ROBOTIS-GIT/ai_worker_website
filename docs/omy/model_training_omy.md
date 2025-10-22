@@ -99,12 +99,45 @@ Go to the `Training` page and follow the steps below:
 
   <img src="/imitation_learning/web_ui/training/page.png" alt="Web UI" style="width: 100%; ">
 
-- Step 1: Select the `Dataset`, `Policy Type` and `Device`.
-- Step 2: Enter the `Output Folder Name`.
-- Step 3: (Optional) Modify `Additional Options` if needed.
+At the bottom of the page, select either **New Training** or **Resume Training**.
+
+  <img src="/imitation_learning/web_ui/training/training_mode.png" alt="Web UI" style="width: 50%; ">
+
+
+| Training Type | Description | When to Use |
+|---------------|-------------|-------------|
+| **New Training** | Start training a new model | - First time training<br>- Starting with a new dataset<br>- Training with a different policy on the same dataset |
+| **Resume Training** | Continue training from a saved checkpoint | - Training was interrupted and you want to resume<br>- Want to incorporate additional datasets into the model<br>- Want to modify training options (Steps, Save Frequency, etc.) and retrain |
+
+:::tabs
+== New Training
+
+For new training, follow these steps:
+
+- **Step 1**: Select the `Dataset`, `Policy Type` and `Device`.
+
+- **Step 2**: Enter the `Output Folder Name`.
+
+- **Step 3**: (Optional) Modify `Additional Options` if needed.
 
 For more information about these **options**, please refer to the descriptions below.
 
+== Resume Training
+
+For resuming training, follow these steps:
+
+- **Step 1**: Select the **checkpoint path to resume** with file browsing(📁) and click the **`Load`** button to load the training information(Dataset, Policy, Device, Output Folder Name, and Additional Options) automatically.
+  - The checkpoint path should be the folder containing the `train_config.json` file.
+
+<img src="/imitation_learning/web_ui/training/checkpoint_path_to_resume.png" alt="Web UI" style="width: 60%; ">
+
+<img src="/imitation_learning/web_ui/training/select_checkpoint_path.png" alt="Web UI" style="width: 80%; ">
+
+- **Step 2**: (Optional) Change the training `Dataset` if needed.
+- **Step 3**: (Optional) Modify `Additional Options` if needed.
+:::
+
+- **Training Information**
 :::tabs
 == Dataset
 
@@ -142,7 +175,19 @@ style="width: 50%; ">
 | **save frequency** | How often (in steps) to save model checkpoints. Lower values create more backup points but use more storage space. |
 :::
 
-Click `Start Training` to begin training the policy. The training results will be saved in the `physical_ai_tools/lerobot/outputs/train/` directory.
+:::tabs
+== New Training
+Click `Start Training` to begin training the policy.
+
+<img src="/imitation_learning/web_ui/training/button_start_training.png" alt="Web UI" style="width: 30%; ">
+
+== Resume Training
+Click `Resume Training` to continue training from the checkpoint.
+
+<img src="/imitation_learning/web_ui/training/button_resume_training.png" alt="Web UI" style="width: 35%; ">
+::: 
+
+The training results will be saved in the `physical_ai_tools/lerobot/outputs/train/` directory.
 
 You can monitor the training loss while training is in progress.
 <img src="/imitation_learning/web_ui/training/training_loss.png" alt="Web UI" style="width: 50%; display: block; margin: 0 auto;">

@@ -113,7 +113,7 @@ For more information about these **options**, please refer to the descriptions b
 
 For resuming training, follow these steps:
 
-- **Step 1**: Select the **checkpoint path to resume** with file browsing(📁) and click the **`Load`** button to load the training informations(Dataset, Policy, Device, Output Folder Name, and Additional Options) automatically.
+- **Step 1**: Select the **checkpoint path to resume** with file browsing(📁) and click the **`Load`** button to load the training information(Dataset, Policy, Device, Output Folder Name, and Additional Options) automatically.
   - The checkpoint path should be the folder containing the `train_config.json` file.
 
 <img src="/imitation_learning/web_ui/training/checkpoint_path_to_resume.png" alt="Web UI" style="width: 60%; ">
@@ -124,7 +124,7 @@ For resuming training, follow these steps:
 - **Step 3**: (Optional) Modify `Additional Options` if needed.
 :::
 
-- **Training Informations**
+- **Training Information**
 :::tabs
 == Dataset
 

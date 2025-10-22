@@ -219,3 +219,17 @@ The torso workspace is the same for both FFW-BG2 and FFW-SG2 models.
 <a href="/specifications/ai_worker/workspace.png" target="_blank">
   <img src="/specifications/ai_worker/workspace.png" alt="Workspace" width="100%">
 </a>
+
+
+## **Drawing Files**
+
+### Follower
+| MODEL |  File Type | Download Link |
+|-------|------------|---------------|
+| FFW-BG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2227) |
+| FFW-SG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2228) |
+
+### Leader
+| MODEL |  File Type | Download Link |
+|-------|------------|---------------|
+| FFW-LG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2229) |

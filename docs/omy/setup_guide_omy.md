@@ -29,9 +29,9 @@ git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.
 ## SSH connection
 
 ### Network Access Method
-Start by connecting the `robot pc` to the same network as the `user PC` using a LAN cable, then power on the OMY (press and release the power button until it turns white). The OMY OS uses mDNS technology to discover its IP address.
+Start by connecting the `ROBOT PC` to the same network as the `USER PC` using a LAN cable, then power on the OMY (press and release the power button until it turns white). The OMY OS uses mDNS technology to discover its IP address.
 Each time OMY OS boots, it sets the SBC’s hostname to the serial number (SN) written on the product (e.g., SNPR44B9999).
-In environments where UDP Multicast is available (such as being on the same router), you can connect directly to the `robot pc` using the hostname. Static IP assignment and other network settings for more advanced connection options are supported through the Manager.
+In environments where UDP Multicast is available (such as being on the same router), you can connect directly to the `ROBOT PC` using the hostname. Static IP assignment and other network settings for more advanced connection options are supported through the Manager.
 
 ![omy_serial_number](/quick_start_guide/omy/omy_serial_number.png)
 

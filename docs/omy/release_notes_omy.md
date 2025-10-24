@@ -3,6 +3,15 @@
 ## OMY
 https://github.com/ROBOTIS-GIT/open_manipulator
 
+### 4.1.0 (2025-10-24)
+* Support OMX-F GUI
+* Support OMX-F Keyboard Teleop
+* Contributors: Heewon Lee
+
+### 4.0.10 (2025-10-23)
+* Changed default drive mode to 0 for OMX-L
+* Contributors: Woojin Wie
+
 ### 4.0.9 (2025-09-15)
 * Support custom camera namespace and connection
 * Contributors: Junha Cha

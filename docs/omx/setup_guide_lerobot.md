@@ -1,4 +1,7 @@
 ---
+prev: 
+  text: Setup Guide
+  link: /omx/setup_guide_omx
 next: false
 ---
 

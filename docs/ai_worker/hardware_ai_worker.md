@@ -17,10 +17,6 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ## Follower Specification
 ![model_lineup](/specifications/ai_worker/model_lineup.png)
 
-::: info
-The FFW-BG2 model is scheduled for release in July 2025, while the FFW-SG2 model is expected to be released in September 2025. Please note that the specifications provided below are preliminary and subject to change before the official product launch.
-:::
-
 | Properties                  | Specification (FFW-SG2)                | Specification (FFW-BG2)                |
 |-----------------------------|----------------------------------------|----------------------------------------|
 | Dimensions (WxDxH)          | 604x602x1,623 (mm)<br>23.8x23.7x63.8 (inch)| 604x564x1,607 (mm)<br>23.8x22.2x63.2 (inch)|
@@ -219,3 +215,17 @@ The torso workspace is the same for both FFW-BG2 and FFW-SG2 models.
 <a href="/specifications/ai_worker/workspace.png" target="_blank">
   <img src="/specifications/ai_worker/workspace.png" alt="Workspace" width="100%">
 </a>
+
+
+## **Drawing Files**
+
+### Follower
+| MODEL |  File Type | Download Link |
+|-------|------------|---------------|
+| FFW-BG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2227) |
+| FFW-SG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2228) |
+
+### Leader
+| MODEL |  File Type | Download Link |
+|-------|------------|---------------|
+| FFW-LG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2229) |

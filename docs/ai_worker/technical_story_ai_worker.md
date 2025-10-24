@@ -25,12 +25,12 @@ Click on the card below to explore the AI technologies we've implemented:
 ### ▶️ Full Demo
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0; border-radius: 8px;">
-  <iframe 
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-    src="https://www.youtube.com/embed/h2O57D7KGYg" 
-    title="AI Worker x NVIDIA GR00T N1.5 Demo" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/h2O57D7KGYg"
+    title="AI Worker x NVIDIA Isaac GR00T N1.5 Demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
   </iframe>
 </div>
@@ -41,14 +41,14 @@ Click on the card below to explore the AI technologies we've implemented:
 
 We aimed to develop an autonomous robotic system capable of sorting convenience store items, with a specific focus on coffee bottle classification as our primary task scenario. The robot is presented with mixed items placed in a central area and must sort them into designated boxes positioned on the left and right sides.
 
-To achieve this goal, we leveraged **imitation learning** as our core methodology, utilizing NVIDIA's **Isaac GR00T N1.5** foundation model. We collected real-world demonstration data directly in actual operational environments, ensuring our model could handle the complexities and variations inherent in real-world scenarios.
+To achieve this goal, we leveraged **imitation learning** as our core methodology, utilizing [**NVIDIA Isaac GR00T N1.5**](https://developer.nvidia.com/isaac/gr00t) foundation model. We collected real-world demonstration data directly in actual operational environments, ensuring our model could handle the complexities and variations inherent in real-world scenarios.
 
 <div style="margin: 20px 0; padding: 20px; background: rgba(102, 126, 234, 0.1); border-left: 4px solid #667eea; border-radius: 4px;">
 
 **🎯 Public Demonstrations**
 
 We successfully showcased this system at two major robotics conferences:
-- **CoRL 2025 (Conference on Robot Learning)** 
+- **CoRL 2025 (Conference on Robot Learning)**
 - **Humanoid Conference 2025**
 
 </div>
@@ -73,7 +73,7 @@ This project goes beyond simply using a foundation model – we've built a compl
 
 ### Model Architecture
 
-NVIDIA's Isaac GR00T N1.5 is a vision-language-action (VLA) foundation model designed for robotic manipulation tasks. The model architecture consists of two main systems working in tandem to translate multimodal inputs into precise robot actions.
+NVIDIA Isaac GR00T N1.5 is an open vision-language-action (VLA) foundation model designed for robotic manipulation tasks. The model architecture consists of two main systems working in tandem to translate multimodal inputs into precise robot actions.
 
 <div style="text-align: center; margin: 30px 0;">
   <img src="/technical_story/isaac_gr00t_architecture.png" alt="Isaac GR00T N1.5 Architecture" style="max-width: 100%; border-radius: 8px; border: 2px solid #667eea;">
@@ -337,7 +337,7 @@ This project provided valuable insights into deploying foundation models on real
 **Related Projects & Tools**
 - [NVIDIA Isaac GR00T](https://github.com/NVIDIA/Isaac-GR00T) - Official NVIDIA Isaac GR00T repository
 - [Physical AI Tools](https://github.com/ROBOTIS-GIT/physical_ai_tools) - Our open-source tools for robotic AI deployment
-- [AI Worker](https://github.com/ROBOTIS-GIT/aiworker) - AI Worker robot platform
+- [AI Worker](https://github.com/ROBOTIS-GIT/ai_worker) - AI Worker robot platform
 
 </div>
 </details>
@@ -364,4 +364,3 @@ details[open] > summary .expand-indicator {
 </style>
 
 ---
-

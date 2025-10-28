@@ -124,11 +124,11 @@ You must install **robotis_dds_python**, which is required to synchronize the si
 
   ```bash
   python scripts/sim2real/imitation_learning/recorder/record_demos.py \
-      --task=RobotisLab-Real-Pick-Place-Bottle-OMY-v0 \
-      --robot_type OMY \
-      --dataset_file ./datasets/omy_pick_place_task.hdf5 \
-      --num_demos 10 \
-      --enable_cameras
+  --task=RobotisLab-Real-Pick-Place-Bottle-OMY-v0 \
+  --robot_type OMY \
+  --dataset_file ./datasets/omy_pick_place_task.hdf5 \
+  --num_demos 10 \
+  --enable_cameras
   ```
 
 2. **[Optional] Dataset Processing and Generation**
@@ -137,33 +137,33 @@ You must install **robotis_dds_python**, which is required to synchronize the si
   ```bash
   # Convert actions from joint space to end-effector pose
   python scripts/sim2real/imitation_learning/mimic/action_data_converter.py \
-    --input_file ./datasets/omy_pick_place_task.hdf5 \
-    --output_file ./datasets/processed_omy_pick_place_task.hdf5 \
-    --action_type ik
+  --input_file ./datasets/omy_pick_place_task.hdf5 \
+  --output_file ./datasets/processed_omy_pick_place_task.hdf5 \
+  --action_type ik
 
   # Annotate dataset
   python scripts/sim2real/imitation_learning/mimic/annotate_demos.py \
-    --task RobotisLab-Real-Mimic-Pick-Place-Bottle-OMY-v0 \
-    --auto \
-    --input_file ./datasets/processed_omy_pick_place_task.hdf5 \
-    --output_file ./datasets/annotated_dataset.hdf5 \
-    --enable_cameras --headless
+  --task RobotisLab-Real-Mimic-Pick-Place-Bottle-OMY-v0 \
+  --auto \
+  --input_file ./datasets/processed_omy_pick_place_task.hdf5 \
+  --output_file ./datasets/annotated_dataset.hdf5 \
+  --enable_cameras --headless
 
   # Generate augmented dataset
   python scripts/sim2real/imitation_learning/mimic/generate_dataset.py \
-    --device cuda \
-    --num_envs 10 \
-    --task RobotisLab-Real-Mimic-Pick-Place-Bottle-OMY-v0 \
-    --generation_num_trials 500 \
-    --input_file ./datasets/annotated_dataset.hdf5 \
-    --output_file ./datasets/generated_dataset.hdf5 \
-    --enable_cameras --headless
+  --device cuda \
+  --num_envs 10 \
+  --task RobotisLab-Real-Mimic-Pick-Place-Bottle-OMY-v0 \
+  --generation_num_trials 500 \
+  --input_file ./datasets/annotated_dataset.hdf5 \
+  --output_file ./datasets/generated_dataset.hdf5 \
+  --enable_cameras --headless
 
   # Convert actions back to joint space
   python scripts/sim2real/imitation_learning/mimic/action_data_converter.py \
-    --input_file ./datasets/generated_dataset.hdf5 \
-    --output_file ./datasets/processed_generated_dataset.hdf5 \
-    --action_type joint
+  --input_file ./datasets/generated_dataset.hdf5 \
+  --output_file ./datasets/processed_generated_dataset.hdf5 \
+  --action_type joint
   ```
 
 3. **Convert IsaacLab Dataset to Lerobot Format**
@@ -171,9 +171,9 @@ You must install **robotis_dds_python**, which is required to synchronize the si
 
   ```bash
   python scripts/sim2real/imitation_learning/data_converter/OMY/isaaclab2lerobot.py \
-    --task=RobotisLab-Real-Pick-Place-Bottle-OMY-v0 \
-    --robot_type OMY \
-    --dataset_file ./datasets/<processed_generated_dataset.hdf5>  # or processed_omy_pick_place_task.hdf5
+  --task=RobotisLab-Real-Pick-Place-Bottle-OMY-v0 \
+  --robot_type OMY \
+  --dataset_file ./datasets/<processed_generated_dataset.hdf5>  # or processed_omy_pick_place_task.hdf5
   ```
 
 4. **Training and Inference with physical_ai_tools**
@@ -186,8 +186,8 @@ You must install **robotis_dds_python**, which is required to synchronize the si
   If you want to verify inference in the simulator, run the inference using physical_ai_tools, and then launch the simulator using the command below.
 
   ```bash
-    python scripts/sim2real/imitation_learning/inference/inference_demos.py \
-      --task RobotisLab-Real-Pick-Place-Bottle-OMY-v0 \
-      --robot_type OMY \
-      --enable_cameras
+  python scripts/sim2real/imitation_learning/inference/inference_demos.py \
+  --task RobotisLab-Real-Pick-Place-Bottle-OMY-v0 \
+  --robot_type OMY \
+  --enable_cameras
   ```

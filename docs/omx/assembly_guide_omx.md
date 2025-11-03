@@ -203,7 +203,7 @@ Assemble exactly as in the official manual video.
 
 ---
 
-### Video: Assembly Cable & Camera
+## Video: Assembly Cable & Camera
 <YouTube videoId="HgvYZe6BHLE" />
 
 🎉 Assembly Complete

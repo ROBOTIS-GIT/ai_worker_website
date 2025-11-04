@@ -2,37 +2,9 @@
 
 The OMX hardware platform is an entry-level Physical AI manipulator designed for `imitation learning` and `teleoperation`. It consists of two main components: the `OMX-F` follower robot arm and the `OMX-L` leader device. Built on DYNAMIXEL‑X actuators and ROS 2‑native workflows, it supports end‑to‑end IL pipelines and seamless integration with Physical AI Tools and LeRobot.
 
-![omy_f3m](/specifications/omx/main_image.png)
+![omx](/specifications/omx/main_image.png)
 
-## [Follower] Hardware Overview
-![](/specifications/omx/hw_overview_omx_f.png)
-
-| Item | OMX (Follower) |
-|:---:|:---:|
-| DOF | 5 + 1Gripper |
-| Full Reach | 400 [mm] |
-| Weight | 560 [g] |
-| Operating Voltage | 12 [VDC] |
-| Joint Resolution | -π(rad) ~ π(rad), -2,048 ~ 2,048 [pulse/rev] |
-| Joint Range | Joint 1 : -270° ~ +360°<br>Joint 2, 3 : -120° ~ +90°<br>Joint 4 : -100° ~ +100°<br>Joint 5 : ±270°<br>Joint 6 : 0° ~ + 100° |
-| DYNAMIXEL-X Specification | ID 11~13 : XL430-W250-T<br>ID 14~16 : XL330-M288-T |
-| Host Interface | USB C-Type |
-| Internal Communications | TTL |
-| Communication Baudrate | 1 [Mbps] |
-| SW | ROS 2 |
-| Payload | Full reach : 100g , Normal reach : 250g |
-
-## [Follower] Layout
-![](/specifications/omx/omx_follower_layout.png)
-
-### **Drawing Files**
-
-| File Type | Download Link |
-|-----------|---------------|
-| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2223) |
-| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2224) |
-
-## [Leader] Hardware Overview
+## [OMX-L] Hardware Overview
 
 ![](/specifications/omx/hw_overview_omx_l.png)
 
@@ -51,7 +23,7 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 | SW | ROS 2 |
 
 
-## [Leader] Layout
+## [OMX-L] Layout
 ![](/specifications/omx/omx_leader_layout.png)
 
 ### **Drawing Files**
@@ -60,3 +32,36 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 |-----------|---------------|
 | PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2225) |
 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2226) |
+
+## [OMX-L] Part List
+
+
+## [OMX-F] Hardware Overview
+![](/specifications/omx/hw_overview_omx_f.png)
+
+| Item | OMX (Follower) |
+|:---:|:---:|
+| DOF | 5 + 1Gripper |
+| Full Reach | 400 [mm] |
+| Weight | 560 [g] |
+| Operating Voltage | 12 [VDC] |
+| Joint Resolution | -π(rad) ~ π(rad), -2,048 ~ 2,048 [pulse/rev] |
+| Joint Range | Joint 1 : -270° ~ +360°<br>Joint 2, 3 : -120° ~ +90°<br>Joint 4 : -100° ~ +100°<br>Joint 5 : ±270°<br>Joint 6 : 0° ~ + 100° |
+| DYNAMIXEL-X Specification | ID 11~13 : XL430-W250-T<br>ID 14~16 : XL330-M288-T |
+| Host Interface | USB C-Type |
+| Internal Communications | TTL |
+| Communication Baudrate | 1 [Mbps] |
+| SW | ROS 2 |
+| Payload | Full reach : 100g , Normal reach : 250g |
+
+## [OMX-F] Layout
+![](/specifications/omx/omx_follower_layout.png)
+
+### **Drawing Files**
+
+| File Type | Download Link |
+|-----------|---------------|
+| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2223) |
+| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2224) |
+
+## [OMX-F] Part List

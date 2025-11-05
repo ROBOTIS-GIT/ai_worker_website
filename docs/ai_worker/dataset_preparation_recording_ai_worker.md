@@ -150,6 +150,30 @@ You can remove an instruction by simply clicking the `X` button on the right.
 | **Reset Time** | Time allocated (in seconds) for resetting between episodes |
 | **Num Episodes** | Total number of episodes to record |
 | **Optimized Save** | If enabled, uses RAM for faster dataset encoding processing |
+| **Record Rosbag2** | If enabled, records rosbag2 data along with the dataset |
+:::
+
+::: tip
+When the **Record Rosbag2** option is enabled, rosbag2 data is recorded along with the LeRobot dataset during recording.
+This feature allows you to save the raw data from the robot's camera images and joint topics.
+
+The rosbag folder is created at the following path:
+
+ `~/physical_ai_tools/docker/workspace/rosbag2/{User ID}/`
+
+A rosbag is generated for each episode with the following structure:
+```
+.
+├── 0/
+│   ├── 0_0.mcap
+│   └── metadata.yaml
+├── 1/
+│   ├── 1_0.mcap
+│   └── metadata.yaml
+(...)
+```
+
+**NOTE:** Rosbag data takes approximately 9 times more storage space compared to the LeRobot dataset.
 :::
 
 You are now ready to start recording your dataset.

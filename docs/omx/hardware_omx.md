@@ -33,9 +33,6 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 | PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2225) |
 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2226) |
 
-## [OMX-L] Part List
-
-
 ## [OMX-F] Hardware Overview
 ![](/specifications/omx/hw_overview_omx_f.png)
 
@@ -63,5 +60,3 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 |-----------|---------------|
 | PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2223) |
 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2224) |
-
-## [OMX-F] Part List

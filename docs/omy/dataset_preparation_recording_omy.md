@@ -122,7 +122,7 @@ You can remove an instruction by simply clicking the `X` button on the right.
 
 ::: tip
 When the **Record Rosbag2** option is enabled, rosbag2 data is recorded along with the LeRobot dataset during recording.
-This feature allows you to save the raw data from the robot's camera images and joint topics.
+This feature allows you to save raw data from the robot's camera image topics and joint topics.
 
 The rosbag folder is created at the following path:
 

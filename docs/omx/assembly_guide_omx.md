@@ -35,9 +35,9 @@ OMX-AI is operated as a leader–follower system. Each arm has a dedicated role 
 <!-- styles consolidated to docs/.vitepress/theme/custom.css -->
 
 
-## Leader — Assembly Guide
+## Assembly Guide — OMX-L
 
-### Motor Configuration (Leader)
+### Motor Configuration (OMX-L)
 <div style="overflow-x: auto;">
   <table style="width: 100%; text-align: center; border-collapse: separate; border-spacing: 10px 8px;">
     <thead>
@@ -116,9 +116,9 @@ Assemble exactly as in the official manual video.
 </div>
 
 
-## Follower — Assembly Guide
+## Assembly Guide — OMX-F
 
-### Motor Configuration (Follower)
+### Motor Configuration (OMX-F)
 <div style="overflow-x: auto;">
   <table style="width: 100%; text-align: center; border-collapse: separate; border-spacing: 10px 8px;">
     <thead>
@@ -198,8 +198,8 @@ Assemble exactly as in the official manual video.
 
 ---
 
-### Video: Assembly Cable & Camera
-<YouTube videoId="HgvYZe6BHLE" />
+## Video: Cable & Camera Assembly
+<YouTube videoId="mFXQkIDG69k" />
 
 🎉 Assembly Complete
 

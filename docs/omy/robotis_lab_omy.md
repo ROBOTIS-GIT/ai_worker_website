@@ -9,48 +9,53 @@ This project provides simulation environments, configuration tools, and task def
 This repository currently depends on **IsaacLab v2.2.0** or higher.
 :::
 
-## Installation
-[YouTube Guide](https://www.youtube.com/watch?v=GHkyxmOy5-I)
+## Installation (Docker)
+Docker installation provides a consistent environment with all dependencies pre-installed.
 
-1. Follow the [Isaac Lab installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html) to set up the environment.
-  Instead of the recommended local installation, you can run Isaac Lab in a Docker container to simplify dependency management and ensure consistency across systems.
+**Prerequisites:**
+- Docker and Docker Compose installed
+- NVIDIA Container Toolkit installed
+- NVIDIA GPU with appropriate drivers
 
-2. Clone the Isaac Lab Repository:
-  ```bash
-  git clone https://github.com/isaac-sim/IsaacLab.git
-  ```
+**Steps:**
+1. Clone robotis_lab repository with submodules:
 
-3. Start and enter the Docker container:
-  ```bash
-  # start
-  ./IsaacLab/docker/container.py start base
+   ```bash
+   git clone --recurse-submodules https://github.com/ROBOTIS-GIT/robotis_lab.git
+   cd robotis_lab
+   ```
 
-  # enter
-  ./IsaacLab/docker/container.py enter base
-  ```
+   If you already cloned without submodules, initialize them:
+   ```bash
+   git submodule update --init --recursive
+   ```
 
+2. Build and start the Docker container:
 
-4. Clone the robotis_lab repository (outside the IsaacLab directory):
+   ```bash
+   ./docker/container.sh start
+   ```
 
-  ```bash
-  cd /workspace && git clone https://github.com/ROBOTIS-GIT/robotis_lab.git
-  ```
+3. Enter the container:
 
-5. Install the robotis_lab Package.
+   ```bash
+   ./docker/container.sh enter
+   ```
 
-  ```bash
-  cd robotis_lab
-  python -m pip install -e source/robotis_lab
-  ```
+**Docker Commands:**
+- `./docker/container.sh start` - Build and start the container
+- `./docker/container.sh enter` - Enter the running container
+- `./docker/container.sh stop` - Stop the container
+- `./docker/container.sh logs` - View container logs
+- `./docker/container.sh clean` - Remove container and image
 
-6. Verify that the extension is correctly installed by listing all available environments:
-
-  ```bash
-  python scripts/tools/list_envs.py
-  ```
-
-  Once the installation is complete, the available training tasks will be displayed as shown below:
-  ![run list_env](/simulation/all/isaaclab_list_envs.png)
+**What's included in the Docker image:**
+- Isaac Sim 5.1.0
+- Isaac Lab v2.3.0 (from third_party submodule)
+- CycloneDDS 0.10.2 (from third_party submodule)
+- robotis_dds_python (from third_party submodule)
+- LeRobot 0.3.3 (in separate virtual environment at `~/lerobot_env`)
+- All required dependencies and configurations
 
 ## Running Examples
 
@@ -94,12 +99,6 @@ python scripts/sim2real/reinforcement_learning/inference/OMY/reach/run_omy_reach
 ### Imitation Learning
 
 ROBOTIS Lab supports imitation learning pipelines for Robotis robots. Using the OMY robot as an example, you can collect demonstration data, process it, convert it into the Lerobot dataset format, and run inference or training using **physical_ai_tools**.
-
-::: info
-You must install **robotis_dds_python**, which is required to synchronize the simulated robot with the real Leader using DDS communication.
-
-[robotis_dds_python GitHub Repository](https://github.com/ROBOTIS-GIT/robotis_dds_python)
-:::
 
 #### OMY Pick and Place Task
 
@@ -170,7 +169,7 @@ You must install **robotis_dds_python**, which is required to synchronize the si
   The processed datasets can be converted to the Lerobot dataset format, which is compatible with physical_ai_tools for training and inference.
 
   ```bash
-  python scripts/sim2real/imitation_learning/data_converter/OMY/isaaclab2lerobot.py \
+  lerobot-python scripts/sim2real/imitation_learning/data_converter/OMY/isaaclab2lerobot.py \
   --task=RobotisLab-Real-Pick-Place-Bottle-OMY-v0 \
   --robot_type OMY \
   --dataset_file ./datasets/<processed_generated_dataset.hdf5>  # or processed_omy_pick_place_task.hdf5

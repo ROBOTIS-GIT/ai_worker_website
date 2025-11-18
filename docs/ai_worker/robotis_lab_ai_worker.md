@@ -6,51 +6,56 @@
 This project provides simulation environments, configuration tools, and task definitions tailored for Robotis hardware, leveraging NVIDIA Isaac Sim’s powerful GPU-accelerated physics engine and Isaac Lab’s modular RL pipeline.
 
 ::: info
-This repository currently depends on **IsaacLab v2.0.0** or higher.
+This repository currently depends on **IsaacLab v2.2.0** or higher.
 :::
 
-## Installation
-[YouTube Guide](https://www.youtube.com/watch?v=GHkyxmOy5-I)
+## Installation (Docker)
+Docker installation provides a consistent environment with all dependencies pre-installed.
 
-1. Follow the [Isaac Lab installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html) to set up the environment.
-  Instead of the recommended local installation, you can run Isaac Lab in a Docker container to simplify dependency management and ensure consistency across systems.
+**Prerequisites:**
+- Docker and Docker Compose installed
+- NVIDIA Container Toolkit installed
+- NVIDIA GPU with appropriate drivers
 
-2. Clone the Isaac Lab Repository:
-  ```bash
-  git clone https://github.com/isaac-sim/IsaacLab.git
-  ```
+**Steps:**
+1. Clone robotis_lab repository with submodules:
 
-3. Start and enter the Docker container:
-  ```bash
-  # start
-  ./IsaacLab/docker/container.py start base
+   ```bash
+   git clone --recurse-submodules https://github.com/ROBOTIS-GIT/robotis_lab.git
+   cd robotis_lab
+   ```
 
-  # enter
-  ./IsaacLab/docker/container.py enter base
-  ```
+   If you already cloned without submodules, initialize them:
+   ```bash
+   git submodule update --init --recursive
+   ```
 
+2. Build and start the Docker container:
 
-4. Clone the robotis_lab repository (outside the IsaacLab directory):
+   ```bash
+   ./docker/container.sh start
+   ```
 
-  ```bash
-  cd /workspace && git clone https://github.com/ROBOTIS-GIT/robotis_lab.git
-  ```
+3. Enter the container:
 
-5. Install the robotis_lab Package.
+   ```bash
+   ./docker/container.sh enter
+   ```
 
-  ```bash
-  cd robotis_lab
-  python -m pip install -e source/robotis_lab
-  ```
+**Docker Commands:**
+- `./docker/container.sh start` - Build and start the container
+- `./docker/container.sh enter` - Enter the running container
+- `./docker/container.sh stop` - Stop the container
+- `./docker/container.sh logs` - View container logs
+- `./docker/container.sh clean` - Remove container and image
 
-6. Verify that the extension is correctly installed by listing all available environments:
-
-  ```bash
-  python scripts/tools/list_envs.py
-  ```
-
-  Once the installation is complete, the available training tasks will be displayed as shown below:
-  ![run list_env](/simulation/all/isaaclab_list_envs.png)
+**What's included in the Docker image:**
+- Isaac Sim 5.1.0
+- Isaac Lab v2.3.0 (from third_party submodule)
+- CycloneDDS 0.10.2 (from third_party submodule)
+- robotis_dds_python (from third_party submodule)
+- LeRobot 0.3.3 (in separate virtual environment at `~/lerobot_env`)
+- All required dependencies and configurations
 
 ## Running Examples
 ![AI Worker in NVIDIA Isaac Lab](/simulation/ai_worker/ffw_bg2_isaac_lab2.png)

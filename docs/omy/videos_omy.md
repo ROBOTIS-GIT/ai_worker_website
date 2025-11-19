@@ -13,6 +13,8 @@ Watch how OMY, our 6-DOF AI manipulator, enables real-world learning through Lea
 
 <YouTube videoId="KswAongVdSk" />
 
+<YouTube videoId="pMDhS8s0AFs" />
+
 ## Use Cases
 
 <div class="coming-soon">

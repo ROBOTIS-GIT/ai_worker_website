@@ -17,6 +17,8 @@ Explore the ROBOTIS Physical AI Lineup through our collection of videos featurin
 
 <YouTube videoId="h2O57D7KGYg" />
 
+<YouTube videoId="pFPKaru62gQ" />
+
 ## Use Cases
 
 <div class="coming-soon">

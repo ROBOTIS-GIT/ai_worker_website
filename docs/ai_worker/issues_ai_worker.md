@@ -4,7 +4,7 @@ If you encounter any issues or have questions about the AI Worker and AI Manipul
 
 - **GitHub Issues**:
   - AI Worker [https://github.com/ROBOTIS-GIT/ai_worker/issues](https://github.com/ROBOTIS-GIT/ai_worker/issues)
-- **Community Forum**: [https://forum.robotis.com/](https://forum.robotis.com/)
+- **Discord Server**: [https://discord.gg/robotis](https://discord.gg/robotis)
 - **Email for Sensitive Inquiries**: [ost@robotis.com](mailto:ost@robotis.com)
 
 Our team is committed to providing prompt assistance and will respond to your inquiries as quickly as possible.

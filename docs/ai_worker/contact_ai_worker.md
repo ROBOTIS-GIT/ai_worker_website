@@ -34,6 +34,5 @@ For the latest updates, follow us on our resources and social media channels.
   <a href="https://www.instagram.com/robotis_global/" target="_blank">Instagram</a> |
   <a href="https://www.facebook.com/robotis.company" target="_blank">Facebook</a> |
   <a href="https://www.linkedin.com/company/robotis/" target="_blank">LinkedIn</a> |
-  <a href="https://forum.robotis.com/" target="_blank">Forum</a> |
-  <a href="https://discord.gg/g2g52RVcQF" target="_blank">Discord</a>
+  <a href="https://discord.gg/robotis" target="_blank">Discord</a>
 </div>

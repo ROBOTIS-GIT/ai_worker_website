@@ -226,9 +226,9 @@ For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS D
 
 #### **Drawing Files**
 
-| MODEL |  File Type | Download Link |
-|-------|------------|---------------|
-| FFW-LG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2229) |
+|  File Type | Download Link |
+|------------|---------------|
+| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2229) |
 
 ---
 

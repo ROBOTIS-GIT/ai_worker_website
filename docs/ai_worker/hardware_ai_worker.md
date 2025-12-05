@@ -227,7 +227,7 @@ For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS D
 #### **Drawing Files**
 
 | File Type | Download Link |
-|------------|---------------|
+|-----------|---------------|
 | STEP | [📄 Download STEP](https://www.robotis.com/service/download.php?no=2229) |
 
 ---
@@ -246,6 +246,6 @@ The torso workspace is the same for both FFW-BG2 and FFW-SG2 models.
 
 #### **Drawing Files**
 
-|  File Type | Download Link |
-|------------|---------------|
-| PDF | [📦 Download PDF](https://www.robotis.com/service/download.php?no=2230) |
+| File Type | Download Link |
+|-----------|---------------|
+| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2230) |

@@ -194,15 +194,43 @@ For detailed specifications of each DYNAMIXEL model, please visit the [ROBOTIS D
   <img src="/specifications/ai_worker/dimension_ffw_sg2.png" alt="Dimensions" width="100%">
 </a>
 
+#### **Drawing Files**
+
+| File Type | Download Link |
+|-----------|---------------|
+| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2215) |
+| DWG | [💾 Download DWG](https://www.robotis.com/service/download.php?no=2232) |
+| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2228) |
+
+---
+
 ### FFW-BG2
 <a href="/specifications/ai_worker/dimension_ffw_bg2.png" target="_blank">
   <img src="/specifications/ai_worker/dimension_ffw_bg2.png" alt="Dimensions" width="100%">
 </a>
 
+#### **Drawing Files**
+
+| File Type | Download Link |
+|-----------|---------------|
+| PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2214) |
+| DWG | [💾 Download DWG](https://www.robotis.com/service/download.php?no=2231) |
+| STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2227) |
+
+---
+
 ### FFW-LG2
 <a href="/specifications/ai_worker/dimension_ffw_lg2.png" target="_blank">
   <img src="/specifications/ai_worker/dimension_ffw_lg2.png" alt="Dimensions" width="100%">
 </a>
+
+#### **Drawing Files**
+
+| MODEL |  File Type | Download Link |
+|-------|------------|---------------|
+| FFW-LG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2229) |
+
+---
 
 ### FFW-LH5
 <a href="/specifications/ai_worker/dimension_ffw_lh5.png" target="_blank">
@@ -216,16 +244,8 @@ The torso workspace is the same for both FFW-BG2 and FFW-SG2 models.
   <img src="/specifications/ai_worker/workspace.png" alt="Workspace" width="100%">
 </a>
 
+#### **Drawing Files**
 
-## **Drawing Files**
-
-### Follower
-| MODEL |  File Type | Download Link |
-|-------|------------|---------------|
-| FFW-BG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2227) |
-| FFW-SG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2228) |
-
-### Leader
-| MODEL |  File Type | Download Link |
-|-------|------------|---------------|
-| FFW-LG2 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2229) |
+|  File Type | Download Link |
+|------------|---------------|
+| PDF | [📦 Download PDF](https://www.robotis.com/service/download.php?no=2230) |

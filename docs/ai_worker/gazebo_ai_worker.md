@@ -32,7 +32,6 @@ You can launch Gazebo and RViz(Moveit) individually, or launch RViz together wit
     ```
     :::
 
-
 *   **Launch RViz with physical hardware:**
     Use this command when you want to operate the physical AI Worker hardware and monitor its status in RViz. This command will launch RViz alongside the hardware interface.
     :::tabs key:robot-type

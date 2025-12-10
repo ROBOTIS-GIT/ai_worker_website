@@ -28,7 +28,7 @@ You can launch Gazebo and RViz(Moveit) individually, or launch RViz together wit
     == SG2 Type
     ```bash
     ros2 launch ffw_description ffw_sg2_rev1.launch.py
-    #If the display looks incorrect, try adjusting the Fixed Frame
+    # If the display looks incorrect, try adjusting the Fixed Frame
     ```
     :::
 

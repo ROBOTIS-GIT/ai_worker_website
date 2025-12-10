@@ -37,11 +37,11 @@ You can launch Gazebo and RViz(Moveit) individually, or launch RViz together wit
     :::tabs key:robot-type
     == BG2 Type
     ```bash
-    ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
+    ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py start_rviz:=true
     ```
     == SG2 Type
     ```bash
-    ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
+    ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py start_rviz:=true
     ```
     :::
     *   **Note:** This command is the same as the `Follower` launch command in the [`Teleoperation Guide`](/ai_worker/operation_ai_worker) and will also launch the cameras by default. To run without cameras, you can add the `launch_cameras:=false` argument.

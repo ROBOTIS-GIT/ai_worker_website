@@ -15,8 +15,11 @@ You can launch Gazebo and RViz(Moveit) individually, or launch RViz together wit
 *   **View model in RViz only:**
     Use this command when you want to visualize the robot model in RViz without running a full simulation or the physical hardware.
     ```bash
-    ros2 launch ffw_description model_view.launch.py
-    # Launch RViz with the AI Worker model
+    #FFW-BG2
+    ros2 launch ffw_description ffw_bg2_rev4.launch.py
+
+    #FFW-SG2
+    ros2 launch ffw_description ffw_sg2_rev1.launch.py
     ```
 
 *   **Launch RViz with physical hardware:**

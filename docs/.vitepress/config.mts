@@ -60,6 +60,7 @@ export default defineConfig({
       { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
       { text: 'OMY', link: '/omy/introduction_omy' },
       { text: 'OMX', link: '/omx/introduction_omx' },
+      { text: 'Hands', link: '/hands/introduction_hands' },
       { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
       {
         text: 'OpenSource',
@@ -296,6 +297,20 @@ export default defineConfig({
             { text: 'Issues', link: '/omx/issues_omx' },
             { text: 'FAQ', link: '/omx/faq_omx' },
             { text: 'Contact Us', link: '/omx/contact_omx' }
+          ]
+        }
+      ],
+
+      '/hands/': [
+        {
+          text: 'Hands',
+          items: [
+            { text: 'Introduction', link: '/hands/introduction_hands' },
+            { text: 'Specifications', link: '/hands/hardware_hands' },
+            { text: 'Quick Start Guide', link: '/hands/quick_start_guide_hands' },
+            { text: 'Simulation', link: '/hands/simulation_hands' },
+            { text: 'Resources', link: '/hands/resources_hands' },
+            { text: 'Support', link: '/hands/support_hands' }
           ]
         }
       ],

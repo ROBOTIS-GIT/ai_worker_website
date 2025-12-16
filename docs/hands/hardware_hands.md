@@ -49,6 +49,3 @@ High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.
 |             | Actuators       | 141 ~ 165     |
 
 More detailed hardware specifications (exact joint naming, connector pinouts, and mechanical drawings) will be added here later.
-
-For the full Modbus control table of the hand actuator, see:  
-**[Hands Control Table](/hands/control_table_hands)**.

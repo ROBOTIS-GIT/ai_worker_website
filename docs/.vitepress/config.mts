@@ -312,7 +312,14 @@ export default defineConfig({
         {
           text: 'Specifications',
           items: [
-            { text: 'Hardware', link: '/hands/hardware_hands' },
+            {
+              text: 'Hardware',
+              link: '/hands/hardware_hands',
+              collapsed: false,
+              items: [
+                { text: 'Control Table', link: '/hands/control_table_hands' }
+              ]
+            },
             { text: 'Software', link: '/hands/software_hands' }
           ]
         },

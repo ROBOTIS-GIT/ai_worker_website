@@ -1,3 +1,5 @@
+# ROBOTIS HX Hand
+
 ## Specifications - Robot Hands
 
 High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.

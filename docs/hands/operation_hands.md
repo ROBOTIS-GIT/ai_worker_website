@@ -26,7 +26,7 @@ ros2 launch robotis_hand_bringup hx5_d20_right.launch.py
 
 This command will sequentially execute the following procedures:
 1. Move the ROBOTIS HX Hand to its initial position
-2. Start Follower mode 
+2. Start subscribing to the input topic
 
 The ROBOTIS HX Hand controller will now subscribe to the input topic described in the [Software Specifications](/hands/software_hands.html).
 

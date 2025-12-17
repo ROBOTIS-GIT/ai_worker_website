@@ -1,8 +1,6 @@
-# Setup Guide
+# Setup Guide for ROBOTIS Hands
 
-## Prerequisites
-
-Coming soon...
+This guide will walk you through the process of setting up your ROBOTIS HX Hand hardware and software environment.
 
 ## Hardware Setup
 
@@ -21,15 +19,83 @@ Coming soon...
 
 <img src="/quick_start_guide/hands/hardware_connection.png" width="1000"/>
 
-## Software Installation
+## Software Setup
 
-Coming soon...
+### Prerequisites
+- **Operating System**: Any Linux distribution<br>
+  - The container runs `Ubuntu 24.04 (ROS 2 Jazzy)`
+- **Container Engine**: Docker Engine
+  - Follow the [official Docker installation guide](https://docs.docker.com/engine/install/ubuntu/)
+  - Complete the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/)
+  - Required steps:
+    1. Install Docker Engine using the repository method
+    2. Add your user to the docker group
+    3. Enable Docker to start on boot
+    4. Verify installation with `docker run hello-world`
+- **Version Control**: Git
+---
 
-## Configuration
+### Configuration
 
-Coming soon...
+#### Docker Volume Management
+The Docker container uses the following volume mappings for data persistence and hardware access:
 
-## Verification
+```yaml
+volumes:
+  # Hardware and System Access
+  - /dev:/dev                                   # Hardware device access
+  - /tmp/.X11-unix:/tmp/.X11-unix:rw            # X11 display
+  - /tmp/.docker.xauth:/tmp/.docker.xauth:rw    # X11 authentication
 
-Coming soon...
+  # Development and Data Storage
+  - ./workspace:/workspace                      # Main workspace directory
+  - ../:/root/ros2_ws/src/robotis_hand/         # ROBOTIS Hand source code
+```
+
+⚠️ **Important: Data Persistence**
+- Container data is volatile and will be lost when the container is removed
+- Always store important data in the mapped volumes:
+  1. Use `/workspace` for development files
+  2. Save model outputs to the mapped output directory
+  3. Keep source code changes in the mapped volumes
+
+#### Container Management
+
+1. **Initial Setup**
+   ```bash
+   # Clone the repository
+   cd ~/  # or your preferred directory
+   git clone -b jazzy https://github.com/ROBOTIS-GIT/robotis_hand.git
+   cd robotis_hand
+   ```
+
+2. **Container Operations**
+   ```bash
+   # Start container
+   ./docker/container.sh start
+
+   # Enter running container
+   ./docker/container.sh enter
+
+   # Stop container
+   ./docker/container.sh stop
+   ```
+
+### Docker Command Guide
+
+The `container.sh` script provides easy container management:
+
+#### Available Commands
+- `help`: Display help message
+- `start`: Start container
+- `enter`: Enter running container
+- `stop`: Stop container
+
+#### Usage Examples
+```bash
+./container.sh help                 # Show help
+./container.sh start                # Start container
+./container.sh enter                # Enter container
+./container.sh stop                 # Stop container
+```
 

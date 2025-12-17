@@ -1,14 +1,4 @@
 # FAQ
+This document provides answers to frequently asked questions about the ROBOTIS HX hand.
 
-## General Questions
-
-Coming soon...
-
-## Technical Questions
-
-Coming soon...
-
-## Troubleshooting
-
-Coming soon...
-
+(TBD)

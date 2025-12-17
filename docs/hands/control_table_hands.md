@@ -125,6 +125,8 @@
 
 <script>
 (function() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+  
   function addAreaClasses() {
     const tables = document.querySelectorAll('.control-table-page table')
     tables.forEach(table => {

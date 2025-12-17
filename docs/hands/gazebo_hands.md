@@ -52,6 +52,21 @@ xhost +
     ```
     :::
 
+*   **Launch RViz with physical hardware:**
+    Use this command when you want to operate the physical ROBOTIS HX Hand hardware and monitor its status in RViz. This command will launch RViz alongside the hardware interface.
+    :::tabs key:robot-type
+    == Left
+    ```bash
+    ros2 launch robotis_hand_bringup hx5_d20_left.launch.py start_rviz:=true
+    ```
+    == Right
+    ```bash
+    ros2 launch robotis_hand_bringup hx5_d20_right.launch.py start_rviz:=true
+    ```
+    :::
+
+    *   **Note:** This command is the same as the `visualization` launch command in the [`Operation Guide`](/hands/operation_hands).
+
 ## Simulation Views
 
 ### Left Hand

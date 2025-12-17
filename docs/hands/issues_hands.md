@@ -1,9 +1,9 @@
 # Issues
 
-If you encounter any issues or have questions about the ROBOTIS HX hand, please submit them through one of our support channels:
+If you encounter any issues or have questions about the ROBOTIS HX Hand, please submit them through one of our support channels:
 
 - **GitHub Issues**:
-  - ROBOTIS HX hand [https://github.com/ROBOTIS-GIT/robotis_hand/issues](https://github.com/ROBOTIS-GIT/robotis_hand/issues)
+  - ROBOTIS HX Hand [https://github.com/ROBOTIS-GIT/robotis_hand/issues](https://github.com/ROBOTIS-GIT/robotis_hand/issues)
 - **Discord Server**: [https://discord.gg/robotis](https://discord.gg/robotis)
 - **Email for Sensitive Inquiries**: [ost@robotis.com](mailto:ost@robotis.com)
 

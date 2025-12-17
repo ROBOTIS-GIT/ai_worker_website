@@ -10,13 +10,13 @@ The ROBOTIS HX hand can be simulated in various environments using different mod
 ### Gazebo / RViz (URDF/SDF)
 For seamless integration with the ROS ecosystem, URDF (Unified Robot Description Format) and SDF (Simulation Description Format) models are provided. These are primarily used with Gazebo for physics simulation and RViz for 3D visualization of robot states and sensor data.
 
-![ROBOTIS HX hand URDF model in RViz or Gazebo](/simulation/ai_worker/ffw_bg2_urdf.png)
+![ROBOTIS HX hand URDF model in RViz or Gazebo](/simulation/hands/hands_urdf.png)
 
 *   **Model Formats**: [URDF](https://docs.ros.org/en/rolling/Tutorials/Intermediate/URDF/URDF-Main.html), [SDF](http://sdformat.org/)
 *   **Primary Tools**: [Gazebo Sim](https://gazebosim.org/), [RViz](https://docs.ros.org/en/rolling/Tutorials/Intermediate/RViz/RViz-Main.html)
 *   **Purpose**: General robotics simulation, ROS-based algorithm testing, visualization.
-*   **Link**: [ROBOTIS HX hand URDF on GitHub](https://github.com/ROBOTIS-GIT/robotis_hand/tree/main/ffw_description/urdf)
+*   **Link**: [ROBOTIS HX hand URDF on GitHub](https://github.com/ROBOTIS-GIT/robotis_hand/tree/main/robotis_hand_description/urdf)
 
-<a href="/ai_worker/gazebo_ai_worker" class="button-shortcut">
+<a href="/hands/gazebo_hands" class="button-shortcut">
 Gazebo Information
 </a>

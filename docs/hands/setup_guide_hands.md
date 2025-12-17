@@ -1,4 +1,4 @@
-# Setup Guide for ROBOTIS Hands
+# Setup Guide for Robotis Hand
 
 This guide will walk you through the process of setting up your ROBOTIS HX Hand hardware and software environment.
 

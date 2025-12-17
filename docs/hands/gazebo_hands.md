@@ -31,11 +31,11 @@ xhost +
     :::tabs key:robot-type
     == Left
     ```bash
-    ros2 launch robotis_hand_bringup hx5_d20_left_gazebo.launch.launch.py
+    ros2 launch robotis_hand_bringup hx5_d20_left_gazebo.launch.py
     ```
     == Right
     ```bash
-    ros2 launch robotis_hand_bringup hx5_d20_right_gazebo.launch.launch.py
+    ros2 launch robotis_hand_bringup hx5_d20_right_gazebo.launch.py
     ```
     :::
 
@@ -52,14 +52,41 @@ xhost +
     ```
     :::
 
-
 ## Simulation Views
 
-### FFW_BG2
+### Left Hand
 
-![FFW BG2 Simulation](/simulation/ai_worker/ffw_bg2_gazebo.png)
+![Left Hand Simulation](/simulation/hands/hands_left_gazebo.png)
 
 
-### FFW_SG2
+### Right Hand
 
-![FFW SG2 Simulation](/simulation/ai_worker/ffw_sg2_gazebo.png)
+![Right Hand Simulation](/simulation/hands/hands_right_gazebo.png)
+
+## Launch Moveit
+*   **Launch Moveit:**
+    You can use the following command to launch Moveit for ROBOTIS HX Hand:
+    :::tabs key:robot-type
+    == Left
+    ```bash
+    ros2 launch robotis_hand_moveit_config hx5_d20_left_moveit.launch.py
+    ```
+    == Right
+    ```bash
+    ros2 launch robotis_hand_moveit_config hx5_d20_right_moveit.launch.py
+    ```
+    :::
+
+    If you are using Gazebo, you should add the argument `use_sim:=true`:
+    :::tabs key:robot-type
+    == Left
+    ```bash
+    ros2 launch robotis_hand_moveit_config hx5_d20_left_moveit.launch.py use_sim:=true
+    ```
+    == Right
+    ```bash
+    ros2 launch robotis_hand_moveit_config hx5_d20_right_moveit.launch.py use_sim:=true
+    ```
+    :::
+    
+<img src="/simulation/hands/hands_moveit.gif" alt="ROBOTIS HX Hand MoveIt">

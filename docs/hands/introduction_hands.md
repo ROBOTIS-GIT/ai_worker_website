@@ -2,7 +2,7 @@
 
 <img src="/hx5_d20_rev2.png" width="500"/>
 
-The **ROBOTIS HX** series marks the future of robotic manipulation, blending mechanical precision with advanced intelligence. Built on the foundation of our reliable Dynamixel Smart Actuators, the HX utilizes a human hand-mimicking structure integrated with cutting-edge Physical AI. This design allows the hand to move beyond simple grasping. It actively perceives object texture and shape, enabling it to perform complex high-dexterity tasks with precision.
+The **ROBOTIS HX Hand** series marks the future of robotic manipulation, blending mechanical precision with advanced intelligence. Built on the foundation of our reliable Dynamixel Smart Actuators, the ROBOTIS HX Hand utilizes a human hand-mimicking structure integrated with cutting-edge Physical AI. This design allows the hand to move beyond simple grasping. It actively perceives object texture and shape, enabling it to perform complex high-dexterity tasks with precision.
 
 ## Key Features
 

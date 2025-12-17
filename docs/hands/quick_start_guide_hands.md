@@ -1,4 +1,4 @@
-## Quick Start Guide - Robot Hands
+## Quick Start Guide - ROBOTIS HX Hand
 
 This page will provide a step-by-step guide for:
 

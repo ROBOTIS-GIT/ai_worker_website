@@ -1,14 +1,11 @@
 # Release Notes
 
-## Latest Release
+## ROBOTIS HX Hand
+https://github.com/ROBOTIS-GIT/robotis_hand
 
-Coming soon...
-
-## Version History
-
-Coming soon...
-
-## Changelog
-
-Coming soon...
+### 0.0.1 (2025-11-27)
+* Added bringup scripts for system initialization
+* Added robot description files for visualization and planning
+* Added MoveIt for motion planning support
+* Contributors: Woojin Wie, Hyunwoo Nam
 

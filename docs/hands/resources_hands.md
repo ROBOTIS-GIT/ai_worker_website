@@ -1,4 +1,4 @@
-## Resources - Robot Hands
+## Resources - ROBOTIS HX Hand
 
 Here you will find:
 

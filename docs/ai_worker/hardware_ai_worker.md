@@ -74,7 +74,7 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 | Actuator                 | Joint 1~7: DYNAMIXEL-X                  | Joint 1~7: DYNAMIXEL-X                 |
 | Degrees of Freedom       | - Total: 22 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- JoyStick: 3 DOF x 2 | - Total: 60 DOF<br>- Arm: 7 DOF x 2<br>- Hand: 20 DOF x 2<br>- JoyStick: 3 DOF x 2 |
 | Exterior Materials       | Aluminum, Plastic                       | Aluminum, Plastic                      |
-| Internal Communications  | RS-485                                  | RS-485                                 |
+| Internal Communications  | TTL                                     | TTL                                    |
 | Communication Baudrate   | 4 Mbps                                  | 4 Mbps                                 |
 | Software                 | ROS 2 Support, Python, C++              | ROS 2 Support, Python, C++             |
 

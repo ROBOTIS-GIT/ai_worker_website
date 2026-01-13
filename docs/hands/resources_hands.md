@@ -1,4 +1,4 @@
-## Resources - ROBOTIS HX Hand
+## Resources - ROBOTIS Hand
 
 Here you will find:
 

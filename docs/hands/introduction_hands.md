@@ -17,7 +17,7 @@ The **ROBOTIS HX Hand** series marks the future of robotic manipulation, blendin
   <div class="feature-item">
     <div class="feature-icon">⚙️</div>
     <h3>Direct-Drive Finger Actuation</h3>
-    <p>Each finger joint is powered by a XC335-T323-T DYNAMIXEL actuator in a direct-drive configuration. This structure enhances mechanical robustness, reduces backlash, and simplifies control while ensuring reliable performance under repeated use.</p>
+    <p>Each finger joint is powered by a XM335-T323-T DYNAMIXEL actuator in a direct-drive configuration. This structure enhances mechanical robustness, reduces backlash, and simplifies control while ensuring reliable performance under repeated use.</p>
   </div>
 </div>
 <div class="features">

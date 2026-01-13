@@ -584,7 +584,7 @@ A counter representing the device's time.
 The current supply voltage. 
 
 ### Status (106)
-Represents the current status of HX.
+Represents the current status of ROBOTIS Hand.
 | Bit | Name | Description |
 |----|---|-----------|
 | 7 | - | Unused, always '0' |
@@ -631,10 +631,10 @@ Change 2 bytes from Indirect Data 2 to 3 to 561 (0x0231): TableSync1 Read Addres
 :::
 
 
-### TableSync1 ID (1024~1029), TableSync2 ID (1222~1227), TableSync3 ID (1420~1425), TableSync4 ID (1618~1623), TableSync5 ID (1816~1821), TableSync1 Read Address (1030~1040), TableSync2 Read Address (1228~1238), TableSync3 Read Address (1426~1436), TableSync4 Read Address (1624~1634), TableSync5 Read Address (1822~1832), TableSync1 Read Size (1042~1052), TableSync2 Read Size (1240~1250), TableSync3 Read Size (1438~1448), TableSync4 Read Size (1636~1646), TableSync5 Read Size (1834~1844), TableSync1 Write Address (1054~1064), TableSync2 Write Address (1252~1262), TableSync3 Write Address (1450~1460), TableSync4 Write Address (1648~1658), TableSync5 Write Address (1846~1856), TableSync1 Write Size (1066~1076), TableSync2 Write Size (1264~1274), TableSync3 Write Size (1462~1472), TableSync4 Write Size (1660~1670), TableSync5 Write Size (1858~1868), TableSync1 Read Data (1078~1149), TableSync2 Read Data (1276~1347), TableSync3 Read Data (1474~1545), TableSync4 Read Data (1672~1743), TableSync5 Read Data (1870~1941), TableSync1 Write Data (1150~1221), TableSync2 Write Data (1348~1419), TableSync3 Write Data (1546~1617), TableSync4 Write Data (1744~1815), TableSync5 Write Data (1942~2013)  
+### TableSync [ID, Read Address, Read Size, Write Address, Write Size, Read Data, Write Data] (1024~2013)
 
-Users can use this function to map specific areas of DYNAMIXEL's control table to HX's Table Sync Read Data and Table Sync Write Data areas.  
-HX's TableSync consists of 5 channels in total, with channel 1 assigned to the thumb, channel 2 to the index finger, channel 3 to the middle finger, channel 4 to the ring finger, and channel 5 to the little finger.  
+Users can use this function to map specific areas of DYNAMIXEL's control table to ROBOTIS Hand's Table Sync Read Data and Table Sync Write Data areas.  
+ROBOTIS Hand's TableSync consists of 5 channels in total, with channel 1 assigned to the thumb, channel 2 to the index finger, channel 3 to the middle finger, channel 4 to the ring finger, and channel 5 to the little finger.  
 Specify the DYNAMIXEL ID to be mapped in TableSync ID, and specify the start address and size to read from DYNAMIXEL using TableSync Read Address and TableSync Read Size. Then data will be mapped to TableSync Read Data in the order of ID settings. Also, specify the start address and size of data to write to DYNAMIXEL using TableSync Write Address and TableSync Write Size. Then TableSync Write Data will be mapped in the order of ID settings. After configuration, setting TableSync Enable to 1 activates the TableSync function, and TableSync Read Data is constantly updated, while TableSync Write Data updates the mapped control table of DYNAMIXEL when data is written.  
 If the TableSync ID value is 255, that slot is disabled. A maximum of 6 slots can be mapped per channel.  
 For example, to map Present Position and Goal Position of 2 DYNAMIXELs with IDs 1 and 2 to TableSync1 Read Data and TableSync1 Write Data, configure as follows.
@@ -661,7 +661,7 @@ When TableSync Enable is set to 1, TableSync1 Read Data 1~4 will be the same as 
 
 ### Preset Index (2016)
 When Operating Mode (33) is in Preset Motion Mode, you can select which of the 3 stored preset motions to perform.  
-Editing and saving preset motions is possible in the HX Hands menu of DYNAMIXEL Wizard 2.0.
+Editing and saving preset motions is possible in the ROBOTIS Hand's menu of DYNAMIXEL Wizard 2.0.
 
 ### Preset Motion Index (2017)
 A function that can perform linearly interpolated motion between the start and end motions of the preset motion selected in Preset Index (2016).  

@@ -1,7 +1,7 @@
 
 # Software Overview
 
-**ROBOTIS HX Hand** is a dexterous robotic hand system designed for real-world **Physical AI** research and manipulation tasks. It supports **high-DOF finger control** and enables smooth integration of both **teleoperation** and **AI policy execution**.
+**ROBOTIS Hand** is a dexterous robotic hand system designed for real-world **Physical AI** research and manipulation tasks. It supports **high-DOF finger control** and enables smooth integration of both **teleoperation** and **AI policy execution**.
 
 The platform runs on **ROS 2 Jazzy** and uses the **`ros2_control`** framework for real-time joint-level control. Each hand features **20 degrees of freedom** powered by **XM335 actuators** operating in **position mode** via TTL communication. The actuators are connected through a **Hand Controller Board** that converts RS-485 signals from the U2D2 interface to 5 TTL channels, enabling distributed control of finger joints. The system also integrates **tactile sensors** that provide feedback through `ros2_control` state interfaces, enabling rich sensory perception for manipulation tasks.
 
@@ -15,15 +15,16 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 
 ## System Architecture
 
-> The diagram below illustrates the overall control structure of ROBOTIS HX Hand.
+> The diagram below illustrates the overall control structure of ROBOTIS Hand.
 >
 >
 > External teleoperation or trajectory commands are received via ROS 2 topics, processed in real time by `ros2_control`, and executed by DYNAMIXEL Actuators via TTL.
 >
 
 ![software_architecture](/specifications/ai_worker/software_architecture.png)
-[Placeholder for now]
 
+:::tabs key:robot-type
+== HX5-D20
 | Layer | Component | Description |
 | --- | --- | --- |
 | **Motion Control** | `ros2_control`  | 100Hz joint control loop |
@@ -31,10 +32,11 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 | **Hand Controller Board** | PCB Board (RS-485) | RS-485 to 5 TTL channels |
 | **Communication** | U2D2 (RS‑485) | 4 Mbps, Dynamixel Protocol 2.0 |
 | **Sensors** | Tactile sensors | Read via ros2_control state_interfaces |
+:::
 
 ## Why `ros2_control`?
 
-`ros2_control` is a real-time, modular control framework used in ROS 2. ROBOTIS HX Hand uses it without major changes.
+`ros2_control` is a real-time, modular control framework used in ROS 2. ROBOTIS Hand uses it without major changes.
 
 - Separates control logic from hardware drivers
 - Operates at a fixed **100Hz** update rate
@@ -74,12 +76,14 @@ DYNAMIXEL Actuators
 7. **Actuators** — Execute the motion and return position/current feedback
 
 ## Controller Configuration & Joint Mapping
-
+:::tabs key:robot-type
+== HX5-D20
 | Controller | Segment | DOF | Input Topic |
 | --- | --- | --- | --- |
 | `hand_l_controller` | Left hand | 20 | `/leader/joint_trajectory_command_broadcaster_left_hand/joint_trajectory` |
 | `hand_r_controller` | Right hand | 20 | `/leader/joint_trajectory_command_broadcaster_right_hand/joint_trajectory` |
 | `joint_state_broadcaster` | All joints | – | Publishes to `/joint_states` |
+:::
 
 All controllers (except `joint_state_broadcaster`) use the **`JointTrajectoryController`** type.
 
@@ -87,6 +91,8 @@ By default, all joints operate in **position mode**.
 
 ## Controller YAML Example ([link](https://github.com/ROBOTIS-GIT/robotis_hand/blob/main/robotis_hand_bringup/config/robotis_hand_hardware_controller_manager.yaml))
 
+:::tabs key:robot-type
+== HX5-D20
 ```yaml
 /**:
   controller_manager:
@@ -223,6 +229,7 @@ By default, all joints operate in **position mode**.
         - finger_r_joint19
         - finger_r_joint20
 ```
+:::
 
 ## Debugging & Visualization Tools
 

@@ -1,4 +1,4 @@
 # FAQ
-This document provides answers to frequently asked questions about the ROBOTIS HX hand.
+This document provides answers to frequently asked questions about the ROBOTIS Hand.
 
 (TBD)

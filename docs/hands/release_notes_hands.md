@@ -1,6 +1,6 @@
 # Release Notes
 
-## ROBOTIS HX Hand
+## ROBOTIS Hand
 https://github.com/ROBOTIS-GIT/robotis_hand
 
 ### 0.0.1 (2025-11-27)

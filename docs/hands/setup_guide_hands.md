@@ -1,13 +1,15 @@
 # Setup Guide for Robotis Hand
 
-This guide will walk you through the process of setting up your ROBOTIS HX Hand hardware and software environment.
+This guide will walk you through the process of setting up your ROBOTIS Hand hardware and software environment.
 
 ## Hardware Setup
 
 ### Hardware Requirements
+:::tabs key:robot-type
+== HX5-D20
 | Required Hardware  | Qty | Description                                                                                                       | Link  |
 |--------------------|-----|-------------------------------------------------------------------------------------------------------------------|-------|
-| HX5                |  1  | Robotis Hand                                                                                                      |       |
+| HX5-D20                |  1  | ROBOTIS Hand                                                                                                      |       |
 | U2D2               |  1  | U2D2 is a small size USB communication converter that enables to control and to operate the DYNAMIXEL with the PC |[Link](https://en.robotis.com/shop_en/item.php?it_id=902-0132-000)|
 | SMPS               |  1  | Power supply and battery charging device.                                                                         |[Link](https://en.robotis.com/shop_en/item.php?it_id=903-0126-000)|
 | U2D2 Power Hub     |  1  | The U2D2 Power Hub Board combines with the U2D2 to supply a variety of external power sources to DYNAMIXELs.      |[Link](https://en.robotis.com/shop_en/item.php?it_id=902-0145-001)|
@@ -18,6 +20,7 @@ This guide will walk you through the process of setting up your ROBOTIS HX Hand 
 ### Hardware Connection
 
 <img src="/quick_start_guide/hands/hardware_connection.png" width="1000"/>
+:::
 
 ## Software Setup
 

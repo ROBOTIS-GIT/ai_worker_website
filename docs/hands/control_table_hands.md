@@ -181,7 +181,7 @@ Address is a unique value used to access specific data in the control table via 
 To read or write device data, the address of the corresponding data must be specified in the Instruction Packet.  
 For detailed information about Packets, please refer to DYNAMIXEL Protocol 2.0.  
 ::: info
-**Note**: Negative numbers follow the Two's complement rule. For detailed explanation of Two's complement, please refer to Wikipedia's Two's complement.  
+Negative numbers follow the Two's complement rule. For detailed explanation of Two's complement, please refer to Wikipedia's Two's complement.  
 :::
 
 
@@ -401,11 +401,11 @@ The firmware version of the device.
 ### ID (7)
 A unique number used to identify the device via Instruction Packets. Values from 0 to 253 (0xFD) can be used, and 254 (0xFE) is specially used as the Broadcast ID. When an Instruction Packet is sent with the Broadcast ID (254, 0xFE), commands can be sent to all devices.  
 ::: info
-**Note**: Be careful not to duplicate IDs of connected devices. If device IDs are duplicated, communication errors will occur and searching for DYNAMIXELs with unique IDs will fail.
+Be careful not to duplicate IDs of connected devices. If device IDs are duplicated, communication errors will occur and searching for DYNAMIXELs with unique IDs will fail.
 :::
 
 ::: info
-**Note**: When the ID of an Instruction packet is the Broadcast ID (0xFE), Status Packets for Read Instructions or Write Instructions are not returned regardless of the Status Return Level (15) setting. For more details, please refer to the Status Packet section in DYNAMIXEL Protocol 2.0.
+When the ID of an Instruction packet is the Broadcast ID (0xFE), Status Packets for Read Instructions or Write Instructions are not returned regardless of the Status Return Level (15) setting. For more details, please refer to the Status Packet section in DYNAMIXEL Protocol 2.0.
 :::
 
 
@@ -450,11 +450,11 @@ Communication speed for communication with the upper controller.
 
 
 ::: info
-**Note**: UART communication is not affected if the baud rate error is within 3 [%].
+UART communication is not affected if the baud rate error is within 3 [%].
 :::
 
 ::: info
-**Note**: When using U2D2, lower the USB port response delay time (Latency) for stable communication at high baud rates.
+When using U2D2, lower the USB port response delay time (Latency) for stable communication at high baud rates.
 :::
 
 
@@ -477,7 +477,7 @@ Determines the return method of Status Packets.
 
 
 ::: info
-**Note**: When the Instruction Packet ID is the Broadcast ID, Status Packets for Read Instructions or Write Instructions are not returned regardless of the Status Return Level (15) setting. For more details, please refer to the Status Packet section in DYNAMIXEL Protocol 2.0.
+When the Instruction Packet ID is the Broadcast ID, Status Packets for Read Instructions or Write Instructions are not returned regardless of the Status Return Level (15) setting. For more details, please refer to the Status Packet section in DYNAMIXEL Protocol 2.0.
 :::
 
 
@@ -490,7 +490,7 @@ Indicates whether Write information has been registered by Reg Write Instruction
 
 
 ::: info
-**Note**: When an ACTION command is executed, the Registered Instruction (16) value changes to '0'.
+When an ACTION command is executed, the Registered Instruction (16) value changes to '0'.
 :::
 
 
@@ -508,7 +508,7 @@ Communication speed for communication with DYNAMIXEL.
 
 
 ::: info
-**Note**: UART communication is not affected if the baud rate error is within 3 [%].
+UART communication is not affected if the baud rate error is within 3 [%].
 :::
 
 
@@ -522,7 +522,7 @@ Sets the operating mode of the device. Since each operating mode has different c
 
 
 ::: info
-**Note**: In Direct Control Mode, when the TableSync function is disabled, direct access and control of DYNAMIXEL is possible.
+In Direct Control Mode, when the TableSync function is disabled, direct access and control of DYNAMIXEL is possible.
 :::
 
 ### Min/Max Voltage Limit (60, 62)
@@ -544,7 +544,7 @@ Turns the LED ON/OFF.
 | 1 | Turns LED on. |
 
 ::: info
-**Note**: LED operation according to device status (conditions).
+LED operation according to device status (conditions).
 | Status | LED Operation |
 |------|-----------|
 | Booting | Flashes once |
@@ -607,14 +607,14 @@ A point to note is when setting a Control Table with a length of 2 bytes or more
 All bytes of the Control Table Item must be set as Indirect Addresses for normal operation.  
 For example, to use Indirect Data 2 as TableSync1 Read Address 1 (1030), it must be set as follows.
 
-::: info example
+::: info
 **Example 1**: Assigning 1-byte LED (65) to Indirect Data 1 (634).  
 Indirect Address 1 (122): Change to '65', which is the address value of LED.  
 Change Indirect Data 1 (634) to '1': LED (65) value also changes to '1' and LED turns on.  
 Change Indirect Data 1 (634) to '0': LED (65) value also changes to '0' and LED turns off.
 :::
 
-::: info example
+::: info
 **Example 2**: To assign 2-byte TableSync1 Read Address 1 (1030) to Indirect Data 2 (635), all consecutive 2 bytes must be assigned.  
 Indirect Address 2 (124): Change value to 1030, which is the first address of TableSync1 Read Address 1.  
 Indirect Address 3 (126): Change value to 1031, which is the second address of TableSync1 Read Address 1.  
@@ -627,7 +627,7 @@ Change 2 bytes from Indirect Data 2 to 3 to 561 (0x0231): TableSync1 Read Addres
 :::
 
 ::: info
-**Note**: To assign data of 2 bytes or more to Indirect Address, all data addresses must be assigned to Indirect Address as in Example 2.
+To assign data of 2 bytes or more to Indirect Address, all data addresses must be assigned to Indirect Address as in Example 2.
 :::
 
 
@@ -654,7 +654,7 @@ For example, to map Present Position and Goal Position of 2 DYNAMIXELs with IDs 
 When TableSync Enable is set to 1, TableSync1 Read Data 1~4 will be the same as ID1's Present Position value, and TableSync Read Data 5~8 will be the same as ID2's Present Position value. Also, writing values to TableSync Write Data 1~4 will write to ID1's Goal Position, and writing values to TableSync Write Data 5~8 will write to ID2's Goal Position.
 
 ::: info
-**Note**: Set TableSync Read Size and TableSync Write Size according to the size of the control table you want to map. Incorrect size settings may cause data corruption.
+Set TableSync Read Size and TableSync Write Size according to the size of the control table you want to map. Incorrect size settings may cause data corruption.
 :::
 
 

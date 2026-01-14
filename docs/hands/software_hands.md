@@ -21,7 +21,7 @@ It is suitable for researchers, developers, and integrators working with AI-enab
 > External teleoperation or trajectory commands are received via ROS 2 topics, processed in real time by `ros2_control`, and executed by DYNAMIXEL Actuators via TTL.
 >
 
-![software_architecture](/specifications/ai_worker/software_architecture.png)
+![software_architecture](/specifications/ai_worker/hand_software_architecture.png)
 
 :::tabs key:robot-type
 == HX5-D20

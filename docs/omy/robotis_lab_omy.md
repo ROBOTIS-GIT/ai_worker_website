@@ -98,7 +98,7 @@ python scripts/sim2real/reinforcement_learning/inference/OMY/reach/run_omy_reach
 
 ### Imitation Learning
 
-ROBOTIS Lab supports imitation learning pipelines for Robotis robots. Using the OMY robot as an example, you can collect demonstration data, process it, convert it into the Lerobot dataset format, and run inference or training using **physical_ai_tools**.
+ROBOTIS Lab supports imitation learning pipelines for ROBOTIS robots. Using the OMY robot as an example, you can collect demonstration data, process it, convert it into the Lerobot dataset format, and run inference or training using **physical_ai_tools**.
 
 #### OMY Pick and Place Task
 

@@ -246,7 +246,7 @@
     order: 10;
   }
 
-  /* 
+  /*
    * Adjust spacing to the RIGHT of the toggle switch (Theme Switcher).
    * Increase this value to add more space after the toggle.
    */
@@ -254,7 +254,7 @@
     margin-right: -20px !important;
   }
 
-  /* 
+  /*
    * Specific adjustment for Home Page to push menu right.
    * Uses :has() to check if the current page content is 'home'.
    */

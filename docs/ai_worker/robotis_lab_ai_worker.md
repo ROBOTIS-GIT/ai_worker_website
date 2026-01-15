@@ -80,7 +80,7 @@ ROBOTIS Lab supports imitation learning pipelines for ROBOTIS robots. Using the 
 
 #### FFW SG2 Pick and Place Task
 
-**Sim2Real & Sim2Real**
+**Sim2Sim & Sim2Real**
 <div class="video-container">
   <video controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;">
     <source src="/simulation/ai_worker/ffw_sg2_isaac_real_imitation_learning.mp4" type="video/mp4" />

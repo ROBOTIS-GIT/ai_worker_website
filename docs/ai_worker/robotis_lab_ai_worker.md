@@ -143,9 +143,9 @@ ROBOTIS Lab supports imitation learning pipelines for ROBOTIS robots. Using the 
 
   ```bash
    lerobot-python scripts/sim2real/imitation_learning/data_converter/isaaclab2lerobot.py \
-      --task=RobotisLab-Real-Pick-Place-FFW-SG2-v0 \
-      --robot_type FFW_SG2 \
-      --dataset_file ./datasets/ffw_sg2_final.hdf5
+   --task=RobotisLab-Real-Pick-Place-FFW-SG2-v0 \
+   --robot_type FFW_SG2 \
+   --dataset_file ./datasets/ffw_sg2_final.hdf5
   ```
 
 4. **Training and Inference with physical_ai_tools**

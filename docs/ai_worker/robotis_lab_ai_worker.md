@@ -159,7 +159,7 @@ ROBOTIS Lab supports imitation learning pipelines for ROBOTIS robots. Using the 
 
   ```bash
    python scripts/sim2real/imitation_learning/inference/inference_demos.py \
-   --task RobotisLab-Real-Pick-Place-FFW-SG2-v0  \
+   --task RobotisLab-Real-Pick-Place-FFW-SG2-v0 \
    --robot_type FFW_SG2 \
    --enable_cameras
   ```

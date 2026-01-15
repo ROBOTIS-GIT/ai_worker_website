@@ -17,6 +17,8 @@ This guide will walk you through the process of setting up your ROBOTIS Hand har
 
 <img src="/quick_start_guide/hands/hardware_requirements.png" width="1000"/>
 
+> \* Additional items shown sold separately.
+
 ### Hardware Connection
 
 <img src="/quick_start_guide/hands/hardware_connection.png" width="1000"/>

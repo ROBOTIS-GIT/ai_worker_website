@@ -306,7 +306,7 @@ export default defineConfig({
           text: 'Hands',
           items: [
             { text: 'Introduction', link: '/hands/introduction_hands' },
-            { text: 'Video Gallery', link: '/hands/videos_hands' },
+            { text: 'Video Gallery', link: '/hands/videos_hands' }
           ]
         },
         {
@@ -334,7 +334,7 @@ export default defineConfig({
           text: 'Simulation',
           items: [
             { text: 'Overview', link: '/hands/simulation_hands' },
-            { text: 'Gazebo', link: '/hands/gazebo_hands' },
+            { text: 'Gazebo', link: '/hands/gazebo_hands' }
           ]
         },
         {

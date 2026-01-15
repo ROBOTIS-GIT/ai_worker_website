@@ -1,5 +1,7 @@
 # ROBOTIS Hand
 
+<img src="/hx5_d20_rev2.png" width="400"/>
+
 ## Specifications
 
 High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.

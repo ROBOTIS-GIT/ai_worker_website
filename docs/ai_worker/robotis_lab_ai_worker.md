@@ -61,7 +61,7 @@ Docker installation provides a consistent environment with all dependencies pre-
 
 ### Reinforcement Learning
 
-#### OMY Reach Task
+#### FFW-BG2 Reach Task
 **Sim2Sim**
 ![AI Worker in NVIDIA Isaac Lab](/simulation/ai_worker/ffw_bg2_isaac_lab2.png)
 

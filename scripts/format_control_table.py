@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import argparse
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
 
-def parse_table(lines: List[str]) -> (int, int, List[List[str]]):
+def parse_table(lines: List[str]) -> Tuple[int, int, List[List[str]]]:
     start = end = -1
     rows: List[List[str]] = []
     for i, line in enumerate(lines):

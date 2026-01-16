@@ -24,7 +24,7 @@ This command will sequentially execute the following procedures:
 1. Move the ROBOTIS Hand to its initial position
 2. Start subscribing to the input topic
 
-The ROBOTIS Hand controller will now subscribe to the input topic described in the [Software Specifications](/hands/software_hands.html).
+The ROBOTIS Hand controller will now subscribe to the input topic described in the [Software Specifications](/hands/software_hands.html#controller-configuration-joint-mapping).
 
 For visualization, add the option `start_rviz:=true` at the end of the command:
 :::tabs key:robot-type

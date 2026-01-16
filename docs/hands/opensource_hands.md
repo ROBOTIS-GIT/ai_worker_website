@@ -6,13 +6,13 @@ ROBOTIS Hand is an open-source project that provides comprehensive resources for
 
 | Resource | Description | Link |
 |----------|-------------|------|
-| **ROBOTIS Hand** | ROS 2 Packages for for operating the ROBOTIS Hand | [GitHub](https://github.com/ROBOTIS-GIT/robotis_hand) |
+| **ROBOTIS Hand** | ROS 2 Packages for operating the ROBOTIS Hand | [GitHub](https://github.com/ROBOTIS-GIT/robotis_hand) |
 | **Physical AI Tools** | ROS 2 Packages for generating datasets in LeRobotDataset format | [GitHub](https://github.com/ROBOTIS-GIT/physical_ai_tools) |
 | **Simulation Models** | URDF(ROS) model file for simulation | [URDF](https://github.com/ROBOTIS-GIT/robotis_hand/tree/main/robotis_hand_description/urdf) |
-| **Drawing Files** | Hardware design files and technical drawings | TBD |
+| **Drawing Files** | Hardware design files and technical drawings | **HX5-D20:**<br>[PDF](https://www.robotis.com/service/downloadcenter.php)<br>[DWG](https://www.robotis.com/service/downloadcenter.php) / [STEP](https://www.robotis.com/service/downloadcenter.php)<br> |
 | **AI Models & Datasets** | Pre-trained models and training datasets | [Hugging Face](https://huggingface.co/ROBOTIS) |
 | **Docker Images** | Ready-to-use development environments | [Docker Hub](https://hub.docker.com/r/robotis/ros/tags) |
 | **Documentation** | Official manual and documentation | [ai.robotis.com](https://ai.robotis.com) |
-| **Tutorial Videos** | Educational content and demonstrations | TBD |
+| **Tutorial Videos** | Educational content and demonstrations | [YouTube](https://www.youtube.com/@ROBOTISOpenSourceTeam) |
 
 We welcome contributions from the community to help improve and expand the ROBOTIS Hand ecosystem.

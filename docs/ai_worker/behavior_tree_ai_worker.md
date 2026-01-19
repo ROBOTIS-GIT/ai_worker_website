@@ -326,28 +326,3 @@ ros2 launch physical_ai_bt bt_node.launch.py \
   robot_type:=ffw_sg2_rev1 \
   tree_xml:=my_custom_tree.xml
 ```
-
-### Deploying Your Custom Trees
-
-1. **Save your XML file** created in Groot
-2. **Copy to the trees directory**:
-   ```bash
-   cp my_tree.xml ~/physical_ai_tools/physical_ai_bt/trees/
-   ```
-3. **Launch with your tree**:
-   ```bash
-   ros2 launch physical_ai_bt bt_node.launch.py tree_xml:=my_tree.xml
-   ```
-
-## Monitoring Execution with Groot
-
-Groot can connect to the running behavior tree for real-time monitoring:
-
-1. **Launch your behavior tree** on the AI Worker
-2. **Open Groot** on your development machine
-3. **Connect to the robot** using Groot's monitoring feature
-4. **Watch the tree execution** with visual feedback
-
-::: tip
-Real-time monitoring requires network connectivity between your development machine and the AI Worker. Ensure both are on the same network.
-:::

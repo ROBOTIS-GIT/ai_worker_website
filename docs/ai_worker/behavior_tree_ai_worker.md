@@ -68,7 +68,6 @@ The AI Worker provides several built-in nodes that you can use in Groot:
 - Rotates the mobile base by a specified angle
 - Parameters:
   - `angle_deg`: Target rotation in degrees (positive = CCW, negative = CW)
-- Returns SUCCESS when rotation completes
 
 **MoveArms**
 - Controls both arms simultaneously using trajectory commands
@@ -77,7 +76,6 @@ The AI Worker provides several built-in nodes that you can use in Groot:
   - `right_positions`: 8 joint positions for right arm
   - `duration`: Trajectory execution time in seconds
   - `position_threshold`: Position tolerance for completion
-- Returns SUCCESS when both arms reach target positions
 
 **MoveHead**
 - Controls head joint positions
@@ -85,7 +83,6 @@ The AI Worker provides several built-in nodes that you can use in Groot:
   - `head_positions`: Target positions for head joints
   - `duration`: Trajectory execution time in seconds
   - `position_threshold`: Position tolerance for completion
-- Returns SUCCESS when head reaches target position
 
 **MoveLift**
 - Controls the lift mechanism
@@ -93,7 +90,6 @@ The AI Worker provides several built-in nodes that you can use in Groot:
   - `lift_position`: Target lift position
   - `duration`: Trajectory execution time in seconds
   - `position_threshold`: Position tolerance for completion
-- Returns SUCCESS when lift reaches target position
 
 ## Creating Behavior Trees with Groot
 

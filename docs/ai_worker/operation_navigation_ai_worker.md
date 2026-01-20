@@ -85,7 +85,7 @@ All commands below run on the `robot PC` in a new terminal after the bringup abo
       - **Keyboard teleop:** In a new terminal, run:
         ```bash
         cd ~/ros2_ws/src/ai_worker/ffw_teleop/ffw_teleop
-        python3 mobile_control.py
+        python3 mobile_teleop.py
         ```
         Drive with the keyboard to explore and build the map.
 

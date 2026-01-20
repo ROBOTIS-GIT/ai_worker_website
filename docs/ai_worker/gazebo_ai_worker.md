@@ -1,7 +1,7 @@
 # Getting Started with Gazebo
 
 ## Overview
-You can launch Gazebo and RViz(Moveit) individually, or launch RViz together with the physical hardware.
+You can launch Gazebo and RViz (Moveit) individually, launch RViz together with physical hardware, and now run Nav2 with SLAM Toolbox in simulation to map the environment and test navigation before deploying to the robot.
 
 ## Launch Gazebo
 
@@ -71,3 +71,59 @@ You can launch Gazebo and RViz(Moveit) individually, or launch RViz together wit
     # Launch Moveit in simulation mode
     ```
 <img src="/release_note/ai_worker/ffw_moveit.gif" alt="AI Worker MoveIt">
+
+
+## Launch Nav2 in Gazebo
+
+Use Nav2 with the Gazebo simulation to test autonomous navigation before running on hardware.
+
+1. **Start Gazebo simulation:** Use one of the Gazebo launch commands.
+    :::tabs key:robot-type
+    == BG2 Type
+    ```bash
+    ros2 launch ffw_bringup ffw_bg2_follower_ai_gazebo.launch.py
+    ```
+    == SG2 Type
+    ```bash
+    ros2 launch ffw_bringup ffw_sg2_follower_ai_gazebo.launch.py
+    ```
+    :::
+
+#### Gazebo View in the default world
+![Gazebo Nav2 View](/simulation/ai_worker/gazebo_view1.png)
+
+2. **Launch Nav2:**
+
+   A default map matching the current gazebo world is provided. 
+   Remap with SLAM Toolbox if you change the world or want a new map.
+
+   - **Build a map with SLAM Toolbox:**
+     ```bash
+     ros2 launch ffw_navigation navigation.launch.py use_slam:=true use_sim_time:=true
+     ```
+     Nav2 starts with SLAM enabled so you can map while driving. In RViz, send goals with `2D Goal Pose` to explore and expand the map.
+
+   #### SLAM Mapping Example  
+   ![Nav2 SLAM Mapping](/simulation/ai_worker/nav2_slamtoolbox1.gif)
+
+   #### Save a generated map
+    If you ran SLAM and want to reuse the map, save it with:
+    ```bash
+    cd ~/ros2_ws/src/ai_worker/ffw_navigation/maps
+    ros2 run nav2_map_server map_saver_cli -f ./map
+    ```
+    This produces `map.yaml` and `map.pgm` in the `maps` directory. Change the path with `-f /path/to/map_name` if needed.
+
+   #### Saved Map Example
+   Example of a saved occupancy grid generated with `map_saver_cli`:
+
+   ![Saved map example](/simulation/ai_worker/my_map.png)
+   The map uses a two-dimensional Occupancy Grid Map (OGM). White is free space, black is occupied, and gray is unknown.
+
+## Navigation Using a Saved Map
+
+- **Use a saved or default map:**
+  ```bash
+  ros2 launch ffw_navigation navigation.launch.py use_sim_time:=true
+  ```
+  Set the initial pose in RViz with `2D Pose Estimate` so AMCL can localize. After Nav2 is running, send a goal in RViz using `2D Goal Pose`. The robot will plan and drive to the target pose; if SLAM is enabled, the map updates in real time.

@@ -100,7 +100,14 @@ export default defineConfig({
           text: 'Quick Start Guide',
           items: [
             { text: 'Setup Guide', link: '/ai_worker/setup_guide_ai_worker' },
-            { text: 'Operation Guide', link: '/ai_worker/operation_ai_worker' }
+            {
+              text: 'Operation Guide',
+              link: '/ai_worker/operation_ai_worker',
+              items: [
+                { text: 'Teleoperation', link: '/ai_worker/operation_teleoperation_ai_worker' },
+                { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' }
+              ]
+            }
           ]
         },
         {

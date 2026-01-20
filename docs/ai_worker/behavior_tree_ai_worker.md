@@ -91,6 +91,17 @@ The AI Worker provides several built-in nodes that you can use in Groot:
   - `duration`: Trajectory execution time in seconds
   - `position_threshold`: Position tolerance for completion
 
+#### Extensibility
+
+The behavior tree system is fully extensible. You can create and add your own custom nodes to suit your application needs:
+
+- **Custom Action Nodes**: Implement specific robot behaviors (e.g., GraspObject, OpenDoor, ScanEnvironment)
+- **Custom Control Nodes**: Create specialized control flow patterns (e.g., Fallback, Parallel, ReactiveSequence)
+- **Custom Decorator Nodes**: Add node modifiers (e.g., Retry, Timeout, Inverter, ForceSuccess)
+- **Custom Condition Nodes**: Define state checks and preconditions (e.g., IsBatteryLow, IsObjectVisible)
+
+See the [Creating Custom Nodes](#step-1-implement-custom-python-nodes) section below for detailed implementation instructions.
+
 ## Creating Behavior Trees with Groot
 
 Creating a complete behavior tree involves two main steps: implementing the Python nodes and designing the tree structure in Groot.

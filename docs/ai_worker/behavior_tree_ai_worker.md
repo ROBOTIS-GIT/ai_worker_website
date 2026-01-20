@@ -99,7 +99,7 @@ Creating a complete behavior tree involves two main steps: implementing the Pyth
 
 Before creating your tree in Groot, you need to implement the actual behavior logic in Python.
 
-#### 1. Custom Action Node
+#### 1. Custom Node
 
 Create a new Python file for your custom action (e.g., `grasp_object.py`):
 
@@ -132,40 +132,12 @@ class GraspObject(BaseAction):
         # Reset any internal state if needed
 ```
 
-#### 2. Custom Condition Node
-
-Create a condition node to check robot state (e.g., `battery_check.py`):
-
-```python
-from physical_ai_bt.actions.base_action import BTNode, NodeStatus
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from rclpy.node import Node
-
-class IsBatteryLow(BTNode):
-    def __init__(self, node: 'Node', threshold: float = 20.0):
-        super().__init__(node, name='IsBatteryLow')
-        self.threshold = threshold
-
-        # Subscribe to battery status topic
-        self.current_battery = 100.0  # Example initial value
-
-    def tick(self) -> NodeStatus:
-        if self.current_battery < self.threshold:
-            self.log_warn(f'Battery low: {self.current_battery}')
-            return NodeStatus.SUCCESS
-        else:
-            return NodeStatus.FAILURE
-```
-
-#### 3. Register Your Custom Nodes
+#### 2. Register Your Custom Nodes
 
 Add your nodes to `bt_nodes_loader.py`:
 
 ```python
 from physical_ai_bt.actions import GraspObject
-from physical_ai_bt.actions import IsBatteryLow
 
 # In TreeLoader.__init__()
 self.action_types: Dict[str, Type[BaseAction]] = {
@@ -201,11 +173,6 @@ The `TreeNodesModel` section tells Groot which nodes are available and what para
       <input_port name="object_id" default="object_1"/>
       <input_port name="force" default="10.0"/>
     </Action>
-
-    <!-- Your custom condition node -->
-    <Condition ID="IsBatteryLow">
-      <input_port name="threshold" default="20.0"/>
-    </Condition>
   </TreeNodesModel>
 </root>
 ```
@@ -227,9 +194,6 @@ Here is a complete example using both built-in and custom nodes:
 <root BTCPP_format="3" main_tree_to_execute="PickAndPlace">
   <BehaviorTree ID="PickAndPlace">
     <Sequence name="PickAndPlace">
-
-      <!-- Check battery before starting -->
-      <IsBatteryLow name="CheckBattery" threshold="15.0"/>
 
       <!-- Move arms to pre-grasp position -->
       <MoveArms name="PreGrasp"
@@ -262,9 +226,6 @@ Here is a complete example using both built-in and custom nodes:
       <input_port name="object_id" default="object_1"/>
       <input_port name="force" default="10.0"/>
     </Action>
-    <Condition ID="IsBatteryLow">
-      <input_port name="threshold" default="20.0"/>
-    </Condition>
   </TreeNodesModel>
 </root>
 ```

@@ -6,7 +6,7 @@ Behavior Trees (BTs) provide a powerful framework for designing complex robot be
 
 ## Before You Begin
 
-Before creating behavior trees for the AI Worker, you should become familiar with Groot and basic Behavior Tree concepts.
+Before creating behavior trees for the AI Worker, you should become familiar with Groot 2 and basic Behavior Tree concepts.
 
 ### 1. Learn Behavior Tree Basics
 
@@ -19,16 +19,34 @@ Visit the [BehaviorTree.CPP Introduction](https://www.behaviortree.dev/docs/intr
 - Basic node types and their purposes
 :::
 
-### 2. Install Groot
+### 2. Install Groot 2
 
-Groot is available for Linux, Windows, and macOS. Please refer to the official website for the latest downloads and comprehensive installation guides:
+Groot 2 is available on Linux. Please refer to the official website for the latest downloads and comprehensive installation guides:
 
 - **Official Website**: [https://www.behaviortree.dev/groot](https://www.behaviortree.dev/groot)
+
+Once installed, you can launch Groot 2 from the terminal:
+
+```bash
+cd ~/Groot2/bin && ./groot2
+```
+
+::: tip
+If your Groot 2 directory is different, update the path accordingly.
+:::
+
+When you run the above command, the Groot 2 main window will appear:
+
+![Groot 2 Main Window](/advanced_features/behavior_tree/groot_main_page.png)
 
 
 ## AI Worker Behavior Tree Implementation
 
 The AI Worker includes the `physical_ai_bt` ROS 2 package, which provides a complete Python-based behavior tree system specifically designed for robotic manipulation and navigation tasks.
+
+::: info
+This guide assumes the AI Worker software is installed at `~/physical_ai_tools/`. If you installed it in a different location, replace `~/physical_ai_tools/` with your actual installation path throughout this guide.
+:::
 
 ### Package Overview
 
@@ -52,24 +70,29 @@ physical_ai_bt/
 
 ### Available Nodes
 
-The AI Worker provides several built-in nodes that you can use in Groot:
+The AI Worker provides several built-in nodes that you can use in Groot 2.
+
+::: info
+An example behavior tree is provided in `~/physical_ai_tools/physical_ai_bt/trees/ffw_sg2_rev1.xml`. You can open this file in Groot 2 to see how the built-in nodes are used to create a complete robot control sequence.
+
+When you open this file in Groot 2, you will see the tree structure as shown below:
+
+![Groot 2 Example Tree](/advanced_features/behavior_tree/groot_example_page.png)
+:::
 
 #### Control Nodes
 
-**Sequence**
+**1. Sequence**
 - Executes children sequentially from left to right
-- Returns SUCCESS if all children succeed
-- Returns FAILURE if any child fails
-- Returns RUNNING while executing
 
 #### Action Nodes
 
-**Rotate**
+**1. Rotate**
 - Rotates the mobile base by a specified angle
 - Parameters:
   - `angle_deg`: Target rotation in degrees (positive = CCW, negative = CW)
 
-**MoveArms**
+**2. MoveArms**
 - Controls both arms simultaneously using trajectory commands
 - Parameters:
   - `left_positions`: 8 joint positions for left arm
@@ -77,14 +100,14 @@ The AI Worker provides several built-in nodes that you can use in Groot:
   - `duration`: Trajectory execution time in seconds
   - `position_threshold`: Position tolerance for completion
 
-**MoveHead**
+**3. MoveHead**
 - Controls head joint positions
 - Parameters:
   - `head_positions`: Target positions for head joints
   - `duration`: Trajectory execution time in seconds
   - `position_threshold`: Position tolerance for completion
 
-**MoveLift**
+**4. MoveLift**
 - Controls the lift mechanism
 - Parameters:
   - `lift_position`: Target lift position
@@ -102,19 +125,28 @@ The behavior tree system is fully extensible. You can create and add your own cu
 
 See the [Creating Custom Nodes](#step-1-implement-custom-python-nodes) section below for detailed implementation instructions.
 
-## Creating Behavior Trees with Groot
+## Creating Behavior Trees with Groot 2
 
-Creating a complete behavior tree involves two main steps: implementing the Python nodes and designing the tree structure in Groot.
+Creating a complete behavior tree involves two main steps: implementing the Python nodes and designing the tree structure in Groot 2.
 
 ### Step 1: Implement Custom Python Nodes
 
-Before creating your tree in Groot, you need to implement the actual behavior logic in Python.
+Before creating your tree in Groot 2, you need to implement the actual behavior logic in Python.
+
+::: info
+Depending on the node type, place your custom Python files in the appropriate directory:
+- **Action Nodes**: `~/physical_ai_tools/physical_ai_bt/physical_ai_bt/actions/`
+- **Control Nodes**: `~/physical_ai_tools/physical_ai_bt/physical_ai_bt/controls/`
+- **Decorator Nodes**: `~/physical_ai_tools/physical_ai_bt/physical_ai_bt/decorators/` (create if needed)
+- **Condition Nodes**: `~/physical_ai_tools/physical_ai_bt/physical_ai_bt/conditions/` (create if needed)
+:::
 
 #### 1. Custom Node
 
-Create a new Python file for your custom action (e.g., `grasp_object.py`):
+Create a new Python file for your custom action in the actions directory:
 
 ```python
+# Example: grasp_object.py
 from physical_ai_bt.actions.base_action import BaseAction, NodeStatus
 from typing import TYPE_CHECKING
 
@@ -123,16 +155,22 @@ if TYPE_CHECKING:
 
 class GraspObject(BaseAction):
 
-    def __init__(self, node: 'Node', object_id: str = "object_1"):
+    def __init__(
+        self,
+        node: 'Node',
+        object_id: str = "object_1",
+        force: float = 10.0,
+    ):
         super().__init__(node, name='GraspObject')
         self.object_id = object_id
+        self.force = force
 
         # Initialize your ROS 2 publishers/subscribers here
 
-        self.log_info(f'Initialized with object_id={object_id}')
+        self.log_info(f'Initialized with object_id={object_id}, force={force}')
 
     def tick(self) -> NodeStatus:
-        self.log_info(f'Attempting to grasp {self.object_id}')
+        self.log_info(f'Attempting to grasp {self.object_id} with force {self.force}')
 
         # Implement your grasping logic here
         # For this example, we'll simulate success
@@ -145,7 +183,9 @@ class GraspObject(BaseAction):
 
 #### 2. Register Your Custom Nodes
 
-Add your nodes to `bt_nodes_loader.py`:
+Add your nodes to the TreeLoader class:
+
+**File location**: `~/physical_ai_tools/physical_ai_bt/physical_ai_bt/bt_nodes_loader.py`
 
 ```python
 from physical_ai_bt.actions import GraspObject
@@ -158,15 +198,17 @@ self.action_types: Dict[str, Type[BaseAction]] = {
     # ...
 }
 
-# For condition nodes, add a similar registry if needed
+# For condition, control, decoration nodes, add a similar registry if needed
 ```
 
 ### Step 2: Define Node Models in XML
 
-Create an XML file that defines your custom nodes for Groot:
+Create an XML file that defines your custom nodes for Groot 2.
+
+**File location**: `~/physical_ai_tools/physical_ai_bt/trees/your_custom_tree.xml`
 
 ::: tip
-The `TreeNodesModel` section tells Groot which nodes are available and what parameters they accept. This must match your Python implementation.
+The `TreeNodesModel` section tells Groot 2 which nodes are available and what parameters they accept. This must match your Python implementation.
 :::
 
 ```xml
@@ -177,24 +219,27 @@ The `TreeNodesModel` section tells Groot which nodes are available and what para
     <!-- Your tree structure goes here -->
   </BehaviorTree>
 
-  <!-- Node model definitions for Groot -->
+  <!-- Node model definitions for Groot 2 -->
   <TreeNodesModel>
     <!-- Your custom action node -->
     <Action ID="GraspObject">
       <input_port name="object_id" default="object_1"/>
-      <input_port name="force" default="10.0"/>
     </Action>
   </TreeNodesModel>
 </root>
 ```
 
-### Step 3: Design Your Tree in Groot
+### Step 3: Design Your Tree in Groot 2
 
-1. **Open the XML file in Groot**
-2. **Add nodes from the palette** to the canvas
-3. **Connect nodes** to build your behavior hierarchy
-4. **Set parameters** for each action node
-5. **Save the XML** file
+1. Open the XML file in Groot 2. As shown in the image below, you can see that `GraspObject` has been added to the Action nodes in the bottom-left palette.
+![Groot 2 Example Tree 2](/advanced_features/behavior_tree/groot_example_page_2.png)
+2. Add nodes from the palette to the canvas. Click and drag the desired action from the palette and drop it onto the canvas.
+![Groot 2 Example Tree 3](/advanced_features/behavior_tree/groot_example_page_3.png)
+3. Connect nodes to build your behavior hierarchy.
+![Groot 2 Example Tree 4](/advanced_features/behavior_tree/groot_example_page_4.png)
+4. Set parameters for each action node.
+![Groot 2 Example Tree 5](/advanced_features/behavior_tree/groot_example_page_5.png)
+5. Save the XML file
 
 ### Step 4: Example - Complete Custom Tree
 
@@ -249,7 +294,7 @@ Before running behavior trees, you need to launch the AI Worker's follower node 
 
 #### 1. Launch the Follower
 
-::: tabs key:robot-type
+:::tabs key:robot-type
 == FFW-SG2
 ```bash
 ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
@@ -272,7 +317,7 @@ For more details on setting up and operating the AI Worker, refer to the [Setup 
 The behavior tree will start executing immediately upon launch. Ensure the robot is in a safe position and the surrounding area is clear before running this command.
 :::
 
-::: tabs key:robot-type
+:::tabs key:robot-type
 == FFW-SG2
 ```bash
 ros2 launch physical_ai_bt bt_node.launch.py robot_type:=ffw_sg2_rev1
@@ -296,5 +341,6 @@ Example with custom tree file:
 ```bash
 ros2 launch physical_ai_bt bt_node.launch.py \
   robot_type:=ffw_sg2_rev1 \
-  tree_xml:=my_custom_tree.xml
+  tree_xml:=my_custom_tree.xml \
+  tick_rate:=15.0
 ```

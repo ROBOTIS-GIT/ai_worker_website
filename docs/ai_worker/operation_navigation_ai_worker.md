@@ -8,7 +8,7 @@ This guide shows how to bring up the AI Worker's navigation stack so the robot c
 - Connect to the robot PC (keyboard/monitor or SSH) and make sure the battery is charged.
 
 ## Bring Up the Robot
-Before launching Nav2, start the SG2 follower using the commands from the Teleoperation Guide. 
+Before launching Nav2, start the SG2 follower using the commands from the Teleoperation Guide.
 Run these inside the Docker container:
 ```bash
 cd ~/ai_worker
@@ -34,7 +34,7 @@ RViz cannot be displayed over plain SSH. Use noVNC to launch RViz and view it fr
     ```bash
     cd /workspace/docker-novnc
     ```
-3. noVNC setup (First-Time): 
+3. noVNC setup (First-Time):
     ```bash
     ./install.sh
     ```
@@ -53,8 +53,8 @@ RViz cannot be displayed over plain SSH. Use noVNC to launch RViz and view it fr
 ## Lidar Scan Visualization
 First, use RViz (via noVNC) to confirm lidar scans are visible around the robot.
 
-![Lidar scan visualization](/simulation/ai_worker/laserscan.png)  
-Lidar scan values visualized in RViz. Use this view to confirm the sensor is publishing after connecting via noVNC.  
+![Lidar scan visualization](/simulation/ai_worker/laserscan.png)
+Lidar scan values visualized in RViz. Use this view to confirm the sensor is publishing after connecting via noVNC.
 ::: warning
 In RViz, set the `scan` topic Reliability Policy to `Best Effort` for this display.
 :::
@@ -74,13 +74,13 @@ All commands below run on the `robot PC` in a new terminal after the bringup abo
     :::
 
 
-    The package includes only a default Gazebo map. create your own map with SLAM Toolbox for your environment.
+    The package includes only a default Gazebo map. Create your own map with SLAM Toolbox for your environment.
 
      **Build a map with SLAM Toolbox:**
       ```bash
       ros2 launch ffw_navigation navigation.launch.py use_slam:=true
       ```
-      Nav2 starts with SLAM enabled so you can map while driving. <u>Pick **one** of the two exploration methods below:</u> 
+      Nav2 starts with SLAM enabled so you can map while driving. <u>Pick **one** of the two exploration methods below:</u>
       - **Autonomous:** In RViz, send a goal with `2D Goal Pose`. the robot will plan, drive, and expand the map as it moves.
       - **Keyboard teleop:** In a new terminal, run:
         ```bash
@@ -114,10 +114,10 @@ All commands below run on the `robot PC` in a new terminal after the bringup abo
   if SLAM is enabled, the map updates in real time.
 
 ### RViz Goal on Saved Map
-![RViz goal and path with saved map](/simulation/ai_worker/aiw_rviz2.gif)  
+![RViz goal and path with saved map](/simulation/ai_worker/aiw_rviz2.gif)
 Setting `2D Goal Pose` in RViz on a saved map. the plan is sent to the real robot for execution.
 ### Real-World Execution
-![Real robot following planned path](/simulation/ai_worker/navigation_curve.gif)  
+![Real robot following planned path](/simulation/ai_worker/navigation_curve.gif)
 AI Worker following the planned curved path on the saved map and driving to the goal.
 
 ## Troubleshooting

@@ -159,18 +159,16 @@ class GraspObject(BaseAction):
         self,
         node: 'Node',
         object_id: str = "object_1",
-        force: float = 10.0,
     ):
         super().__init__(node, name='GraspObject')
         self.object_id = object_id
-        self.force = force
 
         # Initialize your ROS 2 publishers/subscribers here
 
-        self.log_info(f'Initialized with object_id={object_id}, force={force}')
+        self.log_info(f'Initialized with object_id={object_id}')
 
     def tick(self) -> NodeStatus:
-        self.log_info(f'Attempting to grasp {self.object_id} with force {self.force}')
+        self.log_info(f'Attempting to grasp {self.object_id}')
 
         # Implement your grasping logic here
         # For this example, we'll simulate success
@@ -258,7 +256,7 @@ Here is a complete example using both built-in and custom nodes:
         duration="2.0"/>
 
       <!-- Grasp the object -->
-      <GraspObject name="Grasp" object_id="cube_1" force="15.0"/>
+      <GraspObject name="Grasp" object_id="cube_1"/>
 
       <!-- Rotate to target location -->
       <Rotate name="RotateToTarget" angle_deg="90.0"/>
@@ -280,7 +278,6 @@ Here is a complete example using both built-in and custom nodes:
     <!-- Custom nodes -->
     <Action ID="GraspObject">
       <input_port name="object_id" default="object_1"/>
-      <input_port name="force" default="10.0"/>
     </Action>
   </TreeNodesModel>
 </root>

@@ -239,7 +239,7 @@ The `TreeNodesModel` section tells Groot 2 which nodes are available and what pa
 ![Groot 2 Example Tree 4](/advanced_features/behavior_tree/groot_example_page_4.png)
 4. Set parameters for each action node.
 ![Groot 2 Example Tree 5](/advanced_features/behavior_tree/groot_example_page_5.png)
-5. Save the XML file
+5. Save the XML file.
 
 ### Step 4: Example - Complete Custom Tree
 
@@ -285,6 +285,9 @@ Here is a complete example using both built-in and custom nodes:
   </TreeNodesModel>
 </root>
 ```
+
+You have now completed the behavior tree design. Your custom tree is ready to run on the AI Worker. Proceed to the next section to learn how to launch and execute your behavior tree.
+
 
 ## Running Behavior Trees on AI Worker
 

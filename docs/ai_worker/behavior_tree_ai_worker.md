@@ -46,6 +46,8 @@ The AI Worker includes the `physical_ai_bt` ROS 2 package, which provides a comp
 
 ::: info
 This guide assumes the AI Worker software is installed at `~/physical_ai_tools/`. If you installed it in a different location, replace `~/physical_ai_tools/` with your actual installation path throughout this guide.
+
+Currently, behavior tree examples are provided for `ffw_sg2_rev1` only. Examples for FFW-BG2, OMY, and OMX will be added in future updates.
 :::
 
 ### Package Overview
@@ -294,16 +296,9 @@ Before running behavior trees, you need to launch the AI Worker's follower node 
 
 #### 1. Launch the Follower
 
-:::tabs key:robot-type
-== FFW-SG2
 ```bash
 ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
 ```
-== FFW-BG2
-```bash
-ros2 launch ffw_bringup ffw_bg2_follower_ai.launch.py
-```
-:::
 
 Wait until the follower is fully initialized.
 
@@ -317,16 +312,9 @@ For more details on setting up and operating the AI Worker, refer to the [Setup 
 The behavior tree will start executing immediately upon launch. Ensure the robot is in a safe position and the surrounding area is clear before running this command.
 :::
 
-:::tabs key:robot-type
-== FFW-SG2
 ```bash
 ros2 launch physical_ai_bt bt_node.launch.py robot_type:=ffw_sg2_rev1
 ```
-== FFW-BG2
-```bash
-ros2 launch physical_ai_bt bt_node.launch.py robot_type:=ffw_bg2_rev4
-```
-:::
 
 ### Configuration
 

@@ -198,7 +198,7 @@ self.action_types: Dict[str, Type[BaseAction]] = {
     # ...
 }
 
-# For condition, control, decoration nodes, add a similar registry if needed
+# For condition, control, decorator nodes, add a similar registry if needed
 ```
 
 ### Step 2: Define Node Models in XML
@@ -232,13 +232,21 @@ The `TreeNodesModel` section tells Groot 2 which nodes are available and what pa
 ### Step 3: Design Your Tree in Groot 2
 
 1. Open the XML file in Groot 2. As shown in the image below, you can see that `GraspObject` has been added to the Action nodes in the bottom-left palette.
-![Groot 2 Example Tree 2](/advanced_features/behavior_tree/groot_example_page_2.png)
+
+   ![Groot 2 Example Tree 2](/advanced_features/behavior_tree/groot_example_page_2.png)
+
 2. Add nodes from the palette to the canvas. Click and drag the desired action from the palette and drop it onto the canvas.
-![Groot 2 Example Tree 3](/advanced_features/behavior_tree/groot_example_page_3.png)
+
+   ![Groot 2 Example Tree 3](/advanced_features/behavior_tree/groot_example_page_3.png)
+
 3. Connect nodes to build your behavior hierarchy.
-![Groot 2 Example Tree 4](/advanced_features/behavior_tree/groot_example_page_4.png)
+
+   ![Groot 2 Example Tree 4](/advanced_features/behavior_tree/groot_example_page_4.png)
+
 4. Set parameters for each action node.
-![Groot 2 Example Tree 5](/advanced_features/behavior_tree/groot_example_page_5.png)
+
+   ![Groot 2 Example Tree 5](/advanced_features/behavior_tree/groot_example_page_5.png)
+
 5. Save the XML file.
 
 ### Step 4: Example - Complete Custom Tree

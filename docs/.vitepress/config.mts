@@ -136,7 +136,7 @@ export default defineConfig({
           text: 'Advanced Features',
           items: [
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
-            { text: 'Behavior Tree', link: '/ai_worker/behavior_tree_ai_worker' },
+            { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
           ]
         },
         {

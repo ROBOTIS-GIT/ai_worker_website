@@ -44,7 +44,7 @@ High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.
 | Bus Type          | RS485 multidrop                          |
 | Default Baudrate  | 4 Mbps                                   |
 | Control Mode      | Direct torque / position-level commands* |
-| Command Format    | DYNAMIXEL-style digital packets          |
+| Command Format    | DYNAMIXEL Protocol 2.0, Modbus-RTU       |
 
 > \* Exact low-level control mode and interfaces will be finalized with the ROS 2 drivers.
 

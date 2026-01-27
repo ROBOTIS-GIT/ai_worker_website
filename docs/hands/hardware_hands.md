@@ -20,7 +20,7 @@ High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.
 | Operating Voltage         | 24 V                                            |
 | TIP Sensor                | 9-array sensor, 0 ~ 255 value                   |
 | Operating Mode            | Direct Control Mode  <br> Preset Motion Mode    |
-| Maximum Payload           | 15 kg                                           |
+| Maximum Load for Envelop  | 15 kg                                           |
 | Max Finger Tip Force      | 14 N                                            |
 | Peak Current              | 2.6 A                                           |
 | Finger Actuator           | XM335-T323-T                                    |

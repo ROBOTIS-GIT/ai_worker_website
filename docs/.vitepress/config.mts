@@ -60,6 +60,7 @@ export default defineConfig({
       { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
       { text: 'OMY', link: '/omy/introduction_omy' },
       { text: 'OMX', link: '/omx/introduction_omx' },
+      { text: 'Hands', link: '/hands/introduction_hands' },
       { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
       {
         text: 'OpenSource',
@@ -310,6 +311,60 @@ export default defineConfig({
             { text: 'Issues', link: '/omx/issues_omx' },
             { text: 'FAQ', link: '/omx/faq_omx' },
             { text: 'Contact Us', link: '/omx/contact_omx' }
+          ]
+        }
+      ],
+
+      '/hands/': [
+        {
+          text: 'Hands',
+          items: [
+            { text: 'Introduction', link: '/hands/introduction_hands' },
+            { text: 'Video Gallery', link: '/hands/videos_hands' }
+          ]
+        },
+        {
+          text: 'Specifications',
+          items: [
+            {
+              text: 'Hardware',
+              link: '/hands/hardware_hands',
+              collapsed: false,
+              items: [
+                { text: 'Control Table', link: '/hands/control_table_hands' }
+              ]
+            },
+            { text: 'Software', link: '/hands/software_hands' }
+          ]
+        },
+        {
+          text: 'Quick Start Guide',
+          items: [
+            { text: 'Setup Guide', link: '/hands/setup_guide_hands' },
+            { text: 'Operation Guide', link: '/hands/operation_hands' }
+          ]
+        },
+        {
+          text: 'Simulation',
+          items: [
+            { text: 'Overview', link: '/hands/simulation_hands' },
+            { text: 'Gazebo', link: '/hands/gazebo_hands' }
+          ]
+        },
+        {
+          text: 'Resources',
+          items: [
+            { text: 'Open Source', link: '/hands/opensource_hands' },
+            { text: 'Release Notes', link: '/hands/release_notes_hands' }
+          ]
+        },
+        {
+          text: 'Support',
+          items: [
+            { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
+            { text: 'Issues', link: '/hands/issues_hands' },
+            { text: 'FAQ', link: '/hands/faq_hands' },
+            { text: 'Contact Us', link: '/hands/contact_hands' }
           ]
         }
       ],

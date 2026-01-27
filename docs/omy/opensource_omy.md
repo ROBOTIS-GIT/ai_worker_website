@@ -7,7 +7,7 @@ AI Manipulator is an open-source project that provides comprehensive resources f
 | Resource | Description | Link |
 |----------|-------------|------|
 | **AI Manipulator** | ROS 2 Packages for operating the AI Manipulator | [GitHub](https://github.com/ROBOTIS-GIT/open_manipulator) |
-| **Physical AI Tools** | ROS 2 package for generating datasets in LeRobotDataset format | [GitHub](https://github.com/ROBOTIS-GIT/physical_ai_tools) |
+| **Physical AI Tools** | ROS 2 Packages for generating datasets in LeRobotDataset format | [GitHub](https://github.com/ROBOTIS-GIT/physical_ai_tools) |
 | **Simulation Models** | URDF(ROS), MJCF(MuJoCo) and USD(Isaac Sim/Lab) model files for simulation | [URDF](https://github.com/ROBOTIS-GIT/open_manipulator/tree/main/open_manipulator_description/urdf)<br>[MJCF](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)<br>[USD](https://github.com/ROBOTIS-GIT/robotis_lab/tree/main/source/robotis_lab/data/robots) |
 | **Drawing Files** | Hardware design files and technical drawings | **OMY-F3M:**<br>[PDF](https://www.robotis.com/service/download.php?no=2217)<br>[DWG](https://www.robotis.com/service/download.php?no=2216) / [STEP](https://www.robotis.com/service/download.php?no=2218)<br>**OMY-L100:**<br>[PDF](https://www.robotis.com/service/download.php?no=2220)<br>[DWG](https://www.robotis.com/service/download.php?no=2219) / [STEP](https://www.robotis.com/service/download.php?no=2221) |
 | **AI Models & Datasets** | Pre-trained models and training datasets | [Hugging Face](https://huggingface.co/ROBOTIS) |

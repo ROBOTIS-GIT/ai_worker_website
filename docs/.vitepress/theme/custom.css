@@ -104,7 +104,7 @@
 
 .feature-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-icon {
@@ -191,9 +191,75 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   transition: background 0.2s, box-shadow 0.2s, border 0.2s;
 }
+
 .button-shortcut:hover {
   background: rgba(120, 130, 140, 0.18);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1.5px solid rgba(120, 130, 140, 0.32);
   cursor: pointer;
+}
+
+:root {
+  --vp-layout-max-width: 1920px;
+}
+
+.VPDoc:not(.has-sidebar) .container {
+  max-width: 1584px !important;
+}
+
+.VPDoc:not(.has-sidebar) .content {
+  max-width: 1264px !important;
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: 1168px !important;
+}
+
+/* Custom Navbar Alignment */
+@media (min-width: 960px) {
+  .VPNavBar .content-body {
+    /* Force flex to easily reorder and align */
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 20px;
+  }
+
+  .VPNavBarTitle {
+    order: 1;
+  }
+
+  .VPNavBarMenu {
+    order: 2;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .VPNavBarSearch {
+    order: 3;
+    flex-grow: 0;
+  }
+
+  /* Social links and appearance stay at end */
+  .VPNavBarSocialLinks,
+  .VPNavBarAppearance,
+  .VPNavBarExtra {
+    order: 10;
+  }
+
+  /*
+   * Adjust spacing to the RIGHT of the toggle switch (Theme Switcher).
+   * Increase this value to add more space after the toggle.
+   */
+  .VPNavBarAppearance {
+    margin-right: -20px !important;
+  }
+
+  /*
+   * Specific adjustment for Home Page to push menu right.
+   * Uses :has() to check if the current page content is 'home'.
+   */
+  :root:has(.VPContent.is-home) .VPNavBarMenu {
+    margin-left: 50px !important;
+    /* Adjust this value to shift menu right on Home */
+  }
 }

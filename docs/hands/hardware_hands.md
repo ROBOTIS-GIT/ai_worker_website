@@ -13,7 +13,7 @@ High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.
 | Item                      | Specification                                   |
 | ------------------------- | ----------------------------------------------- |
 | Number of Fingers         | 5                                               |
-| Degrees of Freedom        | 20 (4 DoF / 1 Finger)                           |
+| Degrees of Freedom        | 20 (4 DOF / 1 Finger)                           |
 | Baud Rate                 | 9,600 bps ~ 6 Mbps (default: **4 Mbps**)        |
 | Control Frequency         | 1 kHz                                           |
 | Weight                    | 1,000 g ± 2%                                    |

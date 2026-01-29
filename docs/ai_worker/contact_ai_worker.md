@@ -14,6 +14,7 @@ For sales inquiries or detailed product information about the Physical AI lineup
 - ROBOTIS Co., Ltd.
 - Address: 37, Magokjungang 5-ro 1-gil, Gangseo-gu, Seoul, Republic of Korea (Postal Code: 07594)
 - Website: [robotis.com](https://www.robotis.com/)
+- Online Shop: [www.robotis.com/shop](https://www.robotis.com/shop/list.php?ca_id=4080)
 - Email: korea@robotis.com
 - TEL: +82-70-8671-2629
 - FAX: +82-70-8230-1336
@@ -22,6 +23,7 @@ For sales inquiries or detailed product information about the Physical AI lineup
 - ROBOTIS Inc.
 - 4222 Green River Rd, Corona, CA 92880, United States
 - Website: [robotis.us](https://www.robotis.us)
+- Online Shop: [www.robotis.us/ai-worker](https://www.robotis.us/ai-worker/)
 - Email: america@robotis.com
 - TEL: 949-377-0377
 

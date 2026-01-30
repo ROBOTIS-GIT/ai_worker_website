@@ -199,7 +199,7 @@
   cursor: pointer;
 }
 
-:root {
+/* :root {
   --vp-layout-max-width: 1920px;
 }
 
@@ -213,7 +213,7 @@
 
 .VPDoc.has-aside .content-container {
   max-width: 1168px !important;
-}
+} */
 
 /* Custom Navbar Alignment */
 @media (min-width: 960px) {

@@ -10,7 +10,10 @@
 
 /* Table styling */
 .control-table-page table {
+  display: block; /* Make table a block to allow overflow scrolling */
   width: 100%;
+  overflow-x: auto; /* Enable horizontal scroll */
+  white-space: nowrap; /* Prevent text wrapping */
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-size: 0.9rem;

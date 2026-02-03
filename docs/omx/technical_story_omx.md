@@ -30,7 +30,7 @@ Click on the card below to explore the AI technologies we've implemented:
   <iframe
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
     src="/technical_story/technical_story_omx.mp4"
-    title="AI Worker x NVIDIA Isaac GR00T N1.5 Demo"
+    title="OMX Technical Story Demo"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>

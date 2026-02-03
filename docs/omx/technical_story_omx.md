@@ -16,7 +16,7 @@ Click on the card below to explore the AI technologies we've implemented:
 <details style="grid-column: 1 / -1;">
 <summary style="list-style: none; cursor: pointer;">
   <div style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 20px; transition: all 0.3s; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; min-height: 200px; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; width: calc(66.666% - 14px); vertical-align: top;">
-    <img src="/technical_story/omx.png" alt="Real-Time IK Shape Drawing" style="width: 100%; max-width: 420px; height: auto; margin-bottom: 15px; object-fit: contain; background: transparent; border-radius: 8px;">
+    <img src="/technical_story/omx_ik.png" alt="Real-Time IK Shape Drawing" style="width: 100%; max-width: 420px; height: auto; margin-bottom: 15px; object-fit: contain; background: transparent; border-radius: 8px;">
     <h3 style="margin: 0 0 10px 0; border: none; color: white;">Jacobian IK · Real-Time Control</h3>
     <div class="expand-indicator" style="margin-top: 15px; font-size: 12px; opacity: 0.8;">▼ Click to expand</div>
   </div>

@@ -301,7 +301,8 @@ export default defineConfig({
           text: 'Resources',
           items: [
             { text: 'Open Source', link: '/omx/opensource_omx' },
-            { text: 'Release Notes', link: '/omx/release_notes_omx' }
+            { text: 'Release Notes', link: '/omx/release_notes_omx' },
+            { text: 'Technical Story', link: '/omx/technical_story_omx' }
           ]
         },
         {

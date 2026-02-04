@@ -5,6 +5,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
+    "markdown-it-include": "^2.0.0",
     "vitepress": "^1.6.3",
     "vitepress-plugin-tabs": "^0.7.1"
   }

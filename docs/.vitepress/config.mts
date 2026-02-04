@@ -1,5 +1,13 @@
 import { defineConfig } from 'vitepress'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { createRequire } from 'module'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const docsRoot = path.resolve(__dirname, '..')
+const require = createRequire(import.meta.url)
+const markdownItInclude = require('markdown-it-include')
 
 const title = 'ROBOTIS'
 const description = 'Website for AI Worker and AI Manipulator'
@@ -48,6 +56,7 @@ export default defineConfig({
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin)
+      md.use(markdownItInclude, docsRoot)
     }
   },
   themeConfig: {
@@ -100,7 +109,7 @@ export default defineConfig({
         {
           text: 'Zenoh',
           items: [
-            { text: 'Overview', link: '/zenoh' }
+            { text: 'Overview', link: '/ai_worker/zenoh_ai_worker' }
           ]
         },
         {
@@ -190,7 +199,7 @@ export default defineConfig({
         {
           text: 'Zenoh',
           items: [
-            { text: 'Overview', link: '/zenoh' }
+            { text: 'Overview', link: '/omy/zenoh_omy' }
           ]
         },
         {
@@ -265,7 +274,7 @@ export default defineConfig({
         {
           text: 'Zenoh',
           items: [
-            { text: 'Overview', link: '/zenoh' }
+            { text: 'Overview', link: '/omx/zenoh_omx' }
           ]
         },
         {
@@ -358,7 +367,7 @@ export default defineConfig({
         {
           text: 'Zenoh',
           items: [
-            { text: 'Overview', link: '/zenoh' }
+            { text: 'Overview', link: '/hands/zenoh_hands' }
           ]
         },
         {

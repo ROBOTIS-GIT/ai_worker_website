@@ -19,7 +19,7 @@ In ROS 2, the **RMW** (ROS Middleware) is the layer that implements topics, serv
 
 ## Why Zenoh?
 
-Zenoh is chosen for our stack to improve scalability, latency, and flexibility in wired and wireless setups, while keeping full compatibility with the ROS 2 ecosystem. Setup and usage details are covered in each product’s **Setup Guide** and **Quick Start Guide**.
+Zenoh is chosen for our stack to improve scalability, latency, and flexibility in wired and wireless setups, while keeping full compatibility with the ROS 2 ecosystem. Setup and usage details are covered in each product's **Setup Guide** and **Quick Start Guide**.
 
 ## Further reading
 

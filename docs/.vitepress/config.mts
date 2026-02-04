@@ -98,6 +98,12 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Zenoh',
+          items: [
+            { text: 'Overview', link: '/zenoh' }
+          ]
+        },
+        {
           text: 'Quick Start Guide',
           items: [
             { text: 'Setup Guide', link: '/ai_worker/setup_guide_ai_worker' },
@@ -182,6 +188,12 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Zenoh',
+          items: [
+            { text: 'Overview', link: '/zenoh' }
+          ]
+        },
+        {
           text: 'Quick Start Guide',
           items: [
             { text: 'Setup Guide', link: '/omy/setup_guide_omy' },
@@ -248,6 +260,12 @@ export default defineConfig({
           items: [
             { text: 'Hardware', link: '/omx/hardware_omx' },
             { text: 'Software', link: '/omx/software_omx' }
+          ]
+        },
+        {
+          text: 'Zenoh',
+          items: [
+            { text: 'Overview', link: '/zenoh' }
           ]
         },
         {
@@ -335,6 +353,12 @@ export default defineConfig({
               ]
             },
             { text: 'Software', link: '/hands/software_hands' }
+          ]
+        },
+        {
+          text: 'Zenoh',
+          items: [
+            { text: 'Overview', link: '/zenoh' }
           ]
         },
         {

@@ -147,8 +147,8 @@ source /opt/ros/jazzy/setup.bash
 cd ~/open_manipulator
 source install/setup.bash
 
-python3 open_manipulator_playground/src/traj_pub_node.py \
-  --ros-args -p interactive:=true
+python3 open_manipulator_playground/src/drawing_shape_omx.py --ros-args -p interactive:=true
+
 ```
 
 #### 4.3 Runtime Parameters (Interactive Mode)

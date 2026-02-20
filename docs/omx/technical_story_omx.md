@@ -147,7 +147,7 @@ source /opt/ros/jazzy/setup.bash
 cd ~/open_manipulator
 source install/setup.bash
 
-python3 open_manipulator_playground/src/drawing_shape_omx.py --ros-args -p interactive:=true
+python3 open_manipulator_playground/src/omx_drawing_shape.py --ros-args -p interactive:=true
 
 ```
 

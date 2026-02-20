@@ -680,7 +680,7 @@ The blackboard is shared memory inside the BT where nodes read and write shared 
 
 **Visual representation of the Hybrid Strategy BT logic flow**
 <div style="text-align: center; margin: 14px 0 10px 0;">
-  <img src="/simulation/ai_worker/flow2.svg" alt="BT decision flow for controller switching" style="max-width: 100%; border-radius: 8px; border: 2px solid #667eea; background: #0f0f13;">
+  <img src="/technical_story/flow.svg" alt="BT decision flow for controller switching" style="max-width: 100%; border-radius: 8px; border: 2px solid #667eea; background: #0f0f13;">
 </div>
 
 

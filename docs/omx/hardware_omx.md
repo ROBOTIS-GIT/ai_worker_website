@@ -4,6 +4,21 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 
 ![omx](/specifications/omx/main_image.png)
 
+## [OMX-AI] Included Components
+
+| Item | Qty |
+|:-----|:---:|
+| OpenRB-150 | 2 |
+| XL430-W250-T | 3 |
+| XL330-M288-T | 8 |
+| XL330-M077-T | 1 |
+| SMPS2DXL | 1 |
+| SMPS | 1 |
+| USB-C CABLE | 2 |
+| CLAMP | 4 |
+| DC CONVERTER | 1 |
+| 3D printed parts for OMX-F & OMX-L | — |
+
 ## [OMX-L] Hardware Overview
 
 ![](/specifications/omx/hw_overview_omx_l.png)

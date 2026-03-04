@@ -8,8 +8,16 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ## Product Components
 ![product_components](/specifications/ai_worker/product_components.png)
 
-* Extra Included Items
-  - **FFW-SG2**: Battery Charger
+### Included Contents
+
+| Item | Qty |
+|:-----|:---:|
+| SG2 or BG2 | 1 |
+| LG2 | 1 |
+| SMPS for robot | 2 |
+| SMPS for LG2 | 1 |
+| E stop remote controller (Only SG2) | 1 |
+| USB cable (1m) | 1 |
 
 ## Product Models
 ![model_name](/specifications/ai_worker/model_name.png)

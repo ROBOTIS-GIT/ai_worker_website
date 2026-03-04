@@ -4,6 +4,18 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![omy_f3m](/specifications/omy/omy_product.png)
 
+## Included Contents
+
+| Item | Qty |
+|:-----|:---:|
+| OMY-L100 | 1 |
+| OMY-F3M | 1 |
+| USB Hub 3.0 | 1 |
+| USB cable | 1 |
+| SMPS for OMY-F3M | 1 |
+| SMPS for OMY-L100 | 1 |
+| E stop | 1 |
+
 ## [Follower] Hardware Overview
 ![](/specifications/omy/omy_f3m.png)
 

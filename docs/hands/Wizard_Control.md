@@ -44,7 +44,6 @@ DYNAMIXEL Wizard 2.0 provides real-time monitoring capabilities for the ROBOTIS 
 
 ### Monitoring Features
 
-<img src="/wizard_control/hands/wizard_monitoring_features.png" width="1000"/>
 
 | Feature | Description |
 | --- | --- |

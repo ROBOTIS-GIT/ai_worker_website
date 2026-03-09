@@ -258,9 +258,9 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 | 6 | 1.0912699e+02 | 3.7567212e+00 | -7.7299588e+01 | -3.2079617e+01 | 2.4565166e+05 | 1.2581152e+05 | 1.4593436e+05 |
 | 7 | 4.0609159e+00 | -2.6354677e-01 | -2.0547867e+00 | -8.7853268e+00 | 7.5093441e+02 | 5.4840080e+02 | 2.3962266e+02 |
 
-| File Type | Download Link |
+<!-- | File Type | Download Link |
 |-----------|---------------|
-| PDF | [📄 Download PDF]() |
+| PDF | [📄 Download PDF]() | -->
 
 <details>
 <summary>Raw inertia data (full)</summary>

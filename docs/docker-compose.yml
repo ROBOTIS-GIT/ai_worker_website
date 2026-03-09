@@ -1,0 +1,13 @@
+services:
+  ai_worker_website:
+    container_name: ai_worker_website
+    # image: robotis/ai_worker_website:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./docs:/app/docs
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
+    network_mode: host
+    restart: unless-stopped

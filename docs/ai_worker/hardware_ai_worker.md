@@ -73,7 +73,9 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
     </div>
 </div>
 
-
+:::info
+**FFW-LH5** is currently in preparation for release.
+:::
 
 | Properties               | Specification (FFW-LG2)                 | Specification (FFW-LH5)                |
 |--------------------------|-----------------------------------------|----------------------------------------|

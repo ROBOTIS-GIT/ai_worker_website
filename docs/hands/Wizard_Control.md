@@ -42,29 +42,6 @@ Ensure the following hardware connections are complete:
 
 DYNAMIXEL Wizard 2.0 provides real-time monitoring capabilities for the ROBOTIS Hand actuators. This allows you to observe the current state of each joint and verify that the hand is operating correctly.
 
-### Monitoring Features
-
-
-| Feature | Description |
-| --- | --- |
-| **Position** | Displays the current position value of each actuator in real time |
-| **Velocity** | Shows the current velocity of each actuator |
-| **Current** | Monitors the current (torque) load on each actuator |
-| **Temperature** | Displays the internal temperature of each actuator |
-| **Voltage** | Shows the input voltage being supplied to each actuator |
-
-### How to Use Control Monitoring
-
-1. After scanning, select the actuator(s) you want to monitor from the device list
-2. Navigate to the **Control Table** panel
-3. Observe the real-time values for position, velocity, current, temperature, and voltage
-4. Use the **Graph** feature to visualize data over time for more detailed analysis
-
-<!-- TODO: Add screenshot of the monitoring interface -->
-
-> **Tip**: You can monitor multiple actuators simultaneously to get a comprehensive overview of the entire hand state.
-
----
 
 ## Preset Control via Tools Menu
 
@@ -104,7 +81,7 @@ The ROBOTIS Hand will move to the saved configuration automatically.
 
 > **Note**: Ensure the hand is in a safe position before executing a preset to avoid unexpected collisions or movements.
 
-### Example Use Cases
+### Defualt Preset Guide
 
 | Preset | Example Use Case |
 | --- | --- |

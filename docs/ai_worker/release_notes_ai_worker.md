@@ -41,7 +41,7 @@
 
 📦 **AI Worker**
 > **Version:** `1.1.15`
-> **Released:** 2025-12-11>
+> **Released:** 2025-12-11
 > 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.1.15)
 
 - Add LiDAR URDF and launch configuration to AI Worker
@@ -174,7 +174,7 @@ Applied Dynamic Brake for Dynamixel Y.
 > **Released:** 2025-08-21
 > 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.6.8)
 
-Basic Dataset Editing in Web UI.
+Basic Dataset Editing in Web UI.
 - Add support for merging multiple datasets and deleting unwanted episodes from datasets
 - Enable deletion of unwanted episodes from datasets
 <img src="/release_note/physical_ai_tools/0.6.8/pat_edit_data.png" alt="Physical AI Tools Dataset Editing">

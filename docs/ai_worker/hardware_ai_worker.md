@@ -26,7 +26,7 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ![model_lineup](/specifications/ai_worker/model_lineup.png)
 
 :::info
-**FFW-BG2** is sold domestically only.  
+**FFW-BG2** is sold in Korea only.  
 **FFW-SH3P** is currently in preparation for release.
 :::
 

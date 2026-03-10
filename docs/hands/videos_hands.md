@@ -8,3 +8,24 @@ We are just getting started—stay tuned as we add more demonstrations of our Ph
 ### HX5-D20
 <img src="/hand_rev1.gif"/>
 
+
+### Preset Control
+You can control this with preset.
+
+<div class="video-container">
+	<video src="/specifications/hand/HXhands.mov" controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;"></video>
+</div>
+
+### Tectile Sensors
+You can check the pressure by using tectile sensors
+
+<div class="video-container">
+	<video src="/specifications/hand/Tectile.mov" controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;"></video>
+</div>
+
+### Sync hands with Wizard
+You can see how hands position moved in a Wizard program
+
+<div class="video-container">
+	<video src="/specifications/hand/Hand_sync.mov" controls preload="metadata" style="width: 100%; max-width: 900px; border-radius: 10px;"></video>
+</div>

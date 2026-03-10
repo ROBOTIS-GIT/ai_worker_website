@@ -106,7 +106,8 @@ export default defineConfig({
               link: '/ai_worker/operation_ai_worker',
               items: [
                 { text: 'Teleoperation', link: '/ai_worker/operation_teleoperation_ai_worker' },
-                { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' }
+                { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' },
+                { text: 'Motion controller', link: '/ai_worker/operation_motion_controller_ai_worker' }
               ]
             }
           ]

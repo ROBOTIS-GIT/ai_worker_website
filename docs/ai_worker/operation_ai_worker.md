@@ -9,3 +9,4 @@ Use the dedicated pages below to get started quickly:
 
 - [Teleoperation](/ai_worker/operation_teleoperation_ai_worker)
 - [Navigation](/ai_worker/operation_navigation_ai_worker)
+- [Motion controller](/ai_worker/operation_motion_controller_ai_worker)

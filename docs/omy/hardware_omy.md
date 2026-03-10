@@ -425,5 +425,3 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
   - Izx Izy Izz :  9.4024163e+00 -9.9427818e+01  2.3962266e+02
 
 </details>
-
-### **Drawing Files**

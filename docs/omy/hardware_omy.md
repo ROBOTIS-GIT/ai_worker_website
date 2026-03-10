@@ -4,7 +4,7 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![omy_f3m](/specifications/omy/omy_product.png)
 
-## Included Contents
+## Included Common Items
 
 | Item | Qty |
 |:-----|:---:|

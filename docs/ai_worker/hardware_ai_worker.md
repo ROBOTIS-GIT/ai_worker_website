@@ -8,7 +8,7 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ## Product Components
 ![product_components](/specifications/ai_worker/product_components.png)
 
-### Included Contents
+### Included Common Items
 
 | Item | Qty |
 |:-----|:---:|

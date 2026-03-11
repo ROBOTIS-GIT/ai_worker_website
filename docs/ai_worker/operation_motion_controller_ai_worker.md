@@ -4,7 +4,7 @@ This guide shows how to run the motion controller from [`robotis_motion_controll
 
 The default `ai_worker` controller mainly follows task-space pose references on the follower robot. In practice, it is used either with VR teleoperation inputs or with RViz interactive markers that publish end-effector goals.
 
-![vr_control](/simulation/ai_worker/laserscan.png)
+![vr_control](/simulation/ai_worker/ffw_sg2_vr_teleop.gif)
 
 If a leader device is available, you can instead use the `joint_space` or `leader` controller paths depending on whether you want joint-space filtering or leader-to-task-space retargeting.
 
@@ -129,7 +129,7 @@ Use this mode when a leader device is already publishing raw joint trajectories 
 ros2 launch motion_controller_ros controller.launch.py controller_type:=joint_space
 ```
 
-![joint_space_control](/simulation/ai_worker/laserscan.png)
+<!-- ![joint_space_control](/simulation/ai_worker/laserscan.png) -->
 
 In this mode, the controller does not generate task-space goals. It only filters the leader's joint trajectory commands while considering constraints such as joint limits, velocity limits, and self-collision avoidance.
 
@@ -151,7 +151,7 @@ Use this mode when an leader device is available and you want to control the fol
 ros2 launch motion_controller_ros controller.launch.py controller_type:=leader
 ```
 
-![retargeting_control](/simulation/ai_worker/laserscan.png)
+<!-- ![retargeting_control](/simulation/ai_worker/laserscan.png) -->
 
 This launch starts:
 

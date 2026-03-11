@@ -123,17 +123,17 @@ The built-in reference checker flags sudden changes larger than the configured t
 
 ### Joint-space Controller
 
-Use this mode when a leader device is already publishing raw joint trajectories and you want the controller to add a safety filter before those commands reach the follower arm controllers:
+This controller is used to apply a safety filter to raw joint trajectory commands published by a leader device:
 
 ```bash
 ros2 launch motion_controller_ros controller.launch.py controller_type:=joint_space
 ```
 
-<!-- ![joint_space_control](/simulation/ai_worker/laserscan.png) -->
+![joint_space_control](/simulation/ai_worker/ffw_sg2_leader_teleop.gif)
 
-In this mode, the controller does not generate task-space goals. It only filters the leader's joint trajectory commands while considering constraints such as joint limits, velocity limits, and self-collision avoidance.
+The controller filters the leader's joint trajectory commands while considering constraints such as joint position limit, velocity limit, and self-collision.
 
-This mode subscribes to:
+This controller subscribes to:
 
 - `/leader/joint_trajectory_command_broadcaster_right/raw_joint_trajectory`
 - `/leader/joint_trajectory_command_broadcaster_left/raw_joint_trajectory`
@@ -145,13 +145,13 @@ and republishes filtered outputs to:
 
 ### Leader-follower retargeting controller
 
-Use this mode when an leader device is available and you want to control the follower in task space from the leader configuration:
+This controller is used to control the follower in task space from the leader configuration through retargeting:
 
 ```bash
 ros2 launch motion_controller_ros controller.launch.py controller_type:=leader
 ```
 
-<!-- ![retargeting_control](/simulation/ai_worker/laserscan.png) -->
+![retargeting_control](/simulation/ai_worker/ffw_sg2_retargeting_control.gif)
 
 This launch starts:
 
@@ -173,14 +173,10 @@ The `leader_controller_node` performs forward kinematics using the leader joint 
   ```bash
   ros2 service call /reactivate std_srvs/srv/Trigger "{}"
   ```
-- If startup mismatch error occurs, move both interactive markers back near the current gripper pose.
-- If the markers do not appear in RViz, confirm `start_interactive_marker:=true` and add the `InteractiveMarkers` display.
-- If the controller does not move, verify `/joint_states` is updating or reference divergence event has occured:
-  ```bash
-  ros2 topic echo /joint_states --once
-  ```
-- If `leader` or `joint_space` mode does not respond, verify that the raw trajectory topics are receiving data.
-- If you are using a non-default robot model, override the URDF/SRDF paths instead of using the SG2/LG2 defaults.
+- If a startup mismatch error occurs, move both goal poses back near the current gripper pose.
+- If the markers do not appear in RViz after setting `start_interactive_marker:=true`, check that the `InteractiveMarkers` display is added and that the `base_frame` is set correctly.
+- If the controller does not move, check the terminal log to see whether `/joint_states` is updating or whether a reference divergence event has occurred.
+- If `leader` or `joint_space` controller does not respond, verify that the raw trajectory topics are receiving data.
 
 ## Controller Parameters
 

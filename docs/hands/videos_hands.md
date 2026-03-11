@@ -6,23 +6,23 @@ We are just getting started—stay tuned as we add more demonstrations of our Ph
 
 ## Product Overview
 
-### ROBOTIS Hand Introduction
+### ROBOTIS Hand Showcase
 <YouTube videoId="Gr867DGH5tk" />
 
-## Use Cases
+<!-- ## Use Cases
 
 <div class="coming-soon">
   <div class="coming-soon-content">
     <h3>Application Videos Coming Soon</h3>
     <p>We're currently preparing videos demonstrating ROBOTIS Hand in various industrial applications including:</p>
     <ul>
-      <li>How to use Wizard Control</li>
-      <li>Precision and delicate work</li>
+      <li>How to use DYNAMIXEL Wizard to control ROBOTIS Hand</li>
+      <li>Precise and delicate works</li>
       <li>Research environments</li>
     </ul>
     <p>Check back soon or subscribe to our YouTube channel for updates.</p>
   </div>
-</div>
+</div> -->
 
 ## More Videos
 

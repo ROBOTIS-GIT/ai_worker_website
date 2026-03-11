@@ -10,9 +10,14 @@ Before running the ROBOTIS Hand, make sure:
 
 ## Running the ROBOTIS Hand
 
-The ROBOTIS Hand controller has been constructed to utilize the `ros2_control` framework for enhanced flexibility, modularity, and usability. This updated controller allows for seamless integration with ROS 2-based systems, offering advanced features such as trajectory planning, real-time control, and state feedback.
+The ROBOTIS Hand controller utilizes the `ros2_control` framework for enhanced flexibility and real-time control. Running the robot requires two separate terminal instances, both accessing the Docker container.
 
-After accessing the Robotis Hand Docker container, use the following command:
+After accessing the ROBOTIS Hand Docker container, start the Zenoh daemon. For convenience, the following alias is provided to simplify the command:
+```bash
+zenohd
+```
+
+In a second terminal, access the same Docker container and launch the ROBOTIS Hand bringup script.
 :::tabs key:robot-type
 == HX5-D20
 ```bash
@@ -26,7 +31,7 @@ This command will sequentially execute the following procedures:
 
 The ROBOTIS Hand controller will now subscribe to the input topic described in the [Software Specifications](/hands/software_hands.html#controller-configuration-joint-mapping).
 
-For visualization, add the option `start_rviz:=true` at the end of the command:
+(Optional) For visualization, add the option `start_rviz:=true` at the end of the command:
 :::tabs key:robot-type
 == HX5-D20
 ```bash

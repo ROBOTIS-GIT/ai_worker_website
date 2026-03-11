@@ -5,7 +5,7 @@ This guide explains how to use **DYNAMIXEL Wizard 2.0** to connect, monitor, and
 ## Prerequisites
 
 Before using DYNAMIXEL Wizard 2.0, make sure:
-- The ROBOTIS Hand is properly set up and powered on
+- The ROBOTIS Hand is properly set up and powered ON
 - The ROBOTIS Hand is connected to the PC via USB
 
 ## Connecting to DYNAMIXEL Wizard 2.0
@@ -47,14 +47,12 @@ Ensure the following hardware connections are complete:
 
 1. Launch DYNAMIXEL Wizard 2.0
 2. Click the `Options` button in the top menu bar
+<img src='/specifications/hand/option_scan_button.png'>
 3. Select the appropriate **Protocol**
 4. Select the appropriate **COM port** (or `/dev/ttyUSB0` on Linux)
 5. Set the **baud rate** to match the ROBOTIS Hand configuration
 <img src='/specifications/hand/connection_setting.png'>
 6. Click `Scan` to detect all connected actuators and sensors in the side panel
-<img src='/specifications/hand/option_scan_button.png'>
-<img src='/specifications/hand/connection_setting.png'>
-
 <!-- TODO: Add screenshot of the scan result : Options and base image-->
 
 > Once the scan is complete, all connected actuators will be listed in the device panel on the left side of the application.
@@ -64,7 +62,7 @@ Ensure the following hardware connections are complete:
 
 ### Control Monitoring
 
-The hand has five fingers, and each finger has four motors and one tactile sensor.
+- The hand has five fingers, and each finger has four motors and one tactile sensor.
 You can easily monitor each actuator and sensor.
 <img src='/specifications/hand/controllers_guide.png'>
 
@@ -80,7 +78,6 @@ You can control the ROBOTIS Hand with HX Hands.
 4. You can check the hand's current status in the GUI.
 
 <img src='/specifications/hand/sync_hxhands.png'>
-<img src='/specifications/hand/sync_check.png'>
 
 <!-- put the explanations how to access the hands tools and note that have to sync with the hands -->
 
@@ -116,8 +113,8 @@ Once presets are saved, you can instantly apply them to control the ROBOTIS Hand
 2. Select the desired preset (**Preset 1**, **Preset 2**, or **Preset 3**)
 3. Click **Execute** (or **Load**) to apply the saved joint positions to the hand
 4. Click **Grasping** (or **Releasing**) to execute a saved preset
-    - Use the hand icon next to the Preset table
-    - It is safe to execute **Grasping** and **Releasing** alternately
+    - Use the hand icon next to the Preset table
+    - It is safe to execute **Grasping** and **Releasing** alternately
 
 <img src='/specifications/hand/wizard_control_image.png'>
 
@@ -141,6 +138,8 @@ Click **Custom Preset** as shown in the image below.
 <img src='/specifications/hand/custom_preset.png'>
 
 You can customize the release and grasp positions as shown in the image below.
+- Set a joint value for each finger
+- Set gain value and current limit for the robot hand.
 
 <img src='/specifications/hand/custom_preset_setting.png'>
 
@@ -149,3 +148,4 @@ You can customize the release and grasp positions as shown in the image below.
 #### Checking Tactile Sensors
 
 In the Wizard program, you can easily check whether the tactile sensors are working in the GUI. The color changes indicate pressure levels: **Bright Green** means strong pressure, and a **Black Background** means weak pressure.
+<img src='/specifications/hand/check_tactile_sensor.png'>

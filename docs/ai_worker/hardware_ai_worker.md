@@ -8,14 +8,27 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ## Product Components
 ![product_components](/specifications/ai_worker/product_components.png)
 
-* Extra Included Items
-  - **FFW-SG2**: Battery Charger
+### Included Common Items
+
+| Item | Qty |
+|:-----|:---:|
+| SG2 or BG2 | 1 |
+| LG2 | 1 |
+| SMPS for robot | 2 |
+| SMPS for LG2 | 1 |
+| E stop remote controller (Only SG2) | 1 |
+| USB cable (1m) | 1 |
 
 ## Product Models
 ![model_name](/specifications/ai_worker/model_name.png)
 
 ## Follower Specification
 ![model_lineup](/specifications/ai_worker/model_lineup.png)
+
+:::info
+**FFW-BG2** is sold in Korea only.  
+**FFW-SH3P** is currently in preparation for release.
+:::
 
 | Properties                  | Specification (FFW-SG2)                | Specification (FFW-BG2)                |
 |-----------------------------|----------------------------------------|----------------------------------------|
@@ -65,7 +78,9 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
     </div>
 </div>
 
-
+:::info
+**FFW-LH5** is currently in preparation for release.
+:::
 
 | Properties               | Specification (FFW-LG2)                 | Specification (FFW-LH5)                |
 |--------------------------|-----------------------------------------|----------------------------------------|

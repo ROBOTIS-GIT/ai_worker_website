@@ -39,7 +39,7 @@ Caution: The robot may fall in the direction of gravity, so it must be held by h
 ![omy manual operation 1](/specifications/omy/omy_manual_operation_1.png)
 3. Move the target axis to the marked home position.
 4. Turn the torque off.
-5. Repeat steps 1 to 4 for each axis until the robot reaches the home position or the packaging position (see the next block).
+5. Repeat steps 1 to 4 for each axis until the robot reaches the home position or the packaging position (see the [next block](#initialize-the-home-position)).
 ![omy manual operation 2](/specifications/omy/omy_manual_operation_2.png)
 
 ## Initialize the home position
@@ -47,7 +47,7 @@ Caution: The robot may fall in the direction of gravity, so it must be held by h
 2. In the Packet Monitoring window of Wizard 2.0, open the COM port and send the `Clear` command to IDs `1` through `6`.
 ![initialize home position 1](/specifications/omy/reset_multiturn_1.png)
 3. Check that the current position of each joint is within `1` degree.
-4. For any joint outside that range, refer to page 6 and manually move it to the home position, then repeat step 2.
+4. For any joint outside that range, refer to the [previous block](#manual-operation-of-dynamixel-y) and manually move it to the home position, then repeat step 2.
 ![initialize home position 2](/specifications/omy/initialize_home_position.png)
 
 ## OMY home position

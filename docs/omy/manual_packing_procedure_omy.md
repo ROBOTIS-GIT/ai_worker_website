@@ -39,7 +39,7 @@ Caution: The robot may fall in the direction of gravity, so it must be held by h
 ![omy manual operation 1](/specifications/omy/omy_manual_operation_1.png)
 3. Move the target axis to the marked home position.
 4. Turn the torque off.
-5. Repeat steps 1 to 4 for each axis until the robot reaches the home position or the packaging position (see the [next block](#initialize-the-home-position)).
+5. Repeat steps 1 to 4 for each axis until the robot reaches the home position or the packing position (see the [next block](#initialize-the-home-position)).
 ![omy manual operation 2](/specifications/omy/omy_manual_operation_2.png)
 
 ## Initialize the home position
@@ -54,8 +54,8 @@ Caution: The robot may fall in the direction of gravity, so it must be held by h
 Move the robot to the home position by aligning it with the home-position slit.
 ![home position slit](/specifications/omy/home_position_slit_omy.png)
 
-## OMY packaging position
+## OMY packing position
 1. Confirm that the robot is in the home position.
 2. Move joint 3 to `150` degrees toward the base panel.
 3. Move joint 4 to `30` degrees.
-![packaging position slit](/specifications/omy/packaging_position_omy.png)
+![packing position slit](/specifications/omy/packing_position_omy.png)

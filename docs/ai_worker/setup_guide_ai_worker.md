@@ -58,6 +58,11 @@ AI Worker supports mDNS, allowing you to connect without manually checking the I
  ```
 Replace SNPR48A0000 with the serial number printed on the back of the robot body.
 ![Back of the Follower](/quick_start_guide/ai_worker/serial_number.png)
+3. When prompted, enter the system password `root` .
+
+If hostname-based access is not available, use one of the following methods:
+1. Router connection: Connect both your user PC and the AI Worker LAN port to the same router using Ethernet cables, then identify the robot PC on the local network.
+2. Direct IP check via HDMI: Connect a monitor to the Orin via HDMI, log in locally, and check the current IP address before connecting through SSH.
 
 == FFW-SG2
 
@@ -73,18 +78,35 @@ Replace SNPR48A0000 with the serial number printed on the back of the robot body
  ```
  Replace SNPR48A0000 with the serial number printed on the back of the robot body.
 
-4. When prompted, enter the system password.
+4. When prompted, enter the system password `root` .
 
 ::: info
 Both the Wi-Fi and system passwords are initially configured by ROBOTIS. For security purposes, you may change these passwords if necessary.
 :::
 
+## Remote E-STOP Usage
+
+![remote_e_stop](/quick_start_guide/ai_worker/remote_e_stop.png)
+
+The Remote E-STOP device is the safety stop controller for AI WORKER. It is used to perform an emergency stop and to release the initial safety lock.
+
+Press the red mushroom button circled above to activate the E-STOP.
+To release it, rotate the button clockwise, then press the **A** button.
+
+The other buttons have no function.
+
+::: warning
+When AI WORKER is powered on for the first time, it remains in a **torque-off** state.
+To enable communication with the DYNAMIXELs, you must press the **A** button on the Remote E-STOP.
+When the safety lock is released, you will hear a beep sound.
+:::
+
 ## Software Setup
+The software setup instructions below are intended for development on a `user PC`. **_Note that the robot PC on the AI WORKER is already pre-configured with the same setup. (no additional installation is required.)_**
+
 AI WORKER relies on two main repositories:
 - [ai_worker](https://github.com/ROBOTIS-GIT/ai_worker): Provides support for controlling DYNAMIXEL actuators using ros2_control and enables teleoperation functionality.
 - [physical_ai_tools](https://github.com/ROBOTIS-GIT/physical_ai_tools): A set of tools for imitation learning, including data collection, training, model inference, and visualization utilities.
-
-The software setup instructions below are intended for development on a `user PC`. **_Note that the robot PC on the AI WORKER is already pre-configured with the same setup._**
 
 ::: danger
 ⚠️ **On the AI Worker Orin:** Do not run `apt upgrade` command. Upgrading packages may cause conflicts and break robot functionality.

@@ -16,8 +16,8 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 | LG2 | 1 |
 | SMPS for robot | 2 |
 | SMPS for LG2 | 1 |
-| E stop remote controller (Only SG2) | 1 |
-| USB cable (1m) | 1 |
+| E stop remote controller | 1 |
+| USB cable | 1 |
 
 ## Product Models
 ![model_name](/specifications/ai_worker/model_name.png)
@@ -26,7 +26,7 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ![model_lineup](/specifications/ai_worker/model_lineup.png)
 
 :::info
-**FFW-BG2** is sold in Korea only.  
+**FFW-BG2** is sold in Korea only.
 **FFW-SH3P** is currently in preparation for release.
 :::
 

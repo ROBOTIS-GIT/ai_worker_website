@@ -1,5 +1,5 @@
-# Manual Packing Pose Procedure for OMY
-
+# Manual Packing Procedure for OMY
+This page describes the procedure for manually moving the OMY to the packing pose when normal operation is unavailable.
 ## Connect OMY with Wizard 2.0
 1. Prepare a PC or laptop with [Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/) installed.
 2. Connect the Debug USB-C port on the main body panel to the PC using a USB-C cable.

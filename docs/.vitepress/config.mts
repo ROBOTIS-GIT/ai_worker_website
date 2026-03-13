@@ -227,7 +227,7 @@ export default defineConfig({
         {
           text: 'Support',
           items: [
-            { text: 'Manual Packaging Pose Procedure', link: '/omy/manual_packaging_pose_procedure_omy' },
+            { text: 'Manual Packing Procedure', link: '/omy/manual_packing_procedure_omy' },
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/omy/issues_omy' },
             { text: 'FAQ', link: '/omy/faq_omy' },

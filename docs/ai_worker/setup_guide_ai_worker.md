@@ -58,7 +58,7 @@ AI Worker supports mDNS, allowing you to connect without manually checking the I
  ```
 Replace SNPR48A0000 with the serial number printed on the back of the robot body.
 ![Back of the Follower](/quick_start_guide/ai_worker/serial_number.png)
-3. When prompted, enter the system password `root` .
+3. When prompted, enter the system password `root`.
 
 If hostname-based access is not available, use one of the following methods:
 1. Router connection: Connect both your user PC and the AI Worker LAN port to the same router using Ethernet cables, then identify the robot PC on the local network.

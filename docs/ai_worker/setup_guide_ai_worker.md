@@ -88,7 +88,7 @@ Both the Wi-Fi and system passwords are initially configured by ROBOTIS. For sec
 
 ![remote_e_stop](/quick_start_guide/ai_worker/remote_e_stop.png)
 
-The Remote E-STOP device is the safety stop controller for AI WORKER. It is used to perform an emergency stop and to release the initial safety lock.
+The Remote E-STOP device is the safety stop controller for AI Worker. It is used to perform an emergency stop and to release the initial safety lock.
 
 Press the red mushroom button circled above to activate the E-STOP.
 To release it, rotate the button clockwise, then press the **A** button.

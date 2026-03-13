@@ -78,7 +78,7 @@ If hostname-based access is not available, use one of the following methods:
  ```
  Replace SNPR48A0000 with the serial number printed on the back of the robot body.
 
-4. When prompted, enter the system password `root` .
+4. When prompted, enter the system password `root`.
 
 ::: info
 Both the Wi-Fi and system passwords are initially configured by ROBOTIS. For security purposes, you may change these passwords if necessary.

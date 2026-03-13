@@ -61,7 +61,7 @@ Replace SNPR48A0000 with the serial number printed on the back of the robot body
 3. When prompted, enter the system password `root`.
 
 If hostname-based access is not available, use one of the following methods:
-1. Router connection: Connect both your user PC and the AI Worker LAN port to the same router using Ethernet cables, then identify the robot PC on the local network.
+1. Router connection: Connect both your user PC and the AI Worker LAN port to the same router using Ethernet cables, then try connecting via SSH again.
 2. Direct IP check via HDMI: Connect a monitor to the Orin via HDMI, log in locally, and check the current IP address before connecting through SSH.
 
 == FFW-SG2

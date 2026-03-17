@@ -186,7 +186,14 @@ export default defineConfig({
           text: 'Quick Start Guide',
           items: [
             { text: 'Setup Guide', link: '/omy/setup_guide_omy' },
-            { text: 'Operation Guide', link: '/omy/operation_omy' }
+            {
+              text: 'Operation Guide',
+                link: '/omy/operation_omy',
+                items: [
+                  { text: 'Teleoperation', link: '/omy/operation_teleoperation_omy' },
+                  { text: 'Motion controller', link: '/omy/operation_motion_controller_omy' }
+                ]
+            }
           ]
         },
         {

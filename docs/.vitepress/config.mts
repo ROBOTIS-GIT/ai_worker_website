@@ -264,7 +264,14 @@ export default defineConfig({
                 { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
               ]
             },
-            { text: 'Operation Guide - ROS 2', link: '/omx/operation_omx' }
+            {
+            text: 'Operation Guide',
+              link: '/omx/operation_omx',
+              items: [
+                { text: 'ROS 2', link: '/omx/operation_ros2_omx' },
+                { text: 'Motion controller', link: '/omx/operation_motion_controller_omx' }
+              ]
+            }
           ]
         },
         {

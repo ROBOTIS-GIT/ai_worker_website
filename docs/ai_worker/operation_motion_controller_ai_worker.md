@@ -17,6 +17,7 @@ If a leader device is available, you can instead use the `joint_space` or `leade
 ## Prerequisites
 
 - Complete the hardware and software steps in the **Setup Guide**.
+- Clone [robotis_motion_controller](https://github.com/ROBOTIS-GIT/robotis_motion_controller/tree/main) into your workspace and follow the installation steps in the README.
 - Ensure the robot is on level ground with enough clearance to move both arms safely.
 - Make sure you can press the emergency stop button immediately if the robot behaves unexpectedly.
 - Connect to the robot PC (keyboard/monitor or SSH) and make sure the battery is charged.

@@ -27,7 +27,7 @@ git clone --recurse-submodules https://github.com/ROBOTIS-GIT/physical_ai_tools.
 
 ## Camera Connection
 ![omy_camera](/quick_start_guide/omy/omy_camera.png)
-Connect the computer to the `Camera` port using a USB-C to USB-A cable.
+Connect the `USER PC` to the `Camera` port using a USB-C to USB-A cable.
 
 ## SSH connection
 

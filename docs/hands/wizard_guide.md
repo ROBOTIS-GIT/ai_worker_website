@@ -104,7 +104,7 @@ There are two ways to capture a pose:
 #### Method B: Numerical Entry
 1. Select an available preset slot (**Preset 1**, **Preset 2**, or **Preset 3**)
 2. Manually type the desired joint values into the input fields for the selected preset slot
-4. Click **Save** to store the current joint configuration
+3. Click **Save** to store the current joint configuration
 
 ### Loading and Executing Presets
 

@@ -18,15 +18,16 @@ After accessing the Robotis Hand Docker container, use the following command:
 ```bash
 ros2 launch robotis_hand_bringup hx5_d20_right.launch.py
 ```
+**Check Hand Orientation:** You must use the launch file that matches your specific hardware (`hx5_d20_left` or `hx5_d20_right`). If the software configuration does not match the physical hand, the system **will not work**.
 :::
 
-This command will sequentially execute the following procedures:
-1. Move the ROBOTIS Hand to its initial position
-2. Start subscribing to the input topic
+Once the command is executed, the system will perform the following steps:
+1. **Initial Positioning**: The ROBOTIS Hand moves to its initial position
+2. **Topic Subscription**: The node begins subscribing to the input topic
 
 The ROBOTIS Hand controller will now subscribe to the input topic described in the [Software Specifications](/hands/software_hands.html#controller-configuration-joint-mapping).
 
-For visualization, add the option `start_rviz:=true` at the end of the command:
+(Optional) For visualization, add the option `start_rviz:=true` at the end of the command:
 :::tabs key:robot-type
 == HX5-D20
 ```bash

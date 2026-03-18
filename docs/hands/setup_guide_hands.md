@@ -21,7 +21,7 @@ This guide will walk you through the process of setting up your ROBOTIS Hand har
 
 ### Hardware Connection
 
-<img src="/quick_start_guide/hands/hardware_connection.png" width="1000"/> <br>
+<img src="/quick_start_guide/hands/hx5_d20_hardware_connection.png" width="1000"/> <br>
  - Connect the **SMPS** and the **4-pin robot cable** to the U2D2 Power Hub<br>
  - Connect the **4-pin robot cable** to the 4-pin port of the HX5-D20
 :::

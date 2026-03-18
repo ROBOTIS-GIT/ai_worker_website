@@ -30,13 +30,13 @@ Ensure the following hardware connections are complete:
 1. Launch **DYNAMIXEL Wizard 2.0**
 2. Click the `Options` button in the top menu bar
 
-<img src='/specifications/hand/option_scan_button.png'>
+<img src='/specifications/hand/wizard_option_scan_button.png'>
 
 3. Select **Protocol 2.0**
 4. Select the appropriate **COM port** (or `/dev/ttyUSB0` on Linux)
 5. Set the **Baudrate** to match the ROBOTIS Hand configuration
 
-<img src='/specifications/hand/connection_setting.png'>
+<img src='/specifications/hand/wizard_connection_setting.png'>
 
 6. Click `Scan` to detect all connected actuators and sensors in the side panel
 
@@ -48,7 +48,7 @@ Ensure the following hardware connections are complete:
 - The ROBOTIS Hand HX5-D20 features five fingers, each equipped with four actuators and one tactile sensor.
 You can easily monitor the real-time status of every component.
 
-<img src='/specifications/hand/controllers_guide.png'>
+<img src='/specifications/hand/wizard_hx5_d20_scan_list.png'>
 
 ## HX Hands Tool
 You can control the ROBOTIS Hand through the specialized `HX Hands` Tool.
@@ -58,7 +58,7 @@ You can control the ROBOTIS Hand through the specialized `HX Hands` Tool.
 3. Choose a control mode: `Preset` or `Hand`
 4. Monitor the hand's current status via the GUI
 
-<img src='/specifications/hand/sync_hxhands.png'>
+<img src='/specifications/hand/wizard_sync_hxhands.png'>
 
 ### Preset Control via Tools Menu
 
@@ -80,13 +80,13 @@ The **Preset** feature allows you to save and load up to **three custom configur
 ### Custom Preset
 Click **Custom Preset** as shown in the image below.
 
-<img src='/specifications/hand/custom_preset.png'>
+<img src='/specifications/hand/wizard_custom_preset.png'>
 
 You can customize the release and grasp positions as shown in the image below.
 - Set a joint value for each finger
 - Set **PID gain values** and **current limits** for the robot hand.
 
-<img src='/specifications/hand/custom_preset_setting.png'>
+<img src='/specifications/hand/wizard_custom_preset_setting.png'>
 
 > When using preset mode, executing the release pose before the grasp pose is recommended.
 
@@ -128,4 +128,4 @@ The GUI provides a visual representation of tactile sensor data. Pressure levels
 - **Bright Green**: Strong pressure detected
 - **Black Background**: Weak or no pressure
 
-<img src='/specifications/hand/check_tactile_sensor.png'>
+<img src='/specifications/hand/hx5_d20_tactile_sensor.png'>

@@ -8,8 +8,16 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ## Product Components
 ![product_components](/specifications/ai_worker/product_components.png)
 
-* Extra Included Items
-  - **FFW-SG2**: Battery Charger
+### Included Common Items
+
+| Item | Qty |
+|:-----|:---:|
+| SG2 or BG2 | 1 |
+| LG2 | 1 |
+| SMPS for robot | 2 |
+| SMPS for LG2 | 1 |
+| E stop remote controller | 1 |
+| USB cable | 1 |
 
 ## Product Models
 ![model_name](/specifications/ai_worker/model_name.png)
@@ -17,29 +25,34 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ## Follower Specification
 ![model_lineup](/specifications/ai_worker/model_lineup.png)
 
-| Properties                  | Specification <br>(FFW-SG2)                | Specification<br>(FFW-BG2, not sold abroad) | Specification (FFW-SH3P) |
-|-----------------------------|----------------------------------------|----------------------------------------|---------------------------|
-| Dimensions (WxDxH)          | 604x602x1,623 (mm)<br>23.8x23.7x63.8 (inch)| 604x564x1,607 (mm)<br>23.8x22.2x63.2 (inch)| Preparing                 |
-| Weight                      | 90 kg (198 lb)                         | 85 kg (187 lb)                         | Preparing                 |
-| Actuator                    | Arm Joint 1~6: DYNAMIXEL-Y<br>Arm Joint 7: DYNAMIXEL-P<br>Head: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~6: DYNAMIXEL-Y<br>Arm Joint 7: DYNAMIXEL-P<br>Head: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details)) | Preparing                 |
-| Degrees of Freedom          | - Total: 25 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1<br>- Mobile: 6 DOF | - Total: 19 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1 | Preparing                 |
-| Arm Reach                   | 641 mm (to wrist) + hand               | 641 mm (to wrist) + hand               | Preparing                 |
-| Arm Payload<br>(Nominal)       | 3.0 kg (single arm)<br>6.0 kg (dual arm)  | 3.0 kg (single arm)<br>6.0 kg (dual arm)  | Preparing                 |
-| Arm Payload¹<br>(Peak)          | 5.0 kg (single arm)<br>10.0 kg (dual arm) | 5.0 kg (single arm)<br>10.0 kg (dual arm) | Preparing                 |
-| Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| Preparing                 |
-| Joint Range                 | (see [Joint Configuration](#joint-configuration-and-nomenclature))| (see [Joint Configuration](#joint-configuration-and-nomenclature))| Preparing                 |
-| Gripper/Hand                | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous Finger Actuator in development, see [Finger Actuator Specification](#finger-actuator-specification)) | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous Finger Actuator in development, see [Finger Actuator Specification](#finger-actuator-specification)) | Preparing                 |
-| Mobile Type                 | Swerve Drive                           | None                                   | Preparing                 |
-| Mobile Operation Velocity   | 1.5 m/s                                | None                                   | Preparing                 |
-| Power                       | Battery: 25V, 80Ah (2,040Wh)           | AC powered via SMPS: 24VDC, 80A, 1,920W               | Preparing                 |
-| Ambient Operating Temperature | 0 ~ 40℃                             | 0 ~ 40℃                                | Preparing                 |
-| Exterior Materials          | Aluminum, Plastic                      | Aluminum, Plastic                      | Preparing                 |
-| Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU<br>(see [Camera Specification](#camera-specification))| RGBD Camera x 3<br>(see [Camera Specification](#camera-specification))| Preparing                 |
-| Host Interface              | Ethernet<br>(Wi-Fi router up to 1Gbps)    | Ethernet<br>(Direct connection to host PC)| Preparing                 |
-| Internal Communications     | RS-485                                 | RS-485                                 | Preparing                 |
-| Communication Baudrate      | 4 Mbps                                 | 4 Mbps                                 | Preparing                 |
-| Computer                    | NVIDIA Jetson AGX Orin 32GB            | NVIDIA Jetson AGX Orin 32GB            | Preparing                 |
-| Software                    | ROS 2 Support, Python, C++, Web UI     | ROS 2 Support, Python, C++, Web UI     | Preparing                 |
+:::info
+**FFW-BG2** is sold in Korea only.
+**FFW-SH3P** is currently in preparation for release.
+:::
+
+| Properties                  | Specification (FFW-SG2)                | Specification (FFW-BG2)                |
+|-----------------------------|----------------------------------------|----------------------------------------|
+| Dimensions (WxDxH)          | 604x602x1,623 (mm)<br>23.8x23.7x63.8 (inch)| 604x564x1,607 (mm)<br>23.8x22.2x63.2 (inch)|
+| Weight                      | 90 kg (198 lb)                         | 85 kg (187 lb)                         |
+| Actuator                    | Arm Joint 1~6: DYNAMIXEL-Y<br>Arm Joint 7: DYNAMIXEL-P<br>Head: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details))|Arm Joint 1~6: DYNAMIXEL-Y<br>Arm Joint 7: DYNAMIXEL-P<br>Head: DYNAMIXEL-X<br>Lift: DYNAMIXEL-Y<br>(see [DYNAMIXEL Details](#dynamixel-details)) |
+| Degrees of Freedom          | - Total: 25 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1<br>- Mobile: 6 DOF | - Total: 19 DOF<br>- Arm: 7 DOF x 2<br>- Gripper: 1 DOF x 2<br>- Head: 2 DOF x 1<br>- Lift: 1 DOF x 1 |
+| Arm Reach                   | 641 mm (to wrist) + hand               | 641 mm (to wrist) + hand               |
+| Arm Payload<br>(Nominal)       | 3.0 kg (single arm)<br>6.0 kg (dual arm)  | 3.0 kg (single arm)<br>6.0 kg (dual arm)  |
+| Arm Payload¹<br>(Peak)          | 5.0 kg (single arm)<br>10.0 kg (dual arm) | 5.0 kg (single arm)<br>10.0 kg (dual arm) |
+| Joint Resolution            | -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)| -π(rad)~π(rad)<br>-262,144~262,144 (pulse/rev)|
+| Joint Range                 | (see [Joint Configuration](#joint-configuration-and-nomenclature))| (see [Joint Configuration](#joint-configuration-and-nomenclature))|
+| Gripper/Hand                | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous Finger Actuator in development, see [Finger Actuator Specification](#finger-actuator-specification)) | Standard: RH-P12-RN<br>(see [Gripper Specification](#gripper-specification))<br>(Dexterous Finger Actuator in development, see [Finger Actuator Specification](#finger-actuator-specification)) |
+| Mobile Type                 | Swerve Drive                           | None                                   |
+| Mobile Operation Velocity   | 1.5 m/s                                | None                                   |
+| Power                       | Battery: 25V, 80Ah (2,040Wh)           | AC powered via SMPS: 24VDC, 80A, 1,920W               |
+| Ambient Operating Temperature | 0 ~ 40℃                             | 0 ~ 40℃                                |
+| Exterior Materials          | Aluminum, Plastic                      | Aluminum, Plastic                      |
+| Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU<br>(see [Camera Specification](#camera-specification))| RGBD Camera x 3<br>(see [Camera Specification](#camera-specification))|
+| Host Interface              | Ethernet<br>(Wi-Fi router up to 1Gbps)    | Ethernet<br>(Direct connection to host PC)|
+| Internal Communications     | RS-485                                 | RS-485                                 |
+| Communication Baudrate      | 4 Mbps                                 | 4 Mbps                                 |
+| Computer                    | NVIDIA Jetson AGX Orin 32GB            | NVIDIA Jetson AGX Orin 32GB            |
+| Software                    | ROS 2 Support, Python, C++, Web UI     | ROS 2 Support, Python, C++, Web UI     |
 
 ¹ *Peak payload capacity may vary depending on the robot's posture and motion profile.*
 
@@ -65,7 +78,9 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
     </div>
 </div>
 
-
+:::info
+**FFW-LH5** is currently in preparation for release.
+:::
 
 | Properties               | Specification (FFW-LG2)                 | Specification (FFW-LH5)                |
 |--------------------------|-----------------------------------------|----------------------------------------|

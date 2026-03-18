@@ -70,7 +70,7 @@ You can launch Gazebo and RViz (Moveit) individually, launch RViz together with 
     ros2 launch ffw_moveit_config moveit.launch.py use_sim:=true
     # Launch Moveit in simulation mode
     ```
-<img src="/release_note/ai_worker/ffw_moveit.gif" alt="AI Worker MoveIt">
+<img src="/release_note/ai_worker/1.1.10/ffw_moveit.gif" alt="AI Worker MoveIt">
 
 
 ## Launch Nav2 in Gazebo

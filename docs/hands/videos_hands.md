@@ -5,6 +5,7 @@ We are just getting started—stay tuned as we add more demonstrations of our Ph
 
 ## Product Overview
 
+### HX5-D20
 <img src="/hand_rev1.gif"/>
 
 ### ROBOTIS Hand Showcase

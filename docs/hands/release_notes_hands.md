@@ -3,6 +3,12 @@
 ## ROBOTIS Hand
 https://github.com/ROBOTIS-GIT/robotis_hand
 
+### 0.0.3 (2026-03-18)
+* Updated Docker image tag
+* Added version print notice to Docker container
+* Removed rmw_zenoh from Dockerfile
+* Contributors: Hyunwoo Nam
+
 ### 0.0.2 (2026-01-14)
 * Fixed moveit_config srdf files for correct disable_collisions settings
 * Fixed robot description files for hx5_d20_rev2

@@ -342,7 +342,8 @@ export default defineConfig({
           text: 'Quick Start Guide',
           items: [
             { text: 'Setup Guide', link: '/hands/setup_guide_hands' },
-            { text: 'Operation Guide', link: '/hands/operation_hands' }
+            { text: 'Operation Guide', link: '/hands/operation_hands' },
+            { text: 'DXL Wizard Guide', link: '/hands/wizard_guide' }
           ]
         },
         {

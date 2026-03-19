@@ -28,7 +28,6 @@ The motion controller is the software layer that turns easier robot commands, su
 - **Higher-Level Commanding**: Command target poses or joint goals instead of manually sending every joint step
 - **Interpolated Motion**: Generate smooth `MoveL` and `MoveJ` motions from the current state to the goal over a requested time
 - **QP-Based Safety**: Apply constraints such as joint range, joint velocity, and self-collision avoidance while tracking the command
-- **Multiple Control Modes**: Support `movel`, `movej`, `vr`, and leader-follower retargeting workflows
 
 On AI Worker, this is especially helpful when you want motion that is easier to command than raw low-level control, but still filtered through the controller's safety-aware optimization.
 

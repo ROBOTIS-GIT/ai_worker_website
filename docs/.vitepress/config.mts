@@ -107,7 +107,6 @@ export default defineConfig({
               items: [
                 { text: 'Teleoperation', link: '/ai_worker/operation_teleoperation_ai_worker' },
                 { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' },
-                { text: 'Motion controller', link: '/ai_worker/operation_motion_controller_ai_worker' }
               ]
             }
           ]
@@ -146,6 +145,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
             { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
+            { text: 'Motion controller', link: '/ai_worker/advanced_motion_controller_ai_worker' }
           ]
         },
         {
@@ -186,14 +186,7 @@ export default defineConfig({
           text: 'Quick Start Guide',
           items: [
             { text: 'Setup Guide', link: '/omy/setup_guide_omy' },
-            {
-              text: 'Operation Guide',
-                link: '/omy/operation_omy',
-                items: [
-                  { text: 'Teleoperation', link: '/omy/operation_teleoperation_omy' },
-                  { text: 'Motion controller', link: '/omy/operation_motion_controller_omy' }
-                ]
-            }
+            { text: 'Operation Guide', link: '/omy/operation_omy' }
           ]
         },
         {
@@ -223,6 +216,13 @@ export default defineConfig({
             { text: 'Overview', link: '/omy/simulation_omy'},
             { text: 'Gazebo', link: '/omy/gazebo_omy' },
             { text: 'Isaac Sim/Lab', link: '/omy/robotis_lab_omy' }
+          ]
+        },
+        {
+          text: 'Advanced Features',
+          items: [
+            { text: 'Overview', link: '/omy/advanced_features_omy' },
+            { text: 'Motion controller', link: '/omy/advanced_motion_controller_omy' }
           ]
         },
         {
@@ -271,14 +271,7 @@ export default defineConfig({
                 { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
               ]
             },
-            {
-            text: 'Operation Guide',
-              link: '/omx/operation_omx',
-              items: [
-                { text: 'ROS 2', link: '/omx/operation_ros2_omx' },
-                { text: 'Motion controller', link: '/omx/operation_motion_controller_omx' }
-              ]
-            }
+            { text: 'Operation Guide - ROS 2', link: '/omx/operation_omx' }
           ]
         },
         {
@@ -310,6 +303,13 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/omx/simulation_omx'},
             { text: 'Gazebo', link: '/omx/gazebo_omx' },
+          ]
+        },
+        {
+          text: 'Advanced Features',
+          items: [
+            { text: 'Overview', link: '/omx/advanced_features_omx' },
+            { text: 'Motion controller', link: '/omx/advanced_motion_controller_omx' }
           ]
         },
         {

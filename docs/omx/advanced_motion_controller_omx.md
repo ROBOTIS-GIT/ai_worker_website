@@ -10,7 +10,7 @@ Its QP(Quadratic Programming)-based controller is especially useful because it d
 
 ## Supported Controllers
 
-- `controller_type:=movel`: Generates interpolated arm motion from the current hand pose to the requested goal pose.
+- `controller_type:=movel`**(Default)**: Generates interpolated arm motion from the current hand pose to the requested goal pose.
 - `controller_type:=movej`: Generates interpolated arm motion from the current joint configuration to the requested joint goal.
 
 ## Understanding `MoveL` and `MoveJ`
@@ -26,7 +26,7 @@ This is different from a simple pose or joint command that only describes the de
 ## Prerequisites
 
 - Complete the hardware and software steps in the **Setup Guide**.
-- Clone [`robotis_motion_controller`](https://github.com/ROBOTIS-GIT/robotis_motion_controller) into your workspace and follow the installation steps in the README.
+- In the default open_manipulator Docker container environment, clone [`robotis_motion_controller`](https://github.com/ROBOTIS-GIT/robotis_motion_controller) into `~/ros2_ws/src`, then follow the installation steps in the README.
 - Make sure `robotis_interfaces` is available in the same ROS 2 workspace.
 - Ensure OMX is on a stable surface with enough clearance for arm motion.
 
@@ -70,7 +70,7 @@ source ~/ros2_ws/install/setup.bash
    - `TF`
    - `InteractiveMarkers`
 
-When `start_interactive_marker:=true`, the launch file starts one interactive marker named `omx_goal_marker`. In the current rev1 branch, that marker publishes `MoveL` commands directly to `/omx_movel_controller/movel`.
+When `start_interactive_marker:=true`, the launch file starts one interactive marker named `omx_goal_marker`. Marker publishes `MoveL` commands directly to `/omx_movel_controller/movel`.
 
 You can use the `movel` controller in two ways:
 

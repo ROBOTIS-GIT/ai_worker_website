@@ -10,7 +10,7 @@ Its QP(Quadratic Programming)-based controller is especially useful because it d
 
 ## Supported Controllers
 
-- `controller_type:=movel`: Generates interpolated arm motion from the current hand pose to the requested goal pose.
+- `controller_type:=movel`**(Default)**: Generates interpolated arm motion from the current hand pose to the requested goal pose.
 - `controller_type:=movej`: Receives raw joint trajectories and republishes safer filtered trajectories for the robot.
 <!-- - `controller_type:=vr`: Continuously tracks live right and left task-space pose references from VR input.
 - `controller_type:=leader`: Converts leader-side motion into follower pose references and tracks them on the robot. -->
@@ -28,7 +28,7 @@ This is different from a simple pose or joint command that only describes the de
 ## Prerequisites
 
 - Complete the hardware and software steps in the **Setup Guide**.
-- Clone [`robotis_motion_controller`](https://github.com/ROBOTIS-GIT/robotis_motion_controller) into your workspace and follow the installation steps in the README.
+- In the default ai_worker Docker container environment, clone [`robotis_motion_controller`](https://github.com/ROBOTIS-GIT/robotis_motion_controller) into `~/ros2_ws/src`, then follow the installation steps in the README.
 - Ensure the robot is on level ground with enough clearance to move both arms safely.
 - Make sure the emergency stop button is always within reach during operation.
 - Connect to the robot PC and make sure the battery is charged.

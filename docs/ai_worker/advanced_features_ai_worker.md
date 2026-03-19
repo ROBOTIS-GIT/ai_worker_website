@@ -20,3 +20,18 @@ Behavior Trees are particularly powerful when combined with imitation learning m
 <a href="/ai_worker/behavior_tree_ai_worker" class="button-shortcut">
 Learn More About Behavior Trees
 </a>
+
+### 2. Motion Controller
+
+The motion controller is the software layer that turns easier robot commands, such as target hand poses or joint commands, into joint trajectories that the real robot can execute. It is useful when you want higher-level motion commands while still relying on the controller to generate safe robot motion.
+
+- **Higher-Level Commanding**: Command target poses or joint goals instead of manually sending every joint step
+- **Interpolated Motion**: Generate smooth `MoveL` and `MoveJ` motions from the current state to the goal over a requested time
+- **QP-Based Safety**: Apply constraints such as joint range, joint velocity, and self-collision avoidance while tracking the command
+- **Multiple Control Modes**: Support `movel`, `movej`, `vr`, and leader-follower retargeting workflows
+
+On AI Worker, this is especially helpful when you want motion that is easier to command than raw low-level control, but still filtered through the controller's safety-aware optimization.
+
+<a href="/ai_worker/advanced_motion_controller_ai_worker" class="button-shortcut">
+Learn More About Motion Controller
+</a>

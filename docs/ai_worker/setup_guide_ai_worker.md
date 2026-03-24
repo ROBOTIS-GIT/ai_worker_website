@@ -35,6 +35,8 @@ The back of the Follower body includes several ports for system access and exter
 #### Hardware Ports (FFW_SG2 Follower)
 ![Back of the SG2 body](/quick_start_guide/ai_worker/back_of_the_SG2_body.png)
 The back of the Follower body includes several ports for system access and external connections. These include:
+- `WAN Port`: Used to connect the robot to an external network or the internet.
+
 - `LAN Port`: Used to access the robot PC via SSH or remote desktop.
 
 - `USB Ports`: For connecting peripherals such as a keyboard, mouse, or USB drive.

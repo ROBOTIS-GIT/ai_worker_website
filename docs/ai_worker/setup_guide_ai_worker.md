@@ -242,9 +242,9 @@ Data in areas without volume mapping will be lost during container restart. Make
 **1. Bring up the robot.**
 
 :::tabs key:robot-type
-== BG2 Type
+== FFW-BG2
 ros2 launch ffw_bringup ffw_bg2_ai.launch.py
-== SG2 Type
+== FFW-SG2
 ros2 launch ffw_bringup ffw_sg2_ai.launch.py
 :::
 

@@ -239,66 +239,34 @@ Data in areas without volume mapping will be lost during container restart. Make
 :::
 
 ## Checking battery state
-**1. Bring up the robot.**
 
-:::tabs key:robot-type
-== FFW-BG2
-ros2 launch ffw_bringup ffw_bg2_ai.launch.py
-== FFW-SG2
-ros2 launch ffw_bringup ffw_sg2_ai.launch.py
-:::
+The `FFW-SG2` model has two batteries. The `FFW-BG2` model does not have a battery.
 
-**2. Check that the battery state topics are available.**
+To check the battery state, run:
 
 ```bash
-ros2 topic list | grep battery
-```
-
-You should see the following topics:
-
-```bash
-/ai_worker/battery/left/state
-/ai_worker/battery/right/state
-```
-
-**3. Read the battery state.**
-
-To check the left battery, run:
-
-```bash
+# Check the left battery
 ros2 topic echo /ai_worker/battery/left/state --once
-```
-
-To check the right battery, run:
-
-```bash
+# Check the right battery
 ros2 topic echo /ai_worker/battery/right/state --once
 ```
 
-The output will look similar to this:
+The output includes the following keys: `frame_id`, `voltage`, and `percentage`.
+
+- `frame_id`: Shows which battery the state is from.
 
 ```bash
-header:
-  stamp:
-    sec: 1774318714
-    nanosec: 557607025
-  frame_id: battery_left
-voltage: 28.700000762939453
-temperature: 0.0
-current: 0.0
-charge: 0.0
-capacity: 0.0
-design_capacity: 0.0
-percentage: 0.934949517250061
-power_supply_status: 0
-power_supply_health: 0
-power_supply_technology: 3
-present: true
-cell_voltage: []
-cell_temperature: []
-location: ''
-serial_number: ''
+frame_id: battery_left  # Battery state from left battery
 ```
 
 - `voltage`: Shows the current battery voltage.
-- `percentage`: Shows the remaining battery level as a value from `0.0` to `1.0`. In the sample output above, `0.9349` means about `93%`.
+
+```bash
+voltage: 28.700000762939453  # Battery voltage 28.7V
+```
+
+- `percentage`: Shows the remaining battery level as a value from `0.0` to `1.0`.
+
+```bash
+percentage: 0.934949517250061  # Battery 93% charged
+```

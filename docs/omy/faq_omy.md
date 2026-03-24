@@ -1,4 +1,4 @@
 # FAQ
-This document provides answers to frequently asked questions about the OMY.
+You can find frequently asked questions about the OMY in the FAQ section of the Discord server.
 
-(TBD)
+- **Discord Server**: [https://discord.gg/robotis](https://discord.gg/robotis)

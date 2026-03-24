@@ -1,4 +1,4 @@
 # FAQ
-This document provides answers to frequently asked questions about the OMX.
+You can find frequently asked questions about the OMX in the FAQ section of the Discord server.
 
-(TBD)
+- **Discord Server**: [https://discord.gg/robotis](https://discord.gg/robotis)

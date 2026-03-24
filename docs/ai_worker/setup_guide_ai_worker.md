@@ -237,3 +237,68 @@ git pull
 ::: warning
 Data in areas without volume mapping will be lost during container restart. Make sure to save important data before restarting.
 :::
+
+## Checking battery state
+**1. Bring up the robot.**
+
+:::tabs key:robot-type
+== BG2 Type
+ros2 launch ffw_bringup ffw_bg2_ai.launch.py
+== SG2 Type
+ros2 launch ffw_bringup ffw_sg2_ai.launch.py
+:::
+
+**2. Check that the battery state topics are available.**
+
+```bash
+ros2 topic list | grep battery
+```
+
+You should see the following topics:
+
+```bash
+/ai_worker/battery/left/state
+/ai_worker/battery/right/state
+```
+
+**3. Read the battery state.**
+
+To check the left battery, run:
+
+```bash
+ros2 topic echo /ai_worker/battery/left/state --once
+```
+
+To check the right battery, run:
+
+```bash
+ros2 topic echo /ai_worker/battery/right/state --once
+```
+
+The output will look similar to this:
+
+```bash
+header:
+  stamp:
+    sec: 1774318714
+    nanosec: 557607025
+  frame_id: battery_left
+voltage: 28.700000762939453
+temperature: 0.0
+current: 0.0
+charge: 0.0
+capacity: 0.0
+design_capacity: 0.0
+percentage: 0.934949517250061
+power_supply_status: 0
+power_supply_health: 0
+power_supply_technology: 3
+present: true
+cell_voltage: []
+cell_temperature: []
+location: ''
+serial_number: ''
+```
+
+- `voltage`: Shows the current battery voltage.
+- `percentage`: Shows the remaining battery level as a value from `0.0` to `1.0`. In the sample output above, `0.9349` means about `93%`.

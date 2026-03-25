@@ -17,7 +17,7 @@ Use the steps below to clear the multi-turn error.
 ## How to clear the multi-turn error
 
 ### 1. Align the home position
-Press the E-stop, align the slit marks while moving the arm to the **home (zero) position**, then release the E-stop.  
+Press the E-stop, align the slit marks while moving the arm to the **home (zero) position**, then release the E-stop *once alignment is complete*.
   Home positions (joint index, Dynamixel ID): These are left arm images. Please apply the same to the right arm as well.  
       * **Joint 1** (ID 1, 31)
           <img src="/troubleshooting_guide/ai_worker_31.jpg" alt="Joint 1, Dynamixel ID 31, home position reference" style="max-width: 360px; width: 100%; height: auto; display: block;" />

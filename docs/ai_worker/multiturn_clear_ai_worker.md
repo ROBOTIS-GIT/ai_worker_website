@@ -64,7 +64,7 @@ Press the E-stop, align the slit marks while moving the arm to the **home (zero)
     Then run `docker-compose up -d` to start the noVNC container.
 
 ### 3. Open noVNC in a browser
-In Web Browser(like Chrome), open `http://ffw-snpr48a{serial-number}.local:8090`, substituting your robot’s serial number for `serial-number`. (e.g. `http://ffw-snpr48a0000.local:8090`)
+In a Web Browser(like Chrome), open `http://ffw-snpr48a{serial-number}.local:8090`, substituting your robot’s serial number for `serial-number`. (e.g. `http://ffw-snpr48a0000.local:8090`)
 
 ### 4. Connect noVNC and Dynamixel Wizard 2.0
 Connect **noVNC** and **Dynamixel Wizard 2.0** so you can use the wizard on the robot’s desktop.

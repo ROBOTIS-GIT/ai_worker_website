@@ -51,7 +51,7 @@ Then run `docker-compose up -d` to start the noVNC container.
 
 ### 2. Open noVNC in a browser
 
-In a web browser (for example Chrome), open `http://omy-snpr44b{serial-number}.local:8090`, replacing `{serial-number}` with your robot’s serial number. Example: `http://omy-snpr44b0000.local:8090`
+In a Web browser (for example Chrome), open `http://omy-snpr44b{serial-number}.local:8090`, replacing `{serial-number}` with your robot’s serial number. Example: `http://omy-snpr44b0000.local:8090`
 
 ### 3. Connect noVNC and Dynamixel Wizard 2.0
 

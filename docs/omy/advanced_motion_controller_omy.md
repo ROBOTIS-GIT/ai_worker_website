@@ -1,9 +1,9 @@
 
-# ROBOTIS Motion Controller
+# Cyclo Motion Controller
 
-This guide shows how to run the ROBOTIS Motion Controller from [`robotis_motion_controller`](https://github.com/ROBOTIS-GIT/robotis_motion_controller) on OMY.
+This guide shows how to run the Cyclo Motion Controller from [`cyclo_control`](https://github.com/ROBOTIS-GIT/cyclo_control) on OMY.
 
-`robotis_motion_controller` is the software layer that acts like the robot's motion interpreter. You give it an easier command, such as an end-effector target pose or a joint target, and it computes the joint trajectories that the real robot should follow.
+`cyclo_motion_controller` is the software layer that acts like the robot's motion interpreter. You give it an easier command, such as an end-effector target pose or a joint target, and it computes the joint trajectories that the real robot should follow.
 ![omy_motion_controller](/simulation/omy/omy_motion_controller.png)
 
 Its QP(Quadratic Programming)-based controller is especially useful because it does not only track the command, but also tries to keep the motion safe at the same time by considering limits and constraints such as **joint range**, **joint velocity**, and **self-collision avoidance**. In practice, you use it when you want to command the robot by target poses or joint commands while still relying on the controller to generate safe motion.
@@ -27,7 +27,7 @@ This is different from a simple pose or joint command that only describes the de
 ## Prerequisites
 
 - Complete the hardware and software steps in the **Setup Guide**.
-- In the default open_manipulator Docker container environment, clone [`robotis_motion_controller`](https://github.com/ROBOTIS-GIT/robotis_motion_controller) into `~/ros2_ws/src`, then follow the installation steps in the README.
+- In the default open_manipulator Docker container environment, clone [`cyclo_control`](https://github.com/ROBOTIS-GIT/cyclo_control) into `~/ros2_ws/src`, then follow the installation steps in the README.
 - Ensure OMY is on a stable surface with enough clearance for arm motion.
 - Make sure the emergency stop is reachable at all times during operation.
 
@@ -60,13 +60,13 @@ source /opt/ros/jazzy/setup.bash
 source ~/ros2_ws/install/setup.bash
 ```
 
-1. In the first terminal, launch the default ROBOTIS Motion Controller.
+1. In the first terminal, launch the default OMY Motion Controller.
    ```bash
-   ros2 launch robotis_motion_controller_ros omy_controller.launch.py
+   ros2 launch cyclo_motion_controller_ros omy_controller.launch.py
    ```
 2. If you want to use marker-based control in RViz, relaunch it with `start_interactive_marker:=true`:
    ```bash
-   ros2 launch robotis_motion_controller_ros omy_controller.launch.py start_interactive_marker:=true
+   ros2 launch cyclo_motion_controller_ros omy_controller.launch.py start_interactive_marker:=true
    ```
 3. If you use marker-based control, start RViz if it is not already running:
    ```bash
@@ -170,7 +170,7 @@ The controller interpolates from the current joint state to the requested joint 
 
 ## Controller Parameters
 
-The main parameters live in `robotis_motion_controller_ros/config/omy_config.yaml`. The file is divided by controller name, so you usually tune only the block that matches the controller mode you are running.
+The main parameters live in `cyclo_motion_controller_ros/config/omy_config.yaml`. The file is divided by controller name, so you usually tune only the block that matches the controller mode you are running.
 
 ### `omy_movel_controller`
 

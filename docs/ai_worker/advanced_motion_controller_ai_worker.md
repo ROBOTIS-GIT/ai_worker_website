@@ -1,8 +1,8 @@
-# ROBOTIS Motion Controller
+# Cyclo Motion Controller
 
-This guide shows how to run the ROBOTIS Motion Controller from [`robotis_motion_controller`](https://github.com/ROBOTIS-GIT/robotis_motion_controller) on AI Worker.
+This guide shows how to run the Cyclo Motion Controller from [`cyclo_control`](https://github.com/ROBOTIS-GIT/cyclo_control) on AI Worker.
 
-`robotis_motion_controller` is the software layer that acts like the robot's motion interpreter. You give it an easier command, such as an end-effector target pose or a joint target, and it computes the joint trajectories that the real robot should follow.
+`cyclo_motion_controller` is the software layer that acts like the robot's motion interpreter. You give it an easier command, such as an end-effector target pose or a joint target, and it computes the joint trajectories that the real robot should follow.
 ![ai_worker_motion_controller](/simulation/ai_worker/aiw_motion_controller.png)
 
 Its QP(Quadratic Programming)-based controller is especially useful because it does not only track the command, but also tries to keep the motion safe at the same time by considering limits and constraints such as **joint range**, **joint velocity**, and **self-collision avoidance**. In practice, you use it when you want to command the robot by target poses or joint commands while still relying on the controller to generate safe motion.
@@ -28,7 +28,7 @@ This is different from a simple pose or joint command that only describes the de
 ## Prerequisites
 
 - Complete the hardware and software steps in the **Setup Guide**.
-- In the default ai_worker Docker container environment, clone [`robotis_motion_controller`](https://github.com/ROBOTIS-GIT/robotis_motion_controller) into `~/ros2_ws/src`, then follow the installation steps in the README.
+- In the default ai_worker Docker container environment, clone [`cyclo_control`](https://github.com/ROBOTIS-GIT/cyclo_control) into `~/ros2_ws/src`, then follow the installation steps in the README.
 - Ensure the robot is on level ground with enough clearance to move both arms safely.
 - Make sure the emergency stop button is always within reach during operation.
 - Connect to the robot PC and make sure the battery is charged.
@@ -56,13 +56,13 @@ source /opt/ros/jazzy/setup.bash
 source ~/ros2_ws/install/setup.bash
 ```
 
-1. In the first terminal, launch the default AI Worker ROBOTIS Motion Controller:
+1. In the first terminal, launch the default AI Worker controller:
    ```bash
-   ros2 launch robotis_motion_controller_ros ai_worker_controller.launch.py controller_type:=movel
+   ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=movel
    ```
 2. If you want to use marker-based control in RViz, relaunch it with `start_interactive_marker:=true`:
    ```bash
-   ros2 launch robotis_motion_controller_ros ai_worker_controller.launch.py controller_type:=movel start_interactive_marker:=true
+   ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=movel start_interactive_marker:=true
    ```
 3. If you use marker-based control, start RViz if it is not already running:
    ```bash
@@ -123,7 +123,7 @@ ros2 topic pub --once /l_goal_move robotis_interfaces/msg/MoveL "{
 This controller is used to apply a safety filter to raw joint trajectory commands published for the follower arms:
 
 ```bash
-ros2 launch robotis_motion_controller_ros ai_worker_controller.launch.py controller_type:=movej
+ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=movej
 ```
 
 It subscribes to:
@@ -255,7 +255,7 @@ The leader controller performs forward kinematics from the leader joint trajecto
 
 ## Controller Parameters
 
-The main parameters live in `robotis_motion_controller_ros/config/ai_worker_config.yaml`. The file is divided by controller name, so you usually tune only the block that matches the controller mode you are running.
+The main parameters live in `cyclo_motion_controller_ros/config/ai_worker_config.yaml`. The file is divided by controller name, so you usually tune only the block that matches the controller mode you are running.
 
 ### `ai_worker_movel_controller`
 

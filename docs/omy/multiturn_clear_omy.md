@@ -115,7 +115,7 @@ The robot may move or fall under gravity. **Support the robot by hand** while to
 
 ![Initialize home position — packet monitoring](/specifications/omy/reset_multiturn_1.png)
 
-3. Check that each joint’s present position is within **1** degree of the target.
+3. Check that each joint’s present position is within **1** degrees of the target.
 4. For any joint outside that range, return to **step 6**, adjust the joint manually, then repeat step 2.
 
 ![Initialize home position reference](/specifications/omy/initialize_home_position.png)

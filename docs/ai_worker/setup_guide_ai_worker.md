@@ -35,6 +35,8 @@ The back of the Follower body includes several ports for system access and exter
 #### Hardware Ports (FFW_SG2 Follower)
 ![Back of the SG2 body](/quick_start_guide/ai_worker/back_of_the_SG2_body.png)
 The back of the Follower body includes several ports for system access and external connections. These include:
+- `WAN Port`: Used to connect the robot to an external network or the internet.
+
 - `LAN Port`: Used to access the robot PC via SSH or remote desktop.
 
 - `USB Ports`: For connecting peripherals such as a keyboard, mouse, or USB drive.
@@ -237,3 +239,36 @@ git pull
 ::: warning
 Data in areas without volume mapping will be lost during container restart. Make sure to save important data before restarting.
 :::
+
+## Checking battery state
+
+The `FFW-SG2` model has two batteries. The `FFW-BG2` model does not have a battery.
+
+To check the battery state, run:
+
+```bash
+# Check the left battery
+ros2 topic echo /ai_worker/battery/left/state --once
+# Check the right battery
+ros2 topic echo /ai_worker/battery/right/state --once
+```
+
+The output includes the following keys: `frame_id`, `voltage`, and `percentage`.
+
+- `frame_id`: Shows which battery the state is from.
+
+```bash
+frame_id: battery_left  # Battery state from left battery
+```
+
+- `voltage`: Shows the current battery voltage.
+
+```bash
+voltage: 28.700000762939453  # Battery voltage 28.7V
+```
+
+- `percentage`: Shows the remaining battery level as a value from `0.0` to `1.0`.
+
+```bash
+percentage: 0.934949517250061  # Battery 93% charged
+```

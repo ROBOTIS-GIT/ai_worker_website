@@ -158,6 +158,7 @@ export default defineConfig({
         {
           text: 'Support',
           items: [
+            { text: 'Troubleshooting Guide', link: '/ai_worker/multiturn_clear_ai_worker' },
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/ai_worker/issues_ai_worker' },
             { text: 'FAQ', link: '/ai_worker/faq_ai_worker' },
@@ -227,6 +228,7 @@ export default defineConfig({
         {
           text: 'Support',
           items: [
+            { text: 'Troubleshooting Guide', link: '/omy/multiturn_clear_omy' },
             { text: 'Manual Packing Procedure', link: '/omy/manual_packing_procedure_omy' },
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/omy/issues_omy' },

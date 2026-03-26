@@ -36,11 +36,6 @@ cd ~/ai_worker
 ./docker/container.sh start
 ```
 #### method 2
-create docker-compose.yml file and run it.
-```bash
-docker-compose up -d
-```
-
 Make a `docker-compose.yml` file with the following content:
   ::: details docker-compose.yml
   ```yml

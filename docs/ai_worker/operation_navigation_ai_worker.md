@@ -28,6 +28,19 @@ At the `Robot PC`, run the following commands:
 
 1. Build the noVNC container:
 
+#### method 1
+Update `ai_worker` repository and run `container.sh`.  
+(⚠️ **Warning:** Existing container data may be lost! If you want to keep your container data, use **method 2** instead.)
+```bash
+cd ~/ai_worker
+./docker/container.sh start
+```
+#### method 2
+create docker-compose.yml file and run it.
+```bash
+docker-compose up -d
+```
+
 Make a `docker-compose.yml` file with the following content:
   ::: details docker-compose.yml
   ```yml

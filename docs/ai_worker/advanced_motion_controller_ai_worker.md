@@ -9,7 +9,7 @@ Its QP(Quadratic Programming)-based controller is especially useful because it d
 ![motion_controller_safety](/simulation/ai_worker/ffw_sg2_collision.gif)
 
 ::: danger
-The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Always operate the robot carefully and avoid fast or sudden movements.
+⚠️ The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Always operate the robot carefully and avoid fast or sudden movements.
 :::
 
 ## Supported Controllers
@@ -348,7 +348,7 @@ The main parameters live in `cyclo_motion_controller_ros/config/ai_worker_config
 ## Safety and Usage Tips
 
 ::: danger
-The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Operate the robot carefully and avoid fast or sudden movements.
+⚠️ The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Operate the robot carefully and avoid fast or sudden movements.
 :::
 
 - Keep people, cables, and nearby objects clear before sending commands.

@@ -9,7 +9,7 @@ Its QP(Quadratic Programming)-based controller is especially useful because it d
 ![omx_collision](/simulation/omx/omx_collision.gif)
 
 ::: danger
-The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Always operate the robot carefully and avoid fast or sudden movements.
+⚠️ The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Always operate the robot carefully and avoid fast or sudden movements.
 :::
 
 ## Supported Controllers
@@ -205,7 +205,7 @@ The main parameters live in `cyclo_motion_controller_ros/config/omx_config.yaml`
 ## Safety and Usage Tips
 
 ::: danger
-The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Operate the robot carefully and avoid fast or sudden movements.
+⚠️ The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Operate the robot carefully and avoid fast or sudden movements.
 :::
 
 - Keep hands and cables clear before sending marker, `movej`, or `movel` commands.

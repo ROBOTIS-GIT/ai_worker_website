@@ -8,6 +8,10 @@ This guide shows how to run the Cyclo Motion Controller from [`cyclo_control`](h
 Its QP(Quadratic Programming)-based controller is especially useful because it does not only track the command, but also tries to keep the motion safe at the same time by considering limits and constraints such as **joint range**, **joint velocity**, and **self-collision avoidance**. In practice, you use it when you want to command the robot by target poses or joint commands while still relying on the controller to generate safe motion.
 ![motion_controller_safety](/simulation/ai_worker/ffw_sg2_collision.gif)
 
+::: danger
+The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Always operate the robot carefully and avoid fast or sudden movements.
+:::
+
 ## Supported Controllers
 
 - `controller_type:=movel`**(Default)**: Generates interpolated arm motion from the current hand pose to the requested goal pose.
@@ -19,9 +23,9 @@ Its QP(Quadratic Programming)-based controller is especially useful because it d
 
 `MoveL` and `MoveJ` are not just "send one target and hope the robot gets there." They are motion commands that tell the controller to generate an interpolated motion from the robot's current state to the requested goal over a given time.
 
-- `MoveL` means "move in a Cartesian line." You command a target hand pose and an interpolation time, and the controller generates a smooth motion from the current end-effector pose toward that goal.
+- `MoveL` means "move in a Cartesian line." You command a target hand pose and an interpolation time, and the controller generates a smooth motion that keeps the end-effector on a straight (linear) path from the current pose to the goal.
 ![Default_vs_movel](/simulation/ai_worker/default_vs_movel.gif)
-- `MoveJ` means "move in joint space." You command target joint values and an interpolation time, and the controller generates a smooth motion from the current joint configuration toward those values. In that sense, it follows the same interpolation idea as `MoveL`, but in joint space instead of Cartesian space.
+- `MoveJ` means "move in joint space." You command target joint values and an interpolation time, and the controller generates a smooth motion from the current joint configuration toward those values. Because the interpolation happens in joint space, the end-effector path is generally not a straight line and may appear curved.
 
 This is different from a simple pose or joint command that only describes the desired target state. `MoveL` and `MoveJ` are higher-level motion commands because they also imply a transition from the current state to the goal, including how long that transition should take.
 
@@ -56,19 +60,23 @@ source /opt/ros/jazzy/setup.bash
 source ~/ros2_ws/install/setup.bash
 ```
 
-1. In the first terminal, launch the default AI Worker controller:
+1. In the first terminal, launch the default `movel` controller:
    ```bash
    ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=movel
    ```
-2. If you want to use marker-based control in RViz, relaunch it with `start_interactive_marker:=true`:
+2. For marker-based control in RViz, relaunch it with `start_interactive_marker:=true`:
    ```bash
    ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=movel start_interactive_marker:=true
    ```
-3. If you use marker-based control, start RViz if it is not already running:
+3. For handover-style motions where the two grippers may intentionally come into contact, relaunch it with `disable_gripper_collisions:=true`:
+   ```bash
+   ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=movel start_interactive_marker:=true disable_gripper_collisions:=true
+   ```
+4. If you use marker-based control, start RViz if it is not already running:
    ```bash
    rviz2
    ```
-4. In RViz, set the fixed frame to `base_link` and add these displays:
+5. In RViz, set the fixed frame to `base_link` and add these displays:
    - `RobotModel`
    - `TF`
    - `InteractiveMarkers`
@@ -120,10 +128,16 @@ ros2 topic pub --once /l_goal_move robotis_interfaces/msg/MoveL "{
 
 ## Launch MoveJ Controller
 
-This controller is used to apply a safety filter to raw joint trajectory commands published for the follower arms:
+This controller is used to apply a safety filter to raw joint trajectory commands published for the follower arms.
 
 ```bash
 ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=movej
+```
+
+For handover-style motions where the two grippers may intentionally come into contact, relaunch it with `disable_gripper_collisions:=true`:
+
+```bash
+ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=movej disable_gripper_collisions:=true
 ```
 
 It subscribes to:
@@ -211,6 +225,7 @@ The leader controller performs forward kinematics from the leader joint trajecto
 - `base_frame`: Frame used for the interactive markers. Default: `base_link`.
 - `right_controlled_link`, `left_controlled_link`: Controlled link names for the right and left markers.
 - `right_movel_topic`, `left_movel_topic`: `MoveL` topics published by the right and left markers.
+- `disable_gripper_collisions`: Disables collision checking only between the left and right grippers. Default: `false`.
 - `reactivate_service`: Reactivation service used by the `vr` and `leader` modes. Default: `/reactivate`.
 - `config_file`: Path to controller configuration yaml file.
 - `follower_urdf_path`, `follower_srdf_path`: Override the follower robot model files.
@@ -331,6 +346,10 @@ The main parameters live in `cyclo_motion_controller_ros/config/ai_worker_config
 - `r_goal_pose_topic`, `l_goal_pose_topic`: Right and left goal pose topics monitored for discontinuities. -->
 
 ## Safety and Usage Tips
+
+::: danger
+The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Operate the robot carefully and avoid fast or sudden movements.
+:::
 
 - Keep people, cables, and nearby objects clear before sending commands.
 - Start with small motions first to confirm the model, frames, and topics are configured correctly.

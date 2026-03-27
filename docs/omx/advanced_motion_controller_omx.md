@@ -8,6 +8,10 @@ This guide shows how to run the Cyclo Motion Controller from [`cyclo_control`](h
 Its QP(Quadratic Programming)-based controller is especially useful because it does not only track the command, but also tries to keep the motion safe at the same time by considering limits and constraints such as **joint range**, **joint velocity**, and **self-collision avoidance**. In practice, you use it when you want to command the robot by target poses or joint commands while still relying on the controller to generate safe motion.
 ![omx_collision](/simulation/omx/omx_collision.gif)
 
+::: danger
+The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Always operate the robot carefully and avoid fast or sudden movements.
+:::
+
 ## Supported Controllers
 
 - `controller_type:=movel`**(Default)**: Generates interpolated arm motion from the current hand pose to the requested goal pose.
@@ -17,9 +21,9 @@ Its QP(Quadratic Programming)-based controller is especially useful because it d
 
 `MoveL` and `MoveJ` are not just "send one target and hope the robot gets there." They are motion commands that tell the controller to generate an interpolated motion from the robot's current state to the requested goal over a given time.
 
-- `MoveL` means "move in a Cartesian line." You command a target hand pose and an interpolation time, and the controller generates a smooth motion from the current end-effector pose toward that goal.
+- `MoveL` means "move in a Cartesian line." You command a target hand pose and an interpolation time, and the controller generates a smooth motion that keeps the end-effector on a straight (linear) path from the current pose to the goal.
 ![default_vs_movel_omx](/simulation/omx/default_vs_movel_omx.gif)
-- `MoveJ` means "move in joint space." You command target joint values and an interpolation time, and the controller generates a smooth motion from the current joint configuration toward those values. In that sense, it follows the same interpolation idea as `MoveL`, but in joint space instead of Cartesian space.
+- `MoveJ` means "move in joint space." You command target joint values and an interpolation time, and the controller generates a smooth motion from the current joint configuration toward those values. Because the interpolation happens in joint space, the end-effector path is generally not a straight line and may appear curved.
 
 This is different from a simple pose or joint command that only describes the desired target state. `MoveL` and `MoveJ` are higher-level motion commands because they also imply a transition from the current state to the goal, including how long that transition should take.
 
@@ -52,11 +56,11 @@ source /opt/ros/jazzy/setup.bash
 source ~/ros2_ws/install/setup.bash
 ```
 
-1. In the first terminal, launch the default OMX Motion Controller.
+1. In the first terminal, launch the default `movel` controller:
    ```bash
    ros2 launch cyclo_motion_controller_ros omx_controller.launch.py
    ```
-2. If you want to use marker-based control in RViz, relaunch it with `start_interactive_marker:=true`:
+2. For marker-based control in RViz, relaunch it with `start_interactive_marker:=true`:
    ```bash
    ros2 launch cyclo_motion_controller_ros omx_controller.launch.py start_interactive_marker:=true
    ```
@@ -100,7 +104,7 @@ ros2 topic pub --once /omx_movel_controller/movel robotis_interfaces/msg/MoveL "
 
 ## Launch MoveJ Controller
 
-This controller is used to execute a joint-space target command:
+This controller is used to execute a joint-space target command.
 
 ```bash
 ros2 launch cyclo_motion_controller_ros omx_controller.launch.py controller_type:=movej
@@ -199,6 +203,10 @@ The main parameters live in `cyclo_motion_controller_ros/config/omx_config.yaml`
 - `controller_error_topic`: Published controller error topic.
 
 ## Safety and Usage Tips
+
+::: danger
+The controller only provides self-collision avoidance, and it is not guaranteed in all situations. Operate the robot carefully and avoid fast or sudden movements.
+:::
 
 - Keep hands and cables clear before sending marker, `movej`, or `movel` commands.
 - Start with small motions first to confirm the robot model, frames, and topics are configured correctly.

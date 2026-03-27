@@ -79,7 +79,7 @@ Connect **noVNC** and **Dynamixel Wizard 2.0** so you can use the wizard on the 
 ### 5. Configure Dynamixel Wizard 2.0 and run Scan
 In **Dynamixel Wizard 2.0**, configure the following and run **Scan**:  
     - Select protocol to scan: **Protocol 2.0**  
-    - Select port to scan: `/dev/ttyUSB4` **(If you connect lg2 to the robot scan `ttyUSB4 ~ ttyUSB6`)**  
+    - Select port to scan: `/dev/ttyUSB4` **(When connecting an LG2 leader, scan ports from `ttyUSB4` to `ttyUSB6`)**  
     - Baud rate: **4000000 bps**  
 ![wizard options](/public/specifications/ai_worker/wizard_options_ai_worker.png)
 ### 6. Select the Dynamixel that reported the error

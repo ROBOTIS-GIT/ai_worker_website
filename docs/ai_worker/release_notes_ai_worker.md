@@ -1,7 +1,19 @@
 # Release Notes
 
 <details>
-<summary>2026.2.12</summary>
+<summary>2026.03.12</summary>
+
+📦 **Physical AI Tools**
+> **Version:** `0.8.2`
+> **Released:** 2026-03-12
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.8.2)
+
+- Changed talos repository name and url in Dockerfile
+- Removed server pipeline service in s6 user bundle
+</details>
+
+<details>
+<summary>2026.02.12</summary>
 
 📦 **AI Worker**
 > **Version:** `1.1.18`
@@ -14,7 +26,18 @@
 </details>
 
 <details>
-<summary>2026.1.29</summary>
+<summary>2026.02.06</summary>
+
+📦 **Physical AI Tools**
+> **Version:** `0.8.1`
+> **Released:** 2026-02-06
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.8.1)
+
+- Add s6-agent and s6-services for supporting talos system manager
+</details>
+
+<details>
+<summary>2026.01.29</summary>
 
 📦 **AI Worker**
 > **Version:** `1.1.16`
@@ -28,12 +51,14 @@
 
 📦 **Physical AI Tools**
 > **Version:** `0.8.0`
-> **Released:** 2026-1-19
+> **Released:** 2026-01-19
 > 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.8.0)
 
-- Add Behavior Tree
+- Initial release of physical_ai_bt package
+- Implemented rule-based behavior tree system with Sequence control node
+- Added trajectory-based actions (MoveArms, MoveLift, MoveHead, Rotate)
+- Added TreeLoader for XML-based configuration with auto-execution mode
 <img src="/release_note/physical_ai_tools/0.8.0/pat_bt.gif" alt="Physical AI Tools Behavior Tree">
-- Implement rule-based behavior tree system with Sequence control node for the FFW-SG2 type.
 </details>
 
 <details>
@@ -52,15 +77,37 @@
 </details>
 
 <details>
-<summary>2025.12.04</summary>
+<summary>2025.12.01</summary>
+
+📦 **Physical AI Tools**
+> **Version:** `0.7.2`
+> **Released:** 2025-12-01
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.7.2)
+
+- Fixed an issue where the task_index was being merged based on the first episode when merging episodes in the *.parquet data.
+</details>
+
+<details>
+<summary>2025.11.28</summary>
+
+📦 **Physical AI Tools**
+> **Version:** `0.7.1`
+> **Released:** 2025-11-28
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.7.1)
+
+- Updated physical_ai_server launch file to use direct rosbridge websocket node instantiation
+</details>
+
+<details>
+<summary>2025.11.21</summary>
 
 📦 **Physical AI Tools**
 > **Version:** `0.7.0`
 > **Released:** 2025-11-21
 > 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.7.0)
 
-- Add support for resume training from saved checkpoints
-- User can now continue training from the last saved checkpoint of a previously trained model.
+- Added rosbag_recorder package
+- Added rosbag2 recording support when collecting LeRobot datasets
 </details>
 
 <details>
@@ -135,6 +182,18 @@
 </details>
 
 <details>
+<summary>2025.10.27</summary>
+
+📦 **Physical AI Tools**
+> **Version:** `0.6.13`
+> **Released:** 2025-10-27
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.6.13)
+
+- Fixed physical_ai_server crash when querying user ID without locally registered HuggingFace token
+- Changed to skip automatic HF user ID loading on Record page when Push to Hub is disabled
+</details>
+
+<details>
 <summary>2025.10.23</summary>
 
 📦 **AI Worker**
@@ -145,11 +204,13 @@ Corrected the battery monitoring feature when exceeding the maximum voltage
 
 📦 **Physical AI Tools**
 > **Version:** `0.6.12`
-> **Released:** 2025-10-22
+> **Released:** 2025-10-21
 > 🔗 [Repository](https://github.com/ROBOTIS-GIT/physical_ai_tools/releases/tag/0.6.12)
 
-Add support for resume training from saved checkpoints
-User can now continue training from the last saved checkpoint of a previously trained model.
+- Enhanced SendTrainingCommand.srv with resume functionality.
+- Added GetTrainingInfo.srv for retrieving training configuration from saved model checkpoints.
+- Added training resume functionality.
+- Improved performance of dataset episode deletion by implementing batch deletion.
 <img src="/release_note/physical_ai_tools/0.6.12/pat_check_point.png" alt="Physical AI Tools Checkpoint">
 <img src="/release_note/physical_ai_tools/0.6.12/pat_check_point_button.png" alt="Physical AI Tools Checkpoint Button">
 </details>

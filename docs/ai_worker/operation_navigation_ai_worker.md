@@ -26,14 +26,14 @@ RViz cannot be displayed over plain SSH. Use noVNC to launch RViz and view it fr
 
 At the `Robot PC`, run the following commands:
 
-1. Build the noVNC container:
+1. Build and start the noVNC container:
 
 #### method 1
-Update `ai_worker` repository and run `container.sh`.  
-(⚠️ **Warning:** Existing container data may be lost! If you want to keep your container data, use **method 2** instead.)
+Update `ai_worker` repository and run `container.sh start-novnc`.  
+(⚠️ **Warning:** When you doing `git pull` in the `ai_worker` repository, existing container data may be lost! If you want to keep your container data, use **method 2** instead.)
 ```bash
 cd ~/ai_worker
-./docker/container.sh start
+./docker/container.sh start-novnc
 ```
 #### method 2
 Make a `docker-compose.yml` file with the following content:
@@ -43,7 +43,7 @@ Make a `docker-compose.yml` file with the following content:
     novnc-server:
       container_name: novnc-server
       image: robotis/novnc-server:latest
-      restart: always
+      restart: no
       cap_add:
         - SYS_NICE
       ulimits:
@@ -63,13 +63,12 @@ Make a `docker-compose.yml` file with the following content:
       privileged: true
   ```
   :::
-Then run `docker-compose up -d` to start the noVNC container.
+Then run `docker-compose up` to start the noVNC container.
 
 
 2. Open noVNC in a browser
-In a Web Browser(like Chrome), open `http://ffw-snpr48a{serial-number}.local:8090`, substituting your robot’s serial number for `serial-number`. (e.g. `http://ffw-snpr48a0000.local:8090`)
+In a web browser, open `http://ffw-snpr48a{serial-number}.local:8090` (substituting your robot's serial number) or `http://192.168.6.2:8090`. After the page loads, click **Connect**.  
 
-3. In a browser, open `http://192.168.6.2:8090` and click **Connect**.
 
 4. Run RViz
 

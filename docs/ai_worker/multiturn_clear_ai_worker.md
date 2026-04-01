@@ -40,14 +40,24 @@ Home positions (joint index, Dynamixel ID): the figures below are **left arm** r
   <img src="/troubleshooting_guide/ai_worker_36.jpg" alt="Joint 6, Dynamixel ID 36, home position reference" style="max-width: 360px; width: 100%; height: auto; display: block;" />
 
 
-### 2. Set up the noVNC container
+### 2. Set up and start the noVNC container
+
+
+method 1: Update `ai_worker` repository and run `container.sh start-novnc`.  
+(⚠️ **Warning:** When you doing `git pull` in the `ai_worker` repository, existing container data may be lost! If you want to keep your container data, use **method 2** instead.)
+```bash
+cd ~/ai_worker
+./docker/container.sh start-novnc
+```
+
+method 2: Make a `docker-compose.yml` file with the following content:  
   ::: details docker-compose.yml
   ```yml
   services:
     novnc-server:
       container_name: novnc-server
       image: robotis/novnc-server:latest
-      restart: always
+      restart: no
       cap_add:
         - SYS_NICE
       ulimits:
@@ -68,7 +78,7 @@ Home positions (joint index, Dynamixel ID): the figures below are **left arm** r
   ```
   :::
 
-  Then run `docker-compose up -d` to start the noVNC container.
+  Then run `docker-compose up` to start the noVNC container.
 
 ### 3. Open noVNC in a browser
 In a Web Browser(like Chrome), open `http://ffw-snpr48a{serial-number}.local:8090`, substituting your robot’s serial number for `serial-number`. (e.g. `http://ffw-snpr48a0000.local:8090`)

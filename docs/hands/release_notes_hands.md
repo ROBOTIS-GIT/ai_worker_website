@@ -1,7 +1,7 @@
 # Release Notes
 
 <details>
-<summary>2026.3.18</summary>
+<summary>2026.03.18</summary>
 
 📦 **ROBOTIS Hand**
 > **Version:** `0.0.3`
@@ -14,7 +14,7 @@
 </details>
 
 <details>
-<summary>2026.1.14</summary>
+<summary>2026.01.14</summary>
 
 📦 **ROBOTIS Hand**
 > **Version:** `0.0.2`

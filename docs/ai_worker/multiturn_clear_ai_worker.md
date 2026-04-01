@@ -50,8 +50,8 @@ cd ~/ai_worker
 ./docker/container.sh start-novnc
 ```
 
-method 2: Make a `docker-compose.yml` file with the following content:  
-  ::: details docker-compose.yml
+method 2: Make a `docker-compose.novnc.yml` file with the following content:  
+  ::: details docker-compose.novnc.yml
   ```yml
   services:
     novnc-server:
@@ -78,7 +78,7 @@ method 2: Make a `docker-compose.yml` file with the following content:
   ```
   :::
 
-  Then run `docker-compose up` to start the noVNC container.
+  Then run `docker compose -f docker/docker-compose.novnc.yml up` to start the noVNC container.
 
 ### 3. Open noVNC in a browser
 In a Web Browser(like Chrome), open `http://ffw-snpr48a{serial-number}.local:8090`, substituting your robot’s serial number for `serial-number`. (e.g. `http://ffw-snpr48a0000.local:8090`)

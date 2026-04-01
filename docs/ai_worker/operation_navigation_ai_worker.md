@@ -36,8 +36,8 @@ cd ~/ai_worker
 ./docker/container.sh start-novnc
 ```
 #### method 2
-Make a `docker-compose.yml` file with the following content:
-  ::: details docker-compose.yml
+Make a `docker-compose.novnc.yml` file with the following content:
+  ::: details docker-compose.novnc.yml
   ```yml
   services:
     novnc-server:
@@ -63,7 +63,7 @@ Make a `docker-compose.yml` file with the following content:
       privileged: true
   ```
   :::
-Then run `docker-compose up` to start the noVNC container.
+Then run `docker compose -f docker/docker-compose.novnc.yml up` to start the noVNC container.
 
 
 2. Open noVNC in a browser

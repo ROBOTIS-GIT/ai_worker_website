@@ -106,6 +106,7 @@ export default defineConfig({
               link: '/ai_worker/operation_ai_worker',
               items: [
                 { text: 'Teleoperation', link: '/ai_worker/operation_teleoperation_ai_worker' },
+                { text: 'VR Teleoperation', link: '/ai_worker/operation_vr_teleoperation_ai_worker' },
                 { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' },
               ]
             }
@@ -146,14 +147,7 @@ export default defineConfig({
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
             { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
             { text: 'Cyclo Motion Controller', link: '/ai_worker/advanced_motion_controller_ai_worker' },
-            {
-              text : 'VR Control', link: '/ai_worker/vr_overview_ai_worker',
-              items: [
-              { text: 'Overview', link: '/ai_worker/vr_overview_ai_worker' },
-              { text: 'Setup Guide', link: '/ai_worker/vr_setup_guide_ai_worker' },
-              { text: 'Startup Guide', link: '/ai_worker/vr_startup_guide_ai_worker' },
-              ]
-            },
+            { text : 'VR Control', link: '/ai_worker/vr_overview_ai_worker' },
           ]
         },
         {

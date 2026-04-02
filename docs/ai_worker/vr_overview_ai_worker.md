@@ -26,7 +26,4 @@ Official docs: [docs.vuer.ai](https://docs.vuer.ai) (may reflect newer releases 
 
 ## Related guides
 
-- **[Setup Guide](/ai_worker/vr_setup_guide_ai_worker)** — Quest 3 developer mode, display, boundary, and device settings
-- **[Startup Guide](/ai_worker/vr_startup_guide_ai_worker)** — Clone repo, Docker, URL to open, and entering VR
-
-For concrete commands and URL patterns, follow the Startup Guide.
+- **[VR Teleoperation](/ai_worker/operation_vr_teleoperation_ai_worker)** — How to start VR teleoperation

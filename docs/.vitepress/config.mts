@@ -106,7 +106,7 @@ export default defineConfig({
               link: '/ai_worker/operation_ai_worker',
               items: [
                 { text: 'Teleoperation', link: '/ai_worker/operation_teleoperation_ai_worker' },
-                { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' }
+                { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' },
               ]
             }
           ]
@@ -145,6 +145,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
             { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
+            { text: 'Cyclo Motion Controller', link: '/ai_worker/advanced_motion_controller_ai_worker' }
           ]
         },
         {
@@ -216,6 +217,13 @@ export default defineConfig({
             { text: 'Overview', link: '/omy/simulation_omy'},
             { text: 'Gazebo', link: '/omy/gazebo_omy' },
             { text: 'Isaac Sim/Lab', link: '/omy/robotis_lab_omy' }
+          ]
+        },
+        {
+          text: 'Advanced Features',
+          items: [
+            { text: 'Overview', link: '/omy/advanced_features_omy' },
+            { text: 'Cyclo Motion Controller', link: '/omy/advanced_motion_controller_omy' }
           ]
         },
         {
@@ -298,6 +306,13 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/omx/simulation_omx'},
             { text: 'Gazebo', link: '/omx/gazebo_omx' },
+          ]
+        },
+        {
+          text: 'Advanced Features',
+          items: [
+            { text: 'Overview', link: '/omx/advanced_features_omx' },
+            { text: 'Cyclo Motion Controller', link: '/omx/advanced_motion_controller_omx' }
           ]
         },
         {

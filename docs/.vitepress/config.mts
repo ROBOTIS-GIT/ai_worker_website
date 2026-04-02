@@ -145,7 +145,15 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
             { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
-            { text: 'Cyclo Motion Controller', link: '/ai_worker/advanced_motion_controller_ai_worker' }
+            { text: 'Cyclo Motion Controller', link: '/ai_worker/advanced_motion_controller_ai_worker' },
+            {
+              text : 'VR Control', link: '/ai_worker/vr_overview_ai_worker',
+              items: [
+              { text: 'Overview', link: '/ai_worker/vr_overview_ai_worker' },
+              { text: 'Setup Guide', link: '/ai_worker/vr_setup_guide_ai_worker' },
+              { text: 'Startup Guide', link: '/ai_worker/vr_startup_guide_ai_worker' },
+              ]
+            },
           ]
         },
         {

@@ -120,11 +120,13 @@ When **passthrough** is active and you see axis markers on your hands, the sessi
 
 ## Motion Controller Setup
 
+AI Worker VR teleoperation uses **Cyclo Motion Controller** as the robot motion-control layer. It receives VR references and generates the arm trajectories that the robot follows.
+
 Before running VR teleoperation, make sure the Cyclo Motion Controller is installed and set up correctly.
 
-For more information, see **[Cyclo Motion Controller](/ai_worker/advanced_motion_controller_ai_worker)**.
-
 You can find the installation steps in the [`cyclo_control` repository](https://github.com/ROBOTIS-GIT/cyclo_control).
+
+For more information, see **[Cyclo Motion Controller](/ai_worker/advanced_motion_controller_ai_worker)**.
 
 ## Running Teleoperation
 
@@ -147,8 +149,6 @@ ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
 ```
 
 ### 2. Start Cyclo motion controller
-
-AI Worker VR teleoperation uses **Cyclo Motion Controller** as the robot motion-control layer. It receives VR references and generates the arm trajectories that the robot follows.
 
 After the robot has fully completed bringup and moved to its initial position, start Cyclo Motion Controller in `vr` mode:
 
@@ -202,15 +202,11 @@ ros2 launch ffw_bringup ffw_sh5_follower_ai.launch.py
 
 ### 2. Start Cyclo motion controller
 
-AI Worker VR teleoperation uses **Cyclo Motion Controller** as the robot motion-control layer. It receives VR references and generates the arm trajectories that the robot follows.
-
 After the robot has fully completed bringup and moved to its initial position, start Cyclo Motion Controller in `vr` mode:
 
 ```bash
 ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr
 ```
-
-For more information about Cyclo Motion Controller, see the **[Cyclo Motion Controller](/ai_worker/advanced_motion_controller_ai_worker)**.
 
 ### 3. Activate VR publisher
 
@@ -224,7 +220,7 @@ You can publish it directly from a terminal:
 ros2 topic pub --once /vr_control/toggle std_msgs/msg/Bool "{data: true}"
 ```
 ::: tip
-You can also use a custom device such as a pedal or button. In that case, the device runs a node that publishes to `/vr_control/toggle` when a specific input behavior is detected, such as a pedal press or button press.
+You can also build your own custom device, such as a pedal or button, for this purpose. In that case, your device should run a node that publishes to `/vr_control/toggle` when a specific input behavior is detected, such as a pedal press or button press.
 :::
 ### 4. Activate the controller
 
@@ -239,7 +235,7 @@ ros2 service call /reactivate std_srvs/srv/Trigger
 ```
 
 ::: tip
-As with VR publisher activation, you can also use a custom device to call this service.
+As with VR publisher activation, you can also build your own custom device to call this service.
 :::
 
 Right after the controller is activated, the system checks the difference between the detected hand poses and the robot wrist poses. If the difference is small enough, the arm controller starts after 3 seconds. After startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to make your arm posture as close as possible to the robot posture before activating the controller.
@@ -249,13 +245,6 @@ Right after the controller is activated, the system checks the difference betwee
 - To pause the demonstration, publish `/vr_control/toggle` with topic data set to false
 - To resume, repeat step 3 and 4.
 ::::
-
-
-
-
-
-
-
 
 ## Troubleshooting
 1. If ROS communication is not working: check the ROS_DOMAIN_ID. (ROS_DOMAIN_ID is set to 30 in the container.)

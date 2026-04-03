@@ -31,7 +31,7 @@ On the Meta Horizon mobile app:
 
 ## VR Startup
 
-AI Worker VR teleoperation uses **Vuer** as the browser-based VR client. For more information about the VR stack and Vuer itself, see the **[VR Control](/ai_worker/vr_overview_ai_worker)**.
+AI Worker VR teleoperation uses **Vuer** as the browser-based VR client. For more information about the VR stack and Vuer itself, see the **[ROBOTIS Vuer](/ai_worker/vuer_overview_ai_worker)**.
 
 ### 1. Clone the repository
 
@@ -118,6 +118,14 @@ When **passthrough** is active and you see axis markers on your hands, the sessi
 
 **Notice**: if you stop the vuer server, you need to refresh the page and clicking the **Enter VR** button again.
 
+## Motion Controller Setup
+
+Before running VR teleoperation, make sure the Cyclo Motion Controller is installed and set up correctly.
+
+For more information, see **[Cyclo Motion Controller](/ai_worker/advanced_motion_controller_ai_worker)**.
+
+You can find the installation steps in the [`cyclo_control` repository](https://github.com/ROBOTIS-GIT/cyclo_control).
+
 ## Running Teleoperation
 
 The following teleoperation commands are executed on the `robot PC`.
@@ -148,8 +156,6 @@ After the robot has fully completed bringup and moved to its initial position, s
 ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr
 ```
 
-For more information about Cyclo Motion Controller, see the **[Cyclo Motion Controller](/ai_worker/advanced_motion_controller_ai_worker)**.
-
 ### 3. Activate VR publisher
 
 For the VR node to start publishing reference poses, press and hold both grip buttons on the controllers. This works as a deadman switch.
@@ -174,6 +180,7 @@ ros2 service call /reactivate std_srvs/srv/Trigger
 
 ::: tip
 You can also call this service by pressing the `X` button on the left controller and the `A` button on the right controller at the same time.
+![Activate VR controller](/public/vr/vr_a_x.png)
 :::
 
 Right after the controller is activated, the system checks the difference between the detected controller poses and the robot wrist poses. If the difference is small enough, the arm controller starts after 3 seconds. After startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to keep your arm posture as close as possible to the robot posture before activating the controller.
@@ -184,7 +191,7 @@ Right after the controller is activated, the system checks the difference betwee
 - To resume, press both grip buttons again.
 
 ::: warning
-If VR publishing resumes when your hands are far from the previous pose, the robot may move quickly.
+Avoid resuming VR publishing when your hands are far from the previous pose, because the robot may move quickly. Before resuming, it is recommended to make your arm posture as close as possible to the robot posture.
 :::
 == SH5 Type
 ### 1. Bring up the robot.

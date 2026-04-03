@@ -35,18 +35,18 @@ On AI Worker, this is especially helpful when you want motion that is easier to 
 Learn More About Cyclo Motion Controller
 </a>
 
-### 3. VR Control
+### 3. ROBOTIS Vuer
 
-VR Control lets AI Worker use a **Meta Quest 3** headset together with a browser-based **Vuer** client for immersive robot interaction. The headset connects to the robot-side ROS 2 system through **HTTPS/WSS**, allowing the system to exchange pose, visualization, and control data in real time.
+ROBOTIS Vuer lets AI Worker use a **Meta Quest 3** headset together with a browser-based **Vuer** client for immersive robot interaction. The headset connects to the robot-side ROS 2 system through **HTTPS/WSS**, allowing the system to exchange pose, visualization, and control data in real time.
 
 - **Immersive Monitoring**: View the robot scene and related 3D information directly in the headset
 - **Hand-Tracking Interaction**: Use VR hand tracking and related input as references for robot control
 - **Browser-Based Workflow**: Start the VR session from the headset browser without installing a separate native application
 - **ROS 2 Integration**: Connect the Vuer-based VR interface with the robot-side ROS 2 stack for teleoperation and state visualization
 
-In AI Worker, VR Control is used as the front-end interface for VR teleoperation. Vuer handles the browser-side 3D scene and WebXR interaction, while ROS 2 nodes on the robot side process the incoming references and connect them to the robot control pipeline.
+In AI Worker, ROBOTIS Vuer is used as the front-end interface for VR teleoperation. Vuer handles the browser-side 3D scene and WebXR interaction, while ROS 2 nodes on the robot side process the incoming references and connect them to the robot control pipeline.
 
 
-<a href="/ai_worker/vr_overview_ai_worker" class="button-shortcut">
-Learn More About VR Control
+<a href="/ai_worker/vuer_overview_ai_worker" class="button-shortcut">
+Learn More About ROBOTIS Vuer
 </a>

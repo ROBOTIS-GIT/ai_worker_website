@@ -1,6 +1,6 @@
-# VR Control Overview
+# ROBOTIS Vuer Overview
 
-**VR Control** for AI Worker lets you view a 3D scene on a **Meta Quest 3** headset and interact with the robot using hand tracking and related input. A browser-based VR client runs together with the **ROS 2** stack on the robot side.
+**ROBOTIS Vuer** for AI Worker lets you view a 3D scene on a **Meta Quest 3** headset and interact with the robot using hand tracking and related input. A browser-based VR client runs together with the **ROS 2** stack on the robot side.
 
 ## Stack summary
 

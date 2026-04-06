@@ -20,13 +20,13 @@ Use **one** of the methods below, depending on whether you use **noVNC on the ro
 
 ### 1. Set up the noVNC container
 
-::: details docker-compose.yml
+::: details docker-compose.novnc.yml
 ```yaml
 services:
   novnc-server:
     container_name: novnc-server
     image: robotis/novnc-server:latest
-    restart: always
+    restart: no
     cap_add:
       - SYS_NICE
     ulimits:
@@ -47,7 +47,7 @@ services:
 ```
 :::
 
-Then run `docker-compose up -d` to start the noVNC container.
+Then run `docker compose -f docker/docker-compose.novnc.yml up` to start the noVNC container.
 
 ### 2. Open noVNC in a browser
 

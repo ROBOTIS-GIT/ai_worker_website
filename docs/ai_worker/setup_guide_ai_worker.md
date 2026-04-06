@@ -180,13 +180,19 @@ volumes:
 
 2. **Container Operations**
    ```bash
-   # Start container
+   # Start ai_worker container
    ./docker/container.sh start
+
+   # Run novnc-server in the foreground
+   ./docker/container.sh start-novnc
 
    # Enter running container
    ./docker/container.sh enter
 
-   # Stop container
+   # Stop novnc-server container
+   ./docker/container.sh stop-novnc
+
+   # Stop ai_worker container
    ./docker/container.sh stop
    ```
 
@@ -196,16 +202,20 @@ The `container.sh` script provides easy container management:
 
 #### Available Commands
 - `help`: Display help message
-- `start`: Start container
-- `enter`: Enter running container
-- `stop`: Stop container
+- `start`: Start ai_worker container
+- `start-novnc`: Run novnc-server in the foreground
+- `enter`: Enter the running container
+- `stop-novnc`: Stop novnc-server container
+- `stop`: Stop the container
 
 #### Usage Examples
 ```bash
 ./container.sh help                 # Show help
-./container.sh start                # Start container
-./container.sh enter                # Enter container
-./container.sh stop                 # Stop container
+./container.sh start                # Start ai_worker container
+./container.sh start-novnc          # Run novnc-server in the foreground
+./container.sh enter                # Enter the running container
+./container.sh stop-novnc           # Stop novnc-server container
+./container.sh stop                 # Stop the container
 ```
 
 

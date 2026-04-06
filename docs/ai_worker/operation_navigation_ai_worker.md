@@ -21,34 +21,56 @@ Keep these terminals running. use a new terminal for the commands below.
 RViz cannot be displayed over plain SSH. Use noVNC to launch RViz and view it from a browser.
 
 ::: tip
-- `./install.sh` is only needed once. If the noVNC service is already set up, skip step 3.
 - If `192.168.6.2:8090` is unreachable, confirm the host IP and the forwarded port in your environment.
 :::
 
-1. Enter the AI Worker Docker container:
-    ```bash
-    cd ~/ai_worker
-    ./docker/container.sh enter
-    ```
-2. Move to the noVNC workspace:
-    ```bash
-    cd /workspace/docker-novnc
-    ```
-3. noVNC setup (First-Time):
-    ```bash
-    ./install.sh
-    ```
-4. Start noVNC:
-    ```bash
-    ./entrypoint.sh
-    ```
-5. In a browser, open `http://192.168.6.2:8090/vnc.html` and click **Connect**. A terminal window will appear.
+At the `Robot PC`, run the following commands:
 
-6. Run RViz in that terminal:
-    ```bash
-    rviz2
-    ```
-7. In RViz, open the config via **File → Open Config** and choose `/ros2_ws/src/ai_worker/ffw_navigation/*.rviz` (use the `mapping.rviz` or `navigation.rviz` configuration as needed).
+1. Build and start the noVNC container:
+
+#### method 1
+Update `ai_worker` repository and run `container.sh start-novnc`.  
+(⚠️ **Warning:** When you doing `git pull` in the `ai_worker` repository, existing container data may be lost! If you want to keep your container data, use **method 2** instead.)
+```bash
+cd ~/ai_worker
+./docker/container.sh start-novnc
+```
+#### method 2
+Make a `docker-compose.novnc.yml` file with the following content:
+  ::: details docker-compose.novnc.yml
+  ```yml
+  services:
+    novnc-server:
+      container_name: novnc-server
+      image: robotis/novnc-server:latest
+      restart: no
+      cap_add:
+        - SYS_NICE
+      ulimits:
+        rtprio: 99
+        rttime: -1
+        memlock: 8428281856
+      network_mode: host
+      environment:
+        - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-30}
+        - DISPLAY=:99
+        - DISPLAY_WIDTH=1920
+        - DISPLAY_HEIGHT=1080
+        - WEBSOCKIFY_PORT=8090
+      volumes:
+        - /dev:/dev
+        - /dev/shm:/dev/shm
+      privileged: true
+  ```
+  :::
+Then run `docker compose -f docker/docker-compose.novnc.yml up` to start the noVNC container.
+
+
+2. Open noVNC in a browser
+In a web browser, open `http://ffw-snpr48a{serial-number}.local:8090` (substituting your robot's serial number) or `http://192.168.6.2:8090`. After the page loads, click **Connect**.  
+
+
+4. Run RViz
 
 ## Lidar Scan Visualization
 First, use RViz (via noVNC) to confirm lidar scans are visible around the robot.

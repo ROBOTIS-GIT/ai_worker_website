@@ -1,8 +1,8 @@
-# Cyclo Motion Controller
+# Cyclo Control
 
-This guide shows how to run the Cyclo Motion Controller from [`cyclo_control`](https://github.com/ROBOTIS-GIT/cyclo_control) on AI Worker.
+This guide shows how to run the Cyclo Control from [`cyclo_control`](https://github.com/ROBOTIS-GIT/cyclo_control) on AI Worker.
 
-`cyclo_motion_controller` is the software layer that acts like the robot's motion interpreter. You give it an easier command, such as an end-effector target pose or a joint target, and it computes the joint trajectories that the real robot should follow.
+Cyclo Control is the software layer that acts like the robot's motion interpreter. You give it an easier command, such as an end-effector target pose or a joint target, and it computes the joint trajectories that the real robot should follow.
 ![ai_worker_motion_controller](/simulation/ai_worker/aiw_motion_controller.png)
 
 Its QP(Quadratic Programming)-based controller is especially useful because it does not only track the command, but also tries to keep the motion safe at the same time by considering limits and constraints such as **joint range**, **joint velocity**, and **self-collision avoidance**. In practice, you use it when you want to command the robot by target poses or joint commands while still relying on the controller to generate safe motion.

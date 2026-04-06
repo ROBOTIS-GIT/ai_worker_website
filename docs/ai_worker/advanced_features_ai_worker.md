@@ -21,9 +21,9 @@ Behavior Trees are particularly powerful when combined with imitation learning m
 Learn More About Behavior Trees
 </a>
 
-### 2. Cyclo Motion Controller
+### 2. Cyclo Control
 
-The Cyclo Motion Controller is the software layer that turns easier robot commands, such as target hand poses or joint commands, into joint trajectories that the real robot can execute. It is useful when you want higher-level motion commands while still relying on the controller to generate safe robot motion.
+Cyclo Control is the software layer that turns easier robot commands, such as target hand poses or joint commands, into joint trajectories that the real robot can execute. It is useful when you want higher-level motion commands while still relying on the controller to generate safe robot motion.
 
 - **Higher-Level Commanding**: Command target poses or joint goals instead of manually sending every joint step
 - **Interpolated Motion**: Generate smooth `MoveL` and `MoveJ` motions from the current state to the goal over a requested time

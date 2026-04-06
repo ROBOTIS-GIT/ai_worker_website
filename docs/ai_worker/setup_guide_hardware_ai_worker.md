@@ -59,19 +59,19 @@ When the safety lock is released, you will hear a beep sound.
 :::
 
 ## Optional: ROBOTIS Hand Installation
-If your application requires a multi-functional grip, you can replace the RH-P12-RN gripper with a ROBOTIS Hand. Follow these steps to perform the exchange:
+If your application requires a multi-functional grip, you can replace the `RH-P12-RN` gripper with a `ROBOTIS Hand`. Follow these steps to perform the exchange:
 
-1. Remove the RH-P12-RN Gripper: Carefully unscrew the mounting bolts and disconnect the communication cable from the current gripper.
+1. Remove the `RH-P12-RN` gripper: Carefully unscrew the mounting bolts and disconnect the communication cable from the current gripper.
 
 ![hand_mount_bracket](/quick_start_guide/ai_worker/hand_mount_bracket.png)
 
-2. Reorient the Mounting Bracket: Rotate the FRP42-A110K bracket by 90°. Ensure the bracket alignment matches the orientation shown in the image above.
+2. Reorient the Mounting Bracket: Rotate the `FRP42-A110K` bracket by 90°. Ensure the bracket alignment matches the orientation shown in the image above.
 
 <img src="/quick_start_guide/ai_worker/hand_cable_port.png" width="350"/>
 
-3. Connect the Communication Cable: Plug the 4-pin JST cable into the port located on the ROBOTIS Hand. Ensure the connector clicks into place to prevent signal loss.
+3. Connect the Communication Cable: Plug the `4-pin JST cable` into the port located on the `ROBOTIS Hand`. Ensure the connector clicks into place to prevent signal loss.
 
-4. Secure the ROBOTIS Hand: Align the hand with the rotated FRP42-A110K bracket and tighten the mounting screws.
+4. Secure the `ROBOTIS Hand`: Align the hand with the rotated `FRP42-A110K` bracket and tighten the mounting screws.
 
 <img src="/quick_start_guide/ai_worker/hand_attached.jpg" width="350"/>
 

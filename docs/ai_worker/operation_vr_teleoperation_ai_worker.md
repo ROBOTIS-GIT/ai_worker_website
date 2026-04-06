@@ -76,9 +76,18 @@ In the Docker environment, run the VR publisher node.
 ```bash
 ros2 launch robotis_vuer vr.launch.py model:=sg2
 ```
+Or use the shortcut:
+```bash
+vr model:=sg2
+```
+
 == SH5 Type
 ```bash
 ros2 launch robotis_vuer vr.launch.py model:=sh5
+```
+Or use the shortcut:
+```bash
+vr model:=sh5
 ```
 :::
 
@@ -108,7 +117,7 @@ If the browser shows a certificate warning, use **Advanced** → proceed to the 
 
 #### Enter VR
 
-Click **Enter VR**.
+Click `Enter VR`.
 
 ![Enter VR button](/public/vr/enter_vr_webpage.png)
 
@@ -147,6 +156,10 @@ cd ~/ai_worker
 ```bash
 ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
 ```
+Or use the shortcut:
+```bash
+ffw_sg2_follower_ai
+```
 
 ### 2. Start Cyclo motion controller
 
@@ -156,39 +169,44 @@ After the robot has fully completed bringup and moved to its initial position, s
 ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr
 ```
 
+Or use the shortcut:
+```bash
+motion_controller controller_type:=vr
+```
+
 ### 3. Activate VR publisher
 
-For the VR node to start publishing reference poses, press and hold both grip buttons on the controllers. This works as a deadman switch.
+For the VR node to start publishing reference poses, press and hold both squeeze buttons on the controllers. This works as a deadman switch.
 
-![Activate VR publisher](/public/vr/vr_grip_buttons.png)
+![Activate VR publisher](/public/vr/vr_squeeze_buttons.png)
 
 ::: tip
-The VR node publishes reference data only while both grip buttons are pressed.
+The VR node publishes reference data only while both squeeze buttons are pressed.
 :::
 
 ### 4. Activate the controller
 
-To activate VR teleoperation, call the `/reactivate` service.
+To activate VR teleoperation, publish the `/reactivate` topic.
 
-This service uses the `std_srvs/srv/Trigger` type.
+This topic uses the `std_msgs/msg/Bool` type.
 
-You can call it directly from a terminal:
+You can activate the controller by pressing the `X` button on the left controller and the `A` button on the right controller at the same time.
+![Activate VR controller](/public/vr/vr_a_x.png)
+
+::: info
+Alternatively, you can publish the topic directly from a terminal:
 
 ```bash
-ros2 service call /reactivate std_srvs/srv/Trigger
+ros2 topic pub --once /reactivate std_msgs/msg/Bool "{data: true}"
 ```
-
-::: tip
-You can also call this service by pressing the `X` button on the left controller and the `A` button on the right controller at the same time.
-![Activate VR controller](/public/vr/vr_a_x.png)
 :::
 
 Right after the controller is activated, the system checks the difference between the detected controller poses and the robot wrist poses. If the difference is small enough, the arm controller starts after 3 seconds. After startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to keep your arm posture as close as possible to the robot posture before activating the controller.
 
 ### 5. Pause and resume teleoperation
 
-- To pause the demonstration, release the grip buttons.
-- To resume, press both grip buttons again.
+- To pause the demonstration, release the squeeze buttons.
+- To resume, press both squeeze buttons again.
 
 ::: warning
 Avoid resuming VR publishing when your hands are far from the previous pose, because the robot may move quickly. Before resuming, it is recommended to make your arm posture as close as possible to the robot posture.
@@ -200,6 +218,11 @@ Avoid resuming VR publishing when your hands are far from the previous pose, bec
 ros2 launch ffw_bringup ffw_sh5_follower_ai.launch.py
 ```
 
+Or use the shortcut:
+```bash
+ffw_sh5_follower_ai
+```
+
 ### 2. Start Cyclo motion controller
 
 After the robot has fully completed bringup and moved to its initial position, start Cyclo Motion Controller in `vr` mode:
@@ -208,42 +231,36 @@ After the robot has fully completed bringup and moved to its initial position, s
 ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr
 ```
 
-### 3. Activate VR publisher
+Or use the shortcut:
+```bash
+motion_controller controller_type:=vr
+```
 
-For the VR node to start publishing reference poses, it must receive the `/vr_control/toggle` topic.
+### 3. Activate VR publisher and controller
+
+For the VR node to start publishing reference poses, it must receive the `/reactivate` topic.
 
 This topic uses the `std_msgs/msg/Bool` type.
 
 You can publish it directly from a terminal:
 
 ```bash
-ros2 topic pub --once /vr_control/toggle std_msgs/msg/Bool "{data: true}"
+ros2 topic pub --once /reactive std_msgs/msg/Bool "{data: true}"
 ```
 ::: tip
-You can also build your own custom device, such as a pedal or button, for this purpose. In that case, your device should run a node that publishes to `/vr_control/toggle` when a specific input behavior is detected, such as a pedal press or button press.
+You can also build your own custom device, such as a pedal or button, for this purpose. In that case, your device should run a node that publishes to `/reactivate` when a specific input behavior is detected, such as a pedal press or button press.
 :::
-### 4. Activate the controller
-
-To activate VR teleoperation, call the `/reactivate` service.
-
-This service uses the `std_srvs/srv/Trigger` type.
-
-You can call it directly from a terminal:
-
-```bash
-ros2 service call /reactivate std_srvs/srv/Trigger
-```
 
 ::: tip
-As with VR publisher activation, you can also build your own custom device to call this service.
+As with VR publisher activation, you can also build your own custom device to publish this topic.
 :::
 
 Right after the controller is activated, the system checks the difference between the detected hand poses and the robot wrist poses. If the difference is small enough, the arm controller starts after 3 seconds. After startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to make your arm posture as close as possible to the robot posture before activating the controller.
 
-### 5. Pause and resume teleoperation
+### 4. Pause and resume teleoperation
 
-- To pause the demonstration, publish `/vr_control/toggle` with topic data set to false
-- To resume, repeat step 3 and 4.
+- To pause the demonstration, publish `/reactivate` with topic data set to false
+- To resume, repeat `step 3`
 ::::
 
 ## Troubleshooting

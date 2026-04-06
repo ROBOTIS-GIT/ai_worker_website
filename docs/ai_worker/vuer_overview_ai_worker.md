@@ -18,7 +18,7 @@ In short: **Quest 3 → (HTTPS/WSS) → Vuer** is the user-facing path, and **Vu
 **Vuer** is a **Python** toolkit for **3D visualization and interaction** in the browser, aimed at robotics and VR. The server defines the scene (meshes, frames, markers, etc.) and events; the client renders with **WebXR** on the headset and sends hand and controller input back to the server.
 
 - **Role**: Acts as the in-browser VR viewer and a **bidirectional bridge** to the robot PC. A typical pattern is ROS 2 nodes running alongside the Vuer server, linked via **WebSocket (`wss://`)**.
-- **Why HTTPS/WSS**: WebXR and device APIs expect a **secure context**, so setups often use **HTTPS** and a **secure WebSocket** even on a local network. That matches the URL format in the [Startup Guide](/ai_worker/vr_startup_guide_ai_worker).
+- **Why HTTPS/WSS**: WebXR and device APIs expect a **secure context**, so setups often use **HTTPS** and a **secure WebSocket** even on a local network.
 - **Robotics**: Suited to robot models (e.g. URDF), live poses and sensor data, and teleoperation-style UIs. AI Worker aligns Quest 3 visuals and input with ROS 2 logic on this path.
 - **Version in AI Worker**: Packages and Docker images target **Vuer v0.1.5**. Newer releases may change APIs or behavior; when debugging, compare against v0.1.5.
 

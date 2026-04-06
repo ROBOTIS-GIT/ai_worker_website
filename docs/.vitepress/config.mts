@@ -145,7 +145,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
             { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
-            { text: 'Cyclo Motion Controller', link: '/ai_worker/advanced_motion_controller_ai_worker' }
+            { text: 'Cyclo Control', link: '/ai_worker/advanced_motion_controller_ai_worker' }
           ]
         },
         {
@@ -223,7 +223,7 @@ export default defineConfig({
           text: 'Advanced Features',
           items: [
             { text: 'Overview', link: '/omy/advanced_features_omy' },
-            { text: 'Cyclo Motion Controller', link: '/omy/advanced_motion_controller_omy' }
+            { text: 'Cyclo Control', link: '/omy/advanced_motion_controller_omy' }
           ]
         },
         {
@@ -312,7 +312,7 @@ export default defineConfig({
           text: 'Advanced Features',
           items: [
             { text: 'Overview', link: '/omx/advanced_features_omx' },
-            { text: 'Cyclo Motion Controller', link: '/omx/advanced_motion_controller_omx' }
+            { text: 'Cyclo Control', link: '/omx/advanced_motion_controller_omx' }
           ]
         },
         {

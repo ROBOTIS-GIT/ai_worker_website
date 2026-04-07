@@ -62,6 +62,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'AI Sapiens', link: '/ai_sapiens/introduction_ai_sapiens' },
       { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
       { text: 'OMY', link: '/omy/introduction_omy' },
       { text: 'OMX', link: '/omx/introduction_omx' },
@@ -324,6 +325,15 @@ export default defineConfig({
             { text: 'Issues', link: '/omx/issues_omx' },
             { text: 'FAQ', link: '/omx/faq_omx' },
             { text: 'Contact Us', link: '/contact' }
+          ]
+        }
+      ],
+
+      '/ai_sapiens/': [
+        {
+          text: 'AI Sapiens',
+          items: [
+            { text: 'Introduction', link: '/ai_sapiens/introduction_ai_sapiens' }
           ]
         }
       ],

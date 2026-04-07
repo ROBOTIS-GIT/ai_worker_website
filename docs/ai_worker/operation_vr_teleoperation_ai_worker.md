@@ -205,8 +205,10 @@ Right after the controller is activated, the system checks the difference betwee
 
 ### 5. Pause and resume teleoperation
 
-- To pause the demonstration, release the squeeze buttons.
-- To resume, press both squeeze buttons again.
+- Release the squeeze buttons.
+- Deactivate the controller by pressing the `Y` button on the left controller and the `B` button on the right controller at the same time.
+![Activate VR controller](/vr/vr_b_y.png)
+- To resume, repeat step 3 to 4.
 
 ::: warning
 Avoid resuming VR publishing when your hands are far from the previous pose, because the robot may move quickly. Before resuming, it is recommended to make your arm posture as close as possible to the robot posture.

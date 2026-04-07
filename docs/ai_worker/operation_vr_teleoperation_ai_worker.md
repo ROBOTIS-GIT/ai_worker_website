@@ -11,21 +11,21 @@ On the Meta Horizon mobile app:
 **Menu → Device management → Devices → Headset settings → Developer Mode → On**
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-  <img src="/public/vr/menu_meta.png" alt="menu_meta" width="22%" />
-  <img src="/public/vr/headset_settings_meta.png" alt="headset_settings_meta" width="22%" />
-  <img src="/public/vr/developer_mode_meta.png" alt="developer_mode_meta" width="22%" />
-  <img src="/public/vr/developer_mode_toggle_meta.png" alt="developer_mode_toggle_meta" width="22%" />
+  <img src="/vr/menu_meta.png" alt="menu_meta" width="22%" />
+  <img src="/vr/headset_settings_meta.png" alt="headset_settings_meta" width="22%" />
+  <img src="/vr/developer_mode_meta.png" alt="developer_mode_meta" width="22%" />
+  <img src="/vr/developer_mode_toggle_meta.png" alt="developer_mode_toggle_meta" width="22%" />
 </div>
 
 ### 2. On-headset settings
 
 1. **Power / sleep** — **Settings → General** (use **Power** or **Display** depending on your firmware): set **Display off** and **Sleep mode** to **4 hours** (or the longest option available) so the headset does not sleep during use.
 
-![Quest power and sleep settings](/public/vr/power_setting_meta.png)
+![Quest power and sleep settings](/vr/power_setting_meta.png)
 
 2. **Play area** — **Settings → Environment → Stationary boundary size** → **Large**.
 
-![Stationary boundary set to Large](/public/vr/boundary_large_meta.png)
+![Stationary boundary set to Large](/vr/boundary_large_meta.png)
 
    Alternatively, use **Create new boundary** to define the boundary manually.
 
@@ -111,19 +111,19 @@ Replace `{pc_ip}` with the actual IP of the machine hosting the Vuer server.
 
 If the browser shows a certificate warning, use **Advanced** → proceed to the site (wording may vary by browser).
 
-![Browser advanced / certificate bypass](/public/vr/advance_webpage.png)
+![Browser advanced / certificate bypass](/vr/advance_webpage.png)
 
-![Proceed to site (unsafe)](/public/vr/proceed_webpage.png)
+![Proceed to site (unsafe)](/vr/proceed_webpage.png)
 
 #### Enter VR
 
 Click `Enter VR`.
 
-![Enter VR button](/public/vr/enter_vr_webpage.png)
+![Enter VR button](/vr/enter_vr_webpage.png)
 
 When **passthrough** is active and you see axis markers on your hands, the session is ready.
 
-![Passthrough with hand axes](/public/vr/pass_meta.png)
+![Passthrough with hand axes](/vr/pass_meta.png)
 
 **Notice**: if you stop the vuer server, you need to refresh the page and clicking the **Enter VR** button again.
 
@@ -178,7 +178,7 @@ motion_controller controller_type:=vr
 
 For the VR node to start publishing reference poses, press and hold both squeeze buttons on the controllers. This works as a deadman switch.
 
-![Activate VR publisher](/public/vr/vr_squeeze_buttons.png)
+![Activate VR publisher](/vr/vr_squeeze_buttons.png)
 
 ::: tip
 The VR node publishes reference data only while both squeeze buttons are pressed.
@@ -191,7 +191,7 @@ To activate VR teleoperation, publish the `/reactivate` topic.
 This topic uses the `std_msgs/msg/Bool` type.
 
 You can activate the controller by pressing the `X` button on the left controller and the `A` button on the right controller at the same time.
-![Activate VR controller](/public/vr/vr_a_x.png)
+![Activate VR controller](/vr/vr_a_x.png)
 
 ::: info
 Alternatively, you can publish the topic directly from a terminal:

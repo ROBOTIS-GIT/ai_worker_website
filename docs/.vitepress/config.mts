@@ -151,8 +151,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
             { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
-            { text: 'Cyclo Motion Controller', link: '/ai_worker/advanced_motion_controller_ai_worker' },
-            { text : 'ROBOTIS Vuer', link: '/ai_worker/vuer_overview_ai_worker' },
+            { text: 'Cyclo Control', link: '/ai_worker/advanced_motion_controller_ai_worker' },
           ]
         },
         {

@@ -131,15 +131,25 @@ If the browser shows a certificate warning, use **Advanced** → proceed to the 
 
 #### Enter VR
 
+::: warning
+**Positioning and Calibration**
+
+Ensure you are at your intended operating location before proceeding. The following step initializes the VR coordinate system based on your current physical position.
+:::
+
 Click the `Enter VR` button.
 
 ![Enter VR button](/vr/enter_vr_webpage.png)
 
-When **passthrough** is active and axis markers appear on your hands, and the session is ready.
+The session is ready when **passthrough** becomes active and **axis markers** appear on your hands.
 
 ![Passthrough with hand axes](/vr/pass_meta.png)
 
-**Notice**: If the Vuer server is restarted, you must refresh the browser page and click `Enter VR` again.
+Once the VR setup is complete, **hang the headset around your neck** and tighten the strap until the device is stable and secure.
+
+::: warning
+If the Vuer server is **restarted**, you must **refresh** the browser page and click `Enter VR` again.
+:::
 
 ## Cyclo Control Setup
 
@@ -171,7 +181,7 @@ Or use the shortcut:
 ffw_sg2_follower_ai
 ```
 
-### 2. Start Cyclo motion controller
+### 2. Start Cyclo Motion Controller
 
 Once the robot reaches its initial position, start Cyclo Motion Controller with `controller_type` parameter set as `vr`:
 
@@ -184,13 +194,13 @@ Or use shortcut:
 motion_controller controller_type:=vr
 ```
 
-### 3. Activate VR publisher
+### 3. Activate VR Publisher
 
 The VR node only publishes reference data while **both squeeze (grip) buttons** on the controllers are held down. This acts as a safety deadman switch.
 
 ![Activate VR publisher](/vr/vr_squeeze_buttons.png)
 
-### 4. Activate the controller
+### 4. Activate the Controller
 
 ::: warning
 **Pre-Activation Alignment**: Align your physical arms with the robot's current pose before activating to prevent sudden movements. Maintain a safe distance from the robot.
@@ -238,7 +248,7 @@ Or use the shortcut:
 ffw_sh5_follower_ai
 ```
 
-### 2. Start Cyclo motion controller
+### 2. Start Cyclo Motion Controller
 
 After the robot has fully completed bringup and moved to its initial position, start Cyclo Motion Controller in `vr` mode:
 
@@ -251,7 +261,7 @@ Or use the shortcut:
 motion_controller controller_type:=vr
 ```
 
-### 3. Activate VR publisher and controller
+### 3. Activate VR Publisher and Controller
 
 ::: warning
 **Pre-Activation Alignment**: Align your physical arms with the robot's current pose before activating to prevent sudden movements. Maintain a safe distance from the robot.

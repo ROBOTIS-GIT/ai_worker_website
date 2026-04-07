@@ -61,7 +61,7 @@ export default defineConfig({
       { text: 'OMY', link: '/omy/introduction_omy' },
       { text: 'OMX', link: '/omx/introduction_omx' },
       { text: 'Hands', link: '/hands/introduction_hands' },
-      { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
+      { text: 'Dxl Project', link: '/community_showcase' },
       {
         text: 'OpenSource',
         items: [
@@ -390,7 +390,7 @@ export default defineConfig({
 
       '/': [
         {
-          text: 'Ecosystem',
+          text: 'Dxl Project',
           items: [
             { text: 'Community Showcase', link: '/community_showcase' }
           ]

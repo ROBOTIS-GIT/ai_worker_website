@@ -79,7 +79,7 @@ export default defineConfig({
           { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
         ]
       },
-      { text: 'Contact', link: '/ai_worker/contact_ai_worker' },
+      { text: 'Contact', link: '/contact' },
     ],
     sidebar: {
       '/ai_worker/': [
@@ -163,7 +163,7 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/ai_worker/issues_ai_worker' },
             { text: 'FAQ', link: '/ai_worker/faq_ai_worker' },
-            { text: 'Contact Us', link: '/ai_worker/contact_ai_worker' }
+            { text: 'Contact Us', link: '/contact' }
           ]
         }
       ],
@@ -241,7 +241,7 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/omy/issues_omy' },
             { text: 'FAQ', link: '/omy/faq_omy' },
-            { text: 'Contact Us', link: '/omy/contact_omy' }
+            { text: 'Contact Us', link: '/contact' }
           ]
         }
       ],
@@ -328,7 +328,7 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/omx/issues_omx' },
             { text: 'FAQ', link: '/omx/faq_omx' },
-            { text: 'Contact Us', link: '/omx/contact_omx' }
+            { text: 'Contact Us', link: '/contact' }
           ]
         }
       ],
@@ -383,8 +383,15 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/hands/issues_hands' },
             { text: 'FAQ', link: '/hands/faq_hands' },
-            { text: 'Contact Us', link: '/hands/contact_hands' }
+            { text: 'Contact Us', link: '/contact' }
           ]
+        }
+      ],
+
+      '/contact': [
+        {
+          text: 'Contact',
+          items: [{ text: 'Contact Us', link: '/contact' }]
         }
       ],
 

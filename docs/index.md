@@ -20,7 +20,7 @@ hero:
       link: /ai_worker/opensource_ai_worker
     - theme: alt
       text: Purchase Inquiry
-      link: /ai_worker/contact_ai_worker
+      link: /contact
 
 features:
   - title: Physical AI with Imitation Learning

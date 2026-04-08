@@ -271,6 +271,10 @@ For the VR node to start publishing reference poses, it must receive the `/react
 
 This topic uses the `std_msgs/msg/Bool` type.
 
+::: warning
+If you do not plan to build your own external device for on/off VR teleoperation, it is important to have another person to help switching of/off the vr teleoperation as the robot will keep following the teleoperation.
+:::
+
 You can publish it directly from a terminal:
 
 ```bash
@@ -287,9 +291,6 @@ Right after the controller is activated, the system checks the difference betwee
 - To pause the demonstration, publish `/reactivate` with topic data set to `false`
 - To resume, repeat `Step 3`
 
-::: warning
-If you do not plan to build your own external device for on/off VR teleoperation, it is important to have another person to help switching of/off the vr teleoperation as the robot will keep following the teleoperation.
-:::
 ::::
 
 ## Troubleshooting

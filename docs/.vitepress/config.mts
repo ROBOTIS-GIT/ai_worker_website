@@ -61,7 +61,7 @@ export default defineConfig({
       { text: 'OMY', link: '/omy/introduction_omy' },
       { text: 'OMX', link: '/omx/introduction_omx' },
       { text: 'Hands', link: '/hands/introduction_hands' },
-      { text: 'Dxl Project', link: '/community_showcase' },
+      { text: 'Ecosystem', link: '/community_showcase' },
       {
         text: 'OpenSource',
         items: [
@@ -397,7 +397,7 @@ export default defineConfig({
 
       '/': [
         {
-          text: 'Dxl Project',
+          text: 'Ecosystem',
           items: [
             { text: 'Community Showcase', link: '/community_showcase' }
           ]

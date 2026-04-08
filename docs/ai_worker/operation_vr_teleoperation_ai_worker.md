@@ -38,7 +38,7 @@ Enable Developer Mode via the Meta Horizon mobile app:
 
 ![Quest power and sleep settings](/vr/power_setting_meta.png)
 
-2. **Play area** : **Settings → Environment → Stationary boundary size** → **Large**.
+2. Play area : Settings → Environment setup → Boundary → Stationary boundary size → Large.
 
 ![Stationary boundary set to Large](/vr/boundary_large_meta.png)
 
@@ -274,7 +274,7 @@ This topic uses the `std_msgs/msg/Bool` type.
 You can publish it directly from a terminal:
 
 ```bash
-ros2 topic pub --once /reactive std_msgs/msg/Bool "{data: true}"
+ros2 topic pub --once /reactivate std_msgs/msg/Bool "{data: true}"
 ```
 ::: tip
 You can also build your own custom device, such as a pedal or a button, for this purpose. In that case, your device should run a node that publishes to `/reactivate` when a specific input behavior is detected, such as a pedal press or a button press.

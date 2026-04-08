@@ -60,7 +60,7 @@ For sales inquiries or detailed product information about the Physical AI lineup
 
 ### ROBOTIS Japan
 
-- **Company:** Japan Branch Office
+- **Company:** ROBOTIS Japan
 - **Email:** [japan@robotis.com](mailto:japan@robotis.com)
 - **TEL:** [06-4862-5783](tel:+81648625783)
 - **Address:** 201 Shin-Osaka Dainichi Building 5-6-16 Nishinakajima, Yodogawa-ku, Osaka-shi, Osaka 532-0011
@@ -68,6 +68,21 @@ For sales inquiries or detailed product information about the Physical AI lineup
 <div class="contact-office-actions">
   <a class="contact-pill-btn" href="http://robotis.com/ja" target="_blank" rel="noopener noreferrer">Website</a>
   <a class="contact-pill-btn" href="https://e-shop.robotis.co.jp/" target="_blank" rel="noopener noreferrer">Online Shop</a>
+</div>
+
+</div>
+
+<div class="contact-office-card">
+
+### ROBOTIS China
+
+- **Company:** ROBOTIS China
+- **Email:** [china@robotis.com](mailto:china@robotis.com)
+- **TEL:** [+86-010-84783681](tel:+861084783681)
+- **Address:** Room 4031, 4th Floor, Zhongren Building, No.10 ChaoWai Street, Chaoyang District, Beijing, China
+
+<div class="contact-office-actions">
+  <a class="contact-pill-btn" href="http://robotis.com/zh" target="_blank" rel="noopener noreferrer">Website</a>
 </div>
 
 </div>

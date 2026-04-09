@@ -73,10 +73,16 @@ cd robotis_applications
 ```
 :::
 
-### 2. Start the Docker Container
+### 2. Start and Enter the Docker Container
 
 ```bash
-cd robotis_applications/docker && ./container.sh start
+cd docker
+
+# Start container
+./container.sh start
+
+# Enter running container
+./container.sh enter
 ```
 
 ### 3. Start VR Publisher Node

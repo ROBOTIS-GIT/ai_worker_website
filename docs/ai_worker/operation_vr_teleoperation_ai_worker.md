@@ -229,8 +229,6 @@ Right after the controller is activated, the system checks the difference betwee
 ### 5. Pause and resume teleoperation
 
 - Release the squeeze buttons.
-- Deactivate the controller by pressing the `Y` button on the left controller and the `B` button on the right controller at the same time.
-![Activate VR controller](/vr/vr_b_y.png)
 - To resume, repeat step 3 to 4.
 
 ::: warning

@@ -6,6 +6,11 @@ const description = 'Website for AI Worker and AI Manipulator'
 const ogUrl = 'https://ai.robotis.com/'
 const ogImage = `${ogUrl}og_image.png`
 
+/** Inline SVG — `icon: '/favicon.svg'` is treated as a Simple Icons name and triggers a broken Iconify URL. */
+const robotisHomeSocialIcon = {
+  svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect fill="#fff" width="16" height="16"/><path fill="#222" d="M13.6,14.08H9.77L5.5,9.44l1.2-2.75h3.18c0.26,0,0.49-0.09,0.67-0.28c0.18-0.18,0.28-0.41,0.28-0.67c0-0.26-0.09-0.49-0.28-0.67c-0.18-0.18-0.41-0.28-0.67-0.28H5.15v9.3H2.4V2.03h7.49c1.02,0,1.89,0.36,2.62,1.08c0.72,0.72,1.08,1.6,1.08,2.62c0,1.02-0.36,1.89-1.08,2.62c-0.72,0.72-1.59,1.08-2.61,1.08L9.28,9.43L13.6,14.08z"/></svg>'
+}
+
 export default defineConfig({
   title,
   description,
@@ -61,7 +66,7 @@ export default defineConfig({
       { text: 'OMY', link: '/omy/introduction_omy' },
       { text: 'OMX', link: '/omx/introduction_omx' },
       { text: 'Hands', link: '/hands/introduction_hands' },
-      { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
+      { text: 'Ecosystem', link: '/community_showcase' },
       {
         text: 'OpenSource',
         items: [
@@ -79,7 +84,7 @@ export default defineConfig({
           { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
         ]
       },
-      { text: 'Contact', link: '/ai_worker/contact_ai_worker' },
+      { text: 'Contact', link: '/contact' },
     ],
     sidebar: {
       '/ai_worker/': [
@@ -169,7 +174,7 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/ai_worker/issues_ai_worker' },
             { text: 'FAQ', link: '/ai_worker/faq_ai_worker' },
-            { text: 'Contact Us', link: '/ai_worker/contact_ai_worker' }
+            { text: 'Contact Us', link: '/contact' }
           ]
         }
       ],
@@ -247,7 +252,7 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/omy/issues_omy' },
             { text: 'FAQ', link: '/omy/faq_omy' },
-            { text: 'Contact Us', link: '/omy/contact_omy' }
+            { text: 'Contact Us', link: '/contact' }
           ]
         }
       ],
@@ -334,7 +339,7 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/omx/issues_omx' },
             { text: 'FAQ', link: '/omx/faq_omx' },
-            { text: 'Contact Us', link: '/omx/contact_omx' }
+            { text: 'Contact Us', link: '/contact' }
           ]
         }
       ],
@@ -389,8 +394,15 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/hands/issues_hands' },
             { text: 'FAQ', link: '/hands/faq_hands' },
-            { text: 'Contact Us', link: '/hands/contact_hands' }
+            { text: 'Contact Us', link: '/contact' }
           ]
+        }
+      ],
+
+      '/contact': [
+        {
+          text: 'Contact',
+          items: [{ text: 'Contact Us', link: '/contact' }]
         }
       ],
 
@@ -404,7 +416,11 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      { icon: '/favicon.svg', link: 'https://en.robotis.com/' },
+      {
+        icon: robotisHomeSocialIcon,
+        link: 'https://en.robotis.com/',
+        ariaLabel: 'ROBOTIS'
+      },
       { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/' },
       { icon: 'youtube', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam' },
       { icon: 'x', link: 'https://x.com/ROBOTISAmerica' },

@@ -6,6 +6,11 @@ const description = 'Website for AI Worker and AI Manipulator'
 const ogUrl = 'https://ai.robotis.com/'
 const ogImage = `${ogUrl}og_image.png`
 
+/** Inline SVG — `icon: '/favicon.svg'` is treated as a Simple Icons name and triggers a broken Iconify URL. */
+const robotisHomeSocialIcon = {
+  svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect fill="#fff" width="16" height="16"/><path fill="#222" d="M13.6,14.08H9.77L5.5,9.44l1.2-2.75h3.18c0.26,0,0.49-0.09,0.67-0.28c0.18-0.18,0.28-0.41,0.28-0.67c0-0.26-0.09-0.49-0.28-0.67c-0.18-0.18-0.41-0.28-0.67-0.28H5.15v9.3H2.4V2.03h7.49c1.02,0,1.89,0.36,2.62,1.08c0.72,0.72,1.08,1.6,1.08,2.62c0,1.02-0.36,1.89-1.08,2.62c-0.72,0.72-1.59,1.08-2.61,1.08L9.28,9.43L13.6,14.08z"/></svg>'
+}
+
 export default defineConfig({
   title,
   description,
@@ -405,7 +410,11 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      { icon: '/favicon.svg', link: 'https://en.robotis.com/' },
+      {
+        icon: robotisHomeSocialIcon,
+        link: 'https://en.robotis.com/',
+        ariaLabel: 'ROBOTIS'
+      },
       { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/' },
       { icon: 'youtube', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam' },
       { icon: 'x', link: 'https://x.com/ROBOTISAmerica' },

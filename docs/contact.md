@@ -25,7 +25,7 @@ For sales inquiries or detailed product information about the Physical AI lineup
 
 <div class="contact-office-card">
 
-###  Headquarters / Korea
+### Headquarters / Korea
 
 - **Company:** ROBOTIS Co., Ltd.
 - **Email:** [korea@robotis.com](mailto:korea@robotis.com)
@@ -66,7 +66,7 @@ For sales inquiries or detailed product information about the Physical AI lineup
 - **Address:** 201 Shin-Osaka Dainichi Building 5-6-16 Nishinakajima, Yodogawa-ku, Osaka-shi, Osaka 532-0011
 
 <div class="contact-office-actions">
-  <a class="contact-pill-btn" href="http://robotis.com/ja" target="_blank" rel="noopener noreferrer">Website</a>
+  <a class="contact-pill-btn" href="https://robotis.com/ja" target="_blank" rel="noopener noreferrer">Website</a>
   <a class="contact-pill-btn" href="https://e-shop.robotis.co.jp/" target="_blank" rel="noopener noreferrer">Online Shop</a>
 </div>
 
@@ -78,11 +78,11 @@ For sales inquiries or detailed product information about the Physical AI lineup
 
 - **Company:** ROBOTIS China
 - **Email:** [china@robotis.com](mailto:china@robotis.com)
-- **TEL:** [+86-010-84783681](tel:+861084783681)
+- **TEL:** [+86-10-84783681](tel:+861084783681)
 - **Address:** Room 4031, 4th Floor, Zhongren Building, No.10 ChaoWai Street, Chaoyang District, Beijing, China
 
 <div class="contact-office-actions">
-  <a class="contact-pill-btn" href="http://robotis.com/zh" target="_blank" rel="noopener noreferrer">Website</a>
+  <a class="contact-pill-btn" href="https://robotis.com/zh" target="_blank" rel="noopener noreferrer">Website</a>
 </div>
 
 </div>
@@ -107,7 +107,7 @@ For the latest updates, follow us on our resources and social media channels.
 <style>
 .contact-page .contact-offices-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1.25rem;
   margin: 1.5rem 0 2rem;
   align-items: stretch;

@@ -1,11 +1,11 @@
 # Release Notes
 
 <details>
-<summary>2026.04.09</summary>
+<summary>2026.04.01</summary>
 
 📦 **AI Worker**
 > **Version:** `1.2.0`
-> **Released:** 2026-04-09
+> **Released:** 2026-04-01
 > 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.2.0)
 
 - Added support for SH5, BH5 model

@@ -1,7 +1,46 @@
 # Release Notes
 
 <details>
+<summary>2026.04.09</summary>
+
+📦 **AI Worker**
+> **Version:** `1.2.0`
+> **Released:** 2026-04-09
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.2.0)
+
+- Added support for SH5, BH5 model
+</details>
+
+<details>
+<summary>2026.03.26</summary>
+
+📦 **AI Worker**
+> **Version:** `1.1.21`
+> **Released:** 2026-03-26
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.1.21)
+
+- Added docker-compose.novnc.yml
+</details>
+
+<details>
 <summary>2026.03.12</summary>
+
+📦 **AI Worker**
+> **Version:** `1.1.19`
+> **Released:** 2026-03-12
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.1.19)
+
+- Added MPPI navigation mode
+- Merged AMCL params into navigation.yaml and added navigation_mppi.yaml
+- Added BT tree with IsPathLengthUnder
+- Added a console entry point for the mobile teleop node
+
+> **Version:** `1.1.20`
+> **Released:** 2026-03-12
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.1.20)
+
+- Fixed version of docker image in docker-compose.yml
+- Added a notice in container.sh when update is available
 
 📦 **Physical AI Tools**
 > **Version:** `0.8.2`
@@ -17,7 +56,7 @@
 
 📦 **AI Worker**
 > **Version:** `1.1.18`
-> **Released:** 2026-02-9
+> **Released:** 2026-02-09
 > 🔗 [Repository](https://github.com/ROBOTIS-GIT/ai_worker/releases/tag/1.1.18)
 
 - Use sigint signal to shutdown s6-overlay services

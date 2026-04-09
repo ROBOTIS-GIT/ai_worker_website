@@ -6,7 +6,7 @@
 📦 **ROBOTIS Hand**
 > **Version:** `0.0.3`
 > **Released:** 2026-03-18
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/robotis_hand)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/robotis_hand/releases/tag/0.0.3)
 
 - Updated Docker image tag
 - Added version print notice to Docker container
@@ -19,7 +19,7 @@
 📦 **ROBOTIS Hand**
 > **Version:** `0.0.2`
 > **Released:** 2026-01-14
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/robotis_hand)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/robotis_hand/releases/tag/0.0.2)
 
 - Fixed moveit_config srdf files for correct disable_collisions settings
 - Fixed robot description files for hx5_d20_rev2

@@ -6,7 +6,7 @@
 📦 **OMY**
 > **Version:** `4.1.3`
 > **Released:** 2026-03-18
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.1.3)
 
 - Added realsense d405 urdf for OMY-F3M
 </details>
@@ -17,7 +17,7 @@
 📦 **OMY**
 > **Version:** `4.1.2`
 > **Released:** 2026-01-09
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.1.2)
 
 - Added urdf for every model
 </details>
@@ -28,7 +28,7 @@
 📦 **OMY**
 > **Version:** `4.1.1`
 > **Released:** 2025-11-13
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.1.1)
 
 - Updated for new DHI, mock_components
 - Updated for docker-compose.yml to use host IPC and PID and shared memory
@@ -43,7 +43,7 @@
 📦 **OMY**
 > **Version:** `4.1.0`
 > **Released:** 2025-10-24
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.1.0)
 
 - Support OMX-F GUI
 - Support OMX-F Keyboard Teleop
@@ -55,7 +55,7 @@
 📦 **OMY**
 > **Version:** `4.0.10`
 > **Released:** 2025-10-23
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.0.10)
 
 - Changed default drive mode to 0 for OMX-L
 </details>
@@ -66,7 +66,7 @@
 📦 **OMY**
 > **Version:** `4.0.9`
 > **Released:** 2025-09-15
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.0.9)
 
 - Support custom camera namespace and connection
 </details>
@@ -77,7 +77,7 @@
 📦 **OMY**
 > **Version:** `4.0.8`
 > **Released:** 2025-09-03
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.0.8)
 
 - Added camera_usb_cam launch file
 - Support OMX series
@@ -95,7 +95,7 @@
 📦 **OMY**
 > **Version:** `4.0.7`
 > **Released:** 2025-07-17
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.0.7)
 
 - Fixed joint offset functionality of joint trajectory command broadcaster
 - Updated launch files for OMY Packing and Unpacking
@@ -107,7 +107,7 @@
 📦 **OMY**
 > **Version:** `4.0.6`
 > **Released:** 2025-07-15
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.0.6)
 
 - Renamed omx to open_manipulator_x
 </details>
@@ -118,7 +118,7 @@
 📦 **OMY**
 > **Version:** `4.0.5`
 > **Released:** 2025-07-02
-> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator)
+> 🔗 [Repository](https://github.com/ROBOTIS-GIT/open_manipulator/releases/tag/4.0.5)
 
 - Added init_position_file argument to launch files
 - Updated profile time and acceleration time for OMY series

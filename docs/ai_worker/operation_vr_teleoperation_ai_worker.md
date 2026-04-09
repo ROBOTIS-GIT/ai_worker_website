@@ -224,6 +224,8 @@ ros2 topic pub --once /reactivate std_msgs/msg/Bool "{data: true}"
 
 Right after the controller is activated, the system checks the difference between the detected controller poses and the robot wrist poses. If the difference is small enough, the arm controller starts after 3 seconds. After startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to keep your arm posture as close as possible to the robot posture before activating the controller.
 
+![SG2 Slow Start](/quick_start_guide/ai_worker/sg2_vr_slow_start.gif)
+
 ### 5. Pause and resume teleoperation
 
 - Release the squeeze buttons.
@@ -285,6 +287,8 @@ You can also build your own custom device, such as a pedal or a button, for this
 :::
 
 Right after the controller is activated, the system checks the difference between the detected hand poses and the robot wrist poses. If the difference is small enough, the arm controller will start after 3 seconds. After the startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to make your arm posture as close as possible to the robot posture before activating the controller.
+
+![SH5 Slow Start](/quick_start_guide/ai_worker/sh5_vr_slow_start.gif)
 
 ### 4. Pause and resume teleoperation
 

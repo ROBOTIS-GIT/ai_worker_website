@@ -1,5 +1,10 @@
 # Release Notes
 
+Release notes are posted in the **Discord** release notes channel. Use the link below to open the channel (a Discord account may be required).
+
+[Open the release notes channel on Discord](https://discordapp.com/channels/1377230275393884170/1491682343553863750)
+
+<!--
 <details>
 <summary>2026.03.18</summary>
 
@@ -126,3 +131,4 @@
 - Updated Collision area for OMY series
 - Added feedback control for leader-follower synchronization
 </details>
+-->

@@ -67,23 +67,7 @@ export default defineConfig({
       { text: 'OMX', link: '/omx/introduction_omx' },
       { text: 'Hands', link: '/hands/introduction_hands' },
       { text: 'Ecosystem', link: '/community_showcase' },
-      {
-        text: 'OpenSource',
-        items: [
-          { text: 'AI Worker ROS 2 Packages', link: 'https://github.com/ROBOTIS-GIT/ai_worker', target: '_blank' },
-          { text: 'AI Manipulator ROS 2 Packages', link: 'https://github.com/ROBOTIS-GIT/open_manipulator', target: '_blank' },
-          { text: 'Physical AI Tools', link: 'https://github.com/ROBOTIS-GIT/physical_ai_tools', target: '_blank' },
-          { text: 'Isaac Sim Models', link: 'https://github.com/ROBOTIS-GIT/robotis_lab/tree/main/source/robotis_lab/data/robots', target: '_blank' },
-          { text: 'MuJoCo Models', link: 'https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie', target: '_blank' },
-          { text: 'AI Worker URDF Models', link: 'https://github.com/ROBOTIS-GIT/ai_worker/tree/main/ffw_description/urdf', target: '_blank' },
-          { text: 'AI Manipulator URDF Models', link: 'https://github.com/ROBOTIS-GIT/open_manipulator/tree/main/open_manipulator_description/urdf', target: '_blank' },
-          { text: 'AI Models & Datasets (Hugging Face)', link: 'https://huggingface.co/ROBOTIS', target: '_blank' },
-          { text: 'Docker Images', link: 'https://hub.docker.com/r/robotis/ros/tags', target: '_blank' },
-          { text: 'ROBOTIS Homepage', link: 'https://en.robotis.com/', target: '_blank' },
-          { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
-          { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
-        ]
-      },
+      { text: 'Open Source', link: '/opensource' },
       { text: 'Contact', link: '/contact' },
     ],
     sidebar: {
@@ -162,7 +146,7 @@ export default defineConfig({
         {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/ai_worker/opensource_ai_worker' },
+            { text: 'Open Source', link: '/opensource' },
             { text: 'Release Notes', link: '/ai_worker/release_notes_ai_worker' },
             { text: 'Technical Story', link: '/ai_worker/technical_story_ai_worker' }
           ]
@@ -240,7 +224,7 @@ export default defineConfig({
         {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/omy/opensource_omy' },
+            { text: 'Open Source', link: '/opensource' },
             { text: 'Release Notes', link: '/omy/release_notes_omy' }
           ]
         },
@@ -329,7 +313,7 @@ export default defineConfig({
         {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/omx/opensource_omx' },
+            { text: 'Open Source', link: '/opensource' },
             { text: 'Release Notes', link: '/omx/release_notes_omx' }
           ]
         },
@@ -384,7 +368,7 @@ export default defineConfig({
         {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/hands/opensource_hands' },
+            { text: 'Open Source', link: '/opensource' },
             { text: 'Release Notes', link: '/hands/release_notes_hands' }
           ]
         },
@@ -403,6 +387,13 @@ export default defineConfig({
         {
           text: 'Contact',
           items: [{ text: 'Contact Us', link: '/contact' }]
+        }
+      ],
+
+      '/opensource': [
+        {
+          text: 'Open Source',
+          items: [{ text: 'Overview', link: '/opensource' }]
         }
       ],
 

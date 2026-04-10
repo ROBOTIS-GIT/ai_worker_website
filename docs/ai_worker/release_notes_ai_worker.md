@@ -1,5 +1,10 @@
 # Release Notes
 
+Release notes are posted in the **Discord** release notes channel. Use the link below to open the channel (a Discord account may be required).
+
+[Open the release notes channel on Discord](https://discord.com/channels/1377230275393884170/1491682343553863750)
+
+<!--
 <details>
 <summary>2026.04.01</summary>
 
@@ -486,3 +491,4 @@ Physical AI Manager – web app for data collection, training, and inference.
 - Management of AI.ROBOTIS.COM has begun. The site includes hardware, software, setup guides, and imitation learning manuals for the AI Worker.
 <img src="/release_note/ai_worker/ffw_website.png" alt="Website">
 </details>
+-->

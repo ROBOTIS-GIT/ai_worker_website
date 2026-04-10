@@ -67,7 +67,7 @@ export default defineConfig({
       { text: 'OMX', link: '/omx/introduction_omx' },
       { text: 'Hands', link: '/hands/introduction_hands' },
       { text: 'Ecosystem', link: '/community_showcase' },
-      { text: 'OpenSource', link: '/opensource' },
+      { text: 'Open Source', link: '/opensource' },
       { text: 'Contact', link: '/contact' },
     ],
     sidebar: {

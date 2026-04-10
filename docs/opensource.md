@@ -40,7 +40,7 @@
 <tr>
 <td><strong>Docker Images</strong></td>
 <td>Ready-to-use development environments</td>
-<td><a href="https://hub.docker.com/repository/docker/robotis/ai-worker">Docker Hub</a></td>
+<td><a href="https://hub.docker.com/r/robotis/ai-worker">Docker Hub</a></td>
 </tr>
 <tr>
 <td><strong>Tutorial Videos</strong></td>
@@ -66,7 +66,7 @@
 <tr>
 <td><strong>Docker Images</strong></td>
 <td>Ready-to-use development environments</td>
-<td><a href="https://hub.docker.com/repository/docker/robotis/open-manipulator">Docker Hub</a></td>
+<td><a href="https://hub.docker.com/r/robotis/open-manipulator">Docker Hub</a></td>
 </tr>
 <tr>
 <td><strong>Tutorial Videos</strong></td>
@@ -92,7 +92,7 @@
 <tr>
 <td><strong>Docker Images</strong></td>
 <td>Ready-to-use development environments</td>
-<td><a href="https://hub.docker.com/repository/docker/robotis/open-manipulator">Docker Hub</a></td>
+<td><a href="https://hub.docker.com/r/robotis/open-manipulator">Docker Hub</a></td>
 </tr>
 <tr>
 <td><strong>Tutorial Videos</strong></td>
@@ -118,7 +118,7 @@
 <tr>
 <td><strong>Docker Images</strong></td>
 <td>Ready-to-use development environments</td>
-<td><a href="https://hub.docker.com/repository/docker/robotis/robotis-hand">Docker Hub</a></td>
+<td><a href="https://hub.docker.com/r/robotis/robotis-hand">Docker Hub</a></td>
 </tr>
 <tr>
 <td><strong>Tutorial Videos</strong></td>

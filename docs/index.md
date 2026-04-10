@@ -17,7 +17,7 @@ hero:
       link: /ai_worker/hardware_ai_worker
     - theme: alt
       text: Open Source
-      link: /ai_worker/opensource_ai_worker
+      link: /opensource
     - theme: alt
       text: Purchase Inquiry
       link: /contact

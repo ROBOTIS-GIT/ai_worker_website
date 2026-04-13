@@ -162,4 +162,4 @@ You can integrate a custom hardware trigger, such as a foot pedal or physical bu
 1. If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` in the container.)
 2. If the Vuer server is not running: check the logs in the terminal.
 3. If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A wired connection is recommended.
-4. If the ROBOTIS hand does not start moving after VR publishing is enabled: make sure `/reactivate` was called successfully.
+4. If the ROBOTIS Hand does not start moving after VR publishing is enabled: make sure `/reactivate` was called successfully.

@@ -256,15 +256,15 @@ ffw_sh5_follower_ai
 
 ### 2. Start Cyclo Motion Controller
 
-After the robot has fully completed bringup and moved to its initial position, start Cyclo Motion Controller in `vr` mode:
+Once the robot has completed its bringup sequence and reached the initial position, launch the **Cyclo Motion Controller** in `vr` mode with the `hand` parameter enabled:
 
 ```bash
-ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr
+ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr hand:=true
 ```
 
 Or use the shortcut:
 ```bash
-motion_controller controller_type:=vr
+motion_controller controller_type:=vr hand:=true
 ```
 
 ### 3. Activate VR Publisher and Controller

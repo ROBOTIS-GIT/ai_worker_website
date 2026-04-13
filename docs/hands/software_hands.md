@@ -83,10 +83,11 @@ DYNAMIXEL Actuators
 | `hand_l_controller` | Left hand | 20 | `/leader/joint_trajectory_command_broadcaster_left_hand/joint_trajectory` |
 | `hand_r_controller` | Right hand | 20 | `/leader/joint_trajectory_command_broadcaster_right_hand/joint_trajectory` |
 | `joint_state_broadcaster` | All joints | – | Publishes to `/joint_states` |
-| `robotis_hand_pressure_broadcaster` | All tactile sensors | – | Publishes to `/left_hand/finger_pressures` or `/right_hand/finger_pressures` |
+| `pressure_l_broadcaster` | Left sensors | – | Publishes to `/left_hand/finger_pressures` |
+| `pressure_r_broadcaster` | Right sensors | – | Publishes to `/right_hand/finger_pressures` |
 :::
 
-All controllers (except `broadcaster`) use the **`JointTrajectoryController`** type.
+Hand controllers use the **`JointTrajectoryController`** type.
 
 By default, all joints operate in **position mode**.
 

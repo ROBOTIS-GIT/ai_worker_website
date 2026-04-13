@@ -83,9 +83,10 @@ DYNAMIXEL Actuators
 | `hand_l_controller` | Left hand | 20 | `/leader/joint_trajectory_command_broadcaster_left_hand/joint_trajectory` |
 | `hand_r_controller` | Right hand | 20 | `/leader/joint_trajectory_command_broadcaster_right_hand/joint_trajectory` |
 | `joint_state_broadcaster` | All joints | – | Publishes to `/joint_states` |
+| `robotis_hand_pressure_broadcaster` | All tactile sensors | – | Publishes to `/left_hand/finger_pressures` or `/right_hand/finger_pressures` |
 :::
 
-All controllers (except `joint_state_broadcaster`) use the **`JointTrajectoryController`** type.
+All controllers (except `broadcaster`) use the **`JointTrajectoryController`** type.
 
 By default, all joints operate in **position mode**.
 
@@ -98,25 +99,31 @@ By default, all joints operate in **position mode**.
   controller_manager:
     ros__parameters:
       use_sim_time: False
-      update_rate: 100  # Hz
+      update_rate: 100 # Hz
 
       joint_state_broadcaster:
         type: joint_state_broadcaster/JointStateBroadcaster
 
-      left_hand_controller:
+      hand_l_controller:
         type: joint_trajectory_controller/JointTrajectoryController
 
-      right_hand_controller:
+      hand_r_controller:
         type: joint_trajectory_controller/JointTrajectoryController
 
-      left_effort_controller:
+      effort_l_controller:
         type: effort_controllers/JointGroupEffortController
 
-      right_effort_controller:
+      effort_r_controller:
         type: effort_controllers/JointGroupEffortController
+
+      pressure_l_broadcaster:
+        type: robotis_hand_pressure_broadcaster/PressureBroadcaster
+
+      pressure_r_broadcaster:
+        type: robotis_hand_pressure_broadcaster/PressureBroadcaster
 
 /**:
-  left_hand_controller:
+  hand_l_controller:
     ros__parameters:
       joints:
         - finger_l_joint1
@@ -148,7 +155,7 @@ By default, all joints operate in **position mode**.
       allow_partial_joints_goal: true
 
 /**:
-  right_hand_controller:
+  hand_r_controller:
     ros__parameters:
       joints:
         - finger_r_joint1
@@ -180,7 +187,7 @@ By default, all joints operate in **position mode**.
       allow_partial_joints_goal: true
 
 /**:
-  left_effort_controller:
+  effort_l_controller:
     ros__parameters:
       joints:
         - finger_l_joint1
@@ -205,7 +212,7 @@ By default, all joints operate in **position mode**.
         - finger_l_joint20
 
 /**:
-  right_effort_controller:
+  effort_r_controller:
     ros__parameters:
       joints:
         - finger_r_joint1
@@ -228,6 +235,48 @@ By default, all joints operate in **position mode**.
         - finger_r_joint18
         - finger_r_joint19
         - finger_r_joint20
+
+/**:
+  pressure_l_broadcaster:
+    ros__parameters:
+      topic_name: /left_hand/finger_pressures
+      sensor_names:
+        - finger_l_sensor1
+        - finger_l_sensor2
+        - finger_l_sensor3
+        - finger_l_sensor4
+        - finger_l_sensor5
+      interface_names:
+        - Present Pressure 1
+        - Present Pressure 2
+        - Present Pressure 3
+        - Present Pressure 4
+        - Present Pressure 5
+        - Present Pressure 6
+        - Present Pressure 7
+        - Present Pressure 8
+        - Present Pressure 9
+
+/**:
+  pressure_r_broadcaster:
+    ros__parameters:
+      topic_name: /right_hand/finger_pressures
+      sensor_names:
+        - finger_r_sensor1
+        - finger_r_sensor2
+        - finger_r_sensor3
+        - finger_r_sensor4
+        - finger_r_sensor5
+      interface_names:
+        - Present Pressure 1
+        - Present Pressure 2
+        - Present Pressure 3
+        - Present Pressure 4
+        - Present Pressure 5
+        - Present Pressure 6
+        - Present Pressure 7
+        - Present Pressure 8
+        - Present Pressure 9
 ```
 :::
 

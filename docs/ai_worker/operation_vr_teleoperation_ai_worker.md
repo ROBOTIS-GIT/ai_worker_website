@@ -14,7 +14,7 @@ The VR setup process is identical for all models unless otherwise specified.
 ::: warning
 Modify **initial pose** for safety.
 
-The default initial pose for the AI Worker (arms straight down) is not ideal for VR, as VR teleoperation requires the hands to be within the camera's field of view. It is highly recommended to change the initial position to a "ready" pose (e.g., elbows bent 90° with hands forward). Refer to this **[Discord post](https://discord.com/channels/1377230275393884170/1486960366700204204)** for instructions on modifying the initial pose.
+The default initial pose for the AI Worker (arms straight down) is not ideal for VR, as VR teleoperation requires the hands to be within the camera's field of view. It is highly recommended to change the initial position to a "ready" pose (e.g., elbows bent 90° with hands forward). Refer to this **[Discord post](https://discord.com/channels/1377230275393884170/1486960366700204204)** for instructions on modifying the initial pose (a Discord account may be required).
 :::
 
 ## VR Device Setup
@@ -46,7 +46,7 @@ Enable Developer Mode via the Meta Horizon mobile app:
 
 ## VR Startup
 
-AI Worker VR teleoperation utilizess **Vuer** as the browser-based VR client. For more information about the VR stack and Vuer itself, see the **[ROBOTIS Vuer](https://github.com/ROBOTIS-GIT/robotis_applications/tree/main/robotis_vuer)** package.
+AI Worker VR teleoperation utilizes **Vuer** as the browser-based VR client. For more information about the VR stack and Vuer itself, see the **[ROBOTIS Vuer](https://github.com/ROBOTIS-GIT/robotis_applications/tree/main/robotis_vuer)** package.
 
 ### 1. Clone the repository
 

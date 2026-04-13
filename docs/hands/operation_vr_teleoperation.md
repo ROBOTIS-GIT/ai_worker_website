@@ -101,7 +101,7 @@ If the Vuer server is **restarted**, you must **refresh** the browser page and c
 
 ## Cyclo Control Setup
 
-VR teleoperation relies `Cyclo Control` as the robot retargeting layer. It receives VR references and generates the hand trajectories that the robot follows. Ensure it is installed and configured before proceeding.
+VR teleoperation relies on `Cyclo Control` as the robot retargeting layer. It receives VR references and generates the hand trajectories that the robot follows. Ensure it is installed and configured before proceeding.
 
 You can find the installation steps in the [`cyclo_control` repository](https://github.com/ROBOTIS-GIT/cyclo_control).
 

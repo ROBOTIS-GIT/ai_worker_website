@@ -159,7 +159,11 @@ You can integrate a custom hardware trigger, such as a foot pedal or physical bu
 - To Resume: Re-align your hand pose and repeat `Step 3`
 
 ## Troubleshooting
-1. If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` in the container.)
-2. If the Vuer server is not running: check the logs in the terminal.
-3. If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A wired connection is recommended.
-4. If the ROBOTIS Hand does not start moving after VR publishing is enabled: make sure `/reactivate` was called successfully.
+### Communication Issues
+- If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` by default within the provided Docker container.)
+- If the Vuer server is not running: check the terminal logs.
+- If the robot remains stationary after enabling VR publishing: ensure the `/reactivate` topic was published successfully.
+
+### Network Performance
+- If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A **wired connection** is recommended.
+- If wireless performance is insufficient, use a USB-C to Ethernet adapter to establish a **wired connection** for the Meta Quest 3.

@@ -302,7 +302,15 @@ Right after the controller is activated, the system checks the difference betwee
 ::::
 
 ## Troubleshooting
-1. If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` in the container.)
-2. If the Vuer server is not running: check the logs in the terminal.
-3. If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A wired connection is recommended.
-4. If the controller does not start moving after VR publishing is enabled: make sure `/reactivate` was called successfully and confirm that the detected hand poses are close enough to the robot wrist poses.
+
+### Communication Issues
+- If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` by default within the provided Docker container.)
+- If the Vuer server is not running: check the terminal logs.
+- If the robot remains stationary after enabling VR publishing: ensure the `/reactivate` topic was published successfully and confirm that your physical hand pose is sufficiently aligned with the robot's wrist pose.
+
+### Network Performance
+- If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A **wired connection** is recommended.
+- If wireless performance is insufficient, host the VR server directly on the `Robot PC` and use a USB-C to Ethernet adapter to establish a **wired connection** for the Meta Quest 3.
+
+### Hardware Tips
+- Proximity Sensor Workaround: The Meta Quest 3 may pause the session if it detects that the headset has been removed. Placing a small piece of **non-transparent tape** over the internal proximity sensor (located between the lenses) can help keep the session active.

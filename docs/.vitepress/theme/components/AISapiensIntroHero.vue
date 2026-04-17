@@ -1,5 +1,5 @@
 <script setup>
-const bannerImageSrc = '/ai_sapiens/ai_sapienc_banner.png'
+const bannerImageSrc = '/ai_sapiens/ai_sapiens_banner.png'
 
 </script>
 

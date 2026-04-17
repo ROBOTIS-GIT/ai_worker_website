@@ -110,10 +110,18 @@ The system supports a **maximum arm payload of 3 kg**.
 
 **DYNAMIXEL-Q** is a **QDD (Quasi-Direct Drive)** actuator that combines a **low gear reduction ratio** with a **high-torque** motor and integrated control electronics. It enables **high backdrivability**, **low impedance**, and **precise torque control**, making it well-suited for dynamic and compliant motions in humanoid and robotic applications.
 
+::: info
+* **DYNAMIXEL-Q** is scheduled for release in the second half of the year.(The schedule is subject to change)
+
+* The details on this page are subject to change as the product approaches launch.
+
+* For any additional inquiries, contact us at [contactus2@robotis.com](mailto:contactus2@robotis.com)
+:::
+
 :::tip QM-060
 <div class="dynamixel-q-at-a-glance">
 
-<img src="/ai_sapiens/dynamixel_q.png" alt="dynamixel_q"/>
+<img src="/ai_sapiens/thumb_dynamixel_qm060.png" alt="dynamixel_q"/>
 
 <div class="motor-spec">
 
@@ -121,12 +129,10 @@ The system supports a **maximum arm payload of 3 kg**.
 |:-----|:----------------|
 | Motor Type | Inner Rotor |
 | Input Voltage | 48 V |
-| Continuous Speed  | 180.0 rpm |
-| Continuous Torque | 10.6 Nm |
-| Gear ratio | 20:1 |
+| Gear ratio | 12:1 / 16:1 / 20:1 |
 | Size | Ø58 x 60 mm |
 | Weight | 450 g |
-| Torque density | 23.56 Nm/kg |
+| Hollow Bore Diameter | Ø5 mm |
 
 </div>
 </div>
@@ -135,7 +141,7 @@ The system supports a **maximum arm payload of 3 kg**.
 :::tip QM-080
 <div class="dynamixel-q-at-a-glance">
 
-<img src="/ai_sapiens/dynamixel_q.png" alt="dynamixel_q"/>
+<img src="/ai_sapiens/thumb_dynamixel_qm080.png" alt="dynamixel_q"/>
 
 <div class="motor-spec">
 
@@ -143,12 +149,10 @@ The system supports a **maximum arm payload of 3 kg**.
 |:-----|:----------------|
 | Motor Type | Inner Rotor |
 | Input Voltage | 48 V |
-| Continuous Speed  | 95.0 rpm |
-| Continuous Torque | 24.2 Nm |
-| Gear ratio | 20:1 |
+| Gear ratio | 12:1 / 16:1 / 20:1 |
 | Size | Ø78 x 65 mm |
 | Weight | 850 g |
-| Torque density | 28.47 Nm/kg |
+| Hollow Bore Diameter | Ø7 mm |
 
 </div>
 </div>

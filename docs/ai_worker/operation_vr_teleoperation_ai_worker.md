@@ -14,7 +14,7 @@ The VR setup process is identical for all models unless otherwise specified.
 ::: warning
 Modify **initial pose** for safety.
 
-The default initial pose for the AI Worker (arms straight down) is not ideal for VR, as VR teleoperation requires the hands to be within the camera's field of view. It is highly recommended to change the initial position to a "ready" pose (e.g., elbows bent 90° with hands forward). Refer to this **[Discord post](https://discord.com/channels/1377230275393884170/1486960366700204204)** for instructions on modifying the initial pose.
+The default initial pose for the AI Worker (arms straight down) is not ideal for VR, as VR teleoperation requires the hands to be within the camera's field of view. It is highly recommended to change the initial position to a "ready" pose (e.g., elbows bent 90° with hands forward). Refer to this **[Discord post](https://discord.com/channels/1377230275393884170/1486960366700204204)** for instructions on modifying the initial pose (a Discord account may be required).
 :::
 
 ## VR Device Setup
@@ -46,7 +46,7 @@ Enable Developer Mode via the Meta Horizon mobile app:
 
 ## VR Startup
 
-AI Worker VR teleoperation utilizess **Vuer** as the browser-based VR client. For more information about the VR stack and Vuer itself, see the **[ROBOTIS Vuer](https://github.com/ROBOTIS-GIT/robotis_applications/tree/main/robotis_vuer)** package.
+AI Worker VR teleoperation utilizes **Vuer** as the browser-based VR client. For more information about the VR stack and Vuer itself, see the **[ROBOTIS Vuer](https://github.com/ROBOTIS-GIT/robotis_applications/tree/main/robotis_vuer)** package.
 
 ### 1. Clone the repository
 
@@ -159,7 +159,7 @@ If the Vuer server is **restarted**, you must **refresh** the browser page and c
 
 ## Cyclo Control Setup
 
-VR teleoperation relies `Cyclo Control` as the robot motion-control layer. It receives VR references and generates the arm trajectories that the robot follows. Ensure it is installed and configured before proceeding.
+VR teleoperation relie on `Cyclo Control` as the robot motion-control layer. It receives VR references and generates the arm trajectories that the robot follows. Ensure it is installed and configured before proceeding.
 
 You can find the installation steps in the [`cyclo_control` repository](https://github.com/ROBOTIS-GIT/cyclo_control).
 
@@ -256,15 +256,15 @@ ffw_sh5_follower_ai
 
 ### 2. Start Cyclo Motion Controller
 
-After the robot has fully completed bringup and moved to its initial position, start Cyclo Motion Controller in `vr` mode:
+Once the robot has completed its bringup sequence and reached the initial position, launch the **Cyclo Motion Controller** in `vr` mode with the `hand` parameter enabled:
 
 ```bash
-ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr
+ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr hand:=true
 ```
 
 Or use the shortcut:
 ```bash
-motion_controller controller_type:=vr
+motion_controller controller_type:=vr hand:=true
 ```
 
 ### 3. Activate VR Publisher and Controller
@@ -302,7 +302,14 @@ Right after the controller is activated, the system checks the difference betwee
 ::::
 
 ## Troubleshooting
-1. If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` in the container.)
-2. If the Vuer server is not running: check the logs in the terminal.
-3. If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A wired connection is recommended.
-4. If the controller does not start moving after VR publishing is enabled: make sure `/reactivate` was called successfully and confirm that the detected hand poses are close enough to the robot wrist poses.
+### Communication Issues
+- If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` by default within the provided Docker container.)
+- If the Vuer server is not running: check the terminal logs.
+- If the robot remains stationary after enabling VR publishing: ensure the `/reactivate` topic was published successfully and confirm that your physical hand pose is sufficiently aligned with the robot's wrist pose.
+
+### Network Performance
+- If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A **wired connection** is recommended.
+- If wireless performance is insufficient, host the VR server directly on the `Robot PC` and use a USB-C to Ethernet adapter to establish a **wired connection** for the Meta Quest 3.
+
+### Hardware Tips
+- Proximity Sensor Workaround: The Meta Quest 3 may pause the session if it detects that the headset has been removed. Placing a small piece of **non-transparent tape** over the internal proximity sensor (located between the lenses) can help keep the session active.

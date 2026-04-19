@@ -69,7 +69,7 @@ A humanoid only earns the name when motion survives the real world: contact, bac
 
 ## Teaser Video
 
-<YouTube videoId="Gr867DGH5tk" />
+<YouTube videoId="eFRftVHCwUs" />
 
 ## Reinforcement Learning
 

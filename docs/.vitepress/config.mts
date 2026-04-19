@@ -419,7 +419,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: robotisHomeSocialIcon,
-        link: 'https://en.robotis.com/',
+        link: 'https://robotis.com/',
         ariaLabel: 'ROBOTIS'
       },
       { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/' },

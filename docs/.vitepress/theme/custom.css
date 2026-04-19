@@ -199,6 +199,87 @@
   cursor: pointer;
 }
 
+/* AI Sapiens intro: keep :::tip look, hide default “TIP” label for at-a-glance only */
+.vp-doc .custom-block.tip:has(.ai-sapiens-at-a-glance) > .custom-block-title {
+  display: none;
+}
+
+.ai-sapiens-at-a-glance {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ai-sapiens-at-a-glance-img {
+  width: min(320px, 42%);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.ai-sapiens-at-a-glance-spec {
+  flex: 1;
+  min-width: 0;
+}
+
+.ai-sapiens-at-a-glance-spec table {
+  width: 100%;
+}
+
+.ai-sapiens-at-a-glance-spec table thead {
+  display: none;
+}
+
+.dynamixel-q-at-a-glance {
+  /* Make image and table side-by-side */
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.dynamixel-q-at-a-glance > img {
+  flex: 0 0 auto;
+  width: clamp(140px, 24vw, 220px);
+  max-width: 220px;
+  height: auto;
+  display: block;
+}
+
+.dynamixel-q-at-a-glance > div {
+  flex: 0 1 auto;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+  margin-left: auto;
+  padding-left: 0;
+}
+
+.dynamixel-q-at-a-glance > .motor-spec {
+  padding-left: 0;
+}
+
+.dynamixel-q-at-a-glance table {
+  width: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ai-sapiens-at-a-glance {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ai-sapiens-at-a-glance-img {
+    width: min(320px, 100%);
+  }
+
+  .dynamixel-q-at-a-glance > div {
+    margin-left: 0;
+    padding-left: 8px;
+  }
+}
+
 /* :root {
   --vp-layout-max-width: 1920px;
 }
@@ -262,4 +343,34 @@
     margin-left: 50px !important;
     /* Adjust this value to shift menu right on Home */
   }
+}
+
+.ai-sapiens-open-source-blocks {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.ai-sapiens-open-source-blocks > .custom-block.tip .custom-block-title {
+  display: none;
+}
+
+.ai-sapiens-open-source-blocks > .custom-block.tip {
+  padding-top: 16px;
+}
+
+.ai-sapiens-open-source-blocks > .ai-sapiens-coming-soon-banner {
+  margin: 0 0 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: normal;
+  box-shadow: none;
 }

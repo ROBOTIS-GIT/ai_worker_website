@@ -139,4 +139,7 @@ dist
 .vitepress/cache
 .vitepress/dist
 
+# Git bundle exports (do not commit; GitHub 100MB limit)
+*.bundle
+
 # user-specific files

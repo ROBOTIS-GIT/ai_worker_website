@@ -2,7 +2,8 @@ import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 const title = 'ROBOTIS'
-const description = 'Website for AI Worker and AI Manipulator'
+const description =
+  'The official e-Manual for ROBOTIS, the open source platform for Physical AI. Includes documentation, open source resources, and the latest updates for AI Sapiens, AI Worker, AI Manipulator, and ROBOTIS Hands.'
 const ogUrl = 'https://ai.robotis.com/'
 const ogImage = `${ogUrl}og_image.png`
 

@@ -355,7 +355,7 @@ export default defineConfig({
           items: [
             { text: 'Setup Guide', link: '/hands/setup_guide_hands' },
             { text: 'Operation Guide', link: '/hands/operation_hands' },
-            { text: 'VR Teleoperation Guide', link: '/hands/operation_vr_teleoperation' },
+            // { text: 'VR Teleoperation Guide', link: '/hands/operation_vr_teleoperation' },
             { text: 'DXL Wizard Guide', link: '/hands/wizard_guide' }
           ]
         },

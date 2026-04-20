@@ -302,7 +302,6 @@ Right after the controller is activated, the system checks the difference betwee
 ::::
 
 ## Troubleshooting
-
 ### Communication Issues
 - If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` by default within the provided Docker container.)
 - If the Vuer server is not running: check the terminal logs.

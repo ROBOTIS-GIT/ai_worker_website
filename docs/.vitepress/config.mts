@@ -90,7 +90,8 @@ export default defineConfig({
         {
           text: 'Quick Start Guide',
           items: [
-            { text: 'Setup Overview', link: '/ai_worker/setup_guide_ai_worker',
+            {
+              text: 'Setup Overview', link: '/ai_worker/setup_guide_ai_worker',
               items: [
                 { text: 'Hardware', link: '/ai_worker/setup_guide_hardware_ai_worker' },
                 { text: 'Software', link: '/ai_worker/setup_guide_software_ai_worker' },
@@ -123,7 +124,7 @@ export default defineConfig({
               text: 'Model Training', link: '/ai_worker/model_training_ai_worker',
             },
             {
-              text: 'Model Inference', link:'/ai_worker/model_inference_ai_worker',
+              text: 'Model Inference', link: '/ai_worker/model_inference_ai_worker',
             },
             { text: 'Data Tools', link: '/ai_worker/data_tools_ai_worker' },
           ]
@@ -131,7 +132,7 @@ export default defineConfig({
         {
           text: 'Simulation',
           items: [
-            { text: 'Overview', link: '/ai_worker/simulation_ai_worker'},
+            { text: 'Overview', link: '/ai_worker/simulation_ai_worker' },
             { text: 'Gazebo', link: '/ai_worker/gazebo_ai_worker' },
             { text: 'Isaac Sim/Lab', link: '/ai_worker/robotis_lab_ai_worker' }
           ]
@@ -175,7 +176,14 @@ export default defineConfig({
         {
           text: 'Specifications',
           items: [
-            { text: 'Hardware', link: '/omy/hardware_omy' },
+            {
+              text: 'Hardware', 
+              link: '/omy/hardware_omy', 
+              collapsed: false,
+              items: [
+                { text: 'Control Table', link: '/omy/control_table_omy_unit' }
+              ]
+            },
             { text: 'Software', link: '/omy/software_omy' }
           ]
         },
@@ -202,7 +210,7 @@ export default defineConfig({
               text: 'Model Training', link: '/omy/model_training_omy',
             },
             {
-              text: 'Model Inference', link:'/omy/model_inference_omy',
+              text: 'Model Inference', link: '/omy/model_inference_omy',
             },
             { text: 'Data Tools', link: '/omy/data_tools_omy' },
           ]
@@ -210,7 +218,7 @@ export default defineConfig({
         {
           text: 'Simulation',
           items: [
-            { text: 'Overview', link: '/omy/simulation_omy'},
+            { text: 'Overview', link: '/omy/simulation_omy' },
             { text: 'Gazebo', link: '/omy/gazebo_omy' },
             { text: 'Isaac Sim/Lab', link: '/omy/robotis_lab_omy' }
           ]
@@ -300,7 +308,7 @@ export default defineConfig({
         {
           text: 'Simulation',
           items: [
-            { text: 'Overview', link: '/omx/simulation_omx'},
+            { text: 'Overview', link: '/omx/simulation_omx' },
             { text: 'Gazebo', link: '/omx/gazebo_omx' },
           ]
         },

@@ -17,7 +17,7 @@ For sales inquiries or detailed product information about the Physical AI lineup
 - **Address:** 37, Magokjungang 5-ro 1-gil, Gangseo-gu, Seoul, Republic of Korea (Postal Code: 07594)
 
 <div class="contact-office-actions">
-  <a class="contact-pill-btn" href="https://en.robotis.com" target="_blank" rel="noopener noreferrer">Website</a>
+  <a class="contact-pill-btn" href="https://robotis.com" target="_blank" rel="noopener noreferrer">Website</a>
   <a class="contact-pill-btn" href="https://en.robotis.com/shop_en/" target="_blank" rel="noopener noreferrer">Online Shop</a>
 </div>
 

@@ -125,6 +125,26 @@ Two Intel RealSense D405 cameras are integrated into the robot's hands/grippers,
 | Depth Range       | 7cm to 50cm (2.7inch to 19.6inch)                  |
 | More Information  | [Intel RealSense D405 Details](https://www.intelrealsense.com/depth-camera-d405/) |
 
+## LiDAR Specification
+
+The AI Worker uses dual 2D ToF LiDAR sensors for robust long-range environment scanning and obstacle detection.
+
+### LiDAR: LakiBeam 1 (x2)
+
+Two LakiBeam 1 units are mounted on the platform to provide wide horizontal coverage and reliable perception in industrial environments.
+
+| Feature           | Specification                                      |
+|-------------------|----------------------------------------------------|
+| Model Name        | LakiBeam 1                                     |
+| Type              | 2D Single-line Pulsed ToF LiDAR                    |
+| Key Use           | Long-range environment perception, mapping, obstacle detection |
+| Horizontal FOV    | 270°                                               |
+| Detection Range   | up to 25m (>=25m @ 90% reflectivity, >=15m @ 10% reflectivity) |
+| Angle Resolution  | 0.1° @ 10Hz / 0.25° @ 20/25/30Hz                  |
+| Accuracy          | ±2cm                                               |
+| Interface         | Ethernet UDP / USB (RJ45, Type-C)                  |
+| More Information  | [LakiBeam 1 Details](https://www.richbeam.com/product/LakiBeam) |
+
 ## Gripper Specification
 ![model_rh_p12_rn](/specifications/ai_worker/model_rh_p12_rn.png)
 The [RH-P12-RN](https://emanual.robotis.com/docs/en/platform/rh_p12_rn/) is a multi-functional, 1-DOF two-fingered robot hand. It features an adaptive gripping design with passive joints, allowing it to grasp objects of various shapes. The hand utilizes a 10W DC motor and offers torque control and current-based position control, enabling it to handle objects made of different materials. Key features of the RH-P12-RN include its lightweight design (500g) and high payload capacity (5kg). It also has detachable fingertips that can be easily replaced with customized ones. The RH-P12-RN is designed for easy integration with the AI Worker platform, making it suitable for various applications in industrial environments.

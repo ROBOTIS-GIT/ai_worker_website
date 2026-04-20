@@ -16,6 +16,10 @@ After accessing the Robotis Hand Docker container, use the following command:
 :::tabs key:robot-type
 == HX5-D20
 ```bash
+# For the left hand
+ros2 launch robotis_hand_bringup hx5_d20_left.launch.py
+
+# For the right hand
 ros2 launch robotis_hand_bringup hx5_d20_right.launch.py
 ```
 **Check Hand Orientation:** You must use the launch file that matches your specific hardware (`hx5_d20_left` or `hx5_d20_right`). If the software configuration does not match the physical hand, the system **will not work**.
@@ -31,6 +35,10 @@ The ROBOTIS Hand controller will now subscribe to the input topic described in t
 :::tabs key:robot-type
 == HX5-D20
 ```bash
+# For the left hand
+ros2 launch robotis_hand_bringup hx5_d20_left.launch.py start_rviz:=true
+
+# For the right hand
 ros2 launch robotis_hand_bringup hx5_d20_right.launch.py start_rviz:=true
 ```
 :::

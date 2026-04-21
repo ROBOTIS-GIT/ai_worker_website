@@ -64,7 +64,7 @@ The dataset follows the standard [🤗 Hugging Face datasets format](https://hug
 Option 1<br>Physical AI tools (Recommended)
 </a>
 
-<a href="/omx/lerobot_imitation_learning_omx.html" class="button-shortcut">
+<a href="https://huggingface.co/docs/lerobot/omx" class="button-shortcut">
 Option 2<br>Lerobot
 </a>
 </div>

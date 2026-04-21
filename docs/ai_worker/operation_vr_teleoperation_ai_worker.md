@@ -224,7 +224,7 @@ To activate VR teleoperation, publish the `/reactivate` topic.
 This topic uses the `std_msgs/msg/Bool` type.
 
 ```bash
-ros2 topic pub --once /reactivate std_msgs/msg/Bool "{data: true}"
+ros2 topic pub /reactivate std_msgs/msg/Bool "{data: true}"
 ```
 :::
 
@@ -284,7 +284,7 @@ If you do not plan to build your own external device for on/off VR teleoperation
 You can publish it directly from a terminal:
 
 ```bash
-ros2 topic pub --once /reactivate std_msgs/msg/Bool "{data: true}"
+ros2 topic pub /reactivate std_msgs/msg/Bool "{data: true}"
 ```
 ::: tip
 You can also build your own custom device, such as a pedal or a button, for this purpose. In that case, your device should run a node that publishes to `/reactivate` when a specific input behavior is detected, such as a pedal press or a button press.

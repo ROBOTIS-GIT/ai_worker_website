@@ -147,7 +147,7 @@ The VR node will only begin publishing reference poses upon receiving a message 
 Publish the activation signal (type `std_msgs/msg/Bool`) directly from the terminal:
 
 ```bash
-ros2 topic pub --once /reactivate std_msgs/msg/Bool "{data: true}"
+ros2 topic pub /reactivate std_msgs/msg/Bool "{data: true}"
 ```
 ::: tip
 You can integrate a custom hardware trigger, such as a foot pedal or physical button. To do this, create a node that publishes to the `/reactivate` topic when your device input is detected.

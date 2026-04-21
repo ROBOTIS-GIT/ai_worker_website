@@ -309,7 +309,7 @@ Right after the controller is activated, the system checks the difference betwee
 
 ### Network Performance
 - If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A **wired connection** is recommended.
-- If wireless performance is insufficient, host the VR server directly on the `Robot PC` and use a USB-C to Ethernet adapter to establish a **wired connection** for the Meta Quest 3.
+- If wireless performance is insufficient, host the VR server directly on the `Robot PC` and use a USB-C to Ethernet adapter to establish a **wired connection** for the Meta Quest 3. Ensure the Ethernet cable is connected to the LAN port of the AI Worker, not the WAN port. Refer to the [Hardware Setup Overview](/ai_worker/setup_guide_hardware_ai_worker) for port identification.
 
 ### Hardware Tips
 - Proximity Sensor Workaround: The Meta Quest 3 may pause the session if it detects that the headset has been removed. Placing a small piece of **non-transparent tape** over the internal proximity sensor (located between the lenses) can help keep the session active.

@@ -276,7 +276,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'ROS 2 (Physical AI Tools)', link: '/omx/setup_guide_physical_ai_tools' },
-                { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
+                { text: 'LeRobot', link: 'https://huggingface.co/docs/lerobot/installation', target: '_blank' }
               ]
             },
             { text: 'Operation Guide - ROS 2', link: '/omx/operation_omx' }
@@ -303,7 +303,7 @@ export default defineConfig({
                 { text: 'Data Tools', link: '/omx/data_tools_omx' },
               ]
             },
-            { text: 'LeRobot', link: '/omx/lerobot_imitation_learning_omx' }
+            { text: 'LeRobot', link: 'https://huggingface.co/docs/lerobot/omx', target: '_blank' }
           ]
         },
         {

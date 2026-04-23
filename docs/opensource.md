@@ -6,7 +6,7 @@
 Cyclo is a modular, open-source framework by ROBOTIS designed to make building and operating Physical AI systems accessible, from AI integration to robot operations.
 | Resource | Description | Link |
 |----------|-------------|------|
-| **CYCLO** | Modular framework for Physical AI systems | [GitHub](https://github.com/ROBOTIS-GIT/cyclo) |
+| **CYCLO** | Open stack spanning AI integration, data workflows, control, simulation, and operations | [GitHub](https://github.com/ROBOTIS-GIT/cyclo) |
 | **CYCLO Control** | Control packages for the Physical AI lineup | [GitHub](https://github.com/ROBOTIS-GIT/cyclo_control) |
 
 ### Shared Resources

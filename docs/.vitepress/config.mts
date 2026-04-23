@@ -2,9 +2,15 @@ import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 const title = 'ROBOTIS'
-const description = 'Website for AI Worker and AI Manipulator'
+const description =
+  'The official e-Manual for ROBOTIS, the open source platform for Physical AI. Includes documentation, open source resources, and the latest updates for AI Sapiens, AI Worker, AI Manipulator, and ROBOTIS Hands.'
 const ogUrl = 'https://ai.robotis.com/'
 const ogImage = `${ogUrl}og_image.png`
+
+/** Inline SVG — `icon: '/favicon.svg'` is treated as a Simple Icons name and triggers a broken Iconify URL. */
+const robotisHomeSocialIcon = {
+  svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect fill="#fff" width="16" height="16"/><path fill="#222" d="M13.6,14.08H9.77L5.5,9.44l1.2-2.75h3.18c0.26,0,0.49-0.09,0.67-0.28c0.18-0.18,0.28-0.41,0.28-0.67c0-0.26-0.09-0.49-0.28-0.67c-0.18-0.18-0.41-0.28-0.67-0.28H5.15v9.3H2.4V2.03h7.49c1.02,0,1.89,0.36,2.62,1.08c0.72,0.72,1.08,1.6,1.08,2.62c0,1.02-0.36,1.89-1.08,2.62c-0.72,0.72-1.59,1.08-2.61,1.08L9.28,9.43L13.6,14.08z"/></svg>'
+}
 
 export default defineConfig({
   title,
@@ -57,29 +63,14 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'AI Sapiens', link: '/ai_sapiens/introduction_ai_sapiens' },
       { text: 'AI Worker', link: '/ai_worker/introduction_ai_worker' },
       { text: 'OMY', link: '/omy/introduction_omy' },
       { text: 'OMX', link: '/omx/introduction_omx' },
       { text: 'Hands', link: '/hands/introduction_hands' },
-      { text: 'Dynamixel Ecosystem', link: '/community_showcase' },
-      {
-        text: 'OpenSource',
-        items: [
-          { text: 'AI Worker ROS 2 Packages', link: 'https://github.com/ROBOTIS-GIT/ai_worker', target: '_blank' },
-          { text: 'AI Manipulator ROS 2 Packages', link: 'https://github.com/ROBOTIS-GIT/open_manipulator', target: '_blank' },
-          { text: 'Physical AI Tools', link: 'https://github.com/ROBOTIS-GIT/physical_ai_tools', target: '_blank' },
-          { text: 'Isaac Sim Models', link: 'https://github.com/ROBOTIS-GIT/robotis_lab/tree/main/source/robotis_lab/data/robots', target: '_blank' },
-          { text: 'MuJoCo Models', link: 'https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie', target: '_blank' },
-          { text: 'AI Worker URDF Models', link: 'https://github.com/ROBOTIS-GIT/ai_worker/tree/main/ffw_description/urdf', target: '_blank' },
-          { text: 'AI Manipulator URDF Models', link: 'https://github.com/ROBOTIS-GIT/open_manipulator/tree/main/open_manipulator_description/urdf', target: '_blank' },
-          { text: 'AI Models & Datasets (Hugging Face)', link: 'https://huggingface.co/ROBOTIS', target: '_blank' },
-          { text: 'Docker Images', link: 'https://hub.docker.com/r/robotis/ros/tags', target: '_blank' },
-          { text: 'ROBOTIS Homepage', link: 'https://en.robotis.com/', target: '_blank' },
-          { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
-          { text: 'Videos', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam', target: '_blank' },
-        ]
-      },
-      { text: 'Contact', link: '/ai_worker/contact_ai_worker' },
+      { text: 'Ecosystem', link: '/community_showcase' },
+      { text: 'Open Source', link: '/opensource' },
+      { text: 'Contact', link: '/contact' },
     ],
     sidebar: {
       '/ai_worker/': [
@@ -100,13 +91,20 @@ export default defineConfig({
         {
           text: 'Quick Start Guide',
           items: [
-            { text: 'Setup Guide', link: '/ai_worker/setup_guide_ai_worker' },
+            {
+              text: 'Setup Overview', link: '/ai_worker/setup_guide_ai_worker',
+              items: [
+                { text: 'Hardware', link: '/ai_worker/setup_guide_hardware_ai_worker' },
+                { text: 'Software', link: '/ai_worker/setup_guide_software_ai_worker' },
+              ]
+            },
             {
               text: 'Operation Guide',
               link: '/ai_worker/operation_ai_worker',
               items: [
                 { text: 'Teleoperation', link: '/ai_worker/operation_teleoperation_ai_worker' },
-                { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' }
+                { text: 'VR Teleoperation', link: '/ai_worker/operation_vr_teleoperation_ai_worker' },
+                { text: 'Navigation', link: '/ai_worker/operation_navigation_ai_worker' },
               ]
             }
           ]
@@ -145,12 +143,13 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
             { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
+            { text: 'Cyclo Control', link: '/ai_worker/advanced_motion_controller_ai_worker' },
           ]
         },
         {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/ai_worker/opensource_ai_worker' },
+            { text: 'Open Source', link: '/opensource' },
             { text: 'Release Notes', link: '/ai_worker/release_notes_ai_worker' },
             { text: 'Technical Story', link: '/ai_worker/technical_story_ai_worker' }
           ]
@@ -158,10 +157,11 @@ export default defineConfig({
         {
           text: 'Support',
           items: [
+            { text: 'Troubleshooting Guide', link: '/ai_worker/multiturn_clear_ai_worker' },
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/ai_worker/issues_ai_worker' },
             { text: 'FAQ', link: '/ai_worker/faq_ai_worker' },
-            { text: 'Contact Us', link: '/ai_worker/contact_ai_worker' }
+            { text: 'Contact Us', link: '/contact' }
           ]
         }
       ],
@@ -177,7 +177,14 @@ export default defineConfig({
         {
           text: 'Specifications',
           items: [
-            { text: 'Hardware', link: '/omy/hardware_omy' },
+            {
+              text: 'Hardware',
+              link: '/omy/hardware_omy',
+              collapsed: false,
+              items: [
+                { text: 'Control Table', link: '/omy/control_table_omy_unit' }
+              ]
+            },
             { text: 'Software', link: '/omy/software_omy' }
           ]
         },
@@ -218,19 +225,28 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Advanced Features',
+          items: [
+            { text: 'Overview', link: '/omy/advanced_features_omy' },
+            { text: 'Cyclo Control', link: '/omy/advanced_motion_controller_omy' }
+          ]
+        },
+        {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/omy/opensource_omy' },
+            { text: 'Open Source', link: '/opensource' },
             { text: 'Release Notes', link: '/omy/release_notes_omy' }
           ]
         },
         {
           text: 'Support',
           items: [
+            { text: 'Troubleshooting Guide', link: '/omy/multiturn_clear_omy' },
+            { text: 'Manual Packing Procedure', link: '/omy/manual_packing_procedure_omy' },
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/omy/issues_omy' },
             { text: 'FAQ', link: '/omy/faq_omy' },
-            { text: 'Contact Us', link: '/omy/contact_omy' }
+            { text: 'Contact Us', link: '/contact' }
           ]
         }
       ],
@@ -260,7 +276,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'ROS 2 (Physical AI Tools)', link: '/omx/setup_guide_physical_ai_tools' },
-                { text: 'LeRobot', link: '/omx/setup_guide_lerobot' }
+                { text: 'LeRobot', link: 'https://huggingface.co/docs/lerobot/installation', target: '_blank' }
               ]
             },
             { text: 'Operation Guide - ROS 2', link: '/omx/operation_omx' }
@@ -287,7 +303,7 @@ export default defineConfig({
                 { text: 'Data Tools', link: '/omx/data_tools_omx' },
               ]
             },
-            { text: 'LeRobot', link: '/omx/lerobot_imitation_learning_omx' }
+            { text: 'LeRobot', link: 'https://huggingface.co/docs/lerobot/omx', target: '_blank' }
           ]
         },
         {
@@ -295,6 +311,13 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/omx/simulation_omx' },
             { text: 'Gazebo', link: '/omx/gazebo_omx' },
+          ]
+        },
+        {
+          text: 'Advanced Features',
+          items: [
+            { text: 'Overview', link: '/omx/advanced_features_omx' },
+            { text: 'Cyclo Control', link: '/omx/advanced_motion_controller_omx' }
           ]
         },
         {
@@ -311,7 +334,16 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/omx/issues_omx' },
             { text: 'FAQ', link: '/omx/faq_omx' },
-            { text: 'Contact Us', link: '/omx/contact_omx' }
+            { text: 'Contact Us', link: '/contact' }
+          ]
+        }
+      ],
+
+      '/ai_sapiens/': [
+        {
+          text: 'AI Sapiens',
+          items: [
+            { text: 'Introduction', link: '/ai_sapiens/introduction_ai_sapiens' }
           ]
         }
       ],
@@ -342,7 +374,9 @@ export default defineConfig({
           text: 'Quick Start Guide',
           items: [
             { text: 'Setup Guide', link: '/hands/setup_guide_hands' },
-            { text: 'Operation Guide', link: '/hands/operation_hands' }
+            { text: 'Operation Guide', link: '/hands/operation_hands' },
+            // { text: 'VR Teleoperation Guide', link: '/hands/operation_vr_teleoperation' },
+            { text: 'DXL Wizard Guide', link: '/hands/wizard_guide' }
           ]
         },
         {
@@ -355,7 +389,7 @@ export default defineConfig({
         {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/hands/opensource_hands' },
+            { text: 'Open Source', link: '/opensource' },
             { text: 'Release Notes', link: '/hands/release_notes_hands' }
           ]
         },
@@ -365,8 +399,22 @@ export default defineConfig({
             { text: 'Discord Server', link: 'https://discord.gg/robotis', target: '_blank' },
             { text: 'Issues', link: '/hands/issues_hands' },
             { text: 'FAQ', link: '/hands/faq_hands' },
-            { text: 'Contact Us', link: '/hands/contact_hands' }
+            { text: 'Contact Us', link: '/contact' }
           ]
+        }
+      ],
+
+      '/contact': [
+        {
+          text: 'Contact',
+          items: [{ text: 'Contact Us', link: '/contact' }]
+        }
+      ],
+
+      '/opensource': [
+        {
+          text: 'Open Source',
+          items: [{ text: 'Overview', link: '/opensource' }]
         }
       ],
 
@@ -380,7 +428,11 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      { icon: '/favicon.svg', link: 'https://en.robotis.com/' },
+      {
+        icon: robotisHomeSocialIcon,
+        link: 'https://robotis.com/',
+        ariaLabel: 'ROBOTIS'
+      },
       { icon: 'github', link: 'https://github.com/ROBOTIS-GIT/' },
       { icon: 'youtube', link: 'https://www.youtube.com/@ROBOTISOpenSourceTeam' },
       { icon: 'x', link: 'https://x.com/ROBOTISAmerica' },

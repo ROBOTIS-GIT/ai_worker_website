@@ -15,7 +15,7 @@ This project focuses on real-time end-effector trajectory control of the manipul
 
 Specifically, the `shape_detector_node` applies **Adaptive Smoothing** to generate high-precision trajectories optimized for robot kinematics, going beyond simple image preprocessing. The system parses the robot's URDF during runtime to perform FK and IK internally, maintaining an independent control loop without relying on a separate high-level motion planning framework.
 
-To ensure stable movement, especially near kinematic singularities, we use a numerical Inverse Kinematics solver applying **QP (Quadratic Programming) optimization**. The trajectory data extracted from the vision processing node is converted into real-time joint commands via the [cyclo motion controller](https://ai.robotis.com/omx/advanced_motion_controller_omx.html), and generates smooth motion on the drawing plane through a timer-based control loop.
+To ensure stable movement, especially near kinematic singularities, we use a numerical Inverse Kinematics solver applying **QP (Quadratic Programming) optimization**. The trajectory data extracted from the vision processing node is converted into real-time joint commands via the [cyclo motion controller](/omx/advanced_motion_controller_omx), and generates smooth motion on the drawing plane through a timer-based control loop.
 
 ### Key Packages and File Structure
 
@@ -51,14 +51,10 @@ The Jacobian matrix provides a differential mapping that converts minute changes
 
 Standard robot models generally define the center of the gripper as the end-effector. However, for precise drawing using a pen, the position of the pen tip extending from the hardware mount must be the reference point for control (TCP). To achieve this, a hierarchical link structure starting from `end_effector_link` needs to be added to the URDF, considering the actual location where the pen tip is attached.
 
-<div style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap: 20px; margin: 18px 0;">
-  <div style="display:flex; flex-direction:column; align-items:center;">
-    <img src="/technical_story/pen_link.png" alt="Physical Pen Setup" style="max-width:400px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-  </div>
-  <div style="display:flex; flex-direction:column; align-items:center;">
-    <img src="/technical_story/pen_link_rviz.png" alt="RViz Pen Link Visualization" style="max-width:400px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-  </div>
-</div>
+| Physical Pen Setup | RViz Pen Link Visualization |
+| --- | --- |
+| ![Physical Pen Setup](/technical_story/pen_link.png) | ![RViz Pen Link Visualization](/technical_story/pen_link_rviz.png) |
+
 
 
 
@@ -105,9 +101,7 @@ With this modification, the IK solver now computes joint angles targeting the **
     ```bash
     ros2 launch cyclo_motion_controller_models view_omx_f.launch.py
     ```
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 18px 0;">
-  <img src="/technical_story/pen_point.png" alt="TCP Calibration Result" style="max-width:720px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-</div>
+![TCP Calibration Result](/technical_story/pen_point.png)
 
 #### Stable Real-Time Control Based on QP Optimization
 To ensure stability in a real-time execution environment, the inverse kinematics problem is solved using a **QP (Quadratic Programming) optimization** approach. By directly reflecting joint limits as constraints, it ensures the physical safety of the hardware while enabling smooth and reliable drawing trajectory tracking.
@@ -206,48 +200,36 @@ PID and profile parameters have also been optimized at the Dynamixel hardware le
 
 These are the detailed technical specifications of the vision processing and motion control algorithms.
 
-### 4.1 Vision Recognition and Data Preprocessing (Shape Detector Node)
+#### 4.1 Vision Recognition and Data Preprocessing (Shape Detector Node)
 
 `shape_detector_node.py` extracts precise linear data from the input image, considering the mechanical characteristics of the robot and the quality of the drawing. This process consists of three main algorithmic steps.
 
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 18px 0;">
-  <img src="/technical_story/person.jpeg" alt="Original Image" style="max-width:320px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-  <span style="font-size: 0.9em; margin-top: 8px; color: #888;"><a href="https://www.freepik.com/" target="_blank" style="color: inherit; text-decoration: none;">Image Designed by Freepik</a></span>
-</div>
+![Original Image](/technical_story/person.jpeg)
+[Image Designed by Freepik](https://www.freepik.com/)
 
 1.  **Step 1 (Image Analysis and Preprocessing)**:
     *   **Bilateral Filter**: Unlike simple Gaussian blur, it effectively removes only noise while preserving edge information.
-        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 18px 0;">
-          <img src="/technical_story/bilateral_filter.jpg" alt="Bilateral Filter" style="max-width:320px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-        </div>
+        ![Bilateral Filter](/technical_story/bilateral_filter.jpg)
     *   **Adaptive Thresholding**: Performs robust binarization against lighting changes, and uses **Morphological Closing** operations to fill broken lines or tiny gaps in text, ensuring structural integrity.
 
-    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 18px 0;">
-      <img src="/technical_story/threshold_&_closing.jpg" alt="Adaptive Thresholding" style="max-width:320px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-    </div>
+    ![Adaptive Thresholding](/technical_story/threshold_and_closing.jpg)
     
 2.  **Step 2 (Skeletonization and Single Line Extraction)**:
     *   **Skeletonization**: Converts the binarized outline into a 1-pixel thick centerline, extracting only the geometric skeleton.
 
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 18px 0;">
-  <img src="/technical_story/skeletonization.jpg" alt="Skeletonization Result" style="max-width:500px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-</div>
+![Skeletonization Result](/technical_story/skeletonization.jpg)
 
   *   **Line Extraction (Pixel Sorting)**: To extract valid point cloud data that the robot can follow without interruption, it applies a sorting algorithm (`extract_single_line`) based on **Nearest Neighbor** to the skeletonized pixels. By calculating the Euclidean distance between pixels, it sequentially connects the closest unvisited pixel within a threshold (50px²) from the current position.
   *   **Segment Generation**: The connected pixels are grouped into a single valid stroke sector that the robot can follow without stopping. If there are no neighboring pixels within the threshold, a new segment is created to prevent sudden jumps or discontinuities.
 
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 18px 0;">
-  <img src="/technical_story/stage_2_line_extraction.jpg" alt="Line Extraction Flow" style="max-width:500px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-</div>
+![Line Extraction Flow](/technical_story/stage_2_line_extraction.jpg)
 
 3.  **Step 3 (Adaptive Smoothing & Optimization)**:
     *   **Douglas-Peucker Algorithm**: Detects vertices with sharp curvature across the entire trajectory. This preserves straight sections and selectively applies smoothing only to curved sections, preventing them from becoming blunt.
     *   **Trajectory Stitching**: If the distance between two adjacent trajectories is within 25mm, they are forcibly merged into one continuous path, minimizing unnecessary pen-lift counts.
     *   **WMA (Weighted Moving Average)**: Finally, a weighted moving average filter corrects trajectory jitter and publishes it to the `/drawing_trajectory` topic.
 
-  <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 18px 0;">
-  <img src="/technical_story/trajectory.jpg" alt="Robotic Trajectory" style="max-width:500px; width:auto; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-</div>
+  ![Robotic Trajectory](/technical_story/trajectory.jpg)
 
 #### 4.2 Trajectory Control and Motion Generation (Trajectory Controller & Cyclo control)
 - **Waypoint Sorting & Path Planning**: Sorts the collected trajectory points using a Nearest Neighbor algorithm and plans the path in three phases: Approach, Drawing, and Home.
@@ -259,8 +241,7 @@ These are the detailed technical specifications of the vision processing and mot
 ## 5. Technology Verification via Simulation
 
 This is the process of verifying the validity of the trajectory in advance through Gazebo and RViz before applying it to actual hardware.
-Execute in three terminals:
-
+ Execute the following, using three terminals for steps 1–3:
 
 1. **OMX Mock-hardware Bring up in rviz**
     ```bash
@@ -271,7 +252,7 @@ Execute in three terminals:
 2. **Execute Cyclo Motion Controller**
   
     For detailed execution instructions, please refer to the link below.
-    [cyclo motion controller](https://ai.robotis.com/omx/advanced_motion_controller_omx.html)
+    [cyclo motion controller](/omx/advanced_motion_controller_omx)
     ```bash
     cd open_manipulator/docker
     ./container.sh enter
@@ -288,15 +269,11 @@ Execute in three terminals:
    ```
 4. **RViz Monitoring**: Visually check if the generated points are stably distributed within the robot's workspace.
 
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 16px 0;">
-  <img src="/technical_story/drawing_circle.gif" alt="RViz Monitoring" style="max-width: 100%; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-</div>
+![RViz Monitoring](/technical_story/drawing_circle.gif)
 
 5. **Check IK Convergence**: Use Plot Juggler to monitor IK convergence and tracking performance by comparing the movel target trajectory topic (`/omx_movel_controller/movel`) with the current end-effector pose topic (`/omx_movel_controller/current_pose`) in real-time.
 
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 16px 0;">
-  <img src="/technical_story/plotjuggler.gif" alt="PlotJuggler IK Convergence" style="max-width: 100%; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-</div>
+![PlotJuggler IK Convergence](/technical_story/plotjuggler.gif)
 
 ---
 
@@ -313,7 +290,7 @@ To perform drawing using the actual OMX, execute the following commands in three
 2. **Execute Cyclo Motion Controller**
   
     For detailed execution instructions, please refer to the link below.
-    [cyclo motion controller](https://ai.robotis.com/omx/advanced_motion_controller_omx.html)
+    [cyclo motion controller](/omx/advanced_motion_controller_omx)
     ```bash
     cd open_manipulator/docker
     ./container.sh enter
@@ -352,13 +329,13 @@ Key options applied during the execution of `omx_drawing.launch.py` are critical
 | Category | Parameter | Default Value | Main Role and Tuning Tips |
 | :--- | :--- | :--- | :--- |
 | **Vision & Recognition** | `image_path` | `robotis2.png` | **Input Image Path**: Specifies the absolute path of the image for the robot to recognize. |
-| | `smoothing_sigma` | `1.0` | **Noise Filter Strength**: Larger values create smoother curves, but if too large, details are blurred. Lower values are recommended for low-resolution images. |
+| **Vision & Recognition** | `smoothing_sigma` | `1.0` | **Noise Filter Strength**: Larger values create smoother curves, but if too large, details are blurred. Lower values are recommended for low-resolution images. |
 | **Drawing Precision** | `drawing_height` | `0.025` | **Pressure Control**: The Z height of the paper surface. You can optimize line thickness and pressure by fine-tuning in 0.001m units. |
-| | `resample_num_pts` | `100` | **Trajectory Resolution**: The number of points configuring one stroke. For complex logos, increase the value to ensure precision. |
+| **Drawing Precision** | `resample_num_pts` | `100` | **Trajectory Resolution**: The number of points configuring one stroke. For complex logos, increase the value to ensure precision. |
 | **Kinematics Setting** | `joint5_angle` | `90.0` | **Tool Angle**: Fixes the pen holder's angle vertically (90 degrees) to fix the pen's position based on where the pen is attached. |
-| | `home_x, y, z` | `0.124, 0, 0.081` | **Safe Pose**: The manipulator's position to return to after mission completion or at start. Defines the robot's initial standby state. |
+| **Kinematics Setting** | `home_x, y, z` | `0.124, 0, 0.081` | **Safe Pose**: The manipulator's position to return to after mission completion or at start. Defines the robot's initial standby state. |
 | **Operational Sequence** | `approach_duration`| `2.0` | **Approach Speed**: Travel time from home to the starting point of the first stroke. Protects the mechanism by preventing sudden acceleration. |
-| | `home_duration` | `4.0` | **Return Speed**: Time to return to home after all drawing is completed. Ensures safety through a relaxed movement. |
+| **Operational Sequence** | `home_duration` | `4.0` | **Return Speed**: Time to return to home after all drawing is completed. Ensures safety through a relaxed movement. |
 
 #### Parameter Usage Tips for Experts
 
@@ -367,22 +344,18 @@ Key options applied during the execution of `omx_drawing.launch.py` are critical
 3.  **Preserving Drawing Details**: If fine details in the image (e.g., text, thin lines of a logo) are erased, try reducing `smoothing_sigma` to 0.5~0.8. Conversely, if the outline is too jagged, increasing this value can yield a smoother appearance.
 4.  **Safe Operation**: By setting `approach_duration` and `home_duration` loosely (5 seconds or more), you can reduce the inertial force generated when the robot moves to the target point, preventing step-out (desynchronization) phenomena and extending motor life.
 
-### 6.3 Following motion from Images
+### 6.1 Following motion from Images
 
 This final stage demonstrates the integrated success of the drawing pipeline.
 
-#### Trajectories Extracted from Contour
+#### 6.2 Trajectories Extracted from Contour
 
 This is the trajectory generated from the detected contours. It represents the final path the robot will follow after completing all image processing, skeletal extraction, and adaptive smoothing stages, ensuring a kinematically feasible route for the manipulator.
 
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 16px 0;">
-  <img src="/technical_story/trajectories.gif" alt="Generated Trajectories" style="max-width: 100%; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-</div>
+![Generated Trajectories](/technical_story/trajectories.gif)
 
-#### Actual Robot Drawing along the Trajectory
+#### 6.3 Actual Robot Drawing along the Trajectory
 
-Controlled by the QP-based IK solver and optimized Dynamixel PID gains, the robot reproduces the complex contours
+Controlled by the QP-based IK solver and optimized Dynamixel PID gains, the robot reproduces the complex contours of the input image
 
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 16px 0;">
-  <img src="/technical_story/drawing_person.gif" alt="Real Robot Drawing" style="max-width: 100%; height:auto; display:block; border-radius:8px; border:1px solid #ddd;">
-</div>
+![Real Robot Drawing](/technical_story/drawing_person.gif)

@@ -212,7 +212,7 @@ These are the detailed technical specifications of the vision processing and mot
         ![Bilateral Filter](/technical_story/bilateral_filter.jpg)
     *   **Adaptive Thresholding**: Performs robust binarization against lighting changes, and uses **Morphological Closing** operations to fill broken lines or tiny gaps in text, ensuring structural integrity.
 
-    ![Adaptive Thresholding](/technical_story/threshold_and_closing.jpg)
+    ![Adaptive Thresholding](/technical_story/threshold_&_closing.jpg)
     
 2.  **Step 2 (Skeletonization and Single Line Extraction)**:
     *   **Skeletonization**: Converts the binarized outline into a 1-pixel thick centerline, extracting only the geometric skeleton.

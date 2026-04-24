@@ -40,6 +40,6 @@ Physical AI Tools Setup Guide
 #### LeRobot CLI (Alternative)
 **LeRobot** is the underlying robotics framework that powers Physical AI Tools. While it provides direct command-line control and is fully functional, it requires more technical expertise and lacks the web-based interface that makes robot control more accessible.
 
-<a href="/omx/setup_guide_lerobot.html" class="button-shortcut">
+<a href="https://huggingface.co/docs/lerobot/omx" class="button-shortcut" target="_blank" rel="noopener noreferrer">
 LeRobot Setup Guide
 </a>

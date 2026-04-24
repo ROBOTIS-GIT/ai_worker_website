@@ -8,7 +8,7 @@ Let's dive into the technical stories behind OMX.
 
 ## Stories
 
-Click on the card below to explore the AI technologies we've implemented:
+Click on the card below to dive into the technical details of our drawing system:
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0;">
 

@@ -311,7 +311,7 @@ ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
 Wait until the follower is fully initialized.
 
 ::: tip
-For more details on setting up and operating the AI Worker, refer to the [Setup Guide](/ai_worker/setup_guide_ai_worker) and [Operation Guide](/ai_worker/operation_ai_worker).
+For more details on setting up and operating the AI Worker, refer to the [Setup Overview](/ai_worker/setup_guide_ai_worker) and [Operation Guide](/ai_worker/operation_ai_worker).
 :::
 
 ### Launch the Behavior Tree Node

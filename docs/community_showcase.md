@@ -122,4 +122,4 @@ The DYNAMIXEL community is a vibrant hub of innovation. If you have an open-sour
 
 Your Idea, Powered by DYNAMIXEL. Let's build the future together.
 
-[Contact us to share your project](/ai_worker/contact_ai_worker)
+[Contact us to share your project](/contact)

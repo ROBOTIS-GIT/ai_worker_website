@@ -4,6 +4,21 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 
 ![omx](/specifications/omx/main_image.png)
 
+## [OMX-AI] Included Common Items
+
+| Item | Qty |
+|:-----|:---:|
+| OpenRB-150 | 2 |
+| XL430-W250-T | 3 |
+| XL330-M288-T | 8 |
+| XL330-M077-T | 1 |
+| SMPS2DXL | 1 |
+| SMPS | 1 |
+| USB-C CABLE | 2 |
+| CLAMP | 4 |
+| DC CONVERTER | 1 |
+| 3D printed parts for OMX-F & OMX-L | — |
+
 ## [OMX-L] Hardware Overview
 
 ![](/specifications/omx/hw_overview_omx_l.png)
@@ -32,6 +47,7 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 |-----------|---------------|
 | PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2225) |
 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2226) |
+|      | <a href="https://www.printables.com/model/1696210-omx-leader" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25em; white-space: nowrap;"><img src="/specifications/omx/printables_logo_no_background.png" alt="" width="13" height="13" decoding="async" />Download in Printables</a> |
 
 ## [OMX-F] Hardware Overview
 ![](/specifications/omx/hw_overview_omx_f.png)
@@ -60,3 +76,4 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 |-----------|---------------|
 | PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2223) |
 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2224) |
+|      | <a href="https://www.printables.com/model/1696214-omx-follower" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25em; white-space: nowrap;"><img src="/specifications/omx/printables_logo_no_background.png" alt="" width="13" height="13" decoding="async" />Download in Printables</a> |

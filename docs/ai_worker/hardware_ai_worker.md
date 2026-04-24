@@ -8,14 +8,27 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 ## Product Components
 ![product_components](/specifications/ai_worker/product_components.png)
 
-* Extra Included Items
-  - **FFW-SG2**: Battery Charger
+### Included Common Items
+
+| Item | Qty |
+|:-----|:---:|
+| SG2 or BG2 | 1 |
+| LG2 | 1 |
+| SMPS for robot | 2 |
+| SMPS for LG2 | 1 |
+| E stop remote controller | 1 |
+| USB cable | 1 |
 
 ## Product Models
 ![model_name](/specifications/ai_worker/model_name.png)
 
 ## Follower Specification
 ![model_lineup](/specifications/ai_worker/model_lineup.png)
+
+:::info
+**FFW-BG2** is sold in Korea only.
+**FFW-SH3P** is currently in preparation for release.
+:::
 
 | Properties                  | Specification (FFW-SG2)                | Specification (FFW-BG2)                |
 |-----------------------------|----------------------------------------|----------------------------------------|
@@ -65,7 +78,9 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
     </div>
 </div>
 
-
+:::info
+**FFW-LH5** is currently in preparation for release.
+:::
 
 | Properties               | Specification (FFW-LG2)                 | Specification (FFW-LH5)                |
 |--------------------------|-----------------------------------------|----------------------------------------|
@@ -109,6 +124,26 @@ Two Intel RealSense D405 cameras are integrated into the robot's hands/grippers,
 | Max Resolution    | 1280 x 720                                         |
 | Depth Range       | 7cm to 50cm (2.7inch to 19.6inch)                  |
 | More Information  | [Intel RealSense D405 Details](https://www.intelrealsense.com/depth-camera-d405/) |
+
+## LiDAR Specification
+
+The AI Worker uses dual 2D ToF LiDAR sensors for robust long-range environment scanning and obstacle detection.
+
+### LiDAR: LakiBeam 1 (x2)
+
+Two LakiBeam 1 units are mounted on the platform to provide wide horizontal coverage and reliable perception in industrial environments.
+
+| Feature           | Specification                                      |
+|-------------------|----------------------------------------------------|
+| Model Name        | LakiBeam 1                                     |
+| Type              | 2D Single-line Pulsed ToF LiDAR                    |
+| Key Use           | Long-range environment perception, mapping, obstacle detection |
+| Horizontal FOV    | 270°                                               |
+| Detection Range   | up to 25m (>=25m @ 90% reflectivity, >=15m @ 10% reflectivity) |
+| Angle Resolution  | 0.1° @ 10Hz / 0.25° @ 20/25/30Hz                  |
+| Accuracy          | ±2cm                                               |
+| Interface         | Ethernet UDP / USB (RJ45, Type-C)                  |
+| More Information  | [LakiBeam 1 Details](https://www.richbeam.com/product/LakiBeam) |
 
 ## Gripper Specification
 ![model_rh_p12_rn](/specifications/ai_worker/model_rh_p12_rn.png)

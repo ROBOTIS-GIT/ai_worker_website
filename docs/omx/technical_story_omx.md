@@ -3,7 +3,7 @@
 Welcome to the OMX Technical Story. 
 This section covers the process of performing precise drawing missions along contours extracted from an input image, using the `Cyclo Motion Control` framework.
 
-The drawing system of OpenManipulator-X provides a complex control environment that converts task-space movements into stable real-time joint commands, going beyond simple shape drawing. By combining vision recognition data and a precise trajectory control algorithm, URDF parsing, Forward Kinematics (FK), Inverse Kinematics (IK), and a timer-based control loop work seamlessly together to draw complex shapes.
+The drawing system of OMX provides a complex control environment that converts task-space movements into stable real-time joint commands, going beyond simple shape drawing. By combining vision recognition data and a precise trajectory control algorithm, URDF parsing, Forward Kinematics (FK), Inverse Kinematics (IK), and a timer-based control loop work seamlessly together to draw complex shapes.
 
 In particular, we introduce a drawing algorithm that maintains stability and tracks continuous trajectories even near kinematic singularities, using advanced image preprocessing via the `Shape Detector` node and a **QP (Quadratic Programming) optimization-based IK Solver**.
 

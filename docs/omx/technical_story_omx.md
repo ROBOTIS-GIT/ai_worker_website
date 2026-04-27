@@ -23,7 +23,7 @@ Click on the card below to dive into the technical details of our drawing system
 <div style="padding: 30px; border: 2px solid #1e3c72; border-radius: 12px; margin-top: 20px; background: #1b1b1f; color: #e0e0e0;">
 
 Welcome to the OMX Technical Story. 
-This section covers the process of performing precise drawing missions along contours extracted from an input image, using the `Cyclo Motion Control` framework.
+This section covers the process of performing precise drawing missions along contours extracted from an input image, using the `Cyclo Control` framework.
 
 In particular, we introduce a drawing algorithm that maintains stability and tracks continuous trajectories even near kinematic singularities, using advanced image preprocessing via the `Shape Detector` node and a **QP (Quadratic Programming) optimization-based IK Solver**.
 
@@ -50,9 +50,9 @@ In particular, we introduce a drawing algorithm that maintains stability and tra
 
 This project focuses on real-time end-effector trajectory control of the manipulator. The core components, `shape_detector_node` and `omx_trajectory_controller_node`, handle image processing and motion control respectively, operating harmoniously through ROS 2 topic communication.
 
-Specifically, the `shape_detector_node` applies **Adaptive Smoothing** to generate high-precision trajectories optimized for robot kinematics, going beyond simple image preprocessing. The system parses the robot's URDF during runtime to perform FK and IK internally, maintaining an independent control loop without relying on a separate high-level motion planning framework.
+Specifically, the `shape_detector_node` applies **Adaptive Smoothing** to extract high-precision trajectories from visual data. These extracted paths are then passed to the `omx_trajectory_controller_node`, which parses the robot's URDF during runtime to perform FK and IK internally, maintaining an independent control loop without relying on a separate high-level motion planning framework.
 
-To ensure stable movement, especially near kinematic singularities, we use a numerical Inverse Kinematics solver applying **QP (Quadratic Programming) optimization**. The trajectory data extracted from the vision processing node is converted into real-time joint commands via the [cyclo motion controller](/omx/advanced_motion_controller_omx), and generates smooth motion on the drawing plane through a timer-based control loop.
+The pipeline utilizes Cyclo Control, a numerical Inverse Kinematics solver based on QP (Quadratic Programming) optimization, to calculate joint trajectories. Trajectory data from the vision node is processed through this controller and converted into real-time joint commands, ensuring smooth and precise motion on the drawing plane via a timer-based control loop.
 
 ### Key Packages and File Structure
 
@@ -170,7 +170,7 @@ The QP (Quadratic Programming) optimization-based solver calculates joint limits
 
 For precise drawing, consistent parameter optimization from the hardware interface to the high-level controller is essential. This section details the key settings modified for high-performance trajectory tracking and the reasoning behind their optimization.
 
-### 3.1 Cyclo Motion Control and Real-Time Controller Settings
+### 3.1 Cyclo Control and Real-Time Controller Settings
 
 The `omx_movel_controller` is responsible for the linear movement of the end-effector. To maximize drawing precision and hardware safety, its parameters have been optimized as follows:
 
@@ -268,9 +268,9 @@ These are the detailed technical specifications of the vision processing and mot
 
   ![Robotic Trajectory](/technical_story/trajectory.jpg)
 
-#### 4.2 Trajectory Control and Motion Generation (Trajectory Controller & Cyclo control)
+#### 4.2 Trajectory Control and Motion Generation (Trajectory Controller & Cyclo Control)
 - **Waypoint Sorting & Path Planning**: Sorts the collected trajectory points using a Nearest Neighbor algorithm and plans the path in three phases: Approach, Drawing, and Home.
-- **MoveL Based Linear Control**: Performs real-time linear interpolation to the target pose via `Cyclo Motion Control`, ensuring the end-effector maintains a straight path.
+- **MoveL Based Linear Control**: Performs real-time linear interpolation to the target pose via `Cyclo Control`, ensuring the end-effector maintains a straight path.
 - **QP Based IK Solver**: Delivers calculated joint commands to the hardware through a QP optimization algorithm that considers kinematic singularities and joint limits.
 
 ---
@@ -286,10 +286,10 @@ This is the process of verifying the validity of the trajectory in advance throu
     ./container.sh enter
     ros2 launch open_manipulator_bringup omx_f.launch.py start_rviz:=true use_mock_hardware:=true
     ```
-2. **Execute Cyclo Motion Controller**
+2. **Execute Cyclo Control**
   
     For detailed execution instructions, please refer to the link below.
-    [cyclo motion controller](/omx/advanced_motion_controller_omx)
+    [Cyclo Control](/omx/advanced_motion_controller_omx)
     ```bash
     cd open_manipulator/docker
     ./container.sh enter
@@ -324,10 +324,10 @@ To perform drawing using the actual OMX, execute the following commands in three
     ./container.sh enter
     ros2 launch open_manipulator_bringup omx_f.launch.py
     ```
-2. **Execute Cyclo Motion Controller**
+2. **Execute Cyclo Control**
   
     For detailed execution instructions, please refer to the link below.
-    [cyclo motion controller](/omx/advanced_motion_controller_omx)
+    [Cyclo Control](/omx/advanced_motion_controller_omx)
     ```bash
     cd open_manipulator/docker
     ./container.sh enter

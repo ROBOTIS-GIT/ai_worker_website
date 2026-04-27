@@ -3,7 +3,7 @@
 <img src="/hx5_d20_rev2.png" width="400"/>
 
 ## Product Models
-<img src="/specifications/hand/hand_lineup_R.png"/>
+<img src="/specifications/hand/hx5_d20_lineup_R.png"/>
 
 ## Specifications
 
@@ -60,8 +60,8 @@ High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.
 <!-- More detailed hardware specifications (exact joint naming, connector pinouts, and mechanical drawings) will be added here later. -->
 ### Joint Configuration and Nomenclature
 
-<a href="/specifications/hand/hand_joints_R.png" target="_blank">
-  <img src="/specifications/hand/hand_joints_R.png" alt="Dimensions" width="100%">
+<a href="/specifications/hand/hx5_d20_joints_R.png" target="_blank">
+  <img src="/specifications/hand/hx5_d20_joints_R.png" alt="Dimensions" width="100%">
 </a>
 
 #### Right Hand
@@ -88,8 +88,8 @@ High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.
 | 133 | Right Pinky PIP       | finger_r_joint19 |    0° ~ 90° |
 | 134 | Right Pinky DIP       | finger_r_joint20 |    0° ~ 90° |
 
-<a href="/specifications/hand/hand_joints_L.png" target="_blank">
-  <img src="/specifications/hand/hand_joints_L.png" alt="Dimensions" width="100%">
+<a href="/specifications/hand/hx5_d20_joints_L.png" target="_blank">
+  <img src="/specifications/hand/hx5_d20_joints_L.png" alt="Dimensions" width="100%">
 </a>
 
 #### Left Hand

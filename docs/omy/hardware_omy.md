@@ -4,6 +4,18 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 ![omy_f3m](/specifications/omy/omy_product.png)
 
+## Included Common Items
+
+| Item | Qty |
+|:-----|:---:|
+| OMY-L100 | 1 |
+| OMY-F3M | 1 |
+| USB Hub 3.0 | 1 |
+| USB cable | 1 |
+| SMPS for OMY-F3M | 1 |
+| SMPS for OMY-L100 | 1 |
+| E stop | 1 |
+
 ## [Follower] Hardware Overview
 ![](/specifications/omy/omy_f3m.png)
 
@@ -48,6 +60,18 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 | PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2222) |
 
 ## [Follower] Inertia
+
+| Joint | Mass [g] | COG X [mm] | COG Y [mm] | COG Z [mm] | Ixx @ COG [g·mm²] | Iyy @ COG [g·mm²] | Izz @ COG [g·mm²] |
+|:-----:|---------:|-----------:|-----------:|-----------:|------------------:|------------------:|------------------:|
+| 1 | 2.0648832e+03 | -1.1063615e-01 | -5.4711270e+00 | -1.5897733e+01 | 3.0332190e+06 | 2.7276724e+06 | 2.2826576e+06 |
+| 2 | 3.6795395e+03 | 1.1405379e-02 | 1.6184244e+01 | 1.0360634e+02 | 5.1731918e+07 | 5.0353401e+07 | 4.5014360e+06 |
+| 3 | 2.3865916e+03 | 7.8148689e-02 | 1.0718481e+02 | 1.4117267e+02 | 2.2694399e+07 | 2.1920087e+07 | 2.7761559e+06 |
+| 4 | 1.4002347e+03 | -1.3318256e-01 | -1.0746667e+02 | 1.9090688e+01 | 1.7545679e+06 | 1.5652147e+06 | 1.2159839e+06 |
+| 5 | 1.4002347e+03 | 1.3318256e-01 | -1.9090688e+01 | 1.0996667e+02 | 1.7545679e+06 | 1.2159839e+06 | 1.5652147e+06 |
+| 6 | 4.0015475e+02 | 1.1080146e-02 | -8.0594056e+01 | 9.3029337e+00 | 5.6741276e+05 | 6.2966706e+05 | 1.9890515e+05 |
+
+<details>
+<summary>Raw inertia data (full)</summary>
 
 ### Joint 1
 
@@ -175,6 +199,8 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
   - Iyx Iyy Iyz :  2.0073339e+02  6.2966706e+05 -5.6318805e+04
   - Izx Izy Izz : -1.2345347e+03 -5.6318805e+04  1.9890515e+05
 
+</details>
+
 ## [Follower] Base Unit
 
 ### Back Panel
@@ -233,6 +259,23 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
 
 
 ## [Leader] Inertia
+
+| Joint | Mass [g] | COG X [mm] | COG Y [mm] | COG Z [mm] | Ixx @ COG [g·mm²] | Iyy @ COG [g·mm²] | Izz @ COG [g·mm²] |
+|:-----:|---------:|-----------:|-----------:|-----------:|------------------:|------------------:|------------------:|
+| 1 | 1.9792620e+02 | -1.5094777e+01 | -2.9152531e+00 | -5.8029327e-01 | 6.2365226e+04 | 9.4342296e+04 | 8.3389570e+04 |
+| 2 | 4.9547242e+02 | -6.6509235e-02 | 2.2442703e+00 | 1.3349620e+02 | 6.3981681e+06 | 6.3363675e+06 | 1.4701194e+05 |
+| 3 | 9.8660130e+01 | -1.7428771e-01 | 4.9723865e+01 | 1.2400449e+02 | 6.4610911e+05 | 6.4271022e+05 | 1.2915160e+04 |
+| 4 | 2.6687200e+01 | 2.6921263e-02 | -3.5455461e+01 | 7.5765923e-01 | 4.9440199e+03 | 2.2567035e+03 | 4.4783555e+03 |
+| 5 | 2.6687200e+01 | -2.6921263e-02 | -7.5765923e-01 | 3.3955461e+01 | 4.9440199e+03 | 4.4783555e+03 | 2.2567035e+03 |
+| 6 | 1.0912699e+02 | 3.7567212e+00 | -7.7299588e+01 | -3.2079617e+01 | 2.4565166e+05 | 1.2581152e+05 | 1.4593436e+05 |
+| 7 | 4.0609159e+00 | -2.6354677e-01 | -2.0547867e+00 | -8.7853268e+00 | 7.5093441e+02 | 5.4840080e+02 | 2.3962266e+02 |
+
+<!-- | File Type | Download Link |
+|-----------|---------------|
+| PDF | [📄 Download PDF]() | -->
+
+<details>
+<summary>Raw inertia data (full)</summary>
 
 ### Joint 1
 
@@ -380,3 +423,5 @@ The OMY hardware platform is a teleoperation system specifically designed for `i
   - Ixx Ixy Ixz :  7.5093441e+02  2.1991129e+00  9.4024163e+00
   - Iyx Iyy Iyz :  2.1991129e+00  5.4840080e+02 -9.9427818e+01
   - Izx Izy Izz :  9.4024163e+00 -9.9427818e+01  2.3962266e+02
+
+</details>

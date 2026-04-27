@@ -1,4 +1,4 @@
-# Operation Guide
+# Operation Guide — Teleoperation
 
 ## Teleoperation
 After accessing the Open Manipulator Docker container in `ROBOT PC`, use the following command:
@@ -140,3 +140,12 @@ ros2 run open_manipulator_teleop omy_f3m_teleop
 
 ### Keyboard Teleop Demo
 ![](/quick_start_guide/omy/omy_f3m_teleoperation.gif)
+
+
+### Camera launch
+Launch the Camera Node:
+
+`USER PC` `🐋 OPEN MANIPULATOR`
+```bash
+ros2 launch realsense2_camera rs_launch.py camera_name:='cam_wrist'
+```

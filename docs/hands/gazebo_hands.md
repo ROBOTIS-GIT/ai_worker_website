@@ -31,6 +31,10 @@ xhost +
     :::tabs key:robot-type
     == HX5-D20
     ```bash
+    # For the left hand
+    ros2 launch robotis_hand_bringup hx5_d20_left_gazebo.launch.py
+
+    # For the right hand
     ros2 launch robotis_hand_bringup hx5_d20_right_gazebo.launch.py
     ```
     :::
@@ -40,6 +44,10 @@ xhost +
     :::tabs key:robot-type
     == HX5-D20
     ```bash
+    # For the left hand
+    ros2 launch robotis_hand_description hx5_d20_left.launch.py
+
+    # For the right hand
     ros2 launch robotis_hand_description hx5_d20_right.launch.py
     ```
     :::
@@ -49,6 +57,10 @@ xhost +
     :::tabs key:robot-type
     == HX5-D20
     ```bash
+    # For the left hand
+    ros2 launch robotis_hand_bringup hx5_d20_left.launch.py start_rviz:=true
+
+    # For the right hand
     ros2 launch robotis_hand_bringup hx5_d20_right.launch.py start_rviz:=true
     ```
     :::
@@ -72,6 +84,10 @@ xhost +
     :::tabs key:robot-type
     == HX5-D20
     ```bash
+    # For the left hand
+    ros2 launch robotis_hand_moveit_config hx5_d20_left_moveit.launch.py
+
+    # For the right hand
     ros2 launch robotis_hand_moveit_config hx5_d20_right_moveit.launch.py
     ```
     :::
@@ -80,6 +96,10 @@ xhost +
     :::tabs key:robot-type
     == HX5-D20
     ```bash
+    # For the left hand
+    ros2 launch robotis_hand_moveit_config hx5_d20_left_moveit.launch.py use_sim:=true
+
+    # For the right hand
     ros2 launch robotis_hand_moveit_config hx5_d20_right_moveit.launch.py use_sim:=true
     ```
     <img src="/simulation/hands/hands_moveit.gif" alt="ROBOTIS HX Hand MoveIt">

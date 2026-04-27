@@ -223,7 +223,7 @@ To begin inference, use the **Control Panel** located at the bottom of the page:
   - The `Finish` button stops inference.
 
 <div style='display: flex; justify-content: flex-start; gap: 30px; margin-top: 24px;'>
-<a href="/omx/opensource_omx.html" class="button-shortcut">
+<a href="/opensource" class="button-shortcut">
 Overview
 </a>
 </div>

@@ -41,6 +41,10 @@ Fully compatible with ROBOTIS Physical AI Tools and native LeRobot workflows. Us
 
 <img src="/overview/omx_models.png" width="800"/>
 
+:::info
+The leader and follower are only available for purchase as a set.
+:::
+
 The OMX series offers multiple configurations for various teleoperation and manipulation tasks:
 
 - `OMX-L`

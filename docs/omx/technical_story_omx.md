@@ -64,7 +64,7 @@ The pipeline utilizes Cyclo Control, a numerical Inverse Kinematics solver based
 
 ## 2. Quick Start Guide
 
-This guide provides a streamlined path to setting up and running the OMX drawing pipeline. Follow these phases to prepare your workspace, configure parameters, and execute the motion control using the official **Cyclo Control** framework.
+This guide provides a streamlined path to setting up and running the OMX drawing pipeline. Follow these phases to prepare your workspace, configure parameters, and execute the motion control using the official **Cyclo Control** framework. **Specifically, you can immediately verify the drawing process in a virtual environment using Mock Hardware and RViz even without the physical robot hardware.**
 
 ### Phase 1: Environment Setup & Build
 
@@ -75,20 +75,23 @@ Follow these steps in order to set up the official development environment and m
 cd ~
 git clone https://github.com/ROBOTIS-GIT/open_manipulator.git
 
-# 2. Enter Docker Container (Recommended environment)
+# 2. Enter Docker Container
 cd ~/open_manipulator/docker
+./container.sh start
 ./container.sh enter
 
 # 3. Clone Cyclo Control in Workspace
 cd ~/ros2_ws/src
 git clone https://github.com/ROBOTIS-GIT/cyclo_control.git
 
-# 4. Import Dependencies (CRITICAL: Do not just clone)
+# 4. Import Dependencies (Do not just clone)
 vcs import . < cyclo_control/cyclo_control_ci.repos
 
 # 5. Build the workspace
 cd ~/ros2_ws
-colcon build --symlink-install
+sudo apt update
+rosdep install --from-paths src --ignore-src -r -y --rosdistro jazzy
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 source install/setup.bash
 ```
 
@@ -119,14 +122,21 @@ Apply optimized parameters directly using the following `sed` commands from your
    src/cyclo_control/cyclo_motion_controller_ros/config/omx_config.yaml
    ```
 
+4. **Collision Constraint Removal**
+   Disable self-collision checks to prevent trajectories from being blocked during high-precision drawing.
+   ```bash
+   sed -i 's/<collision>/<!-- <collision>/g; s/<\/collision>/<\/collision> -->/g' \
+   src/cyclo_control/cyclo_motion_controller_models/models/omx/omx_f.urdf
+   ```
+
 ### Phase 3: Execution & Verification
 
-Run the drawing pipeline in three simple stages. Ensure you have sourced your workspace in each terminal.
+Run the drawing pipeline in three simple stages. **Each terminal must enter the Docker container (`./container.sh enter`) first.** Ensure you have sourced your workspace in each terminal.
 
 1. **Bring up OMX Hardware** (Terminal 1)
    ```bash
    # Use the AI-optimized follower bringup
-   ros2 launch open_manipulator_bringup omx_f_follower_ai.launch.py
+   ros2 launch open_manipulator_bringup omx_f.launch.py start_rviz:=true use_mock_hardware:=true
    ```
 
 2. **Start Cyclo Control** (Terminal 2)
@@ -135,25 +145,10 @@ Run the drawing pipeline in three simple stages. Ensure you have sourced your wo
    # Default: omx_movel_controller (linear motion)
    ros2 launch cyclo_motion_controller_ros omx_controller.launch.py start_interactive_marker:=true
    ```
-   *Note: Use `controller_type:=movej` for joint-space or `movel` for task-space control.*
 
-3. **Verification: Manual MoveL Command** (Optional)
-   Test the controller tracking by sending a single linear move command.
+3. **Launch Drawing Pipeline** (Terminal 3)
    ```bash
-   ros2 topic pub --once /omx_movel_controller/movel robotis_interfaces/msg/MoveL "{
-     pose: {
-       pose: {
-         position: {x: 0.20, y: 0.00, z: 0.18},
-         orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}
-       }
-     },
-     time_from_start: {sec: 3, nanosec: 0}
-   }"
-   ```
-
-4. **Launch Drawing Pipeline** (Terminal 3)
-   ```bash
-   ros2 launch open_manipulator_playground omx_drawing.launch.py image_path:=/path/to/image.png
+   ros2 launch open_manipulator_playground omx_drawing.launch.py
    ```
 
 ---
@@ -273,6 +268,9 @@ For precise drawing, consistent parameter optimization from the hardware interfa
 
 The `omx_movel_controller` is responsible for the linear movement of the end-effector. To maximize drawing precision and hardware safety, its parameters have been optimized as follows:
 
+<details>
+<summary><b>▼ Click to view Detailed Parameter Explanation</b></summary>
+
 ```yaml
 omx_movel_controller:
   ros__parameters:
@@ -296,9 +294,6 @@ omx_movel_controller:
 ::: info **Original Configuration File Path**
 `ros2_ws/src/cyclo_control/cyclo_motion_controller_ros/config/omx_config.yaml`
 :::
-
-<details>
-<summary><b>▼ Click to view Detailed Parameter Explanation</b></summary>
 
 #### Detailed Parameter Explanation
 

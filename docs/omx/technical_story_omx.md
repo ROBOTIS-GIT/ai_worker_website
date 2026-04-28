@@ -12,10 +12,10 @@ Click on the card below to dive into the technical details of drawing system:
 
 <details style="grid-column: 1 / -1;">
 <summary style="list-style: none; cursor: pointer;">
-  <div style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 20px; transition: all 0.3s; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; min-height: 240px; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; width: calc(66.666% - 14px); vertical-align: top;">
-    <img src="/technical_story/omx_ik.png" alt="OMX IK" style="height: 160px; margin-bottom: 15px; border-radius: 8px;">
-    <h3 style="margin: 0 0 10px 0; border: none; color: white;">OMX Drawing</h3>
-    <div class="expand-indicator" style="margin-top: 15px; font-size: 12px; opacity: 0.8;">▼ Click to expand</div>
+  <div style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 10px; transition: all 0.3s; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; min-height: 200px; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; width: calc(66.666% - 14px); vertical-align: top;">
+    <img src="/technical_story/omx_ik.png" alt="OMX IK" style="height: 155px; margin-bottom: 5px; border-radius: 8px;">
+    <h3 style="margin: 0; border: none; color: white; font-size: 0.95em;">OMX Drawing</h3>
+    <div class="expand-indicator" style="margin-top: 3px; font-size: 10px; opacity: 0.8;">▼ Click to expand</div>
   </div>
 </summary>
 <div style="padding: 30px; border: 2px solid #1e3c72; border-radius: 12px; margin-top: 20px; background: #1b1b1f; color: #e0e0e0;">
@@ -435,6 +435,9 @@ To perform drawing using the actual OMX, execute the following commands in three
 
 The `omx_drawing` launch file provides the following core options:
 
+<details>
+<summary><b>▼ Click to view detailed parameter guide and expert tuning tips</b></summary>
+
 | Category | Parameter | Default Value | Brief Description |
 | :--- | :--- | :--- | :--- |
 | **Vision** | `image_path` | `square.png` | Path to the source image for contour extraction. |
@@ -445,8 +448,6 @@ The `omx_drawing` launch file provides the following core options:
 | **Sequence** | `approach_duration`| `2.0` | Time taken to move from home to the first stroke. |
 | **Sequence** | `home_duration` | `4.0` | Time taken to return home after drawing completion. |
 
-<details>
-<summary><b>▼ Click to view detailed parameter guide and expert tuning tips</b></summary>
 
 ### Detailed Parameter and Expert Tuning Guide
 

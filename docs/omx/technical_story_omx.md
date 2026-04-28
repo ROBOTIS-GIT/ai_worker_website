@@ -1,14 +1,12 @@
 # Technical Story
 
-Welcome to the OMX Technical Story section. Here we share the vision-based robot control and motion optimization technologies implemented for the OMX.
-
-The drawing system of OMX provides a complex control environment that converts task-space movements into stable real-time joint commands, going beyond simple shape drawing. By combining vision recognition data and a precise trajectory control algorithm, URDF parsing, Forward Kinematics (FK), Inverse Kinematics (IK), and a timer-based control loop work seamlessly together to draw complex shapes.
+Welcome to the OMX Technical Story section. 
 
 Let's dive into the technical stories behind OMX.
 
 ## Stories
 
-Click on the card below to dive into the technical details of our drawing system:
+Click on the card below to dive into the technical details of drawing system:
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0;">
 
@@ -64,11 +62,107 @@ The pipeline utilizes Cyclo Control, a numerical Inverse Kinematics solver based
 
 ---
 
-## 2. Kinematic Background
+## 2. Quick Start Guide
+
+This guide provides a streamlined path to setting up and running the OMX drawing pipeline. Follow these phases to prepare your workspace, configure parameters, and execute the motion control using the official **Cyclo Control** framework.
+
+### Phase 1: Environment Setup & Build
+
+Follow these steps in order to set up the official development environment and motion control packages.
+
+```bash
+# 1. Clone OpenManipulator Repository
+cd ~
+git clone https://github.com/ROBOTIS-GIT/open_manipulator.git
+
+# 2. Enter Docker Container (Recommended environment)
+cd ~/open_manipulator/docker
+./container.sh enter
+
+# 3. Clone Cyclo Control in Workspace
+cd ~/ros2_ws/src
+git clone https://github.com/ROBOTIS-GIT/cyclo_control.git
+
+# 4. Import Dependencies (CRITICAL: Do not just clone)
+vcs import . < cyclo_control/cyclo_control_ci.repos
+
+# 5. Build the workspace
+cd ~/ros2_ws
+colcon build --symlink-install
+source install/setup.bash
+```
+
+### Phase 2: Essential System Configuration (One-Time)
+
+Apply optimized parameters directly using the following `sed` commands from your workspace root (`~/ros2_ws`).
+
+1. **TCP (Tool Center Point) Calibration**
+   Update the `pen_link` origin in the URDF to match the physical pen offset.
+   ```bash
+   sed -i '/<child link="end_effector_link"\/>/,/<\/joint>/ s/xyz=".*" rpy=".*"/xyz="0.01 0.015 0" rpy="0 0 -0.1571"/' \
+   src/cyclo_control/cyclo_motion_controller_models/models/omx/omx_f.urdf
+   ```
+
+2. **Dynamixel Hardware PID Tuning**
+   Align hardware response for high-friction drawing surfaces.
+   ```bash
+   sed -i 's/<parameter name="k_i">0<\/parameter>/<parameter name="k_i">1000<\/parameter>/g' \
+   src/open_manipulator/open_manipulator_description/ros2_control/omx_f.ros2_control.xacro
+   sed -i 's/<parameter name="k_d">1000<\/parameter>/<parameter name="k_d">1200<\/parameter>/g' \
+   src/open_manipulator/open_manipulator_description/ros2_control/omx_f.ros2_control.xacro
+   ```
+
+3. **Cyclo Control Gain Optimization**
+   Prioritize position tracking accuracy in task space.
+   ```bash
+   sed -i 's/weight_task_position: .*/weight_task_position: 1500.0/' \
+   src/cyclo_control/cyclo_motion_controller_ros/config/omx_config.yaml
+   ```
+
+### Phase 3: Execution & Verification
+
+Run the drawing pipeline in three simple stages. Ensure you have sourced your workspace in each terminal.
+
+1. **Bring up OMX Hardware** (Terminal 1)
+   ```bash
+   # Use the AI-optimized follower bringup
+   ros2 launch open_manipulator_bringup omx_f_follower_ai.launch.py
+   ```
+
+2. **Start Cyclo Control** (Terminal 2)
+   Launch the controller with interactive markers enabled for manual testing.
+   ```bash
+   # Default: omx_movel_controller (linear motion)
+   ros2 launch cyclo_motion_controller_ros omx_controller.launch.py start_interactive_marker:=true
+   ```
+   *Note: Use `controller_type:=movej` for joint-space or `movel` for task-space control.*
+
+3. **Verification: Manual MoveL Command** (Optional)
+   Test the controller tracking by sending a single linear move command.
+   ```bash
+   ros2 topic pub --once /omx_movel_controller/movel robotis_interfaces/msg/MoveL "{
+     pose: {
+       pose: {
+         position: {x: 0.20, y: 0.00, z: 0.18},
+         orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}
+       }
+     },
+     time_from_start: {sec: 3, nanosec: 0}
+   }"
+   ```
+
+4. **Launch Drawing Pipeline** (Terminal 3)
+   ```bash
+   ros2 launch open_manipulator_playground omx_drawing.launch.py image_path:=/path/to/image.png
+   ```
+
+---
+
+## 3. Kinematic Background
 
 The core of manipulator control is defining the relationship between each joint angle of the robot and the physical position of the end-effector.
 
-### 2.1 Forward Kinematics (FK) vs Inverse Kinematics (IK)
+### 3.1 Forward Kinematics (FK) vs Inverse Kinematics (IK)
 
 | Category | Forward Kinematics (FK) | Inverse Kinematics (IK) |
 | --- | --- | --- |
@@ -80,17 +174,20 @@ The core of manipulator control is defining the relationship between each joint 
 | **Role in Control** | State evaluation and visualization | Real-time control and trajectory tracking |
 
 
-### 2.2 Accurate Pen Tip Position Tracking via Pen_Link Addition
+### 3.2 Accurate Pen Tip Position Tracking via Pen_Link Addition
 
 The Jacobian matrix provides a differential mapping that converts minute changes in Joint Space into Task Space velocities, which forms the core of task space control. In this drawing system, the geometric Jacobian is recalculated at every control step by parsing the modified URDF model at runtime, and this is shared across both forward and inverse kinematics operations.
+
+<details>
+<summary><b>▼ Click to view Advanced TCP Definition and URDF details</b></summary>
 
 #### Advanced TCP (Tool Center Point) Definition via Virtual Link
 
 Standard robot models generally define the center of the gripper as the end-effector. However, for precise drawing using a pen, the position of the pen tip extending from the hardware mount must be the reference point for control (TCP). To achieve this, a hierarchical link structure starting from `end_effector_link` needs to be added to the URDF, considering the actual location where the pen tip is attached.
 
 | Physical Pen Setup | RViz Pen Link Visualization |
-| --- | --- |
-| ![Physical Pen Setup](/technical_story/pen_link.png) | ![RViz Pen Link Visualization](/technical_story/pen_link_rviz.png) |
+| :---: | :---: |
+| <img src="/technical_story/pen_link.png" alt="Physical Pen Setup" width="550"> | <img src="/technical_story/TCP.jpg" alt="Pen Link Visualization" width="350"> |
 
 
 
@@ -164,13 +261,15 @@ The QP (Quadratic Programming) optimization-based solver calculates joint limits
 </link>
 ```
 
+</details>
+
 ---
 
-## 3. Controller and Motion Control Parameter Optimization
+## 4. Controller and Motion Control Parameter Optimization
 
 For precise drawing, consistent parameter optimization from the hardware interface to the high-level controller is essential. This section details the key settings modified for high-performance trajectory tracking and the reasoning behind their optimization.
 
-### 3.1 Cyclo Control and Real-Time Controller Settings
+### 4.1 Cyclo Control and Real-Time Controller Settings
 
 The `omx_movel_controller` is responsible for the linear movement of the end-effector. To maximize drawing precision and hardware safety, its parameters have been optimized as follows:
 
@@ -198,6 +297,9 @@ omx_movel_controller:
 `ros2_ws/src/cyclo_control/cyclo_motion_controller_ros/config/omx_config.yaml`
 :::
 
+<details>
+<summary><b>▼ Click to view Detailed Parameter Explanation</b></summary>
+
 #### Detailed Parameter Explanation
 
 1.  **Control Performance and Tracking**
@@ -214,6 +316,8 @@ omx_movel_controller:
     *   **MoveL Topic (`~/movel`)**: A topic that receives linear movement commands.
     *   **EE Pose Topic (`~/current_pose`)**: Publishes the current pose of the end-effector in real-time to assist with monitoring.
     *   **Controller Error Topic (`~/controller_error`)**: A topic for monitoring the tracking error with the target trajectory in real-time.
+
+</details>
 
 ### 3.2 ros2_control and Dynamixel PID Tuning
 
@@ -233,13 +337,16 @@ PID and profile parameters have also been optimized at the Dynamixel hardware le
 - **D Gain**: Minimizes shaking during high-speed movements and sudden changes in direction.
 ---
 
-## 4. Software Detailed Configuration and Algorithms
+## 5. Software Detailed Configuration and Algorithms
 
 These are the detailed technical specifications of the vision processing and motion control algorithms.
 
-#### 4.1 Vision Recognition and Data Preprocessing (Shape Detector Node)
+#### 5.1 Vision Recognition and Data Preprocessing (Shape Detector Node)
 
-`shape_detector_node.py` extracts precise linear data from the input image, considering the mechanical characteristics of the robot and the quality of the drawing. This process consists of three main algorithmic steps.
+`shape_detector_node.py` extracts precise linear data from the input image, considering the mechanical characteristics of the robot and the quality of the drawing.
+
+<details>
+<summary><b>▼ Click to view detailed Step-by-Step Vision Pipeline</b></summary>
 
 ![Original Image](/technical_story/person.jpeg)
 [Image Designed by Freepik](https://www.freepik.com/)
@@ -268,53 +375,29 @@ These are the detailed technical specifications of the vision processing and mot
 
   ![Robotic Trajectory](/technical_story/trajectory.jpg)
 
-#### 4.2 Trajectory Control and Motion Generation (Trajectory Controller & Cyclo Control)
+</details>
+
+#### 5.2 Trajectory Control and Motion Generation (Trajectory Controller & Cyclo Control)
 - **Waypoint Sorting & Path Planning**: Sorts the collected trajectory points using a Nearest Neighbor algorithm and plans the path in three phases: Approach, Drawing, and Home.
 - **MoveL Based Linear Control**: Performs real-time linear interpolation to the target pose via `Cyclo Control`, ensuring the end-effector maintains a straight path.
 - **QP Based IK Solver**: Delivers calculated joint commands to the hardware through a QP optimization algorithm that considers kinematic singularities and joint limits.
 
 ---
 
-## 5. Technology Verification via Simulation
+## 6. Simulation-based Verification (RViz)
 
-This is the process of verifying the validity of the trajectory in advance through Gazebo and RViz before applying it to actual hardware.
- Execute the following, using three terminals for steps 1–3:
+Before applying the trajectory to actual hardware, it is critical to verify its validity in a virtual environment. This process ensures that the generated paths are kinematically feasible and that the Inverse Kinematics (IK) solver converges correctly.
 
-1. **OMX Mock-hardware Bring up in rviz**
-    ```bash
-    cd open_manipulator/docker
-    ./container.sh enter
-    ros2 launch open_manipulator_bringup omx_f.launch.py start_rviz:=true use_mock_hardware:=true
-    ```
-2. **Execute Cyclo Control**
-  
-    For detailed execution instructions, please refer to the link below.
-    [Cyclo Control](/omx/advanced_motion_controller_omx)
-    ```bash
-    cd open_manipulator/docker
-    ./container.sh enter
-    colcon build
-    source install/setup.bash
-    ros2 launch cyclo_motion_controller_ros omx_controller.launch.py
-    ```
-
-3. **Start Simulation Environment**:
+1. **Verify Workspace & Flow**: Visually monitor the drawing process in RViz to ensure the robot stays within its operating limits.
    ```bash
-   cd open_manipulator/docker
-   ./container.sh enter
-   ros2 launch open_manipulator_playground omx_drawing.launch.py
+   # Launch simulation bringup and drawing node
+   ros2 launch open_manipulator_playground omx_drawing.launch.py start_rviz:=true use_mock_hardware:=true
    ```
-4. **RViz Monitoring**: Visually check if the generated points are stably distributed within the robot's workspace.
-
-![RViz Monitoring](/technical_story/drawing_circle.gif)
-
-5. **Check IK Convergence**: Use Plot Juggler to monitor IK convergence and tracking performance by comparing the movel target trajectory topic (`/omx_movel_controller/movel`) with the current end-effector pose topic (`/omx_movel_controller/current_pose`) in real-time.
-
-![PlotJuggler IK Convergence](/technical_story/plotjuggler.gif)
+   ![RViz Monitoring](/technical_story/drawing_circle.gif)
 
 ---
 
-## 6. Practical Operation and Parameter Usage Guide
+## 7. Practical Operation and Parameter Usage Guide
 
 To perform drawing using the actual OMX, execute the following commands in three terminals.
 
@@ -340,58 +423,64 @@ To perform drawing using the actual OMX, execute the following commands in three
    ```bash
    cd open_manipulator/docker
    ./container.sh enter
-   ros2 launch open_manipulator_playground omx_drawing.launch.py
+   ros2 launch open_manipulator_playground omx_drawing.launch.py \
+       image_path:=/path/to/image.png \
+       drawing_height:=0.025 \
+       smoothing_sigma:=1.0 \
+       resample_num_pts:=100 \
+       joint5_angle:=90.0 \
+       approach_duration:=2.0 \
+       home_duration:=4.0
    ```
 
-The omx_drawing launch file provides the options below.
+The `omx_drawing` launch file provides the following core options:
 
-```bash
-ros2 launch open_manipulator_playground omx_drawing.launch.py \
-    image_path:=/path/to/robotis2.png \
-    drawing_height:=0.025 \
-    smoothing_sigma:=1.0 \
-    resample_num_pts:=100 \
-    joint5_angle:=90.0 \
-    home_x:=0.124 \
-    home_y:=0.0 \
-    home_z:=0.081 \
-    approach_duration:=2.0 \
-    home_duration:=4.0
-```
-
-### Detailed Available Parameters Guide
-
-Key options applied during the execution of `omx_drawing.launch.py` are critical variables directly related to the robot's drawing quality and operational stability. A detailed guide with comments is provided.
-
-| Category | Parameter | Default Value | Main Role and Tuning Tips |
+| Category | Parameter | Default Value | Brief Description |
 | :--- | :--- | :--- | :--- |
-| **Vision & Recognition** | `image_path` | `robotis2.png` | **Input Image Path**: Specifies the absolute path of the image for the robot to recognize. |
-| **Vision & Recognition** | `smoothing_sigma` | `1.0` | **Noise Filter Strength**: Larger values create smoother curves, but if too large, details are blurred. Lower values are recommended for low-resolution images. |
-| **Drawing Precision** | `drawing_height` | `0.025` | **Pressure Control**: The Z height of the paper surface. You can optimize line thickness and pressure by fine-tuning in 0.001m units. |
-| **Drawing Precision** | `resample_num_pts` | `100` | **Trajectory Resolution**: The number of points configuring one stroke. For complex logos, increase the value to ensure precision. |
-| **Kinematics Setting** | `joint5_angle` | `90.0` | **Tool Angle**: Fixes the pen holder's angle vertically (90 degrees) to fix the pen's position based on where the pen is attached. |
-| **Kinematics Setting** | `home_x, y, z` | `0.124, 0, 0.081` | **Safe Pose**: The manipulator's position to return to after mission completion or at start. Defines the robot's initial standby state. |
-| **Operational Sequence** | `approach_duration`| `2.0` | **Approach Speed**: Travel time from home to the starting point of the first stroke. Protects the mechanism by preventing sudden acceleration. |
-| **Operational Sequence** | `home_duration` | `4.0` | **Return Speed**: Time to return to home after all drawing is completed. Ensures safety through a relaxed movement. |
+| **Vision** | `image_path` | `square.png` | Path to the source image for contour extraction. |
+| **Vision** | `smoothing_sigma` | `1.0` | Strength of the noise filter for smoothing the trajectory. |
+| **Precision** | `drawing_height` | `0.025` | The Z-axis height (in meters) representing the paper surface. |
+| **Precision** | `resample_num_pts` | `100` | Target number of points for each drawing segment. |
+| **Kinematics** | `joint5_angle` | `90.0` | Fixed angle (degrees) for the vertical pen position. |
+| **Sequence** | `approach_duration`| `2.0` | Time taken to move from home to the first stroke. |
+| **Sequence** | `home_duration` | `4.0` | Time taken to return home after drawing completion. |
 
-#### Parameter Usage Tips for Experts
+<details>
+<summary><b>▼ Click to view detailed parameter guide and expert tuning tips</b></summary>
 
-1.  **Precise Pressure Control**: `drawing_height` is the distance between the pen tip and the ground during drawing. It is optimal for the pen tip to slightly touch the paper and bend in actual hardware. If the floor surface is uneven, you should test while adjusting this value up/down in mm units.
-2.  **Complex Shape Optimization**: When drawing complex patterns, it is recommended to increase `resample_num_pts`. Reducing the resampling interval is suitable for complex drawings.
-3.  **Preserving Drawing Details**: If fine details in the image (e.g., text, thin lines of a logo) are erased, try reducing `smoothing_sigma` to 0.5~0.8. Conversely, if the outline is too jagged, increasing this value can yield a smoother appearance.
-4.  **Safe Operation**: By setting `approach_duration` and `home_duration` loosely (5 seconds or more), you can reduce the inertial force generated when the robot moves to the target point, preventing step-out (desynchronization) phenomena and extending motor life.
+### Detailed Parameter and Expert Tuning Guide
 
-### 6.1 Following motion from Images
+Key options applied during the execution of `omx_drawing.launch.py` are critical variables directly related to the robot's drawing quality and operational stability.
+
+#### 1. Vision & Recognition
+*   **`image_path`**: Specifies the absolute path of the image for the robot to recognize.
+*   **`smoothing_sigma`**: Controls the noise filter strength. Larger values create smoother curves, but if too large, fine details (like text) may be blurred.
+    *   **Expert Tip**: For low-resolution images or simple shapes, a value between 0.5 and 0.8 often yields better detail preservation.
+
+#### 2. Drawing Precision
+*   **`drawing_height`**: Defines the Z height of the paper surface. 
+    *   **Expert Tip**: You can optimize line thickness and pressure by fine-tuning this in 0.001m units. It is optimal for the pen tip to slightly touch the paper and bend in actual hardware.
+*   **`resample_num_pts`**: The number of points configuring one stroke.
+    *   **Expert Tip**: For complex logos or intricate curves, increase this value to 200+ to ensure the robot captures the detail accurately.
+
+#### 3. Kinematics & Operation
+*   **`joint5_angle`**: Fixes the pen holder's angle vertically (typically 90.0 degrees) to ensure the pen tip remains perpendicular to the drawing plane.
+*   **`approach_duration` & `home_duration`**: Travel times between the safe home pose and the drawing area.
+    *   **Expert Tip**: Setting these loosely (5 seconds or more) reduces inertial forces, preventing motor desynchronization (step-out) and extending joint life.
+
+</details>
+
+### 7.1 Following motion from Images
 
 This final stage demonstrates the integrated success of the drawing pipeline.
 
-#### 6.2 Trajectories Extracted from Contour
+#### 7.2 Trajectories Extracted from Contour
 
 This is the trajectory generated from the detected contours. It represents the final path the robot will follow after completing all image processing, skeletal extraction, and adaptive smoothing stages, ensuring a kinematically feasible route for the manipulator.
 
 ![Generated Trajectories](/technical_story/trajectories.gif)
 
-#### 6.3 Actual Robot Drawing along the Trajectory
+#### 7.3 Actual Robot Drawing along the Trajectory
 
 Controlled by the QP-based IK solver and optimized Dynamixel PID gains, the robot reproduces the complex contours of the input image
 

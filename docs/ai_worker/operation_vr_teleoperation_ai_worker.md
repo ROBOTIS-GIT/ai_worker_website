@@ -119,13 +119,15 @@ Open the Meta Quest browser (or a browser on the same network, if applicable) an
 https://{pc_ip}:8012?ws=wss://{pc_ip}:8012
 ```
 
-Example: The AI Worker PC is at `sg2`'s Orin is `192.168.6.2`:
+Replace `{pc_ip}` with the actual IP of the machine hosting the Vuer server.
+
+Example: The AI Worker PC (`SG2`’s Orin) has the IP address `192.168.6.2`.
 
 ```text
 https://192.168.6.2:8012?ws=wss://192.168.6.2:8012
 ```
 
-Replace `{pc_ip}` with the actual IP of the machine hosting the Vuer server.
+The PC on `BG2` should be connected to a router and use a corresponding IP address within that network.
 
 #### Self-signed HTTPS warning
 

@@ -46,8 +46,14 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 | File Type | Download Link |
 |-----------|---------------|
 | PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2225) |
+
+### **3D Printable Parts**
+
+| File Type | Download Link |
+|-----------|---------------|
 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2226) |
 |      | <a href="https://www.printables.com/model/1696210-omx-leader" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25em; white-space: nowrap;"><img src="/specifications/omx/printables_logo_no_background.png" alt="" width="13" height="13" decoding="async" />Download in Printables</a> |
+| STL |  <a href="https://cad.onshape.com/documents?nodeId=3&resourceType=filter&q=_all:ROBOTIS%20OMX-AI%20" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25em; white-space: nowrap;"><img src="/specifications/omx/onshape_logo_nobg.png" alt="" width="14" height="14" decoding="async" />Download in Onshape</a> |
 
 ## [OMX-F] Hardware Overview
 ![](/specifications/omx/hw_overview_omx_f.png)
@@ -75,5 +81,11 @@ The OMX hardware platform is an entry-level Physical AI manipulator designed for
 | File Type | Download Link |
 |-----------|---------------|
 | PDF | [📄 Download PDF](https://www.robotis.com/service/download.php?no=2223) |
+
+### **3D Printable Parts**
+
+| File Type | Download Link |
+|-----------|---------------|
 | STEP | [📦 Download STEP](https://www.robotis.com/service/download.php?no=2224) |
 |      | <a href="https://www.printables.com/model/1696214-omx-follower" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25em; white-space: nowrap;"><img src="/specifications/omx/printables_logo_no_background.png" alt="" width="13" height="13" decoding="async" />Download in Printables</a> |
+| STL |  <a href="https://cad.onshape.com/documents?nodeId=3&resourceType=filter&q=_all:ROBOTIS%20OMX-AI%20" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25em; white-space: nowrap;"><img src="/specifications/omx/onshape_logo_nobg.png" alt="" width="14" height="14" decoding="async" />Download in Onshape</a> |

@@ -30,7 +30,7 @@ In particular, we introduce a drawing algorithm that maintains stability and tra
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0; border-radius: 8px; border: 2px solid #1e3c72;">
   <iframe
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://youtu.be/xed_XWs2rwg"
+    src="https://www.youtube.com/embed/xed_XWs2rwg"
     title="OMX High-Precision Drawing Pipeline Demo"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

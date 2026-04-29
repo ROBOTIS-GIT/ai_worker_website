@@ -178,8 +178,8 @@ export default defineConfig({
           text: 'Specifications',
           items: [
             {
-              text: 'Hardware', 
-              link: '/omy/hardware_omy', 
+              text: 'Hardware',
+              link: '/omy/hardware_omy',
               collapsed: false,
               items: [
                 { text: 'Control Table', link: '/omy/control_table_omy_unit' }
@@ -323,8 +323,9 @@ export default defineConfig({
         {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/opensource' },
-            { text: 'Release Notes', link: '/omx/release_notes_omx' }
+            { text: 'Open Source', link: '/omx/opensource_omx' },
+            { text: 'Release Notes', link: '/omx/release_notes_omx' },
+            { text: 'Technical Story', link: '/omx/technical_story_omx' }
           ]
         },
         {

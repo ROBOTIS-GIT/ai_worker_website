@@ -30,7 +30,7 @@ In particular, we introduce a drawing algorithm that maintains stability and tra
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0; border-radius: 8px; border: 2px solid #1e3c72;">
   <iframe
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/7A-Y6VhFzaQ"
+    src="https://youtu.be/xed_XWs2rwg"
     title="OMX High-Precision Drawing Pipeline Demo"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -64,7 +64,7 @@ The pipeline utilizes Cyclo Control, a numerical Inverse Kinematics solver based
 
 ## 2. Quick Start Guide
 
-This guide provides a streamlined path to setting up and running the OMX drawing pipeline. Follow these phases to prepare your workspace, configure parameters, and execute the motion control using the official **Cyclo Control** framework. **Specifically, you can immediately verify the drawing process in a virtual environment using Mock Hardware and RViz even without the physical robot hardware.**
+This guide provides a streamlined path to setting up and running the OMX drawing pipeline. Follow these phases to prepare your workspace, configure parameters, and execute the motion control using the official **Cyclo Control** framework. 
 
 ### Phase 1: Environment Setup & Build
 
@@ -138,11 +138,11 @@ Run the drawing pipeline in three simple stages. **Each terminal must enter the 
    # Use the AI-optimized follower bringup
    ros2 launch open_manipulator_bringup omx_f.launch.py start_rviz:=true use_mock_hardware:=true
    ```
+   > **Note**: This setup is configured for simulation in RViz using mock hardware. To run it on actual hardware, execute the command without the `start_rviz:=true` and `use_mock_hardware:=true` flags.
 
 2. **Start Cyclo Control** (Terminal 2)
    Launch the controller with interactive markers enabled for manual testing.
    ```bash
-   # Default: omx_movel_controller (linear motion)
    ros2 launch cyclo_motion_controller_ros omx_controller.launch.py start_interactive_marker:=true
    ```
 
@@ -440,7 +440,7 @@ The `omx_drawing` launch file provides the following core options:
 | **Precision** | `drawing_height` | `0.025` | The Z-axis height (in meters) representing the paper surface. |
 | **Precision** | `resample_num_pts` | `100` | Target number of points for each drawing segment. |
 | **Kinematics** | `joint5_angle` | `90.0` | Fixed angle (degrees) for the vertical pen position. |
-| **Sequence** | `approach_duration`| `2.0` | Time taken to move from home to the first stroke. |
+| **Sequence** | `approach_duration`| `2.0` | Duration for the pen to descend from hovering height to the paper surface. |
 | **Sequence** | `home_duration` | `4.0` | Time taken to return home after drawing completion. |
 
 
@@ -454,15 +454,19 @@ Key options applied during the execution of `omx_drawing.launch.py` are critical
     *   **Expert Tip**: For low-resolution images or simple shapes, a value between 0.5 and 0.8 often yields better detail preservation.
 
 #### 2. Drawing Precision
-*   **`drawing_height`**: Defines the Z height of the paper surface. 
-    *   **Expert Tip**: You can optimize line thickness and pressure by fine-tuning this in 0.001m units. It is optimal for the pen tip to slightly touch the paper and bend in actual hardware.
-*   **`resample_num_pts`**: The number of points configuring one stroke.
-    *   **Expert Tip**: For complex logos or intricate curves, increase this value to 200+ to ensure the robot captures the detail accurately.
+*   **`drawing_height`**: Defines the vertical (Z-axis) position of the paper surface.
+    *   **Impact on Quality**: This directly determines the **"pen pressure."** Setting this value too high (far from the paper) will result in the pen not touching the surface, while setting it too low can cause excessive friction, line thickening, or even motor stalls due to resistance.
+    *   **Expert Tip**: Fine-tune this in 1mm (0.001m) increments. The ideal "sweet spot" is where the pen tip slightly compresses or the pen holder structure flexes just enough to maintain constant contact without overloading the servos.
+*   **`resample_num_pts`**: Controls the density of points along the generated trajectory.
+    *   **Impact on Speed & Smoothness**: This is the primary variable affecting **movement speed**. Since the trajectory is executed based on point density, **increasing** this value creates a smoother, more precise path but **decreases** the overall drawing speed. Conversely, a lower value increases speed but may result in "choppy" or jagged lines.
+    *   **Expert Tip**: For complex sketches with many curves, use a value of 150-200. For simple geometric shapes where speed is prioritized, 80-100 is usually sufficient.
 
 #### 3. Kinematics & Operation
 *   **`joint5_angle`**: Fixes the pen holder's angle vertically (typically 90.0 degrees) to ensure the pen tip remains perpendicular to the drawing plane.
-*   **`approach_duration` & `home_duration`**: Travel times between the safe home pose and the drawing area.
-    *   **Expert Tip**: Setting these loosely (5 seconds or more) reduces inertial forces, preventing motor desynchronization (step-out) and extending joint life.
+*   **`approach_duration`**: Controls the time taken for the pen to descend from the clearance (hovering) height to the paper surface.
+    *   **Expert Tip**: A longer duration (e.g., 2.0s - 3.0s) ensures a gentle landing, protecting the pen tip and preventing the paper from shifting due to sudden impact.
+*   **`home_duration`**: The time taken to return to the safe home pose after drawing completion.
+    *   **Expert Tip**: Setting this to 4.0s or more reduces inertial forces during the final movement, extending the lifespan of the joints.
 
 </details>
 

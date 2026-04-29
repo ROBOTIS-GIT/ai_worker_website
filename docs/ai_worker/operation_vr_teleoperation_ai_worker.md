@@ -177,6 +177,7 @@ cd ~/ai_worker
 ::::tabs key:robot-type
 == Gripper Type
 Note that `sg2` model is used here as an example.
+If you are using a `bg2`, use the `sg2` launch commands in this section.
 ### 1. Bring up the robot.
 
 ```bash
@@ -243,6 +244,7 @@ Avoid resuming VR publishing when your hands are far from the previous pose, bec
 
 == Hand Type
 Note that `sh5` model is used here as an example.
+If you are using a `bh5`, use the `sh5` launch commands in this section.
 ### 1. Bring up the robot.
 
 ```bash

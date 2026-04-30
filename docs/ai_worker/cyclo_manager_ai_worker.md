@@ -7,11 +7,11 @@
 **Cyclo Manager** runs inside Docker containers. The Python package **`cyclo-manager`** on PyPI provides the **`cyclo_manager`** CLI, which uses Docker images and Compose to bring up and configure the container stack.  
 
 :::info
-**Cyclo Manager** is operated on the AI Worker Orin. So you shoud install it on the AI Worker Orin.
+**Cyclo Manager** is operated on the **AI Worker Orin**. So you shoud install it on the **AI Worker Orin**.
 :::
 
 
-1.Connect to the AI Worker Orin via SSH.
+1. Connect to the AI Worker Orin via SSH.
 ```bash
 ssh robotis@ffw-SNPR48A0000.local
 ```

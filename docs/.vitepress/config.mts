@@ -179,8 +179,8 @@ export default defineConfig({
           text: 'Specifications',
           items: [
             {
-              text: 'Hardware', 
-              link: '/omy/hardware_omy', 
+              text: 'Hardware',
+              link: '/omy/hardware_omy',
               collapsed: false,
               items: [
                 { text: 'Control Table', link: '/omy/control_table_omy_unit' }
@@ -324,8 +324,9 @@ export default defineConfig({
         {
           text: 'Resources',
           items: [
-            { text: 'Open Source', link: '/opensource' },
-            { text: 'Release Notes', link: '/omx/release_notes_omx' }
+            { text: 'Open Source', link: '/omx/opensource_omx' },
+            { text: 'Release Notes', link: '/omx/release_notes_omx' },
+            { text: 'Technical Story', link: '/omx/technical_story_omx' }
           ]
         },
         {
@@ -375,7 +376,7 @@ export default defineConfig({
           items: [
             { text: 'Setup Guide', link: '/hands/setup_guide_hands' },
             { text: 'Operation Guide', link: '/hands/operation_hands' },
-            // { text: 'VR Teleoperation Guide', link: '/hands/operation_vr_teleoperation' },
+            { text: 'VR Teleoperation Guide', link: '/hands/operation_vr_teleoperation' },
             { text: 'DXL Wizard Guide', link: '/hands/wizard_guide' }
           ]
         },

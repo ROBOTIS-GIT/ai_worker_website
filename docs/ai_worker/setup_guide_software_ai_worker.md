@@ -125,9 +125,7 @@ Container data is volatile and will be lost when the container is removed. Store
 
    ```bash
    ./docker/container.sh start
-   ./docker/container.sh start-novnc
    ./docker/container.sh enter
-   ./docker/container.sh stop-novnc
    ./docker/container.sh stop
    ```
 
@@ -137,9 +135,7 @@ The `container.sh` script provides the following commands:
 
 - `help`: Display the help message.
 - `start`: Start the AI Worker container.
-- `start-novnc`: Run the `novnc-server` in the foreground.
 - `enter`: Enter the running container.
-- `stop-novnc`: Stop the `novnc-server` container.
 - `stop`: Stop the AI Worker container.
 
 Example usage:
@@ -147,9 +143,7 @@ Example usage:
 ```bash
 ./container.sh help
 ./container.sh start
-./container.sh start-novnc
 ./container.sh enter
-./container.sh stop-novnc
 ./container.sh stop
 ```
 

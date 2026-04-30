@@ -1,3 +1,5 @@
+# AI Worker x Nav2
+
 ### Overview: What You Will Learn
 
 This post is a practical guide for engineers building autonomous navigation on ROS2 Nav2. It starts from the basic setup and walks through designing your own navigation strategies.

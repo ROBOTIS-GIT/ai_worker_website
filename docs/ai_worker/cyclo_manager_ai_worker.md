@@ -7,7 +7,7 @@
 **Cyclo Manager** runs inside Docker containers. The Python package **`cyclo-manager`** on PyPI provides the **`cyclo_manager`** CLI, which uses Docker images and Compose to bring up and configure the container stack.  
 
 :::info
-**Cyclo Manager** is operated on the **AI Worker Orin**. So you shoud install it on the **AI Worker Orin**.
+**Cyclo Manager** is operated on the **AI Worker Orin**. So you should install it on the **AI Worker Orin**.
 :::
 
 
@@ -136,7 +136,6 @@ The Topic list button makes the topic list visible.
 ![Docker Page](/advanced_features/cyclo_manager/docker_page.png)
 On the Docker page, you can manage the list of Docker containers running on the PC.  
 You can start, stop, and restart containers.  
-<!-- ![Modifying Bashrc](/advanced_features/cyclo_manager/modifying_bashrc.png) -->
 ![Modifying Bashrc Cyclo Manager](/advanced_features/cyclo_manager/modifying_bashrc_cyclo_manager.png)
 Click the **Settings** button, open the **`.bashrc`** section, and you can edit the bashrc file for the container.  
 

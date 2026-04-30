@@ -1,26 +1,10 @@
-# Technical Story
+# Drawing Tutorial
 
-Welcome to the OMX Technical Story section. 
-
-Let's dive into the technical stories behind OMX.
+Welcome to the **OMX Technical Story**! This section explores the core principles behind the **High-Precision Drawing System**, where a robot analyzes an image and replicates it on paper with sub-millimeter accuracy. 
+Moving beyond simple point-to-point tasks, we dive into the technical challenges of extracting complex contours and transforming them into smooth, fluid, and artistic robotic movements.
 
 ## Stories
 
-Click on the card below to dive into the technical details of drawing system:
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0;">
-
-<details style="grid-column: 1 / -1;">
-<summary style="list-style: none; cursor: pointer;">
-  <div style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 10px; transition: all 0.3s; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; min-height: 200px; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; width: calc(66.666% - 14px); vertical-align: top;">
-    <img src="/technical_story/omx_ik.png" alt="OMX IK" style="height: 155px; margin-bottom: 5px; border-radius: 8px;">
-    <h3 style="margin: 0; border: none; color: white; font-size: 0.95em;">OMX Drawing</h3>
-    <div class="expand-indicator" style="margin-top: 3px; font-size: 10px; opacity: 0.8;">▼ Click to expand</div>
-  </div>
-</summary>
-<div style="padding: 30px; border: 2px solid #1e3c72; border-radius: 12px; margin-top: 20px; background: #1b1b1f; color: #e0e0e0;">
-
-Welcome to the OMX Technical Story. 
 This section covers the process of performing precise drawing missions along contours extracted from an input image, using the `Cyclo Control` framework.
 
 In particular, we introduce a drawing algorithm that maintains stability and tracks continuous trajectories even near kinematic singularities, using advanced image preprocessing via the `Shape Detector` node and a **QP (Quadratic Programming) optimization-based IK Solver**.
@@ -485,29 +469,5 @@ This is the trajectory generated from the detected contours. It represents the f
 Controlled by the QP-based IK solver and optimized Dynamixel PID gains, the robot reproduces the complex contours of the input image
 
 ![Real Robot Drawing](/technical_story/drawing_person.gif)
-
-</div>
-</details>
-
-</div>
-
-<style>
-details > summary::-webkit-details-marker {
-  display: none;
-}
-details > summary {
-  list-style: none;
-}
-details > summary > div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-details[open] > summary > div {
-  border-radius: 12px;
-}
-details[open] > summary .expand-indicator {
-  display: none;
-}
-</style>
 
 ---

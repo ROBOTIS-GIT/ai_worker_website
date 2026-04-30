@@ -132,7 +132,7 @@ RPP is a great default for stability, but if your robot has mecanum or swerve dr
 Holonomic control shines at short range: crab motion trims turning time and keeps the robot efficient in narrow spots
 
 **Why MPPI for Holonomic?**  
-Nav2 offers multiple holonomic-capable controllers (e.g., DWB, TEB), but MPPI is highly flexible: by mixing critics(scoring functions that evaluate paths) and motion models you can change driving style without touching the core algorithm.
+Nav2 offers multiple holonomic-capable controllers (e.g., DWB, TEB), but MPPI is highly flexible: by mixing critics (scoring functions that evaluate paths) and motion models you can change driving style without touching the core algorithm.
 
 ::: info
 **What is MPPI? (Model Predictive Path Integral)**  
@@ -254,7 +254,7 @@ controller_server:
 ### Crafting Your Own Strategy with Behavior Trees
 
 Nav2's Behavior Tree (BT) is the core logic layer that dictates the robot's decision-making process. By customizing this BT, you can move beyond standard behaviors and define your own unique navigation strategies tailored to your specific mission.
-I’ll show how i modified the BT to build my path-length–aware driving strategy so you can use it as a reference.
+I’ll show how I modified the BT to build my path-length–aware driving strategy so you can use it as a reference.
 
 **Hybrid Static Strategy (Path-Length Based)**  
 Pick the driving mode before motion starts, based on the total length of the planned global path:

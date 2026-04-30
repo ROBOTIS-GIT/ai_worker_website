@@ -97,12 +97,12 @@ Apply optimized parameters directly using the following `sed` commands from your
    src/cyclo_control/cyclo_motion_controller_ros/config/omx_config.yaml
    ```
 
-4. **Collision Constraint Removal**
-   Disable self-collision checks to prevent trajectories from being blocked during high-precision drawing.
+4. **Collision Constraint Optimization for QP Solver**
    ```bash
    sed -i 's/<collision>/<!-- <collision>/g; s/<\/collision>/<\/collision> -->/g' \
    src/cyclo_control/cyclo_motion_controller_models/models/omx/omx_f.urdf
    ```
+   > **Note on Safety:** Since software-level collision avoidance is disabled for this performance optimization, please ensure the robot's workspace is clear of obstacles and **closely monitor the robot during operation** to prevent physical collisions.
 
 ### Phase 3: Execution & Verification
 
@@ -289,7 +289,7 @@ omx_movel_controller:
 
 </details>
 
-### 3.2 ros2_control and Dynamixel PID Tuning
+### 4.2 ros2_control and Dynamixel PID Tuning
 
 PID and profile parameters have also been optimized at the Dynamixel hardware level for rapid and precise response.
 
@@ -311,7 +311,7 @@ PID and profile parameters have also been optimized at the Dynamixel hardware le
 
 These are the detailed technical specifications of the vision processing and motion control algorithms.
 
-#### 5.1 Vision Recognition and Data Preprocessing (Shape Detector Node)
+### 5.1 Vision Recognition and Data Preprocessing (Shape Detector Node)
 
 `shape_detector_node.py` extracts precise linear data from the input image, considering the mechanical characteristics of the robot and the quality of the drawing.
 
@@ -347,7 +347,7 @@ These are the detailed technical specifications of the vision processing and mot
 
 </details>
 
-#### 5.2 Trajectory Control and Motion Generation (Trajectory Controller & Cyclo Control)
+### 5.2 Trajectory Control and Motion Generation (Trajectory Controller & Cyclo Control)
 - **Waypoint Sorting & Path Planning**: Sorts the collected trajectory points using a Nearest Neighbor algorithm and plans the path in three phases: Approach, Drawing, and Home.
 - **MoveL Based Linear Control**: Performs real-time linear interpolation to the target pose via `Cyclo Control`, ensuring the end-effector maintains a straight path.
 - **QP Based IK Solver**: Delivers calculated joint commands to the hardware through a QP optimization algorithm that considers kinematic singularities and joint limits.
@@ -419,7 +419,7 @@ The `omx_drawing` launch file provides the following core options:
 | **Sequence** | `home_duration` | `4.0` | Time taken to return home after drawing completion. |
 
 
-### Detailed Parameter and Expert Tuning Guide
+### 7.1 Detailed Parameter and Expert Tuning Guide
 
 Key options applied during the execution of `omx_drawing.launch.py` are critical variables directly related to the robot's drawing quality and operational stability.
 
@@ -445,17 +445,17 @@ Key options applied during the execution of `omx_drawing.launch.py` are critical
 
 </details>
 
-### 7.1 Following motion from Images
+### 7.2 Following motion from Images
 
 This final stage demonstrates the integrated success of the drawing pipeline.
 
-#### 7.2 Trajectories Extracted from Contour
+#### Trajectories Extracted from Contour
 
 This is the trajectory generated from the detected contours. It represents the final path the robot will follow after completing all image processing, skeletal extraction, and adaptive smoothing stages, ensuring a kinematically feasible route for the manipulator.
 
 ![Generated Trajectories](/technical_story/trajectories.gif)
 
-#### 7.3 Actual Robot Drawing along the Trajectory
+#### Actual Robot Drawing along the Trajectory
 
 Controlled by the QP-based IK solver and optimized Dynamixel PID gains, the robot reproduces the complex contours of the input image
 

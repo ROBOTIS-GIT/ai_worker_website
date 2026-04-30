@@ -1,14 +1,3 @@
-# Drawing Tutorial
-
-Welcome to the **OMX Technical Story**! This section explores the core principles behind the **High-Precision Drawing System**, where a robot analyzes an image and replicates it on paper with sub-millimeter accuracy. 
-Moving beyond simple point-to-point tasks, we dive into the technical challenges of extracting complex contours and transforming them into smooth, fluid, and artistic robotic movements.
-
-## Stories
-
-This section covers the process of performing precise drawing missions along contours extracted from an input image, using the `Cyclo Control` framework.
-
-In particular, we introduce a drawing algorithm that maintains stability and tracks continuous trajectories even near kinematic singularities, using advanced image preprocessing via the `Shape Detector` node and a **QP (Quadratic Programming) optimization-based IK Solver**.
-
 ### ▶️ Full Demo
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0; border-radius: 8px; border: 2px solid #1e3c72;">

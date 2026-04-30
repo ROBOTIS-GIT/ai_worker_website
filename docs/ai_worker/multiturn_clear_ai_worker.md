@@ -42,15 +42,25 @@ Home positions (joint index, Dynamixel ID): the figures below are **left arm** r
 
 ### 2. Set up and start the noVNC container
 
+:::info
+⚠️ **noVNC and Cyclo Manager**
 
-method 1: Update `ai_worker` repository and run `container.sh start-novnc`.  
-(⚠️ **Warning:** When you doing `git pull` in the `ai_worker` repository, existing container data may be lost! If you want to keep your container data, use **method 2** instead.)
-```bash
-cd ~/ai_worker
-./docker/container.sh start-novnc
-```
+Previously, AI Worker repository provided noVNC compose directly. After Cyclo Manager was introduced, the noVNC container is managed from Cyclo Manager instead. Starting with **AI Worker 1.2.2**, the noVNC Compose file is no longer shipped with AI Worker.
+:::
 
-method 2: Make a `docker-compose.novnc.yml` file with the following content:  
+#### Method 1: Install Cyclo Manager
+[(How to Install Cyclo Manager)](/ai_worker/cyclo_manager_ai_worker#install).
+
+1. In a Web Browser(like Chrome), open `http://ffw-snpr48a{serial-number}.local:3000`, substituting your robot’s serial number for `serial-number`. (e.g. `http://ffw-snpr48a0000.local:3000`)  
+2. Then navigate Cyclo Manager -> AI worker -> noVNC Page and click the NOVNC Server Start button on the top and reload the page(f5).
+![noVNC Desktop](/advanced_features/cyclo_manager/novnc_desktop.png)
+
+3. Click the `Dynamixel Wizard 2.0` icon to open the Dynamixel Wizard 2.0.
+![noVNC Page](/advanced_features/cyclo_manager/novnc_page.png)
+
+
+
+#### Method 2: Make a `docker-compose.novnc.yml` file with the following content:  
   ::: details docker-compose.novnc.yml
   ```yml
   services:
@@ -78,28 +88,24 @@ method 2: Make a `docker-compose.novnc.yml` file with the following content:
   ```
   :::
 
-  Then run `docker compose -f docker/docker-compose.novnc.yml up` to start the noVNC container.
+  Then run `docker compose -f docker/docker-compose.novnc.yml up` to start the noVNC container and browse `http://ffw-snpr48a{serial-number}.local:8090` in a web browser.
+  Click the connect button and open the Dynamixel Wizard 2.0.
+  ![noVNC connect](/troubleshooting_guide/novnc_connect.png)
 
-### 3. Open noVNC in a browser
-In a Web Browser(like Chrome), open `http://ffw-snpr48a{serial-number}.local:8090`, substituting your robot’s serial number for `serial-number`. (e.g. `http://ffw-snpr48a0000.local:8090`)
-
-### 4. Connect noVNC and Dynamixel Wizard 2.0
-Connect **noVNC** and **Dynamixel Wizard 2.0** so you can use the wizard on the robot’s desktop.
-
-### 5. Configure Dynamixel Wizard 2.0 and run Scan
+### 3. Configure Dynamixel Wizard 2.0 and run Scan
 In **Dynamixel Wizard 2.0**, configure the following and run **Scan**:  
     - Select protocol to scan: **Protocol 2.0**  
     - Select port to scan: `/dev/ttyUSB4` **(When connecting an LG2 leader, scan ports from `ttyUSB4` to `ttyUSB6`)**  
     - Baud rate: **4000000 bps**  
 ![wizard options](/public/specifications/ai_worker/wizard_options_ai_worker.png)
-### 6. Select the Dynamixel that reported the error
+### 4. Select the Dynamixel that reported the error
 Select the Dynamixel that reported the error, then choose **Tools → Encoder battery change** from the top menu.
   ![encoder battery change](/public/specifications/ai_worker/wizard_ai_worker.png)
 
-### 7. Clear the multi-turn error
+### 5. Clear the multi-turn error
 Set **Multi-turn encoder power mode** to **High**, then perform **Clear**.
 
   ![multi turn encoder power mode](/public/troubleshooting_guide/multi_turn_encoder_power_mode.png)
 
-### 8. Verify with bringup
+### 6. Verify with bringup
 Run **bringup** again and confirm the error no longer appears.

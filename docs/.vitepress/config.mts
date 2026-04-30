@@ -327,7 +327,7 @@ export default defineConfig({
             { text: 'Release Notes', link: '/omx/release_notes_omx' },
             {
               text: 'Technical Story',
-              link: '/omx/technical_story_omx',
+              link: '/omx/technical_story_drawing',
               collapsed: false,
               items: [
                 { text: 'Drawing Tutorial', link: '/omx/technical_story_drawing' }

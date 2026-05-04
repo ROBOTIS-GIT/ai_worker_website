@@ -1,12 +1,4 @@
-# HX5-D20 Tactile Grasping
-
-Welcome to the HX5-D20 Tactile Grasping Technical Story section.
-
-This project implements tactile feedback grasping for the ROBOTIS HX5-D20 hand using ROS 2. The controller manager publishes tactile sensor data from each finger, and the grasp controller converts the 3×3 pressure array values into force-based grasp commands.
-
-The main controller described in this guide is the **Force-Based Grasping** controller, implemented as `tactile_force_controller`. It closes the fingers until contact is detected, stores the contact force, and then maintains a stable grasp force using tactile feedback.
-
-The project also includes an **Optimization-Based Grasping** controller. This advanced controller uses the Center of Pressure (CoP) from each 3×3 tactile array to estimate contact direction and apply correction planning with an IK solver. The optimization-based controller is introduced later in the Advanced section.
+# HX5-D20 Tactile Feedback Grasping
 
 ### ▶️ Full Demo
 
@@ -25,11 +17,13 @@ The project also includes an **Optimization-Based Grasping** controller. This ad
   This video demonstrates tactile sensor visualization, force-based grasping, optimization-based correction, and stable grasping across different object shapes.
 </p>
 
----
-
 ## 1. Overview
 
-The HX5-D20 hand has five fingers, and each finger includes a 3×3 tactile sensor layout. Instead of using a single scalar contact signal, this system uses all nine tactile values from each finger. The tactile data is received through ROS 2 topics, processed into filtered force values, and used to command the hand through a `JointTrajectory` interface.
+This project implements tactile feedback grasping for the ROBOTIS HX5-D20 hand using ROS 2. The HX5-D20 hand has five fingers, and each finger includes a 3×3 tactile sensor layout. Instead of using a single scalar contact signal, this system uses all nine tactile values from each finger.
+
+The main controller described in this guide is the **Force-Based Grasping** controller, implemented as `tactile_force_controller`. It closes the fingers until contact is detected, stores the contact force, and then maintains a stable grasp force using tactile feedback.
+
+The project also includes an **Optimization-Based Grasping** controller. This advanced controller uses the Center of Pressure (CoP) from each 3×3 tactile array to estimate contact direction and apply correction planning with an IK solver.
 
 The core idea is simple:
 

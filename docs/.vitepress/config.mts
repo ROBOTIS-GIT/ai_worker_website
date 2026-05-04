@@ -413,7 +413,7 @@ export default defineConfig({
               link: '/hands/technical_story_hands',
               collapsed: false,
               items: [
-                { text: 'Tactile Grasping', link: '/hands/technical_story_hands_tactile_grasp' }
+                { text: 'Tactile Feedback Grasping', link: '/hands/technical_story_hands_tactile_grasp' }
               ]
             }
           ]

@@ -35,7 +35,20 @@ On AI Worker, this is especially helpful when you want motion that is easier to 
 Learn More About Cyclo Motion Controller
 </a>
 
-### 3. ROBOTIS Vuer
+### 3. Cyclo Manager
+
+Cyclo Manager is an integrated control system for managing and controlling the robot through a web-based UI. You can bring up the robot from the UI, and inspect and manage Docker container status from the same interface.
+
+- **Robot bring-up system**: Start and coordinate the robot stack from the UI instead of wiring together many manual steps.
+- **Topic viewer**: Inspect ROS 2 topics and message flow from the browser while the system is running.
+- **Docker management system**: View container health, control lifecycle, and keep the containerized services aligned with what the robot needs.
+- **noVNC**: Open remote desktop sessions in the browser so you can interact with graphical tools on the host or in containers without a separate VNC client.
+
+<a href="/ai_worker/cyclo_manager_ai_worker" class="button-shortcut">
+Learn More About Cyclo Manager
+</a>
+
+### 4. ROBOTIS Vuer
 
 ROBOTIS Vuer lets AI Worker use a **Meta Quest 3** headset together with a browser-based **Vuer** client for immersive robot interaction. The headset connects to the robot-side ROS 2 system through **HTTPS/WSS**, allowing the system to exchange pose, visualization, and control data in real time.
 

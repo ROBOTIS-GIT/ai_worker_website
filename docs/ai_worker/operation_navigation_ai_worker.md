@@ -18,7 +18,12 @@ ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
 Keep these terminals running. use a new terminal for the commands below.
 
 ## View RViz via noVNC (headless/SSH)
-RViz cannot be displayed over plain SSH. Use noVNC to launch RViz and view it from a browser.
+
+:::info
+We will update a manual soon so that RViz can be viewed through noVNC.
+:::
+
+<!-- RViz cannot be displayed over plain SSH. Use noVNC to launch RViz and view it from a browser.
 
 ::: tip
 - If `192.168.6.2:8090` is unreachable, confirm the host IP and the forwarded port in your environment.
@@ -70,7 +75,7 @@ Then run `docker compose -f docker/docker-compose.novnc.yml up` to start the noV
 In a web browser, open `http://ffw-snpr48a{serial-number}.local:8090` (substituting your robot's serial number) or `http://192.168.6.2:8090`. After the page loads, click **Connect**.  
 
 
-4. Run RViz
+4. Run RViz -->
 
 ## Lidar Scan Visualization
 First, use RViz (via noVNC) to confirm lidar scans are visible around the robot.

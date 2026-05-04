@@ -1,6 +1,6 @@
 # HX5-D20 Tactile Feedback Grasping
 
-### ▶️ Full Demo
+### Full Demo
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0; border-radius: 8px; border: 2px solid #1e3c72;">
   <iframe
@@ -37,9 +37,9 @@ The core idea is simple:
 
 The force-based grasping path mainly uses:
 
-* `tactile_force_controller.cpp`: Force-based grasping state machine and trajectory publishing.
-* `tactile_sensor.cpp`: Tactile parsing, baseline compensation, EMA filtering, and total force calculation.
-* `hx5d20_init.cpp`: HX5-D20 finger model, joint names, joint limits, and initial posture.
+* `tactile_force_controller.cpp`: Force-based grasping state machine and trajectory publisher.
+* `tactile_sensor.cpp`: Tactile parsing, baseline compensation, EMA(Exponential Moving Average) filtering, and total force calculation.
+* `hx5d20_init.cpp`: Initialize HX5-D20 finger model, joint names, joint limits, and posture.
 * `param.cpp`: ROS 2 parameter declaration and loading.
 * `tactile_rviz.cpp`: RViz tactile force marker visualization.
 * `grasp_start.py`: Keyboard trigger for `/grasp_start`.
@@ -53,11 +53,11 @@ The tactile grasping system is organized around the following main components:
 
 ![System Architecture](/technical_story/hx5d20_system_architecture.png)
 
-*   User/App Layer: Sends the /grasp_start command to start or reset the tactile grasping sequence.
-*   Pressure Broadcaster: Collects raw tactile sensor data from the HX5-D20 hand and publishes each finger’s 3×3 pressure array to the /right_hand/finger_pressures topic.
-*   Tactile Sensor: Parses the incoming finger pressure topic, organizes the 3×3 tactile values for each finger, builds the initial baseline, applies filtering, and computes tactile features such as total force and CoP.
-*   Force-Based Grasping: Performs force-based grasping by using each finger’s total tactile force to detect contact, close the hand, and maintain a stable grip force.
-*   Optimization-Based Grasping: Performs CoP-based optimization grasping by using the pressure distribution of the 3×3 tactile array to estimate contact bias, plan correction motions, and adjust the grasp through IK-based finger control.
+*   **User/App Layer**: Sends the /grasp_start command to start or reset the tactile grasping sequence.
+*   **Pressure Broadcaster**: Collects raw tactile sensor data from the HX5-D20 hand and publishes each finger’s 3×3 pressure array to the /right_hand/finger_pressures topic.
+*   **Tactile Sensor**: Parses the incoming finger pressure topic, organizes the 3×3 tactile values for each finger, builds the initial baseline, applies filtering, and computes tactile features such as total force and CoP.
+*   **Force-Based Grasping**: Performs force-based grasping by using each finger’s total tactile force to detect contact, close the hand, and maintain a stable grip force.
+*   **Optimization-Based Grasping**: Performs CoP-based optimization grasping by using the pressure distribution of the 3×3 tactile array to estimate contact bias, plan correction motions, and adjust the grasp through IK-based finger control.
 
 ---
 
@@ -65,7 +65,7 @@ The tactile grasping system is organized around the following main components:
 
 This guide focuses on the force-based tactile grasping controller.
 
-### Phase 1: Environment Setup & Build
+### Step 1: Environment Setup & Build
 
 ```bash
 # 1. Clone RobotisHand Repository
@@ -78,7 +78,7 @@ cd ~/robotis_hand/docker
 ./container.sh enter
 ```
 
-### Phase 2: Bring Up the HX5-D20 Hand
+### Step 2: Bring Up the HX5-D20 Hand
 
 Launch the ROBOTIS hand hardware bringup first. The launch file must be selected depending on which hand is being used(right or left).
 > Tactile grasping and visualization are available only on real hardware.
@@ -89,16 +89,11 @@ ros2 launch robotis_hand_bringup hx5_d20_right.launch.py
 
 To visualize the force arrows in RViz, enable RViz from the hand bringup launch file. In the bringup `launch.py`, change the `start_rviz` launch argument default value from `false` to `true`:
 
-```python
-def generate_launch_description():
-    declared_arguments = [
-        DeclareLaunchArgument(
-            'start_rviz', default_value='true', description='Whether to execute rviz2'
-        ),
-    ]
+```bash
+ros2 launch robotis_hand_bringup hx5_d20_right.launch.py start_rviz:=true
 ```
 
-### Phase 3: Run Force-Based Tactile Grasping
+### Step 3: Run Force-Based Tactile Grasping
 
 Before running the controller, check `robotis_hand_playground/config/param.yaml` and set `hand_side` to match the hand you brought up:
 
@@ -115,9 +110,9 @@ Run the force-based controller and RViz tactile marker node:
 ros2 launch robotis_hand_playground tactile_force_controller_launch.py
 ```
 
-### Phase 4: Start and Stop Grasping
+### Step 4: Start and Stop Grasping
 
-Open another terminal and run the keyboard trigger:
+Open another terminal and run the keyboard trigger node:
 
 ```bash
 ros2 run robotis_hand_playground grasp_start_keyboard.py
@@ -211,7 +206,7 @@ ros2 run robotis_hand_playground tactile_rviz.py
 
 The marker visualization is useful for demonstrations because it directly shows that the robot is using tactile sensor feedback during grasping.
 
-### 5.2 3×3 Tactile Heatmap Visualization
+### 5.2 (Optional)3×3 Tactile Heatmap Visualization
 
 The heatmap script visualizes the 3×3 tactile values for each finger.
 
@@ -221,10 +216,6 @@ Install the optional dependencies before running the Matplotlib visualizer:
 sudo apt update
 sudo apt install -y python3-matplotlib python3-numpy
 ```
-
-::: tip
-This step is optional. Install these dependencies only if you want to use the Matplotlib-based tactile visualization tool.
-:::
 
 ```bash
 ros2 run robotis_hand_playground matplot_visualize_tactile.py

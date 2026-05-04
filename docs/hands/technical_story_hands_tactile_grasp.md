@@ -19,7 +19,7 @@
 
 ## 1. Overview
 
-This project implements tactile feedback grasping for the ROBOTIS HX5-D20 hand using ROS 2. The HX5-D20 hand has five fingers, and each finger includes a 3×3 tactile sensor layout. Instead of using a single scalar contact signal, this system uses all nine tactile values from each finger.
+This project implements tactile feedback grasping for the HX5-D20 using ROS 2. The HX5-D20 has five fingers, and each finger includes a 3×3 tactile sensor layout. Instead of using a single scalar contact signal, this system uses all nine tactile values from each finger.
 
 The main controller described in this guide is the **Force-Based Grasping** controller, implemented as `tactile_force_controller`. It closes the fingers until contact is detected, stores the contact force, and then maintains a stable grasp force using tactile feedback.
 
@@ -54,7 +54,7 @@ The tactile grasping system is organized around the following main components:
 ![System Architecture](/technical_story/hx5d20_system_architecture.png)
 
 *   **User/App Layer**: Sends the /grasp_start command to start or reset the tactile grasping sequence.
-*   **Pressure Broadcaster**: Collects raw tactile sensor data from the HX5-D20 hand and publishes each finger’s 3×3 pressure array to the /right_hand/finger_pressures topic.
+*   **Pressure Broadcaster**: Collects raw tactile sensor data from the HX5-D20 and publishes each finger’s 3×3 pressure array to the /right_hand/finger_pressures topic.
 *   **Tactile Sensor**: Parses the incoming finger pressure topic, organizes the 3×3 tactile values for each finger, builds the initial baseline, applies filtering, and computes tactile features such as total force and CoP.
 *   **Force-Based Grasping**: Performs force-based grasping by using each finger’s total tactile force to detect contact, close the hand, and maintain a stable grip force.
 *   **Optimization-Based Grasping**: Performs CoP-based optimization grasping by using the pressure distribution of the 3×3 tactile array to estimate contact bias, plan correction motions, and adjust the grasp through IK-based finger control.
@@ -78,7 +78,7 @@ cd ~/robotis_hand/docker
 ./container.sh enter
 ```
 
-### Step 2: Bring Up the HX5-D20 Hand
+### Step 2: Bring Up the HX5-D20
 
 Launch the ROBOTIS hand hardware bringup first. The launch file must be selected depending on which hand is being used(right or left).
 > Tactile grasping and visualization are available only on real hardware.
@@ -179,7 +179,7 @@ When a finger is configured as unused, the controller treats it as already conta
 
 ### 4.4 Initial Hand Posture
 
-The initial open posture of the HX5-D20 hand is defined in `hx5d20_init.cpp`.
+The initial open posture of the HX5-D20 is defined in `hx5d20_init.cpp`.
 
 The right-hand and left-hand initial postures are defined separately:
 
@@ -387,21 +387,7 @@ It first estimates the current fingertip pose, applies a small displacement in t
 
 This keeps the correction closer to the actual contact behavior on the tactile pad, while still respecting the joint limits.
 
-### 7.6 Optimization Parameters
-
-The optimization-based controller uses additional parameters for CoP region judgment and correction strength.
-
-| Parameter | Description |
-| :--- | :--- |
-| `x_center` | Center region threshold for the CoP X axis. |
-| `y_center` | Center region threshold for the CoP Y axis. |
-| `min_force_correction` | Minimum tactile force required before applying CoP correction. |
-| `cost_thres` | Minimum CoP bias cost required to trigger correction. |
-| `feedback_max_delta` | Maximum joint delta used for feedback correction. |
-| `regrasp_force` | Target force scale used during regrasping. |
-| `link_lengths` | Planar IK link lengths for each finger. |
-
-### 7.7 Optimization-Based Grasping Flow
+### 7.6 Optimization-Based Grasping Flow
 
 The optimization-based grasping flow is:
 

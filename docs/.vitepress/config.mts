@@ -407,7 +407,15 @@ export default defineConfig({
           text: 'Resources',
           items: [
             { text: 'Open Source', link: '/opensource' },
-            { text: 'Release Notes', link: '/hands/release_notes_hands' }
+            { text: 'Release Notes', link: '/hands/release_notes_hands' },
+            {
+              text: 'Technical Story',
+              link: '/hands/technical_story_hands',
+              collapsed: false,
+              items: [
+                { text: 'Tactile Grasping', link: '/hands/technical_story_hands_tactile_grasp' }
+              ]
+            }
           ]
         },
         {

@@ -152,7 +152,16 @@ export default defineConfig({
           items: [
             { text: 'Open Source', link: '/opensource' },
             { text: 'Release Notes', link: '/ai_worker/release_notes_ai_worker' },
-            { text: 'Technical Story', link: '/ai_worker/technical_story_ai_worker' }
+            {
+              text: 'Technical Story',
+              link: '/ai_worker/technical_story_ai_worker',
+              collapsed: false,
+              items: [
+                { text: 'Isaac GR00T', link: '/ai_worker/technical_story_ai_worker_Isaac_GR00T' },
+                { text: 'Nav2', link: '/ai_worker/technical_story_ai_worker_Nav2' }
+
+              ]
+            }
           ]
         },
         {
@@ -326,7 +335,14 @@ export default defineConfig({
           items: [
             { text: 'Open Source', link: '/omx/opensource_omx' },
             { text: 'Release Notes', link: '/omx/release_notes_omx' },
-            { text: 'Technical Story', link: '/omx/technical_story_omx' }
+            {
+              text: 'Technical Story',
+              link: '/omx/technical_story_omx',
+              collapsed: false,
+              items: [
+                { text: 'Drawing Tutorial', link: '/omx/technical_story_omx_drawing' }
+              ]
+            }
           ]
         },
         {

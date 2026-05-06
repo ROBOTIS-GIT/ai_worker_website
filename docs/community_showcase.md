@@ -13,7 +13,7 @@ Discover how your peers are leveraging DYNAMIXEL technology to build the future,
     <img src="/community_showcase/reachy_mini.png" alt="Reachy-Mini Project Image" class="project-image">
     <h3>Reachy-Mini</h3>
     <p><strong>Developed by:</strong> Pollen Robotics</p>
-    <p>Reachy-Mini is a small, agile, and versatile robot designed for research and education in robotics.</p>
+    <p>Reachy-Mini is a small, agile, and versatile robot designed for research and education in robotics. It uses nine DYNAMIXEL <strong>XL330-M288-T</strong> actuators.</p>
     <div class="project-actions">
       <a href="https://huggingface.co/reachy-mini" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
     </div>
@@ -22,7 +22,7 @@ Discover how your peers are leveraging DYNAMIXEL technology to build the future,
     <img src="/community_showcase/AquaMILR+.png" alt="AquaMILR+ Project Image" class="project-image">
     <h3>AquaMILR+</h3>
     <p><strong>Developed by:</strong> CRAB Lab</p>
-    <p>Design of an untethered limbless robot for complex aquatic terrain navigation.</p>
+    <p>Design of an untethered limbless robot for complex aquatic terrain navigation. It uses DYNAMIXEL <strong>2XL430-W250-T</strong> and <strong>2XC330-T288-T</strong> actuators.</p>
     <div class="project-actions">
       <a href="https://crablab.gatech.edu/pages/publications/pdf/2025_AquaMILR+_published.pdf" target="_blank" rel="noopener noreferrer" class="project-btn">PDF</a>
       <a href="https://youtu.be/l1MjoG7HlX8" target="_blank" rel="noopener noreferrer" class="project-btn">Youtube</a>
@@ -32,7 +32,7 @@ Discover how your peers are leveraging DYNAMIXEL technology to build the future,
     <img src="/community_showcase/TRLC_DK1.png" alt="TRLC_DK1 Project Image" class="project-image">
     <h3>TRLC-DK1</h3>
     <p><strong>Developed by:</strong> The Robot Learning Company</p>
-    <p>An Open Source Dev Kit for AI-native Robotics.</p>
+    <p>An Open Source Dev Kit for AI-native Robotics. The leader arm uses seven DYNAMIXEL <strong>XL330-M077-T</strong> actuators.</p>
     <div class="project-actions">
       <a href="https://www.robot-learning.co/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
     </div>
@@ -41,7 +41,7 @@ Discover how your peers are leveraging DYNAMIXEL technology to build the future,
     <img src="/community_showcase/olaf_robot.png" alt="Olaf Robotics Project Image" class="project-image">
     <h3>Olaf Robot</h3>
     <p><strong>Developed by:</strong> Walt Disney Imagineering</p>
-    <p>Disney Imagineering’s physical Olaf robot, controlled with RL using animation references.</p>
+    <p>Disney Imagineering’s physical Olaf robot, controlled with RL using animation references. It uses DYNAMIXEL <strong>XH540-V270</strong>, <strong>XH430-V210</strong>, and <strong>XC330-M181</strong> actuators.</p>
     <div class="project-actions">
       <a href="https://arxiv.org/html/2512.16705v1#S2" target="_blank" rel="noopener noreferrer" class="project-btn">arXiv</a>
       <a href="https://www.youtube.com/watch?v=d-WdUYdOdHY" target="_blank" rel="noopener noreferrer" class="project-btn">Youtube</a>

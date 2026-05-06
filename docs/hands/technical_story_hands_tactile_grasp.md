@@ -63,8 +63,6 @@ The tactile grasping system is organized around the following main components:
 
 ## 3. Start Guide
 
-This guide focuses on the force-based tactile grasping controller.
-
 ### Step 1: Environment Setup & Build
 
 ```bash
@@ -115,7 +113,7 @@ ros2 launch robotis_hand_playground tactile_force_controller_launch.py
 Open another terminal and run the keyboard trigger node:
 
 ```bash
-ros2 run robotis_hand_playground grasp_start_keyboard.py
+ros2 run robotis_hand_playground grasp_start_publisher.py
 ```
 
 The keyboard helper publishes `/grasp_start` commands:
@@ -163,6 +161,20 @@ robotis_hand_playground/config/param.yaml
 | :--- | :---: | :--- |
 | `reactive_force` | `1.2` | Desired force multiplier after initial contact. |
 | `state` | `HOLD` | Behavior after contact. Use `HOLD` to maintain force. |
+
+<!-- Replace the src values below after adding the GIF files to docs/public/technical_story/. -->
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 16px 0;">
+  <div>
+    <h4 style="margin-top: 0; font-size: 16px;">state: HOLD</h4>
+    <p style="margin-top: 0;">After contact is detected, the controller maintains the contact force.</p>
+    <img src="/technical_story/tactile_param_hold.gif" alt="Force-based grasping HOLD mode" style="width: 100%; border-radius: 8px;" />
+  </div>
+  <div>
+    <h4 style="margin-top: 0; font-size: 16px;">state: IDLE</h4>
+    <p style="margin-top: 0;">After contact is detected, the controller stops immediately.</p>
+    <img src="/technical_story/tactile_param_idle.gif" alt="Force-based grasping IDLE mode" style="width: 100%; border-radius: 8px;" />
+  </div>
+</div>
 
 ### 4.3 Unused Finger Setting
 
@@ -214,7 +226,7 @@ Install the optional dependencies before running the Matplotlib visualizer:
 
 ```bash
 sudo apt update
-sudo apt install -y python3-matplotlib python3-numpy
+sudo apt install -y python3-matplotlib
 ```
 
 ```bash
@@ -256,7 +268,7 @@ The module handles:
 * 3×3 tactile array parsing.
 * Baseline collection.
 * Baseline subtraction.
-* EMA filtering.
+* EMA(Exponential Moving Average) filtering.
 * Total force update.
 
 The total force is calculated as the sum of the nine filtered tactile values:

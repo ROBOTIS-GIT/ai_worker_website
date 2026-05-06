@@ -22,17 +22,17 @@ Discover how your peers are leveraging DYNAMIXEL technology to build the future,
     <img src="/community_showcase/AquaMILR+.png" alt="AquaMILR+ Project Image" class="project-image">
     <h3>AquaMILR+</h3>
     <p><strong>Developed by:</strong> CRAB Lab</p>
-    <p>Design of an untethered limbless robot for complex aquatic terrain navigation. It uses DYNAMIXEL <strong>2XL430-W250-T</strong> and <strong>2XC330-T288-T</strong> actuators.</p>
+    <p>An untethered limbless robot designed for complex aquatic terrain navigation. It uses DYNAMIXEL <strong>2XL430-W250-T</strong> and <strong>2XC330-T288-T</strong> actuators.</p>
     <div class="project-actions">
       <a href="https://crablab.gatech.edu/pages/publications/pdf/2025_AquaMILR+_published.pdf" target="_blank" rel="noopener noreferrer" class="project-btn">PDF</a>
-      <a href="https://youtu.be/l1MjoG7HlX8" target="_blank" rel="noopener noreferrer" class="project-btn">Youtube</a>
+      <a href="https://youtu.be/l1MjoG7HlX8" target="_blank" rel="noopener noreferrer" class="project-btn">YouTube</a>
     </div>
   </div>
   <div class="project-card">
     <img src="/community_showcase/TRLC_DK1.png" alt="TRLC_DK1 Project Image" class="project-image">
     <h3>TRLC-DK1</h3>
     <p><strong>Developed by:</strong> The Robot Learning Company</p>
-    <p>An Open Source Dev Kit for AI-native Robotics. The leader arm uses seven DYNAMIXEL <strong>XL330-M077-T</strong> actuators.</p>
+    <p>An open source dev kit for AI-native robotics. The leader arm uses seven DYNAMIXEL <strong>XL330-M077-T</strong> actuators.</p>
     <div class="project-actions">
       <a href="https://www.robot-learning.co/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
     </div>
@@ -44,7 +44,7 @@ Discover how your peers are leveraging DYNAMIXEL technology to build the future,
     <p>Disney Imagineering’s physical Olaf robot, controlled with RL using animation references. It uses DYNAMIXEL <strong>XH540-V270</strong>, <strong>XH430-V210</strong>, and <strong>XC330-M181</strong> actuators.</p>
     <div class="project-actions">
       <a href="https://arxiv.org/html/2512.16705v1#S2" target="_blank" rel="noopener noreferrer" class="project-btn">arXiv</a>
-      <a href="https://www.youtube.com/watch?v=d-WdUYdOdHY" target="_blank" rel="noopener noreferrer" class="project-btn">Youtube</a>
+      <a href="https://www.youtube.com/watch?v=d-WdUYdOdHY" target="_blank" rel="noopener noreferrer" class="project-btn">YouTube</a>
     </div>
   </div>
   <div class="project-card">
@@ -177,8 +177,7 @@ Discover how your peers are leveraging DYNAMIXEL technology to build the future,
   border: 1px solid var(--vp-c-brand-1);
   background-color: var(--vp-c-brand-1);
   color: #fff;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease,
-    background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 .vp-doc .project-card .project-actions a.project-btn:hover {
   transform: translateY(-1px);

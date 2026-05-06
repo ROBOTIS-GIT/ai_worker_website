@@ -123,6 +123,10 @@ The keyboard helper publishes `/grasp_start` commands:
 | `z` | Start grasping by publishing `/grasp_start: true`. |
 | `x` | Reset to the initial open posture by publishing `/grasp_start: false`. |
 
+::: tip
+For reliable contact detection, place the object so each finger touches the 3×3 tactile sensor area as evenly as possible. Ellipsoid-shaped objects are recommended for broad fingertip contact.
+:::
+
 You can also publish manually:
 
 ```bash
@@ -318,6 +322,10 @@ The force controller follows a simple `IDLE → CLOSE → HOLD` state machine:
 This structure keeps the grasping behavior predictable and easy to debug.
 
 ## 7. Advanced: Optimization-Based Grasping
+
+::: info
+Official source code for the optimization-based grasping controller is not provided. This section explains the core idea behind contact estimation and correction motion.
+:::
 
 The force-based controller mainly uses the total force from each finger. However, the tactile sensor contains more information than total force. Since each finger has a 3×3 tactile array, the pressure distribution can also show where the contact is located on the fingertip.
 

@@ -8,7 +8,9 @@ We are just getting started—stay tuned as we add more demonstrations of our Ph
 ### HX5-D20 Introduction
 <YouTube videoId="bTCIVPrWoV8" />
 
-## ROBOTIS Hand Showcase
+## Tutorials & Demonstrations
+<YouTube videoId="ymnFMMVgk" />
+
 <YouTube videoId="Gr867DGH5tk" />
 
 ## More Videos

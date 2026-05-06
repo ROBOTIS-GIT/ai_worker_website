@@ -41,8 +41,8 @@ The force-based grasping path mainly uses:
 * `tactile_sensor.cpp`: Tactile parsing, baseline compensation, EMA(Exponential Moving Average) filtering, and total force calculation.
 * `hx5d20_init.cpp`: Initialize HX5-D20 finger model, joint names, joint limits, and posture.
 * `param.cpp`: ROS 2 parameter declaration and loading.
-* `tactile_rviz.cpp`: RViz tactile force marker visualization.
-* `grasp_start.py`: Keyboard trigger for `/grasp_start`.
+* `tactile_rviz.py`: RViz tactile force marker visualization.
+* `grasp_start_publisher.py`: Keyboard trigger for `/grasp_start`.
 * `matplot_visualize_tactile.py`: 3×3 tactile heatmap visualization.
 
 ---
@@ -78,7 +78,7 @@ cd ~/robotis_hand/docker
 
 ### Step 2: Bring Up the HX5-D20
 
-Launch the ROBOTIS hand hardware bringup first. The launch file must be selected depending on which hand is being used(right or left).
+Launch the ROBOTIS hand hardware bringup first. The launch file must be selected depending on which hand is being used (right or left).
 > Tactile grasping and visualization are available only on real hardware.
 
 ```bash
@@ -166,7 +166,6 @@ robotis_hand_playground/config/param.yaml
 | `reactive_force` | `1.2` | Desired force multiplier after initial contact. |
 | `state` | `HOLD` | Behavior after contact. Use `HOLD` to maintain force. |
 
-<!-- Replace the src values below after adding the GIF files to docs/public/technical_story/. -->
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 16px 0;">
   <div>
     <h4 style="margin-top: 0; font-size: 16px;">state: HOLD</h4>
@@ -222,7 +221,7 @@ ros2 run robotis_hand_playground tactile_rviz.py
 
 The marker visualization is useful for demonstrations because it directly shows that the robot is using tactile sensor feedback during grasping.
 
-### 5.2 (Optional)3×3 Tactile Heatmap Visualization
+### 5.2 (Optional) 3×3 Tactile Heatmap Visualization
 
 The heatmap script visualizes the 3×3 tactile values for each finger.
 
@@ -384,7 +383,7 @@ The region-based correction result can be visualized separately for X-axis and Y
     <p>
       Y correction moves top- or bottom-biased contact back toward the center region.
     </p>
-    <img src="/technical_story/tactile_grasp_y_corr.gif" alt="X-axis tactile grasp correction" style="width: 100%; border-radius: 8px;" />
+    <img src="/technical_story/tactile_grasp_y_corr.gif" alt="Y-axis tactile grasp correction" style="width: 100%; border-radius: 8px;" />
   </div>
 </div>
 

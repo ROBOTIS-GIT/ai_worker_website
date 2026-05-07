@@ -6,66 +6,118 @@ The DYNAMIXEL ecosystem thrives on the creativity and innovation of our users. W
 
 Discover how your peers are leveraging DYNAMIXEL technology to build the future, one groundbreaking project at a time. Many of these incredible advancements are proudly **Powered by DYNAMIXEL**.
 
-## Featured Open Source Projects
-
-Here are some inspiring examples of robotics projects from our community:
+## Projects Using DYNAMIXEL
 
 <div class="project-grid">
+  <div class="project-card">
+    <img src="/community_showcase/reachy_mini.png" alt="Reachy-Mini Project Image" class="project-image">
+    <h3>Reachy-Mini</h3>
+    <p><strong>Developed by:</strong> Pollen Robotics</p>
+    <p>Reachy-Mini is a small, agile, and versatile robot designed for research and education in robotics. It uses nine DYNAMIXEL <strong>XL330-M288-T</strong> actuators.</p>
+    <div class="project-actions">
+      <a href="https://huggingface.co/reachy-mini" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
+    </div>
+  </div>
+  <div class="project-card">
+    <img src="/community_showcase/AquaMILR+.png" alt="AquaMILR+ Project Image" class="project-image">
+    <h3>AquaMILR+</h3>
+    <p><strong>Developed by:</strong> CRAB Lab</p>
+    <p>An untethered limbless robot designed for complex aquatic terrain navigation. It uses DYNAMIXEL <strong>2XL430-W250-T</strong> and <strong>2XC330-T288-T</strong> actuators.</p>
+    <div class="project-actions">
+      <a href="https://crablab.gatech.edu/pages/publications/pdf/2025_AquaMILR+_published.pdf" target="_blank" rel="noopener noreferrer" class="project-btn">PDF</a>
+      <a href="https://youtu.be/l1MjoG7HlX8" target="_blank" rel="noopener noreferrer" class="project-btn">YouTube</a>
+    </div>
+  </div>
+  <div class="project-card">
+    <img src="/community_showcase/TRLC_DK1.png" alt="TRLC_DK1 Project Image" class="project-image">
+    <h3>TRLC-DK1</h3>
+    <p><strong>Developed by:</strong> The Robot Learning Company</p>
+    <p>An open source dev kit for AI-native robotics. The leader arm uses seven DYNAMIXEL <strong>XL330-M077-T</strong> actuators.</p>
+    <div class="project-actions">
+      <a href="https://www.robot-learning.co/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
+    </div>
+  </div>
+  <div class="project-card">
+    <img src="/community_showcase/olaf_robot.png" alt="Olaf Robotics Project Image" class="project-image">
+    <h3>Olaf Robot</h3>
+    <p><strong>Developed by:</strong> Walt Disney Imagineering</p>
+    <p>Disney Imagineering’s physical Olaf robot, controlled with RL using animation references. It uses DYNAMIXEL <strong>XH540-V270</strong>, <strong>XH430-V210</strong>, and <strong>XC330-M181</strong> actuators.</p>
+    <div class="project-actions">
+      <a href="https://arxiv.org/html/2512.16705v1#S2" target="_blank" rel="noopener noreferrer" class="project-btn">arXiv</a>
+      <a href="https://www.youtube.com/watch?v=d-WdUYdOdHY" target="_blank" rel="noopener noreferrer" class="project-btn">YouTube</a>
+    </div>
+  </div>
   <div class="project-card">
     <img src="/community_showcase/en02-op.png" alt="EN02-OP Project Image" class="project-image">
     <h3>EN02-OP</h3>
     <p><strong>Developed by:</strong> Westwood Robotics</p>
     <p>A high-performance, open-source robotic hand designed for advanced manipulation tasks, utilizing DYNAMIXELs for precise control.</p>
-    <a href="https://github.com/Westwood-Robotics/EN02-OP" target="_blank" class="project-link">Learn More &rarr;</a>
+    <div class="project-actions">
+      <a href="https://github.com/Westwood-Robotics/EN02-OP" target="_blank" rel="noopener noreferrer" class="project-btn">GitHub</a>
+    </div>
   </div>
   <div class="project-card">
     <img src="/community_showcase/leaphand.png" alt="LeapHand Project Image" class="project-image">
     <h3>LeapHand</h3>
     <p><strong>Developed by:</strong> Carnegie Mellon University</p>
     <p>A low-cost, highly capable, and open-source anthropomorphic robotic hand, often integrating DYNAMIXEL actuators.</p>
-    <a href="https://v1.leaphand.com/" target="_blank" class="project-link">Learn More &rarr;</a>
+    <div class="project-actions">
+      <a href="https://v1.leaphand.com/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
+    </div>
   </div>
   <div class="project-card">
     <img src="/community_showcase/legato.png" alt="LEGATO Project Image" class="project-image">
     <h3>LEGATO</h3>
     <p><strong>Developed by:</strong> The University of Texas at Austin, The AI Institute</p>
     <p>An open-source, affordable, and robust robotic hand for research and education, frequently powered by DYNAMIXELs.</p>
-    <a href="https://ut-hcrl.github.io/LEGATO/" target="_blank" class="project-link">Learn More &rarr;</a>
+    <div class="project-actions">
+      <a href="https://ut-hcrl.github.io/LEGATO/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
+    </div>
   </div>
   <div class="project-card">
     <img src="/community_showcase/openhand.png" alt="OpenHand Project Image" class="project-image">
     <h3>OpenHand</h3>
     <p><strong>Developed by:</strong> Yale University</p>
     <p>A project focusing on open-source, customizable, and accessible robotic hand designs, with DYNAMIXELs as a common choice for actuation.</p>
-    <a href="https://www.eng.yale.edu/grablab/openhand/" target="_blank" class="project-link">Learn More &rarr;</a>
+    <div class="project-actions">
+      <a href="https://www.eng.yale.edu/grablab/openhand/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
+    </div>
   </div>
   <div class="project-card">
     <img src="/community_showcase/orcahand.png" alt="Orca Hand Project Image" class="project-image">
     <h3>Orca Hand</h3>
     <p><strong>Developed by:</strong> ETH Zurich</p>
     <p>A modular and powerful open-source robotic hand for dexterous manipulation, showcasing the capabilities of DYNAMIXELs.</p>
-    <a href="https://www.orcahand.com/" target="_blank" class="project-link">Learn More &rarr;</a>
+    <div class="project-actions">
+      <a href="https://www.orcahand.com/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
+    </div>
   </div>
   <div class="project-card">
     <img src="/community_showcase/ruka-hand.png" alt="Ruka-Hand Project Image" class="project-image">
     <h3>Ruka-Hand</h3>
     <p><strong>Developed by:</strong> New York University</p>
     <p>An open-source, 3D-printable robotic hand designed for accessibility and research, often built with DYNAMIXEL actuators.</p>
-    <a href="https://ruka-hand.github.io/" target="_blank" class="project-link">Learn More &rarr;</a>
+    <div class="project-actions">
+      <a href="https://ruka-hand.github.io/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
+    </div>
   </div>
   <div class="project-card">
     <img src="/community_showcase/LeKiwi-DYNAMIXEL.png" alt="LeKiwi Project Image" class="project-image">
     <h3>LeKiwi-DYNAMIXEL</h3>
     <p><strong>Developed by:</strong> SIG Robotics team at the University of Illinois Urbana-Champaign</p>
     <p>LeKiwi – Low-Cost Mobile Manipulator (DYNAMIXEL Edition)</p>
-    <a href="https://github.com/SIGRobotics-UIUC/LeKiwi/tree/main/DynamixelLeKiwi" target="_blank" class="project-link">Learn More &rarr;</a>
+    <div class="project-actions">
+      <a href="https://github.com/SIGRobotics-UIUC/LeKiwi/tree/main/DynamixelLeKiwi" target="_blank" rel="noopener noreferrer" class="project-btn">GitHub</a>
+    </div>
   </div>
   <div class="project-card">
     <img src="/community_showcase/gello.png" alt="GELLO Project Image" class="project-image">
     <h3>GELLO</h3>
     <p><strong>Developed by:</strong> University of California Berkeley</p>
     <p>A General, Low-Cost, and Intuitive Teleoperation Framework for Robot Manipulators</p>
-    <a href="https://docs.google.com/document/d/1pzV8LDIGZh6zq8z-ZyKjUZ1ISkdCQctfu_05-ZY95eg/edit?usp=sharing" target="_blank" class="project-link">Learn More &rarr;</a>
+    <div class="project-actions">
+      <a href="https://wuphilipp.github.io/gello_site/" target="_blank" rel="noopener noreferrer" class="project-btn">Website</a>
+    </div>
   </div>
 </div>
 
@@ -104,15 +156,42 @@ Here are some inspiring examples of robotics projects from our community:
   line-height: 1.6;
   flex-grow: 1; /* Allows text to take available space, pushing link to bottom */
 }
-.project-link {
-  display: inline-block;
-  margin-top: 10px; /* Ensures space above the link if text is short */
-  font-weight: bold;
-  color: var(--vp-c-brand-1);
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+/* Override .vp-doc a (brand-colored text) so label stays visible on brand fill */
+.vp-doc .project-card .project-actions a.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.2;
+  border: 1px solid var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-1);
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.vp-doc .project-card .project-actions a.project-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  filter: brightness(1.05);
+  color: #fff;
   text-decoration: none;
 }
-.project-link:hover {
-  text-decoration: underline;
+.vp-doc .project-card .project-actions a.project-btn:visited {
+  color: #fff;
+}
+.vp-doc .project-card .project-actions a.project-btn:active {
+  transform: translateY(0);
+  color: #fff;
 }
 </style>
 

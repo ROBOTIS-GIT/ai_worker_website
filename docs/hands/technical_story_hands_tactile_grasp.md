@@ -37,15 +37,11 @@ The core idea is simple:
 
 The force-based grasping path mainly uses:
 
-* `tactile_force_controller.cpp`: Force-based grasping state machine and trajectory publisher.
+* `tactile_force_controller.cpp`: Force-based grasping state machine, trajectory publisher, HX5-D20 hand initialization, and ROS 2 parameter declaration/loading.
 * `tactile_sensor.cpp`: Tactile parsing, baseline compensation, EMA(Exponential Moving Average) filtering, and total force calculation.
-* `hx5d20_init.cpp`: Initialize HX5-D20 finger model, joint names, joint limits, and posture.
-* `param.cpp`: ROS 2 parameter declaration and loading.
-* `tactile_rviz.py`: RViz tactile force marker visualization.
+* `tactile_rviz.cpp`: RViz tactile force marker visualization.
 * `grasp_start_publisher.py`: Keyboard trigger for `/grasp_start`.
 * `matplot_visualize_tactile.py`: 3×3 tactile heatmap visualization.
-
----
 
 ## 2. System Architecture
 
@@ -58,8 +54,6 @@ The tactile grasping system is organized around the following main components:
 *   **Tactile Sensor**: Parses the incoming finger pressure topic, organizes the 3×3 tactile values for each finger, builds the initial baseline, applies filtering, and computes tactile features such as total force and CoP.
 *   **Force-Based Grasping**: Performs force-based grasping by using each finger’s total tactile force to detect contact, close the hand, and maintain a stable grip force.
 *   **Optimization-Based Grasping**: Performs CoP-based optimization grasping by using the pressure distribution of the 3×3 tactile array to estimate contact bias, plan correction motions, and adjust the grasp through IK-based finger control.
-
----
 
 ## 3. Start Guide
 
@@ -96,7 +90,7 @@ ros2 launch robotis_hand_bringup hx5_d20_right.launch.py start_rviz:=true
 Before running the controller, check `robotis_hand_playground/config/param.yaml` and set `hand_side` to match the hand you brought up:
 
 ```yaml
-/**:
+tactile_force_controller:
   ros__parameters:
     # Use "right" for HX5-D20 right hand, "left" for HX5-D20 left hand.
     hand_side: "right"  
@@ -194,7 +188,7 @@ When a finger is configured as unused, the controller treats it as already conta
 
 ### 4.4 Initial Hand Posture
 
-The initial open posture of the HX5-D20 is defined in `hx5d20_init.cpp`.
+The initial open posture of the HX5-D20 is defined in `tactile_force_controller.cpp`.
 
 The right-hand and left-hand initial postures are defined separately:
 
@@ -214,9 +208,10 @@ The project provides two visualization tools: RViz force marker visualization an
 
 The `tactile_rviz` node visualizes tactile force information as markers in RViz. This is useful for checking whether each finger receives pressure and whether the tactile direction or force arrow changes correctly.
 
+Set `hand_side` to match the hand model you are using (`right` or `left`). The default value is `right`.
 
 ```bash
-ros2 run robotis_hand_playground tactile_rviz.py
+ros2 run robotis_hand_playground tactile_rviz --ros-args -p hand_side:=right
 ```
 
 The marker visualization is useful for demonstrations because it directly shows that the robot is using tactile sensor feedback during grasping.

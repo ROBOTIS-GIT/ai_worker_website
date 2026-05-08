@@ -49,32 +49,17 @@ This section provides a simple example for running predefined hand motion. It co
 <img src="/specifications/hand/example_hand_motion.gif" alt="ROBOTIS Hand example motion" style="display:block;margin:0 auto;max-width:100%;" />
 <p style="text-align: center;"><em>Example hand motion demo.</em></p>
 
-### Run the Example Hand motion
+### Run the Example Motion
 After launching the **real robot** or **Gazebo bringup**, enter the following command in the new Docker container:
 
 :::tabs key:robot-type
-== HX5-D20 Left Hand
-
+== HX5-D20
 ```bash
+# For the left hand
 ros2 run robotis_hand_playground hx5_d20_example_motion_left.py
-```
 
-This script publishes trajectory commands to:
-
-```bash
-/leader/joint_trajectory_command_broadcaster_left_hand/joint_trajectory
-```
-
-== HX5-D20 Right Hand
-
-```bash
+# For the right hand
 ros2 run robotis_hand_playground hx5_d20_example_motion_right.py
-```
-
-This script publishes trajectory commands to:
-
-```bash
-/leader/joint_trajectory_command_broadcaster_right_hand/joint_trajectory
 ```
 :::
 
@@ -87,20 +72,20 @@ Control the ROBOTIS Hand using your keyboard.
 
 ### Run the Keyboard Teleop
 After launching the **real robot** or **Gazebo bringup**, enter the following command in the new Docker container:
+::: warning
+In Gazebo, a finger may not move if its `joint_state` is outside the joint limits defined in the URDF.
+:::
 
 :::tabs key:robot-type
-== HX5-D20 Left Hand
+== HX5-D20
 
 ```bash
+# For the left hand
 ros2 run robotis_hand_teleop hx5_d20_left_teleop.py
-```
 
-== HX5-D20 Right Hand
-
-```bash
+# For the right hand
 ros2 run robotis_hand_teleop hx5_d20_right_teleop.py
 ```
-:::
 
 **Finger Control**
 - `v` / `c` - Thumb close / open
@@ -127,3 +112,4 @@ ros2 run robotis_hand_teleop hx5_d20_right_teleop.py
 
 <img src="/specifications/hand/keyboard_teleop.gif" alt="ROBOTIS Hand keyboard teleop demo" style="display:block;margin:16px auto 0;max-width:100%;" />
 <p style="text-align: center;"><em>Keyboard control of individual fingers.</em></p>
+:::

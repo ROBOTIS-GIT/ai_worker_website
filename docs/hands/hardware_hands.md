@@ -68,7 +68,7 @@ High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.
 | ID  | Joint Name            | Technical Name   | Range       |
 |-----|-----------------------|------------------|-------------|
 | 111 | Right Thumb CMC       | finger_r_joint1  |  -90° ~ 90° |
-| 112 | Right Thumb MCP Yaw   | finger_r_joint2  | -180° ~ 0°  |
+| 112 | Right Thumb MCP Yaw   | finger_r_joint2  |  -90° ~ 0°  |
 | 113 | Right Thumb MCP Pitch | finger_r_joint3  |    0° ~ 90° |
 | 114 | Right Thumb IP        | finger_r_joint4  |    0° ~ 90° |
 | 116 | Right Index MCP Roll  | finger_r_joint5  |  -35° ~ 35° |
@@ -96,7 +96,7 @@ High-DOF multi-finger robot hands designed for AI Worker / OMY platforms.
 | ID  | Joint Name            | Technical Name   | Range       |
 |-----|-----------------------|------------------|-------------|
 | 141 |  Left Thumb CMC       | finger_l_joint1  |  -90° ~ 90° |
-| 142 |  Left Thumb MCP Yaw   | finger_l_joint2  |    0° ~ 180°|
+| 142 |  Left Thumb MCP Yaw   | finger_l_joint2  |    0° ~ 90° |
 | 143 |  Left Thumb MCP Pitch | finger_l_joint3  |  -90° ~ 0°  |
 | 144 |  Left Thumb IP        | finger_l_joint4  |  -90° ~ 0°  |
 | 146 |  Left Index MCP Roll  | finger_l_joint5  |  -35° ~ 35° |

@@ -42,3 +42,40 @@ ros2 launch robotis_hand_bringup hx5_d20_left.launch.py start_rviz:=true
 ros2 launch robotis_hand_bringup hx5_d20_right.launch.py start_rviz:=true
 ```
 :::
+
+## Example Hand Motion
+This section provides a simple example for running predefined hand motion. It continuously alternates between smooth and quick cycles of finger pinch and grasp motions.
+
+<img src="/specifications/hand/example_hand_motion.gif" alt="ROBOTIS Hand example motion" style="display:block;margin:0 auto;max-width:100%;" />
+<p style="text-align: center;"><em>Example hand motion demo.</em></p>
+
+After launching the real robot or Gazebo bringup, enter the following command in the new Docker container:
+
+:::tabs key:robot-type
+== HX5-D20 Left Hand
+
+```bash
+ros2 run robotis_hand_playground hx5_d20_example_motion_left.py
+```
+
+This script publishes trajectory commands to:
+
+```bash
+/leader/joint_trajectory_command_broadcaster_left_hand/joint_trajectory
+```
+
+== HX5-D20 Right Hand
+
+```bash
+ros2 run robotis_hand_playground hx5_d20_example_motion_right.py
+```
+
+This script publishes trajectory commands to:
+
+```bash
+/leader/joint_trajectory_command_broadcaster_right_hand/joint_trajectory
+```
+:::
+The example node sends predefined motion sequences as `trajectory_msgs/JointTrajectory` messages.
+> When the script starts, it first publishes a few dummy trajectories.
+> This helps prevent the first command from being ignored by the controller. 

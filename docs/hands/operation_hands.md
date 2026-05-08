@@ -49,7 +49,8 @@ This section provides a simple example for running predefined hand motion. It co
 <img src="/specifications/hand/example_hand_motion.gif" alt="ROBOTIS Hand example motion" style="display:block;margin:0 auto;max-width:100%;" />
 <p style="text-align: center;"><em>Example hand motion demo.</em></p>
 
-After launching the real robot or Gazebo bringup, enter the following command in the new Docker container:
+### Run the Example Hand motion
+After launching the **real robot** or **Gazebo bringup**, enter the following command in the new Docker container:
 
 :::tabs key:robot-type
 == HX5-D20 Left Hand
@@ -76,6 +77,50 @@ This script publishes trajectory commands to:
 /leader/joint_trajectory_command_broadcaster_right_hand/joint_trajectory
 ```
 :::
+
 The example node sends predefined motion sequences as `trajectory_msgs/JointTrajectory` messages.
 > When the script starts, it first publishes a few dummy trajectories.
 > This helps prevent the first command from being ignored by the controller. 
+
+## Keyboard Teleop
+Control the ROBOTIS Hand using your keyboard.
+
+### Run the Keyboard Teleop
+After launching the **real robot** or **Gazebo bringup**, enter the following command in the new Docker container:
+
+:::tabs key:robot-type
+== HX5-D20 Left Hand
+
+```bash
+ros2 run robotis_hand_teleop hx5_d20_left_teleop.py
+```
+
+== HX5-D20 Right Hand
+
+```bash
+ros2 run robotis_hand_teleop hx5_d20_right_teleop.py
+```
+:::
+
+**Finger Control**
+- `v` / `c` - Thumb close / open
+- `q` / `a` - Index close / open
+- `w` / `s` - Middle close / open
+- `e` / `d` - Ring close / open
+- `r` / `f` - Little close / open
+
+**Shift Joint Control**
+- `1` - Index (`Joint 5`)
+- `2` - Middle (`Joint 9`)
+- `3` - Ring (`Joint 13`)
+- `4` - Little (`Joint 17`)
+- `5` - Thumb (`Joint 1`) 
+- `6` - Thumb (`Joint 2`)
+- `TAB` - Toggle movement direction
+
+**Hand Control**
+- `z` - Open all fingers
+- `x` - Close all fingers
+- `b` - Print current target positions
+
+### Keyboard Teleop Demo

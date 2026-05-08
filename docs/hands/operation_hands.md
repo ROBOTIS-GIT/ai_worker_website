@@ -44,7 +44,7 @@ ros2 launch robotis_hand_bringup hx5_d20_right.launch.py start_rviz:=true
 :::
 
 ## Example Hand Motion
-This section provides a simple example for running predefined hand motion. It continuously alternates between smooth and quick cycles of finger pinch and grasp motions.
+This section provides a simple example for running predefined hand motions. It continuously alternates between smooth and quick cycles of finger pinch and grasp motions.
 
 <img src="/specifications/hand/example_hand_motion.gif" alt="ROBOTIS Hand example motion" style="display:block;margin:0 auto;max-width:100%;" />
 <p style="text-align: center;"><em>Example hand motion demo.</em></p>

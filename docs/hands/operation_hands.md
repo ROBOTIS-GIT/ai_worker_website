@@ -64,7 +64,7 @@ ros2 run robotis_hand_playground hx5_d20_example_motion_right.py
 :::
 
 The example node sends predefined motion sequences as `trajectory_msgs/JointTrajectory` messages.
-> When the script starts, it first publishes a few dummy trajectories.
+> When the script starts, it first publishes one dummy trajectory.
 > This helps prevent the first command from being ignored by the controller. 
 
 ## Keyboard Teleop

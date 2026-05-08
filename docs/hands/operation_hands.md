@@ -124,3 +124,6 @@ ros2 run robotis_hand_teleop hx5_d20_right_teleop.py
 - `b` - Print current target positions
 
 ### Keyboard Teleop Demo
+
+<img src="/specifications/hand/keyboard_teleop.gif" alt="ROBOTIS Hand keyboard teleop demo" style="display:block;margin:16px auto 0;max-width:100%;" />
+<p style="text-align: center;"><em>Keyboard control of individual fingers.</em></p>

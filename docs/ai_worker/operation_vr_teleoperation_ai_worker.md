@@ -297,7 +297,7 @@ Right after the controller is activated, the system checks the difference betwee
 ### Communication Issues
 - If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` by default within the provided Docker container.)
 - If the Vuer server is not running: check the terminal logs.
-- If the robot fingers move but the arms remain still after the gesture trigger, make sure your physical hand pose is sufficiently aligned with the robot's wrist pose..
+- If the robot fingers move but the arms remain still after the gesture trigger, make sure your physical hand pose is sufficiently aligned with the robot's wrist pose.
 
 ### Network Performance
 - If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A **wired connection** is recommended.

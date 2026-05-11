@@ -46,7 +46,7 @@ ros2 launch robotis_hand_bringup hx5_d20_right.launch.py start_rviz:=true
 ## Example Hand Motion
 This section provides a simple example for running predefined hand motions. It continuously alternates between smooth and quick cycles of finger pinch and grasp motions.
 
-<img src="/specifications/hand/example_hand_motion.gif" alt="ROBOTIS Hand example motion" style="display:block;margin:0 auto;max-width:100%;" />
+<img src="/quick_start_guide/hands/example_hand_motion.gif" alt="ROBOTIS Hand example motion" style="display:block;margin:0 auto;max-width:100%;" />
 <p style="text-align: center;"><em>Example hand motion demo.</em></p>
 
 ### Run the Example Motion
@@ -110,6 +110,6 @@ ros2 run robotis_hand_teleop hx5_d20_right_teleop.py --hand-side right
 
 ### Keyboard Teleop Demo
 
-<img src="/specifications/hand/keyboard_teleop.gif" alt="ROBOTIS Hand keyboard teleop demo" style="display:block;margin:16px auto 0;max-width:100%;" />
+<img src="/quick_start_guide/hands/keyboard_teleop.gif" alt="ROBOTIS Hand keyboard teleop demo" style="display:block;margin:16px auto 0;max-width:100%;" />
 <p style="text-align: center;"><em>Keyboard control of individual fingers.</em></p>
 :::

@@ -280,6 +280,7 @@ motion_controller controller_type:=vr hand:=true
 For `sh5`, VR teleoperation starts and stops with a hand gesture instead of a ROS topic or an external device.
 
 Make **one hand squeeze** and **the other hand pinch**, then hold that combination for **3 seconds** to toggle the VR controller on or off.
+![SH5 gesture](/quick_start_guide/ai_worker/gesture.png)
 
 Right after the controller is activated, the system checks the difference between the detected hand poses and the robot wrist poses. If the difference is small enough, the arm controller will start after 3 seconds. After the startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to make your arm posture as close as possible to the robot posture before activating the controller.
 

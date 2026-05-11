@@ -219,18 +219,6 @@ You can activate the controller by pressing the `X` button on the left controlle
 
 ![Activate VR controller](/vr/vr_a_x.png)
 
-::: info
-Alternatively, you can publish the topic directly from a terminal:
-
-To activate VR teleoperation, publish the `/reactivate` topic.
-
-This topic uses the `std_msgs/msg/Bool` type.
-
-```bash
-ros2 topic pub /reactivate std_msgs/msg/Bool "{data: true}"
-```
-:::
-
 Right after the controller is activated, the system checks the difference between the detected controller poses and the robot wrist poses. If the difference is small enough, the arm controller starts after 3 seconds. After startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to keep your arm posture as close as possible to the robot posture before activating the controller.
 
 ![SG2 Slow Start](/quick_start_guide/ai_worker/sg2_vr_slow_start.gif)
@@ -238,7 +226,7 @@ Right after the controller is activated, the system checks the difference betwee
 ### 5. Pause and resume teleoperation
 
 - Release the squeeze buttons.
-- To resume, repeat step 3 and 4.
+- To resume, repeat Step 3 and 4.
 
 ::: warning
 Avoid resuming VR publishing when your hands are far from the previous pose, because the robot may move quickly. Before resuming, it is recommended to make your arm posture as close as possible to the robot posture.
@@ -288,7 +276,7 @@ Right after the controller is activated, the system checks the difference betwee
 
 ### 4. Pause and resume teleoperation
 
-- To stop teleoperation, make **one hand squeeze** and **the other hand pinch**, then hold for **3 seconds**.
+- To stop teleoperation, make one hand squeeze and the other hand pinch, then hold for 3 seconds.
 - To start again, repeat Step 3.
 
 ::::

@@ -277,22 +277,9 @@ motion_controller controller_type:=vr hand:=true
 **Pre-Activation Alignment**: Align your physical arms with the robot's current pose before activating to prevent sudden movements. Maintain a safe distance from the robot.
 :::
 
-For the VR node to start publishing reference poses, it must receive the `/reactivate` topic.
+For `sh5`, VR teleoperation starts and stops with a hand gesture instead of a ROS topic or an external device.
 
-This topic uses the `std_msgs/msg/Bool` type.
-
-::: warning
-If you do not plan to build your own external device for on/off VR teleoperation, it is important to have another person to help switching of/off the vr teleoperation as the robot will keep following the teleoperation.
-:::
-
-You can publish it directly from a terminal:
-
-```bash
-ros2 topic pub /reactivate std_msgs/msg/Bool "{data: true}"
-```
-::: tip
-You can also build your own custom device, such as a pedal or a button, for this purpose. In that case, your device should run a node that publishes to `/reactivate` when a specific input behavior is detected, such as a pedal press or a button press.
-:::
+Make **one hand squeeze** and **the other hand pinch**, then hold that combination for **3 seconds** to toggle the VR controller on or off.
 
 Right after the controller is activated, the system checks the difference between the detected hand poses and the robot wrist poses. If the difference is small enough, the arm controller will start after 3 seconds. After the startup, the `slow start` function remains active for 5 seconds. Because of this, it is recommended to make your arm posture as close as possible to the robot posture before activating the controller.
 
@@ -300,8 +287,8 @@ Right after the controller is activated, the system checks the difference betwee
 
 ### 4. Pause and resume teleoperation
 
-- To pause the demonstration, publish `/reactivate` with topic data set to `false`
-- To resume, repeat `Step 3`
+- To stop teleoperation, make **one hand squeeze** and **the other hand pinch**, then hold for **3 seconds**.
+- To start again, repeat `Step 3`.
 
 ::::
 
@@ -309,7 +296,7 @@ Right after the controller is activated, the system checks the difference betwee
 ### Communication Issues
 - If ROS communication is not working: check the `ROS_DOMAIN_ID`. (`ROS_DOMAIN_ID` is set to `30` by default within the provided Docker container.)
 - If the Vuer server is not running: check the terminal logs.
-- If the robot remains stationary after enabling VR publishing: ensure the `/reactivate` topic was published successfully and confirm that your physical hand pose is sufficiently aligned with the robot's wrist pose.
+- If the robot remains stationary after the gesture trigger: confirm that you held **one-hand squeeze + one-hand pinch** for **3 seconds**, and make sure your physical hand pose is sufficiently aligned with the robot's wrist pose.
 
 ### Network Performance
 - If value updates are slow: check your Wi-Fi connection. Network performance has a major effect. A **wired connection** is recommended.

@@ -288,7 +288,7 @@ Right after the controller is activated, the system checks the difference betwee
 ### 4. Pause and resume teleoperation
 
 - To stop teleoperation, make **one hand squeeze** and **the other hand pinch**, then hold for **3 seconds**.
-- To start again, repeat `Step 3`.
+- To start again, repeat Step 3.
 
 ::::
 

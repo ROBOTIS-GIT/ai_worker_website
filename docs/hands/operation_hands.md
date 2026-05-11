@@ -56,10 +56,10 @@ After launching the **real robot** or **Gazebo bringup**, enter the following co
 == HX5-D20
 ```bash
 # For the left hand
-ros2 run robotis_hand_playground hx5_d20_example_motion_left.py
+ros2 run robotis_hand_playground hx5_d20_example_motion.py --hand-side left
 
 # For the right hand
-ros2 run robotis_hand_playground hx5_d20_example_motion_right.py
+ros2 run robotis_hand_playground hx5_d20_example_motion.py --hand-side right
 ```
 :::
 
@@ -81,10 +81,10 @@ In Gazebo, a finger may not move if its `joint_state` is outside the joint limit
 
 ```bash
 # For the left hand
-ros2 run robotis_hand_teleop hx5_d20_left_teleop.py
+ros2 run robotis_hand_teleop hx5_d20_left_teleop.py --hand-side left
 
 # For the right hand
-ros2 run robotis_hand_teleop hx5_d20_right_teleop.py
+ros2 run robotis_hand_teleop hx5_d20_right_teleop.py --hand-side right
 ```
 
 **Finger Control**

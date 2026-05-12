@@ -91,6 +91,8 @@ cd docker
 Internet connection is required.
 
 Before starting the VR publisher node, make sure the AI Worker is connected to the internet.  
+During VR teleoperation, keep the AI Worker connected to the internet at all times.  
+To connect the AI Worker to the internet, use the WAN port. For WAN port location, refer to [Power on and Check Ports](/ai_worker/setup_guide_hardware_ai_worker.html#power-on-and-check-ports).
 :::
 
 In the Docker environment, launch the VR publisher node corresponding to your model.

@@ -1,6 +1,6 @@
 # OMX Drawing
 
-### ▶️ Full Demo
+### Full Demo
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0; border-radius: 8px; border: 2px solid #1e3c72;">
   <iframe

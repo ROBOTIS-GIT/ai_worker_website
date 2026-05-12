@@ -8,80 +8,66 @@ This guide shows how to bring up the AI Worker's navigation stack so the robot c
 - Connect to the robot PC (keyboard/monitor or SSH) and make sure the battery is charged.
 
 ## Bring Up the Robot
-Before launching Nav2, start the SG2 follower using the commands from the Teleoperation Guide.
+Before launching Nav2, start the follower using the commands from the Teleoperation Guide.
 Run these inside the Docker container:
 ```bash
 cd ~/ai_worker
 ./docker/container.sh enter
+```
+
+:::tabs key:robot-type
+== Gripper Type
+Note that `sg2` model is used as an example.
+```bash
 ros2 launch ffw_bringup ffw_sg2_follower_ai.launch.py
 ```
+Or use the shortcut:
+```bash
+ffw_sg2_follower_ai
+```
+
+== Hand Type
+Note that `sh5` model is used as an example.
+```bash
+ros2 launch ffw_bringup ffw_sh5_follower_ai.launch.py
+```
+Or use the shortcut:
+```bash
+ffw_sh5_follower_ai
+```
+:::
+
 Keep these terminals running. use a new terminal for the commands below.
 
-## View RViz via noVNC (headless/SSH)
+## View RViz in Local
 
-:::info
-We will update a manual soon so that RViz can be viewed through noVNC.
-:::
-
-<!-- RViz cannot be displayed over plain SSH. Use noVNC to launch RViz and view it from a browser.
-
-::: tip
-- If `192.168.6.2:8090` is unreachable, confirm the host IP and the forwarded port in your environment.
-:::
-
-At the `Robot PC`, run the following commands:
-
-1. Build and start the noVNC container:
-
-#### method 1
-Update `ai_worker` repository and run `container.sh start-novnc`.  
-(⚠️ **Warning:** When you doing `git pull` in the `ai_worker` repository, existing container data may be lost! If you want to keep your container data, use **method 2** instead.)
+On the `User PC`, open a terminal and enter the `ai_worker` Docker container:
 ```bash
-cd ~/ai_worker
-./docker/container.sh start-novnc
+cd ~/  # or your preferred directory
+git clone -b jazzy https://github.com/ROBOTIS-GIT/ai_worker.git
+cd ai_worker
+./docker/container.sh enter
 ```
-#### method 2
-Make a `docker-compose.novnc.yml` file with the following content:
-  ::: details docker-compose.novnc.yml
-  ```yml
-  services:
-    novnc-server:
-      container_name: novnc-server
-      image: robotis/novnc-server:latest
-      restart: no
-      cap_add:
-        - SYS_NICE
-      ulimits:
-        rtprio: 99
-        rttime: -1
-        memlock: 8428281856
-      network_mode: host
-      environment:
-        - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-30}
-        - DISPLAY=:99
-        - DISPLAY_WIDTH=1920
-        - DISPLAY_HEIGHT=1080
-        - WEBSOCKIFY_PORT=8090
-      volumes:
-        - /dev:/dev
-        - /dev/shm:/dev/shm
-      privileged: true
-  ```
-  :::
-Then run `docker compose -f docker/docker-compose.novnc.yml up` to start the noVNC container.
 
+Start RViz with the navigation configuration file:
+```bash
+rviz2 -d ~/ros2_ws/src/ai_worker/ffw_navigation/rviz/navigation.rviz
+```
 
-2. Open noVNC in a browser
-In a web browser, open `http://ffw-snpr48a{serial-number}.local:8090` (substituting your robot's serial number) or `http://192.168.6.2:8090`. After the page loads, click **Connect**.  
+::: warning
+Make sure the `ROS_DOMAIN_ID` in the User PC Docker container matches the `ROS_DOMAIN_ID` used by the AI Worker robot. If the domain IDs are different, RViz will not receive robot topics such as `/scan`.
+:::
 
-
-4. Run RViz -->
+On the `User PC`, check that `/scan` data is being received:
+```bash
+ros2 topic echo /scan
+```
 
 ## Lidar Scan Visualization
-First, use RViz (via noVNC) to confirm lidar scans are visible around the robot.
+First, use RViz to confirm lidar scans are visible around the robot.
 
 ![Lidar scan visualization](/simulation/ai_worker/laserscan.png)
-Lidar scan values visualized in RViz. Use this view to confirm the sensor is publishing after connecting via noVNC.
+Lidar scan values visualized in RViz. Use this view to confirm the sensor is publishing correctly.
 ::: warning
 In RViz, set the `scan` topic Reliability Policy to `Best Effort` for this display.
 :::
@@ -116,12 +102,26 @@ All commands below run on the `robot PC` in a new terminal after the bringup abo
         ```
         Drive with the keyboard to explore and build the map.
 
+    #### View Mapping in RViz
+    On the `User PC`, open a new terminal and enter the `ai_worker` Docker container:
+    ```bash
+    cd ~/ai_worker
+    ./docker/container.sh enter
+    ```
+
+    Start RViz with the mapping configuration file:
+    ```bash
+    rviz2 -d ~/ros2_ws/src/ai_worker/ffw_navigation/rviz/mapping.rviz
+    ```
+
+    Use this RViz view to monitor the map, lidar scan, robot pose, and navigation status while SLAM mapping is running.
+
     #### SLAM Mapping Process
     ![SLAM mapping (Nav2 + SLAM Toolbox)](/simulation/ai_worker/MAPPING.gif)
     White areas show free space discovered by SLAM, black indicates obstacles or walls, and gray is unknown space. As the robot drives, the explored (white) region expands and the unknown area shrinks while the map is refined.
 
     #### Save a generated map
-    If you ran SLAM and want to reuse the map, save it with:
+    On the `Robot PC`, if you ran SLAM and want to reuse the map, save it with:
     ```bash
     cd ~/ros2_ws/src/ai_worker/ffw_navigation/maps
     ros2 run nav2_map_server map_saver_cli -f ./map
@@ -139,6 +139,18 @@ All commands below run on the `robot PC` in a new terminal after the bringup abo
   :::
   Set the initial pose in RViz with `2D Pose Estimate` so AMCL can localize. After Nav2 is running, send a goal in RViz using `2D Goal Pose`. The robot will plan and drive to the target pose.
   if SLAM is enabled, the map updates in real time.
+
+### View Saved Map Navigation in RViz
+On the `User PC`, open a new terminal and enter the `ai_worker` Docker container:
+```bash
+cd ~/ai_worker
+./docker/container.sh enter
+```
+
+Start RViz with the navigation configuration file:
+```bash
+rviz2 -d ~/ros2_ws/src/ai_worker/ffw_navigation/rviz/navigation.rviz
+```
 
 ### RViz Goal on Saved Map
 ![RViz goal and path with saved map](/simulation/ai_worker/aiw_rviz2.gif)

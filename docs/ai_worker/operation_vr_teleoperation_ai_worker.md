@@ -87,6 +87,12 @@ cd docker
 
 ### 3. Start VR Publisher Node
 
+::: warning
+Internet connection is required.
+
+Before starting the VR publisher node, make sure the AI Worker is connected to the internet.  
+:::
+
 In the Docker environment, launch the VR publisher node corresponding to your model.
 
 :::tabs key:robot-type

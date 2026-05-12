@@ -37,7 +37,7 @@ ffw_sh5_follower_ai
 ```
 :::
 
-Keep these terminals running. use a new terminal for the commands below.
+Keep these terminals running. Use a new terminal for the commands below.
 
 ## View RViz in Local
 

@@ -48,7 +48,7 @@ This comprehensive hardware design enables the AI Worker to perform complex mani
 | Ambient Operating Temperature | 0 ~ 40℃                             | 0 ~ 40℃                                |
 | Exterior Materials          | Aluminum, Plastic                      | Aluminum, Plastic                      |
 | Sensor                      | RGBD Camera x 3, LiDAR x 2, IMU<br>(see [Camera Specification](#camera-specification))| RGBD Camera x 3<br>(see [Camera Specification](#camera-specification))|
-| Host Interface              | Ethernet<br>* LAN port: up to 100 Mbps<br>* USB Ethernet adapter: up to 1 Gbps  | Ethernet<br>(Direct connection to a host PC)|
+| Host Interface              | Ethernet<br>(up to 100 Mbps) | Ethernet<br>(Direct connection to a host PC)|
 | Internal Router             |[TP-Link AC1200](https://www.tp-link.com/kr/home-networking/wifi-router/archer-c54/)    | None                                 |
 | Internal Communications     | RS-485                                 | RS-485                                 |
 | Communication Baudrate      | 4 Mbps                                 | 4 Mbps                                 |

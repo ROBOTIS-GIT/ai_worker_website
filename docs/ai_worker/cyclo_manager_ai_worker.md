@@ -117,13 +117,13 @@ The gear icon opens the **Follower Bringup (SG2) Launch Arguments** dialog. Defa
 | Start RViz | `false` | Launch RViz with the physical hardware.|
 | Use Simulation | `false` | Use simulation environment timestamp.|
 | Use Mock Hardware | `false` | Use mock hardware.|
-| Mock Sensor Commands | `false` | Use mock sensor. You can bringup the robot without sensor. |
+| Mock Sensor Commands | `false` | Use mock sensor. You can bring up the robot without sensors. |
 | Port Name | `/dev/follower` | Port name for the hardware.|
 | Launch Cameras | `true` | Whether to launch cameras.|
 | Launch Lidar | `true` | Whether to launch lidar.|
 | Init Position | `true` | Whether to initialize position.|
 | Model | `ffw_sg2_rev1_follower` | Model name.|
-| Use Head EEF Tracker | `false` | Whether to use head EEF tracker. If you use this, Head will track the middle of the hand.|
+| Use Head EEF Tracker | `false` | Whether to use the head EEF tracker. If enabled, head will track the middle of the hand.|
 | Init Position File | `pack_position.yaml` | File name for the initial position file.|
 | ROS2 Control Type | `ffw_sg2_follower` | ROS2 control type.|
 
@@ -165,8 +165,8 @@ Click the **Settings** button, open the **`.bashrc`** section, and you can edit 
 :::
 
 ![Terminal Page](/advanced_features/cyclo_manager/terminal_page.png)
-- You can open the terminal page to click the `terminal` button.
-- You can use bash terminal to run commands in the container.
+- Click the terminal button to open the terminal page.
+- You can use the bash terminal to run commands in the container.
 - You can also manage the process list in the container.
 
 ## noVNC Page

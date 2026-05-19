@@ -110,6 +110,23 @@ http://ffw-SNPR48A0000.local:3000
 - Click the gear icon (⚙️) to configure the robot parameters.
 - You can also set the pack position by specifying the initial position parameter in `pack_position.yaml`.
 
+The gear icon opens the **Follower Bringup (SG2) Launch Arguments** dialog. Default values:
+
+| Parameter | Default | Description |
+| :--- | :--- | :--- |
+| Start RViz | `false` | Launch RViz with the physical hardware.|
+| Use Simulation | `false` | Use simulation environment timestamp.|
+| Use Mock Hardware | `false` | Use mock hardware.|
+| Mock Sensor Commands | `false` | Use mock sensor. You can bringup the robot without sensor. |
+| Port Name | `/dev/follower` | Port name for the hardware.|
+| Launch Cameras | `true` | Whether to launch cameras.|
+| Launch Lidar | `true` | Whether to launch lidar.|
+| Init Position | `true` | Whether to initialize position.|
+| Model | `ffw_sg2_rev1_follower` | Model name.|
+| Use Head EEF Tracker | `false` | Whether to use head EEF tracker. If you use this, Head will track the middle of the hand.|
+| Init Position File | `pack_position.yaml` | File name for the initial position file.|
+| ROS2 Control Type | `ffw_sg2_follower` | ROS2 control type.|
+
 :::info Log Clear Button Description
 <div class="cyclo-bringup-legend-stack">
 <div class="cyclo-bringup-legend">

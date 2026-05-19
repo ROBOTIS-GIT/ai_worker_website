@@ -69,7 +69,7 @@ http://ffw-SNPR48A0000.local:3000
 - Select the container to manage and navigate to the corresponding page.
 - If the source inside the corresponding container is not at the latest version, a notification appears indicating that an update is available.
 
-## System Management
+## System Page
 
 ![System Page](/advanced_features/cyclo_manager/system_page.png)  
 
@@ -105,6 +105,10 @@ http://ffw-SNPR48A0000.local:3000
 - You can bring up the robot and view logs.
 - You can run the Physical AI server and view logs.
 - You can run the Zenoh daemon container (zenohd).
+
+![Parameter Setup](/advanced_features/cyclo_manager/parameter_setup.png)
+- Click the gear icon (⚙️) to configure the robot parameters.
+- You can also set the pack position by specifying the initial position parameter in `pack_position.yaml`.
 
 :::info Log Clear Button Description
 <div class="cyclo-bringup-legend-stack">
@@ -142,6 +146,11 @@ Click the **Settings** button, open the **`.bashrc`** section, and you can edit 
 :::info
 **Environment variables in the container are managed in the `.bashrc` file.**  
 :::
+
+![Terminal Page](/advanced_features/cyclo_manager/terminal_page.png)
+- You can open the terminal page to click the `terminal` button.
+- You can use bash terminal to run commands in the container.
+- You can also manage the process list in the container.
 
 ## noVNC Page
 ![noVNC Page](/advanced_features/cyclo_manager/novnc_page.png)

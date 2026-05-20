@@ -143,8 +143,8 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/ai_worker/advanced_features_ai_worker' },
             { text: 'Cyclo Manager', link: '/ai_worker/cyclo_manager_ai_worker' },
-            { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
             { text: 'Cyclo Control', link: '/ai_worker/advanced_motion_controller_ai_worker' },
+            { text: 'Behavior Trees', link: '/ai_worker/behavior_tree_ai_worker' },
           ]
         },
         {

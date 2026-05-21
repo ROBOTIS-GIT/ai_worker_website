@@ -53,7 +53,7 @@
         <path class="flow-line backend-line" d="M 425 880 C 440 780 600 720 650 656" marker-end="url(#arch-arrow-backend)" />
         <path class="flow-line backend-line" d="M 650 880 C 650 780 720 720 740 656" marker-end="url(#arch-arrow-backend)" />
         <path class="flow-line backend-line" d="M 875 880 C 850 780 815 720 830 656" marker-end="url(#arch-arrow-backend)" />
-        <path class="flow-line robot-line" d="M 790 740 C 790 675 805 620 805 556" marker-end="url(#arch-arrow-robot)" />
+        <path class="flow-line robot-line" d="M 790 740 C 870 690 880 625 845 585" marker-end="url(#arch-arrow-robot)" />
         <path class="flow-line robot-line dashed" d="M 250 1049 C 360 980 610 940 790 818" marker-end="url(#arch-arrow-robot)" />
         <path class="flow-line action-line dashed" d="M 321 818 C 445 920 610 1010 750 1049" marker-end="url(#arch-arrow-action)" />
       </svg>
@@ -196,7 +196,7 @@
       <span class="flow-label label-processed main-flow">processed actions</span>
       <span class="flow-label label-tick action-flow">one action / tick</span>
       <span class="flow-label label-observation robot-flow">sensor / state read</span>
-      <span class="flow-label label-observation-policy robot-flow">observation to preprocess</span>
+      <span class="flow-label label-observation-policy robot-flow">observation to inference</span>
       <span class="flow-label label-command-out action-flow">command out</span>
       <span class="flow-label label-backend backend-flow">backend contract</span>
       <span class="flow-marker marker-1 command-marker">1</span>
@@ -461,17 +461,19 @@
   position: absolute;
   z-index: 3;
   display: grid;
-  align-content: start;
-  gap: 2px;
-  padding: 8px;
+  place-content: center;
+  justify-items: center;
+  gap: 3px;
+  padding: 6px;
+  text-align: center;
   overflow-wrap: anywhere;
   background: #fbfdff;
 }
 
 .node strong {
   color: var(--arch-ink);
-  font-size: 0.72rem;
-  line-height: 1.3;
+  font-size: 0.68rem;
+  line-height: 1.22;
   overflow-wrap: anywhere;
   word-break: normal;
 }
@@ -480,41 +482,45 @@
 .node em {
   min-width: 0;
   color: var(--arch-muted);
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.24;
 }
 
 .node em {
   display: inline-flex;
+  justify-content: center;
   width: fit-content;
   max-width: 100%;
   white-space: normal;
   overflow-wrap: anywhere;
-  margin-top: 3px;
-  padding: 2px 6px;
+  margin-top: 1px;
+  padding: 1px 5px;
   border-radius: 999px;
   background: #eef4f8;
   color: #344155;
   font-family: var(--vp-font-family-mono);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .lane-tag {
   display: inline-flex;
+  justify-content: center;
   width: fit-content;
   max-width: 100%;
   margin-bottom: 2px;
-  padding: 2px 6px;
+  padding: 2px 5px;
   border: 1px solid currentColor;
   border-radius: 999px;
   background: #ffffff;
   font-family: var(--vp-font-family-mono);
-  font-size: 0.52rem !important;
+  font-size: 0.48rem !important;
   font-weight: 800 !important;
   line-height: 1.2 !important;
+  text-align: center;
 }
 
 .host-tag { color: var(--arch-host) !important; }
@@ -523,17 +529,17 @@
 .robot-tag { color: var(--arch-robot) !important; }
 
 .host-source {
-  top: 42px;
+  top: 40px;
   left: 20px;
   width: 38%;
-  bottom: 14px;
+  bottom: 10px;
 }
 
 .host-command {
-  top: 42px;
+  top: 40px;
   right: 20px;
   width: 38%;
-  bottom: 14px;
+  bottom: 10px;
 }
 
 .main-service {
@@ -600,17 +606,17 @@
 }
 
 .robot-sensors {
-  top: 44px;
+  top: 40px;
   left: 20px;
   width: calc(50% - 28px);
-  bottom: 14px;
+  bottom: 10px;
 }
 
 .robot-command {
-  top: 44px;
+  top: 40px;
   right: 20px;
   width: calc(50% - 28px);
-  bottom: 14px;
+  bottom: 10px;
 }
 
 .subnode-grid {
@@ -623,6 +629,7 @@
 .subnode-grid span {
   display: grid;
   align-items: center;
+  justify-items: center;
   min-height: 34px;
   padding: 5px 6px;
   border: 1px solid var(--arch-line);
@@ -652,6 +659,7 @@
 .backend-island span {
   display: grid;
   align-items: center;
+  justify-items: center;
   min-height: 34px;
   padding: 6px 8px;
   border: 1px solid var(--arch-line);
@@ -727,7 +735,7 @@
 .label-processed { left: 29%; top: 698px; }
 .label-tick { left: 34%; top: 840px; }
 .label-observation { left: 28%; top: 990px; }
-.label-observation-policy { left: 77%; top: 700px; }
+.label-observation-policy { left: 84%; top: 680px; }
 .label-command-out { left: 74%; top: 990px; }
 .label-backend { left: 67%; top: 860px; }
 .marker-1 { left: 42%; top: 168px; }

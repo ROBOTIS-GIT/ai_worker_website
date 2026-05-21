@@ -6,9 +6,9 @@
           Cyclo Brain System Architecture
         </p>
         <p class="architecture-summary">
-          UI/orchestrator and standalone CLI commands enter the same runtime contract. The policy
-          container separates command handling from model inference, while robot command output and
-          observation input stay on different paths.
+          Cyclo Brain separates command handling, model inference, open-source policy backends, and
+          robot I/O into distinct runtime areas. The diagram below shows the system blocks first;
+          detailed data flow is summarized after the diagram.
         </p>
       </div>
       <div class="legend" aria-label="Flow legend">
@@ -20,218 +20,151 @@
       </div>
     </div>
 
-    <div class="architecture-map" aria-label="Cyclo Brain architecture map">
-      <article class="runtime-band host-band">
-        <p class="band-label">Host</p>
-        <div class="node-row">
-          <div class="node">
-            <span class="lane-tag host-tag">Command Source</span>
-            <strong>UI / Orchestrator</strong>
-            <span>Standalone CLI args</span>
-            <em>same command shape</em>
-          </div>
-          <div class="h-arrow command-flow" aria-hidden="true">
-            <span>service call</span>
-          </div>
-          <div class="node">
-            <span class="lane-tag host-tag">InferenceCommand</span>
-            <strong>LOAD / START / PAUSE</strong>
-            <span>RESUME / STOP / UNLOAD</span>
-            <em>external service</em>
-          </div>
+    <div class="diagram-stage" aria-label="Cyclo Brain architecture map">
+      <svg class="flow-overlay desktop-flow" viewBox="0 0 1000 1120" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <marker id="arch-arrow-command" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-arrow-main" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-arrow-engine" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-arrow-robot" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-arrow-action" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-arrow-backend" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+        </defs>
+
+        <path class="flow-line command-line dashed" d="M 790 112 C 720 160 390 152 172 226" marker-end="url(#arch-arrow-command)" />
+        <path class="flow-line main-line" d="M 215 318 L 231 318" marker-end="url(#arch-arrow-main)" />
+        <path class="flow-line main-line" d="M 321 356 C 320 388 250 382 240 404" marker-end="url(#arch-arrow-main)" />
+        <path class="flow-line engine-line dashed" d="M 412 448 C 500 430 500 330 588 329" marker-end="url(#arch-arrow-engine)" />
+        <path class="flow-line engine-line dashed" d="M 588 546 C 520 546 500 598 412 598" marker-end="url(#arch-arrow-engine)" />
+        <path class="flow-line main-line" d="M 223 645 C 223 700 124 690 124 740" marker-end="url(#arch-arrow-main)" />
+        <path class="flow-line action-line" d="M 215 779 L 231 779" marker-end="url(#arch-arrow-action)" />
+        <path class="flow-line backend-line" d="M 425 880 C 440 780 600 720 650 656" marker-end="url(#arch-arrow-backend)" />
+        <path class="flow-line backend-line" d="M 650 880 C 650 780 720 720 740 656" marker-end="url(#arch-arrow-backend)" />
+        <path class="flow-line backend-line" d="M 875 880 C 850 780 815 720 830 656" marker-end="url(#arch-arrow-backend)" />
+        <path class="flow-line robot-line" d="M 790 740 C 790 675 805 620 805 556" marker-end="url(#arch-arrow-robot)" />
+        <path class="flow-line robot-line dashed" d="M 250 1049 C 360 980 610 940 790 818" marker-end="url(#arch-arrow-robot)" />
+        <path class="flow-line action-line dashed" d="M 321 818 C 445 920 610 1010 750 1049" marker-end="url(#arch-arrow-action)" />
+      </svg>
+
+      <svg class="flow-overlay mobile-flow" viewBox="0 0 1000 1750" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <marker id="arch-mobile-command" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-mobile-engine" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-mobile-robot" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-mobile-action" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <marker id="arch-mobile-backend" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+        </defs>
+
+        <path class="flow-line command-line dashed" d="M 500 250 C 500 292 500 312 500 350" marker-end="url(#arch-mobile-command)" />
+        <path class="flow-line engine-line dashed" d="M 500 587 C 500 735 500 835 500 948" marker-end="url(#arch-mobile-engine)" />
+        <path class="flow-line engine-line dashed" d="M 500 1110 C 245 1030 245 705 500 620" marker-end="url(#arch-mobile-engine)" />
+        <path class="flow-line robot-line" d="M 500 1230 C 500 1210 500 1200 500 1186" marker-end="url(#arch-mobile-robot)" />
+        <path class="flow-line backend-line" d="M 500 1304 C 500 1268 500 1240 500 1214" marker-end="url(#arch-mobile-backend)" />
+        <path class="flow-line robot-line dashed" d="M 260 1574 C 650 1500 780 1320 500 1260" marker-end="url(#arch-mobile-robot)" />
+        <path class="flow-line action-line dashed" d="M 500 820 C 780 980 780 1400 740 1574" marker-end="url(#arch-mobile-action)" />
+      </svg>
+
+      <article class="zone host-zone">
+        <p class="zone-label">Host</p>
+        <div class="node host-source">
+          <span class="lane-tag host-tag">Command Source</span>
+          <strong>UI / Orchestrator</strong>
+          <span>Standalone CLI args</span>
+          <em>same command shape</em>
+        </div>
+        <div class="node host-command">
+          <span class="lane-tag host-tag">InferenceCommand</span>
+          <strong>LOAD / START / PAUSE</strong>
+          <span>RESUME / STOP / UNLOAD</span>
+          <em>external service</em>
         </div>
       </article>
 
-      <div class="v-arrow down command-flow" aria-hidden="true">
-        <span>external service call</span>
-      </div>
+      <section class="zone policy-zone">
+        <p class="zone-label container-label">Policy Container: &lt;backend&gt;_server</p>
 
-      <section class="flow-container" aria-label="Runtime data flow across host, policy container, and robot">
-        <p class="container-label">Runtime Data Flow</p>
-
-        <article class="flow-step command-step">
-          <span class="step-marker">1</span>
-          <div class="step-content">
-            <p class="step-title">UI/CLI command enters Main.</p>
-            <div class="flow-path">
-              <div class="node">
-                <span class="lane-tag host-tag">Host</span>
-                <strong>InferenceCommand</strong>
-                <span>common command contract</span>
-              </div>
-              <div class="path-arrow command-flow" aria-hidden="true">
-                <span>external service call</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag main-tag">Main Runtime</span>
-                <strong>ServiceHandler</strong>
-                <span>command entry</span>
-              </div>
-              <div class="path-arrow main-flow" aria-hidden="true">
-                <span>update session</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag main-tag">Main Runtime</span>
-                <strong>SessionState</strong>
-                <span>runtime gate</span>
-              </div>
-            </div>
+        <article class="process-panel main-panel">
+          <p class="process-title">Main Runtime</p>
+          <div class="node main-service">
+            <span class="lane-tag main-tag">main-runtime</span>
+            <strong>ServiceHandler</strong>
+            <span>command entry</span>
+          </div>
+          <div class="node main-session">
+            <span class="lane-tag main-tag">main-runtime</span>
+            <strong>SessionState</strong>
+            <span>runtime gate</span>
+          </div>
+          <div class="node main-requester">
+            <span class="lane-tag main-tag">main-runtime</span>
+            <strong>InferenceRequester</strong>
+            <span>one GET_ACTION at a time</span>
+            <span>timeout + seq_id stale guard</span>
+          </div>
+          <div class="node main-actions">
+            <span class="lane-tag main-tag">main-runtime</span>
+            <strong>ActionChunkProcessor</strong>
+            <span>buffer + optional match / RTC</span>
+            <span>interpolate / blend / smooth</span>
+          </div>
+          <div class="node main-loop">
+            <span class="lane-tag main-tag">main-runtime</span>
+            <strong>ControlLoop</strong>
+            <span>self-running tick</span>
+          </div>
+          <div class="node main-robot-client">
+            <span class="lane-tag main-tag">main-runtime</span>
+            <strong>RobotClient</strong>
+            <span>command output</span>
           </div>
         </article>
 
-        <article class="flow-step engine-step">
-          <span class="step-marker">2</span>
-          <div class="step-content">
-            <p class="step-title">Main requests Engine action.</p>
-            <div class="flow-path">
-              <div class="node">
-                <span class="lane-tag main-tag">Main Runtime</span>
-                <strong>InferenceRequester</strong>
-                <span>one GET_ACTION at a time</span>
-                <span>timeout + seq_id stale guard</span>
-              </div>
-              <div class="path-arrow engine-flow" aria-hidden="true">
-                <span>EngineCommand</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag engine-tag">Engine Process</span>
-                <strong>EngineWorker</strong>
-                <span>hosts internal EngineCommand service</span>
-                <span>using Zenoh ROS2 SDK</span>
-              </div>
-              <div class="path-arrow engine-flow" aria-hidden="true">
-                <span>load / predict</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag engine-tag">Engine Process</span>
-                <strong>Backend InferenceEngine</strong>
-                <span>model-specific implementation</span>
-                <span>behind stable contract</span>
-                <div class="subnode-flow" aria-label="Backend inference stages">
-                  <span>Policy Load</span>
-                  <i aria-hidden="true"></i>
-                  <span>Preprocess</span>
-                  <i aria-hidden="true"></i>
-                  <span>Predict</span>
-                  <i aria-hidden="true"></i>
-                  <span>Optional Optimize</span>
-                </div>
-              </div>
+        <article class="process-panel engine-panel">
+          <p class="process-title">Engine Process</p>
+          <div class="node engine-worker">
+            <span class="lane-tag engine-tag">engine-process</span>
+            <strong>EngineWorker</strong>
+            <span>hosts internal EngineCommand service</span>
+            <span>using Zenoh ROS2 SDK</span>
+          </div>
+          <div class="node engine-backend">
+            <span class="lane-tag engine-tag">engine-process</span>
+            <strong>Backend InferenceEngine</strong>
+            <span>model-specific implementation</span>
+            <span>behind stable contract</span>
+            <div class="subnode-grid" aria-label="Backend inference stages">
+              <span>Policy Load</span>
+              <span>Preprocess</span>
+              <span>Predict</span>
+              <span>Optional Optimize</span>
             </div>
           </div>
-        </article>
-
-        <article class="flow-step robot-step">
-          <span class="step-marker">3</span>
-          <div class="step-content">
-            <p class="step-title">Engine reads Robot observation.</p>
-            <div class="flow-path">
-              <div class="node">
-                <span class="lane-tag robot-tag">Robot</span>
-                <strong>Sensors / State</strong>
-                <span>camera, joints, base state</span>
-              </div>
-              <div class="path-arrow robot-flow" aria-hidden="true">
-                <span>sensor / state read</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag engine-tag">Engine Process</span>
-                <strong>RobotClient</strong>
-                <span>observation only</span>
-              </div>
-              <div class="path-arrow robot-flow" aria-hidden="true">
-                <span>observations into policy</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag engine-tag">Engine Process</span>
-                <strong>Backend InferenceEngine</strong>
-                <span>uses camera, joint, and base state</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="flow-step return-step">
-          <span class="step-marker">4</span>
-          <div class="step-content">
-            <p class="step-title">Engine returns action_list.</p>
-            <div class="flow-path">
-              <div class="node">
-                <span class="lane-tag engine-tag">Engine Process</span>
-                <strong>Backend InferenceEngine</strong>
-                <span>computes action chunk</span>
-              </div>
-              <div class="path-arrow engine-flow" aria-hidden="true">
-                <span>action_list</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag main-tag">Main Runtime</span>
-                <strong>ActionChunkProcessor</strong>
-                <span>buffer + optional match / RTC</span>
-                <span>interpolate / blend / smooth</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="flow-step publish-step">
-          <span class="step-marker">5</span>
-          <div class="step-content">
-            <p class="step-title">Main buffers, processes, and publishes.</p>
-            <div class="flow-path">
-              <div class="node">
-                <span class="lane-tag main-tag">Main Runtime</span>
-                <strong>ActionChunkProcessor</strong>
-                <span>can expand 16 actions to 100 Hz buffer</span>
-              </div>
-              <div class="path-arrow main-flow" aria-hidden="true">
-                <span>processed actions</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag main-tag">Main Runtime</span>
-                <strong>ControlLoop</strong>
-                <span>self-running tick</span>
-              </div>
-              <div class="path-arrow action-flow" aria-hidden="true">
-                <span>one action / tick</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag main-tag">Main Runtime</span>
-                <strong>RobotClient</strong>
-                <span>command output</span>
-              </div>
-              <div class="path-arrow action-flow" aria-hidden="true">
-                <span>command publish</span>
-              </div>
-              <div class="node">
-                <span class="lane-tag robot-tag">Robot</span>
-                <strong>Command Topics</strong>
-                <span>cmd_vel, trajectory, etc.</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </section>
-
-      <section class="policy-container" aria-label="Policy container backend server">
-        <p class="container-label">Policy Container: &lt;backend&gt;_server</p>
-
-        <article class="runtime-band process-band">
-          <p class="band-label">Process Split</p>
-          <div class="node-row two-col">
-            <div class="node">
-              <span class="lane-tag main-tag">main-runtime</span>
-              <strong>Command and control owner</strong>
-              <span>external command handling</span>
-              <span>session state, action buffer, command publish</span>
-            </div>
-            <div class="node">
-              <span class="lane-tag engine-tag">engine-process</span>
-              <strong>Model and observation owner</strong>
-              <span>model loading, preprocessing, prediction</span>
-              <span>robot observation read only</span>
-            </div>
+          <div class="node engine-robot-client">
+            <span class="lane-tag engine-tag">engine-process</span>
+            <strong>RobotClient</strong>
+            <span>observation only</span>
           </div>
         </article>
 
@@ -243,21 +176,34 @@
         </div>
       </section>
 
-      <article class="runtime-band robot-band">
-        <p class="band-label">Robot</p>
-        <div class="node-row two-col">
-          <div class="node">
-            <span class="lane-tag robot-tag">Sensors / State</span>
-            <strong>Observation input</strong>
-            <span>camera, joints, base state</span>
-          </div>
-          <div class="node">
-            <span class="lane-tag robot-tag">Command Topics</span>
-            <strong>Command output</strong>
-            <span>cmd_vel, trajectory, etc.</span>
-          </div>
+      <article class="zone robot-zone">
+        <p class="zone-label">Robot</p>
+        <div class="node robot-sensors">
+          <span class="lane-tag robot-tag">Sensors / State</span>
+          <strong>Observation input</strong>
+          <span>camera, joints, base state</span>
+        </div>
+        <div class="node robot-command">
+          <span class="lane-tag robot-tag">Command Topics</span>
+          <strong>Command output</strong>
+          <span>cmd_vel, trajectory, etc.</span>
         </div>
       </article>
+
+      <span class="flow-label label-service command-flow">service call</span>
+      <span class="flow-label label-engine engine-flow">EngineCommand</span>
+      <span class="flow-label label-action-list engine-flow">action_list</span>
+      <span class="flow-label label-processed main-flow">processed actions</span>
+      <span class="flow-label label-tick action-flow">one action / tick</span>
+      <span class="flow-label label-observation robot-flow">sensor / state read</span>
+      <span class="flow-label label-observation-policy robot-flow">observation to preprocess</span>
+      <span class="flow-label label-command-out action-flow">command out</span>
+      <span class="flow-label label-backend backend-flow">backend contract</span>
+      <span class="flow-marker marker-1 command-marker">1</span>
+      <span class="flow-marker marker-2 engine-marker">2</span>
+      <span class="flow-marker marker-3 robot-marker">3</span>
+      <span class="flow-marker marker-4 engine-marker">4</span>
+      <span class="flow-marker marker-5 action-marker">5</span>
     </div>
 
     <ol class="flow-list" aria-label="Runtime data flow">
@@ -287,6 +233,7 @@
   --arch-robot: #9a6a1d;
   --arch-backend: #6554a8;
   --arch-action: #b34242;
+  --arch-flow-opacity: 0.5;
   --arch-shadow: 0 10px 28px rgba(21, 32, 51, 0.08);
   margin: 1rem 0 1.5rem;
   padding: 16px;
@@ -359,47 +306,120 @@
 .backend-dot { background: var(--arch-backend); }
 .action-dot { background: var(--arch-action); }
 
-.architecture-map,
-.flow-container,
-.policy-container,
-.flow-path {
-  display: grid;
-  gap: 10px;
-}
-
-.architecture-map {
+.diagram-stage {
+  position: relative;
+  height: 1120px;
   margin-top: 14px;
 }
 
-.runtime-band,
-.flow-container,
-.policy-container,
-.flow-step {
+.flow-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.mobile-flow {
+  display: none;
+}
+
+.flow-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-opacity: var(--arch-flow-opacity);
+  vector-effect: non-scaling-stroke;
+}
+
+.flow-line.dashed {
+  stroke-dasharray: 9 10;
+  stroke-linecap: round;
+}
+
+.command-line { stroke: var(--arch-host); marker-end: url(#arch-arrow-command); }
+.main-line { stroke: var(--arch-main); marker-end: url(#arch-arrow-main); }
+.engine-line { stroke: var(--arch-engine); marker-end: url(#arch-arrow-engine); }
+.robot-line { stroke: var(--arch-robot); marker-end: url(#arch-arrow-robot); }
+.action-line { stroke: var(--arch-action); marker-end: url(#arch-arrow-action); }
+.backend-line { stroke: var(--arch-backend); marker-end: url(#arch-arrow-backend); }
+
+#arch-arrow-command path,
+#arch-mobile-command path {
+  fill: var(--arch-host);
+  fill-opacity: var(--arch-flow-opacity);
+}
+#arch-arrow-main path {
+  fill: var(--arch-main);
+  fill-opacity: var(--arch-flow-opacity);
+}
+#arch-arrow-engine path,
+#arch-mobile-engine path {
+  fill: var(--arch-engine);
+  fill-opacity: var(--arch-flow-opacity);
+}
+#arch-arrow-robot path,
+#arch-mobile-robot path {
+  fill: var(--arch-robot);
+  fill-opacity: var(--arch-flow-opacity);
+}
+#arch-arrow-action path,
+#arch-mobile-action path {
+  fill: var(--arch-action);
+  fill-opacity: var(--arch-flow-opacity);
+}
+#arch-arrow-backend path,
+#arch-mobile-backend path {
+  fill: var(--arch-backend);
+  fill-opacity: var(--arch-flow-opacity);
+}
+
+.zone,
+.process-panel,
+.node,
+.backend-island {
   min-width: 0;
   border: 1px solid var(--arch-line);
   border-radius: 8px;
   background: var(--arch-paper);
+}
+
+.zone {
+  position: absolute;
   box-shadow: var(--arch-shadow);
 }
 
-.runtime-band {
-  display: grid;
-  gap: 8px;
-  padding: 10px;
+.host-zone {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 126px;
+  border-color: rgba(46, 95, 167, 0.55);
 }
 
-.flow-container,
-.policy-container {
-  padding: 10px;
+.policy-zone {
+  top: 170px;
+  left: 0;
+  right: 0;
+  height: 800px;
+  border-color: rgba(8, 127, 140, 0.45);
 }
 
-.host-band { border-color: rgba(46, 95, 167, 0.55); }
-.process-band { border-color: rgba(8, 127, 140, 0.45); }
-.flow-container { border-color: rgba(8, 127, 140, 0.45); }
-.robot-band { border-color: rgba(154, 106, 29, 0.58); }
+.robot-zone {
+  top: 1005px;
+  left: 0;
+  right: 0;
+  height: 115px;
+  border-color: rgba(154, 106, 29, 0.58);
+}
 
-.band-label,
-.container-label {
+.zone-label,
+.process-title {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 10px;
   margin: 0;
   padding-bottom: 4px;
   border-bottom: 1px solid var(--arch-line);
@@ -413,113 +433,72 @@
   color: var(--arch-main);
 }
 
-.node-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 92px minmax(0, 1fr);
-  gap: 8px;
-  align-items: center;
-}
-
-.node-row.two-col {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.flow-step {
-  --step-color: var(--arch-main);
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: 10px;
-  padding: 10px;
-  border-color: var(--arch-line);
-}
-
-.command-step {
-  --step-color: var(--arch-host);
-  border-color: rgba(46, 95, 167, 0.58);
-}
-
-.engine-step,
-.return-step {
-  --step-color: var(--arch-engine);
-  border-color: rgba(47, 111, 78, 0.58);
-}
-
-.robot-step {
-  --step-color: var(--arch-robot);
-  border-color: rgba(154, 106, 29, 0.58);
-}
-
-.publish-step {
-  --step-color: var(--arch-action);
-  border-color: rgba(179, 66, 66, 0.58);
-}
-
-.step-marker {
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  margin-top: 2px;
-  border-radius: 999px;
-  background: var(--step-color);
-  color: #ffffff;
-  font-family: var(--vp-font-family-mono);
-  font-size: 0.72rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.step-content {
-  min-width: 0;
-}
-
-.step-title {
-  margin: 0 0 8px;
-  color: var(--arch-ink);
+.process-title {
   font-size: 0.78rem;
-  font-weight: 800;
-  line-height: 1.35;
+}
+
+.process-panel {
+  position: absolute;
+}
+
+.main-panel {
+  top: 56px;
+  left: 16px;
+  width: calc(43% - 16px);
+  height: 620px;
+  border-color: rgba(8, 127, 140, 0.55);
+}
+
+.engine-panel {
+  top: 56px;
+  right: 16px;
+  width: calc(43% - 16px);
+  height: 620px;
+  border-color: rgba(47, 111, 78, 0.55);
 }
 
 .node {
+  position: absolute;
+  z-index: 3;
   display: grid;
   align-content: start;
   gap: 2px;
-  min-width: 0;
   padding: 8px;
   overflow-wrap: anywhere;
-  border: 1px solid var(--arch-line);
-  border-radius: 6px;
   background: #fbfdff;
 }
 
 .node strong {
   color: var(--arch-ink);
-  font-size: 0.75rem;
-  line-height: 1.35;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .node span,
 .node em {
   min-width: 0;
   color: var(--arch-muted);
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .node em {
   display: inline-flex;
   width: fit-content;
   max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
   margin-top: 3px;
   padding: 2px 6px;
   border-radius: 999px;
   background: #eef4f8;
   color: #344155;
   font-family: var(--vp-font-family-mono);
-  font-size: 0.58rem;
+  font-size: 0.55rem;
   font-weight: 700;
 }
 
@@ -533,7 +512,7 @@
   border-radius: 999px;
   background: #ffffff;
   font-family: var(--vp-font-family-mono);
-  font-size: 0.56rem !important;
+  font-size: 0.52rem !important;
   font-weight: 800 !important;
   line-height: 1.2 !important;
 }
@@ -543,108 +522,105 @@
 .engine-tag { color: var(--arch-engine) !important; }
 .robot-tag { color: var(--arch-robot) !important; }
 
-.h-arrow,
-.v-arrow,
-.path-arrow {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  color: var(--arch-muted);
+.host-source {
+  top: 42px;
+  left: 20px;
+  width: 38%;
+  bottom: 14px;
 }
 
-.h-arrow {
-  min-height: 28px;
+.host-command {
+  top: 42px;
+  right: 20px;
+  width: 38%;
+  bottom: 14px;
 }
 
-.v-arrow,
-.path-arrow {
-  min-height: 42px;
+.main-service {
+  top: 54px;
+  left: 18px;
+  width: calc(50% - 26px);
+  height: 76px;
 }
 
-.h-arrow::before,
-.v-arrow::before,
-.path-arrow::before {
-  content: "";
-  position: absolute;
-  display: block;
+.main-session {
+  top: 54px;
+  right: 18px;
+  width: calc(50% - 26px);
+  height: 76px;
 }
 
-.h-arrow::before {
-  left: 0;
-  right: 0;
-  top: 50%;
-  border-top: 2px solid currentColor;
+.main-requester {
+  top: 178px;
+  left: 18px;
+  right: 18px;
+  height: 88px;
 }
 
-.h-arrow::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid currentColor;
-  border-right: 2px solid currentColor;
-  transform: translateY(-50%) rotate(45deg);
+.main-actions {
+  top: 325px;
+  left: 18px;
+  right: 18px;
+  height: 94px;
 }
 
-.v-arrow::before,
-.path-arrow::before {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  border-left: 2px solid currentColor;
+.main-loop {
+  bottom: 28px;
+  left: 18px;
+  width: calc(50% - 26px);
+  height: 78px;
 }
 
-.v-arrow::after,
-.path-arrow::after {
-  content: "";
-  position: absolute;
-  left: calc(50% - 4px);
-  bottom: 0;
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
+.main-robot-client {
+  bottom: 28px;
+  right: 18px;
+  width: calc(50% - 26px);
+  height: 78px;
 }
 
-.h-arrow span,
-.v-arrow span,
-.path-arrow span {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  max-width: min(100%, 260px);
-  padding: 3px 8px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  background: var(--arch-paper);
-  font-family: var(--vp-font-family-mono);
-  font-size: 0.58rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: center;
-  overflow-wrap: anywhere;
+.engine-worker {
+  top: 54px;
+  left: 18px;
+  right: 18px;
+  height: 98px;
 }
 
-.command-flow { color: var(--arch-host); }
-.main-flow { color: var(--arch-main); }
-.engine-flow { color: var(--arch-engine); }
-.robot-flow { color: var(--arch-robot); }
-.action-flow { color: var(--arch-action); }
+.engine-backend {
+  top: 210px;
+  left: 18px;
+  right: 18px;
+  height: 220px;
+}
 
-.subnode-flow {
+.engine-robot-client {
+  bottom: 28px;
+  left: 18px;
+  right: 18px;
+  height: 78px;
+}
+
+.robot-sensors {
+  top: 44px;
+  left: 20px;
+  width: calc(50% - 28px);
+  bottom: 14px;
+}
+
+.robot-command {
+  top: 44px;
+  right: 20px;
+  width: calc(50% - 28px);
+  bottom: 14px;
+}
+
+.subnode-grid {
   display: grid;
-  grid-template-columns: minmax(74px, 1fr) 16px minmax(74px, 1fr) 16px minmax(74px, 1fr) 16px minmax(84px, 1fr);
-  gap: 5px;
-  align-items: center;
-  margin-top: 6px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
 }
 
-.subnode-flow span {
+.subnode-grid span {
   display: grid;
   align-items: center;
   min-height: 34px;
@@ -653,39 +629,24 @@
   border-radius: 6px;
   background: #fbfdff;
   color: var(--arch-muted);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
   line-height: 1.25;
   text-align: center;
 }
 
-.subnode-flow i {
-  position: relative;
-  display: block;
-  height: 2px;
-  background: var(--arch-engine);
-}
-
-.subnode-flow i::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: -3px;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid var(--arch-engine);
-  border-right: 2px solid var(--arch-engine);
-  transform: rotate(45deg);
-}
-
 .backend-island {
+  position: absolute;
+  z-index: 3;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, 1fr));
   gap: 8px;
+  height: 74px;
   padding: 10px;
-  border: 1px solid rgba(101, 84, 168, 0.5);
-  border-radius: 8px;
-  background: var(--arch-paper);
+  border-color: rgba(101, 84, 168, 0.5);
 }
 
 .backend-island span {
@@ -697,7 +658,7 @@
   border-radius: 6px;
   background: #fbfdff;
   color: var(--arch-muted);
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 700;
   line-height: 1.25;
   text-align: center;
@@ -710,6 +671,70 @@
   color: var(--arch-ink);
   text-align: left;
 }
+
+.flow-label,
+.flow-marker {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.flow-label {
+  display: inline-flex;
+  max-width: min(100%, 220px);
+  padding: 3px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: var(--arch-paper);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.55rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+  transform: translate(-50%, -50%);
+}
+
+.flow-marker {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+}
+
+.command-flow { color: var(--arch-host); }
+.main-flow { color: var(--arch-main); }
+.engine-flow { color: var(--arch-engine); }
+.robot-flow { color: var(--arch-robot); }
+.backend-flow { color: var(--arch-backend); }
+.action-flow { color: var(--arch-action); }
+
+.command-marker { background: var(--arch-host); }
+.engine-marker { background: var(--arch-engine); }
+.robot-marker { background: var(--arch-robot); }
+.action-marker { background: var(--arch-action); }
+
+.label-service { left: 43%; top: 150px; }
+.label-engine { left: 50%; top: 392px; }
+.label-action-list { left: 50%; top: 552px; }
+.label-processed { left: 29%; top: 698px; }
+.label-tick { left: 34%; top: 840px; }
+.label-observation { left: 28%; top: 990px; }
+.label-observation-policy { left: 77%; top: 700px; }
+.label-command-out { left: 74%; top: 990px; }
+.label-backend { left: 67%; top: 860px; }
+.marker-1 { left: 42%; top: 168px; }
+.marker-2 { left: 51%; top: 415px; }
+.marker-3 { left: 39%; top: 990px; }
+.marker-4 { left: 50%; top: 586px; }
+.marker-5 { left: 64%; top: 990px; }
 
 .flow-list {
   display: grid;
@@ -766,53 +791,137 @@
 }
 
 @media (max-width: 720px) {
-  .node-row,
-  .node-row.two-col,
+  .diagram-stage {
+    height: 1750px;
+  }
+
+  .desktop-flow {
+    display: none;
+  }
+
+  .mobile-flow {
+    display: block;
+  }
+
+  .command-line { marker-end: url(#arch-mobile-command); }
+  .engine-line { marker-end: url(#arch-mobile-engine); }
+  .robot-line { marker-end: url(#arch-mobile-robot); }
+  .action-line { marker-end: url(#arch-mobile-action); }
+  .backend-line { marker-end: url(#arch-mobile-backend); }
+
+  .host-zone {
+    height: 250px;
+  }
+
+  .policy-zone {
+    top: 290px;
+    height: 1190px;
+  }
+
+  .robot-zone {
+    top: 1530px;
+    height: 220px;
+  }
+
+  .host-source,
+  .host-command,
+  .robot-sensors,
+  .robot-command {
+    left: 20px;
+    right: 20px;
+    width: auto;
+    bottom: auto;
+  }
+
+  .host-source { top: 44px; height: 84px; }
+  .host-command { top: 150px; height: 84px; }
+  .robot-sensors { top: 44px; height: 74px; }
+  .robot-command { top: 134px; height: 74px; }
+
+  .main-panel,
+  .engine-panel {
+    left: 16px;
+    right: 16px;
+    width: auto;
+  }
+
+  .main-panel {
+    top: 52px;
+    height: 525px;
+  }
+
+  .engine-panel {
+    top: 610px;
+    height: 395px;
+  }
+
+  .main-service,
+  .main-session,
+  .main-requester,
+  .main-actions,
+  .main-loop,
+  .main-robot-client,
+  .engine-worker,
+  .engine-backend,
+  .engine-robot-client {
+    left: 18px;
+    right: 18px;
+    width: auto;
+    bottom: auto;
+  }
+
+  .main-service { top: 48px; height: 62px; }
+  .main-session { top: 128px; height: 62px; }
+  .main-requester { top: 208px; height: 74px; }
+  .main-actions { top: 292px; height: 74px; }
+  .main-loop { top: 382px; height: 62px; }
+  .main-robot-client { top: 456px; height: 62px; }
+
+  .engine-worker { top: 48px; height: 76px; }
+  .engine-backend { top: 148px; height: 166px; }
+  .engine-robot-client { top: 330px; height: 64px; }
+
+  .subnode-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .subnode-grid span {
+    min-height: 24px;
+    padding: 3px 6px;
+  }
+
   .backend-island {
+    height: 160px;
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .h-arrow {
-    min-height: 42px;
+  .backend-island span {
+    min-height: 24px;
   }
 
-  .h-arrow::before {
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    right: auto;
-    border-top: 0;
-    border-left: 2px solid currentColor;
+  .label-service { left: 50%; top: 265px; }
+  .label-engine { left: 64%; top: 882px; }
+  .label-action-list { left: 36%; top: 882px; }
+  .label-processed,
+  .label-tick {
+    display: none;
   }
-
-  .h-arrow::after {
-    right: auto;
-    left: calc(50% - 4px);
-    top: auto;
-    bottom: 0;
-    transform: rotate(45deg);
+  .label-observation { left: 42%; top: 1518px; }
+  .label-observation-policy {
+    display: none;
   }
-
-  .subnode-flow {
-    grid-template-columns: minmax(0, 1fr);
+  .label-command-out { left: 72%; top: 1518px; }
+  .label-backend {
+    display: none;
   }
-
-  .subnode-flow i {
-    width: 2px;
-    height: 18px;
-    margin: 0 auto;
+  .marker-1 { left: 58%; top: 314px; }
+  .marker-2 { left: 56%; top: 888px; }
+  .marker-3 { left: 34%; top: 1518px; }
+  .marker-4 {
+    display: none;
   }
-
-  .subnode-flow i::after {
-    top: auto;
-    right: -3px;
-    bottom: 0;
-    transform: rotate(135deg);
-  }
-
-  .backend-island .backend-label {
-    grid-column: auto;
-  }
+  .marker-5 { left: 64%; top: 1518px; }
 }
 
 @media (max-width: 520px) {
@@ -820,16 +929,8 @@
     padding: 12px;
   }
 
-  .flow-step {
-    grid-template-columns: 24px minmax(0, 1fr);
-    gap: 8px;
-    padding: 8px;
-  }
-
-  .step-marker {
-    width: 22px;
-    height: 22px;
-    font-size: 0.66rem;
+  .legend span {
+    white-space: normal;
   }
 }
 </style>

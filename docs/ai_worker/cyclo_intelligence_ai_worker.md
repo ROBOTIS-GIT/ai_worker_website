@@ -130,11 +130,11 @@ Cyclo Brain splits each policy backend into two processes.
 | `main-runtime` | Receives external inference commands, owns session state, manages the action chunk buffer, and publishes robot command topics. |
 | `engine-process` | Loads the policy model, reads robot observations, and computes action chunks. It does not publish robot commands directly. |
 
-The architecture map below shows the command, observation, engine, buffer, and action flow inside the manual page width.
+The architecture map below shows how Host, `main-runtime`, `engine-process`, the open-source backend island, and Robot are connected.
 
 <CycloBrainArchitecture />
 
-The runtime flow is:
+The data flow is:
 
 1. The UI sends a `LOAD`, `START`, `STOP`, or `UNLOAD` style command.
 2. `main-runtime` receives the command and updates the session state.

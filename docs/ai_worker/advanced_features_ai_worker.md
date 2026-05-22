@@ -48,7 +48,20 @@ Cyclo Manager is an integrated control system for managing and controlling the r
 Learn More About Cyclo Manager
 </a>
 
-### 4. ROBOTIS Vuer
+### 4. Cyclo Intelligence
+
+Cyclo Intelligence is the AI workflow system for recording robot data, converting and managing datasets, training policies, and deploying models through the Cyclo Brain inference runtime.
+
+- **Record Pipeline**: Collect robot episodes, preserve rosbag2 data, and convert MCAP/MP4 recordings into LeRobot dataset outputs through `cyclo_data`.
+- **Dataset Management**: Merge datasets, delete episodes, convert recordings, and manage Hugging Face upload/download operations from the UI.
+- **Model Deployment**: Select LeRobot or GR00T policy backends, manage Docker runtime status, and run inference with task instructions and policy checkpoints.
+- **Cyclo Brain Runtime**: Run policy backends with separated `main-runtime` and `engine-process` services for model loading, action chunk generation, and robot command publishing.
+
+<a href="/ai_worker/cyclo_intelligence_ai_worker" class="button-shortcut">
+Learn More About Cyclo Intelligence
+</a>
+
+### 5. ROBOTIS Vuer
 
 ROBOTIS Vuer lets AI Worker use a **Meta Quest 3** headset together with a browser-based **Vuer** client for immersive robot interaction. The headset connects to the robot-side ROS 2 system through **HTTPS/WSS**, allowing the system to exchange pose, visualization, and control data in real time.
 

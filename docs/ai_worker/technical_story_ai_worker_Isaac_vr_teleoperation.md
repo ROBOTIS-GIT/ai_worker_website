@@ -19,7 +19,7 @@
 
 ## 1. Overview
 
-This project implements a DDS-based bridge that connects external ROS 2 command topics to the SH5 AI Worker model running in Isaac Sim. It allows the SH5 control stack to be tested without immediate access to physical hardware and can be used to prepare virtual task environments for Physical AI and imitation learning.
+This project implements a DDS-based bridge that connects external ROS 2 command topics to the SH5 AI Worker model running in Isaac Sim. It allows the SH5 control stack to be tested without immediate access to physical hardware and can be used to prepare virtual task environments for imitation learning toward Physical AI applications.
 
 The main script, `sh5_dds_bringup.py`, loads the SH5 model with `FFW_SH5.py`, receives `JointTrajectory` and `/cmd_vel` commands through `robotis_dds_python`, and applies them to the simulated SH5 articulation.
 
@@ -92,7 +92,7 @@ The DDS domain ID must match the external ROS 2 containers that publish the comm
 ### Step 2: Connect the VR Interface
 
 ::: info
-For the complete VR device setup, Vuer page connection, and operation procedure, refer to the [AI Worker VR Teleoperation Guide](https://ai.robotis.com/ai_worker/operation_vr_teleoperation_ai_worker.html).
+For the complete VR device setup, Vuer page connection, and operation procedure, refer to the [AI Worker VR Teleoperation Guide](./operation_vr_teleoperation_ai_worker.md).
 :::
 
 Enter the `robotis_applications` Docker container:

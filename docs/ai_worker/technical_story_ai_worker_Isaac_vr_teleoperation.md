@@ -19,18 +19,15 @@
 
 ## 1. Overview
 
-This project implements a DDS-based bridge that connects external ROS 2 command topics to the SH5 AI Worker model running in Isaac Sim.
+This project implements a DDS-based bridge that connects external ROS 2 command topics to the SH5 AI Worker model running in Isaac Sim. It allows the SH5 control stack to be tested without immediate access to physical hardware and can be used to prepare virtual task environments for Physical AI and imitation learning.
 
-The main script is `sh5_dds_bringup.py`. It loads the SH5 model with the `FFW_SH5.py` configuration, creates DDS readers and writers with `robotis_dds_python`, receives `JointTrajectory` and `/cmd_vel` commands, and applies them to the simulated SH5 articulation.
-
-In this setup, `cyclo_motion_controller` publishes retargeted arm, hand, and lift `JointTrajectory` commands, while `ffw_teleop/mobile_teleop` publishes `/cmd_vel` for the swerve mobile base. Isaac Sim becomes the command target for testing SH5 base movement and manipulation behavior in simulation.
+The main script, `sh5_dds_bringup.py`, loads the SH5 model with `FFW_SH5.py`, receives `JointTrajectory` and `/cmd_vel` commands through `robotis_dds_python`, and applies them to the simulated SH5 articulation.
 
 The core idea is simple:
 
-1. External ROS 2 controllers publish SH5 command topics.
-2. `sh5_dds_bringup.py` receives them through `robotis_dds_python`.
-3. The commands are mapped to the SH5 Isaac Sim articulation and swerve drive joints.
-4. The SH5 model moves in simulation and publishes state topics for pose checking.
+1. ROS 2 controllers publish SH5 arm, hand, lift, and mobile base commands.
+2. `sh5_dds_bringup.py` receives the commands through the DDS SDK.
+3. The SH5 model moves in Isaac Sim and publishes state topics for pose checking.
 
 ### Key Packages and File Structure
 
@@ -166,10 +163,13 @@ ros2 run ffw_teleop mobile_teleop
 | Key | Command |
 | :---: | :--- |
 | `W` / `S` | Move forward / backward |
-| `Q` / `E` | Move left / right |
 | `A` / `D` | Turn left / right |
 | `Space` | Stop |
 | `Ctrl+C` | Quit |
+
+::: tip
+You can modify `mobile_teleop` to add custom key mappings and support freer base movement.
+:::
 
 ## 4. SH5 Model Configuration
 

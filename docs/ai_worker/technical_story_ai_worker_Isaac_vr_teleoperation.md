@@ -1,4 +1,4 @@
-# SH5 DDS Bridge for Isaac Sim VR Teleoperation
+# AI Worker SH5 Isaac Sim VR Teleoperation
 
 ### Full Demo
 
@@ -19,7 +19,7 @@
 
 ## 1. Overview
 
-This project implements a DDS-based bridge that connects external ROS 2 command topics to the SH5 AI Worker model running in Isaac Sim. It allows the SH5 control stack to be tested without immediate access to physical hardware and can be used to prepare virtual task environments for imitation learning toward Physical AI applications.
+This project implements a DDS-based bridge that connects external ROS 2 command topics to the AI Worker SH5 model running in Isaac Sim. It allows the SH5 control stack to be tested without immediate access to physical hardware and can be used to prepare virtual task environments for imitation learning toward Physical AI applications.
 
 The main script, `sh5_dds_bringup.py`, loads the SH5 model with `FFW_SH5.py`, receives `JointTrajectory` and `/cmd_vel` commands through `robotis_dds_python`, and applies them to the simulated SH5 articulation.
 

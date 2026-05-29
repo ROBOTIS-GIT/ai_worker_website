@@ -70,6 +70,7 @@ A humanoid only earns the name when motion survives the real world: contact, bac
 ## Teaser Video
 
 <YouTube videoId="eFRftVHCwUs" />
+<YouTube videoId="2xAJzQ8V9p8" />
 
 ## Reinforcement Learning
 
@@ -94,8 +95,8 @@ Through this pipeline, policies trained from demonstrations can be seamlessly tr
 <img src="/ai_sapiens/k0_exploded_view.png" alt="K0 exploded view" width="600" />
 
 ### Physical Specification
-K0 is a humanoid platform with a **height of 1300 mm** and a **weight of 34 kg**.  
-It features a **total of 23 degrees of freedom**, **5 in each arm**, **6 in each leg**, and **1 in the waist**.  
+K0 is a humanoid platform with a **height of 1300 mm** and a **weight of 34 kg**.
+It features a **total of 23 degrees of freedom**, **5 in each arm**, **6 in each leg**, and **1 in the waist**.
 The system supports a **maximum arm payload of 3 kg**.
 
 | Item | Specification |
@@ -106,7 +107,7 @@ The system supports a **maximum arm payload of 3 kg**.
 | Max arm payload | 3 kg |
 
 ### Actuators
-**AI Sapiens K0** is powered by **DYNAMIXEL-Q** actuators, including the **QM-060** and **QM-080**, which are part of ROBOTIS’s latest generation of **QDD** (Quasi-Direct Drive) actuators. Building on its long-standing expertise in robotic actuators, ROBOTIS developed QDD technology and applied it to humanoid systems such as AI Sapiens.  
+**AI Sapiens K0** is powered by **DYNAMIXEL-Q** actuators, including the **QM-060** and **QM-080**, which are part of ROBOTIS’s latest generation of **QDD** (Quasi-Direct Drive) actuators. Building on its long-standing expertise in robotic actuators, ROBOTIS developed QDD technology and applied it to humanoid systems such as AI Sapiens.
 
 **DYNAMIXEL-Q** is a **QDD (Quasi-Direct Drive)** actuator that combines a **low gear reduction ratio** with a **high-torque** motor and integrated control electronics. It enables **high backdrivability**, **low impedance**, and **precise torque control**, making it well-suited for dynamic and compliant motions in humanoid and robotic applications.
 
@@ -171,7 +172,7 @@ For computation, K0 is equipped with a processor featuring **Cortex-A76** cores 
 
 ### Interfaces
 
-In terms of connectivity, it supports **Wi-Fi 5** and **Bluetooth 5.0** (RTL8822CE).  
+In terms of connectivity, it supports **Wi-Fi 5** and **Bluetooth 5.0** (RTL8822CE).
 The platform provides multiple interfaces, including **2 Ethernet** ports, **USB 2.0 ×2** (USB-A), **USB 3.0 ×2** (1 USB-C, 1 USB-A), and **power outputs** of **24 V** (up to **10 A**) and **12 V** (up to **10 A**).
 
 | Item | Specification |
@@ -193,7 +194,7 @@ K0 is powered by a **46.8 V**, **9000 mAh** battery.
 ## Costume Options
 
 
-AI Sapiens lets you create a unique humanoid using a variety of customizable exterior parts, including hats, head covers, and body covers.  
+AI Sapiens lets you create a unique humanoid using a variety of customizable exterior parts, including hats, head covers, and body covers.
 
 :::info
 The default front and rear body covers and head are provided as **open source 3D printable files**, giving you the flexibility to modify and extend the design as needed.
@@ -243,8 +244,8 @@ Step-by-step tutorials from bring-up to policy deployment will be added so new u
 
 ## More Information and Questions
 
->If you have any questions or would like more information, please reach out on our Discord and we will respond as quickly as possible.  
->You can also learn more about ROBOTIS products and services on our Discord.  
+>If you have any questions or would like more information, please reach out on our Discord and we will respond as quickly as possible.
+>You can also learn more about ROBOTIS products and services on our Discord.
 >[Join our Discord](https://discord.gg/robotis)
 </div>
 

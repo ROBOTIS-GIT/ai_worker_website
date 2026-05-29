@@ -5,8 +5,8 @@
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0; border-radius: 8px; border: 2px solid #1e3c72;">
   <iframe
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src=""
-    title="SH5 Isaac Sim VR Teleoperation Demo"
+    src="https://www.youtube.com/embed/Mp-OEt9UeDU"
+    title="AI Worker with ROBOTIS Hand Isaac Sim VR Teleoperation Demo"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
@@ -14,7 +14,7 @@
 </div>
 
 <p style="text-align: center; font-style: italic; color: #888; font-size: 14px; margin-bottom: 20px;">
-  This video demonstrates SH5 VR and keyboard teleoperation in Isaac Sim, including object pick-and-place and mobile manipulation tasks in kitchen, warehouse, and other virtual environments.
+  This video demonstrates AI Worker SH5 VR and keyboard teleoperation in Isaac Sim, including pick-and-place and mobile manipulation in virtual environments.
 </p>
 
 ## 1. Overview

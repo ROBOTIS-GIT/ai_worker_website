@@ -162,13 +162,14 @@ The system supports a **maximum arm payload of 3 kg**.
 
 ### Compute
 
-For computation, K0 is equipped with a processor featuring **Cortex-A76** cores (**4 cores**, up to **2.4 GHz**) and **Cortex-A55** cores (**4 cores**, up to **1.8 GHz**), a **Mali-G610 GPU**, and a dedicated **NPU** delivering up to **6 TOPS** of AI performance with support for **int4/int8/int16/FP16/BF16/TF32** precisions.
+For computation, K0 is equipped with **Jetson Orin NX 16GB (ONX 16GB)**, featuring an **NVIDIA Ampere GPU**, an **Arm Cortex-A78AE v8.2 64-bit CPU**, and AI performance of up to **100 Sparse INT8 TOPS** / **50 Dense INT8 TOPS**.
 
 | Item | Specification |
 |:-----|:----------------|
-| CPU | Cortex-A76 ×4 (up to 2.4 GHz), Cortex-A55 ×4 (up to 1.8 GHz) |
-| GPU | Mali-G610 |
-| NPU | 6TOPS NPU(int4/int8/int16/FP16/BF16/TF32) |
+| Module | Jetson Orin NX 16GB (ONX 16GB) |
+| CPU | Arm Cortex-A78AE v8.2 64-bit CPU |
+| GPU | NVIDIA Ampere GPU |
+| AI Performance | Up to 100 Sparse INT8 TOPS / 50 Dense INT8 TOPS |
 
 ### Interfaces
 

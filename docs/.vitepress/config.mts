@@ -159,8 +159,8 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'Isaac GR00T', link: '/ai_worker/technical_story_ai_worker_Isaac_GR00T' },
-                { text: 'Nav2', link: '/ai_worker/technical_story_ai_worker_Nav2' }
-
+                { text: 'Nav2', link: '/ai_worker/technical_story_ai_worker_Nav2' },
+                { text: 'Isaac VR Teleoperation', link: '/ai_worker/technical_story_ai_worker_Isaac_vr_teleoperation' }
               ]
             }
           ]

@@ -86,7 +86,7 @@ The page is organized around the main editor areas and runtime controls.
 | Area | What It Does |
 | --- | --- |
 | Left palette | Shows available node types. |
-| Update Node List button | Refreshes the palette from the running BT node by calling `/bt/nodes/catalog`. Use this when you add, remove, or edit custom node files. |
+| Update Node List button | Refreshes the palette from the running BT node. Use this when you add, remove, or edit custom node files. |
 | Canvas | Drag nodes, connect edges, move nodes, auto-layout the graph, and collapse or expand control-node subtrees. |
 | Right parameter panel | Edit the selected node name and node parameters. |
 | Header controls | Load XML, Save As, Undo, Redo, and Auto Layout. |

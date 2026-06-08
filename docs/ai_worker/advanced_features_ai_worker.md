@@ -13,9 +13,9 @@ Behavior Trees provide a modular, hierarchical framework for organizing robot co
 - **Task Decomposition**: Break complex tasks into manageable subtasks
 - **Reactive Control**: Respond dynamically to sensor inputs and state changes
 - **Reusability**: Share behaviors across different tasks and scenarios
-- **Visual Design with Groot 2**: Design and edit behavior trees graphically using Groot 2, then export to XML format for execution
+- **BT Manager Workflow**: Design, save, load, and run behavior trees directly from Cyclo Intelligence
 
-Behavior Trees are particularly powerful when combined with imitation learning models, where learned policies serve as action nodes within a larger decision-making structure. The AI Worker uses XML-based behavior tree definitions created with [Groot 2](https://www.behaviortree.dev/groot), providing a visual workflow for designing complex robot behaviors.
+Behavior Trees are particularly powerful when combined with imitation learning models, where learned policies run as part of a larger decision-making structure. AI Worker uses Cyclo Intelligence `BT Manager` as the primary editor and runner for XML-based behavior trees. [Groot 2](https://www.behaviortree.dev/groot) can still be used as optional background or inspection tooling, but the normal workflow is handled in the Cyclo Intelligence web UI.
 
 <a href="/ai_worker/behavior_tree_ai_worker" class="button-shortcut">
 Learn More About Behavior Trees

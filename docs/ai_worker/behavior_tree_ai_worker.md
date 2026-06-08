@@ -11,9 +11,9 @@ tree can combine rule-based robot motions, wait steps, mobile-base rotation,
 and learned policy inference into one repeatable task sequence.
 
 BT Manager replaces the older workflow where a user had to create XML in an
-external editor (Groot2) and launch a separate behavior-tree package manually. The UI
-builds the graph, serializes it to XML, sends it to the runtime, and shows
-runtime status while the tree is executing.
+external editor (Groot 2) and launch a separate behavior-tree package manually.
+The UI builds the graph, serializes it to XML, sends it to the runtime, and
+shows runtime status while the tree is executing.
 
 The runtime has four main parts.
 
@@ -52,7 +52,7 @@ ros2 launch orchestrator cyclo_intelligence_bringup.launch.py
 Or, use shortcut command:
 
 ```bash
-cyclo_intelligece
+cyclo_intelligence
 ```
 
 Open the web UI in a browser.
@@ -75,6 +75,22 @@ pose, and policy checkpoint before pressing `Start`.
 The BT Manager `BT Node ON` button starts the container's `bt_node` service. In
 the current implementation, that service runs `ros2 launch orchestrator
 bt_node.launch.py` with the launch file default robot type, `ffw_sg2_rev1`.
+
+### 3. Prepare A Cyclo Brain Backend
+
+:::info
+This step is required only when your tree uses `SendCommand` nodes for policy
+inference.
+:::
+
+Open the Cyclo Intelligence `Inference` page, select the backend and model
+family that match the tree, and start the matching Docker backend. Check that
+both `Main` and `Engine` are `Up` before running the behavior tree.
+
+The backend does not need to have a model loaded before the tree starts if the
+tree begins with `SendCommand` and `command="LOAD"`. The `policy_path` in that
+node must still be a value that the backend can access, the same as the
+`Policy Path` field on the Inference page.
 
 ## BT Manager UI
 <img src="/advanced_features/behavior_tree/bt_manager_page.png" alt="Web UI" style="width: 100%; ">
@@ -156,8 +172,8 @@ The bottom runtime bar has two separate control groups.
 | --- | --- |
 | `ON` | Starts the `bt_node` s6 service. This starts the ROS 2 BT runtime process. |
 | `OFF` | Stops the `bt_node` service. It is enabled only when the runtime is stopped. |
-| `Start` | Serializes the current graph and calls `/bt/load_and_run`. |
-| `Stop` | Calls `/bt/set_running` with `false`, resets the tree, and triggers inference cleanup. |
+| `Start` | Serializes the current graph, calls `/bt/load_and_run`, and starts ticking the root node. |
+| `Stop` | Calls `/bt/set_running` with `false`, resets the tree, and sends inference cleanup for running policy commands. |
 
 ## Basic Workflow
 
@@ -285,7 +301,29 @@ Only robot configs with a mobile action group can use `Rotate` directly.
 | `lift_position` | Target lift position. |
 | `duration` | Trajectory duration in seconds. |
 
-:::info
+Position fields are entered as list text. Use a Python/JSON-style list, for
+example `[0.0, 0.35]`. The values are target joint positions for the selected
+group, and `duration` is in seconds.
+
+The order and length of each list must match the active robot configuration.
+For arms, include the gripper value only when the robot configuration includes
+the gripper in the arm joint group. When you are unsure about the order, check
+the example tree or the robot configuration used by the running BT node before
+commanding the real robot.
+
+Example XML:
+
+```xml
+<JointControl
+  name="MoveHeadReady"
+  enable_head="true"
+  head_positions="[0.0, 0.35]"
+  enable_arms="false"
+  enable_lift="false"
+  duration="3.0"/>
+```
+
+::: info
 At least one group must be enabled. If all groups are disabled, `JointControl` construction fails and the tree cannot load.
 :::
 
@@ -297,7 +335,7 @@ At least one group must be enabled. If all groups are disabled, `JointControl` c
 | --- | --- |
 | `command` | One of `LOAD`, `RESUME`, `STOP`, `CLEAR`. |
 | `model` | Policy model/backend choice, such as `lerobot:act` or `groot:n17`. |
-| `policy_path` | Policy checkpoint path. Use the container path under `/workspace/model/...`. |
+| `policy_path` | Hugging Face repo ID or policy checkpoint path. Use the same value you would enter in the Inference page `Policy Path` field. |
 | `task_instruction` | Language instruction for language-conditioned policies. |
 | `inference_hz` | Model inference frequency. |
 | `control_hz` | Robot command publishing frequency. |
@@ -307,16 +345,19 @@ The parameter panel disables fields that are not meaningful for the selected
 command. For example, `STOP` only needs the `command` field.
 
 ::: info
-Cyclo Intelligence mounts the host workspace into the container as
-`/workspace`. When setting `policy_path`, enter the container path instead of a
-host shell path such as `~/cyclo_intelligence/...`.
+When setting `policy_path`, enter a path that is visible inside the policy
+backend container, not a host shell path such as `~/cyclo_intelligence/...`.
 
-Use one of these default model roots:
+For local checkpoints copied into the default backend checkpoint folders, use
+one of these container roots:
 
 ```text
-/workspace/model/groot/your_model_path
-/workspace/model/lerobot/your_model_path
+/policy_checkpoints/groot/your_model_path
+/policy_checkpoints/lerobot/your_model_path
 ```
+
+A Hugging Face repo ID can also be used when the selected backend supports
+loading from the Hub.
 :::
 
 ::: info
@@ -507,7 +548,7 @@ Built-in nodes that use this advanced pattern include:
 - `Rotate`
 - `SendCommand`
 
-### Custom Control Example
+### Custom Control Guidelines
 
 Create a custom control node only when you need behavior that existing controls
 cannot express. A control node must tick its children and return one of the BT
@@ -532,17 +573,11 @@ For custom controls:
 
 If you are new to BTs, review the basic concepts before building a large tree.
 
-The BehaviorTree.CPP introduction is a useful reference for the general model:
+The [BehaviorTree.CPP introduction](https://www.behaviortree.dev/docs/intro) is
+a useful reference for the general model.
 
-```text
-https://www.behaviortree.dev/docs/intro
-```
-
-Groot 2 is also useful for learning visual BT editing:
-
-```text
-https://www.behaviortree.dev/groot
-```
+[Groot 2](https://www.behaviortree.dev/groot) is also useful for learning visual
+BT editing.
 
 For normal AI Worker operation, use Cyclo Intelligence `BT Manager` as the
 primary editor and runner.

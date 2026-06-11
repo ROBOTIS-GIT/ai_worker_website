@@ -16,8 +16,8 @@ Its QP(Quadratic Programming)-based controller is especially useful because it d
 
 - `controller_type:=movel`**(Default)**: Generates interpolated arm motion from the current hand pose to the requested goal pose.
 - `controller_type:=movej`: Receives raw joint trajectories and republishes safer filtered trajectories for the robot.
-<!-- - `controller_type:=vr`: Continuously tracks live right and left task-space pose references from VR input.
-- `controller_type:=leader`: Converts leader-side motion into follower pose references and tracks them on the robot. -->
+- `controller_type:=bimanual_movel`: Runs a `MoveL` controller that can capture a rigid two-hand grasp and move the captured object with both arms together.
+- `controller_type:=bimanual_movej`: Runs a `MoveJ` controller that can preserve the captured relative pose between the two grippers while filtering raw joint trajectory commands.
 
 ## Understanding `MoveL` and `MoveJ`
 
@@ -28,6 +28,14 @@ Its QP(Quadratic Programming)-based controller is especially useful because it d
 - `MoveJ` means "move in joint space." You command target joint values and an interpolation time, and the controller generates a smooth motion from the current joint configuration toward those values. Because the interpolation happens in joint space, the end-effector path is generally not a straight line and may appear curved.
 
 This is different from a simple pose or joint command that only describes the desired target state. `MoveL` and `MoveJ` are higher-level motion commands because they also imply a transition from the current state to the goal, including how long that transition should take.
+
+## Understanding Bimanual Controllers
+
+Bimanual controllers use the same `MoveL` and `MoveJ` command styles, but add a two-hand grasp mode for coordinated object motion. They are useful when the robot holds the same object with both grippers and the two hands should keep a fixed relative pose while the object moves.
+
+When grasp capture is enabled, the controller records the current transform between the configured right and left constraint links, such as the two gripper links. It then adds a 6D rigid grasp constraint to the QP solve, so the controller tracks the requested motion while also trying to preserve that captured relationship between the hands.
+
+In `bimanual_movel`, you can first command the right and left hands independently with normal `MoveL` goals. After capture, you command the virtual object pose, and the controller derives the right and left hand goals from the captured grasp. In `bimanual_movej`, the controller still receives raw right and left joint trajectories, and it can enable the same rigid grasp constraint manually or automatically after both grippers are commanded closed.
 
 ## Prerequisites
 
@@ -78,7 +86,6 @@ source ~/ros2_ws/install/setup.bash
    ```
 5. In RViz, set the fixed frame to `base_link` and add these displays:
    - `RobotModel`
-   - `TF`
    - `InteractiveMarkers`
 
 When `start_interactive_marker:=true`, the launch file starts two interactive markers:
@@ -178,172 +185,222 @@ ros2 topic pub --once /leader/joint_trajectory_command_broadcaster_left/raw_join
 
 ![aiw_movel](/simulation/ai_worker/aiw_movej.gif)
 
-<!-- ## Launch VR Controller
+## Launch Bimanual MoveL Controller
 
-This controller is used when VR teleoperation provides task-space pose references for both arms:
-
-```bash
-ros2 launch robotis_motion_controller_ros ai_worker_controller.launch.py controller_type:=vr
-```
-
-It tracks:
-
-- `/r_goal_pose`, `/l_goal_pose`
-- `/r_elbow_pose`, `/l_elbow_pose`
-
-and publishes follower arm trajectories to the standard right and left arm trajectory topics.
-
-The `vr` controller also runs `reference_checker_node`, waits for `/reactivate`, checks startup alignment, and then enables motion with a delayed activation sequence.
+Use `bimanual_movel` when both arms should keep a captured relative pose while moving an object. Before grasp capture is enabled, the right and left arms still accept normal `MoveL` commands on `/r_goal_move` and `/l_goal_move`. After grasp capture is enabled, the controller treats the current two-gripper relationship as a rigid grasp and follows the virtual object command on `/virtual_object_goal_move`.
 
 ```bash
-ros2 service call /reactivate std_srvs/srv/Trigger "{}"
+ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=bimanual_movel
 ```
 
-![vr_control](/simulation/ai_worker/ffw_sg2_vr_teleop.gif)
-
-## Launch Leader-Follower Retargeting Controller
-
-This controller is used to control the follower in task space from the leader configuration through retargeting:
+For RViz marker-based control, launch it with interactive markers:
 
 ```bash
-ros2 launch robotis_motion_controller_ros ai_worker_controller.launch.py controller_type:=leader
+ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=bimanual_movel start_interactive_marker:=true
 ```
 
-This launch starts:
+When `start_interactive_marker:=true`, the bimanual `MoveL` launch starts:
 
-- `leader_controller_node`
-- `vr_controller_node`
+- `right_goal_marker`, which publishes right-arm `MoveL` commands to `/r_goal_move` while grasp capture is inactive
+- `left_goal_marker`, which publishes left-arm `MoveL` commands to `/l_goal_move` while grasp capture is inactive
+- `virtual_object_marker`, which publishes object-level `MoveL` commands to `/virtual_object_goal_move` while grasp capture is active
 
-The leader controller performs forward kinematics from the leader joint trajectories, publishes follower-side pose references such as `/r_goal_pose` and `/l_goal_pose`, and the VR controller tracks those references on the robot. In this mode, the leader controller also requests `/reactivate` automatically when valid leader commands begin arriving.
+The grasp mode is controlled by `/capture_grasp`:
 
-![retargeting_control](/simulation/ai_worker/ffw_sg2_retargeting_control.gif) -->
+```bash
+ros2 topic pub --once /capture_grasp std_msgs/msg/Bool "{data: true}"
+```
+
+![bimanual_movel](/simulation/ai_worker/aiw_bimanual_movel.gif)
+
+To release the rigid grasp constraint:
+
+```bash
+ros2 topic pub --once /capture_grasp std_msgs/msg/Bool "{data: false}"
+```
+
+![bimanual_released](/simulation/ai_worker/aiw_bimanual_released.gif)
+
+After capture, move the virtual object instead of commanding the two hands separately:
+
+```bash
+ros2 topic pub --once /virtual_object_goal_move robotis_interfaces/msg/MoveL "{
+  pose: {
+    header: {frame_id: 'base_link'},
+    pose: {
+      position: {x: 0.35, y: 0.0, z: 0.95},
+      orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}
+    }
+  },
+  time_from_start: {sec: 3, nanosec: 0}
+}"
+```
+<!-- TODO : Implement real robot demo gif(with box) -->
+## Launch Bimanual MoveJ Controller
+
+Use `bimanual_movej` when the input is still raw right and left joint trajectories, but the two hands may need to hold a rigid relative pose during a grasp. It uses the same raw input and filtered output topics as `movej`, and adds grasp capture logic.
+
+```bash
+ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=bimanual_movej
+```
+
+Manual grasp capture uses the same `/capture_grasp` topic:
+
+```bash
+ros2 topic pub --once /capture_grasp std_msgs/msg/Bool "{data: true}"
+```
+
+```bash
+ros2 topic pub --once /capture_grasp std_msgs/msg/Bool "{data: false}"
+```
+
+The controller can also infer grasp mode from gripper commands. When both configured gripper joints stay above `gripper_grasp_threshold` for `gripper_grasp_hold_time`, it enables the rigid grasp constraint. When one gripper stays below that threshold for the hold time, it disables or partially releases the constraint and blends the arm back into follower control.
+
+Example input commands are the same shape as normal `movej`:
+
+```bash
+ros2 topic pub --once /leader/joint_trajectory_command_broadcaster_right/raw_joint_trajectory trajectory_msgs/msg/JointTrajectory "{
+  joint_names: ['arm_r_joint1', 'arm_r_joint2', 'arm_r_joint3', 'arm_r_joint4', 'arm_r_joint5', 'arm_r_joint6', 'arm_r_joint7', 'gripper_r_joint1'],
+  points: [
+    {
+      positions: [0.25, -0.15, 0.05, 0.0, 0.15, -0.05, 0.0, 1.0],
+      time_from_start: {sec: 3, nanosec: 0}
+    }
+  ]
+}"
+```
+
+```bash
+ros2 topic pub --once /leader/joint_trajectory_command_broadcaster_left/raw_joint_trajectory trajectory_msgs/msg/JointTrajectory "{
+  joint_names: ['arm_l_joint1', 'arm_l_joint2', 'arm_l_joint3', 'arm_l_joint4', 'arm_l_joint5', 'arm_l_joint6', 'arm_l_joint7', 'gripper_l_joint1'],
+  points: [
+    {
+      positions: [-0.25, 0.15, -0.05, 0.0, -0.15, 0.05, 0.0, 1.0],
+      time_from_start: {sec: 3, nanosec: 0}
+    }
+  ]
+}"
+```
 
 ## Launch Arguments
 
-- `controller_type`: Selects `movel`, `movej`, `vr`, or `leader`.
-- `start_interactive_marker`: Starts interactive markers for the `movel` controller.
-- `base_frame`: Frame used for the interactive markers. Default: `base_link`.
-- `right_controlled_link`, `left_controlled_link`: Controlled link names for the right and left markers.
-- `right_movel_topic`, `left_movel_topic`: `MoveL` topics published by the right and left markers.
-- `disable_gripper_collisions`: Disables collision checking only between the left and right grippers. Default: `false`.
-- `reactivate_service`: Reactivation service used by the `vr` and `leader` modes. Default: `/reactivate`.
-- `config_file`: Path to controller configuration yaml file.
-- `follower_urdf_path`, `follower_srdf_path`: Override the follower robot model files.
-- `leader_urdf_path`: Override the leader robot model file.
+Common launch arguments:
+
+- `controller_type`: Selects `movel`, `movej`, `bimanual_movel`, `bimanual_movej`, `vr`, or `leader`. Default: `movel`.
+- `config_file`: Controller configuration yaml file. Default: `cyclo_motion_controller_ros/config/ai_worker_config.yaml`.
+- `follower_urdf_path`: Follower robot URDF path.
+- `default_srdf_path`, `modified_srdf_path`: SRDF paths selected by `disable_gripper_collisions`.
+- `disable_gripper_collisions`: Uses the modified SRDF that disables collision checking between the configured gripper collision links. Default: `false`.
+
+Interactive marker arguments:
+
+- `start_interactive_marker`: Starts RViz interactive markers for `movel` and `bimanual_movel`. Default: `false`.
+- `base_frame`: Frame used for interactive marker goals. Default: `base_link`.
+- `marker_scale`: Interactive marker scale. Default: `0.2`.
+- `right_controlled_link`, `left_controlled_link`: Controlled link names used to initialize the right and left markers. Defaults: `end_effector_r_link`, `end_effector_l_link`.
+- `right_movel_topic`, `left_movel_topic`: Right and left `MoveL` topics used by normal and bimanual `MoveL`. Defaults: `/r_goal_move`, `/l_goal_move`.
+- `right_goal_pose_topic`, `left_goal_pose_topic`: PoseStamped topics published by the right and left markers. Defaults: `/r_goal_pose`, `/l_goal_pose`.
+
+Bimanual-only launch arguments:
+
+- `virtual_object_movel_topic`, `virtual_object_pose_topic`: Virtual-object `MoveL` and PoseStamped marker topics for `bimanual_movel`. Defaults: `/virtual_object_goal_move`, `/virtual_object_goal_pose`.
+- `grasp_capture_topic`: Bool topic used to enable or disable bimanual grasp capture. Default: `/capture_grasp`.
+
+Other controller modes:
+
+- `leader_urdf_path`: Leader robot URDF path used by `controller_type:=leader`.
+- `reactivate_topic`, `arm`, `hand`: Arguments used by the `vr` and `leader` modes.
 
 ## Key Topics and Services
 
-### Common
+### Common Topics
 
 - `/joint_states`: Measured robot state required by all controller modes
-- `/reactivate`: Service used to arm or re-arm the `vr` controller
+- `/leader/joint_trajectory_command_broadcaster_right/joint_trajectory`: Right arm command output used by all four motion controller modes
+- `/leader/joint_trajectory_command_broadcaster_left/joint_trajectory`: Left arm command output used by all four motion controller modes
 
-### MoveL
+### MoveL Family
 
-- `/r_goal_move`: Right arm `MoveL` command topic
-- `/l_goal_move`: Left arm `MoveL` command topic
-- `/r_gripper_pose`: Published current right gripper pose
-- `/l_gripper_pose`: Published current left gripper pose
+- `/r_goal_move`: Right arm `MoveL` command topic for `movel` and `bimanual_movel`
+- `/l_goal_move`: Left arm `MoveL` command topic for `movel` and `bimanual_movel`
+- `/r_gripper_pose`, `/l_gripper_pose`: Published current gripper poses
+- `/leader/joystick_controller_right/joint_trajectory`: Lift trajectory output when lift motion is enabled by `lift_vel_bound`
 
-### MoveJ
+### MoveJ Family
 
-- `/leader/joint_trajectory_command_broadcaster_right/raw_joint_trajectory`: Raw right-arm moveJ input
-- `/leader/joint_trajectory_command_broadcaster_left/raw_joint_trajectory`: Raw left-arm moveJ input
-- `/leader/joint_trajectory_command_broadcaster_right/joint_trajectory`: Filtered or tracked right-arm output trajectory
-- `/leader/joint_trajectory_command_broadcaster_left/joint_trajectory`: Filtered or tracked left-arm output trajectory
+- `/leader/joint_trajectory_command_broadcaster_right/raw_joint_trajectory`: Raw right-arm joint trajectory input for `movej` and `bimanual_movej`
+- `/leader/joint_trajectory_command_broadcaster_left/raw_joint_trajectory`: Raw left-arm joint trajectory input for `movej` and `bimanual_movej`
+- `/leader/joint_trajectory_command_broadcaster_right/joint_trajectory`: Filtered right-arm output trajectory, with gripper command preserved when present
+- `/leader/joint_trajectory_command_broadcaster_left/joint_trajectory`: Filtered left-arm output trajectory, with gripper command preserved when present
 
-<!-- ### VR and Leader
+### Bimanual Additions
 
-- `/r_goal_pose`: Right task-space goal pose
-- `/l_goal_pose`: Left task-space goal pose
-- `/r_elbow_pose`: Right elbow guidance topic
-- `/l_elbow_pose`: Left elbow guidance topic
-- `/reference_diverged`: Reference jump event from the checker node -->
+- `/capture_grasp`: Bool topic that enables or disables the rigid grasp constraint
+- `/virtual_object_goal_move`: Virtual-object `MoveL` command used by `bimanual_movel` after grasp capture
+- `/r_goal_pose`, `/l_goal_pose`: PoseStamped topics published by the right and left markers
+- `/virtual_object_goal_pose`: PoseStamped topic published by the virtual-object marker
+
+## Controller Parameters
+
+The main parameters live in `cyclo_motion_controller_ros/config/ai_worker_config.yaml`. The file is divided by controller name, so you usually tune only the block that matches the controller mode you are running.
+
+### Shared Parameters
+
+- `control_frequency`, `time_step`: Main control loop speed.
+- `trajectory_time`: Time field used when publishing output joint trajectories.
+- `weight_damping`: Regularization term that discourages unnecessarily large joint velocities.
+- `collision_buffer`, `collision_safe_distance`: Safety margins used for collision avoidance.
+- `slack_penalty`: Cost applied when the solver must relax constraints. Larger values enforce constraints more strictly.
+- `cbf_alpha`: Responsiveness of the barrier constraint. Larger values make the constraint act more like a full brake near a cliff, affecting the control input later and more abruptly as the motion gets very close to the constraint boundary.
+- `joint_state_timeout`: Maximum age of `/joint_states` before the controller holds commands.
+- `joint_states_topic`: Source of measured robot state.
+
+### MoveL Family Parameters
+
+- Applies to: `ai_worker_movel_controller`, `ai_worker_bimanual_movel_controller`
+- `kp_position`, `kp_orientation`: Cartesian tracking gains for end-effector or virtual-object tracking.
+- `weight_position`, `weight_orientation`: Relative importance of position and orientation tracking in the QP solve.
+- `right_movel_topic`, `left_movel_topic`: Right and left `MoveL` command input topics.
+- `lift_topic`, `lift_vel_bound`: Lift command path settings. When `lift_vel_bound` is `0`, the controller does not consider lift joint motion.
+- `r_gripper_pose_topic`, `l_gripper_pose_topic`: Published current gripper pose topics.
+- `r_gripper_name`, `l_gripper_name`: Link names used to compute the gripper pose and, in bimanual mode, the grasp constraint.
+
+Only `ai_worker_movel_controller`:
+
+- `right_gripper_joint`, `left_gripper_joint`: Gripper joint names preserved in published trajectories.
+- `controller_error_topic`: Published controller error topic.
+
+Only `ai_worker_bimanual_movel_controller`:
+
+- `virtual_object_movel_topic`: Object-level `MoveL` command topic used after grasp capture.
+- `grasp_capture_topic`: Bool topic used to capture or release the rigid two-hand grasp.
+
+### MoveJ Family Parameters
+
+- Applies to: `ai_worker_movej_controller`, `ai_worker_bimanual_movej_controller`
+- `kp_joint`: Joint-space tracking gain for the target command.
+- `weight_tracking`: Relative importance of joint tracking in the QP solve.
+- `right_traj_topic`, `left_traj_topic`: Raw right and left joint trajectory input topics.
+- `right_traj_filtered_topic`, `left_traj_filtered_topic`: Filtered right and left output trajectory topics.
+- `right_gripper_joint`, `left_gripper_joint`: Gripper joint names read from raw commands and preserved in filtered output.
+
+Only `ai_worker_movej_controller`:
+
+- `command_timeout`: Maximum age of raw trajectory commands before the controller treats command input as stale.
+
+Only `ai_worker_bimanual_movej_controller`:
+
+- `grasp_capture_topic`: Bool topic used to manually capture or release the rigid two-hand grasp.
+- `r_gripper_name`, `l_gripper_name`: Link names used as the right and left constraint links for grasp capture.
+- `gripper_grasp_threshold`: Gripper position threshold used for automatic grasp detection.
+- `gripper_grasp_hold_time`: Time both grippers must remain above the threshold before enabling grasp mode, or below it before releasing grasp mode.
 
 ## Troubleshooting
 
 - If the markers do not appear in RViz after setting `start_interactive_marker:=true`, check that the `InteractiveMarkers` display is added and that the `base_frame` is set correctly.(default set to `base_link`)
 - If the `movel` controller does not move, check the terminal log to see whether `/joint_states` is updating and whether `MoveL` commands are arriving on `/r_goal_move` and `/l_goal_move`.
 - If `movej` does not respond, confirm the raw trajectory topics are receiving commands and that each command includes correct joint names.
-<!-- - If `vr` does not move, check the terminal log for startup mismatch or reference divergence, then call `/reactivate` again after the goal poses are near the current gripper poses.
-- If `leader` does not respond, confirm the leader raw trajectory topics are active and that the controller is publishing `/r_goal_pose` and `/l_goal_pose`. -->
-
-## Controller Parameters
-
-The main parameters live in `cyclo_motion_controller_ros/config/ai_worker_config.yaml`. The file is divided by controller name, so you usually tune only the block that matches the controller mode you are running.
-
-### `ai_worker_movel_controller`
-
-- `control_frequency`, `time_step`: Main control loop speed.
-- `trajectory_time`: Time field used when publishing output joint trajectories.
-- `kp_position`, `kp_orientation`: Cartesian tracking gains for end-effector position and orientation.
-- `weight_position`, `weight_orientation`: Relative importance of position and orientation tracking in the QP solve.
-- `weight_damping`: Regularization term that discourages unnecessarily large joint velocities.
-- `collision_buffer`, `collision_safe_distance`: Safety margins used for collision avoidance.
-- `slack_penalty`: Cost applied when the solver must relax constraints. Larger values enforce constraints more strictly.
-- `cbf_alpha`: Responsiveness of the barrier constraint. Larger values make the constraint act more like a full brake near a cliff, affecting the control input later and more abruptly as the motion gets very close to the constraint boundary.
-- `joint_states_topic`: Source of measured robot state.
-- `right_movel_topic`, `left_movel_topic`: Right and left `MoveL` command input topics.
-- `right_traj_topic`, `left_traj_topic`: Right and left arm trajectory output topics.
-- `lift_topic`, `lift_vel_bound`: Lift command path settings. When `lift_vel_bound` is `0`, the controller does not consider lift joint motion.
-- `r_gripper_pose_topic`, `l_gripper_pose_topic`: Published current gripper pose topics.
-- `r_gripper_name`, `l_gripper_name`: Link names used to compute the gripper pose.
-- `right_gripper_joint`, `left_gripper_joint`: Gripper joint names preserved in published trajectories.
-- `controller_error_topic`: Published controller error topic.
-
-### `ai_worker_movej_controller`
-
-- `control_frequency`, `time_step`: Main control loop speed.
-- `trajectory_time`: Time field used when publishing output joint trajectories.
-- `kp_joint`: Joint-space tracking gain for the moveJ target.
-- `weight_tracking`: Relative importance of joint tracking in the QP solve.
-- `weight_damping`: Regularization term that discourages unnecessarily large joint velocities.
-- `collision_buffer`, `collision_safe_distance`: Safety margins used for collision avoidance.
-- `slack_penalty`: Cost applied when the solver must relax constraints. Larger values enforce constraints more strictly.
-- `cbf_alpha`: Responsiveness of the barrier constraint. Larger values make the constraint act more like a full brake near a cliff, affecting the control input later and more abruptly as the motion gets very close to the constraint boundary.
-- `joint_states_topic`: Source of measured robot state.
-- `right_traj_topic`, `left_traj_topic`: Raw right and left joint trajectory input topics.
-- `right_traj_filtered_topic`, `left_traj_filtered_topic`: Filtered right and left output trajectory topics.
-- `right_gripper_joint`, `left_gripper_joint`: Gripper joint names preserved from the input command.
-
-<!-- ### `vr_controller`
-
-- `control_frequency`, `time_step`: Main control loop speed.
-- `trajectory_time`: Time field used when publishing output joint trajectories.
-- `kp_position`, `kp_orientation`: Task-space tracking gains for gripper position and orientation.
-- `weight_position`, `weight_orientation`, `weight_elbow_position`: Relative importance of end-effector and elbow tasks in the QP solve.
-- `weight_damping`: Regularization term that discourages unnecessarily large joint velocities.
-- `collision_buffer`, `collision_safe_distance`: Safety margins used for collision avoidance.
-- `slack_penalty`: Cost applied when the solver must relax constraints. Larger values enforce constraints more strictly.
-- `cbf_alpha`: Responsiveness of the barrier constraint. Larger values make the constraint act more like a full brake near a cliff, affecting the control input later and more abruptly as the motion gets very close to the constraint boundary.
-- `reactivate_service`: Service used to arm or re-arm the controller.
-- `joint_states_topic`: Source of measured robot state.
-- `right_traj_topic`, `left_traj_topic`: Output arm trajectory topics.
-- `right_raw_traj_topic`, `left_raw_traj_topic`: Raw leader trajectory topics used to preserve gripper commands.
-- `lift_topic`, `lift_vel_bound`: Lift command path settings. When `lift_vel_bound` is `0`, the controller does not consider lift joint motion.
-- `r_goal_pose_topic`, `l_goal_pose_topic`: Main right and left end-effector goal pose topics.
-- `r_elbow_pose_topic`, `l_elbow_pose_topic`: Elbow reference topics used to shape arm posture.
-- `r_gripper_pose_topic`, `l_gripper_pose_topic`: Published current gripper pose topics.
-- `startup_ref_pos_threshold`, `startup_ref_ori_threshold_deg`: Startup alignment thresholds before control is enabled.
-
-### `leader_controller`
-
-- `control_frequency`: Forward-kinematics and retargeting update rate.
-- `joint_states_topic`: Source of measured follower state, used mainly for the lift joint.
-- `right_traj_topic`, `left_traj_topic`: Raw leader joint trajectory input topics.
-- `reactivate_service`: Service used to arm the follower-side `vr` controller automatically when leader commands begin.
-- `command_timeout`: Timeout for detecting that the leader command stream has stopped.
-- `r_goal_pose_topic`, `l_goal_pose_topic`: Right and left goal pose topics generated for the follower.
-- `r_elbow_pose_topic`, `l_elbow_pose_topic`: Right and left elbow reference topics generated for the follower.
-- `base_frame_id`: Base frame used for published pose references.
-- `r_gripper_name`, `l_gripper_name`, `r_elbow_name`, `l_elbow_name`: Link names used for forward kinematics and retargeting.
-- `lift_joint_name`, `model_lift_joint_name`: Lift joint names used to map the leader and follower models correctly.
-
-### `reference_checker`
-
-- `ref_pos_jump_threshold`: Maximum allowed sudden position jump in the incoming reference.
-- `ref_ori_jump_threshold_deg`: Maximum allowed sudden orientation jump in the incoming reference.
-- `r_goal_pose_topic`, `l_goal_pose_topic`: Right and left goal pose topics monitored for discontinuities. -->
+- If any controller holds position unexpectedly, check whether `/joint_states` has stopped. The bimanual controllers stop updating commands after `joint_state_timeout` until fresh feedback is received.
 
 ## Safety and Usage Tips
 
@@ -353,6 +410,5 @@ The main parameters live in `cyclo_motion_controller_ros/config/ai_worker_config
 
 - Keep people, cables, and nearby objects clear before sending commands.
 - Start with small motions first to confirm the model, frames, and topics are configured correctly.
-<!-- - Re-arm the `vr` controller any time you intentionally reset references or recover from a reference divergence event. -->
 - Always stay within reach of the emergency stop during operation.
 - Stop the controller immediately with `Ctrl+C` if it is safe to do so and the robot behaves unexpectedly.

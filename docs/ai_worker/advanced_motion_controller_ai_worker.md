@@ -33,6 +33,8 @@ This is different from a simple pose or joint command that only describes the de
 
 Bimanual controllers use the same `MoveL` and `MoveJ` command styles, but add a two-hand grasp mode for coordinated object motion. They are useful when the robot holds the same object with both grippers and the two hands should keep a fixed relative pose while the object moves.
 
+![bimanual_controller](/simulation/ai_worker/aiw_bimanual_controller.gif)
+
 When grasp capture is enabled, the controller records the current transform between the configured right and left constraint links, such as the two gripper links. It then adds a 6D rigid grasp constraint to the QP solve, so the controller tracks the requested motion while also trying to preserve that captured relationship between the hands.
 
 In `bimanual_movel`, you can first command the right and left hands independently with normal `MoveL` goals. After capture, you command the virtual object pose, and the controller derives the right and left hand goals from the captured grasp. In `bimanual_movej`, the controller still receives raw right and left joint trajectories, and it can enable the same rigid grasp constraint manually or automatically after both grippers are commanded closed.

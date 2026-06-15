@@ -237,10 +237,12 @@ ros2 topic pub --once /virtual_object_goal_move robotis_interfaces/msg/MoveL "{
   time_from_start: {sec: 3, nanosec: 0}
 }"
 ```
-<!-- TODO : Implement real robot demo gif(with box) -->
+
 ## Launch Bimanual MoveJ Controller
 
 Use `bimanual_movej` when the input is still raw right and left joint trajectories, but the two hands may need to hold a rigid relative pose during a grasp. It uses the same raw input and filtered output topics as `movej`, and adds grasp capture logic.
+
+![bimanual_movej](/simulation/ai_worker/aiw_bimanual_movej.gif)
 
 ```bash
 ros2 launch cyclo_motion_controller_ros ai_worker_controller.launch.py controller_type:=bimanual_movej

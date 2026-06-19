@@ -258,33 +258,9 @@ ros2 topic pub --once /capture_grasp std_msgs/msg/Bool "{data: true}"
 ros2 topic pub --once /capture_grasp std_msgs/msg/Bool "{data: false}"
 ```
 
-The controller can also infer grasp mode from gripper commands. When both configured gripper joints stay above `gripper_grasp_threshold` for `gripper_grasp_hold_time`, it enables the rigid grasp constraint. When one gripper stays below that threshold for the hold time, it disables or partially releases the constraint and blends the arm back into follower control.
+The controller can also infer grasp mode from gripper commands. When both configured gripper joints stay above `gripper_grasp_threshold` for `gripper_grasp_hold_time`, it enables the rigid grasp constraint. When one gripper stays below that threshold for the hold time, it disables or partially releases the constraint and slowly blends the arm back into follower control.
 
-Example input commands are the same shape as normal `movej`:
-
-```bash
-ros2 topic pub --once /leader/joint_trajectory_command_broadcaster_right/raw_joint_trajectory trajectory_msgs/msg/JointTrajectory "{
-  joint_names: ['arm_r_joint1', 'arm_r_joint2', 'arm_r_joint3', 'arm_r_joint4', 'arm_r_joint5', 'arm_r_joint6', 'arm_r_joint7', 'gripper_r_joint1'],
-  points: [
-    {
-      positions: [0.25, -0.15, 0.05, 0.0, 0.15, -0.05, 0.0, 1.0],
-      time_from_start: {sec: 3, nanosec: 0}
-    }
-  ]
-}"
-```
-
-```bash
-ros2 topic pub --once /leader/joint_trajectory_command_broadcaster_left/raw_joint_trajectory trajectory_msgs/msg/JointTrajectory "{
-  joint_names: ['arm_l_joint1', 'arm_l_joint2', 'arm_l_joint3', 'arm_l_joint4', 'arm_l_joint5', 'arm_l_joint6', 'arm_l_joint7', 'gripper_l_joint1'],
-  points: [
-    {
-      positions: [-0.25, 0.15, -0.05, 0.0, -0.15, 0.05, 0.0, 1.0],
-      time_from_start: {sec: 3, nanosec: 0}
-    }
-  ]
-}"
-```
+Example input commands are the same shape as normal `movej`
 
 ## Launch Arguments
 

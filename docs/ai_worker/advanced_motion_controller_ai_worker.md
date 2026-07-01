@@ -291,7 +291,7 @@ Example input commands are the same shape as normal `movej`
 
 
 ::: tip
-When using a leader device with `bimanual_movej`, the leader must publish its arm commands to the raw trajectory topics above.
+When using a leader device with `bimanual_movej`, the leader must publish its arm commands to the raw trajectory topics.
 
 Update the `robot_controller_spawner` node in `ffw_lg2_leader_ai.launch.py` by adding controller ROS remap arguments before the controller names:
 

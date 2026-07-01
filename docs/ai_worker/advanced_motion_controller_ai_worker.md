@@ -185,6 +185,33 @@ ros2 topic pub --once /leader/joint_trajectory_command_broadcaster_left/raw_join
 }"
 ```
 
+::: tip
+When using a leader device with `movej`, the leader must publish its arm commands to the raw trajectory topics above.
+
+Update the `robot_controller_spawner` node in `ffw_lg2_leader_ai.launch.py` by adding controller ROS remap arguments before the controller names:
+
+```python
+robot_controller_spawner = Node(
+    package='controller_manager',
+    executable='spawner',
+    arguments=[
+        '--controller-ros-args',
+        '-r /leader/joint_trajectory_command_broadcaster_left/joint_trajectory:='
+        '/leader/joint_trajectory_command_broadcaster_left/raw_joint_trajectory',
+        '--controller-ros-args',
+        '-r /leader/joint_trajectory_command_broadcaster_right/joint_trajectory:='
+        '/leader/joint_trajectory_command_broadcaster_right/raw_joint_trajectory',
+        'joint_trajectory_command_broadcaster',
+        'spring_actuator_controller_left',
+        'spring_actuator_controller_right',
+        'joystick_controller',
+        'joint_state_broadcaster',
+    ],
+    parameters=[robot_description],
+)
+```
+:::
+
 ![aiw_movel](/simulation/ai_worker/aiw_movej.gif)
 
 ## Launch Bimanual MoveL Controller
@@ -261,6 +288,34 @@ ros2 topic pub --once /capture_grasp std_msgs/msg/Bool "{data: false}"
 The controller can also infer grasp mode from gripper commands. When both configured gripper joints stay above `gripper_grasp_threshold` for `gripper_grasp_hold_time`, it enables the rigid grasp constraint. When one gripper stays below that threshold for the hold time, it disables or partially releases the constraint and slowly blends the arm back into follower control.
 
 Example input commands are the same shape as normal `movej`
+
+
+::: tip
+When using a leader device with `bimanual_movej`, the leader must publish its arm commands to the raw trajectory topics above.
+
+Update the `robot_controller_spawner` node in `ffw_lg2_leader_ai.launch.py` by adding controller ROS remap arguments before the controller names:
+
+```python
+robot_controller_spawner = Node(
+    package='controller_manager',
+    executable='spawner',
+    arguments=[
+        '--controller-ros-args',
+        '-r /leader/joint_trajectory_command_broadcaster_left/joint_trajectory:='
+        '/leader/joint_trajectory_command_broadcaster_left/raw_joint_trajectory',
+        '--controller-ros-args',
+        '-r /leader/joint_trajectory_command_broadcaster_right/joint_trajectory:='
+        '/leader/joint_trajectory_command_broadcaster_right/raw_joint_trajectory',
+        'joint_trajectory_command_broadcaster',
+        'spring_actuator_controller_left',
+        'spring_actuator_controller_right',
+        'joystick_controller',
+        'joint_state_broadcaster',
+    ],
+    parameters=[robot_description],
+)
+```
+:::
 
 ## Launch Arguments
 

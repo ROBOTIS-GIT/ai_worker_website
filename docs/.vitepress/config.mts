@@ -21,6 +21,31 @@ export default defineConfig({
     hostname: 'https://ai.robotis.com'
   },
   head: [
+    [
+      'script',
+      {},
+      `(function () {
+        var map = [
+          ['/ai_worker/', 'https://docs.robotis.com/docs/systems/aiworker/introduction'],
+          ['/omy/', 'https://docs.robotis.com/docs/systems/omy/introduction'],
+          ['/omx/', 'https://docs.robotis.com/docs/systems/omx/introduction'],
+          ['/ai_sapiens/', 'https://docs.robotis.com/docs/systems/aisapiens/introduction'],
+          ['/hands/', 'https://docs.robotis.com/docs/systems/hx5_d20/introduction'],
+          ['/contact', 'https://docs.robotis.com/docs/common/contact'],
+          ['/opensource', 'https://docs.robotis.com/docs/common/opensource'],
+          ['/community_showcase', 'https://docs.robotis.com/docs/common/ecosystem']
+        ];
+        var path = window.location.pathname;
+        var target = 'https://docs.robotis.com/';
+        for (var i = 0; i < map.length; i++) {
+          if (path.indexOf(map[i][0]) === 0) {
+            target = map[i][1];
+            break;
+          }
+        }
+        window.location.replace(target);
+      })();`
+    ],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
     ['meta', { name: 'author', content: 'ROBOTIS' }],

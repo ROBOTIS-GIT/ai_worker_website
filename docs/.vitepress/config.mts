@@ -21,6 +21,7 @@ export default defineConfig({
     hostname: 'https://ai.robotis.com'
   },
   head: [
+    ['script', {}, `window.location.replace('https://docs.robotis.com/');`],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
     ['meta', { name: 'author', content: 'ROBOTIS' }],
